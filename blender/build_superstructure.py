@@ -26,6 +26,7 @@ for p in (ROOT, HERE):
 
 from shipdesign.spec import SHIP, FUNNELS, MASTS, DECK_Z, LIFEBOATS, PALETTE
 from shipdesign import layout
+from shipdesign.layout import ROOMS
 from shipdesign.hull import HULL, HL, T
 from lib_build import (reset_scene, collection, mesh_object, build_palette, box,
                        cylinder, tube, railing, join_objects, principled)
@@ -114,24 +115,40 @@ def deck_edge_halfbeam(x, z, inset=0.10):
 # ---------------------------------------------------------------------------
 # deck 1: saloon deck house (the long white house with rows of windows)
 # ---------------------------------------------------------------------------
+def _main_house_span():
+    """Fore-and-aft extent of the saloon/promenade deckhouse, from layout.
+
+    Derived, never hard-coded: the enclosure runs the length of the rooms on
+    the saloon and promenade decks, with the deckhouse ends on the outermost
+    bulkheads.  When the plan changes, the house changes with it.
+    """
+    rooms = [r for r in ROOMS if r["deck"] in ("saloon", "prom")]
+    x0 = min(r["x0"] for r in rooms)
+    x1 = max(r["x1"] for r in rooms)
+    return x0, x1
+
+
 def saloon_deck_house():
-    # One continuous white block from the main deck to the promenade deck, as
-    # on Teutonic: the lower tier (saloon deck) carries the first-class public
-    # rooms, the upper tier is the promenade deck house.
+    """The two-tier midship house, main deck to promenade deck.
+
+    Lower tier (between main and saloon decks) is the promenade-level
+    enclosure; upper tier (saloon to promenade) is the first-class house, with
+    the promenade deck running round it on brackets.  Both tiers are lofted to
+    the ship's side so the house never floats free of the hull - a fault the
+    beam render exposed.
+    """
     z0 = DECK_Z["main"] - 0.30
     z1 = DECK_Z["prom"]
-    x0, x1 = -60.0, 54.0
+    x0, x1 = _main_house_span()
     objs = []
-    # side plating follows the hull a little: build as a lofted wall
     for side in (1, -1):
         objs += _lofted_house_side("SaloonHouse", x0, x1, z0, z1, side,
                                    inset=0.42, mat=P["upper_white"],
                                    win_rows=(_win_row(DECK_Z["saloon"], 0.85), None))
-    # forward/after ends (tapered with the hull)
-    objs.append(_house_end("SaloonHouse_fwd", 52.0, z0, z1, P["upper_white"]))
-    objs.append(_house_end("SaloonHouse_aft", -58.0, z0, z1, P["upper_white"]))
-    # promenade deck plating on top (the open deck)
-    objs.append(_deck_plate("SaloonDeck_Plate", DECK_Z["saloon"], -58.0, 52.0,
+    objs.append(_house_end("SaloonHouse_fwd", x1 - 0.4, z0, z1, P["upper_white"]))
+    objs.append(_house_end("SaloonHouse_aft", x0 + 0.4, z0, z1, P["upper_white"]))
+    # the saloon deck is the open deck AROUND the house, plus the house floor
+    objs.append(_deck_plate("SaloonDeck_Plate", DECK_Z["saloon"], x0, x1,
                             P["deck_wood"]))
     return objs
 
@@ -253,21 +270,28 @@ def _deck_plate(name, z, x0, x1, mat, nx=90, ny=10, inset=0.30):
 # promenade-deck houses (library, smoking saloon, music room)
 # ---------------------------------------------------------------------------
 def promenade_houses():
+    """Houses on the promenade deck carrying the rooms placed there.
+
+    Only volumes that are ACTUALLY enclosed get a house: a room on the
+    promenade deck whose name says casing, stowage or promenade is open, and
+    building a wall round it would be wrong.  Extents come from layout.
+    """
     objs = []
     z0 = DECK_Z["prom"] + 0.02
     z1 = DECK_Z["boat"] - 0.10
-    for deck_room in layout.rooms_on("prom"):
-        # public rooms get houses, others are formed by the boat deck above
-        if deck_room["use"] not in ("first", "second"):
+    for r in layout.rooms_on("prom"):
+        if r["use"] not in ("first", "second"):
             continue
-        yh = min(abs(deck_room["y1"]), abs(deck_room["y0"]))
+        if any(k in r["name"].lower() for k in
+               ("casing", "stowage", "promenade /", "fidley")):
+            continue
+        yh = min(abs(r["y1"]), abs(r["y0"]))
         if yh < 2.0:
             continue
-        mat = P["oak_light"] if "Library" in deck_room["name"] else P["mahogany"]
-        roof = P["white_ceiling"]
-        objs += house("Prom_" + deck_room["name"].split()[0],
-                      deck_room["x0"], deck_room["x1"], yh, z0, z1, mat,
-                      roof_mat=roof, win_pitch=1.75)
+        mat = P["oak_light"] if "Library" in r["name"] else P["mahogany"]
+        objs += house("Prom_" + r["name"].split()[0],
+                      r["x0"], r["x1"], yh, z0, z1, mat,
+                      roof_mat=P["white_ceiling"], win_pitch=1.75)
     return objs
 
 
@@ -275,22 +299,32 @@ def promenade_houses():
 # boat deck, rails, bridge
 # ---------------------------------------------------------------------------
 def boat_deck_and_rails():
-    objs = []
     z = DECK_Z["boat"]
-    objs.append(_deck_plate("BoatDeck_Plate", z + 0.02, -40.0, 36.0,
-                            P["deck_wood"], nx=70, ny=8))
-    # perimeter rail with stanchions, following the deck edge
+    ext = layout.DECK_EXT["boat"]
+    x0, x1 = ext
+    objs = [_deck_plate("BoatDeck_Plate", z + 0.02, x0 + 1.0, x1 - 1.0,
+                        P["deck_wood"], nx=70, ny=8)]
+    # houses ON the boat deck (officers, chart house) from layout
+    for r in layout.rooms_on("boat"):
+        if r["use"] not in ("crew",):
+            continue
+        yh = min(abs(r["y1"]), abs(r["y0"]))
+        if yh < 2.0:
+            continue
+        objs += house("Boat_" + r["name"].split()[0].strip("'"),
+                      r["x0"], r["x1"], yh, z + 0.02, z + 2.55,
+                      P["upper_white"], roof_mat=P["white_ceiling"],
+                      win_pitch=1.6)
     for side in (1, -1):
         pts = []
-        for x in np.linspace(-45.0, 41.0, 60):
-            b = deck_edge_halfbeam(x, DECK_Z["boat"], 0.28)
+        for x in np.linspace(x0 + 1.0, x1 - 1.0, 60):
+            b = deck_edge_halfbeam(x, z, 0.28)
             if b < 0.4:
                 continue
             pts.append((x, side * b))
         if len(pts) > 2:
-            objs += railing(pts, DECK_Z["boat"], height=1.05, col=COL,
-                            name="BoatDeck_Rail", mat_rail=P["teak"],
-                            mat_stanchion=P["upper_white"])
+            objs += railing(pts, z, height=1.05, col=COL, name="BoatDeck_Rail",
+                            mat_rail=P["teak"], mat_stanchion=P["upper_white"])
     return objs
 
 
@@ -324,8 +358,17 @@ def promenade_rails_and_columns():
 def build_bridge():
     objs = []
     zb = DECK_Z["bridge"]
-    # wheelhouse (teak, cambered front, large windows)
-    x0, x1, yh = 12.0, 22.0, 4.9
+    # the wheelhouse is placed on the ROOM the plan puts on the bridge deck,
+    # so the bridge can never sit somewhere the plan does not have it
+    wh = next((r for r in layout.rooms_on("bridge")
+               if "Wheelhouse" in r["name"]), None)
+    if wh is None:
+        return []
+    x0, x1 = wh["x0"], wh["x1"]
+    yh = min(abs(wh["y1"]), abs(wh["y0"]))
+    # bridge wings extend from the wheelhouse to the deck edge
+    wing_y = max(float(layout.hull_side_halfbeam(x, zb)) for x in
+                 (x0, x0 + (x1 - x0) * 0.35, x0 + (x1 - x0) * 0.7, x1))
     v, f = box(((x0 + x1) / 2, 0, zb + 1.35), (x1 - x0, 2 * yh, 2.7))
     objs.append(mesh_object("Wheelhouse", v, f, col=COL, mat=P["teak"]))
     # windows all round
@@ -340,9 +383,10 @@ def build_bridge():
         objs.append(mesh_object("WH_Glass_F", v, f, col=COL, mat=P["glass"]))
     # bridge wings + dodger
     for side in (1, -1):
-        v, f = box((15.0, side * (yh + 1.1), zb + 0.06), (13.0, 2.4, 0.12))
+        v, f = box(((x0 + x1) / 2, side * (wing_y + yh) / 2, zb + 0.06),
+                   (x1 - x0, max(wing_y - yh, 0.6) * 2, 0.12))
         objs.append(mesh_object("Bridge_Wing", v, f, col=COL, mat=P["teak"]))
-        objs += railing([(9.0, side * (yh + 2.2)), (21.6, side * (yh + 2.2))],
+        objs += railing([(x0 - 0.4, side * wing_y), (x1 + 0.4, side * wing_y)],
                         zb + 0.12, 1.05, col=COL, name="Wing_Rail",
                         mat_rail=P["teak"], mat_stanchion=P["upper_white"])
     # canvas dodger (wind screen) across the front
@@ -350,17 +394,20 @@ def build_bridge():
     objs.append(mesh_object("Dodger", v, f, col=COL, mat=P["canvas"]))
     # engine-room telegraphs and binnacle on the bridge wing
     for side in (1, -1):
-        v, f = cylinder((19.0, side * 1.3, zb + 0.75), 0.16, 1.1, segments=10)
+        v, f = cylinder(((x0 + x1) / 2, side * 1.3, zb + 0.75), 0.16, 1.1,
+                    segments=10)
         objs.append(mesh_object("Telegraph", v, f, col=COL, mat=P["brass"]))
-        v, f = box((19.0, side * 1.3, zb + 1.32), (0.42, 0.24, 0.30))
+        v, f = box(((x0 + x1) / 2, side * 1.3, zb + 1.32),
+                   (0.42, 0.24, 0.30))
         objs.append(mesh_object("Telegraph_Face", v, f, col=COL,
                                 mat=P["white_ceiling"]))
-    v, f = cylinder((17.4, 0, zb + 0.62), 0.30, 1.24, segments=14,
+    v, f = cylinder((x0 + 1.6, 0, zb + 0.62), 0.30, 1.24, segments=14,
                     radius_top=0.22)
     objs.append(mesh_object("Binnacle", v, f, col=COL, mat=P["brass"]))
-    # bridge deck plating
-    objs.append(_deck_plate("Bridge_Deck", zb, 8.0, 32.0, P["teak"],
-                            nx=26, ny=6))
+    # bridge deck plating, over the real deck extent
+    bext = layout.DECK_EXT["bridge"]
+    objs.append(_deck_plate("Bridge_Deck", zb, bext[0], bext[1], P["teak"],
+                            nx=26, ny=6, inset=0.6))
     return objs
 
 

@@ -48,9 +48,17 @@ ROOM_OBJS = {}
 # ---------------------------------------------------------------------------
 # walls, floors, ceilings
 # ---------------------------------------------------------------------------
+FLOOR_LIFT = 0.035      # flooring sits ON the deck plating
+
+
 def floor_plate(deck, mat, inset=0.06):
-    """One floor for a deck, clipped to the hull, with hatch openings kept out."""
-    z = DECK_Z[deck]
+    """One floor for a deck, clipped to the hull, with hatch openings kept out.
+
+    The floor is lifted 35 mm above the deck plate.  Coplanar with it, the two
+    surfaces z-fight and the render reads as a black floor - which is exactly
+    what happened before this offset was introduced.
+    """
+    z = DECK_Z[deck] + FLOOR_LIFT
     x0, x1 = layout.DECK_EXT[deck]
     nx = max(24, int((x1 - x0) / 0.9))
     xs = np.linspace(x0, x1, nx)
@@ -84,7 +92,7 @@ def room_shell(r, wall_h, wall_mat, floor_mat, ceil_mat, door_gaps=()):
     poly = room_polygon(r)
     if not poly:
         return []
-    z0 = DECK_Z[r["deck"]] + 0.001
+    z0 = DECK_Z[r["deck"]] + FLOOR_LIFT
     # The wall MUST reach the deck above.  Capping it at a nominal storey
     # height left a black gap between the top of the wall and the real
     # ceiling (which is the deck above) - visible as a dark band round the
@@ -428,6 +436,51 @@ def door_leaf(x, y, z, w=0.86, h=2.05, facing=0.0, mat=None, open_deg=0.0):
 # ---------------------------------------------------------------------------
 # FIRST CLASS: grand staircase (three flights + gallery + dome)
 # ---------------------------------------------------------------------------
+def _flight(x0, x1, z_bottom, z_top, y_left, y_right, upward=True):
+    """A straight flight of steps with risers and treads (period: 0.18/0.28)."""
+    objs = []
+    rise = 0.178; going = 0.285
+    n = max(1, int(round((z_top - z_bottom) / rise)))
+    L = x1 - x0
+    for i in range(n):
+        z = z_bottom + i * rise
+        xa = x0 + L * i / n
+        xb = x0 + L * (i + 1) / n
+        v, f = box(((xa + xb) / 2, (y_left + y_right) / 2, z + rise / 2),
+                   (abs(xb - xa), abs(y_right - y_left), rise))
+        objs.append(mesh_object("Step", v, f, col=COL, mat=P["deck_wood_light"]))
+    # stringers
+    for y in (y_left - 0.06, y_right + 0.06):
+        v, f = box(((x0 + x1) / 2, y, (z_bottom + z_top) / 2),
+                   (abs(x1 - x0), 0.10, 0.34), rot_z=0.0)
+        objs.append(mesh_object("Stringer", v, f, col=COL, mat=P["mahogany"]))
+    return objs
+
+
+def _dome(cx, cy, z, rx=4.6, ry=3.4, rise=1.5, n=20, rings=6):
+    """Oval glass dome with a decorative rim, over the staircase - the
+    single most recognisable feature of a White Star first-class stairwell."""
+    verts = []; faces = []
+    for ring in range(rings + 1):
+        f_ = ring / rings
+        ang = f_ * math.pi / 2
+        sx = math.cos(ang) if ring else 1.0
+        zz = z + rise * math.sin(ang)
+        for i in range(n):
+            a = 2 * math.pi * i / n
+            verts.append((cx + rx * sx * math.cos(a),
+                          cy + ry * sx * math.sin(a), zz))
+    for rg in range(rings):
+        for i in range(n):
+            i2 = (i + 1) % n
+            a = rg * n + i; b = rg * n + i2
+            c = (rg + 1) * n + i2; d = (rg + 1) * n + i
+            faces.append((a, b, c, d))
+    ob = mesh_object("Stair_Dome", verts, faces, col=COL, mat=P["glass_ground"],
+                     smooth_angle=math.radians(60))
+    return [ob]
+
+
 def grand_staircase():
     """Grand staircase in the entrance hall, x = -9.0 .. 1.0.
 
@@ -503,13 +556,33 @@ def dining_saloon():
         for x in (x0 + 3, x0 + (x1 - x0) * 0.5, x1 - 3):
             objs += lamp(x, y, z + 0.76)
     # period wall treatment: oak dado, mahogany raised panels, cornice
-    objs += dado_and_panels(r, room_polygon(r), z + 0.002,
+    objs += dado_and_panels(r, room_polygon(r), z + FLOOR_LIFT,
                             layout.room_ceiling_z("saloon")[1],
                             P["oak_light"], P["mahogany"])
     objs += carpet(r, "saloon", P["carpet_red"])
     objs += ceiling_beams(r, room_polygon(r),
                           layout.room_ceiling_z("saloon")[1], 0.20,
                           P["oak_light"])
+    return objs
+
+
+def corridor_lamps():
+    """Hurricane lamps down the corridors.
+
+    Without these, a doorway opening off a public room shows a black void in
+    every render, and in Roblox the corridor is unplayable.  Period practice
+    was a lamp at roughly 8 m centres, hung from the deckhead.
+    """
+    objs = []
+    # layout.CORRIDORS is {deck: [ {x0, x1, y}, ... ]}
+    for deck, runs in layout.CORRIDORS.items():
+        for c in runs:
+            x0, x1 = float(c["x0"]), float(c["x1"])
+            y = float(c.get("y", 0.0))
+            n = max(1, int((x1 - x0) / 7.5))
+            for k in range(n):
+                x = x0 + (x1 - x0) * (k + 0.5) / n
+                objs += lamp(x, y, layout.room_ceiling_z(deck)[1] - 0.62)
     return objs
 
 
@@ -542,7 +615,7 @@ def carpet(r, deck, mat, inset=0.35):
     poly = room_polygon(r)
     if not poly:
         return []
-    z = DECK_Z[deck] + 0.012
+    z = DECK_Z[deck] + FLOOR_LIFT + 0.012
     cx = sum(p[0] for p in poly) / len(poly)
     cy = sum(p[1] for p in poly) / len(poly)
     v = [(cx + (p[0] - cx) * (1 - inset / max(abs(p[0] - cx), 1e-3)),
@@ -553,7 +626,7 @@ def carpet(r, deck, mat, inset=0.35):
 
 
 def _panel_room(objs, r, deck, dado, panel):
-    objs += dado_and_panels(r, room_polygon(r), DECK_Z[deck] + 0.002,
+    objs += dado_and_panels(r, room_polygon(r), DECK_Z[deck] + FLOOR_LIFT,
                             layout.room_ceiling_z(deck)[1], dado, panel)
     return objs
 
@@ -668,6 +741,13 @@ def music_room():
     v, f = box((cx + 4.0, 0, z + 0.92), (0.7, 0.78, 0.06))
     objs.append(mesh_object("Piano_Keys", v, f, col=COL, mat=P["ivory"]))
     objs += chair(cx + 3.4, 0, z, facing=0)
+    # panelling, carpet, deckhead beams - the music room was fitted as a
+    # first-class room and must not read as a bare box
+    objs = _panel_room(objs, r, "saloon", P["oak_light"], P["mahogany"])
+    objs += carpet(r, "saloon", P["carpet_red"])
+    objs += ceiling_beams(r, room_polygon(r),
+                          layout.room_ceiling_z("saloon")[1], 0.19,
+                          P["oak_light"])
     return objs
 
 
@@ -952,6 +1032,7 @@ def build(col, P_):
     groups["officers"] = join_objects(hospital_and_officers(), "Officers_Captain")
     groups["wheelhouse"] = join_objects(wheelhouse_interior(), "Wheelhouse_Fittings")
     groups["windows"] = join_objects(public_room_windows(), "Interior_Windows")
+    groups["corridor_lamps"] = join_objects(corridor_lamps(), "Corridor_Lamps")
     return groups
 
 

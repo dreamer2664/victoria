@@ -1,0 +1,941 @@
+Blender 4.2.9 LTS (hash a10f621e649a built 2025-04-15 01:46:41)
+Read blend: "/home/user/victoria/models/ship_assembly.blend"
+Fra:1 Mem:58.12M (Peak 58.12M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:59.11M (Peak 59.11M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:59.85M (Peak 59.85M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:59.89M (Peak 59.89M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:59.95M (Peak 59.95M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:59.96M (Peak 59.96M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:59.96M (Peak 59.96M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:59.97M (Peak 59.97M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:59.98M (Peak 59.98M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:60.10M (Peak 60.10M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:61.09M (Peak 61.09M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:61.12M (Peak 61.12M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:61.12M (Peak 61.12M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:61.66M (Peak 61.66M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:61.83M (Peak 61.83M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:67.65M (Peak 68.16M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:67.86M (Peak 68.16M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:68.57M (Peak 68.57M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:68.58M (Peak 68.58M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:68.61M (Peak 68.61M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:69.44M (Peak 69.44M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:69.59M (Peak 69.59M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:69.63M (Peak 69.63M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:69.69M (Peak 69.69M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:69.84M (Peak 69.84M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:70.06M (Peak 70.06M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:70.09M (Peak 70.09M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:70.55M (Peak 70.55M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:70.74M (Peak 70.74M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:71.78M (Peak 71.78M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:72.54M (Peak 72.54M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:72.54M (Peak 72.54M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:72.71M (Peak 72.71M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:72.80M (Peak 72.80M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:73.32M (Peak 73.32M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:73.35M (Peak 73.35M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:73.79M (Peak 73.79M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:74.40M (Peak 74.40M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:74.43M (Peak 74.43M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:76.45M (Peak 76.45M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:77.21M (Peak 77.21M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:77.26M (Peak 77.26M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:77.51M (Peak 77.51M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:80.81M (Peak 81.53M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:80.80M (Peak 81.53M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:80.80M (Peak 81.53M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:80.80M (Peak 81.53M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:80.80M (Peak 81.53M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:80.93M (Peak 81.53M) | Time:00:00.03 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:80.93M (Peak 81.53M) | Time:00:00.03 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:80.93M (Peak 81.53M) | Time:00:00.03 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:80.93M (Peak 81.53M) | Time:00:00.03 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:80.93M (Peak 81.53M) | Time:00:00.03 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:80.93M (Peak 81.53M) | Time:00:00.03 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:80.95M (Peak 81.53M) | Time:00:00.03 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:80.95M (Peak 81.53M) | Time:00:00.03 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:80.95M (Peak 81.53M) | Time:00:00.03 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:80.95M (Peak 81.53M) | Time:00:00.03 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:85.34M (Peak 85.34M) | Time:00:00.03 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:87.61M (Peak 87.61M) | Time:00:00.04 | Mem:0.06M, Peak:0.06M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:87.61M (Peak 87.61M) | Time:00:00.04 | Mem:2.33M, Peak:2.33M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:87.61M (Peak 87.61M) | Time:00:00.04 | Mem:2.33M, Peak:2.33M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:87.61M (Peak 87.61M) | Time:00:00.04 | Mem:11.12M, Peak:11.12M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:87.61M (Peak 87.61M) | Time:00:00.10 | Mem:21.59M, Peak:30.38M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:87.61M (Peak 87.61M) | Time:00:00.10 | Mem:21.59M, Peak:30.38M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:99.14M (Peak 99.14M) | Time:00:00.10 | Mem:21.59M, Peak:30.38M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:99.14M (Peak 99.14M) | Time:00:00.10 | Mem:33.13M, Peak:33.13M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:99.14M (Peak 99.14M) | Time:00:00.10 | Mem:33.13M, Peak:33.13M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:99.14M (Peak 99.14M) | Time:00:00.10 | Mem:33.13M, Peak:33.13M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:99.14M (Peak 99.14M) | Time:00:00.10 | Mem:33.13M, Peak:33.13M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:99.14M (Peak 99.14M) | Time:00:00.10 | Mem:33.13M, Peak:33.13M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:99.14M (Peak 99.14M) | Time:00:00.10 | Mem:33.21M, Peak:33.21M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:99.14M (Peak 99.14M) | Time:00:00.10 | Mem:33.21M, Peak:33.21M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:100.53M (Peak 111.98M) | Time:00:00.12 | Mem:34.59M, Peak:34.59M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:100.53M (Peak 111.98M) | Time:00:00.12 | Mem:34.59M, Peak:34.59M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:100.53M (Peak 111.98M) | Time:00:00.12 | Mem:34.51M, Peak:34.59M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:100.53M (Peak 111.98M) | Time:00:00.12 | Mem:34.60M, Peak:34.60M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:100.53M (Peak 111.98M) | Time:00:00.12 | Mem:34.60M, Peak:34.60M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:100.53M (Peak 111.98M) | Time:00:00.12 | Mem:34.60M, Peak:34.60M | Scene, ViewLayer | Loading denoising kernels (may take a few minutes the first time)
+Fra:1 Mem:100.53M (Peak 111.98M) | Time:00:00.12 | Mem:34.60M, Peak:34.60M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:174.76M (Peak 174.76M) | Time:00:05.79 | Remaining:01:02.36 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:174.76M (Peak 174.76M) | Time:00:28.33 | Remaining:00:39.49 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:174.76M (Peak 174.76M) | Time:00:50.87 | Remaining:00:16.91 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:206.01M (Peak 252.89M) | Time:01:15.21 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:206.01M (Peak 252.89M) | Time:01:15.21 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/grand_staircase.png'
+Time: 01:15.72 (Saving: 00:00.50)
+
+Fra:1 Mem:182.06M (Peak 182.06M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:182.85M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:182.12M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:182.12M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:182.10M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:182.51M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:182.51M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:182.51M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:182.51M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:182.51M (Peak 182.85M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:182.97M (Peak 182.97M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:182.97M (Peak 182.97M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:182.97M (Peak 182.97M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:182.96M (Peak 182.97M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:182.92M (Peak 182.97M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:183.88M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:183.83M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:183.82M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:183.81M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:183.81M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:181.23M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:181.23M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:181.22M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:180.09M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:180.03M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:180.05M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:180.12M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:179.86M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:180.04M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:180.46M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:179.68M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:179.42M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:179.46M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:179.49M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:179.44M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:179.48M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:179.48M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:179.41M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:179.41M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:180.91M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:180.90M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:180.89M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:180.85M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:177.67M (Peak 186.17M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:168.26M (Peak 186.17M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:170.53M (Peak 186.17M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:170.53M (Peak 186.17M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:170.53M (Peak 186.17M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:170.53M (Peak 186.17M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:170.53M (Peak 186.17M) | Time:00:00.10 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:170.53M (Peak 186.17M) | Time:00:00.10 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:182.06M (Peak 186.17M) | Time:00:00.10 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:182.06M (Peak 186.17M) | Time:00:00.10 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:182.06M (Peak 186.17M) | Time:00:00.10 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:182.06M (Peak 186.17M) | Time:00:00.10 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:182.06M (Peak 186.17M) | Time:00:00.10 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:182.06M (Peak 186.17M) | Time:00:00.10 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:182.06M (Peak 186.17M) | Time:00:00.10 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:180.67M (Peak 186.17M) | Time:00:00.10 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:00.12 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:00.12 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:00.12 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:00.12 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:00.12 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:00.12 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:05.68 | Remaining:01:01.17 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:27.66 | Remaining:00:38.55 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:182.06M (Peak 193.51M) | Time:00:50.08 | Remaining:00:16.65 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:213.31M (Peak 260.19M) | Time:01:14.45 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:213.31M (Peak 260.19M) | Time:01:14.45 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/dining_saloon.png'
+Time: 01:14.84 (Saving: 00:00.39)
+
+Fra:1 Mem:184.82M (Peak 184.82M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:185.61M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:184.88M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:184.87M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:184.85M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:185.27M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:185.27M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:185.27M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:185.27M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:185.27M (Peak 185.61M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:185.73M (Peak 185.73M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:185.73M (Peak 185.73M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:185.73M (Peak 185.73M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:185.72M (Peak 185.73M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:185.68M (Peak 185.73M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:184.19M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:184.14M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:182.97M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:182.95M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:182.93M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:183.01M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:183.11M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:183.12M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:183.29M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:183.43M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:183.42M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:182.71M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:182.47M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:182.51M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:182.45M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:182.48M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:182.58M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:182.58M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:182.51M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:182.32M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:182.04M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:181.94M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:181.90M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:182.00M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:182.00M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:182.13M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:181.55M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:181.56M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:180.43M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:180.42M (Peak 188.93M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:171.02M (Peak 188.93M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:173.29M (Peak 188.93M) | Time:00:00.01 | Mem:75.76M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:173.29M (Peak 188.93M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:173.29M (Peak 188.93M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:173.29M (Peak 188.93M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:173.29M (Peak 188.93M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:173.29M (Peak 188.93M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:184.82M (Peak 188.93M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:184.82M (Peak 188.93M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:184.82M (Peak 188.93M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:184.82M (Peak 188.93M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:184.82M (Peak 188.93M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:184.82M (Peak 188.93M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:184.82M (Peak 188.93M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:183.43M (Peak 188.93M) | Time:00:00.06 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:00:06.90 | Remaining:01:15.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:00:33.55 | Remaining:00:46.85 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:184.82M (Peak 196.27M) | Time:01:00.12 | Remaining:00:20.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:216.07M (Peak 262.95M) | Time:01:27.76 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:216.07M (Peak 262.95M) | Time:01:27.76 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/library.png'
+Time: 01:28.15 (Saving: 00:00.38)
+
+Fra:1 Mem:185.21M (Peak 185.21M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:186.00M (Peak 186.00M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:185.27M (Peak 186.00M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:185.27M (Peak 186.00M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:185.25M (Peak 186.00M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:185.66M (Peak 186.00M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:185.66M (Peak 186.00M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:185.66M (Peak 186.00M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:185.66M (Peak 186.00M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:186.17M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:186.12M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:186.12M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:186.12M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:186.11M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:186.07M (Peak 186.17M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:187.03M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:184.54M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:184.52M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:184.52M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:184.51M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:183.52M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:183.65M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:183.38M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:183.54M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:183.68M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:183.66M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:183.79M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:183.76M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:183.72M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:183.08M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:182.75M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:182.70M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:182.84M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:182.45M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:182.47M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:182.63M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:182.74M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:182.51M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:182.16M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:182.16M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:182.16M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:182.13M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:184.00M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:180.82M (Peak 189.32M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:171.41M (Peak 189.32M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:173.69M (Peak 189.32M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:173.68M (Peak 189.32M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:173.68M (Peak 189.32M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:173.68M (Peak 189.32M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:173.68M (Peak 189.32M) | Time:00:00.07 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:173.68M (Peak 189.32M) | Time:00:00.07 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:185.21M (Peak 189.32M) | Time:00:00.07 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:185.21M (Peak 189.32M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:185.21M (Peak 189.32M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:185.21M (Peak 189.32M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:185.21M (Peak 189.32M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:185.21M (Peak 189.32M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.21M (Peak 189.32M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:183.82M (Peak 189.32M) | Time:00:00.07 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:06.36 | Remaining:01:08.94 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:31.56 | Remaining:00:44.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:185.21M (Peak 196.66M) | Time:00:56.47 | Remaining:00:18.79 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:216.46M (Peak 263.34M) | Time:01:22.81 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:216.46M (Peak 263.34M) | Time:01:22.81 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/smoking_saloon.png'
+Time: 01:23.19 (Saving: 00:00.38)
+
+Fra:1 Mem:185.24M (Peak 185.24M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:186.03M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:185.30M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:185.29M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:184.79M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:184.79M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:185.69M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:185.69M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:185.69M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:185.69M (Peak 186.03M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:186.15M (Peak 186.15M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:186.15M (Peak 186.15M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:186.15M (Peak 186.15M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:186.14M (Peak 186.15M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:186.10M (Peak 186.15M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:187.06M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:187.01M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:186.99M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:186.99M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:186.98M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:184.41M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:184.41M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:184.39M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:184.37M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:183.26M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:183.15M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:183.26M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:183.25M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:183.36M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:183.35M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:183.54M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:183.52M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:182.57M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:182.53M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:182.73M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:182.57M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:182.56M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:183.03M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:184.21M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:184.09M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:184.08M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:184.07M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:184.03M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:180.85M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:180.84M (Peak 189.35M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:171.44M (Peak 189.35M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:173.71M (Peak 189.35M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:173.71M (Peak 189.35M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:173.71M (Peak 189.35M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:173.71M (Peak 189.35M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:173.71M (Peak 189.35M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:173.71M (Peak 189.35M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:185.24M (Peak 189.35M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:185.24M (Peak 189.35M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:185.24M (Peak 189.35M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:185.24M (Peak 189.35M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:185.24M (Peak 189.35M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:185.24M (Peak 189.35M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.24M (Peak 189.35M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:183.85M (Peak 189.35M) | Time:00:00.06 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:05.30 | Remaining:00:57.45 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:26.83 | Remaining:00:37.44 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:185.24M (Peak 196.69M) | Time:00:48.47 | Remaining:00:16.12 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:216.49M (Peak 263.37M) | Time:01:12.40 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:216.49M (Peak 263.37M) | Time:01:12.40 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/music_room.png'
+Time: 01:12.80 (Saving: 00:00.39)
+
+Fra:1 Mem:185.25M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:185.12M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:185.12M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:185.12M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:185.12M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:185.12M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:185.07M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:185.06M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:185.06M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:185.06M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:185.02M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:184.12M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:184.11M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:184.04M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:183.78M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:183.75M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:183.68M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:183.68M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:183.55M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:183.55M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:183.54M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:183.49M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:183.34M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:185.98M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:186.41M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:186.40M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:186.38M (Peak 187.75M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:183.83M (Peak 187.80M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:182.93M (Peak 187.80M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:182.47M (Peak 187.80M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:181.56M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:181.39M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:181.51M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:181.57M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:181.61M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:181.61M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:181.60M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:181.47M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:181.40M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:181.40M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:181.09M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:181.00M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:181.04M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:180.86M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:180.85M (Peak 187.80M) | Time:00:00.01 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:171.45M (Peak 187.80M) | Time:00:00.02 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:173.72M (Peak 187.80M) | Time:00:00.02 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:173.72M (Peak 187.80M) | Time:00:00.02 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:173.72M (Peak 187.80M) | Time:00:00.02 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:173.72M (Peak 187.80M) | Time:00:00.02 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:173.72M (Peak 187.80M) | Time:00:00.07 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:173.72M (Peak 187.80M) | Time:00:00.07 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:185.25M (Peak 187.80M) | Time:00:00.07 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:185.25M (Peak 187.80M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:185.25M (Peak 187.80M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:185.25M (Peak 187.80M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:185.25M (Peak 187.80M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:185.25M (Peak 187.80M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.25M (Peak 187.80M) | Time:00:00.07 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:183.86M (Peak 187.80M) | Time:00:00.07 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.09 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:05.05 | Remaining:00:54.53 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:44.12 | Remaining:00:14.67 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:216.50M (Peak 263.38M) | Time:01:06.23 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:216.50M (Peak 263.38M) | Time:01:06.23 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/stateroom.png'
+Time: 01:06.61 (Saving: 00:00.38)
+
+Fra:1 Mem:185.25M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:186.04M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:185.31M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:185.31M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:185.29M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:186.16M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:186.16M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:186.16M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:186.15M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:186.11M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:184.62M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:184.58M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:183.44M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:183.40M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:183.37M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:183.36M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:183.50M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:183.62M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:183.72M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:183.72M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:183.85M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:183.82M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:183.80M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:183.07M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:182.97M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:183.08M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:182.84M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:182.82M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:182.81M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:182.85M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:182.50M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:182.42M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:182.48M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:182.48M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:182.38M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:182.49M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:182.56M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:182.55M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:180.85M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:180.85M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:180.85M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:180.85M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:180.85M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:171.45M (Peak 189.36M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:183.86M (Peak 189.36M) | Time:00:00.06 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:06.05 | Remaining:01:05.70 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:29.62 | Remaining:00:41.35 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:53.20 | Remaining:00:17.70 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:216.50M (Peak 263.38M) | Time:01:18.43 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:216.50M (Peak 263.38M) | Time:01:18.43 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/third_class.png'
+Time: 01:18.82 (Saving: 00:00.38)
+
+Fra:1 Mem:185.25M (Peak 185.25M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:186.04M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:185.31M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:185.31M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:185.29M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:185.70M (Peak 186.04M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:186.16M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:186.16M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:186.16M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:186.15M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:186.11M (Peak 186.16M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:187.07M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:184.58M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:184.56M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:184.56M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:184.55M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:183.63M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:183.69M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:183.42M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:183.24M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:183.16M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:183.56M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:183.68M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:183.80M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:183.76M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:183.12M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:182.79M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:182.82M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:182.88M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:182.61M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:182.48M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:182.75M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:182.78M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:182.55M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:182.54M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:182.46M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:182.28M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:182.31M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:182.13M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:180.86M (Peak 189.36M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:171.45M (Peak 189.36M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:173.73M (Peak 189.36M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:173.72M (Peak 189.36M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.25M (Peak 189.36M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:183.86M (Peak 189.36M) | Time:00:00.06 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:05.52 | Remaining:00:59.80 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:27.43 | Remaining:00:38.29 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:185.25M (Peak 196.70M) | Time:00:49.44 | Remaining:00:16.45 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:216.50M (Peak 263.38M) | Time:01:13.63 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:216.50M (Peak 263.38M) | Time:01:13.63 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/galley.png'
+Time: 01:14.02 (Saving: 00:00.39)
+
+Fra:1 Mem:186.57M (Peak 186.57M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:187.35M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:186.62M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:186.62M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:186.60M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:187.02M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:187.01M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:187.01M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:187.01M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:187.01M (Peak 187.35M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:187.48M (Peak 187.48M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:187.47M (Peak 187.48M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:187.47M (Peak 187.48M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:187.47M (Peak 187.48M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:187.42M (Peak 187.48M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:188.38M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:185.89M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:185.87M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:185.87M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:185.86M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:184.94M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:185.00M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:184.73M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:184.73M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:184.52M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:184.45M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:184.99M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:185.11M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:185.07M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:184.14M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:184.08M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:184.20M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:183.88M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:183.82M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:183.78M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:183.77M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:184.09M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:183.86M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:183.78M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:183.52M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:183.50M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:183.59M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:185.35M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:182.17M (Peak 190.68M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:172.76M (Peak 190.68M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:175.04M (Peak 190.68M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:175.03M (Peak 190.68M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:175.03M (Peak 190.68M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:175.03M (Peak 190.68M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:175.03M (Peak 190.68M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:175.03M (Peak 190.68M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:186.56M (Peak 190.68M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:186.56M (Peak 190.68M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:186.56M (Peak 190.68M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:186.56M (Peak 190.68M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:186.56M (Peak 190.68M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:186.56M (Peak 190.68M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:186.56M (Peak 190.68M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:185.18M (Peak 190.68M) | Time:00:00.06 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:00:07.25 | Remaining:01:18.87 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:00:35.84 | Remaining:00:50.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:186.56M (Peak 198.01M) | Time:01:03.89 | Remaining:00:21.26 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:217.82M (Peak 264.69M) | Time:01:32.41 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:217.82M (Peak 264.69M) | Time:01:32.41 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/chart_house.png'
+Time: 01:32.80 (Saving: 00:00.39)
+
+Fra:1 Mem:186.67M (Peak 186.67M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:187.46M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:186.38M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:186.24M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:186.24M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:186.24M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:186.28M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:186.28M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:186.21M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:186.21M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:187.07M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:187.57M (Peak 187.57M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:187.57M (Peak 187.57M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:187.57M (Peak 187.57M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:187.53M (Peak 187.57M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:186.04M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:185.99M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:185.97M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:185.97M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:185.96M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:184.97M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:185.10M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:184.71M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:184.99M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:184.99M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:185.12M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:185.24M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:185.21M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:184.49M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:184.46M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:184.50M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:184.26M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:184.23M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:184.29M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:184.18M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:184.24M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:183.77M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Music_Room
+Fra:1 Mem:183.72M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:183.70M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:183.89M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:183.55M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:183.80M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:183.88M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:172.87M (Peak 190.78M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:175.14M (Peak 190.78M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:175.13M (Peak 190.78M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:175.13M (Peak 190.78M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:175.13M (Peak 190.78M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:175.13M (Peak 190.78M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:175.13M (Peak 190.78M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:186.66M (Peak 190.78M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:186.66M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:186.66M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:186.66M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:186.66M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:186.66M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:186.66M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:185.28M (Peak 190.78M) | Time:00:00.06 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:05.61 | Remaining:01:00.81 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:27.35 | Remaining:00:38.17 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:186.67M (Peak 198.11M) | Time:00:49.11 | Remaining:00:16.34 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:217.92M (Peak 264.80M) | Time:01:12.86 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:217.92M (Peak 264.80M) | Time:01:12.86 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/officers_cabin.png'
+Time: 01:13.24 (Saving: 00:00.37)
+
+Fra:1 Mem:186.67M (Peak 186.67M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Shell
+Fra:1 Mem:187.46M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boiler_Rooms
+Fra:1 Mem:186.65M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rudder
+Fra:1 Mem:186.65M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Keel_Stem
+Fra:1 Mem:186.70M (Peak 187.46M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Hull_Seams
+Fra:1 Mem:187.63M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Crankshaft
+Fra:1 Mem:187.63M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_HP_Rod
+Fra:1 Mem:187.63M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_IP_Rod
+Fra:1 Mem:187.63M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_LP_Rod
+Fra:1 Mem:187.63M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Engine_Main
+Fra:1 Mem:187.58M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller
+Fra:1 Mem:187.58M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Propeller_Shaft
+Fra:1 Mem:187.57M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Steering_Gear
+Fra:1 Mem:187.57M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Corridor_Lamps
+Fra:1 Mem:187.53M (Peak 187.77M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Dining_Saloon_1C
+Fra:1 Mem:188.49M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bulwarks
+Fra:1 Mem:188.44M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boot_Top
+Fra:1 Mem:188.42M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Anchors_Hawse
+Fra:1 Mem:188.42M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Rigging
+Fra:1 Mem:185.97M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Promenade_Rails
+Fra:1 Mem:185.84M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | NavLights
+Fra:1 Mem:184.65M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Galley
+Fra:1 Mem:184.67M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Masts
+Fra:1 Mem:184.69M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Grand_Staircase
+Fra:1 Mem:184.73M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Funnels
+Fra:1 Mem:184.79M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Decks_SaloonProm
+Fra:1 Mem:184.61M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Floors
+Fra:1 Mem:184.93M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckMachinery
+Fra:1 Mem:185.03M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_SaloonDeck
+Fra:1 Mem:185.07M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | DeckHouse_Promenade
+Fra:1 Mem:184.33M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Rooms
+Fra:1 Mem:184.37M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Interior_Windows
+Fra:1 Mem:184.12M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Bridge
+Fra:1 Mem:184.14M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Boats_Davits
+Fra:1 Mem:184.00M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Lavatories
+Fra:1 Mem:184.03M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Library
+Fra:1 Mem:184.12M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | BoatDeck
+Fra:1 Mem:183.77M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Wheelhouse_Fittings
+Fra:1 Mem:183.60M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Third_Class
+Fra:1 Mem:183.60M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Officers_Captain
+Fra:1 Mem:185.50M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Smoking_Saloon_1C
+Fra:1 Mem:185.46M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Synchronizing object | Staterooms
+Fra:1 Mem:182.28M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Initializing
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:182.27M (Peak 190.78M) | Time:00:00.00 | Mem:89.55M, Peak:108.82M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:172.87M (Peak 190.78M) | Time:00:00.01 | Mem:75.75M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:175.14M (Peak 190.78M) | Time:00:00.01 | Mem:75.76M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:175.13M (Peak 190.78M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:175.14M (Peak 190.78M) | Time:00:00.01 | Mem:78.02M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:175.14M (Peak 190.78M) | Time:00:00.01 | Mem:86.81M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:175.14M (Peak 190.78M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:175.14M (Peak 190.78M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:186.67M (Peak 190.78M) | Time:00:00.06 | Mem:97.29M, Peak:108.82M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:186.67M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:186.67M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:186.67M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:186.67M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:186.67M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:186.67M (Peak 190.78M) | Time:00:00.06 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:185.28M (Peak 190.78M) | Time:00:00.06 | Mem:107.43M, Peak:108.82M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:00.08 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 0/12
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:06.40 | Remaining:01:09.52 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 1/12
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:31.76 | Remaining:00:44.34 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 5/12
+Fra:1 Mem:186.67M (Peak 198.12M) | Time:00:57.24 | Remaining:00:19.05 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 9/12
+Fra:1 Mem:217.92M (Peak 264.80M) | Time:01:23.66 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Sample 12/12
+Fra:1 Mem:217.92M (Peak 264.80M) | Time:01:23.66 | Mem:108.82M, Peak:108.82M | Scene, ViewLayer | Finished
+Saved: 'renders/check/wheelhouse.png'
+Time: 01:24.05 (Saving: 00:00.38)
+
+RENDERED grand_staircase
+RENDERED dining_saloon
+RENDERED library
+RENDERED smoking_saloon
+RENDERED music_room
+RENDERED stateroom
+RENDERED third_class
+RENDERED galley
+RENDERED chart_house
+RENDERED officers_cabin
+RENDERED wheelhouse
+
+Blender quit
