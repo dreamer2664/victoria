@@ -1,0 +1,352 @@
+{
+  "port": "PORT OF CARRICKMORE",
+  "code": "B",
+  "site": [
+    -30.0,
+    -300.0,
+    340.0,
+    400.0
+  ],
+  "water": {
+    "river": [
+      -460.0,
+      -560.0,
+      -30.0,
+      560.0
+    ],
+    "slip_basins": [
+      [
+        -30.0,
+        42.0,
+        66.0,
+        76.0
+      ],
+      [
+        -30.0,
+        92.0,
+        66.0,
+        126.0
+      ],
+      [
+        -30.0,
+        142.0,
+        66.0,
+        176.0
+      ]
+    ]
+  },
+  "quay_z": 4.0,
+  "graving_docks": [
+    {
+      "id": "B-GD1",
+      "name": "The Princess Graving Dock",
+      "built": "1885-1889",
+      "length_m": 243.8,
+      "width_m": 24.4,
+      "entrance_depth_m": 11.0,
+      "sections": 3,
+      "caisson_stops_at": [
+        0.34,
+        0.66
+      ],
+      "ship_envelope": {
+        "L": 180.0,
+        "B": 20.0,
+        "draft": 9.0
+      },
+      "basis": "Alexandra Dock, Belfast: 800 ft x 80 ft, largest dry dock in the world when opened; arranged in 3 sections by caissons.",
+      "adaptation": "Depth increased from the Alexandra's 26 ft sill to 11 m so the specified 9 m-draft envelope can be docked on blocks."
+    },
+    {
+      "id": "B-GD2",
+      "name": "No. 1 Graving Dock",
+      "built": "1867",
+      "length_m": 120.0,
+      "width_m": 18.0,
+      "entrance_depth_m": 8.0,
+      "sections": 1,
+      "basis": "Hamilton Dock, Belfast (1864-67): the older graving dock on the Co. Down side of the river, in use for repair and fitting out."
+    }
+  ],
+  "slips": [
+    {
+      "id": "B-S1",
+      "y0": 42.0,
+      "y1": 76.0,
+      "width_m": 34.0,
+      "length_m": 96.0,
+      "gradient": "2.6 deg",
+      "basis": "Ocean Steamships (1891): the yard frontage lined with launching slips; up to fifteen vessels building at once."
+    },
+    {
+      "id": "B-S2",
+      "y0": 92.0,
+      "y1": 126.0,
+      "width_m": 34.0,
+      "length_m": 96.0,
+      "gradient": "2.6 deg",
+      "basis": "Ocean Steamships (1891): the yard frontage lined with launching slips; up to fifteen vessels building at once."
+    },
+    {
+      "id": "B-S3",
+      "y0": 142.0,
+      "y1": 176.0,
+      "width_m": 34.0,
+      "length_m": 96.0,
+      "gradient": "2.6 deg",
+      "basis": "Ocean Steamships (1891): the yard frontage lined with launching slips; up to fifteen vessels building at once."
+    }
+  ],
+  "berths": [
+    {
+      "id": "B-B1",
+      "name": "Fitting-out quay, river frontage",
+      "rect": [
+        -58.0,
+        186.0,
+        -30.0,
+        396.0
+      ],
+      "length_m": 210.0,
+      "depth_m": 10.0,
+      "ship_envelope": {
+        "L": 180.0,
+        "B": 20.0,
+        "draft": 9.0
+      },
+      "mooring": "bollards 16 m centres + capstans",
+      "kind": "fitting_out"
+    },
+    {
+      "id": "B-B2",
+      "name": "Service quay south of the slips",
+      "rect": [
+        -58.0,
+        -280.0,
+        -30.0,
+        40.0
+      ],
+      "length_m": 320.0,
+      "depth_m": 9.0,
+      "ship_envelope": {
+        "L": 140.0,
+        "B": 18.0,
+        "draft": 8.0
+      },
+      "mooring": "bollards",
+      "kind": "repair"
+    },
+    {
+      "id": "B-B3",
+      "name": "No. 1 Graving Dock entrance",
+      "rect": [
+        150.0,
+        40.0,
+        168.0,
+        160.0
+      ],
+      "length_m": 120.0,
+      "depth_m": 8.0,
+      "ship_envelope": {
+        "L": 105.0,
+        "B": 13.0,
+        "draft": 6.5
+      },
+      "mooring": "docked on keel blocks",
+      "kind": "dry_dock"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "B-I1",
+      "name": "Time Office / Yard Gate",
+      "pos": [
+        70,
+        -30
+      ],
+      "type": "worker_gate",
+      "radius": 5
+    },
+    {
+      "id": "B-I2",
+      "name": "Princess Dock Coping (north)",
+      "pos": [
+        108,
+        262
+      ],
+      "type": "dock_caisson",
+      "radius": 6
+    },
+    {
+      "id": "B-I3",
+      "name": "Princess Dock Floor",
+      "pos": [
+        108,
+        140
+      ],
+      "type": "dock_floor_work",
+      "radius": 10,
+      "z": -11.0
+    },
+    {
+      "id": "B-I4",
+      "name": "Moulding Loft Floor",
+      "pos": [
+        165,
+        219
+      ],
+      "type": "loft_work",
+      "radius": 8
+    },
+    {
+      "id": "B-I5",
+      "name": "Engineering Shop",
+      "pos": [
+        163,
+        252
+      ],
+      "type": "workshop",
+      "radius": 8
+    },
+    {
+      "id": "B-I6",
+      "name": "Slip 1 (shoring / keel blocks)",
+      "pos": [
+        10,
+        59
+      ],
+      "type": "slip_work",
+      "radius": 8
+    },
+    {
+      "id": "B-I7",
+      "name": "Titan Crane Cab",
+      "pos": [
+        40,
+        200
+      ],
+      "type": "crane_operate",
+      "radius": 4
+    },
+    {
+      "id": "B-I8",
+      "name": "Timber Yard",
+      "pos": [
+        258,
+        158
+      ],
+      "type": "materials",
+      "radius": 8
+    },
+    {
+      "id": "B-I9",
+      "name": "Plate Yard",
+      "pos": [
+        232,
+        46
+      ],
+      "type": "materials",
+      "radius": 8
+    },
+    {
+      "id": "B-I10",
+      "name": "Fitting-out Quay",
+      "pos": [
+        -34,
+        250
+      ],
+      "type": "fitting_out",
+      "radius": 8
+    }
+  ],
+  "paths": {
+    "worker": [
+      [
+        [
+          70,
+          -30
+        ],
+        [
+          70,
+          40
+        ],
+        [
+          60,
+          120
+        ],
+        [
+          20,
+          200
+        ],
+        [
+          80,
+          240
+        ]
+      ],
+      [
+        [
+          70,
+          -30
+        ],
+        [
+          20,
+          -100
+        ],
+        [
+          20,
+          -60
+        ]
+      ]
+    ],
+    "vehicle": [
+      [
+        [
+          340,
+          -300
+        ],
+        [
+          300,
+          -100
+        ],
+        [
+          300,
+          200
+        ],
+        [
+          200,
+          260
+        ]
+      ]
+    ],
+    "rail": [
+      [
+        [
+          -16,
+          -280
+        ],
+        [
+          -16,
+          380
+        ]
+      ]
+    ]
+  },
+  "spawns": [
+    {
+      "id": "B-S1",
+      "pos": [
+        70,
+        -24
+      ],
+      "role": "worker"
+    },
+    {
+      "id": "B-S2",
+      "pos": [
+        14,
+        60
+      ],
+      "role": "slipworker"
+    }
+  ]
+}

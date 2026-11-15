@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1202" height="1700" viewBox="0 0 1202 1700" font-family="Georgia,serif">
+<defs><clipPath id="frame"><rect x="114" y="112" width="1024" height="1522"/></clipPath></defs>
+<rect width="100%" height="100%" fill="#f7f4ec"/>
+<g clip-path="url(#frame)">
+<rect x="346.5" y="344.5" width="558.7" height="1057.0" fill="#e7e1d2" stroke="#7d786d" stroke-width="1.1" opacity="1.00"/>
+<rect x="120.0" y="118.0" width="226.5" height="1510.0" fill="#c9d6d8" stroke="none" opacity="1.00"/>
+<rect x="346.5" y="833.7" width="145.0" height="51.3" fill="#c9d6d8" stroke="none" opacity="1.00"/>
+<rect x="346.5" y="758.2" width="145.0" height="51.3" fill="#c9d6d8" stroke="none" opacity="1.00"/>
+<rect x="346.5" y="682.7" width="145.0" height="51.3" fill="#c9d6d8" stroke="none" opacity="1.00"/>
+<rect x="536.8" y="549.9" width="36.8" height="368.4" fill="#b3a68b" stroke="#5f513c" stroke-width="1.3" opacity="1.00"/>
+<text x="555.2" y="734.1" font-size="9.0" fill="#4a3f2e" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B-GD1  The Princess Graving Dock</text>
+<rect x="618.3" y="706.9" width="27.2" height="181.2" fill="#b3a68b" stroke="#5f513c" stroke-width="1.3" opacity="1.00"/>
+<text x="631.9" y="797.5" font-size="9.0" fill="#4a3f2e" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B-GD2  No. 1 Graving Dock</text>
+<rect x="346.5" y="833.7" width="145.0" height="51.3" fill="#d6cbb2" stroke="#6b5c48" stroke-width="1.0" opacity="1.00"/>
+<rect x="346.5" y="758.2" width="145.0" height="51.3" fill="#d6cbb2" stroke="#6b5c48" stroke-width="1.0" opacity="1.00"/>
+<rect x="346.5" y="682.7" width="145.0" height="51.3" fill="#d6cbb2" stroke="#6b5c48" stroke-width="1.0" opacity="1.00"/>
+<rect x="304.2" y="350.5" width="42.3" height="317.1" fill="#b8863f" stroke="#b8863f" stroke-width="1.7" opacity="0.13" stroke-dasharray="8 4"/>
+<text x="325.4" y="509.1" font-size="10.0" fill="#8a5f20" text-anchor="middle" font-weight="bold" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B-B1 Fitting-out quay, </text>
+<rect x="304.2" y="888.1" width="42.3" height="483.2" fill="#b8863f" stroke="#b8863f" stroke-width="1.7" opacity="0.13" stroke-dasharray="8 4"/>
+<text x="325.4" y="1129.7" font-size="10.0" fill="#8a5f20" text-anchor="middle" font-weight="bold" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B-B2 Service quay south</text>
+<rect x="618.3" y="706.9" width="27.2" height="181.2" fill="#b8863f" stroke="#b8863f" stroke-width="1.7" opacity="0.13" stroke-dasharray="8 4"/>
+<text x="631.9" y="797.5" font-size="10.0" fill="#8a5f20" text-anchor="middle" font-weight="bold" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B-B3 No. 1 Graving Dock</text>
+<rect x="603.2" y="495.5" width="57.4" height="30.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="631.9" y="510.6" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_plateshop</text>
+<rect x="678.7" y="498.5" width="51.3" height="27.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="704.4" y="512.1" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_joinershop</text>
+<rect x="754.2" y="622.3" width="60.4" height="24.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="784.4" y="634.4" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_offices</text>
+<rect x="769.3" y="694.8" width="45.3" height="27.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="792.0" y="708.4" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_store2</text>
+<rect x="573.0" y="951.5" width="60.4" height="27.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="603.2" y="965.1" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_paintshop</text>
+<rect x="422.0" y="951.5" width="45.3" height="27.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="444.6" y="965.1" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_store2</text>
+<rect x="648.5" y="1093.5" width="69.5" height="21.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="683.2" y="1104.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_terrace</text>
+<rect x="724.0" y="1093.5" width="69.5" height="21.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="758.7" y="1104.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_terrace</text>
+<rect x="799.5" y="1093.5" width="69.5" height="21.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="834.2" y="1104.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_terrace</text>
+<rect x="500.5" y="552.9" width="24.2" height="18.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="512.6" y="561.9" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_pump_house</text>
+<rect x="603.2" y="604.2" width="75.5" height="27.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="641.0" y="617.8" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_moulding_loft</text>
+<rect x="603.2" y="549.9" width="69.5" height="36.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="637.9" y="568.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_engine_shop</text>
+<rect x="687.8" y="552.9" width="66.4" height="33.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="721.0" y="569.5" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_boiler_shop</text>
+<rect x="708.9" y="664.6" width="45.3" height="27.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="731.5" y="678.2" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_sawmill</text>
+<rect x="769.3" y="737.1" width="51.3" height="30.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="795.0" y="752.2" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_store</text>
+<rect x="769.3" y="788.4" width="33.2" height="69.5" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="785.9" y="823.2" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_fitting_shed</text>
+<rect x="497.5" y="983.2" width="16.6" height="10.6" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="505.8" y="988.5" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_time_office</text>
+<rect x="422.0" y="1093.5" width="69.5" height="21.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="456.7" y="1104.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_terrace</text>
+<rect x="497.5" y="1093.5" width="69.5" height="21.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="532.2" y="1104.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_terrace</text>
+<rect x="573.0" y="1093.5" width="69.5" height="21.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="607.7" y="1104.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_terrace</text>
+<rect x="428.0" y="1066.3" width="24.2" height="18.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="440.1" y="1075.3" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_pub</text>
+<rect x="422.0" y="1008.9" width="51.3" height="30.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="447.7" y="1024.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">B_store</text>
+<circle cx="497.5" cy="993.8" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="497.5" cy="993.8" r="4.2" fill="#4d6b58"/>
+<circle cx="554.9" cy="552.9" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="554.9" cy="552.9" r="4.2" fill="#4d6b58"/>
+<circle cx="554.9" cy="737.1" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="554.9" cy="737.1" r="4.2" fill="#4d6b58"/>
+<circle cx="641.0" cy="617.8" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="641.0" cy="617.8" r="4.2" fill="#4d6b58"/>
+<circle cx="637.9" cy="568.0" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="637.9" cy="568.0" r="4.2" fill="#4d6b58"/>
+<circle cx="406.9" cy="859.4" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="406.9" cy="859.4" r="4.2" fill="#4d6b58"/>
+<circle cx="452.2" cy="646.5" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="452.2" cy="646.5" r="4.2" fill="#4d6b58"/>
+<circle cx="781.4" cy="709.9" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="781.4" cy="709.9" r="4.2" fill="#4d6b58"/>
+<circle cx="742.1" cy="879.0" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="742.1" cy="879.0" r="4.2" fill="#4d6b58"/>
+<circle cx="340.5" cy="571.0" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="340.5" cy="571.0" r="4.2" fill="#4d6b58"/>
+</g>
+<g>
+<text x="24" y="42" font-size="22" letter-spacing="1.6" fill="#1d1d1b">PORT OF CARRICKMORE</text>
+<text x="24" y="62" font-size="11.5" fill="#7d786d">LAYOUT PLAN &#183; measured in metres &#183; north up &#183; 1 Roblox stud = 0.28 m</text>
+<text x="24" y="82" font-size="10.5" fill="#7d786d">site 370 &#215; 700 m &#183; 22 building footprints &#183; 3 berths &#183; 10 interaction points &#183; coping +4.00 m</text>
+</g>
+<g font-size="10" fill="#1d1d1b">
+<rect x="26" y="1582" width="26" height="11" fill="#b8863f" stroke="#6b5c48" stroke-width="0.9"/>
+<text x="66" y="1592">berth envelope</text>
+<rect x="26" y="1599" width="26" height="11" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9"/>
+<text x="66" y="1609">building footprint</text>
+<rect x="26" y="1616" width="26" height="11" fill="#c9d6d8" stroke="#6b5c48" stroke-width="0.9"/>
+<text x="66" y="1626">water</text>
+<rect x="26" y="1633" width="26" height="11" fill="#b3a68b" stroke="#6b5c48" stroke-width="0.9"/>
+<text x="66" y="1643">graving dock</text>
+<circle cx="39" cy="1657" r="5" fill="#4d6b58"/>
+<text x="66" y="1660">interaction point</text>
+</g>
+<line x1="916.7" y1="1660.0" x2="1067.7" y2="1660.0" stroke="#1d1d1b" stroke-width="2"/>
+<text x="1075.7" y="1664.0" font-size="10" fill="#7d786d">100 m</text>
+<g transform="translate(1157.7,44)"><path d="M0,-25 L8,4 L0,-2 L-8,4 Z" fill="#1d1d1b"/><text x="0" y="22" font-size="10" text-anchor="middle" fill="#7d786d">N</text></g>
+</svg>

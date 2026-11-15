@@ -1,0 +1,382 @@
+{
+  "port": "PORT OF ALDERMOUTH",
+  "code": "A",
+  "site": [
+    -30.0,
+    -300.0,
+    330.0,
+    430.0
+  ],
+  "water": {
+    "river": [
+      -460.0,
+      -560.0,
+      -30.0,
+      560.0
+    ],
+    "dock": [
+      -30.0,
+      -200.0,
+      200.0,
+      -60.0
+    ]
+  },
+  "quay_z": 4.0,
+  "berths": [
+    {
+      "id": "A-B1",
+      "name": "Trafalgar Landing Stage, West Face",
+      "rect": [
+        -106.0,
+        24.0,
+        -80.0,
+        236.0
+      ],
+      "length_m": 204.0,
+      "depth_m": 11.0,
+      "ship_envelope": {
+        "L": 180.0,
+        "B": 20.0,
+        "draft": 9.0
+      },
+      "mooring": "bollards on pontoon edge, 20 m centres; 2 headlines, 4 springs",
+      "gangway_from": "pontoon deck",
+      "kind": "passenger"
+    },
+    {
+      "id": "A-B2",
+      "name": "Trafalgar Landing Stage, East Berth (tender/steamer)",
+      "rect": [
+        -62.0,
+        42.0,
+        -42.0,
+        152.0
+      ],
+      "length_m": 110.0,
+      "depth_m": 6.5,
+      "ship_envelope": {
+        "L": 100.0,
+        "B": 14.0,
+        "draft": 5.0
+      },
+      "mooring": "bollards on pontoon edge",
+      "gangway_from": "pontoon deck",
+      "kind": "passenger"
+    },
+    {
+      "id": "A-B3",
+      "name": "Trafalgar Dock, North Quay (cargo)",
+      "rect": [
+        68.0,
+        -60.0,
+        200.0,
+        -84.0
+      ],
+      "length_m": 132.0,
+      "depth_m": 9.0,
+      "ship_envelope": {
+        "L": 130.0,
+        "B": 18.0,
+        "draft": 8.0
+      },
+      "mooring": "bollards + capstans",
+      "gangway_from": "quay",
+      "kind": "cargo"
+    },
+    {
+      "id": "A-B4",
+      "name": "Trafalgar Dock, East Quay (cargo)",
+      "rect": [
+        178.0,
+        -194.0,
+        200.0,
+        -70.0
+      ],
+      "length_m": 124.0,
+      "depth_m": 9.0,
+      "ship_envelope": {
+        "L": 116.0,
+        "B": 17.0,
+        "draft": 8.0
+      },
+      "mooring": "bollards",
+      "gangway_from": "quay",
+      "kind": "cargo"
+    }
+  ],
+  "gangways": [
+    {
+      "id": "A-G1",
+      "type": "canopied gangway bridge",
+      "y": 75.0,
+      "from": [
+        -30.0,
+        75.0
+      ],
+      "to": [
+        -66.0,
+        75.0
+      ],
+      "walk_width_m": 3.8,
+      "slope": "shore 4.0 m -> pontoon 1.5 m"
+    },
+    {
+      "id": "A-G2",
+      "type": "canopied gangway bridge",
+      "y": 195.0,
+      "from": [
+        -30.0,
+        195.0
+      ],
+      "to": [
+        -66.0,
+        195.0
+      ],
+      "walk_width_m": 3.8,
+      "slope": "shore 4.0 m -> pontoon 1.5 m"
+    },
+    {
+      "id": "A-G3",
+      "type": "ship brow (boarding)",
+      "at": "pontoon west face",
+      "pos": [
+        -80.0,
+        130.0
+      ],
+      "length_m": 9.0,
+      "walk_width_m": 1.6
+    }
+  ],
+  "interactions": [
+    {
+      "id": "A-I1",
+      "name": "Booking Office / Tickets",
+      "pos": [
+        24,
+        34
+      ],
+      "type": "ticket_purchase",
+      "radius": 4
+    },
+    {
+      "id": "A-I2",
+      "name": "Baggage Hall (desk / weigh)",
+      "pos": [
+        22,
+        90
+      ],
+      "type": "baggage_checkin",
+      "radius": 6
+    },
+    {
+      "id": "A-I3",
+      "name": "Customs Examination",
+      "pos": [
+        24,
+        120
+      ],
+      "type": "customs",
+      "radius": 6
+    },
+    {
+      "id": "A-I4",
+      "name": "Gangway Bridge (shore end) 1",
+      "pos": [
+        -28,
+        75
+      ],
+      "type": "board_via_bridge",
+      "radius": 4
+    },
+    {
+      "id": "A-I5",
+      "name": "Gangway Bridge (shore end) 2",
+      "pos": [
+        -28,
+        195
+      ],
+      "type": "board_via_bridge",
+      "radius": 4
+    },
+    {
+      "id": "A-I6",
+      "name": "Landing Stage Deck",
+      "pos": [
+        -73,
+        130
+      ],
+      "type": "spawn_passenger",
+      "radius": 10
+    },
+    {
+      "id": "A-I7",
+      "name": "Ship Brow",
+      "pos": [
+        -80,
+        130
+      ],
+      "type": "board_ship",
+      "radius": 3
+    },
+    {
+      "id": "A-I8",
+      "name": "Mooring bollards (berth 1)",
+      "pos": [
+        -82,
+        60
+      ],
+      "type": "mooring",
+      "radius": 3
+    },
+    {
+      "id": "A-I9",
+      "name": "Coal Staithe / Hoist",
+      "pos": [
+        100,
+        -54
+      ],
+      "type": "coal_bunkering",
+      "radius": 6
+    },
+    {
+      "id": "A-I10",
+      "name": "Cargo Shed Door (dock)",
+      "pos": [
+        204,
+        -140
+      ],
+      "type": "cargo_work",
+      "radius": 5
+    },
+    {
+      "id": "A-I11",
+      "name": "Railway Platform",
+      "pos": [
+        116,
+        48
+      ],
+      "type": "train_board",
+      "radius": 6
+    },
+    {
+      "id": "A-I12",
+      "name": "Dock Gate / Time Office",
+      "pos": [
+        170,
+        150
+      ],
+      "type": "worker_gate",
+      "radius": 4
+    }
+  ],
+  "paths": {
+    "passenger": [
+      [
+        [
+          -28.0,
+          75.0
+        ],
+        [
+          2.0,
+          75.0
+        ],
+        [
+          24.0,
+          60.0
+        ],
+        [
+          24.0,
+          34.0
+        ]
+      ],
+      [
+        [
+          -28.0,
+          195.0
+        ],
+        [
+          -6.0,
+          195.0
+        ],
+        [
+          -6.0,
+          120.0
+        ],
+        [
+          2.0,
+          120.0
+        ]
+      ]
+    ],
+    "dockworker": [
+      [
+        [
+          170.0,
+          150.0
+        ],
+        [
+          170.0,
+          60.0
+        ],
+        [
+          150.0,
+          20.0
+        ],
+        [
+          60.0,
+          -30.0
+        ],
+        [
+          16.0,
+          -60.0
+        ]
+      ]
+    ],
+    "vehicle": [
+      [
+        [
+          170.0,
+          150.0
+        ],
+        [
+          170.0,
+          200.0
+        ],
+        [
+          100.0,
+          220.0
+        ],
+        [
+          2.0,
+          220.0
+        ]
+      ]
+    ]
+  },
+  "spawns": [
+    {
+      "id": "A-S1",
+      "pos": [
+        -73,
+        130
+      ],
+      "role": "passenger"
+    },
+    {
+      "id": "A-S2",
+      "pos": [
+        170,
+        140
+      ],
+      "role": "dockworker"
+    },
+    {
+      "id": "A-S3",
+      "pos": [
+        116,
+        48
+      ],
+      "role": "rail_passenger"
+    }
+  ]
+}

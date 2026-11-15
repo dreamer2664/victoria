@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1158" height="1700" viewBox="0 0 1158 1700" font-family="Georgia,serif">
+<defs><clipPath id="frame"><rect x="114" y="112" width="980" height="1522"/></clipPath></defs>
+<rect width="100%" height="100%" fill="#f7f4ec"/>
+<g clip-path="url(#frame)">
+<rect x="339.9" y="337.9" width="527.8" height="1070.2" fill="#e7e1d2" stroke="#7d786d" stroke-width="1.1" opacity="1.00"/>
+<rect x="120.0" y="147.3" width="219.9" height="1480.7" fill="#c9d6d8" stroke="none" opacity="1.00"/>
+<rect x="339.9" y="1056.3" width="337.2" height="205.2" fill="#c9d6d8" stroke="none" opacity="1.00"/>
+<rect x="228.5" y="622.3" width="38.1" height="310.8" fill="#b8863f" stroke="#b8863f" stroke-width="1.7" opacity="0.13" stroke-dasharray="8 4"/>
+<text x="247.5" y="777.7" font-size="10.0" fill="#8a5f20" text-anchor="middle" font-weight="bold" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A-B1 Trafalgar Landing </text>
+<rect x="293.0" y="745.5" width="29.3" height="161.3" fill="#b8863f" stroke="#b8863f" stroke-width="1.7" opacity="0.13" stroke-dasharray="8 4"/>
+<text x="307.7" y="826.1" font-size="10.0" fill="#8a5f20" text-anchor="middle" font-weight="bold" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A-B2 Trafalgar Landing </text>
+<rect x="483.6" y="1056.3" width="193.5" height="35.2" fill="#b8863f" stroke="#b8863f" stroke-width="1.7" opacity="0.13" stroke-dasharray="8 4"/>
+<text x="580.3" y="1073.8" font-size="10.0" fill="#8a5f20" text-anchor="middle" font-weight="bold" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A-B3 Trafalgar Dock, No</text>
+<rect x="644.8" y="1070.9" width="32.3" height="181.8" fill="#b8863f" stroke="#b8863f" stroke-width="1.7" opacity="0.13" stroke-dasharray="8 4"/>
+<text x="661.0" y="1161.8" font-size="10.0" fill="#8a5f20" text-anchor="middle" font-weight="bold" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A-B4 Trafalgar Dock, Ea</text>
+<rect x="386.8" y="581.3" width="67.4" height="20.5" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="420.5" y="591.5" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_terrace</text>
+<rect x="460.1" y="581.3" width="67.4" height="20.5" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="493.8" y="591.5" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_terrace</text>
+<rect x="533.4" y="581.3" width="67.4" height="20.5" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="567.1" y="591.5" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_terrace</text>
+<rect x="606.7" y="563.7" width="58.6" height="38.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="636.0" y="582.7" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_hotel</text>
+<rect x="735.7" y="554.9" width="29.3" height="76.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="750.4" y="593.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_goods_shed</text>
+<rect x="773.8" y="554.9" width="29.3" height="76.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="788.5" y="593.0" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_goods_shed</text>
+<rect x="685.9" y="601.8" width="46.9" height="29.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="709.3" y="616.4" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_3</text>
+<rect x="641.9" y="763.0" width="49.8" height="29.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="666.8" y="777.7" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_4</text>
+<rect x="715.2" y="760.1" width="58.6" height="38.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="744.5" y="779.2" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_hotel</text>
+<rect x="715.2" y="727.9" width="67.4" height="20.5" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="748.9" y="738.1" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_terrace</text>
+<rect x="715.2" y="701.5" width="67.4" height="20.5" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="748.9" y="711.7" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_terrace</text>
+<rect x="788.5" y="716.1" width="29.3" height="76.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="803.2" y="754.3" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_goods_shed</text>
+<rect x="788.5" y="877.4" width="58.6" height="32.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="817.8" y="893.5" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_wide</text>
+<rect x="788.5" y="842.2" width="46.9" height="29.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="812.0" y="856.9" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_3</text>
+<rect x="386.8" y="842.2" width="64.5" height="67.4" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="419.1" y="875.9" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_terminal</text>
+<rect x="386.8" y="795.3" width="88.0" height="38.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="430.8" y="814.4" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_baggage_hall</text>
+<rect x="386.8" y="736.7" width="85.0" height="46.9" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="429.3" y="760.1" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_customhouse</text>
+<rect x="386.8" y="689.7" width="88.0" height="35.2" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="430.8" y="707.3" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_transit_shed</text>
+<rect x="386.8" y="651.6" width="49.8" height="29.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="411.7" y="666.3" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_4</text>
+<rect x="442.5" y="651.6" width="46.9" height="29.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="466.0" y="666.3" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_3</text>
+<rect x="501.2" y="883.3" width="105.6" height="32.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="553.9" y="899.4" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_station</text>
+<rect x="501.2" y="848.1" width="105.6" height="23.5" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="553.9" y="859.8" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_office_row</text>
+<rect x="501.2" y="812.9" width="82.1" height="23.5" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="542.2" y="824.6" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_office_row2</text>
+<rect x="501.2" y="766.0" width="58.6" height="32.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="530.5" y="782.1" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_wide</text>
+<rect x="568.6" y="768.9" width="46.9" height="29.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="592.1" y="783.6" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_3</text>
+<rect x="501.2" y="732.3" width="26.4" height="19.1" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="514.4" y="741.8" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_shop_small</text>
+<rect x="530.5" y="733.7" width="23.5" height="17.6" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="542.2" y="742.5" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_chandlery</text>
+<rect x="568.6" y="722.0" width="58.6" height="29.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="597.9" y="736.7" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_harbour_offices</text>
+<rect x="685.9" y="1076.8" width="35.2" height="173.0" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="703.5" y="1163.3" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_dock_shed</text>
+<rect x="735.7" y="1217.5" width="49.8" height="29.3" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9" opacity="1.00"/>
+<text x="760.7" y="1232.2" font-size="8.4" fill="#3a3227" text-anchor="middle" font-weight="normal" stroke="#f7f4ec" stroke-width="2.4" paint-order="stroke">A_warehouse_4</text>
+<circle cx="419.1" cy="918.4" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="419.1" cy="918.4" r="4.2" fill="#4d6b58"/>
+<circle cx="416.1" cy="836.3" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="416.1" cy="836.3" r="4.2" fill="#4d6b58"/>
+<circle cx="419.1" cy="792.4" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="419.1" cy="792.4" r="4.2" fill="#4d6b58"/>
+<circle cx="342.8" cy="858.3" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="342.8" cy="858.3" r="4.2" fill="#4d6b58"/>
+<circle cx="342.8" cy="682.4" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="342.8" cy="682.4" r="4.2" fill="#4d6b58"/>
+<circle cx="276.9" cy="777.7" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="276.9" cy="777.7" r="4.2" fill="#4d6b58"/>
+<circle cx="266.6" cy="777.7" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="266.6" cy="777.7" r="4.2" fill="#4d6b58"/>
+<circle cx="263.7" cy="880.3" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="263.7" cy="880.3" r="4.2" fill="#4d6b58"/>
+<circle cx="530.5" cy="1047.5" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="530.5" cy="1047.5" r="4.2" fill="#4d6b58"/>
+<circle cx="683.0" cy="1173.5" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="683.0" cy="1173.5" r="4.2" fill="#4d6b58"/>
+<circle cx="553.9" cy="897.9" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="553.9" cy="897.9" r="4.2" fill="#4d6b58"/>
+<circle cx="633.1" cy="748.4" r="9" fill="none" stroke="#4d6b58" stroke-width="1"/>
+<circle cx="633.1" cy="748.4" r="4.2" fill="#4d6b58"/>
+</g>
+<g>
+<text x="24" y="42" font-size="22" letter-spacing="1.6" fill="#1d1d1b">PORT OF ALDERMOUTH</text>
+<text x="24" y="62" font-size="11.5" fill="#7d786d">LAYOUT PLAN &#183; measured in metres &#183; north up &#183; 1 Roblox stud = 0.28 m</text>
+<text x="24" y="82" font-size="10.5" fill="#7d786d">site 360 &#215; 730 m &#183; 30 building footprints &#183; 4 berths &#183; 12 interaction points &#183; coping +4.00 m</text>
+</g>
+<g font-size="10" fill="#1d1d1b">
+<rect x="26" y="1582" width="26" height="11" fill="#b8863f" stroke="#6b5c48" stroke-width="0.9"/>
+<text x="66" y="1592">berth envelope</text>
+<rect x="26" y="1599" width="26" height="11" fill="#b9a88c" stroke="#6b5c48" stroke-width="0.9"/>
+<text x="66" y="1609">building footprint</text>
+<rect x="26" y="1616" width="26" height="11" fill="#c9d6d8" stroke="#6b5c48" stroke-width="0.9"/>
+<text x="66" y="1626">water</text>
+<rect x="26" y="1633" width="26" height="11" fill="#b3a68b" stroke="#6b5c48" stroke-width="0.9"/>
+<text x="66" y="1643">graving dock</text>
+<circle cx="39" cy="1657" r="5" fill="#4d6b58"/>
+<text x="66" y="1660">interaction point</text>
+</g>
+<line x1="872.6" y1="1660.0" x2="1019.2" y2="1660.0" stroke="#1d1d1b" stroke-width="2"/>
+<text x="1027.2" y="1664.0" font-size="10" fill="#7d786d">100 m</text>
+<g transform="translate(1113.6,44)"><path d="M0,-25 L8,4 L0,-2 L-8,4 Z" fill="#1d1d1b"/><text x="0" y="22" font-size="10" text-anchor="middle" fill="#7d786d">N</text></g>
+</svg>
