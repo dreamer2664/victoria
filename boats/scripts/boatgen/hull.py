@@ -661,6 +661,46 @@ def build_gunwale(
     mb.add_face([end + i for i in range(10)], mat)
 
 
+def plank_panel(mb, xs, edge_fn, z_fn, mats, thick=0.030, n_planks=None,
+                plank_w=0.115, gap=0.005, tx=0.0):
+    """Lay a deck or sole as individual boards rather than one slab.
+
+    `edge_fn(x)` returns the two outboard y values at that station, `z_fn(x)`
+    the top height.  Each board is a closed four-sided extrusion with a small
+    caulking gap either side; the board count is held constant along the length
+    so the planks converge at the ends the way real stolen planks do.  Board
+    tone cycles through `mats`, which is what makes the deck read as planking
+    from any distance instead of as a painted surface.
+    """
+    xs = np.asarray(xs, dtype=float)
+    if n_planks is None:
+        xm = xs[len(xs) // 2]
+        y0, y1 = edge_fn(xm)
+        n_planks = max(1, int(round(abs(y1 - y0) / plank_w)))
+    for k in range(n_planks):
+        fa = k / n_planks
+        fb = (k + 1) / n_planks
+        grid = np.zeros((len(xs), 4, 3))
+        for i, x in enumerate(xs):
+            y0, y1 = edge_fn(x)
+            z = z_fn(x)
+            w = y1 - y0
+            ya = y0 + w * fa + gap * 0.5
+            yb = y0 + w * fb - gap * 0.5
+            if yb - ya < 0.012:
+                ya = y0 + w * fa
+                yb = y0 + w * fb
+            grid[i, 0] = (x + tx, ya, z)
+            grid[i, 1] = (x + tx, yb, z)
+            grid[i, 2] = (x + tx, yb, z - thick)
+            grid[i, 3] = (x + tx, ya, z - thick)
+        mb.add_grid(grid, mats[k % len(mats)], close_v=True)
+        # close the two ends so the board is a solid, not a shell
+        for i, flip in ((0, True), (len(xs) - 1, False)):
+            q = [grid[i, j] for j in range(4)]
+            mb.add_quad(q[0], q[1], q[2], q[3], mats[k % len(mats)], flip=flip)
+
+
 def build_rubbing_strake(hull, mb, t=0.93, r=0.017, xi0=0.035, xi1=0.965,
                          mat=MAT["wood_timber"], offset=0.004, n=70):
     """Half-round rubbing strake along the topsides.

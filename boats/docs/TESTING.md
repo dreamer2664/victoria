@@ -16,7 +16,7 @@ tests use triangle-level BVH overlap between the actual meshes (not bounding
 boxes), so a pass means no triangle of one part crosses a triangle of another.
 Full output: [`VERIFICATION.md`](VERIFICATION.md).
 
-**Boat A — 25 ft steam cutter (20 objects, 46 742 verts / 43 086 faces)**
+**Boat A — 25 ft steam cutter (20 objects, 48 774 verts / 45 120 faces)**
 
 | Check | Result | Detail |
 |---|---|---|
@@ -33,7 +33,7 @@ Full output: [`VERIFICATION.md`](VERIFICATION.md).
 | Propeller and rudder are separate objects with their own origins | PASS | screw (−3.42, 0, −0.45); rudder (−3.62, 0, +0.65) |
 | Published displacement | PASS | 3532 kg loaded, integrated in `boatgen.hydro` |
 
-**Boat B — 25 ft clinker rowing cutter (24 objects, 31 819 verts / 29 700 faces)**
+**Boat B — 25 ft clinker rowing cutter (24 objects, 32 071 verts / 29 948 faces)**
 
 | Check | Result | Detail |
 |---|---|---|

@@ -9,23 +9,23 @@ run against the finished .blend, not a claim.
 |---|---|---|---|---|
 | steam_cutter_1888 | dimensions | LOA (hull) | PASS | hull 7.565 m vs spec 7.620 m |
 | steam_cutter_1888 | dimensions | LOA (extreme, incl. rudder/oars/gear) | PASS | model 7.664 m vs hull 7.620 m |
-| steam_cutter_1888 | dimensions | beam | PASS | model 2.262 m vs spec 2.134 m (extreme, incl. fenders/gunwale) |
-| steam_cutter_1888 | mesh | no loose vertices or degenerate faces | PASS | 46742 verts / 43086 faces total |
-| steam_cutter_1888 | mesh | polygon budget | PASS | 43086 faces |
+| steam_cutter_1888 | dimensions | beam | PASS | model 2.250 m vs spec 2.134 m (extreme, incl. fenders/gunwale) |
+| steam_cutter_1888 | mesh | no loose vertices or degenerate faces | PASS | 48774 verts / 45120 faces total |
+| steam_cutter_1888 | mesh | polygon budget | PASS | 45120 faces |
 | steam_cutter_1888 | interference | Propeller vs Planking_Carvel: screw must clear the hull skin | PASS | 0 triangle pairs intersect |
 | steam_cutter_1888 | interference | Propeller vs Keel_Stem_Frames_Gunwale: screw must clear the keel | PASS | 0 triangle pairs intersect |
-| steam_cutter_1888 | fit | Funnel vs Canopy_Cover: funnel must pierce the canvas | PASS | 29 triangle pairs intersect |
+| steam_cutter_1888 | fit | Funnel vs Canopy_Cover: funnel must pierce the canvas | PASS | 30 triangle pairs intersect |
 | steam_cutter_1888 | clearance | screw disc clear below the local keel line | PASS | tip z -0.626 m, keel at that station -0.238 m, disc top -0.274 m |
-| steam_cutter_1888 | clearance | boiler crown below canopy | PASS | boiler top +0.853 m, canopy top +1.040 m |
-| steam_cutter_1888 | clearance | funnel crown above canopy | PASS | funnel top +1.634 m, canopy top +1.040 m |
+| steam_cutter_1888 | clearance | boiler crown below canopy | PASS | boiler top +0.853 m, canopy top +1.039 m |
+| steam_cutter_1888 | clearance | funnel crown above canopy | PASS | funnel top +1.634 m, canopy top +1.039 m |
 | steam_cutter_1888 | pivot | Propeller is a separate movable object | PASS | origin (-3.42, +0.00, -0.45) |
 | steam_cutter_1888 | pivot | Rudder is a separate movable object | PASS | origin (-3.62, +0.00, +0.65) |
 | steam_cutter_1888 | weight | loaded displacement published | PASS | 3532 kg (integrated in boatgen.hydro) |
 | rowing_cutter_25ft | dimensions | LOA (hull) | PASS | hull 7.599 m vs spec 7.620 m |
 | rowing_cutter_25ft | dimensions | LOA (extreme, incl. rudder/oars/gear) | PASS | model 7.915 m vs hull 7.620 m |
-| rowing_cutter_25ft | dimensions | beam | PASS | model 2.089 m vs spec 1.905 m (extreme, incl. fenders/gunwale) |
-| rowing_cutter_25ft | mesh | no loose vertices or degenerate faces | PASS | 31819 verts / 29700 faces total |
-| rowing_cutter_25ft | mesh | polygon budget | PASS | 29700 faces |
+| rowing_cutter_25ft | dimensions | beam | PASS | model 2.082 m vs spec 1.905 m (extreme, incl. fenders/gunwale) |
+| rowing_cutter_25ft | mesh | no loose vertices or degenerate faces | PASS | 32071 verts / 29948 faces total |
+| rowing_cutter_25ft | mesh | polygon budget | PASS | 29948 faces |
 | rowing_cutter_25ft | interference | Rudder vs Planking_Clinker: rudder must not foul the planking | PASS | 0 triangle pairs intersect |
 | rowing_cutter_25ft | pivot | ten oars present | PASS | 10 found |
 | rowing_cutter_25ft | pivot | oar origins on the rowlock axis | PASS | [] |

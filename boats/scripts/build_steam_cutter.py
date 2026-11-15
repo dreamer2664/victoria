@@ -30,6 +30,7 @@ from boatgen.hull import (
     build_gunwale,
     build_rubbing_strake,
     build_stem_band,
+    plank_panel,
     build_keel,
     build_keelson,
     build_stem,
@@ -58,6 +59,13 @@ DECK_DROP = 0.115
 bl.reset_scene()
 mats = bl.build_materials()
 mlist = bl.mats_list(mats)
+
+
+def _register(m):
+    """MAT values are slot indices, so any material created after the base
+    list was built is appended to it and its index returned."""
+    mlist.append(m)
+    return len(mlist) - 1
 col_hull = bl.collection("Hull")
 col_structure = bl.collection("Structure")
 col_deck = bl.collection("Deck_Canopy")
@@ -166,46 +174,63 @@ X_COAMING_FWD = 1.35
 X_COAMING_AFT = -1.55
 
 
+# Deck boards: three timbers cycling, so the deck reads as planking.
+deck_mats = []
+for i, (v, w) in enumerate(((1.00, 1.00), (0.93, 1.05), (0.87, 0.96))):
+    deck_mats.append(_register(bl.wood_material(
+        f"Pine_Deck_{i}", base=(0.30 * v * w, 0.20 * v, 0.105 * v / w),
+        dark=(0.15 * v, 0.095 * v, 0.045 * v), rough=0.52, bump=0.26)))
+
+
 def _decks(mb):
-    # side decks along the whole boat
+    """Side decks, foredeck and after deck, laid as individual boards.
+
+    The boards have real caulking gaps and slightly different timbers; a
+    single-surface slab with a wood texture reads as a painted floor from
+    every angle, which is what a deck must never do.
+    """
+    # --- side decks: two boards a side, following the sheer ---
+    xs = np.linspace(-3.55, 3.62, 48)
     for s in (-1, 1):
-        xs = np.linspace(-3.55, 3.62, 44)
-        grid = np.zeros((len(xs), 4, 3))
-        for i, x in enumerate(xs):
+        def edge(x, s=s):
             xi = HULL.xi_of(x)
             z = HULL.sheer_z(xi) - DECK_DROP
             outer = half_breadth_at(HULL, xi, z + 0.07) - 0.015
             inner = max(0.10, outer - 0.16)
-            grid[i, 0] = (x, s * outer, z)
-            grid[i, 1] = (x, s * inner, z)
-            grid[i, 2] = (x, s * inner, z - 0.032)
-            grid[i, 3] = (x, s * outer, z - 0.032)
-        mb.add_grid(grid, MAT["wood_deck"], close_v=True)
-    # foredeck
-    xs = np.linspace(X_FOREDECK_AFT, X_FOREDECK_FWD, 14)
-    grid = np.zeros((len(xs), 2, 3))
-    for i, x in enumerate(xs):
+            return (s * min(inner, outer), s * outer)
+
+        plank_panel(mb, xs, edge,
+                    lambda x: HULL.sheer_z(HULL.xi_of(x)) - DECK_DROP,
+                    deck_mats, thick=0.032, n_planks=2, gap=0.006)
+    # --- foredeck: laid board by board across the full breadth ---
+    xs = np.linspace(X_FOREDECK_AFT, X_FOREDECK_FWD, 20)
+
+    def fedge(x):
         xi = HULL.xi_of(x)
         z = HULL.sheer_z(xi) - DECK_DROP
         half = half_breadth_at(HULL, xi, z + 0.07) - 0.015
-        grid[i, 0] = (x, -half, z)
-        grid[i, 1] = (x, half, z)
+        return (-half, half)
+
+    plank_panel(mb, xs, fedge,
+                lambda x: HULL.sheer_z(HULL.xi_of(x)) - DECK_DROP,
+                deck_mats, thick=0.032, gap=0.005)
     for i in range(len(xs) - 1):  # deck beams underneath
         x = xs[i]
         half = half_breadth_at(HULL, HULL.xi_of(x), sheer_at(x) - 0.05)
         mb.add_box((x, 0, HULL.sheer_z(HULL.xi_of(x)) - DECK_DROP - 0.045),
-                   (0.06, half * 1.9, 0.05), mat=MAT["wood_timber"])
-    mb.add_grid(grid, MAT["wood_deck"])
-    # aft deck
-    xs2 = np.linspace(-3.62, -2.85, 8)
-    grid2 = np.zeros((len(xs2), 2, 3))
-    for i, x in enumerate(xs2):
+                   (0.06, half * 1.9, 0.05), None, MAT["wood_timber"])
+    # --- after deck ---
+    xs2 = np.linspace(-3.62, -2.85, 12)
+
+    def aedge(x):
         xi = HULL.xi_of(x)
         z = HULL.sheer_z(xi) - DECK_DROP
         half = half_breadth_at(HULL, xi, z + 0.07) - 0.015
-        grid2[i, 0] = (x, -half, z)
-        grid2[i, 1] = (x, half, z)
-    mb.add_grid(grid2, MAT["wood_deck"])
+        return (-half, half)
+
+    plank_panel(mb, xs2, aedge,
+                lambda x: HULL.sheer_z(HULL.xi_of(x)) - DECK_DROP,
+                deck_mats, thick=0.032, gap=0.005)
 
 
 make(_decks, "Decks", col_deck)
@@ -240,23 +265,40 @@ make(_coamings, "Coamings", col_deck)
 
 
 def _seating(mb):
-    # passenger thwarts forward of the machinery
-    for x in (2.30, 1.78):
+    """Four moulded thwarts, each landing on cleats rather than floating.
+
+    A seat that is a plain box hanging in the air is the single most common
+    "3D model" tell in a small boat; the eye wants to see what holds it up.
+    Each plank here is crowned and tapered like a real thwart, sits on two
+    cleats let into the frames, and the two wide passenger thwarts carry a
+    centre stanchion down to the keelson.
+    """
+    seats = ((2.30, 0.26, True), (1.78, 0.26, True),
+             (-2.55, 0.30, False), (-1.95, 0.24, False))
+    for x, width, has_post in seats:
         xi = HULL.xi_of(x)
-        z = HULL.sheer_z(xi) - DECK_DROP - 0.16
-        half = half_breadth_at(HULL, xi, z) - 0.03
-        mb.add_box((x, 0, z), (0.26, half * 1.94, 0.045), mat=MAT["wood_timber"])
-    # coxswain's seat aft, and the engineer's seat
-    for x, w in ((-2.55, 0.30), (-1.95, 0.24)):
-        xi = HULL.xi_of(x)
-        z = HULL.sheer_z(xi) - DECK_DROP - 0.15
-        half = half_breadth_at(HULL, xi, z) - 0.03
-        mb.add_box((x, 0, z), (w, half * 1.90, 0.045), mat=MAT["wood_timber"])
-    # back-rest of the aft seat
+        drop = DECK_DROP + 0.16
+        ys, z_top = parts.thwart_plank(mb, HULL, xi, top_drop=drop, width=width,
+                                       thick=0.045, mat=MAT["wood_timber"])
+        half = max(abs(ys[0]), abs(ys[-1]))
+        # cleats under each end, let into the frames
+        for s_ in (-1, 1):
+            mb.add_box((x, s_ * (half - 0.055), z_top - 0.045 - 0.017),
+                       (width * 0.9, 0.075, 0.032), None, MAT["wood_timber"])
+        # centre stanchion on the two wide thwarts
+        if has_post:
+            z_floor = floor_z(x) + 0.03
+            mb.add_box((x, 0.0, (z_floor + z_top - 0.045) * 0.5),
+                       (0.055, 0.055, max(0.08, (z_top - 0.045) - z_floor)),
+                       None, MAT["wood_timber"])
+    # back-rest of the after seat
     xi = HULL.xi_of(-2.42)
     z = HULL.sheer_z(xi) - DECK_DROP - 0.15
     half = half_breadth_at(HULL, xi, z) - 0.03
-    mb.add_box((-2.42, 0, z + 0.16), (0.05, half * 1.90, 0.20), mat=MAT["wood_timber"])
+    mb.add_box((-2.42, 0, z + 0.16), (0.05, half * 1.90, 0.20), None, MAT["wood_timber"])
+    for s_ in (-1, 1):  # its two arms, so it is not a slab on nothing
+        mb.add_box((-2.42, s_ * (half * 0.86), z + 0.06), (0.05, 0.05, 0.20),
+                   None, MAT["wood_timber"])
 
 
 make(_seating, "Seats", col_furn)
@@ -283,7 +325,7 @@ def _canopy_frame(mb):
         z_coam, half = _canopy_geom(x)
         pts = []
         for f in np.linspace(-1, 1, 15):
-            zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2)
+            zc = z_coam + CANOPY_RISE * math.sqrt(max(0.0, 1.0 - 0.90 * f ** 2))
             pts.append(np.array([x, f * half, zc]))
         mb.add_tube(np.array(pts), 0.013, segments=8, mat=MAT["brass"])
         # short stanchions from the coaming up to the hoop
@@ -296,7 +338,7 @@ def _canopy_frame(mb):
         pts = []
         for x in np.linspace(x0, x1, 9):
             z_coam, half = _canopy_geom(x)
-            zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2)
+            zc = z_coam + CANOPY_RISE * math.sqrt(max(0.0, 1.0 - 0.90 * f ** 2))
             pts.append(np.array([x, f * half, zc]))
         mb.add_tube(np.array(pts), 0.009, segments=6, mat=MAT["brass"])
 
@@ -324,7 +366,7 @@ def _canopy_cover(mb):
         z_coam, half = _canopy_geom(x)
         edge_pull = 0.010 * (1.0 - abs(x - 0.5 * (x0 + x1)) / (0.5 * (x1 - x0)))
         for j, f in enumerate(fs):
-            zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2)
+            zc = z_coam + CANOPY_RISE * math.sqrt(max(0.0, 1.0 - 0.90 * f ** 2))
             # a slight lengthwise dip towards the middle, and a ripple across
             ripple = 0.006 * math.sin(f * math.pi * 3.0) * (1 - f * f)
             grid[i, j] = (x, f * half, zc + 0.010 + sag(x) + ripple + edge_pull)
@@ -335,7 +377,7 @@ def _canopy_cover(mb):
         strip = np.zeros((n_x, 3, 3))
         for i, x in enumerate(xs):
             z_coam, half = _canopy_geom(x)
-            zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2) + 0.010 + sag(x)
+            zc = z_coam + CANOPY_RISE * math.sqrt(max(0.0, 1.0 - 0.90 * f ** 2)) + 0.010 + sag(x)
             for k, dy in enumerate((-0.008, 0.0, 0.008)):
                 bulge = 0.004 if k == 1 else 0.0
                 strip[i, k] = (x, f * half + dy, zc + bulge)

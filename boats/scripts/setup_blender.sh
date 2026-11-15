@@ -23,9 +23,19 @@ tar -xf "$TARBALL" -C "$PREFIX"
 mv "$PREFIX/blender-$VERSION-linux-x64" "$DIR"
 rm -f "$TARBALL"
 
-# the headless build still links libxkbcommon even without a display
+# The headless build still links libxkbcommon even though it never opens a
+# window.  If the distro package is absent, unpack the .deb into Blender's lib
+# directory so LD_LIBRARY_PATH finds it.
 if ! ldconfig -p | grep -q libxkbcommon.so.0; then
-    echo "note: libxkbcommon is missing; install it or supply it on LD_LIBRARY_PATH" >&2
+    echo "fetching libxkbcommon ..."
+    tmp="$(mktemp -d)"
+    (cd "$tmp" && apt-get download libxkbcommon0 >/dev/null 2>&1) ||         echo "warning: could not download libxkbcommon0; Blender may not start" >&2
+    deb="$(ls "$tmp"/libxkbcommon0_*.deb 2>/dev/null | head -1)"
+    if [ -n "$deb" ]; then
+        dpkg -x "$deb" "$tmp/x"
+        cp -a "$tmp"/x/usr/lib/x86_64-linux-gnu/libxkbcommon.so* "$DIR/lib/" 2>/dev/null || true
+    fi
+    rm -rf "$tmp"
 fi
 
 echo "Blender $VERSION installed at $DIR"

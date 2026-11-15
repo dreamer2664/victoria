@@ -8,7 +8,7 @@ return {
 	boat_id = "rowing_cutter_25ft",
 	stud_per_m = 3.571429,
 	parts = {{
-		{ name = "Fittings", role = "gear", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(26.0532, 6.9868, 3.6911), verts = 1034 },
+		{ name = "Fittings", role = "gear", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(26.0532, 6.5296, 3.6911), verts = 1286 },
 		{ name = "Floorboards", role = "furniture", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(12.6614, 2.6129, 0.2439), verts = 1120 },
 		{ name = "Frames", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(25.6914, 6.6525, 4.1786), verts = 5712 },
 		{ name = "Keel_Stem_Sternpost", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.2132, 3.2561, 5.0096), verts = 1434 },

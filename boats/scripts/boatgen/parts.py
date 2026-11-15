@@ -307,7 +307,16 @@ def boat_hook(mb, pos, length=1.9, mat=MAT["wood_timber"], metal=MAT["steel"]):
 
 def fender(mb, pos, mat=MAT["canvas"], rope=MAT["rope"], length=0.55, r=0.075):
     pos = np.asarray(pos, dtype=float)
-    prof = [(r * math.sin(math.pi * i / 8) + 0.005, -length * 0.5 + length * i / 8) for i in range(9)]
-    mb.add_lathe(prof, segments=16, center=pos, mat=mat)
+    # A coir fender is a fat sausage with rounded ends, not a lens: full
+    # diameter for the middle third, then a fast round-off.  The old sine
+    # profile tapered the whole way and read as a peel hanging on the topsides.
+    n = 14
+    prof = []
+    for i in range(n + 1):
+        f = i / n
+        t = abs(2.0 * f - 1.0)            # 0 at the middle, 1 at each end
+        rr = r * math.sqrt(max(0.0, 1.0 - t ** 6)) if t > 0.62 else r
+        prof.append((max(rr, 0.006), -length * 0.5 + length * f))
+    mb.add_lathe(prof, segments=18, center=pos, mat=mat)
     cyl(mb, pos + np.array([0, 0, length * 0.5]), pos + np.array([0, 0, length * 0.5 + 0.10]), 0.008,
         seg=6, mat=rope)

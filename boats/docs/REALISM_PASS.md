@@ -92,3 +92,36 @@ and air can reach the frames.
 * No attempt to make the three-light studio rig work with water. It cannot:
   it is kept for the drawing sheets and the reference board, which have no
   water in them.
+
+## Second pass — the boats themselves
+
+The first pass was mostly environment. This one is all boat.
+
+**Decks are planked, not painted.** Both decks were a single surface with a
+wood texture, which reads as a painted floor at any angle. They are now laid
+as individual boards (`hull.plank_panel`): constant board count along the
+length so the planks converge at the ends the way stolen planks do, a 5 mm
+caulking gap either side of each board, three timbers cycling through the run,
+and closed ends so a board is a solid rather than a shell.
+
+**Seats are held up by something.** Boat A's four thwarts were boxes hanging
+in mid-air — the most common "3D model" tell in a small boat. They are now
+moulded thwarts (crowned, tapered) landing on cleats let into the frames, with
+a centre stanchion to the keelson under each of the two wide passenger
+thwarts. The after seat's back-rest got its two arms for the same reason.
+
+**The canopy is arched.** It rose only 30% more at the crown than at the edge,
+which a real hoop frame never does. The cover and the brass hoops now follow a
+circular arc (`sqrt(1 − 0.90 f²)`), so the canvas drops steeply at the sides
+and the whole hood reads as tensioned over hoops.
+
+**Fenders.** The old sine profile tapered the whole way and read as a peel
+hanging on the topsides. A coir fender is a fat sausage with rounded ends: full
+diameter through the middle, then a fast round-off.
+
+**Boat B's boat hook** was stowed 40 mm outboard of the planking, which is why
+a blade-shaped object appeared to lie on the topsides in every angle.
+
+**Lighting.** Interiors were reading as black holes in the plan views — not
+holes, as a ray cast confirmed, just unlit undersides of frames. A 9 m
+overhead sky-port fills open boats without putting a lamp near the horizon.

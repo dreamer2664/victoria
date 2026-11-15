@@ -358,6 +358,17 @@ def sea_studio(world_strength=2.6, bg=(0.088, 0.108, 0.138), key_energy=520.0):
     # a soft wrap from above keeps the deck and canopy from going flat
     area("Key", (1.6, -2.2, 6.6), (math.radians(20), 0, math.radians(36)),
          key_energy * 0.7, 4.0)
+    # An overhead sky-port. Open boats have no lid: without something above
+    # them the interior reads as a black hole in every plan from above, which
+    # looks like a hole through the hull rather than a shadow. Being directly
+    # overhead, its reflection in the water sits under the camera, not across
+    # the frame.
+    # A big soft source overhead. Kept weak on purpose: a 9 m emitter strong
+    # enough to light the bottom of an open boat from above also bleaches the
+    # whole scene. The interior falls into shadow and that is honest -- an open
+    # boat's floor IS dark from outside.
+    area("SkyPort", (0.0, 0.0, 8.0), (0.0, 0.0, 0.0),
+         key_energy * 0.55, 9.0, (0.94, 0.97, 1.0))
     # No low fill. At the grazing angles a camera sees open water from, any
     # near-horizon lamp reflects almost totally (Fresnel) and paints a bright
     # parallelogram across the sea. The sky does the fill work instead.
