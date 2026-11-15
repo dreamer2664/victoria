@@ -64,6 +64,13 @@ CUTTER_NUMBER = "12"                                   # ship's boat number
 bl.reset_scene()
 mats = bl.build_materials()
 mlist = bl.mats_list(mats)
+
+
+def _register(m):
+    """MAT values are slot indices, so a material created after the base list
+    was built is appended to it and its index returned."""
+    mlist.append(m)
+    return len(mlist) - 1
 col_hull = bl.collection("Hull")
 col_structure = bl.collection("Structure")
 col_furniture = bl.collection("Furniture")
@@ -71,12 +78,13 @@ col_gear = bl.collection("Gear")
 col_moving = bl.collection("MovingParts")
 
 
-def make(builder, name, collection, mirror=False, smooth=True):
+def make(builder, name, collection, mirror=False, smooth=True, auto_smooth=35.0):
     mb = MeshBuilder(name)
     builder(mb)
     if mirror:
         mb.mirror_y()
-    ob = bl.obj_from_builder(mb, name, mlist, collection, smooth=smooth)
+    ob = bl.obj_from_builder(mb, name, mlist, collection, smooth=smooth,
+                             auto_smooth=auto_smooth)
     print(f"  [{name}] verts={len(ob.data.vertices)} faces={len(ob.data.polygons)}")
     return ob
 
@@ -98,7 +106,20 @@ strake_mats = []
 for k in range(11):
     f = (k + 0.5) / 11
     z = lerp(HULL.keel_z(0.5), HULL.sheer_z(0.5), f)
-    strake_mats.append(MAT["paint_hull"] if z < -0.16 else MAT["wood_out"])
+    if z < -0.16:
+        strake_mats.append(MAT["paint_hull"])
+        continue
+    # Every strake is a different tree.  Give each its own slightly different
+    # timber so the planking reads as eleven separate boards rather than one
+    # varnished skin -- the tone shifts are small, but they are what the eye
+    # actually uses to count strakes at a distance.
+    v = 0.955 + 0.09 * ((k * 7) % 5) / 4.0
+    warm = 1.0 + 0.06 * ((k * 3) % 4 - 1.5) / 1.5
+    strake_mats.append(_register(bl.wood_material(
+        f"Wood_Strake_{k:02d}",
+        base=(0.32 * v * warm, 0.17 * v, 0.08 * v / warm),
+        dark=(0.14 * v, 0.07 * v, 0.03 * v),
+        rough=0.44, bump=0.24)))
 
 make(
     lambda mb: build_clinker_planking(
@@ -109,6 +130,10 @@ make(
     "Planking_Clinker",
     col_hull,
     mirror=True,
+    # a clinker lap meets the strake below at a shallow angle; at the default
+    # 35 degrees the shading smooths straight over it and the hull renders as
+    # one skin.  At 20 the laps catch light the way overlapped planks do.
+    auto_smooth=20.0,
 )
 
 # --------------------------------------------------------------------------
@@ -124,8 +149,7 @@ make(lambda mb: (
     # narrow wedges where the planking cannot close the hull
     solid_between_sections(mb, HULL, np.linspace(0.001, 0.042, 6), 0.020, MAT["wood_timber"]),
     solid_between_sections(mb, HULL, np.linspace(0.966, 0.999, 5), 0.020, MAT["wood_timber"]),
-    build_rubbing_strake(HULL, mb, t=0.88, r=0.015, xi0=0.06, xi1=0.94, offset=0.004),
-                      build_stem_band(HULL, mb, r=0.017, n=14),
+    build_stem_band(HULL, mb, r=0.017, n=14),
                       build_keel(HULL, mb, width=0.105, depth=0.080),
                  build_stem(HULL, mb, width=0.115, depth=0.115),
                  build_sternpost(HULL, mb, width=0.082, depth=0.095)),

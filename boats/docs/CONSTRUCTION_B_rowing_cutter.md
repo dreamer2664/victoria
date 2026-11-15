@@ -73,6 +73,12 @@ bathtub in the from-above render.
   each) gives the 10-oared, double-banked arrangement.
 * **Stern sheets** abaft the after thwart, with a stern bench and quarter
   knees.
+* **Every strake is a different tree.** The eleven strakes are separate timber
+  materials with small tone and warmth shifts rather than one varnished skin.
+  The lap is modelled (13 mm overlap on 19 mm plank) *and* the shading angle is
+  dropped to 20° on the planking, because at the library default of 35° the
+  render smooths straight over the lap and the boat reads as a moulded shell
+  instead of overlapped boards.
 * **Floor gratings**: slatted bottom boards, lifted 55 mm clear of the
   planking on cleats so bilge water can run under them and air can reach the
   frames — the "slatted floors on pegs" of the reference model.
