@@ -1,0 +1,122 @@
+{
+  "ship": "SS Aurelian (fictional, 1889)",
+  "metres_per_stud": 0.28,
+  "studs_per_metre": 3.571428571428571,
+  "up_axis_roblox": "Y",
+  "forward_roblox": "-Z",
+  "source_blend": "models/ship_assembly.blend",
+  "modules": [
+    {
+      "module": "DeckEquipment",
+      "objects": [
+        "Boats_Davits",
+        "DeckMachinery"
+      ],
+      "verts": 3848,
+      "tris": 5942,
+      "fbx": "exports/fbx/DeckEquipment.fbx",
+      "glb": "exports/glb/DeckEquipment.glb",
+      "scale_studs_per_m": 3.571428571428571
+    },
+    {
+      "module": "Hull",
+      "objects": [
+        "Anchors_Hawse",
+        "Boot_Top",
+        "Bulwarks",
+        "Hull_Seams",
+        "Hull_Shell",
+        "Keel_Stem",
+        "Rudder"
+      ],
+      "verts": 47649,
+      "tris": 49430,
+      "fbx": "exports/fbx/Hull.fbx",
+      "glb": "exports/glb/Hull.glb",
+      "scale_studs_per_m": 3.571428571428571
+    },
+    {
+      "module": "Interiors_Cabins",
+      "objects": [
+        "Galley",
+        "Officers_Captain",
+        "Staterooms",
+        "Third_Class",
+        "Wheelhouse_Fittings"
+      ],
+      "verts": 54260,
+      "tris": 84560,
+      "fbx": "exports/fbx/Interiors_Cabins.fbx",
+      "glb": "exports/glb/Interiors_Cabins.glb",
+      "scale_studs_per_m": 3.571428571428571
+    },
+    {
+      "module": "Interiors_Public",
+      "objects": [
+        "Dining_Saloon_1C",
+        "Grand_Staircase",
+        "Interior_Windows",
+        "Lavatories",
+        "Library",
+        "Music_Room",
+        "Smoking_Saloon_1C"
+      ],
+      "verts": 49464,
+      "tris": 75086,
+      "fbx": "exports/fbx/Interiors_Public.fbx",
+      "glb": "exports/glb/Interiors_Public.glb",
+      "scale_studs_per_m": 3.571428571428571
+    },
+    {
+      "module": "Interiors_Structure",
+      "objects": [
+        "Interior_Floors",
+        "Interior_Rooms"
+      ],
+      "verts": 11068,
+      "tris": 19304,
+      "fbx": "exports/fbx/Interiors_Structure.fbx",
+      "glb": "exports/glb/Interiors_Structure.glb",
+      "scale_studs_per_m": 3.571428571428571
+    },
+    {
+      "module": "Machinery",
+      "objects": [
+        "Boiler_Rooms",
+        "Crankshaft",
+        "Engine_HP_Rod",
+        "Engine_IP_Rod",
+        "Engine_LP_Rod",
+        "Engine_Main",
+        "Propeller",
+        "Propeller_Shaft",
+        "Steering_Gear"
+      ],
+      "verts": 6956,
+      "tris": 12740,
+      "fbx": "exports/fbx/Machinery.fbx",
+      "glb": "exports/glb/Machinery.glb",
+      "scale_studs_per_m": 3.571428571428571
+    },
+    {
+      "module": "Superstructure",
+      "objects": [
+        "BoatDeck",
+        "Bridge",
+        "DeckHouse_Promenade",
+        "DeckHouse_SaloonDeck",
+        "Decks_SaloonProm",
+        "Funnels",
+        "Masts",
+        "NavLights",
+        "Promenade_Rails",
+        "Rigging"
+      ],
+      "verts": 20384,
+      "tris": 34126,
+      "fbx": "exports/fbx/Superstructure.fbx",
+      "glb": "exports/glb/Superstructure.glb",
+      "scale_studs_per_m": 3.571428571428571
+    }
+  ]
+}
