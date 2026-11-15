@@ -39,7 +39,7 @@ CAMERAS = {
         # Positions were checked against the layout: every camera stands in open
         # ground or over water, never inside a building.
         ("01_aerial",        (-250, -330, 210), (90, 40, 0), 40),
-        ("02_waterfront",    (-206, -70, 38),   (-60, 170, 4), 45),
+        ("02_waterfront",    (-275, -190, 66),  (-30, 165, 2), 50),
         ("03_street",        (-14, 60, 6.5),    (-14, 230, 10), 40),
         ("04_dockside",      (-16, -30, 7.5),   (70, -70, 8), 42),
         ("05_landing_stage", (-196, -20, 22),   (-84, 140, 4), 42),
