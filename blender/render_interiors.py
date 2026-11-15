@@ -9,7 +9,16 @@ from shipdesign.spec import DECK_Z
 def setup(samples=64, res=(1280,800)):
     sc=bpy.context.scene
     sc.render.engine='CYCLES'; sc.cycles.device='CPU'; sc.cycles.samples=samples
-    sc.cycles.use_denoising=True; sc.cycles.max_bounces=4
+    sc.cycles.use_denoising=True; sc.cycles.max_bounces=3
+    # Small, closed rooms with several lamps are slow in Cycles: cap the
+    # adaptive sampling so one stubborn cabin cannot hold up the whole batch.
+    sc.cycles.use_adaptive_sampling=True
+    sc.cycles.adaptive_threshold=0.05
+    sc.cycles.adaptive_min_samples=24
+    sc.render.use_persistent_data=True
+    prefs=bpy.context.preferences.addons.get('cycles')
+    if prefs:
+        prefs.preferences.compute_device_type='NONE'
     sc.render.resolution_x, sc.render.resolution_y = res
     sc.view_settings.view_transform='AgX'
     sc.view_settings.look='AgX - Medium High Contrast'
@@ -203,9 +212,12 @@ VIEWS = {
 
 if __name__=="__main__":
     argv=sys.argv[sys.argv.index("--")+1:] if "--" in sys.argv else []
-    outdir=argv[0] if argv else os.path.join(ROOT,"renders","interiors_wip")
-    only=argv[1].split(",") if len(argv)>1 else None
-    samples=int(argv[2]) if len(argv)>2 else 48
+    outdir=argv[0] if argv else os.path.join(ROOT,"renders","interiors")
+    only=argv[1].split(",") if len(argv)>1 and argv[1] else None
+    samples=int(argv[2]) if len(argv)>2 else 40
+    if len(argv)>3:
+        bpy.context.scene.render.resolution_x=int(argv[3].split("x")[0])
+        bpy.context.scene.render.resolution_y=int(argv[3].split("x")[1])
     os.makedirs(outdir,exist_ok=True)
     setup(samples)
     for name,v in VIEWS.items():

@@ -28,6 +28,31 @@ def _overlap(a0, a1, b0, b1):
     return max(0.0, min(a1, b1) - max(a0, b0))
 
 
+def check_room_polygons_are_floats():
+    """Room polygons must be plain floats.
+
+    A numpy array leaking in here produces a room that is silently the wrong
+    width - the worst kind of bug, because it renders and validates fine.
+    """
+    import numbers
+    bad = []
+    for r in ROOMS:
+        for q in room_polygon(r):
+            if len(q) != 2 or not all(isinstance(c, numbers.Real) or
+                                      type(c).__name__ == "float" for c in q):
+                bad.append("%s: %r" % (r["name"], q))
+                break
+            for c in q:
+                if not (abs(float(c)) < 1e4):
+                    bad.append("%s: %r" % (r["name"], q))
+                    break
+    if bad:
+        fail("%d room polygons contain non-scalar coordinates: %s"
+             % (len(bad), "; ".join(bad[:3])))
+    else:
+        ok("all %d room polygons are plain scalar coordinates" % len(ROOMS))
+
+
 def check_rooms_in_hull():
     for r in ROOMS:
         p = room_polygon(r)
@@ -275,7 +300,8 @@ def check_watertight_subdivision():
 
 
 def run():
-    for fn in (check_deck_order, check_rooms_in_hull, check_vertical_clearance,
+    for fn in (check_deck_order, check_room_polygons_are_floats,
+               check_rooms_in_hull, check_vertical_clearance,
                check_rooms_do_not_overlap, check_walls, check_funnels_clear_of_rooms,
                check_masts_clear_of_rooms, check_doors_reachable,
                check_stairs_connect, check_boats, check_displacement,

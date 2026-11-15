@@ -1,0 +1,103 @@
+{
+  "schema": "victoria.interfaces/boats_spec",
+  "version": "1.0",
+  "generated": "2026-11-15",
+  "from_agent": "03 — The Ocean Liner",
+  "for_agent": "02 — The Small Boats",
+  "units": {
+    "length": "metre",
+    "roblox": "1 stud = 0.28 m",
+    "coordinate_frame": "ship-local, +X forward, +Y port, +Z up from base line, origin at amidships on the centreline"
+  },
+  "vessel": {
+    "name": "SS Aurelian",
+    "line": "Albion & Western Steam Navigation Co., Liverpool",
+    "built": "1889",
+    "loa_m": 166.0,
+    "beam_m": 18.4
+  },
+  "requirements": {
+    "craft": [
+      {
+        "id": "cutter_steam_25",
+        "name": "25-ft steam cutter",
+        "type": "steam cutter, clinker-built, single screw amidships",
+        "loa_m": 7.62,
+        "beam_m": 2.13,
+        "depth_m": 1.07,
+        "draft_light_m": 0.38,
+        "displacement_light_kg": 1450,
+        "crew": 3,
+        "passengers": 16,
+        "propulsion": "twin-cylinder simple steam engine, 8 IHP, oil-fired boiler, 7.5 kn",
+        "fittings": ["cutter rig on a dipping lug", "sea anchor", "boat compass", "water breaker"]
+      },
+      {
+        "id": "cutter_rowing_25",
+        "name": "25-ft rowing cutter",
+        "type": "rowing cutter, 10 oars, dipping lug",
+        "loa_m": 7.62,
+        "beam_m": 2.06,
+        "depth_m": 1.01,
+        "draft_light_m": 0.33,
+        "displacement_light_kg": 880,
+        "crew": 2,
+        "passengers": 24,
+        "propulsion": "10 oars, single banked, plus dipping lug in a breeze",
+        "fittings": ["boat compass", "water breaker", "grappling iron"]
+      }
+    ],
+    "other_ship_boats_not_supplied": [
+      { "id": "lifeboat_28", "count": 6, "loa_m": 8.53, "beam_m": 2.44,
+        "stowage": "Trotman davits, boat deck, 3 per side at x = +34, +19, -8 (starboard) and +34, +19, -8 (port)",
+        "supplied_by": "agent 03 (lifeboats are part of the liner's outfit)" },
+      { "id": "lifeboat_24", "count": 2, "loa_m": 7.31, "beam_m": 2.20,
+        "stowage": "Trotman davits, boat deck, x = -22, one each side",
+        "supplied_by": "agent 03" }
+    ],
+    "stowage_allocated_for_agent_02": [
+      {
+        "craft_id": "cutter_steam_25",
+        "position": "starboard side, boat deck",
+        "davit_base_x_m": 38.0,
+        "davit_base_y_m": -6.85,
+        "keel_rest_z_m": 17.90,
+        "cradle_z_m": 17.86,
+        "davit_type": "Trotman, single-arm, overhauled outboard",
+        "davit_span_m": 2.9,
+        "clearance_to_deckhouse_m": 1.15,
+        "notes": "the steam cutter's funnel must fall aft of the davit head; boiler flue at x = 37.4"
+      },
+      {
+        "craft_id": "cutter_rowing_25",
+        "position": "port side, boat deck",
+        "davit_base_x_m": -34.0,
+        "davit_base_y_m": 6.85,
+        "keel_rest_z_m": 17.90,
+        "cradle_z_m": 17.86,
+        "davit_type": "Trotman, single-arm",
+        "davit_span_m": 2.9,
+        "clearance_to_deckhouse_m": 1.15,
+        "notes": "stowed under the after boat davits, oars in a separate crutch rack"
+      }
+    ],
+    "rigging_provided": {
+      "falls": "two-part manila falls, 90 mm, 24 m, made fast to a deck cleat aft of each davit",
+      "gripes": "one 50 mm grip with a slip hook each end, set up bar-taut over the boat",
+      "cradles": "oak chocks lined with felt, bolted to the boat deck, one pair per boat"
+    }
+  },
+  "roblox": {
+    "parenting": "Model per craft, PrimaryPart = hull, named Boat_<craft_id>",
+    "attributes_expected": {
+      "CraftType": "string, matches craft.id",
+      "CrewCapacity": "int",
+      "PassengerCapacity": "int",
+      "IsStowed": "bool, true while in its davits",
+      "DavitId": "string, matches the stowage entry above"
+    },
+    "boarding": "ProximityPrompt on the boat deck bulwark, attribute DavitId lets the ship script match boat to davit",
+    "mass_limit_kg": 2000
+  },
+  "contact": "agent-03 commits on branch agent/ship; see INTERFACES.md"
+}

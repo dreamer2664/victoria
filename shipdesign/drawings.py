@@ -286,33 +286,121 @@ DECK_PLANS = {
 }
 
 
+DECK_TITLES = {
+    "bottom":  "HOLD / TANK TOP",
+    "orlop":   "ORLOP DECK",
+    "main":    "MAIN DECK",
+    "saloon":  "UPPER (SALOON) DECK",
+    "prom":    "PROMENADE DECK",
+    "boat":    "BOAT DECK",
+    "bridge":  "BRIDGE DECK",
+}
+
+
+def _wrapped(label, max_chars=22, max_lines=3):
+    """Break a room name into at most three short lines, for the plan."""
+    words = label.replace("&", "&").split()
+    lines, cur = [], ""
+    for w in words:
+        if len(cur) + len(w) + 1 > max_chars and cur:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = (cur + " " + w).strip()
+    if cur:
+        lines.append(cur)
+    if len(lines) > max_lines:
+        lines = lines[:max_lines]
+        lines[-1] = lines[-1][:max_chars - 1] + "\u2026"
+    return "\n".join(lines)
+
+
+def _fit_fontsize(poly, label, base=6.4):
+    """Shrink the label so it fits inside its room box on the plan."""
+    xs = [p[0] for p in poly]; ys = [p[1] for p in poly]
+    w = max(xs) - min(xs)
+    h = max(ys) - min(ys)
+    # 1 m of x is about 0.033 in on a 18 in sheet over 176 m
+    lines = label.count("\n") + 1
+    by_h = h / (lines * 2.4 + 1.0) * 6.0
+    by_w = (w / (max(len(l) for l in label.split("\n")) * 0.52)) * 5.4
+    return max(2.6, min(base, by_h, by_w))
+
+
 def deck_plans():
+    """One drawing sheet per deck: outline to scale, rooms, labels, dimensions.
+
+    The earlier version drew the whole 176 m ship into a 4.9 in strip, so the
+    plan occupied an eighth of the page and every label collided.  Each sheet
+    now fills its page, uses the full plan height, places labels with an
+    automatic size fit, and carries a dimension line, a scale bar and a north
+    (forward) arrow.
+    """
     made = []
     plan = {}
     for key, name, z, ext in layout.DECKS:
-        plan[key] = (z, [(r["name"], layout.room_polygon(r))
-                         for r in layout.rooms_on(key)])
-    for key, (z, rooms) in plan.items():
-        fig = plt.figure(figsize=(18, 4.9), dpi=200)
+        plan[key] = (z, ext, [(r["name"], layout.room_polygon(r))
+                              for r in layout.rooms_on(key)])
+    for key, (z, ext, rooms) in plan.items():
+        fig = plt.figure(figsize=(22, 9.0), dpi=170)
         fig.patch.set_facecolor("#f6f3ea")
-        ax = fig.add_axes([0.02, 0.06, 0.96, 0.84])
+        ax = fig.add_axes([0.035, 0.085, 0.93, 0.80])
         _style(ax)
-        _deck_outline(ax, z, colour=INK, lw=1.8)
+        # the deck itself: the plan extent of the ship at this level
+        x0, x1 = ext
+        xs = np.linspace(x0, x1, 500)
+        ys = np.array([layout.hull_side_halfbeam(x, z) for x in xs], dtype=float)
+        good = ys > 0.05
+        if good.any():
+            xg, yg = xs[good], ys[good]
+            ax.fill(np.concatenate([xg, xg[::-1]]),
+                    np.concatenate([yg, -yg[::-1]]),
+                    fc="#e8e0cb", ec=INK, lw=1.6, zorder=1)
         for lab, poly in rooms:
             if not poly:
                 continue
-            ax.add_patch(Polygon(poly, closed=True, fc="#efe8d6",
-                                 ec="#7a6a4a", lw=0.9))
+            ax.add_patch(Polygon(poly, closed=True, fc="#f7f2e4",
+                                 ec="#6b5c40", lw=1.0, zorder=2))
             cx = sum(p[0] for p in poly) / len(poly)
             cy = sum(p[1] for p in poly) / len(poly)
-            ax.text(cx, cy, lab, ha="center", va="center", fontsize=5.4,
-                    wrap=True, clip_on=True)
-        ax.axvline(0, color="#bbb", lw=0.4, ls=":")
-        ax.set_xlim(-88, 88); ax.set_ylim(-11.2, 11.2)
-        ax.text(0, 10.6, "%s DECK — z = %.2f m" % (key.upper(), z),
-                ha="center", fontsize=12, family="serif", weight="bold")
-        ax.text(0, -10.7, "Scale 1:200 — all dimensions from DIMENSION_MANIFEST",
-                ha="center", fontsize=6.5, style="italic")
+            txt = _wrapped(lab)
+            ax.text(cx, cy, txt, ha="center", va="center",
+                    fontsize=_fit_fontsize(poly, txt), zorder=3,
+                    linespacing=1.15)
+        # centreline + frame marks every 10 stations (9.144 m)
+        ax.axhline(0, color="#b09865", lw=0.5, ls=(0, (6, 3, 1, 3)), zorder=4)
+        for fx in range(-80, 81, 20):
+            if x0 <= fx <= x1:
+                ax.plot([fx, fx], [-1.6, 1.6], color="#9c8a63", lw=0.5, zorder=4)
+        ax.set_xlim(x0 - 5, x1 + 5)
+        ax.set_ylim(-12.2, 16.4)
+        ax.set_aspect("equal")
+        ax.set_xticks(np.arange(-80, 81, 20))
+        ax.set_yticks([-9, -6, -3, 0, 3, 6, 9])
+        ax.tick_params(labelsize=7)
+        ax.set_xlabel("distance from amidships (m)   + forward", fontsize=8)
+        ax.set_ylabel("half breadth (m)", fontsize=8)
+        # title block
+        ax.text(x0, 15.8, "SS AURELIAN  —  %s" % DECK_TITLES.get(key, key.upper()),
+                fontsize=16, family="serif", weight="bold", va="top")
+        ax.text(x0, 14.4, "Deck at %.2f m above base line   ·   extent %.1f to %.1f m"
+                "   ·   all dimensions in metres" % (z, x0, x1),
+                fontsize=8.5, style="italic", va="top")
+        ax.text(x1, 15.8, "SHEET %s/9" % (list(plan).index(key) + 3),
+                fontsize=9, ha="right", family="serif", va="top")
+        # graphic scale bar: 20 m
+        bar_x, bar_y = x1 - 26, -10.9
+        ax.plot([bar_x, bar_x + 20], [bar_y, bar_y], color=INK, lw=2.0,
+                solid_capstyle="butt")
+        for t in (0, 10, 20):
+            ax.plot([bar_x + t, bar_x + t], [bar_y - 0.35, bar_y + 0.35],
+                    color=INK, lw=1.0)
+        ax.text(bar_x + 10, bar_y - 1.4, "20 m", ha="center", fontsize=7)
+        # forward arrow
+        ax.annotate("", xy=(x1 - 3, 13.0), xytext=(x1 - 15, 13.0),
+                    arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.4))
+        ax.text(x1 - 9, 13.5, "FORWARD", ha="center", fontsize=7.5,
+                family="serif")
         p = os.path.join(OUT, "deck_%s.png" % key)
         fig.savefig(p, facecolor=fig.get_facecolor())
         fig.savefig(p.replace(".png", ".svg"), facecolor=fig.get_facecolor())

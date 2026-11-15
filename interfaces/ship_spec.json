@@ -1,0 +1,1034 @@
+{
+  "schema": "victoria.interfaces/ship_spec",
+  "version": "1.0",
+  "generated": "2026-11-15",
+  "from_agent": "03 \u2014 The Ocean Liner",
+  "for_agent": "02 \u2014 The Small Boats (and any other agent integrating a vessel)",
+  "units": {
+    "length": "metre",
+    "roblox": "1 stud = 0.28 m (documented Roblox conversion)",
+    "frame": "ship-local: +X forward, +Y to port, +Z up from the base line; origin amidships on the centreline at the base line"
+  },
+  "vessel": {
+    "name": "Aurelian",
+    "full_name": "SS Aurelian",
+    "line": "Albion & Western Steam Navigation Co., Liverpool",
+    "yard_number": 147,
+    "laid_down": "November 1887",
+    "launched": "14 March 1889",
+    "completed": "20 June 1889",
+    "route": "Liverpool - Queenstown - New York (fortnightly)",
+    "flag": "British",
+    "principal_dimensions_m": {
+      "loa": 166.0,
+      "lwl": 159.5,
+      "lbp": 158.0,
+      "beam_moulded": 18.4,
+      "depth_moulded": 11.8,
+      "draft_design": 6.5,
+      "freeboard_main_deck": 2.3
+    },
+    "tonnage": {
+      "gross": 8480,
+      "net": 4720,
+      "displacement_t": 13600,
+      "lightship_t": 9950
+    },
+    "capacity": {
+      "cargo_t": 2600,
+      "coal_t": 1450,
+      "coal_per_day_t": 108
+    },
+    "passengers": {
+      "first": 228,
+      "second": 132,
+      "third": 720,
+      "total": 1080
+    },
+    "crew": {
+      "deck": 46,
+      "engine_room": 62,
+      "stewards_catering": 88,
+      "total": 196
+    },
+    "propulsion": {
+      "type": "vertical inverted direct-acting triple-expansion, single screw",
+      "cylinders_m": [
+        0.965,
+        1.575,
+        2.565
+      ],
+      "stroke_m": 1.295,
+      "ihp": 14000,
+      "rpm": 62,
+      "boilers": "9 cylindrical single-ended return-tube, 4 furnaces each",
+      "boiler_pressure_bar": 11.0,
+      "propeller": {
+        "diameter_m": 5.3,
+        "pitch_m": 6.9,
+        "blades": 4,
+        "shaft_diameter_m": 0.46
+      },
+      "rudder_area_m2": 17.0
+    },
+    "performance": {
+      "service_speed_kn": 19.3,
+      "max_speed_kn": 20.2
+    },
+    "construction": {
+      "frames_spacing_m": 0.9144,
+      "frames": 173,
+      "shell_thickness_mm": 19.0,
+      "watertight_bulkheads": 14,
+      "strake_width_m": 1.83
+    }
+  },
+  "decks": [
+    {
+      "key": "bottom",
+      "name": "Inner Bottom / Tank Top",
+      "height_m": 1.3,
+      "extent_m": [
+        -76.0,
+        70.0
+      ]
+    },
+    {
+      "key": "lower",
+      "name": "Lower (Orlop) Deck",
+      "height_m": 5.2,
+      "extent_m": [
+        -79.5,
+        76.0
+      ]
+    },
+    {
+      "key": "main",
+      "name": "Main Deck",
+      "height_m": 8.8,
+      "extent_m": [
+        -81.5,
+        79.5
+      ]
+    },
+    {
+      "key": "saloon",
+      "name": "Saloon Deck",
+      "height_m": 11.8,
+      "extent_m": [
+        -60.0,
+        54.0
+      ]
+    },
+    {
+      "key": "prom",
+      "name": "Promenade Deck",
+      "height_m": 14.4,
+      "extent_m": [
+        -78.0,
+        46.0
+      ]
+    },
+    {
+      "key": "boat",
+      "name": "Boat Deck",
+      "height_m": 17.2,
+      "extent_m": [
+        -14.0,
+        41.0
+      ]
+    },
+    {
+      "key": "bridge",
+      "name": "Bridge Deck",
+      "height_m": 18.6,
+      "extent_m": [
+        30.0,
+        41.0
+      ]
+    }
+  ],
+  "hydrostatics": {
+    "lwl": 158.53,
+    "volume_m3": 13153.1481,
+    "displacement_t": 13481.9768,
+    "lcb_m": 2.4316,
+    "lcb_pct": 1.5338,
+    "kb_m": 3.4386,
+    "waterplane_m2": 2186.9176,
+    "lcf_m": 2.206,
+    "cb": 0.6937,
+    "cm": 0.9183,
+    "cw": 0.7497,
+    "cp": 0.7554,
+    "midship_area_m2": 109.8291,
+    "tpc": 22.4159,
+    "wetted_area_m2": 3690.1355
+  },
+  "funnels": [
+    {
+      "x": 30.0,
+      "dia": 3.6,
+      "top_z": 30.6,
+      "rake": 0.0,
+      "casing": "boiler room fwd"
+    },
+    {
+      "x": 4.5,
+      "dia": 3.6,
+      "top_z": 30.6,
+      "rake": 0.0,
+      "casing": "boiler room aft"
+    }
+  ],
+  "masts": [
+    {
+      "name": "foremast",
+      "x": 70.0,
+      "rake_deg": 1.5,
+      "height_m": 24.0,
+      "diameter": 0.55
+    },
+    {
+      "name": "mainmast",
+      "x": 8.5,
+      "rake_deg": 1.5,
+      "height_m": 27.0,
+      "diameter": 0.62
+    },
+    {
+      "name": "mizzenmast",
+      "x": -45.6,
+      "rake_deg": 1.5,
+      "height_m": 21.0,
+      "diameter": 0.48
+    }
+  ],
+  "rig": {
+    "fore_square_yards": 2,
+    "fore_and_aft": true,
+    "wire_rigging": true
+  },
+  "boats": {
+    "outfit": {
+      "steam_cutter": {
+        "label": "25 ft steam cutter",
+        "loa": 7.62,
+        "beam": 2.28,
+        "weight_kg": 1850,
+        "davit_type": "Trotman radial davit, 2 per boat",
+        "crew": 2,
+        "capacity": 32
+      },
+      "rowing_cutter": {
+        "label": "27 ft ship's cutter (rowing)",
+        "loa": 8.23,
+        "beam": 2.44,
+        "weight_kg": 980,
+        "davit_type": "Trotman radial davit, 2 per boat",
+        "crew": 1,
+        "capacity": 34
+      }
+    },
+    "starboard": [
+      [
+        38.0,
+        "steam_cutter"
+      ],
+      [
+        26.0,
+        "rowing_cutter"
+      ]
+    ],
+    "port": [
+      [
+        38.0,
+        "rowing_cutter"
+      ]
+    ]
+  },
+  "layout": {
+    "rooms": [
+      {
+        "name": "Third Class \u2014 forward berths (men)",
+        "deck": "lower",
+        "use": "third",
+        "x0": 58.0,
+        "x1": 74.0,
+        "y0": -8.0,
+        "y1": 8.0,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "Third Class \u2014 forward berths (women)",
+        "deck": "lower",
+        "use": "third",
+        "x0": 46.0,
+        "x1": 58.0,
+        "y0": -8.0,
+        "y1": 8.0,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "Third Class mess / washroom",
+        "deck": "lower",
+        "use": "third",
+        "x0": 34.0,
+        "x1": 46.0,
+        "y0": -8.0,
+        "y1": 8.0,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "No. 1 Hold (forward)",
+        "deck": "lower",
+        "use": "cargo",
+        "x0": 18.0,
+        "x1": 34.0,
+        "y0": -8.2,
+        "y1": 8.2,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "Crew \u2014 petty officers",
+        "deck": "lower",
+        "use": "crew",
+        "x0": 6.0,
+        "x1": 18.0,
+        "y0": -8.2,
+        "y1": 8.2,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "No. 2 Hold (midship) / store",
+        "deck": "lower",
+        "use": "cargo",
+        "x0": -6.0,
+        "x1": 6.0,
+        "y0": -8.2,
+        "y1": 8.2,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "Engine room casing & stores",
+        "deck": "lower",
+        "use": "machinery",
+        "x0": -18.0,
+        "x1": -6.0,
+        "y0": -4.2,
+        "y1": 4.2,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "Stokers' & trimmers' quarters",
+        "deck": "lower",
+        "use": "crew",
+        "x0": -40.0,
+        "x1": -27.0,
+        "y0": -8.2,
+        "y1": 8.2,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "No. 3 Hold (after)",
+        "deck": "lower",
+        "use": "cargo",
+        "x0": -52.0,
+        "x1": -40.0,
+        "y0": -8.2,
+        "y1": 8.2,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "Third Class \u2014 after berths",
+        "deck": "lower",
+        "use": "third",
+        "x0": -64.0,
+        "x1": -52.0,
+        "y0": -8.2,
+        "y1": 8.2,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "Third Class \u2014 after berths",
+        "deck": "lower",
+        "use": "third",
+        "x0": -74.0,
+        "x1": -64.0,
+        "y0": -8.0,
+        "y1": 8.0,
+        "ceiling_m": 8.72
+      },
+      {
+        "name": "Forecastle \u2014 seamen's quarters",
+        "deck": "main",
+        "use": "crew",
+        "x0": 62.0,
+        "x1": 78.0,
+        "y0": -7.4,
+        "y1": 7.4,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "No. 1 Hatch & winch",
+        "deck": "main",
+        "use": "cargo",
+        "x0": 48.0,
+        "x1": 62.0,
+        "y0": -8.0,
+        "y1": 8.0,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "Third Class berths (forward)",
+        "deck": "main",
+        "use": "third",
+        "x0": 30.0,
+        "x1": 48.0,
+        "y0": -8.4,
+        "y1": 8.4,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "First Class staterooms (forward)",
+        "deck": "main",
+        "use": "first",
+        "x0": 12.0,
+        "x1": 30.0,
+        "y0": -8.6,
+        "y1": 8.6,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "Entrance Hall (main staircase)",
+        "deck": "main",
+        "use": "first",
+        "x0": -2.0,
+        "x1": 12.0,
+        "y0": -6.0,
+        "y1": 6.0,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "First Class staterooms (midship)",
+        "deck": "main",
+        "use": "first",
+        "x0": -24.0,
+        "x1": -2.0,
+        "y0": -8.6,
+        "y1": 8.6,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "Third Class dining saloon",
+        "deck": "main",
+        "use": "third",
+        "x0": -46.0,
+        "x1": -24.0,
+        "y0": -8.4,
+        "y1": 8.4,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "No. 3 Hatch & winch",
+        "deck": "main",
+        "use": "cargo",
+        "x0": -58.0,
+        "x1": -46.0,
+        "y0": -8.4,
+        "y1": 8.4,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "Poop \u2014 Third Class berths (aft)",
+        "deck": "main",
+        "use": "third",
+        "x0": -78.0,
+        "x1": -58.0,
+        "y0": -7.6,
+        "y1": 7.6,
+        "ceiling_m": 11.72
+      },
+      {
+        "name": "First Class staterooms (fwd)",
+        "deck": "saloon",
+        "use": "first",
+        "x0": 44.0,
+        "x1": 56.0,
+        "y0": -7.2,
+        "y1": 7.2,
+        "ceiling_m": 14.32
+      },
+      {
+        "name": "Funnel casing & uptakes (fwd)",
+        "deck": "saloon",
+        "use": "machinery",
+        "x0": 33.0,
+        "x1": 36.5,
+        "y0": -4.0,
+        "y1": 4.0,
+        "ceiling_m": 14.32
+      },
+      {
+        "name": "First Class music room",
+        "deck": "saloon",
+        "use": "first",
+        "x0": 11.0,
+        "x1": 27.0,
+        "y0": -5.2,
+        "y1": 5.2,
+        "ceiling_m": 14.32
+      },
+      {
+        "name": "Funnel casing & uptakes (aft)",
+        "deck": "saloon",
+        "use": "machinery",
+        "x0": 1.5,
+        "x1": 6.5,
+        "y0": -4.0,
+        "y1": 4.0,
+        "ceiling_m": 14.32
+      },
+      {
+        "name": "Entrance Hall & Grand Staircase",
+        "deck": "saloon",
+        "use": "first",
+        "x0": -9.0,
+        "x1": 1.0,
+        "y0": -5.4,
+        "y1": 5.4,
+        "ceiling_m": 14.32
+      },
+      {
+        "name": "First Class Dining Saloon",
+        "deck": "saloon",
+        "use": "first",
+        "x0": -44.0,
+        "x1": -9.5,
+        "y0": -7.4,
+        "y1": 7.4,
+        "ceiling_m": 14.32
+      },
+      {
+        "name": "Galley, pantry & bakery",
+        "deck": "saloon",
+        "use": "crew",
+        "x0": -58.0,
+        "x1": -45.5,
+        "y0": -7.6,
+        "y1": 7.6,
+        "ceiling_m": 14.32
+      },
+      {
+        "name": "Second Class dining saloon",
+        "deck": "saloon",
+        "use": "second",
+        "x0": -74.0,
+        "x1": -58.0,
+        "y0": -6.4,
+        "y1": 6.4,
+        "ceiling_m": 14.32
+      },
+      {
+        "name": "First Class staterooms (promenade)",
+        "deck": "prom",
+        "use": "first",
+        "x0": 38.0,
+        "x1": 50.0,
+        "y0": -7.0,
+        "y1": 7.0,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "Funnel casing (fwd) & fidley",
+        "deck": "prom",
+        "use": "machinery",
+        "x0": 33.0,
+        "x1": 36.5,
+        "y0": -4.0,
+        "y1": 4.0,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "First Class Library",
+        "deck": "prom",
+        "use": "first",
+        "x0": 11.0,
+        "x1": 27.0,
+        "y0": -5.2,
+        "y1": 5.2,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "Funnel casing (aft) & fidley",
+        "deck": "prom",
+        "use": "machinery",
+        "x0": 1.5,
+        "x1": 6.5,
+        "y0": -4.0,
+        "y1": 4.0,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "Staircase landing, vestibule & bar",
+        "deck": "prom",
+        "use": "first",
+        "x0": -9.0,
+        "x1": 1.0,
+        "y0": -5.0,
+        "y1": 5.0,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "First Class Smoking Saloon",
+        "deck": "prom",
+        "use": "first",
+        "x0": -24.0,
+        "x1": -9.5,
+        "y0": -7.2,
+        "y1": 7.2,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "Barber, lavatories, bathrooms",
+        "deck": "prom",
+        "use": "first",
+        "x0": -38.0,
+        "x1": -24.0,
+        "y0": -7.0,
+        "y1": 7.0,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "Second Class smoking & library",
+        "deck": "prom",
+        "use": "second",
+        "x0": -49.0,
+        "x1": -47.0,
+        "y0": -6.0,
+        "y1": 6.0,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "Second Class promenade / boat stowage",
+        "deck": "prom",
+        "use": "second",
+        "x0": -70.0,
+        "x1": -50.0,
+        "y0": -5.0,
+        "y1": 5.0,
+        "ceiling_m": 17.12
+      },
+      {
+        "name": "Officers' quarters & captain's cabin",
+        "deck": "boat",
+        "use": "crew",
+        "x0": 12.0,
+        "x1": 20.0,
+        "y0": -5.6,
+        "y1": 5.6,
+        "ceiling_m": 18.52
+      },
+      {
+        "name": "Chart house & wireless-room store",
+        "deck": "boat",
+        "use": "crew",
+        "x0": 20.5,
+        "x1": 24.0,
+        "y0": -4.4,
+        "y1": 4.4,
+        "ceiling_m": 18.52
+      },
+      {
+        "name": "Engine skylight & fidley",
+        "deck": "boat",
+        "use": "machinery",
+        "x0": -12.0,
+        "x1": -6.5,
+        "y0": -4.0,
+        "y1": 4.0,
+        "ceiling_m": 18.52
+      },
+      {
+        "name": "Boat stowage",
+        "deck": "boat",
+        "use": "machinery",
+        "x0": -14.0,
+        "x1": -13.0,
+        "y0": -3.0,
+        "y1": 3.0,
+        "ceiling_m": 18.52
+      },
+      {
+        "name": "Wheelhouse",
+        "deck": "bridge",
+        "use": "crew",
+        "x0": 34.5,
+        "x1": 40.5,
+        "y0": -5.2,
+        "y1": 5.2,
+        "ceiling_m": 21.05
+      }
+    ],
+    "doors": [
+      {
+        "deck": "main",
+        "x": 13.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 13.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 16.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 16.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 19.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 19.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 22.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 22.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 25.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 25.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 28.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": 28.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -4.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -4.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -7.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -7.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -10.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -10.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -13.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -13.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -16.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -16.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -19.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -19.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -22.0,
+        "y": 8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "main",
+        "x": -22.0,
+        "y": -8.62,
+        "w": 0.86,
+        "kind": "cabin"
+      },
+      {
+        "deck": "saloon",
+        "x": 6.0,
+        "y": 5.42,
+        "w": 1.6,
+        "kind": "double"
+      },
+      {
+        "deck": "saloon",
+        "x": 2.0,
+        "y": -5.42,
+        "w": 1.6,
+        "kind": "double"
+      },
+      {
+        "deck": "saloon",
+        "x": -30.0,
+        "y": 7.42,
+        "w": 1.2,
+        "kind": "double"
+      },
+      {
+        "deck": "prom",
+        "x": 10.0,
+        "y": 5.22,
+        "w": 1.4,
+        "kind": "double"
+      },
+      {
+        "deck": "prom",
+        "x": -12.0,
+        "y": 7.22,
+        "w": 1.4,
+        "kind": "double"
+      },
+      {
+        "deck": "prom",
+        "x": 2.0,
+        "y": -5.02,
+        "w": 1.4,
+        "kind": "double"
+      }
+    ],
+    "stairs": [
+      {
+        "deck_from": "main",
+        "deck_to": "saloon",
+        "x": -1.0,
+        "y": 0.0,
+        "w": 6.4,
+        "run": 9.0,
+        "name": "Grand Staircase, main flight"
+      },
+      {
+        "deck_from": "saloon",
+        "deck_to": "prom",
+        "x": 2.5,
+        "y": 0.0,
+        "w": 6.4,
+        "run": 8.4,
+        "name": "Grand Staircase, upper flight"
+      },
+      {
+        "deck_from": "lower",
+        "deck_to": "main",
+        "x": 37.0,
+        "y": 6.4,
+        "w": 2.2,
+        "run": 7.0,
+        "name": "Third class stair, forward"
+      },
+      {
+        "deck_from": "lower",
+        "deck_to": "main",
+        "x": -60.0,
+        "y": 5.8,
+        "w": 2.2,
+        "run": 7.0,
+        "name": "Third class stair, aft"
+      },
+      {
+        "deck_from": "main",
+        "deck_to": "saloon",
+        "x": -50.0,
+        "y": 6.2,
+        "w": 1.6,
+        "run": 6.4,
+        "name": "Service stair, galley"
+      },
+      {
+        "deck_from": "saloon",
+        "deck_to": "prom",
+        "x": -36.0,
+        "y": 6.4,
+        "w": 1.4,
+        "run": 6.0,
+        "name": "Service stair, smoking room"
+      },
+      {
+        "deck_from": "main",
+        "deck_to": "saloon",
+        "x": -66.0,
+        "y": 5.6,
+        "w": 1.6,
+        "run": 6.4,
+        "name": "Second class stair"
+      },
+      {
+        "deck_from": "prom",
+        "deck_to": "boat",
+        "x": 20.0,
+        "y": 4.6,
+        "w": 1.3,
+        "run": 6.0,
+        "name": "Officers' ladder"
+      },
+      {
+        "deck_from": "boat",
+        "deck_to": "bridge",
+        "x": 36.0,
+        "y": 4.2,
+        "w": 1.3,
+        "run": 5.4,
+        "name": "Bridge ladder"
+      }
+    ],
+    "bulkhead_stations_m": [
+      70.0,
+      58.0,
+      46.0,
+      34.0,
+      30.0,
+      18.0,
+      6.0,
+      -6.0,
+      -18.0,
+      -27.0,
+      -40.0,
+      -52.0,
+      -64.0,
+      -74.0
+    ]
+  },
+  "scale": {
+    "metres_per_stud": 0.28,
+    "studs_per_metre": 3.5714,
+    "loa_studs": 592.9,
+    "beam_studs": 65.7
+  },
+  "roblox": {
+    "modules": "exports/roblox_modules.json",
+    "scripts": [
+      "AurelianShipController.server.lua",
+      "Aurelian_Telegraph.server.lua",
+      "Aurelian_EngineAnim.server.lua",
+      "Aurelian_DoorsAndLighting.server.lua",
+      "Aurelian_SmokeAndWake.client.lua"
+    ],
+    "attributes": [
+      "Throttle",
+      "ShaftRPM",
+      "ShaftAngle",
+      "SpeedKn",
+      "Heading",
+      "RudderAngle",
+      "Telegraph",
+      "BoilerPressure",
+      "EngineIHP",
+      "SmokeIntensity",
+      "MooringsClear",
+      "EngineRunning",
+      "LightsOut"
+    ]
+  },
+  "interfaces": {
+    "small_boats": "interfaces/boats_spec.json",
+    "exports": "exports/roblox_modules.json"
+  }
+}

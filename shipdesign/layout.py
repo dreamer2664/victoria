@@ -200,9 +200,28 @@ def _hull():
     return HULL
 
 
+def _f(v, default=0.0):
+    """Coerce to a plain float.
+
+    Hull.half_beam_at can return a zero-dimensional numpy array for some
+    stations.  Those leaked into room polygons and broke matplotlib with
+    "inhomogeneous shape" - and, worse, would silently produce a room 0.57 m
+    wide instead of 6.57 m.  Everything that leaves this module is a float.
+    """
+    try:
+        if hasattr(v, "item"):
+            v = v.item()
+        f = float(v)
+    except (TypeError, ValueError):
+        return default
+    if f != f:            # NaN
+        return default
+    return f
+
+
 def hull_half_beam(x, z):
     """Local half breadth of the shell at (x, z)."""
-    return _hull().half_beam_at(x, z)
+    return _f(_hull().half_beam_at(x, z))
 
 
 def room_ceiling_z(deck):
@@ -231,12 +250,12 @@ def hull_side_halfbeam(x, z):
     b = hull_half_beam(x, z)
     if b > 0.6:
         return b
-    zdeck = _hull().deck_z(x)
+    zdeck = _f(_hull().deck_z(x))
     b = hull_half_beam(x, zdeck - 0.05)
     if b > 0.6:
         # superstructure side: a straight continuation with a small tumblehome
         return max(b - 0.42 - 0.05 * (z - zdeck), 0.6)
-    return b
+    return max(b, 0.6)
 
 
 def room_polygon(r, inset=0.10):

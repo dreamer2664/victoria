@@ -122,14 +122,19 @@ def shoot(path, loc, look_at, lens=50, res=(1600, 900), samples=48,
     print("RENDERED", path)
 
 
+# The brief requires bow, stern, BOTH sides, from above and from below the
+# waterline.  s = starboard (-Y), p = port (+Y).
 EXTERIOR_VIEWS = [
-    ("three_quarter_bow", (140, -120, 26), (0, 0, 8), 55),
-    ("beam", (0, -190, 14), (0, 0, 8), 55),
-    ("three_quarter_stern", (-125, 105, 22), (0, 0, 8), 55),
-    ("bow_on", (168, -22, 14), (56, 0, 8), 65),
-    ("stern_on", (-160, 26, 16), (-62, 0, 8), 65),
-    ("high_above", (60, -70, 150), (0, 0, 6), 45),
-    ("below", (70, -80, -30), (0, 0, 4), 50),
+    ("three_quarter_bow_stbd", (140, -120, 26), (10, 0, 8), 55),
+    ("three_quarter_bow_port", (140, 120, 26), (10, 0, 8), 55),
+    ("beam_starboard", (0, -190, 13), (0, 0, 9), 55),
+    ("beam_port", (0, 190, 13), (0, 0, 9), 55),
+    ("three_quarter_stern_stbd", (-132, -112, 24), (-20, 0, 8), 55),
+    ("three_quarter_stern_port", (-132, 112, 24), (-20, 0, 8), 55),
+    ("bow_on", (178, -18, 15), (56, 0, 8), 62),
+    ("stern_on", (-172, 22, 17), (-62, 0, 8), 62),
+    ("high_above", (48, -58, 168), (0, 0, 6), 45),
+    ("below_waterline", (62, -74, -26), (0, 0, 4), 50),
 ]
 
 
@@ -149,6 +154,14 @@ if __name__ == "__main__":
     if preset == "exterior":
         for i, (name, loc, la, lens) in enumerate(EXTERIOR_VIEWS):
             if name.startswith("below"):
+                # a below-waterline view needs the sea plane out of the way
+                sea = bpy.data.objects.get("Sea")
+                if sea:
+                    sea.hide_render = True
+                shoot(os.path.join(outdir, name + ".png"), loc, la, lens,
+                      res, samples)
+                if sea:
+                    sea.hide_render = False
                 continue
             shoot(os.path.join(outdir, name + ".png"), loc, la, lens, res, samples)
     elif preset == "quick":
