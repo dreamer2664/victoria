@@ -94,11 +94,14 @@ bathtub in the from-above render.
 
 ## 6. Finish
 
-Varnished mahogany outside and in — the finish of the reference model
-(SLR1818) and the usual treatment of a boat's boat in a smart ship. The
-Service painted its boats ship's-side grey from the 1900s, but varnish is the
-better-documented finish for the 1880s and it shows the clinker laps to
-advantage, which is the whole point of building them as geometry.
+Varnished mahogany **outside**, with the frames left bright and the
+inside of the planking painted a pale buff — a common split on a working
+boat's boat, where the inside takes the wear from boots, oars and bilge water
+and the outside is kept bright because that is what the ship's company sees.
+The glazing and varnish of the exterior is the finish of the reference model
+(SLR1818). The Service painted its boats ship's-side grey from the 1900s, but
+varnish is the better-documented finish for the 1880s and it shows the clinker
+laps to advantage, which is the whole point of building them as geometry.
 
 ## 7. Rebuild
 
