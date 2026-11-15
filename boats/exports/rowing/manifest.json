@@ -1,0 +1,752 @@
+{
+  "boat_id": "rowing_cutter_25ft",
+  "units": "metres",
+  "roblox_stud_per_m": 3.571428571428571,
+  "source": "boats/blend/boat_b_rowing_cutter.blend",
+  "parts": [
+    {
+      "name": "Fittings",
+      "role": "gear",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.6751,
+        -0.8582,
+        -0.297
+      ],
+      "bounds_max_m": [
+        3.6199,
+        1.0981,
+        0.7365
+      ],
+      "size_m": [
+        7.2949,
+        1.9563,
+        1.0335
+      ],
+      "size_studs": [
+        26.053,
+        6.987,
+        3.691
+      ],
+      "vertices": 1034,
+      "triangles": 1916
+    },
+    {
+      "name": "Floorboards",
+      "role": "furniture",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -1.7726,
+        -0.3579,
+        -0.3326
+      ],
+      "bounds_max_m": [
+        1.7726,
+        0.3579,
+        -0.2748
+      ],
+      "size_m": [
+        3.5452,
+        0.7158,
+        0.0578
+      ],
+      "size_studs": [
+        12.661,
+        2.556,
+        0.207
+      ],
+      "vertices": 1040,
+      "triangles": 2060
+    },
+    {
+      "name": "Frames",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.5986,
+        -0.9313,
+        -0.3624
+      ],
+      "bounds_max_m": [
+        3.595,
+        0.9313,
+        0.8076
+      ],
+      "size_m": [
+        7.1936,
+        1.8627,
+        1.17
+      ],
+      "size_studs": [
+        25.692,
+        6.652,
+        4.179
+      ],
+      "vertices": 5712,
+      "triangles": 11016
+    },
+    {
+      "name": "Keel_Stem_Sternpost",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.8097,
+        -0.4558,
+        -0.4727
+      ],
+      "bounds_max_m": [
+        3.81,
+        0.4558,
+        0.93
+      ],
+      "size_m": [
+        7.6197,
+        0.9117,
+        1.4027
+      ],
+      "size_studs": [
+        27.213,
+        3.256,
+        5.01
+      ],
+      "vertices": 1322,
+      "triangles": 2543
+    },
+    {
+      "name": "Keelson_Gunwale",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.7643,
+        -0.9905,
+        -0.3546
+      ],
+      "bounds_max_m": [
+        3.7636,
+        0.9905,
+        0.8914
+      ],
+      "size_m": [
+        7.5278,
+        1.981,
+        1.246
+      ],
+      "size_studs": [
+        26.885,
+        7.075,
+        4.45
+      ],
+      "vertices": 1400,
+      "triangles": 2784
+    },
+    {
+      "name": "Mast_Clamp",
+      "role": "furniture",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        2.4727,
+        -0.5467,
+        0.5661
+      ],
+      "bounds_max_m": [
+        2.6327,
+        0.5467,
+        0.6361
+      ],
+      "size_m": [
+        0.16,
+        1.0935,
+        0.07
+      ],
+      "size_studs": [
+        0.571,
+        3.905,
+        0.25
+      ],
+      "vertices": 24,
+      "triangles": 48
+    },
+    {
+      "name": "Oar_P1",
+      "role": "moving",
+      "origin_m": [
+        -1.35,
+        0.34,
+        0.5866
+      ],
+      "bounds_min_m": [
+        -2.45,
+        0.297,
+        0.5091
+      ],
+      "bounds_max_m": [
+        1.21,
+        0.383,
+        0.6641
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_P2",
+      "role": "moving",
+      "origin_m": [
+        -1.35,
+        0.425,
+        0.5778
+      ],
+      "bounds_min_m": [
+        -2.45,
+        0.382,
+        0.5003
+      ],
+      "bounds_max_m": [
+        1.21,
+        0.468,
+        0.6553
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_P3",
+      "role": "moving",
+      "origin_m": [
+        -1.25,
+        0.51,
+        0.5375
+      ],
+      "bounds_min_m": [
+        -2.35,
+        0.467,
+        0.46
+      ],
+      "bounds_max_m": [
+        1.31,
+        0.553,
+        0.615
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_P4",
+      "role": "moving",
+      "origin_m": [
+        -1.25,
+        0.595,
+        0.5503
+      ],
+      "bounds_min_m": [
+        -2.35,
+        0.552,
+        0.4728
+      ],
+      "bounds_max_m": [
+        1.31,
+        0.638,
+        0.6278
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_P5",
+      "role": "moving",
+      "origin_m": [
+        -1.15,
+        0.68,
+        0.5253
+      ],
+      "bounds_min_m": [
+        -2.25,
+        0.637,
+        0.4478
+      ],
+      "bounds_max_m": [
+        1.41,
+        0.723,
+        0.6028
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_S1",
+      "role": "moving",
+      "origin_m": [
+        -1.35,
+        -0.425,
+        0.6086
+      ],
+      "bounds_min_m": [
+        -2.45,
+        -0.468,
+        0.5311
+      ],
+      "bounds_max_m": [
+        1.21,
+        -0.382,
+        0.6861
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_S2",
+      "role": "moving",
+      "origin_m": [
+        -1.25,
+        -0.51,
+        0.5558
+      ],
+      "bounds_min_m": [
+        -2.35,
+        -0.553,
+        0.4783
+      ],
+      "bounds_max_m": [
+        1.31,
+        -0.467,
+        0.6333
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_S3",
+      "role": "moving",
+      "origin_m": [
+        -1.25,
+        -0.595,
+        0.5595
+      ],
+      "bounds_min_m": [
+        -2.35,
+        -0.638,
+        0.482
+      ],
+      "bounds_max_m": [
+        1.31,
+        -0.552,
+        0.637
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_S4",
+      "role": "moving",
+      "origin_m": [
+        -1.15,
+        -0.68,
+        0.5283
+      ],
+      "bounds_min_m": [
+        -2.25,
+        -0.723,
+        0.4508
+      ],
+      "bounds_max_m": [
+        1.41,
+        -0.637,
+        0.6058
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Oar_S5",
+      "role": "moving",
+      "origin_m": [
+        -1.15,
+        -0.765,
+        0.5473
+      ],
+      "bounds_min_m": [
+        -2.25,
+        -0.808,
+        0.4698
+      ],
+      "bounds_max_m": [
+        1.41,
+        -0.722,
+        0.6248
+      ],
+      "size_m": [
+        3.66,
+        0.086,
+        0.155
+      ],
+      "size_studs": [
+        13.071,
+        0.307,
+        0.554
+      ],
+      "vertices": 320,
+      "triangles": 590
+    },
+    {
+      "name": "Planking_Clinker",
+      "role": "hull",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.8031,
+        -0.9542,
+        -0.405
+      ],
+      "bounds_max_m": [
+        3.7955,
+        0.9542,
+        0.8733
+      ],
+      "size_m": [
+        7.5987,
+        1.9084,
+        1.2783
+      ],
+      "size_studs": [
+        27.138,
+        6.816,
+        4.565
+      ],
+      "vertices": 14079,
+      "triangles": 27896
+    },
+    {
+      "name": "Quarter_Knees",
+      "role": "furniture",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.7658,
+        -0.4288,
+        0.4043
+      ],
+      "bounds_max_m": [
+        -3.5807,
+        0.4288,
+        0.7368
+      ],
+      "size_m": [
+        0.1851,
+        0.8576,
+        0.3325
+      ],
+      "size_studs": [
+        0.661,
+        3.063,
+        1.187
+      ],
+      "vertices": 96,
+      "triangles": 176
+    },
+    {
+      "name": "Rowlocks",
+      "role": "gear",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -1.3765,
+        -0.9817,
+        0.6606
+      ],
+      "bounds_max_m": [
+        2.0623,
+        0.9817,
+        0.8765
+      ],
+      "size_m": [
+        3.4387,
+        1.9634,
+        0.2158
+      ],
+      "size_studs": [
+        12.281,
+        7.012,
+        0.771
+      ],
+      "vertices": 1020,
+      "triangles": 1920
+    },
+    {
+      "name": "Rudder",
+      "role": "moving",
+      "origin_m": [
+        -3.8196,
+        0.0,
+        0.6917
+      ],
+      "bounds_min_m": [
+        -4.1054,
+        -0.045,
+        -0.3583
+      ],
+      "bounds_max_m": [
+        -2.7686,
+        0.033,
+        0.7952
+      ],
+      "size_m": [
+        1.3367,
+        0.078,
+        1.1535
+      ],
+      "size_studs": [
+        4.774,
+        0.279,
+        4.12
+      ],
+      "vertices": 208,
+      "triangles": 354
+    },
+    {
+      "name": "Structure_Details",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.4213,
+        -0.9054,
+        -0.225
+      ],
+      "bounds_max_m": [
+        3.4161,
+        0.9054,
+        0.7818
+      ],
+      "size_m": [
+        6.8374,
+        1.8107,
+        1.0068
+      ],
+      "size_studs": [
+        24.419,
+        6.467,
+        3.596
+      ],
+      "vertices": 548,
+      "triangles": 1068
+    },
+    {
+      "name": "Thwart_Knees",
+      "role": "furniture",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -1.3535,
+        -0.8894,
+        0.3253
+      ],
+      "bounds_max_m": [
+        2.0393,
+        0.8894,
+        0.5866
+      ],
+      "size_m": [
+        3.3928,
+        1.7788,
+        0.2614
+      ],
+      "size_studs": [
+        12.117,
+        6.353,
+        0.933
+      ],
+      "vertices": 80,
+      "triangles": 120
+    },
+    {
+      "name": "Thwarts_Benches",
+      "role": "furniture",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.2361,
+        -0.9219,
+        0.2707
+      ],
+      "bounds_max_m": [
+        2.1443,
+        0.9219,
+        0.5866
+      ],
+      "size_m": [
+        5.3804,
+        1.8439,
+        0.3159
+      ],
+      "size_studs": [
+        19.216,
+        6.585,
+        1.128
+      ],
+      "vertices": 464,
+      "triangles": 876
+    },
+    {
+      "name": "Transom",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.8539,
+        -0.4112,
+        -0.1083
+      ],
+      "bounds_max_m": [
+        -3.6267,
+        0.4112,
+        0.7301
+      ],
+      "size_m": [
+        0.2272,
+        0.8225,
+        0.8384
+      ],
+      "size_studs": [
+        0.812,
+        2.937,
+        2.994
+      ],
+      "vertices": 680,
+      "triangles": 1272
+    }
+  ]
+}

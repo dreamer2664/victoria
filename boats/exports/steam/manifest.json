@@ -1,0 +1,628 @@
+{
+  "boat_id": "steam_cutter_1888",
+  "units": "metres",
+  "roblox_stud_per_m": 3.571428571428571,
+  "source": "boats/blend/boat_a_steam_cutter.blend",
+  "parts": [
+    {
+      "name": "Boiler",
+      "role": "machinery",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        0.058,
+        -0.3762,
+        -0.3445
+      ],
+      "bounds_max_m": [
+        0.9472,
+        0.3762,
+        0.8533
+      ],
+      "size_m": [
+        0.8892,
+        0.7524,
+        1.1978
+      ],
+      "size_studs": [
+        3.176,
+        2.687,
+        4.278
+      ],
+      "vertices": 3621,
+      "triangles": 6272
+    },
+    {
+      "name": "Boiler_Internals",
+      "role": "machinery",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        0.16,
+        -0.34,
+        -0.2245
+      ],
+      "bounds_max_m": [
+        0.84,
+        0.34,
+        0.5955
+      ],
+      "size_m": [
+        0.68,
+        0.68,
+        0.82
+      ],
+      "size_studs": [
+        2.429,
+        2.429,
+        2.929
+      ],
+      "vertices": 380,
+      "triangles": 632
+    },
+    {
+      "name": "Canopy_Cover",
+      "role": "deck",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -1.58,
+        -0.9716,
+        0.7087
+      ],
+      "bounds_max_m": [
+        1.38,
+        0.9716,
+        1.0159
+      ],
+      "size_m": [
+        2.96,
+        1.9432,
+        0.3072
+      ],
+      "size_studs": [
+        10.571,
+        6.94,
+        1.097
+      ],
+      "vertices": 371,
+      "triangles": 552
+    },
+    {
+      "name": "Canopy_Frame",
+      "role": "deck",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -1.535,
+        -0.9851,
+        0.6352
+      ],
+      "bounds_max_m": [
+        1.335,
+        0.9851,
+        1.0169
+      ],
+      "size_m": [
+        2.87,
+        1.9702,
+        0.3817
+      ],
+      "size_studs": [
+        10.25,
+        7.037,
+        1.363
+      ],
+      "vertices": 1128,
+      "triangles": 2168
+    },
+    {
+      "name": "Coamings",
+      "role": "deck",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -1.5875,
+        -1.0464,
+        0.5481
+      ],
+      "bounds_max_m": [
+        1.3875,
+        1.0464,
+        0.7552
+      ],
+      "size_m": [
+        2.975,
+        2.0928,
+        0.2071
+      ],
+      "size_studs": [
+        10.625,
+        7.474,
+        0.74
+      ],
+      "vertices": 112,
+      "triangles": 200
+    },
+    {
+      "name": "Decks",
+      "role": "deck",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.62,
+        -1.0503,
+        0.516
+      ],
+      "bounds_max_m": [
+        3.8,
+        1.0503,
+        0.7918
+      ],
+      "size_m": [
+        7.42,
+        2.1006,
+        0.2757
+      ],
+      "size_studs": [
+        26.5,
+        7.502,
+        0.985
+      ],
+      "vertices": 500,
+      "triangles": 884
+    },
+    {
+      "name": "Engine",
+      "role": "machinery",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -1.12,
+        -0.245,
+        -0.2682
+      ],
+      "bounds_max_m": [
+        -0.44,
+        0.3347,
+        0.585
+      ],
+      "size_m": [
+        0.68,
+        0.5797,
+        0.8532
+      ],
+      "size_studs": [
+        2.429,
+        2.07,
+        3.047
+      ],
+      "vertices": 1010,
+      "triangles": 1784
+    },
+    {
+      "name": "Engine_Bearers_Floors",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -1.55,
+        -0.5872,
+        -0.4584
+      ],
+      "bounds_max_m": [
+        1.35,
+        0.5872,
+        -0.2581
+      ],
+      "size_m": [
+        2.9,
+        1.1744,
+        0.2003
+      ],
+      "size_studs": [
+        10.357,
+        4.194,
+        0.715
+      ],
+      "vertices": 320,
+      "triangles": 576
+    },
+    {
+      "name": "Frames",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.6134,
+        -1.0404,
+        -0.4962
+      ],
+      "bounds_max_m": [
+        3.6065,
+        1.0404,
+        0.8323
+      ],
+      "size_m": [
+        7.22,
+        2.0808,
+        1.3284
+      ],
+      "size_studs": [
+        25.786,
+        7.431,
+        4.744
+      ],
+      "vertices": 5376,
+      "triangles": 10368
+    },
+    {
+      "name": "Funnel",
+      "role": "machinery",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        0.412,
+        -0.1881,
+        0.6155
+      ],
+      "bounds_max_m": [
+        0.6689,
+        0.1881,
+        1.6341
+      ],
+      "size_m": [
+        0.2569,
+        0.3762,
+        1.0186
+      ],
+      "size_studs": [
+        0.918,
+        1.344,
+        3.638
+      ],
+      "vertices": 360,
+      "triangles": 712
+    },
+    {
+      "name": "Gear_Nav_Safety",
+      "role": "gear",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.6106,
+        -1.1312,
+        -0.4409
+      ],
+      "bounds_max_m": [
+        3.5935,
+        1.1312,
+        1.348
+      ],
+      "size_m": [
+        7.2041,
+        2.2624,
+        1.7888
+      ],
+      "size_studs": [
+        25.729,
+        8.08,
+        6.389
+      ],
+      "vertices": 1754,
+      "triangles": 3248
+    },
+    {
+      "name": "Inner_Diagonal_Skin",
+      "role": "hull",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -2.5946,
+        -1.0418,
+        -0.4734
+      ],
+      "bounds_max_m": [
+        3.6432,
+        1.0418,
+        0.8675
+      ],
+      "size_m": [
+        6.2377,
+        2.0836,
+        1.3409
+      ],
+      "size_studs": [
+        22.278,
+        7.441,
+        4.789
+      ],
+      "vertices": 10955,
+      "triangles": 21240
+    },
+    {
+      "name": "Keel_Stem_Frames_Gunwale",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.8097,
+        -1.1118,
+        -0.6172
+      ],
+      "bounds_max_m": [
+        3.81,
+        1.1118,
+        0.963
+      ],
+      "size_m": [
+        7.6197,
+        2.2236,
+        1.5802
+      ],
+      "size_studs": [
+        27.213,
+        7.941,
+        5.644
+      ],
+      "vertices": 3142,
+      "triangles": 6139
+    },
+    {
+      "name": "Pipework_Fittings",
+      "role": "machinery",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -2.225,
+        -0.39,
+        -0.4744
+      ],
+      "bounds_max_m": [
+        1.85,
+        0.4243,
+        0.9364
+      ],
+      "size_m": [
+        4.075,
+        0.8143,
+        1.4108
+      ],
+      "size_studs": [
+        14.554,
+        2.908,
+        5.039
+      ],
+      "vertices": 934,
+      "triangles": 1748
+    },
+    {
+      "name": "Planking_Carvel",
+      "role": "hull",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.7871,
+        -1.0668,
+        -0.5293
+      ],
+      "bounds_max_m": [
+        3.778,
+        1.0668,
+        0.9021
+      ],
+      "size_m": [
+        7.5651,
+        2.1335,
+        1.4314
+      ],
+      "size_studs": [
+        27.018,
+        7.62,
+        5.112
+      ],
+      "vertices": 11856,
+      "triangles": 23608
+    },
+    {
+      "name": "Propeller",
+      "role": "moving",
+      "origin_m": [
+        -3.02,
+        0.0,
+        -0.6
+      ],
+      "bounds_min_m": [
+        -3.0663,
+        -0.1161,
+        -0.8093
+      ],
+      "bounds_max_m": [
+        -2.958,
+        0.1161,
+        -0.3907
+      ],
+      "size_m": [
+        0.1083,
+        0.2322,
+        0.4186
+      ],
+      "size_studs": [
+        0.387,
+        0.829,
+        1.495
+      ],
+      "vertices": 126,
+      "triangles": 200
+    },
+    {
+      "name": "Rudder",
+      "role": "moving",
+      "origin_m": [
+        -3.62,
+        0.0,
+        0.6546
+      ],
+      "bounds_min_m": [
+        -3.829,
+        -0.084,
+        -0.3774
+      ],
+      "bounds_max_m": [
+        -2.5674,
+        0.036,
+        1.3092
+      ],
+      "size_m": [
+        1.2616,
+        0.12,
+        1.6866
+      ],
+      "size_studs": [
+        4.506,
+        0.428,
+        6.024
+      ],
+      "vertices": 172,
+      "triangles": 290
+    },
+    {
+      "name": "Seats",
+      "role": "furniture",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -2.7,
+        -0.9266,
+        0.3844
+      ],
+      "bounds_max_m": [
+        2.43,
+        0.9266,
+        0.6821
+      ],
+      "size_m": [
+        5.13,
+        1.8533,
+        0.2977
+      ],
+      "size_studs": [
+        18.321,
+        6.619,
+        1.063
+      ],
+      "vertices": 40,
+      "triangles": 60
+    },
+    {
+      "name": "Shafting",
+      "role": "machinery",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.22,
+        -0.0504,
+        -0.6362
+      ],
+      "bounds_max_m": [
+        -1.1132,
+        0.0504,
+        -0.0026
+      ],
+      "size_m": [
+        2.1068,
+        0.1008,
+        0.6336
+      ],
+      "size_studs": [
+        7.524,
+        0.36,
+        2.263
+      ],
+      "vertices": 212,
+      "triangles": 392
+    },
+    {
+      "name": "Transom",
+      "role": "structure",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -3.8539,
+        -0.6215,
+        -0.0894
+      ],
+      "bounds_max_m": [
+        -3.5856,
+        0.6215,
+        0.751
+      ],
+      "size_m": [
+        0.2683,
+        1.243,
+        0.8404
+      ],
+      "size_studs": [
+        0.958,
+        4.439,
+        3.001
+      ],
+      "vertices": 680,
+      "triangles": 1272
+    }
+  ]
+}

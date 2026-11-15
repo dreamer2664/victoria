@@ -1,0 +1,9 @@
+# Blender backups
+*.blend1
+*.blend2
+# scratch
+__pycache__/
+*.pyc
+.DS_Store
+# render scratch
+boats/renders/_wip/

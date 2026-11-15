@@ -1,0 +1,567 @@
+"""
+build_steam_cutter.py -- BOAT A, the 25 ft steam cutter of 1888.
+
+Reconstruction of RMG NPC9572 'Proposed 25ft Steam Cutter' (Dangerfield Lith.,
+18 January 1888, drawn at 1:16, showing inboard profile, plan and midship
+section) developed into a complete, operable steamboat: double-skin hull,
+boiler, engine, shafting, screw, rudder, canopy, seating and all gear.
+
+Run headless:
+    blender -b --python build_steam_cutter.py -- [--quick] [--no-render]
+"""
+
+import math
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+import bpy
+import numpy as np
+from mathutils import Matrix, Vector
+
+from boatgen import bl, machinery, parts, specs
+from boatgen.geom import MeshBuilder, cyl, lerp, sphere, torus, unit
+from boatgen.hull import (
+    MAT,
+    build_carvel_planking,
+    build_diagonal_skin,
+    build_frames,
+    build_gunwale,
+    build_keel,
+    build_keelson,
+    build_stem,
+    build_sternpost,
+    build_transom,
+    half_breadth_at,
+    solid_between_sections,
+)
+
+QUICK = "--quick" in sys.argv
+NO_RENDER = "--no-render" in sys.argv
+ROOT = "/home/user/victoria"
+HULL = specs.STEM_CUTTER
+
+# --------------------------------------------------------------------------
+# installation layout (all measured from the hull, so it follows the design)
+# --------------------------------------------------------------------------
+X_BOILER = 0.50
+X_ENGINE = -0.78
+X_BUNKER = 1.62
+X_SCREW = -3.42
+Z_SHAFT_CRANK = None      # computed below
+Y_BEARER = 0.42
+DECK_DROP = 0.115
+
+bl.reset_scene()
+mats = bl.build_materials()
+mlist = bl.mats_list(mats)
+col_hull = bl.collection("Hull")
+col_structure = bl.collection("Structure")
+col_deck = bl.collection("Deck_Canopy")
+col_mach = bl.collection("Machinery")
+col_furn = bl.collection("Furniture")
+col_gear = bl.collection("Gear")
+col_moving = bl.collection("MovingParts")
+
+
+def make(builder, name, collection, mirror=False, smooth=True):
+    mb = MeshBuilder(name)
+    builder(mb)
+    if mirror:
+        mb.mirror_y()
+    ob = bl.obj_from_builder(mb, name, mlist, collection, smooth=smooth)
+    print(f"  [{name}] verts={len(ob.data.vertices)} faces={len(ob.data.polygons)}")
+    return ob
+
+
+def origin_to(ob, pivot):
+    pivot = Vector(pivot)
+    ob.data.transform(Matrix.Translation(-pivot))
+    ob.location = pivot
+
+
+def floor_z(x):
+    """Inside bottom of the hull at a given x."""
+    xi = HULL.xi_of(x)
+    return HULL.inner(xi, 0.02, 0.020)[2]
+
+
+def sheer_at(x):
+    return HULL.sheer_z(HULL.xi_of(x))
+
+
+# --------------------------------------------------------------------------
+# 1. hull: carvel outer skin over a double-diagonal inner skin
+# --------------------------------------------------------------------------
+N_STRAKES = 13
+carvel_mats = [MAT["paint_white"] if k >= N_STRAKES - 2 else
+               (MAT["paint_hull"] if k >= 2 else MAT["red_lead"]) for k in range(N_STRAKES)]
+make(lambda mb: build_carvel_planking(mb, HULL, n_strakes=N_STRAKES, thickness=0.020, xi0=0.004,
+                                      xi1=0.997, n_xi=76, mat_out=carvel_mats,
+                                      mat_in=MAT["wood_timber"], seam=0.0022),
+     "Planking_Carvel", col_hull, mirror=True)
+
+make(lambda mb: (build_diagonal_skin(mb, HULL, n_strips=15, width=0.062, slope=1.9, direction=1,
+                                     inset=0.024, thickness=0.011, xi0=0.02, xi1=0.98,
+                                     mat=MAT["wood_timber"]),
+                 build_diagonal_skin(mb, HULL, n_strips=15, width=0.062, slope=1.9, direction=-1,
+                                     inset=0.038, thickness=0.011, xi0=0.02, xi1=0.98,
+                                     mat=MAT["wood_timber"])),
+     "Inner_Diagonal_Skin", col_hull, mirror=True)
+
+# --------------------------------------------------------------------------
+# 2. structure
+# --------------------------------------------------------------------------
+make(lambda mb: build_frames(mb, HULL, spacing=0.152, depth=0.040, width=0.028, xi0=0.026,
+                             xi1=0.974, t0=0.010, t1=0.950, plank_thickness=0.024),
+     "Frames", col_structure, mirror=True)
+
+make(lambda mb: (
+    solid_between_sections(mb, HULL, np.linspace(0.001, 0.048, 6), 0.026, MAT["wood_timber"]),
+    solid_between_sections(mb, HULL, np.linspace(0.960, 0.999, 5), 0.026, MAT["wood_timber"]),
+    build_keel(HULL, mb, width=0.115, depth=0.090),
+    build_stem(HULL, mb, width=0.120, depth=0.120),
+    build_sternpost(HULL, mb, width=0.095, depth=0.110),
+    build_keelson(HULL, mb, width=0.100, height=0.080, xi0=0.05, xi1=0.95),
+    build_gunwale(HULL, mb, out_width=0.045, in_width=0.090, height=0.034, xi0=0.006, xi1=0.994),
+), "Keel_Stem_Frames_Gunwale", col_structure, mirror=True)
+
+make(lambda mb: build_transom(HULL, mb, t_lo=0.02, t_top=0.975), "Transom", col_structure)
+
+# engine bearers, boiler seating, floors
+def _bearers(mb):
+    for s in (-1, 1):
+        xs = np.linspace(1.35, -1.55, 22)
+        grid = np.zeros((len(xs), 4, 3))
+        for i, x in enumerate(xs):
+            z = floor_z(x) + 0.12
+            grid[i, 0] = (x, s * (Y_BEARER - 0.05), z - 0.09)
+            grid[i, 1] = (x, s * (Y_BEARER + 0.05), z - 0.09)
+            grid[i, 2] = (x, s * (Y_BEARER + 0.05), z + 0.09)
+            grid[i, 3] = (x, s * (Y_BEARER - 0.05), z + 0.09)
+        mb.add_grid(grid, MAT["wood_timber"], close_v=True)
+    # cross floors under the bearers
+    for x in np.arange(1.3, -1.6, -0.28):
+        z = floor_z(x)
+        half = half_breadth_at(HULL, HULL.xi_of(x), z + 0.16) * 0.94
+        mb.add_box((x, 0, z + 0.10), (0.09, half * 1.95, 0.055), mat=MAT["wood_timber"])
+    # boiler foundation ring
+    z0 = floor_z(X_BOILER) + 0.155
+    cyl(mb, (X_BOILER, 0, z0 - 0.02), (X_BOILER, 0, z0 + 0.05), 0.46, seg=28, mat=MAT["iron"])
+
+
+make(_bearers, "Engine_Bearers_Floors", col_structure)
+
+# --------------------------------------------------------------------------
+# 3. decks, coamings, thwarts, canopy
+# --------------------------------------------------------------------------
+X_FOREDECK_AFT = 3.10
+X_FOREDECK_FWD = 3.80
+X_COAMING_FWD = 1.35
+X_COAMING_AFT = -1.55
+
+
+def _decks(mb):
+    # side decks along the whole boat
+    for s in (-1, 1):
+        xs = np.linspace(-3.55, 3.62, 44)
+        grid = np.zeros((len(xs), 4, 3))
+        for i, x in enumerate(xs):
+            xi = HULL.xi_of(x)
+            z = HULL.sheer_z(xi) - DECK_DROP
+            outer = half_breadth_at(HULL, xi, z + 0.07) - 0.015
+            inner = max(0.10, outer - 0.16)
+            grid[i, 0] = (x, s * outer, z)
+            grid[i, 1] = (x, s * inner, z)
+            grid[i, 2] = (x, s * inner, z - 0.032)
+            grid[i, 3] = (x, s * outer, z - 0.032)
+        mb.add_grid(grid, MAT["wood_deck"], close_v=True)
+    # foredeck
+    xs = np.linspace(X_FOREDECK_AFT, X_FOREDECK_FWD, 14)
+    grid = np.zeros((len(xs), 2, 3))
+    for i, x in enumerate(xs):
+        xi = HULL.xi_of(x)
+        z = HULL.sheer_z(xi) - DECK_DROP
+        half = half_breadth_at(HULL, xi, z + 0.07) - 0.015
+        grid[i, 0] = (x, -half, z)
+        grid[i, 1] = (x, half, z)
+    for i in range(len(xs) - 1):  # deck beams underneath
+        x = xs[i]
+        half = half_breadth_at(HULL, HULL.xi_of(x), sheer_at(x) - 0.05)
+        mb.add_box((x, 0, HULL.sheer_z(HULL.xi_of(x)) - DECK_DROP - 0.045),
+                   (0.06, half * 1.9, 0.05), mat=MAT["wood_timber"])
+    mb.add_grid(grid, MAT["wood_deck"])
+    # aft deck
+    xs2 = np.linspace(-3.62, -2.85, 8)
+    grid2 = np.zeros((len(xs2), 2, 3))
+    for i, x in enumerate(xs2):
+        xi = HULL.xi_of(x)
+        z = HULL.sheer_z(xi) - DECK_DROP
+        half = half_breadth_at(HULL, xi, z + 0.07) - 0.015
+        grid2[i, 0] = (x, -half, z)
+        grid2[i, 1] = (x, half, z)
+    mb.add_grid(grid2, MAT["wood_deck"])
+
+
+make(_decks, "Decks", col_deck)
+
+
+def _coamings(mb):
+    """Coaming round the engine and boiler space, which carries the canopy."""
+    for x, x2 in ((X_COAMING_FWD, X_COAMING_AFT),):
+        pass
+    for x in (X_COAMING_FWD, X_COAMING_AFT):
+        xi = HULL.xi_of(x)
+        z = HULL.sheer_z(xi) - DECK_DROP
+        half = half_breadth_at(HULL, xi, z + 0.10) - 0.02
+        mb.add_box((x, 0, z + 0.055), (0.075, half * 1.92, 0.11), mat=MAT["wood_timber"])
+    # longitudinal coaming/seat backs both sides
+    for s in (-1, 1):
+        xs = np.linspace(X_COAMING_FWD, X_COAMING_AFT, 12)
+        grid = np.zeros((len(xs), 4, 3))
+        for i, x in enumerate(xs):
+            xi = HULL.xi_of(x)
+            z = HULL.sheer_z(xi) - DECK_DROP
+            outer = half_breadth_at(HULL, xi, z + 0.10) - 0.02
+            inner = outer - 0.075
+            grid[i, 0] = (x, s * outer, z)
+            grid[i, 1] = (x, s * inner, z)
+            grid[i, 2] = (x, s * inner, z + 0.16)
+            grid[i, 3] = (x, s * outer, z + 0.16)
+        mb.add_grid(grid, MAT["wood_timber"], close_v=True)
+
+
+make(_coamings, "Coamings", col_deck)
+
+
+def _seating(mb):
+    # passenger thwarts forward of the machinery
+    for x in (2.30, 1.78):
+        xi = HULL.xi_of(x)
+        z = HULL.sheer_z(xi) - DECK_DROP - 0.16
+        half = half_breadth_at(HULL, xi, z) - 0.03
+        mb.add_box((x, 0, z), (0.26, half * 1.94, 0.045), mat=MAT["wood_timber"])
+    # coxswain's seat aft, and the engineer's seat
+    for x, w in ((-2.55, 0.30), (-1.95, 0.24)):
+        xi = HULL.xi_of(x)
+        z = HULL.sheer_z(xi) - DECK_DROP - 0.15
+        half = half_breadth_at(HULL, xi, z) - 0.03
+        mb.add_box((x, 0, z), (w, half * 1.90, 0.045), mat=MAT["wood_timber"])
+    # back-rest of the aft seat
+    xi = HULL.xi_of(-2.42)
+    z = HULL.sheer_z(xi) - DECK_DROP - 0.15
+    half = half_breadth_at(HULL, xi, z) - 0.03
+    mb.add_box((-2.42, 0, z + 0.16), (0.05, half * 1.90, 0.20), mat=MAT["wood_timber"])
+
+
+make(_seating, "Seats", col_furn)
+
+# canopy: a canvas hood carried on the coaming round the machinery, with
+# brass stanchions and a curved top -- the "canopy over the engine and boiler"
+# described for 25-32 ft steam cutters (Kipling Society / ORG 1905 notes).
+CANOPY_X = (1.32, -1.52)
+CANOPY_RISE = 0.30
+
+
+def _canopy_geom(x):
+    """Deck level, coaming top height and the coaming's inner half-width."""
+    xi = HULL.xi_of(x)
+    z_deck = HULL.sheer_z(xi) - DECK_DROP
+    z_coam = z_deck + 0.11
+    outer = half_breadth_at(HULL, xi, z_deck + 0.10) - 0.02
+    return z_coam, outer - 0.075
+
+
+def _canopy_frame(mb):
+    x0, x1 = CANOPY_X
+    for x in np.linspace(x0, x1, 6):
+        z_coam, half = _canopy_geom(x)
+        pts = []
+        for f in np.linspace(-1, 1, 15):
+            zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2)
+            pts.append(np.array([x, f * half, zc]))
+        mb.add_tube(np.array(pts), 0.013, segments=8, mat=MAT["brass"])
+        # short stanchions from the coaming up to the hoop
+        for sgn in (-1, 1):
+            p0 = np.array([x, sgn * half * 0.99, z_coam - 0.02])
+            p1 = np.array([x, sgn * half, z_coam + 0.02])
+            cyl(mb, p0, p1, 0.015, seg=8, mat=MAT["brass"])
+    # longitudinal strings
+    for f in (-0.62, -0.22, 0.22, 0.62):
+        pts = []
+        for x in np.linspace(x0, x1, 9):
+            z_coam, half = _canopy_geom(x)
+            zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2)
+            pts.append(np.array([x, f * half, zc]))
+        mb.add_tube(np.array(pts), 0.009, segments=6, mat=MAT["brass"])
+
+
+make(_canopy_frame, "Canopy_Frame", col_deck)
+
+
+def _canopy_cover(mb):
+    """Painted canvas cover, drawn taut over the frame and lashed to the
+    coaming, with a valance and the funnel opening."""
+    x0, x1 = CANOPY_X
+    xs = np.linspace(x0, x1, 13)
+    fs = np.linspace(-1, 1, 19)
+    grid = np.zeros((len(xs), len(fs), 3))
+    for i, x in enumerate(xs):
+        z_coam, half = _canopy_geom(x)
+        for j, f in enumerate(fs):
+            zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2)
+            grid[i, j] = (x, f * half, zc + 0.010)
+    mb.add_grid(grid, MAT["canvas"])
+    # valance hanging from the two edges onto the coaming
+    for j in (0, len(fs) - 1):
+        strip = np.zeros((len(xs), 2, 3))
+        for i in range(len(xs)):
+            p = grid[i, j]
+            strip[i, 0] = (p[0], p[1], p[2] + 0.002)
+            strip[i, 1] = (p[0], p[1] * 0.965, p[2] - 0.13)
+        mb.add_grid(strip, MAT["canvas"])
+    # eyebrow flaps fore and aft (closed ends)
+    for i in (0, len(xs) - 1):
+        strip = np.zeros((len(fs), 2, 3))
+        for j in range(len(fs)):
+            p = grid[i, j]
+            strip[j, 0] = (p[0], p[1], p[2] + 0.002)
+            strip[j, 1] = (p[0] + (0.06 if i == 0 else -0.06), p[1] * 0.96, p[2] - 0.17)
+        mb.add_grid(strip, MAT["canvas"])
+
+
+make(_canopy_cover, "Canopy_Cover", col_deck)
+
+# --------------------------------------------------------------------------
+# 4. machinery
+# --------------------------------------------------------------------------
+Z_FLOOR_MID = floor_z(X_BOILER)
+BOILER_H = 0.860
+Z_BOILER_TOP = Z_FLOOR_MID + 0.16 + BOILER_H
+
+
+def _boiler(mb):
+    machinery.boiler(mb, (X_BOILER, 0.0, Z_FLOOR_MID + 0.16), r=0.360, height=0.860)
+
+
+make(_boiler, "Boiler", col_mach)
+
+make(lambda mb: machinery.boiler_cutaway(mb, (X_BOILER, 0.0, Z_FLOOR_MID + 0.16), r=0.360,
+                                         height=0.860),
+     "Boiler_Internals", col_mach)
+
+Z_CRANK = floor_z(X_ENGINE) + 0.46
+make(lambda mb: machinery.engine(mb, (X_ENGINE, 0.0, Z_CRANK)), "Engine", col_mach)
+
+# funnel through the canopy
+FUNNEL_TOP = sheer_at(X_BOILER) + 0.95
+FUNNEL_BASE = Z_BOILER_TOP + 0.10
+make(lambda mb: machinery.funnel(mb, (X_BOILER + 0.02, 0.0, FUNNEL_BASE),
+                                 FUNNEL_TOP, r_bottom=0.080, r_top=0.095, rake_x=0.05),
+     "Funnel", col_deck)
+
+# shafting + screw + stern tube
+P_CRANK = np.array([X_ENGINE - 0.34, 0.0, Z_CRANK])
+P_SCREW = np.array([X_SCREW, 0.0, -0.45])
+make(lambda mb: (machinery.shaft_line(mb, P_CRANK, P_SCREW, 0.024),
+                 machinery.stern_tube(mb, lerp(P_CRANK, P_SCREW, 0.80), lerp(P_CRANK, P_SCREW, 0.99)),
+                 # stern bracket
+                 cyl(mb, (X_SCREW - 0.06, 0, -0.42),
+                     (X_SCREW - 0.06, 0, HULL.keel_z(HULL.xi_of(X_SCREW)) + 0.03),
+                     0.030, seg=12, mat=MAT["iron"]),
+                 cyl(mb, (X_SCREW - 0.20, 0, -0.30), (X_SCREW + 0.10, 0, -0.30), 0.018, seg=10,
+                     mat=MAT["iron"])),
+     "Shafting", col_mach)
+
+screw_ob = make(lambda mb: machinery.propeller(mb, (0, 0, 0), dia=machinery.SCREW_DIA,
+                                               blades=2), "Propeller", col_moving)
+origin_to(screw_ob, (0, 0, 0))
+screw_ob.location = Vector(P_SCREW)
+
+# rudder: steel plate aft of the screw
+RUDDER_X = -3.62
+
+
+def _rudder_ob():
+    """Plate rudder hung on the transom: the stock passes down through the
+    counter, the blade hangs below it aft of the screw, so the screw gets
+    clean water and the blade never touches the planking."""
+    mb = MeshBuilder("Rudder")
+    pivot = np.array([RUDDER_X, 0.0, sheer_at(RUDDER_X) - 0.10])
+    n = 9
+    z_top, z_bot = 0.04, -0.60
+    grid = np.zeros((n, 4, 3))
+    for i in range(n):
+        f = i / (n - 1)
+        z = z_top + (z_bot - z_top) * f
+        # blade widens a little towards the heel, as a plate rudder does
+        w = 0.155 + 0.035 * f
+        th = 0.011 * (1 - 0.25 * f)
+        grid[i, 0] = (-0.015, th, z)
+        grid[i, 1] = (-w, th, z)
+        grid[i, 2] = (-w, -th, z)
+        grid[i, 3] = (-0.015, -th, z)
+    mb.add_grid(grid, MAT["paint_hull"], close_v=True)
+    # stock, passing up through the counter to the tiller
+    cyl(mb, (0, 0, 0.04), (0, 0, 0.10), 0.030, seg=12, mat=MAT["steel"])
+    cyl(mb, (0, 0, 0.10), (0, 0, 0.06), 0.036, seg=12, mat=MAT["steel"])
+    # tiller, reaching forward into the boat
+    cyl(mb, (0, 0, 0.06), (1.02, -0.05, 0.15), 0.030, seg=10, mat=MAT["wood_timber"], r1=0.024)
+    # pintles
+    for z in (-0.06, -0.30, -0.54):
+        cyl(mb, (-0.015, -0.03, z), (0.03, -0.03, z), 0.011, seg=8, mat=MAT["steel"])
+    v = np.array(mb.verts) + pivot
+    mb.verts = [tuple(p) for p in v]
+    ob = bl.obj_from_builder(mb, "Rudder", mlist, col_moving)
+    origin_to(ob, pivot)
+    return ob
+
+
+rudder_ob = _rudder_ob()
+
+# --------------------------------------------------------------------------
+# 5. pipework, valves, controls
+# --------------------------------------------------------------------------
+
+
+def _pipes(mb):
+    # main steam: boiler stop valve -> engine valve chest
+    machinery.pipe_run(mb, [(X_BOILER + 0.10, 0.0, Z_BOILER_TOP + 0.30),
+                            (X_BOILER + 0.10, 0.0, Z_BOILER_TOP + 0.10),
+                            (X_BOILER + 0.10, 0.28, Z_BOILER_TOP - 0.06),
+                            (X_ENGINE + 0.10, 0.30, Z_CRANK + 0.62),
+                            (X_ENGINE + 0.02, 0.22, Z_CRANK + 0.55)], r=0.017)
+    # exhaust: engine -> funnel base
+    machinery.pipe_run(mb, [(X_ENGINE, 0.20, Z_CRANK + 0.30),
+                            (X_ENGINE + 0.40, 0.16, Z_CRANK + 0.42),
+                            (X_BOILER - 0.25, 0.02, Z_BOILER_TOP - 0.20)], r=0.030)
+    # feed: tank -> pump -> boiler check valve
+    machinery.pipe_run(mb, [(-1.95, -0.30, floor_z(-1.95) + 0.14),
+                            (-1.20, -0.34, floor_z(-1.20) + 0.20),
+                            (X_ENGINE + 0.05, -0.28, Z_CRANK - 0.12),
+                            (X_BOILER - 0.30, -0.24, Z_FLOOR_MID + 0.50)], r=0.012,
+                       mat=MAT["copper"])
+    # blow-down to the skin fitting
+    machinery.pipe_run(mb, [(X_BOILER - 0.32, -0.22, Z_FLOOR_MID + 0.24),
+                            (X_BOILER - 0.55, -0.30, Z_FLOOR_MID + 0.10),
+                            (X_BOILER - 0.72, -0.34, Z_FLOOR_MID + 0.04)], r=0.013,
+                       mat=MAT["copper"])
+    # valves & controls
+    machinery.valve(mb, (X_BOILER + 0.10, 0.0, Z_BOILER_TOP + 0.28), (0, 0, 1), 1.15)  # stop valve
+    machinery.valve(mb, (X_ENGINE + 0.02, 0.22, Z_CRANK + 0.55), (0, 0, 1), 0.8)       # regulator
+    machinery.gauge(mb, (X_BOILER + 0.34, 0.10, Z_BOILER_TOP - 0.20), (1, 0.2, 0.1))
+    machinery.whistle(mb, (X_BOILER + 0.16, 0.30, Z_BOILER_TOP - 0.02), (0, 1, 0.2))
+    # throttle/reversing console by the engineer's seat
+    for x, z0 in ((-1.30, 0.0),):
+        pass
+    # feed water tank aft under the floor boards
+    mb.add_box((-1.95, 0.0, floor_z(-1.95) + 0.09), (0.55, 0.70, 0.18), mat=MAT["copper"])
+    # coal bunker forward of the boiler
+    z = floor_z(X_BUNKER) + 0.14
+    mb.add_box((X_BUNKER, 0.0, z + 0.16), (0.46, 0.78, 0.42), mat=MAT["iron"])
+    mb.add_box((X_BUNKER, 0.0, z + 0.38), (0.44, 0.74, 0.03), mat=MAT["coal"])
+
+
+make(_pipes, "Pipework_Fittings", col_mach)
+
+
+# --------------------------------------------------------------------------
+# 6. loose gear, navigation and safety equipment
+# --------------------------------------------------------------------------
+def _gear(mb):
+    # hoisting eyes on the keelson (davit slings)
+    for x in (2.05, -1.55):
+        z = floor_z(x) + 0.09
+        parts.eye_bolt(mb, np.array([x, 0.0, z]), direction=(0, 0, 1), scale=1.35)
+    # stem ring and stern eye
+    p = HULL.surface(0.012, 0.80)
+    parts.eye_bolt(mb, np.array([p[0] - 0.12, 0.0, p[2]]), direction=(-1, 0, 0), scale=1.15)
+    p = HULL.surface(0.99, 0.72)
+    parts.eye_bolt(mb, np.array([p[0] + 0.12, 0.0, p[2]]), direction=(1, 0, 0), scale=1.0)
+    # fenders both sides
+    for s in (-1, 1):
+        for x in (1.9, -1.9):
+            xi = HULL.xi_of(x)
+            p = HULL.surface(xi, 0.97)
+            zf = HULL.sheer_z(xi) - 0.34
+            hs = half_breadth_at(HULL, xi, zf)
+            parts.fender(mb, np.array([x, s * (hs + 0.075), zf]), mat=MAT["rope"],
+                         length=0.46, r=0.065)
+    # boat hook stowed on the port side deck
+    xh = 1.05
+    zh = sheer_at(xh) - DECK_DROP + 0.055
+    cyl(mb, (xh, 0.42, zh), (xh - 1.9, 0.42, zh + 0.02), 0.020, seg=10, mat=MAT["wood_timber"])
+    cyl(mb, (xh - 1.9, 0.42, zh + 0.02), (xh - 1.99, 0.42, zh + 0.045), 0.013, seg=8, mat=MAT["steel"])
+    sphere(mb, (xh - 2.0, 0.42, zh + 0.05), 0.020, seg=8, rings=6, mat=MAT["steel"])
+    # lifebuoy (cork ring) on the canopy side
+    c = np.array([0.15, 0.62, sheer_at(0.15) + 0.42])
+    torus(mb, c, 0.20, 0.055, seg=24, rseg=10, axis="Y", mat=MAT["canvas"])
+    # stove-in bailer + bucket
+    p = HULL.surface(0.70, 0.16)
+    cyl(mb, (p[0], -0.35, p[2] + 0.06), (p[0], -0.35, p[2] + 0.20), 0.085, seg=14,
+        mat=MAT["wood_deck"], r1=0.10)
+    # compass box on the foredeck
+    xc = 3.30
+    zc = sheer_at(xc) - DECK_DROP + 0.03
+    mb.add_box((xc, 0, zc + 0.05), (0.22, 0.22, 0.10), mat=MAT["wood_timber"])
+    cyl(mb, (xc, 0, zc + 0.10), (xc, 0, zc + 0.13), 0.085, seg=18, mat=MAT["brass"])
+    cyl(mb, (xc, 0, zc + 0.13), (xc, 0, zc + 0.135), 0.075, seg=18, mat=MAT["glass"])
+    # sidelights: port red, starboard green, on brackets at the canopy front
+    for s, m in ((1, MAT["red_lead"]), (-1, MAT["paint_hull"])):
+        xl = 1.15
+        zl = sheer_at(xl) + 0.30
+        mb.add_box((xl, s * 0.70, zl), (0.11, 0.11, 0.16), mat=m)
+        cyl(mb, (xl, s * 0.70, zl + 0.08), (xl, s * 0.70, zl + 0.13), 0.045, seg=12, mat=MAT["glass"])
+    # shovel & poker for the stokehold
+    cyl(mb, (-0.15, -0.55, floor_z(-0.15) + 0.06), (0.35, -0.55, floor_z(-0.15) + 0.30), 0.014,
+        seg=8, mat=MAT["steel"])
+    mb.add_box((0.36, -0.55, floor_z(-0.15) + 0.31), (0.14, 0.16, 0.02), mat=MAT["steel"])
+
+
+make(_gear, "Gear_Nav_Safety", col_gear)
+
+# morse/tiller connection: a small steering quadrant is already on the rudder
+
+# --------------------------------------------------------------------------
+# 7. report and save
+# --------------------------------------------------------------------------
+allobs = [o for c in (col_hull, col_structure, col_deck, col_mach, col_furn, col_gear, col_moving)
+          for o in c.objects]
+print(f"TOTAL verts={sum(len(o.data.vertices) for o in allobs)} "
+      f"faces={sum(len(o.data.polygons) for o in allobs)} objects={len(allobs)}")
+print(f"LAYOUT boiler_x={X_BOILER} engine_x={X_ENGINE} crank_z={Z_CRANK:.3f} "
+      f"screw={P_SCREW} funnel_top={FUNNEL_TOP:.3f}")
+
+bpy.context.scene["boat_name"] = "25 ft Steam Cutter (1888)"
+bpy.context.scene["loa_m"] = HULL.loa
+bpy.context.scene["stud_per_m"] = specs.STUD_PER_M
+bl.save_blend(f"{ROOT}/boats/blend/boat_a_steam_cutter.blend")
+
+if not QUICK:
+    hull_objs = [o for c in (col_hull, col_structure, col_deck) for o in c.objects]
+    bl.export_object(bl.join_objects(hull_objs, "Hull_Export"),
+                     f"{ROOT}/boats/exports/steam_cutter_hull.glb", "glb")
+    print("EXPORTED steam hull glb")
+
+# --------------------------------------------------------------------------
+# 8. renders
+# --------------------------------------------------------------------------
+if not NO_RENDER:
+    bl.studio(world_strength=0.5, ground_z=-1.7)
+    shots = {
+        "hero": ((10.4, -12.6, 5.4), (0.0, 0, 0.30), 50),
+        "broadside": ((0.0, -14.5, 0.9), (0, 0, 0.45), None),
+        "bow_quarter": ((10.6, -6.8, 3.2), (0.6, 0, 0.25), 55),
+        "stern_quarter": ((-10.2, -6.2, 3.0), (-0.8, 0, 0.25), 55),
+        "from_above": ((2.0, -5.0, 15.0), (0.0, 0, 0.2), 45),
+        "machinery": ((3.2, -3.0, 2.4), (0.2, 0, 0.55), 45),
+    }
+    for name, (loc, look, lens) in shots.items():
+        if lens is None:
+            cam = bl.camera(name, loc, look, ortho=8.8)
+        else:
+            cam = bl.camera(name, loc, look, lens=lens)
+        bl.render(f"{ROOT}/boats/renders/steam_{name}.png", cam,
+                  res=(1200, 750) if not QUICK else (640, 400), samples=24 if QUICK else 72)
+print("BUILD COMPLETE")
