@@ -28,6 +28,8 @@ from boatgen.hull import (
     build_diagonal_skin,
     build_frames,
     build_gunwale,
+    build_rubbing_strake,
+    build_stem_band,
     build_keel,
     build_keelson,
     build_stem,
@@ -125,6 +127,8 @@ make(lambda mb: (
     build_sternpost(HULL, mb, width=0.095, depth=0.110),
     build_keelson(HULL, mb, width=0.100, height=0.080, xi0=0.05, xi1=0.95),
     build_gunwale(HULL, mb, out_width=0.045, in_width=0.090, height=0.034, xi0=0.006, xi1=0.994),
+    build_rubbing_strake(HULL, mb, t=0.905, r=0.019, xi0=0.045, xi1=0.955, offset=0.006),
+    build_stem_band(HULL, mb, r=0.020, n=16),
 ), "Keel_Stem_Frames_Gunwale", col_structure, mirror=True)
 
 make(lambda mb: build_transom(HULL, mb, t_lo=0.02, t_top=0.975), "Transom", col_structure)

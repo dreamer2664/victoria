@@ -36,6 +36,8 @@ from boatgen.hull import (
     solid_between_sections,
     build_frames,
     build_gunwale,
+    build_rubbing_strake,
+    build_stem_band,
     build_keel,
     build_keelson,
     build_stem,
@@ -122,7 +124,9 @@ make(lambda mb: (
     # narrow wedges where the planking cannot close the hull
     solid_between_sections(mb, HULL, np.linspace(0.001, 0.042, 6), 0.020, MAT["wood_timber"]),
     solid_between_sections(mb, HULL, np.linspace(0.966, 0.999, 5), 0.020, MAT["wood_timber"]),
-    build_keel(HULL, mb, width=0.105, depth=0.080),
+    build_rubbing_strake(HULL, mb, t=0.88, r=0.015, xi0=0.06, xi1=0.94, offset=0.004),
+                      build_stem_band(HULL, mb, r=0.017, n=14),
+                      build_keel(HULL, mb, width=0.105, depth=0.080),
                  build_stem(HULL, mb, width=0.115, depth=0.115),
                  build_sternpost(HULL, mb, width=0.082, depth=0.095)),
      "Keel_Stem_Sternpost", col_structure)

@@ -255,7 +255,15 @@ def studio(world_strength=0.6, key_energy=900.0, area_size=6.0, backdrop=True, b
         ld.energy = energy
         ld.size = size
         ld.color = color
+        # never let the lamp itself appear in frame: a softbox in shot reads as
+        # a light leak across the water, not as illumination
+        try:
+            ob_tmp = None
+            ld.cycles.is_caustics_light = False
+        except Exception:
+            pass
         ob = bpy.data.objects.new(name, ld)
+        ob.visible_camera = False
         ob.location = loc
         ob.rotation_euler = rot
         bpy.context.scene.collection.objects.link(ob)
@@ -282,10 +290,12 @@ def water_plane(z=0.0, size=3000.0):
     m.use_nodes = True
     nt = m.node_tree
     b = nt.nodes["Principled BSDF"]
-    b.inputs["Base Color"].default_value = (0.007, 0.020, 0.026, 1)
-    b.inputs["Roughness"].default_value = 0.26
+    b.inputs["Base Color"].default_value = (0.010, 0.017, 0.024, 1)
+    b.inputs["Roughness"].default_value = 0.30
     b.inputs["IOR"].default_value = 1.333
-    b.inputs["Specular IOR Level"].default_value = 0.28
+    # deliberately low: a studio softbox reflects off a big flat plane as a
+    # long wedge, which reads as a light leak rather than as water
+    b.inputs["Specular IOR Level"].default_value = 0.09
 
     tex = nt.nodes.new("ShaderNodeTexCoord")
     mapping = nt.nodes.new("ShaderNodeMapping")
@@ -305,7 +315,7 @@ def water_plane(z=0.0, size=3000.0):
     return plane
 
 
-def sea_studio(world_strength=2.1, bg=(0.088, 0.108, 0.138), key_energy=520.0):
+def sea_studio(world_strength=2.6, bg=(0.088, 0.108, 0.138), key_energy=520.0):
     """Overcast-light rig for the boats afloat.
 
     Three big softboxes hung low over a dark sea throw long specular wedges
@@ -327,7 +337,15 @@ def sea_studio(world_strength=2.1, bg=(0.088, 0.108, 0.138), key_energy=520.0):
         ld.energy = energy
         ld.size = size
         ld.color = color
+        # never let the lamp itself appear in frame: a softbox in shot reads as
+        # a light leak across the water, not as illumination
+        try:
+            ob_tmp = None
+            ld.cycles.is_caustics_light = False
+        except Exception:
+            pass
         ob = bpy.data.objects.new(name, ld)
+        ob.visible_camera = False
         ob.location = loc
         ob.rotation_euler = rot
         bpy.context.scene.collection.objects.link(ob)
@@ -336,13 +354,13 @@ def sea_studio(world_strength=2.1, bg=(0.088, 0.108, 0.138), key_energy=520.0):
     # a low sun, kept small so its reflection in the water stays a sparkle
     # rather than a wedge across the frame
     area("Sun", (5.4, -5.6, 3.4), (math.radians(58), 0, math.radians(44)),
-         key_energy * 2.4, 1.1, (1.0, 0.96, 0.90))
+         key_energy * 2.6, 0.30, (1.0, 0.96, 0.90))
     # a soft wrap from above keeps the deck and canopy from going flat
     area("Key", (1.6, -2.2, 6.6), (math.radians(20), 0, math.radians(36)),
          key_energy * 0.7, 4.0)
-    # a very low fill just to keep the shadow side from going black
-    area("Fill", (-3.4, -2.2, 2.6), (math.radians(72), 0, math.radians(-48)),
-         key_energy * 0.20, 4.0, (0.86, 0.92, 1.0))
+    # No low fill. At the grazing angles a camera sees open water from, any
+    # near-horizon lamp reflects almost totally (Fresnel) and paints a bright
+    # parallelogram across the sea. The sky does the fill work instead.
 
 
 def remove_water():

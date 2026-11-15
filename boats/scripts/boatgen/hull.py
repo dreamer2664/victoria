@@ -661,6 +661,34 @@ def build_gunwale(
     mb.add_face([end + i for i in range(10)], mat)
 
 
+def build_rubbing_strake(hull, mb, t=0.93, r=0.017, xi0=0.035, xi1=0.965,
+                         mat=MAT["wood_timber"], offset=0.004, n=70):
+    """Half-round rubbing strake along the topsides.
+
+    The strake takes the wear from fenders, davit falls and the ship's side, so
+    it stands proud of the planking and is the first thing to be renewed.  It
+    also catches a highlight along the sheer that a bare plank edge never will.
+    """
+    pts = []
+    for xi in np.linspace(xi0, xi1, n):
+        p = hull.surface(xi, t)
+        nn = hull.normal(xi, t)
+        pts.append(p + nn * offset)
+    mb.add_tube(np.array(pts), r, segments=8, mat=mat)
+
+
+def build_stem_band(hull, mb, r=0.020, mat=MAT["brass"], n=14, t0=0.0, t1=0.42):
+    """Metal band down the fore side of the stem, from the forefoot to the
+    stem head -- the part that takes the knocks when the boat comes alongside."""
+    pts = []
+    for t in np.linspace(t0, t1, n):
+        p = hull.surface(0.0006, t)
+        pts.append(p + np.array([-r * 0.55, 0, 0]))
+    pts = np.array(pts)
+    if len(pts) > 2:
+        mb.add_tube(pts, r, segments=8, mat=mat)
+
+
 def half_breadth_at(hull, xi, z, n=80):
     """Half-breadth of the hull at a given height on a given station."""
     best = 0.0
