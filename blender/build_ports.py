@@ -71,8 +71,16 @@ def setup_lighting(coll, port):
         # light along the dock's length instead, so the altars and keel blocks read.
         bsetup.add_sun(coll, 215, 41, 3.4, (1.0, 0.94, 0.86))
     bsetup.add_fill(coll, 100, 34, 0.90, (0.74, 0.80, 0.90))
-    bsetup.setup_sky(sun_az=(215 if port == "a" else 215), sun_el=41,
-                     strength=0.62, cloud_cover=0.34)
+    if os.environ.get("FLAT_SKY"):
+        w = bpy.data.worlds.new("flat")
+        w.use_nodes = True
+        bg = w.node_tree.nodes["Background"]
+        bg.inputs[0].default_value = (1.0, 1.0, 1.0, 1.0)
+        bg.inputs[1].default_value = 2.0
+        bpy.context.scene.world = w
+    else:
+        bsetup.setup_sky(sun_az=(215 if port == "a" else 215), sun_el=41,
+                         strength=0.62, cloud_cover=0.34)
     bsetup.setup_compositor_haze(fog_color=(0.66, 0.68, 0.70), start=150.0,
                                  depth=1400.0, max_fog=0.38)
 
@@ -89,12 +97,39 @@ def main():
     sc.view_settings.exposure = 0.92
 
     bsetup.make_materials()
+    if os.environ.get("FLATMAT"):
+        for m in bpy.data.materials:
+            if not m.use_nodes:
+                continue
+            nt = m.node_tree
+            b = next((n for n in nt.nodes if n.type == "BSDF_PRINCIPLED"), None)
+            if not b:
+                continue
+            for l in list(nt.links):
+                if l.to_node is b and l.to_socket.name in ("Base Color", "Roughness",
+                                                           "Metallic", "Normal"):
+                    nt.links.remove(l)
+            b.inputs["Base Color"].default_value = (0.55, 0.55, 0.55, 1.0)
+            b.inputs["Roughness"].default_value = 0.85
+            b.inputs["Metallic"].default_value = 0.0
     mod = __import__("port_" + PORT)
     coll = bsetup.ensure_coll("PORT_" + PORT.upper())
     R = bsetup.Registry()
     audit = site.LayoutAuditor()
 
     meta = mod.build(R, coll, audit)
+
+    # ---- every prototype must have at least one placed instance
+    # Some assets (the land platform, the water, the boundary wall) are built
+    # once at world coordinates and never instanced. They were left living in
+    # the _PROTOTYPES collection, which is hidden from rendering, so they
+    # vanished the moment that collection was hidden. Give every unplaced
+    # prototype a single instance at the origin -- the identical mesh data, one
+    # copy in the file -- so the prototype genuinely is only a prototype.
+    for name in list(R.proto.keys()):
+        if R.counts.get(name, 0) == 0:
+            R.place(name, 0.0, 0.0, 0.0)
+
     places, tris, protos = R.report()
 
     # ---- layout audit (numeric, before any render)
@@ -135,6 +170,13 @@ def main():
         p_ob = R.place("_PROXY_liner", 0, 0, 0)
         p_ob.hide_render = True
         p_ob.hide_viewport = True
+
+    # Hide the prototype collection again here, after the build and before the
+    # first render: setting it when the collection is created is not enough, the
+    # first render in a session still includes those objects and every interior
+    # renders black.
+    R.hidden.hide_render = True
+    bpy.context.view_layer.update()
 
     setup_lighting(coll, PORT)
 
@@ -189,6 +231,8 @@ def export_all(R, meta):
     # 1. one GLB per prototype: this is the modular kit Roblox users import
     hidden = R.hidden
     for name, ob in R.proto.items():
+        if name.startswith("_"):
+            continue        # QC instruments (the clearance proxy) are not assets
         for o in bpy.context.selected_objects:
             o.select_set(False)
         ob.select_set(True)
@@ -205,7 +249,11 @@ def export_all(R, meta):
     for o in bpy.context.selected_objects:
         o.select_set(False)
     for ob in sc.objects:
-        if ob.type == 'MESH':
+        # never ship the prototypes: they are the same mesh data as the placed
+        # instances, so selecting them puts a second, coincident copy of every
+        # asset in the one-piece GLB.
+        if (ob.type == 'MESH' and R.hidden not in ob.users_collection
+                and not ob.hide_render and not ob.hide_viewport):
             ob.select_set(True)
     bpy.ops.export_scene.gltf(
         filepath=os.path.join(glb_dir, "port_%s_full.glb" % PORT),

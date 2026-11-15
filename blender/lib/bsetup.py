@@ -196,6 +196,15 @@ class Registry:
         self.proto = {}          # name -> prototype object (mesh owner)
         self.counts = {}         # name -> number of instances placed
         self.hidden = ensure_coll("_PROTOTYPES")
+        # The prototypes ARE the first copy of every asset: they are built at
+        # world coordinates, and place() then creates a linked duplicate at
+        # (0,0,0), i.e. exactly on top of them. Leaving the collection visible
+        # to Cycles therefore renders every asset twice, coincident. On convex
+        # outside faces that only produces noise, but inside a cavity -- a
+        # graving dock, a shed -- the duplicate sits in the way of every shadow
+        # ray and the whole interior renders black. It also doubled the render
+        # memory, which is what pushed 1152x648 over this sandbox's 2 GB.
+        self.hidden.hide_render = True
 
     def define(self, name, mb, bevel=0.0, smooth=False):
         ob = builder_to_object(name, mb, coll=self.hidden, bevel=bevel, shade_smooth=smooth)

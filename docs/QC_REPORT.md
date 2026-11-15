@@ -23,8 +23,8 @@ reports any pair that overlaps by more than 5 cm in both axes.
 | Port A after fixes | 46 | 396 | 786,186 | 1 → **0** |
 | Port B, first run | 36 | 269 | 262,423 | 0 |
 | Port B after dock fix | 41 | 291 | 377,162 | **0** |
-| Port A, realism pass (ground regions + life layer) | 57 | 462 | 795,120 | **0** |
-| Port B, realism pass | 50 | 340 | 384,082 | **0** |
+| Port A, realism pass (ground regions + life layer) | 57 | 466 | 795,120 | **0** |
+| Port B, realism pass | 50 | 342 | 384,082 | **0** |
 
 The one overlap caught was `A_goods_shed` ↔ `A_warehouse_3` (2.4 m). It was found by
 the auditor, not by eye, and the warehouse was moved 212 → 206 m along the quay.
@@ -203,9 +203,57 @@ doors and at the crane feet; carts stand where they would be loaded; rope sits a
 the bollards. Empty ground between these clusters is correct — evenly spaced
 props read as a showroom.
 
-Port A gains 11 life prototypes and 66 placements, Port B 9 and 49.
+Port A gains 11 life prototypes and 66 placements, Port B 9 and 49 (both totals
+include the four singletons -- land platform, water, boundary wall, ground -- that
+are now placed as instances rather than left in the hidden prototype collection).
 
-### 3A.4 What this pass did not fix, and what it costs
+### 3A.4 The prototypes were being rendered as well as the instances
+
+This is the most consequential bug found in the whole project, and it had been
+invisible in every previous render.
+
+`Registry.define()` builds an asset at its final world coordinates and puts the
+object in the `_PROTOTYPES` collection. `Registry.place()` then creates a linked
+duplicate at `(x, y, z)`. For an asset placed at the origin the two objects are
+**exactly coincident**, and nothing ever hid the prototype collection: it was
+being rendered. Every asset in both ports therefore existed twice, in the same
+place, to the millimetre.
+
+Outside faces survived this — two coincident surfaces produce noise, not
+darkness, when both face the sky. Inside a cavity it is fatal: the duplicate
+sits a fraction of a millimetre in front of every interior face, so each shadow
+ray leaves a surface and immediately strikes its twin. Nothing inside a graving
+dock was lit by anything, which is why the dock interiors rendered pure black
+while the quay beside them was correctly lit. The defect had been attributed to
+lighting, to the sun azimuth and then to ambient occlusion; all three were
+wrong.
+
+The same duplication doubled the geometry the renderer had to hold, and was the
+real reason 1152 x 648 renders began to be OOM-killed when the texture set grew.
+
+Two further faults surfaced while fixing it:
+
+* The prototype collection could not simply be hidden — the tuning code set
+  `hide_render` when the collection was created, and the *first* render in a
+  session still included it. It is now re-applied after the build, with an
+  explicit view-layer update.
+* The land platform and the water are `define`d but never `place`d: they were
+  built once at world coordinates and lived only as prototypes. Hiding the
+  collection therefore deleted the ground and the sea. `build_ports.py` now
+  places a single instance of any prototype that has no instances, so the
+  prototype is always only a prototype.
+
+The whole-port GLB had the same fault: it selected every mesh in the scene,
+prototypes included, so it shipped a second coincident copy of every asset. It
+now skips the prototype collection.
+
+With the duplicates gone the scene is materially brighter -- every surface had
+been shadowed by its own twin -- so the exposure was re-tested across 0.38, 0.45,
+0.62 and 0.92. AgX compresses the difference to a few percent (ground 111 vs
+124, sky 215 vs 224 out of 255), so it was left at 0.92 rather than re-rendering
+the set for a change that is not visible.
+
+### 3A.5 What this pass did not fix, and what it costs
 
 * **Resolution had to drop.** With the three new texture sets loaded, a
   1152 x 648 render allocates ~1.2 GB anonymous memory and is OOM-killed on
@@ -218,9 +266,10 @@ Port A gains 11 life prototypes and 66 placements, Port B 9 and 49.
   weaker image than a side-lit one. The fix is a gentler horizon falloff on the
   cloud mask (currently 0.02-0.14 in Z, which keeps cloud detail above about
   8 degrees of elevation) and is not done.
-* **The graving dock floors are still black** (§3.3). This is now the single
-  worst defect in Port B: the docks read as holes in the ground rather than as
-  masonry basins.
+* **The graving docks render correctly now** (§3A.4), but the deeper end of the
+  Alexandra-type dock is still very dark, as it would be: an 11 m slot at this
+  sun angle is genuinely a shadowed place. It reads as masonry now rather than
+  as a hole, which was the defect.
 
 
 ---
