@@ -301,34 +301,74 @@ make(_canopy_frame, "Canopy_Frame", col_deck)
 
 
 def _canopy_cover(mb):
-    """Painted canvas cover, drawn taut over the frame and lashed to the
-    coaming, with a valance and the funnel opening."""
+    """Painted canvas hood: tensioned over the hoops, sagging between them,
+    seamed every 0.42 m, laced down to the coaming and finished with a
+    scalloped valance."""
     x0, x1 = CANOPY_X
-    xs = np.linspace(x0, x1, 13)
-    fs = np.linspace(-1, 1, 19)
-    grid = np.zeros((len(xs), len(fs), 3))
+    n_x, n_f = 25, 23
+    xs = np.linspace(x0, x1, n_x)
+    fs = np.linspace(-1, 1, n_f)
+    hoop_x = np.linspace(x0, x1, 6)
+
+    def sag(x):
+        """Canvas droops between the hoops that carry it."""
+        d = np.min(np.abs(hoop_x - x))
+        return -0.026 * (d / (hoop_x[1] - hoop_x[0]))       # up to 26 mm of droop
+
+    grid = np.zeros((n_x, n_f, 3))
     for i, x in enumerate(xs):
         z_coam, half = _canopy_geom(x)
+        edge_pull = 0.010 * (1.0 - abs(x - 0.5 * (x0 + x1)) / (0.5 * (x1 - x0)))
         for j, f in enumerate(fs):
             zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2)
-            grid[i, j] = (x, f * half, zc + 0.010)
+            # a slight lengthwise dip towards the middle, and a ripple across
+            ripple = 0.006 * math.sin(f * math.pi * 3.0) * (1 - f * f)
+            grid[i, j] = (x, f * half, zc + 0.010 + sag(x) + ripple + edge_pull)
     mb.add_grid(grid, MAT["canvas"])
-    # valance hanging from the two edges onto the coaming
-    for j in (0, len(fs) - 1):
-        strip = np.zeros((len(xs), 2, 3))
-        for i in range(len(xs)):
-            p = grid[i, j]
-            strip[i, 0] = (p[0], p[1], p[2] + 0.002)
-            strip[i, 1] = (p[0], p[1] * 0.965, p[2] - 0.13)
+
+    # seams: raised strips down the length of the hood
+    for f in (-0.66, -0.33, 0.0, 0.33, 0.66):
+        strip = np.zeros((n_x, 3, 3))
+        for i, x in enumerate(xs):
+            z_coam, half = _canopy_geom(x)
+            zc = z_coam + CANOPY_RISE * (1.0 - 0.30 * f ** 2) + 0.010 + sag(x)
+            for k, dy in enumerate((-0.008, 0.0, 0.008)):
+                bulge = 0.004 if k == 1 else 0.0
+                strip[i, k] = (x, f * half + dy, zc + bulge)
         mb.add_grid(strip, MAT["canvas"])
-    # eyebrow flaps fore and aft (closed ends)
-    for i in (0, len(xs) - 1):
-        strip = np.zeros((len(fs), 2, 3))
-        for j in range(len(fs)):
+
+    # valance, hanging in scallops from the two edges
+    for j in (0, n_f - 1):
+        sgn = -1 if j == 0 else 1
+        strip = np.zeros((n_x, 3, 3))
+        for i, x in enumerate(xs):
+            p = grid[i, j]
+            scallop = 0.022 * (0.5 + 0.5 * math.cos((x - x0) * math.pi * 5.0))
+            strip[i, 0] = (p[0], p[1], p[2] + 0.002)
+            strip[i, 1] = (p[0], p[1] * 0.985, p[2] - 0.10 - scallop)
+            strip[i, 2] = (p[0], p[1] * 0.965, p[2] - 0.115 - scallop * 0.6)
+        mb.add_grid(strip, MAT["canvas"])
+
+    # end curtains fore and aft
+    for i in (0, n_x - 1):
+        strip = np.zeros((n_f, 2, 3))
+        for j in range(n_f):
             p = grid[i, j]
             strip[j, 0] = (p[0], p[1], p[2] + 0.002)
-            strip[j, 1] = (p[0] + (0.06 if i == 0 else -0.06), p[1] * 0.96, p[2] - 0.17)
+            strip[j, 1] = (p[0] + (0.07 if i == 0 else -0.07), p[1] * 0.955, p[2] - 0.20)
         mb.add_grid(strip, MAT["canvas"])
+
+    # lacing: short ties from the valance down onto the coaming
+    for i in range(0, n_x, 2):
+        x = xs[i]
+        z_coam, half = _canopy_geom(x)
+        for sgn in (-1, 1):
+            p0 = np.array([x, sgn * half * 0.975, z_coam + 0.012])
+            p1 = np.array([x + 0.012, sgn * half * 0.93, z_coam - 0.035])
+            cyl(mb, p0, p1, 0.0045, seg=6, mat=MAT["rope"])
+        # grommets along the edge
+        cyl(mb, (x, half * 0.98, z_coam + 0.02), (x, half * 0.98, z_coam + 0.028),
+            0.010, seg=8, mat=MAT["brass"])
 
 
 make(_canopy_cover, "Canopy_Cover", col_deck)
@@ -431,11 +471,11 @@ def _pipes(mb):
                             (X_BOILER + 0.10, 0.0, Z_BOILER_TOP + 0.10),
                             (X_BOILER + 0.10, 0.28, Z_BOILER_TOP - 0.06),
                             (X_ENGINE + 0.10, 0.30, Z_CRANK + 0.62),
-                            (X_ENGINE + 0.02, 0.22, Z_CRANK + 0.55)], r=0.017)
+                            (X_ENGINE + 0.02, 0.22, Z_CRANK + 0.55)], r=0.017, lagging=True)
     # exhaust: engine -> funnel base
     machinery.pipe_run(mb, [(X_ENGINE, 0.20, Z_CRANK + 0.30),
                             (X_ENGINE + 0.40, 0.16, Z_CRANK + 0.42),
-                            (X_BOILER - 0.25, 0.02, Z_BOILER_TOP - 0.20)], r=0.030)
+                            (X_BOILER - 0.25, 0.02, Z_BOILER_TOP - 0.20)], r=0.030, lagging=True)
     # feed: tank -> pump -> boiler check valve
     machinery.pipe_run(mb, [(-1.95, -0.30, floor_z(-1.95) + 0.14),
                             (-1.20, -0.34, floor_z(-1.20) + 0.20),

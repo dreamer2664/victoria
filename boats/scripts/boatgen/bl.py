@@ -200,8 +200,7 @@ def build_materials():
     mats = {}
     mats["wood_out"] = wood_material("Teak_Exterior", base=(0.155, 0.058, 0.024), dark=(0.052, 0.018, 0.007),
                                     rough=0.28, bump=0.30)
-    mats["wood_in"] = wood_material("Paint_Interior", base=(0.62, 0.60, 0.55), dark=(0.50, 0.48, 0.44),
-                                    rough=0.55, bump=0.12, varnish=False)
+    mats["wood_in"] = paint_material("Paint_Interior", (0.30, 0.275, 0.215), rough=0.62, coat=0.06, grime=0.35)
     mats["wood_timber"] = wood_material("Oak_Timber", base=(0.215, 0.108, 0.048), dark=(0.082, 0.038, 0.016),
                                         scale=9.0)
     mats["wood_deck"] = wood_material("Pine_Deck", base=(0.30, 0.20, 0.105), dark=(0.15, 0.095, 0.045),
@@ -212,7 +211,7 @@ def build_materials():
     mats["iron"] = metal_material("CastIron", (0.055, 0.055, 0.06), rough=0.55, metallic=0.85)
     mats["steel"] = metal_material("Steel", (0.34, 0.35, 0.37), rough=0.30)
     mats["rope"] = plain("Rope", (0.42, 0.35, 0.22), rough=0.85)
-    mats["canvas"] = plain("Canvas", (0.66, 0.62, 0.50), rough=0.8)
+    mats["canvas"] = paint_material("Canvas", (0.40, 0.365, 0.285), rough=0.82, coat=0.04, grime=0.45)
     mats["glass"] = plain("Gauge_Glass", (0.9, 0.9, 0.9), rough=0.05, transmission=0.9, ior=1.5)
     mats["copper"] = metal_material("Copper", (0.72, 0.38, 0.20), rough=0.25)
     mats["leather"] = plain("Leather", (0.18, 0.11, 0.07), rough=0.65)
@@ -268,6 +267,90 @@ def studio(world_strength=0.6, key_energy=900.0, area_size=6.0, backdrop=True, b
     area("Rim", (-1.5, 5.0, 3.4), (math.radians(115), 0, math.radians(200)), key_energy * 0.55, area_size, (1.0, 0.96, 0.9))
 
 
+def water_plane(z=0.0, size=3000.0):
+    """A sea surface at the load waterline (z = 0 by the authoring convention).
+
+    Dark, low-roughness, with a stretched noise bump so the surface reads as
+    slow harbour water rather than a mirror.  Placed at z = 0 it also proves
+    the published draught: the boat floats to exactly the waterline the
+    hydrostatic calculation produced.
+    """
+    bpy.ops.mesh.primitive_plane_add(size=size, location=(0, 0, z))
+    plane = bpy.context.object
+    plane.name = "Water"
+    m = bpy.data.materials.new("SeaWater")
+    m.use_nodes = True
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    b.inputs["Base Color"].default_value = (0.007, 0.020, 0.026, 1)
+    b.inputs["Roughness"].default_value = 0.26
+    b.inputs["IOR"].default_value = 1.333
+    b.inputs["Specular IOR Level"].default_value = 0.28
+
+    tex = nt.nodes.new("ShaderNodeTexCoord")
+    mapping = nt.nodes.new("ShaderNodeMapping")
+    mapping.inputs["Scale"].default_value = (2.4, 5.5, 1.0)
+    nt.links.new(tex.outputs["Object"], mapping.inputs["Vector"])
+    noise = nt.nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = 26.0
+    noise.inputs["Detail"].default_value = 8.0
+    noise.inputs["Roughness"].default_value = 0.55
+    nt.links.new(mapping.outputs["Vector"], noise.inputs["Vector"])
+    bmp = nt.nodes.new("ShaderNodeBump")
+    bmp.inputs["Strength"].default_value = 0.22
+    bmp.inputs["Distance"].default_value = 0.03
+    nt.links.new(noise.outputs["Fac"], bmp.inputs["Height"])
+    nt.links.new(bmp.outputs["Normal"], b.inputs["Normal"])
+    plane.data.materials.append(m)
+    return plane
+
+
+def sea_studio(world_strength=2.1, bg=(0.088, 0.108, 0.138), key_energy=520.0):
+    """Overcast-light rig for the boats afloat.
+
+    Three big softboxes hung low over a dark sea throw long specular wedges
+    across the water, which look like light leaks rather than like weather.
+    This rig instead puts most of the light into a uniform sky and uses a
+    single small key high above the boat, so the water reads as water and the
+    hull still has form.
+    """
+    sc = bpy.context.scene
+    world = bpy.data.worlds.new("SeaWorld")
+    sc.world = world
+    world.use_nodes = True
+    bg_node = world.node_tree.nodes["Background"]
+    bg_node.inputs[0].default_value = (*bg, 1)
+    bg_node.inputs[1].default_value = world_strength
+
+    def area(name, loc, rot, energy, size, color=(1, 1, 1)):
+        ld = bpy.data.lights.new(name, "AREA")
+        ld.energy = energy
+        ld.size = size
+        ld.color = color
+        ob = bpy.data.objects.new(name, ld)
+        ob.location = loc
+        ob.rotation_euler = rot
+        bpy.context.scene.collection.objects.link(ob)
+        return ob
+
+    # a low sun, kept small so its reflection in the water stays a sparkle
+    # rather than a wedge across the frame
+    area("Sun", (5.4, -5.6, 3.4), (math.radians(58), 0, math.radians(44)),
+         key_energy * 2.4, 1.1, (1.0, 0.96, 0.90))
+    # a soft wrap from above keeps the deck and canopy from going flat
+    area("Key", (1.6, -2.2, 6.6), (math.radians(20), 0, math.radians(36)),
+         key_energy * 0.7, 4.0)
+    # a very low fill just to keep the shadow side from going black
+    area("Fill", (-3.4, -2.2, 2.6), (math.radians(72), 0, math.radians(-48)),
+         key_energy * 0.20, 4.0, (0.86, 0.92, 1.0))
+
+
+def remove_water():
+    for ob in list(bpy.data.objects):
+        if ob.name == "Water":
+            bpy.data.objects.remove(ob, do_unlink=True)
+
+
 def camera(name, loc, look_at=(0, 0, 0.35), lens=62.0, ortho=None):
     cd = bpy.data.cameras.new(name)
     cd.lens = lens
@@ -285,8 +368,9 @@ def camera(name, loc, look_at=(0, 0, 0.35), lens=62.0, ortho=None):
 def scene_bounds(objs=None):
     """World-space bounding box of the visible mesh objects."""
     import mathutils  # noqa: F401  (kept local so bl.py imports cleanly outside Blender)
+    EXCLUDE = {"Backdrop", "Water", "Sea"}
     objs = objs or [o for o in bpy.context.scene.objects
-                    if o.type == "MESH" and o.name != "Backdrop" and not o.hide_render]
+                    if o.type == "MESH" and o.name not in EXCLUDE and not o.hide_render]
     mn = mathutils.Vector((1e9, 1e9, 1e9))
     mx = -mn
     for o in objs:

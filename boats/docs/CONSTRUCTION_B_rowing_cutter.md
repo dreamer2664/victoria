@@ -54,8 +54,11 @@ here to keep the strake widths close to the 150–200 mm of the reference
   29 mm sided, from the keel to the sheer (`build_frames`), each following
   the real section of the hull at its own station — so no two frames are the
   same shape and the boat has the slight irregularity of a built boat.
-* An internal keelson through the frames, and a gunwale capping the frame
-  heads.
+* An internal keelson through the frames, and a **gunwale with a moulded cap
+  rail** — a capping piece 6 mm proud of the rail beneath, 5 mm wider than it,
+  with a rounded crown and a drip groove on the outboard side. The cap is
+  built into the cross-section, so it carries a highlight along the whole
+  length of the boat and reads as timber rather than as an extrusion.
 * A raked transom built of separate transom planks.
 
 The clinker boat's strength comes from the riveted overlap plus the frames;
@@ -70,9 +73,9 @@ bathtub in the from-above render.
   each) gives the 10-oared, double-banked arrangement.
 * **Stern sheets** abaft the after thwart, with a stern bench and quarter
   knees.
-* **Floor gratings**: slatted bottom boards on cleats, rising clear of the
-  planking so bilge water can run under them — the "slatted floors on pegs"
-  of the reference model.
+* **Floor gratings**: slatted bottom boards, lifted 55 mm clear of the
+  planking on cleats so bilge water can run under them and air can reach the
+  frames — the "slatted floors on pegs" of the reference model.
 * **Rowlocks** cut in the top strake, with bronze/tholes.
 * **Mooring and lifting eyes**: two large keelson eyes fore and aft for the
   davit slings, plus stem and stern rings.
@@ -107,7 +110,7 @@ laps to advantage, which is the whole point of building them as geometry.
 
 ```
 cd boats/scripts
-LD_LIBRARY_PATH=/home/user/blender/lib blender -b --python build_rowing_cutter.py -- --quick
+LD_LIBRARY_PATH=/var/tmp/blender/lib blender -b --python build_rowing_cutter.py -- --quick
 ```
 
 Flags: `--quick` (low-res renders), `--no-render`, `--oars-out` (ships the

@@ -102,7 +102,7 @@ make(
     lambda mb: build_clinker_planking(
         mb, HULL, n_strakes=11, thickness=0.019, lap=0.013, xi0=0.0015,
         n_xi=70, butt_length=2.9, xi1=0.9995, mat_out=strake_mats,
-        mat_in=[MAT["wood_in"]] * 11,
+        mat_in=[MAT["wood_out"]] * 11,
     ),
     "Planking_Clinker",
     col_hull,

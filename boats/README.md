@@ -19,6 +19,10 @@ Roblox models and scripts, drawings and documentation.
 ![steam cutter](renders/steam_hero.png)
 ![rowing cutter](renders/rowing_hero.png)
 
+The boats are rendered afloat on a sea surface placed at **z = 0**, which is
+the load waterline by the authoring convention — so the renders double as a
+check that the published draught and the modelled hull agree.
+
 ---
 
 ## Where everything is
@@ -27,7 +31,8 @@ Roblox models and scripts, drawings and documentation.
 boats/
 ├── blend/                finished .blend files (bpy 4.2 LTS)
 ├── exports/              per-part GLB + FBX + manifest.json for Roblox
-├── renders/              the published render set (multi-angle + cutaways)
+├── renders/              the published render set: both boats afloat at their
+│                         designed waterline, plus cutaways
 ├── drawings/             dimensioned technical drawings (PNG + SVG) and the
 │                         historical reference board
 ├── scripts/
@@ -69,12 +74,12 @@ generated from designed curves and then built up plank by plank:
 
 ## Rebuilding
 
-Requires Blender 4.2 LTS (installed at `/home/user/blender`).
+Requires Blender 4.2 LTS (installed at `/var/tmp/blender`).
 
 ```bash
 cd boats/scripts
-export LD_LIBRARY_PATH=/home/user/blender/lib
-B=/home/user/blender/blender
+export LD_LIBRARY_PATH=/var/tmp/blender/lib
+B=/var/tmp/blender/blender
 
 $B -b --python build_steam_cutter.py -- --quick   # or omit --quick for full renders
 $B -b --python build_rowing_cutter.py -- --quick

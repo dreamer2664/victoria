@@ -146,16 +146,28 @@ def bench(mb, hull, xi, top_drop=0.16, width=0.34, thick=0.045, mat=MAT["wood_ti
 
 
 def floor_gratings(mb, hull, xi0, xi1, n_slats=5, slat_w=0.095, thick=0.024, t=0.10,
-                   mat=MAT["wood_deck"], gap=0.022):
-    """Slatted wooden floor ('bottom boards') resting on the floor timbers."""
+                   mat=MAT["wood_deck"], gap=0.022, lift=0.055):
+    """Slatted wooden floor ('bottom boards') resting on cleats.
+
+    The boards sit `lift` clear of the planking so that bilge water can run
+    under them and air can get at the frames -- the arrangement visible in the
+    reference model, and the reason a boat's floor is slatted rather than
+    solid.
+    """
     xs = np.linspace(xi0, xi1, 26)
     for k in range(n_slats):
         fy = -1.0 + 2.0 * k / (n_slats - 1) if n_slats > 1 else 0.0
         pts = []
         for xi in xs:
             p = hull.surface(xi, t)
-            pts.append(np.array([p[0], fy * p[1] * 0.78, p[2]]))
+            pts.append(np.array([p[0], fy * p[1] * 0.80, p[2] + lift]))
         pts = np.array(pts)
+        # cleats under the boards
+        for f in (0.18, 0.82):
+            i = int(f * (len(pts) - 1))
+            c = pts[i]
+            mb.add_box(c + np.array([0, 0, -lift * 0.5 - 0.004]),
+                       np.array([0.045, slat_w * 0.55, lift * 0.5]), None, mat)
         grid = np.zeros((len(pts), 4, 3))
         for i, p in enumerate(pts):
             grid[i, 0] = p + np.array([-0.02, -slat_w * 0.5, 0.0])

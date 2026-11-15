@@ -48,7 +48,7 @@ def setup_grade():
         sc.view_settings.look = "AgX - Medium High Contrast"
     except Exception:
         pass
-    sc.view_settings.exposure = 0.12
+    sc.view_settings.exposure = 0.20
     sc.render.engine = "CYCLES"
     sc.cycles.device = "CPU"
     sc.cycles.use_denoising = True
@@ -67,8 +67,10 @@ def render_boat(key):
 
     sc = bpy.context.scene
     sc.world = None
-    bl.studio(world_strength=0.62, key_energy=1400.0, area_size=5.0,
-              ground_z=-0.78, bg=(0.045, 0.050, 0.060))
+    # a sea surface at the load waterline, lit by a soft overcast sky: the boat
+    # then floats at exactly the draught the hydrostatics published
+    bl.sea_studio()
+    bl.water_plane(0.0, 4000.0)
     setup_grade()
 
     for name, v in VIEWS.items():
@@ -91,8 +93,8 @@ def render_boat(key):
             bpy.data.objects["Canopy_Cover"].hide_render = True
         sc = bpy.context.scene
         sc.world = None
-        bl.studio(world_strength=0.85, key_energy=900.0, area_size=3.0,
-                  ground_z=-0.78, bg=(0.05, 0.055, 0.065))
+        bl.sea_studio(world_strength=2.3, key_energy=460.0)
+        bl.water_plane(0.0, 4000.0)
         setup_grade()
         cam = bl.frame_camera("steam_machinery", (0.55, -0.80, 0.42),
                               look_at=(0.0, 0, 0.75), lens=62, margin=0.62, aspect=1.55)

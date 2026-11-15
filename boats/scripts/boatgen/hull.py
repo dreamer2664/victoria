@@ -621,9 +621,16 @@ def build_gunwale(
     n=90,
     rise_inboard=0.008,
 ):
-    """Gunwale: cap rail between the sheer strake and the inwale."""
+    """Gunwale with a moulded cap rail.
+
+    A plain vertical bar is what a box looks like; a real gunwale is a capping
+    piece with a rounded crown, a little wider than the rail beneath it, and a
+    drip groove on the outboard side where the water runs off.  The crown is
+    built into the cross-section, so it catches the light along its full
+    length and reads as timber rather than as an extrusion.
+    """
     xs = np.linspace(xi0, xi1, n)
-    grid = np.zeros((n, 6, 3))
+    grid = np.zeros((n, 10, 3))
     for i, xi in enumerate(xs):
         p = hull.surface(xi, 0.999)
         nrm = hull.normal(xi, 0.999)
@@ -634,16 +641,24 @@ def build_gunwale(
         out = p + nrm * (out_width * k)
         inn = p - nrm * (in_width * k)
         h = height * max(0.45, k)
-        grid[i, 0] = out + np.array([0, 0, 0.002])
-        grid[i, 1] = out + np.array([0, 0, 0.002 + h * 0.5])
-        grid[i, 2] = inn + np.array([0, 0, 0.002 + h * 0.5 + rise_inboard])
-        grid[i, 3] = inn + np.array([0, 0, 0.002 + h + rise_inboard])
-        grid[i, 4] = inn + np.array([0, 0, -0.012])
-        grid[i, 5] = out + np.array([0, 0, -0.004])
+        cap = 0.006 * max(0.3, k)        # the cap stands proud of the rail
+        ear = 0.005 * max(0.3, k)        # and overhangs it slightly
+        z0 = 0.002
+        # section, running round: outboard face -> crown -> inboard face
+        grid[i, 0] = out - nrm * ear + np.array([0, 0, z0 - 0.004])
+        grid[i, 1] = out + np.array([0, 0, z0])
+        grid[i, 2] = out + np.array([0, 0, z0 + h * 0.55])
+        grid[i, 3] = out - nrm * ear + np.array([0, 0, z0 + h * 0.80])
+        grid[i, 4] = (out + inn) * 0.5 + np.array([0, 0, z0 + h + cap])
+        grid[i, 5] = inn + nrm * ear + np.array([0, 0, z0 + h * 0.80 + rise_inboard])
+        grid[i, 6] = inn + np.array([0, 0, z0 + h * 0.55 + rise_inboard])
+        grid[i, 7] = inn + np.array([0, 0, rise_inboard - 0.012])
+        grid[i, 8] = inn * 0.5 + out * 0.5 + np.array([0, 0, z0 - 0.010])
+        grid[i, 9] = out + np.array([0, 0, z0 - 0.004])
     base = mb.add_grid(grid, mat, close_v=True)
-    mb.add_face([base + i for i in range(6)][::-1], mat)
-    end = base + 6 * (n - 1)
-    mb.add_face([end + i for i in range(6)], mat)
+    mb.add_face([base + i for i in range(10)][::-1], mat)
+    end = base + 10 * (n - 1)
+    mb.add_face([end + i for i in range(10)], mat)
 
 
 def half_breadth_at(hull, xi, z, n=80):

@@ -324,11 +324,32 @@ def rudder_steam(mb, hull, length=0.85, width=0.36, mat=MAT["iron"], steel=MAT["
     pass  # implemented in the build script where the geometry is known
 
 
-def pipe_run(mb, pts, r=0.014, mat=MAT["copper"], flange_mat=MAT["brass"], lagging=False):
+def pipe_run(mb, pts, r=0.014, mat=MAT["copper"], flange_mat=MAT["brass"], lagging=False,
+             lag_mat=MAT["canvas"], bands=5):
+    """A steam/feed pipe.  With lagging=True the pipe is wrapped in canvas
+    lagging with brass retaining bands at intervals -- the way a Victorian
+    steam pipe is actually finished, to keep the heat in and the hand of
+    anyone who grabs it unburnt."""
     pts = np.array(pts, dtype=float)
     mb.add_tube(pts, r, segments=10, mat=mat, caps=True)
     for p in (pts[0], pts[-1]):
         cyl(mb, p, p + unit(pts[-1] - pts[0]) * 0.02, r * 1.9, seg=10, mat=flange_mat)
+    if lagging:
+        mb.add_tube(pts, r * 1.65, segments=10, mat=lag_mat, caps=True)
+        # brass bands, evenly spaced along the run
+        seg_len = np.linalg.norm(np.diff(pts, axis=0), axis=1)
+        total = float(seg_len.sum())
+        for k in range(bands):
+            d = total * (k + 0.5) / bands
+            acc = 0.0
+            for i, L in enumerate(seg_len):
+                if acc + L >= d or i == len(seg_len) - 1:
+                    f = np.clip((d - acc) / max(L, 1e-9), 0, 1)
+                    c = pts[i] + (pts[i + 1] - pts[i]) * f
+                    dvec = unit(pts[i + 1] - pts[i])
+                    cyl(mb, c - dvec * 0.006, c + dvec * 0.006, r * 1.82, seg=10, mat=MAT["brass"])
+                    break
+                acc += L
 
 
 def valve(mb, pos, direction=(0, 0, 1), size=1.0, mat=MAT["brass"], wheel=True):

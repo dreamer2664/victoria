@@ -73,11 +73,14 @@ in the renders are the ones this calculation produces.
   with the machinery standing in an open well between them.
 * A coaming 0.11 m high around the well, capped and painted.
 * A **canvas canopy** carried on six brass hoops and four longitudinal
-  strings, tensioned down onto the coaming with a valance at each side and
-  closed ends fore and aft. The funnel passes through it — see §5. The
-  canopy is deliberately *low* (0.30 m rise): a steam cutter's canopy is a
-  weather hood, not a deckhouse, and a tall box would both look wrong and
-  block the view from the helm.
+  strings. The canvas is modelled as cloth, not as a board: it **sags 26 mm
+  between hoops**, carries a slight ripple across its width, is **seamed**
+  with five raised strips down its length, and is **laced** to the coaming
+  with rope ties through brass grommets at every other hoop, finishing in a
+  **scalloped valance** and closed end curtains. The funnel passes through it
+  — see §5. The canopy is deliberately *low* (0.30 m rise): a steam cutter's
+  canopy is a weather hood, not a deckhouse, and a tall box would both look
+  wrong and block the view from the helm.
 
 ## 4. Boiler
 
@@ -136,6 +139,12 @@ runs at real elevations: main steam on the port side at chest height, exhaust
 to the funnel base, feed (copper) low down along the starboard side, blow-down
 through the shell.
 
+The main steam and exhaust runs are **lagged** — wrapped in canvas with brass
+retaining bands at intervals, which is how a Victorian steam pipe is actually
+finished, both to keep the heat in and so that a hand laid on it is not
+burnt. It also stops the pipework reading as bare scaffolding inside the
+boat.
+
 ## 6. Fuel and consumables
 
 * Coal bunker abaft the boiler at x = +1.62 m, 0.48 m wide, holding about
@@ -178,7 +187,7 @@ does not set sail; the historical examples with masts are rowing boats.
 
 ```
 cd boats/scripts
-LD_LIBRARY_PATH=/home/user/blender/lib blender -b --python build_steam_cutter.py -- --quick
+LD_LIBRARY_PATH=/var/tmp/blender/lib blender -b --python build_steam_cutter.py -- --quick
 ```
 
 `--quick` renders at reduced resolution; without it the full render set is
