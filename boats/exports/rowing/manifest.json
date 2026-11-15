@@ -112,21 +112,21 @@
       ],
       "bounds_max_m": [
         3.81,
-        0.9583,
+        0.4558,
         0.93
       ],
       "size_m": [
         7.6197,
-        1.4142,
+        0.9117,
         1.4027
       ],
       "size_studs": [
         27.213,
-        5.051,
+        3.256,
         5.01
       ],
-      "vertices": 1994,
-      "triangles": 3843
+      "vertices": 1434,
+      "triangles": 2738
     },
     {
       "name": "Keelson_Gunwale",

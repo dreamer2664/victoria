@@ -33,7 +33,7 @@ Full output: [`VERIFICATION.md`](VERIFICATION.md).
 | Propeller and rudder are separate objects with their own origins | PASS | screw (−3.42, 0, −0.45); rudder (−3.62, 0, +0.65) |
 | Published displacement | PASS | 3532 kg loaded, integrated in `boatgen.hydro` |
 
-**Boat B — 25 ft clinker rowing cutter (24 objects, 32 379 verts / 30 257 faces)**
+**Boat B — 25 ft clinker rowing cutter (24 objects, 31 819 verts / 29 700 faces)**
 
 | Check | Result | Detail |
 |---|---|---|

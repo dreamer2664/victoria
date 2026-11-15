@@ -7,12 +7,12 @@
 return {
 	boat_id = "rowing_cutter_25ft",
 	stud_per_m = 3.571429,
-	parts = {
+	parts = {{
 		{ name = "Fittings", role = "gear", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(26.0532, 6.9868, 3.6911), verts = 1034 },
-		{ name = "Floorboards", role = "furniture", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(12.6614, 2.5564, 0.2064), verts = 1040 },
+		{ name = "Floorboards", role = "furniture", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(12.6614, 2.6129, 0.2439), verts = 1120 },
 		{ name = "Frames", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(25.6914, 6.6525, 4.1786), verts = 5712 },
-		{ name = "Keel_Stem_Sternpost", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.2132, 3.2561, 5.0096), verts = 1322 },
-		{ name = "Keelson_Gunwale", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(26.885, 7.075, 4.45), verts = 1400 },
+		{ name = "Keel_Stem_Sternpost", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.2132, 3.2561, 5.0096), verts = 1434 },
+		{ name = "Keelson_Gunwale", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(26.885, 7.075, 4.4404), verts = 2120 },
 		{ name = "Mast_Clamp", role = "furniture", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(0.5714, 3.9054, 0.25), verts = 24 },
 		{ name = "Oar_P1", role = "moving", origin = Vector3.new(-4.8214, 1.2143, 2.095), size = Vector3.new(13.0714, 0.3071, 0.5536), verts = 320 },
 		{ name = "Oar_P2", role = "moving", origin = Vector3.new(-4.8214, 1.5179, 2.0636), size = Vector3.new(13.0714, 0.3071, 0.5536), verts = 320 },

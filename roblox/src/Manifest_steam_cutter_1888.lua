@@ -7,10 +7,10 @@
 return {
 	boat_id = "steam_cutter_1888",
 	stud_per_m = 3.571429,
-	parts = {
+	parts = {{
 		{ name = "Boiler", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(3.1757, 2.6871, 4.2779), verts = 3621 },
 		{ name = "Boiler_Internals", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(2.4286, 2.4286, 2.9286), verts = 380 },
-		{ name = "Canopy_Cover", role = "deck", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(10.5714, 6.94, 1.0971), verts = 371 },
+		{ name = "Canopy_Cover", role = "deck", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(10.6429, 6.94, 1.4971), verts = 1708 },
 		{ name = "Canopy_Frame", role = "deck", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(10.25, 7.0364, 1.3632), verts = 1128 },
 		{ name = "Coamings", role = "deck", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(10.625, 7.4743, 0.7396), verts = 112 },
 		{ name = "Decks", role = "deck", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(26.5, 7.5021, 0.9846), verts = 500 },
@@ -20,8 +20,8 @@ return {
 		{ name = "Funnel", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(0.9175, 1.3436, 3.6379), verts = 360 },
 		{ name = "Gear_Nav_Safety", role = "gear", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(25.7289, 8.08, 6.3886), verts = 1754 },
 		{ name = "Inner_Diagonal_Skin", role = "hull", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(22.2775, 7.4414, 4.7889), verts = 10955 },
-		{ name = "Keel_Stem_Frames_Gunwale", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.2132, 7.9414, 5.6436), verts = 3142 },
-		{ name = "Pipework_Fittings", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(14.5536, 2.9082, 5.0386), verts = 934 },
+		{ name = "Keel_Stem_Frames_Gunwale", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.2132, 7.9414, 5.6436), verts = 5238 },
+		{ name = "Pipework_Fittings", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(14.5536, 2.9082, 5.0386), verts = 1214 },
 		{ name = "Planking_Carvel", role = "hull", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.0182, 7.6196, 5.1121), verts = 11856 },
 		{ name = "Propeller", role = "moving", origin = Vector3.new(-12.2143, 0.0, -1.6071), size = Vector3.new(0.3868, 0.7436, 1.26), verts = 126 },
 		{ name = "Rudder", role = "moving", origin = Vector3.new(-12.9286, 0.0, 2.3379), size = Vector3.new(4.33, 0.3929, 2.7596), verts = 152 },

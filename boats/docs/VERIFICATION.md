@@ -24,8 +24,8 @@ run against the finished .blend, not a claim.
 | rowing_cutter_25ft | dimensions | LOA (hull) | PASS | hull 7.599 m vs spec 7.620 m |
 | rowing_cutter_25ft | dimensions | LOA (extreme, incl. rudder/oars/gear) | PASS | model 7.915 m vs hull 7.620 m |
 | rowing_cutter_25ft | dimensions | beam | PASS | model 2.089 m vs spec 1.905 m (extreme, incl. fenders/gunwale) |
-| rowing_cutter_25ft | mesh | no loose vertices or degenerate faces | PASS | 32379 verts / 30257 faces total |
-| rowing_cutter_25ft | mesh | polygon budget | PASS | 30257 faces |
+| rowing_cutter_25ft | mesh | no loose vertices or degenerate faces | PASS | 31819 verts / 29700 faces total |
+| rowing_cutter_25ft | mesh | polygon budget | PASS | 29700 faces |
 | rowing_cutter_25ft | interference | Rudder vs Planking_Clinker: rudder must not foul the planking | PASS | 0 triangle pairs intersect |
 | rowing_cutter_25ft | pivot | ten oars present | PASS | 10 found |
 | rowing_cutter_25ft | pivot | oar origins on the rowlock axis | PASS | [] |
