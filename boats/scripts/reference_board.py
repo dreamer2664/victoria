@@ -16,7 +16,7 @@ REFS = os.path.join(ROOT, "refs", "rmg")
 RENDERS = os.path.join(ROOT, "boats", "renders")
 OUT = os.path.join(ROOT, "boats", "drawings", "reference_board.png")
 
-W, H = 3400, 2380
+W, H = 3400, 2760
 BG = (250, 249, 246)
 INK = (26, 26, 26)
 GREY = (90, 90, 90)
@@ -40,13 +40,22 @@ def fit(im, w, h):
                      Image.LANCZOS)
 
 
-def panel(d, x, y, w, h, img_path, title, caption, num=None, crop=None):
+def autocrop(im, margin=0.14):
+    """Trim the empty studio margin from a render so the subject fills the panel."""
+    w, h = im.size
+    return im.crop((int(w * margin), int(h * margin * 0.9),
+                    int(w * (1 - margin)), int(h * (1 - margin * 0.9))))
+
+
+def panel(d, x, y, w, h, img_path, title, caption, num=None, crop=None, margin=None):
     d.rectangle([x, y, x + w, y + h], outline=(210, 208, 202), width=2)
     ih = h - 150
     if os.path.exists(img_path):
         im = Image.open(img_path)
         if crop:
             im = im.crop(crop)
+        elif margin is not None:
+            im = autocrop(im, margin)
         im = fit(im, w - 24, ih - 12)
         board.paste(im, (x + (w - im.width) // 2, y + 12))
     ty = y + ih + 6
@@ -123,12 +132,13 @@ panel(d, 60, y1, pw2, 720, os.path.join(RENDERS, "steam_hero.png"),
       "Carvel planking over a double-diagonal inner skin, white sheer strake, "
       "coal-fired vertical boiler and inverted vertical engine under a canvas "
       "canopy carried on the coaming, funnel through the canvas, two-bladed "
-      "screw and plate rudder aft.", 4)
+      "screw and plate rudder aft.", 4, margin=0.20)
 panel(d, 60 + pw2 + gap, y1, pw2, 720, os.path.join(RENDERS, "rowing_hero.png"),
       "Boat B — 25 ft clinker rowing cutter",
       "Eleven individually modelled overlapping strakes with a 22 mm land, oak "
       "frames at 152 mm centres inside the planking, five thwarts, stern "
-      "sheets, floor gratings, ten 12 ft oars and a transom-hung plate rudder.", 5)
+      "sheets, floor gratings, ten 12 ft oars and a transom-hung plate rudder.", 5,
+      margin=0.20)
 
 # ---- row 3: element comparisons ----
 y2 = y1 + 720 + 70
@@ -146,7 +156,7 @@ panel(d, 60 + pw3 + gap, y2, pw3, ph3,
       os.path.join(RENDERS, "rowing_broadside.png"),
       "Model: Boat B topsides",
       "Each of the 11 strakes is a closed solid with its own land, so the "
-      "shadow line between strakes is real geometry, not a texture.", 7)
+      "shadow line between strakes is real geometry, not a texture.", 7, margin=0.16)
 panel(d, 60 + 2 * (pw3 + gap), y2, pw3, ph3,
       os.path.join(REFS, "e9006_222.jpg"),
       "Interior arrangement",
@@ -156,7 +166,7 @@ panel(d, 60 + 3 * (pw3 + gap), y2, pw3, ph3,
       os.path.join(RENDERS, "rowing_from_above.png"),
       "Model: Boat B interior",
       "The same arrangement built as geometry: five thwarts with knees, stern "
-      "sheets, and floor gratings on cleats over the frames.", 9)
+      "sheets, and floor gratings on cleats over the frames.", 9, margin=0.18)
 
 # ---- footer ----
 fy = H - 150

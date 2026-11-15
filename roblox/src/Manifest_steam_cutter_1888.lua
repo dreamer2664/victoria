@@ -23,10 +23,10 @@ return {
 		{ name = "Keel_Stem_Frames_Gunwale", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.2132, 7.9414, 5.6436), verts = 3142 },
 		{ name = "Pipework_Fittings", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(14.5536, 2.9082, 5.0386), verts = 934 },
 		{ name = "Planking_Carvel", role = "hull", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.0182, 7.6196, 5.1121), verts = 11856 },
-		{ name = "Propeller", role = "moving", origin = Vector3.new(-10.7857, 0.0, -2.1429), size = Vector3.new(0.3868, 0.8293, 1.495), verts = 126 },
-		{ name = "Rudder", role = "moving", origin = Vector3.new(-12.9286, 0.0, 2.3379), size = Vector3.new(4.5057, 0.4286, 6.0236), verts = 172 },
+		{ name = "Propeller", role = "moving", origin = Vector3.new(-12.2143, 0.0, -1.6071), size = Vector3.new(0.3868, 0.7436, 1.26), verts = 126 },
+		{ name = "Rudder", role = "moving", origin = Vector3.new(-12.9286, 0.0, 2.3379), size = Vector3.new(4.33, 0.3929, 2.7596), verts = 152 },
 		{ name = "Seats", role = "furniture", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(18.3214, 6.6189, 1.0632), verts = 40 },
-		{ name = "Shafting", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(7.5243, 0.36, 2.2629), verts = 212 },
+		{ name = "Shafting", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(8.9439, 0.36, 1.7389), verts = 212 },
 		{ name = "Transom", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(0.9582, 4.4393, 3.0014), verts = 680 },
 	},
 }

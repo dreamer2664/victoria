@@ -100,7 +100,7 @@ def render_boat(key):
                 if abs(p.normal.y) > 0.9 and abs(p.center.y - (-0.16 if key == "steam" else -0.10)) < 0.01:
                     p.material_index = idx
 
-    bl.studio(world_strength=0.55, ground_z=-1.8, key_energy=1100)
+    bl.studio(world_strength=0.55, ground_z=-0.80, key_energy=1100)
     if key == "steam":
         shots = {
             "cutaway_a": ((5.6, -6.2, 3.1), (0.1, 0.1, 0.45), 50),

@@ -113,14 +113,15 @@ Victorian steam plant.
 | Frame | four turned columns on a cast bedplate |
 | Valve gear | slide valve in a chest, driven by an eccentric with a Stephenson reversing link |
 | Transmission | forged crankshaft, crank webs, connecting rod, crosshead running in guide bars, piston rod and piston |
-| Propeller | two-bladed, 0.41 m (16 in) diameter, on a 0.05 m shaft through a stern tube |
+| Propeller | two-bladed, 0.34 m (13½ in) diameter, on a 0.048 m shaft through a stern tube |
 | Rudder | plate rudder aft of the screw, with a stock through the counter and a tiller |
 
 The engine is placed so the crank sits at z = −0.025 m relative to the load
 waterline — low in the boat, where the weight belongs. The shaft runs aft at
-a shallow angle from the crank to the stern tube and out to the screw at
-(−3.02, 0, −0.60), which is 0.073 m above the keel line at that station: the
-screw is clear of the keel and clear of the water surface.
+about 9° from the crank to the stern tube and out to the screw at
+(−3.42, 0, −0.45). The screw hangs below the counter with its disc top 0.04 m
+clear of the local keel line, so it turns in clean water without cutting into
+the planking — verified as a triangle-level interference test, not assumed.
 
 **Why a single-cylinder engine?** The 1888 plan archive pairs this hull with
 simple direct-acting plants; compound engines belong to the 32 ft cutters of

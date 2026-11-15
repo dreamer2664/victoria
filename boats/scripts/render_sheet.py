@@ -48,7 +48,7 @@ def setup_grade():
         sc.view_settings.look = "AgX - Medium High Contrast"
     except Exception:
         pass
-    sc.view_settings.exposure = 0.35
+    sc.view_settings.exposure = 0.12
     sc.render.engine = "CYCLES"
     sc.cycles.device = "CPU"
     sc.cycles.use_denoising = True
@@ -68,7 +68,7 @@ def render_boat(key):
     sc = bpy.context.scene
     sc.world = None
     bl.studio(world_strength=0.62, key_energy=1400.0, area_size=5.0,
-              ground_z=-1.9, bg=(0.045, 0.050, 0.060))
+              ground_z=-0.78, bg=(0.045, 0.050, 0.060))
     setup_grade()
 
     for name, v in VIEWS.items():
@@ -92,7 +92,7 @@ def render_boat(key):
         sc = bpy.context.scene
         sc.world = None
         bl.studio(world_strength=0.85, key_energy=900.0, area_size=3.0,
-                  ground_z=-1.9, bg=(0.05, 0.055, 0.065))
+                  ground_z=-0.78, bg=(0.05, 0.055, 0.065))
         setup_grade()
         cam = bl.frame_camera("steam_machinery", (0.55, -0.80, 0.42),
                               look_at=(0.0, 0, 0.75), lens=62, margin=0.62, aspect=1.55)

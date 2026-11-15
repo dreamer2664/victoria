@@ -198,13 +198,14 @@ def plain(name, color, rough=0.6, transmission=0.0, ior=1.45, emission=None):
 def build_materials():
     """The shared material library.  Order must match boatgen.hull.MAT."""
     mats = {}
-    mats["wood_out"] = wood_material("Teak_Exterior", base=(0.30, 0.155, 0.072), dark=(0.13, 0.06, 0.028))
+    mats["wood_out"] = wood_material("Teak_Exterior", base=(0.155, 0.058, 0.024), dark=(0.052, 0.018, 0.007),
+                                    rough=0.28, bump=0.30)
     mats["wood_in"] = wood_material("Paint_Interior", base=(0.62, 0.60, 0.55), dark=(0.50, 0.48, 0.44),
                                     rough=0.55, bump=0.12, varnish=False)
-    mats["wood_timber"] = wood_material("Oak_Timber", base=(0.36, 0.22, 0.11), dark=(0.18, 0.10, 0.05),
+    mats["wood_timber"] = wood_material("Oak_Timber", base=(0.215, 0.108, 0.048), dark=(0.082, 0.038, 0.016),
                                         scale=9.0)
-    mats["wood_deck"] = wood_material("Pine_Deck", base=(0.46, 0.33, 0.19), dark=(0.26, 0.17, 0.09),
-                                      scale=11.0, rough=0.6)
+    mats["wood_deck"] = wood_material("Pine_Deck", base=(0.30, 0.20, 0.105), dark=(0.15, 0.095, 0.045),
+                                      scale=11.0, rough=0.62)
     mats["paint_hull"] = paint_material("Hull_Black", (0.020, 0.021, 0.024), rough=0.22, coat=0.45, grime=0.5)
     mats["paint_white"] = paint_material("Boot_White", (0.72, 0.71, 0.66), rough=0.3, grime=0.3)
     mats["brass"] = metal_material("Brass", (0.76, 0.55, 0.20), rough=0.18)

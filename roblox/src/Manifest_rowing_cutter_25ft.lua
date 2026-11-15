@@ -24,7 +24,7 @@ return {
 		{ name = "Oar_S3", role = "moving", origin = Vector3.new(-4.4643, -2.125, 1.9982), size = Vector3.new(13.0714, 0.3071, 0.5536), verts = 320 },
 		{ name = "Oar_S4", role = "moving", origin = Vector3.new(-4.1071, -2.4286, 1.8868), size = Vector3.new(13.0714, 0.3071, 0.5536), verts = 320 },
 		{ name = "Oar_S5", role = "moving", origin = Vector3.new(-4.1071, -2.7321, 1.9546), size = Vector3.new(13.0714, 0.3071, 0.5536), verts = 320 },
-		{ name = "Planking_Clinker", role = "hull", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.1382, 6.8157, 4.5654), verts = 14079 },
+		{ name = "Planking_Clinker", role = "hull", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.1382, 6.8304, 4.5832), verts = 14079 },
 		{ name = "Quarter_Knees", role = "furniture", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(0.6611, 3.0629, 1.1875), verts = 96 },
 		{ name = "Rowlocks", role = "gear", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(12.2811, 7.0121, 0.7707), verts = 1020 },
 		{ name = "Rudder", role = "moving", origin = Vector3.new(-13.6414, 0.0, 2.4704), size = Vector3.new(4.7739, 0.2786, 4.1196), verts = 208 },

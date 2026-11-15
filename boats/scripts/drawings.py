@@ -242,7 +242,7 @@ STEAM_NOTES = [
  "2. Sheer: 0.908 m above LWL at the stem head, 0.773 m at the transom; sheer strake is painted white.",
  "3. Machinery is carried on two wrought-iron longitudinal bearers bolted to the floors (see D-002).",
  "4. The canopy is a canvas hood on brass hoops carried by the coaming; the funnel passes through it.",
- "5. Boiler: vertical fire-tube, 0.360 m dia x 0.860 m, ~110 psi working; coal bunker abaft the engine.",
+ "5. Boiler: vertical fire-tube, 0.720 m dia x 0.860 m, ~110 psi working; coal bunker abaft the boiler.",
  "6. Proportion of this boat follows the 1888 Admiralty *proposed* 25 ft steam cutter (RMG NPC9572);",
  "    equipment is reconstructed, not documented - see HISTORICAL_EVIDENCE.md.",
 ]
@@ -266,17 +266,17 @@ def main():
 
     steam_layout = [
         {"kind": "cyl", "x": (0.50 - 0.18, 0.50 + 0.18), "z": (-0.37, 0.49),
-         "label": "Boiler 0.36 dia x 0.86", "lz": 1.30},
+         "label": "Boiler 0.72 dia x 0.86", "lz": 1.30},
         {"kind": "box", "x": (-0.78 - 0.20, -0.78 + 0.20), "z": (-0.30, 0.42),
          "label": "Inverted vertical engine\n5½ in x 6 in", "lz": 1.05},
         {"kind": "box", "x": (1.62 - 0.24, 1.62 + 0.24), "z": (-0.10, 0.52),
          "label": "Coal bunker", "lz": 1.05},
-        {"kind": "box", "x": (-1.15, -0.98), "z": (-0.10, 0.10),
-         "label": "Thrust block", "lz": 0.60, "lx": -1.9},
-        {"kind": "box", "x": (-2.90, -3.14), "z": (-0.70, -0.50),
-         "label": "Screw 0.41 dia", "lz": 0.30, "lx": -2.9},
-        {"kind": "box", "x": (-3.72, -3.52), "z": (-0.62, 0.55),
-         "label": "Rudder", "lz": 0.90, "lx": -3.9},
+        {"kind": "box", "x": (-1.18, -1.02), "z": (-0.10, 0.12),
+         "label": "Thrust block", "lz": 0.62, "lx": -1.95},
+        {"kind": "box", "x": (-3.46, -3.38), "z": (-0.62, -0.28),
+         "label": "Screw 0.34 dia", "lz": 0.30, "lx": -2.95},
+        {"kind": "box", "x": (-3.78, -3.62), "z": (-0.60, 0.66),
+         "label": "Rudder", "lz": 0.95, "lx": -4.0},
         {"kind": "box", "x": (1.10, 1.28), "z": (0.49, 1.63),
          "label": "Funnel", "lz": 1.60, "lx": 1.95},
     ]
