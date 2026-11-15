@@ -3,3 +3,5 @@ __pycache__/
 .cache/
 renders/wip/
 renders/interiors_wip/
+*.blend1
+*.blend2
