@@ -32,6 +32,9 @@ TEX_METRES = {
     "canvas":       1.00,
     "stucco":       2.00,   # painted render (terminal / station)
     "terracotta":   1.20,
+    "yard":         4.00,   # compacted earth / gravel yard
+    "flags":        3.60,   # 1.2 x 0.9 m stone flags
+    "ballast":      1.20,   # railway ballast
 }
 
 
@@ -398,6 +401,80 @@ def _stucco():
     return _shade(col, 0.78), n
 
 
+def _yard():
+    """Compacted earth and gravel yard: ruts, ash, puddles, no stone course."""
+    h = w = PX
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    base = np.array([0.300, 0.278, 0.243])
+    big = fbm((h, w), 3, 5, seed=71)
+    fine = fbm((h, w), 40, 4, seed=72)
+    grit = fbm((h, w), 160, 3, seed=73)
+    col = np.ones((h, w, 3), np.float32) * base
+    col *= (0.72 + 0.55 * big[..., None])
+    col *= (0.88 + 0.24 * fine[..., None])
+    col *= (0.90 + 0.20 * grit[..., None])
+    # cart ruts, roughly parallel, sunk and darker
+    rut = np.zeros((h, w), np.float32)
+    for k, cx in enumerate((0.22, 0.31, 0.70, 0.79)):
+        d = np.abs(xx / w - cx)
+        rut = np.maximum(rut, np.clip(1.0 - d / 0.022, 0, 1) * (0.5 + 0.5 * fine))
+    col *= (1.0 - 0.28 * rut[..., None])
+    # standing water in the lowest spots
+    wet = np.clip((big - 0.70) * 4.0, 0, 1) * np.clip((0.5 - rut) * 3.0, 0, 1)
+    col = _mix(col, np.array([0.075, 0.082, 0.080])[None, None, :], wet * 0.85)
+    # NOTE: keep the height field gentle. Gradients are converted to a normal map
+    # at strength 2.2, and a high-frequency height (the grit octave) produced
+    # normals lying almost flat, which rendered the whole yard near-black.
+    height = (0.30 + 0.45 * fine + 0.25 * big) * (1 - 0.35 * rut) - 0.20 * wet
+    height = np.clip(height, 0, 1) * 0.18
+    return _shade(col, 0.96 - 0.35 * wet), height
+
+
+def _flags():
+    """Big stone flags, 1.2 x 0.9 m -- quay edges, forecourts, station yards."""
+    h = w = PX
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    rows, cols = 4, 3
+    ry = np.floor(yy / (h / rows)).astype(int)
+    off = (ry % 2) * (w / cols * 0.5)
+    cx = np.floor(((xx + off) % w) / (w / cols)).astype(int)
+    jit = (np.sin(ry * 17.3 + cx * 53.1) * 977.7) % 1.0
+    base = np.array([0.268, 0.262, 0.246])
+    col = np.ones((h, w, 3), np.float32) * base
+    col *= (0.82 + 0.30 * jit[..., None])
+    jy = np.minimum(yy % (h / rows), h / rows - yy % (h / rows)) / (h / rows)
+    jx = np.minimum((xx + off) % (w / cols), w / cols - (xx + off) % (w / cols)) / (w / cols)
+    joint = ((jy < 0.012) | (jx < 0.016)).astype(np.float32)
+    col = _mix(col, np.array([0.085, 0.082, 0.075])[None, None, :], joint * 0.85)
+    # wear polish in the middle of each flag, dirt at the edges
+    edge = np.clip(np.minimum(jy * 14, jx * 10), 0, 1)
+    col *= (0.94 + 0.14 * edge[..., None])
+    n = fbm((h, w), 22, 4, seed=81)
+    col *= (0.93 + 0.14 * n[..., None])
+    mud = fbm((h, w), 7, 4, seed=82)
+    col = _mix(col, np.array([0.15, 0.135, 0.115])[None, None, :],
+               np.clip((mud - 0.62) * 2.6, 0, 1) * 0.45 * (1 - edge))
+    height = (np.clip(1.0 - joint * 1.4, 0, 1) * 0.8 + n * 0.2) * 0.45
+    return _shade(col, 0.80 + 0.10 * n), height
+
+
+def _ballast():
+    """Angular granite ballast between and around the rails."""
+    h = w = PX
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    n1 = fbm((h, w), 55, 3, seed=91)
+    n2 = fbm((h, w), 22, 3, seed=92)
+    stones = np.clip((n1 - 0.42) * 5.0, 0, 1)
+    base = np.array([0.185, 0.180, 0.168])
+    col = np.ones((h, w, 3), np.float32) * base
+    col *= (0.55 + 1.15 * stones[..., None])
+    col *= (0.86 + 0.28 * n2[..., None])
+    col = _mix(col, np.array([0.055, 0.052, 0.048])[None, None, :],
+               (1 - stones) * 0.55)
+    height = (np.clip(stones * 1.2 - 0.1, 0, 1) * 0.75 + n2 * 0.25) * 0.30
+    return _shade(col, 0.92 - 0.1 * stones), height
+
+
 def _terracotta():
     h = w = PX
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
@@ -433,6 +510,9 @@ RECIPES = {
     "canvas":      _canvas,
     "stucco":      _stucco,
     "terracotta":  _terracotta,
+    "yard":        _yard,
+    "flags":       _flags,
+    "ballast":     _ballast,
 }
 
 

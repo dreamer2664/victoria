@@ -71,9 +71,10 @@ def setup_lighting(coll, port):
         # light along the dock's length instead, so the altars and keel blocks read.
         bsetup.add_sun(coll, 215, 41, 3.4, (1.0, 0.94, 0.86))
     bsetup.add_fill(coll, 100, 34, 0.90, (0.74, 0.80, 0.90))
-    bsetup.setup_world(1.70, top=(0.40, 0.49, 0.62), bottom=(0.63, 0.61, 0.55))
-    bsetup.setup_compositor_haze(fog_color=(0.75, 0.74, 0.71), start=120.0,
-                                 depth=1100.0, max_fog=0.52)
+    bsetup.setup_sky(sun_az=(215 if port == "a" else 215), sun_el=41,
+                     strength=0.62, cloud_cover=0.34)
+    bsetup.setup_compositor_haze(fog_color=(0.66, 0.68, 0.70), start=150.0,
+                                 depth=1400.0, max_fog=0.38)
 
 
 # ------------------------------------------------------------------ main
@@ -85,7 +86,7 @@ def main():
         sc.view_settings.look = 'AgX - Punchy'
     except TypeError:
         pass
-    sc.view_settings.exposure = 1.00
+    sc.view_settings.exposure = 0.92
 
     bsetup.make_materials()
     mod = __import__("port_" + PORT)

@@ -155,7 +155,8 @@ def build(R, coll, audit):
 
     # ================================================== land + water
     mb = MeshBuilder()
-    site.add_land(mb, SITE, WATER_HOLES, top=QUAY_Z, bottom=-4.5, surf="setts")
+    site.add_land(mb, SITE, WATER_HOLES, top=QUAY_Z, bottom=-4.5, surf=None)
+    site.land_surface_bands(mb, _surface_bands(), WATER_HOLES, top=QUAY_Z)
     site.water(mb, [(SLIP_X0, a, SLIP_X1, b) for a, b in SLIPS], z=0.0)
     # No. 1 dock is flooded with its caisson seated; the Princess dock is pumped dry
     site.water(mb, [(NO1_DOCK[0], NO1_DOCK[1], NO1_DOCK[0] + NO1_DOCK[3],
@@ -361,6 +362,8 @@ def build(R, coll, audit):
         "spawns": [{"id": "B-S1", "pos": (70, -24), "role": "worker"},
                    {"id": "B-S2", "pos": (14, 60), "role": "slipworker"}],
     }
+    _life(R)
+
     return meta
 
 
@@ -418,3 +421,69 @@ def _signs(R):
     bldg.sign_board(mb, mp, 5.5, 5.4, 3.6, 0.85, "sign_time_office")
     R.define("B_signs", mb)
     R.place("B_signs", 0, 0)
+
+
+# ------------------------------------------------------------------ surfaces
+def _surface_bands():
+    """Setts on the frontage and the slip heads, earth yards and plate roads inland.
+
+    An ironworks yard is mud, ash, plate offcuts and spilt coal -- not paving.
+    """
+    return [
+        (-30, -300, 66, 400, "setts"),      # river frontage, slip heads
+        (66, -300, 340, 260, "yard"),       # fitting-out and plate yards
+        (66, 260, 340, 340, "flags"),       # forecourt of the offices and shops
+        (66, 340, 340, 400, "yard"),        # coal and scrap ground at the north
+    ]
+
+
+# ------------------------------------------------------------------ life
+def _life(R):
+    """Ironworkers, carters and the loose material of a building yard.
+
+    Kept to where work is: the slip heads, the dock altars, the shop doors and
+    the fitting-out quay. Empty ground between them is correct -- a yard full of
+    evenly-spaced props looks like a showroom.
+    """
+    from core import QUAY_Z
+    import life as L
+
+    protos = {
+        "B_man":      lambda mb: L.workman(mb, 0, 0, 0, coat="black"),
+        "B_men":      lambda mb: L.workman_pair(mb, 0, 0, 0),
+        "B_dray":     lambda mb: L.dray(mb, 0, 0, 0),
+        "B_cart":     lambda mb: L.handcart(mb, 0, 0, 0),
+        "B_planks":   lambda mb: L.plank_stack(mb, 0, 0, 0),
+        "B_rope":     lambda mb: L.rope_coil(mb, 0, 0, 0),
+        "B_coal":     lambda mb: L.coal_heap(mb, 0, 0, 0),
+        "B_ladder":   lambda mb: L.ladder(mb, 0, 0, 0),
+        "B_bales":    lambda mb: L.bale_stack(mb, 0, 0, 0, seed=11),
+    }
+    for n, fn in protos.items():
+        mb = MeshBuilder(); fn(mb); R.define(n, mb)
+
+    # men at the slip heads and along the frontage
+    for y in (72, 88, 100, 121, 148, 170, 210, 250, 300, -40, -120, -210):
+        R.place("B_man", -8, y, QUAY_Z, (y * 13) % 360)
+    for y in (96, 158, 232):
+        R.place("B_men", 4, y, QUAY_Z, (y * 7) % 360)
+    # men on the shop floor side and in the yards
+    for x, y in ((80, 40), (96, -60), (120, 120), (150, 200), (200, 300), (250, 60)):
+        R.place("B_man", x, y, QUAY_Z, (x * 3) % 360)
+    for x, y, rz in ((30, 60, 90), (40, 140, 95), (90, 210, 20), (170, 320, 10),
+                     (240, 120, 200)):
+        R.place("B_dray", x, y, QUAY_Z, rz)
+    for x, y, rz in ((-10, 130, 90), (20, 190, 95), (70, -30, 20), (110, 250, 15)):
+        R.place("B_cart", x, y, QUAY_Z, rz)
+    # plate and timber stacks in the yards
+    for x, y, rz in ((100, -180, 0), (130, -180, 0), (160, -120, 90), (90, 320, 0),
+                     (210, 250, 90)):
+        R.place("B_planks", x, y, QUAY_Z, rz)
+    for y in (-260, -200, -150, 300, 360):
+        R.place("B_rope", -22, y, QUAY_Z + 0.02)
+    for x, y in ((150, -150), (180, -80), (230, 340)):
+        R.place("B_coal", x, y, QUAY_Z)
+    for x, y, rz in ((60, 210, 180), (120, 300, 90), (200, -200, 10)):
+        R.place("B_ladder", x, y, QUAY_Z, rz)
+    for x, y in ((80, 270), (140, 300), (190, 280)):
+        R.place("B_bales", x, y, QUAY_Z, (x * 5) % 360)

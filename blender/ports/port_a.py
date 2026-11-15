@@ -161,7 +161,8 @@ def build(R, coll, audit):
 
     # ================================================== land + water
     mb = MeshBuilder()
-    site.add_land(mb, SITE, WATER_HOLES, top=QUAY_Z, bottom=-4.0, surf="setts")
+    site.add_land(mb, SITE, WATER_HOLES, top=QUAY_Z, bottom=-4.0, surf=None)
+    site.land_surface_bands(mb, _surface_bands(), WATER_HOLES, top=QUAY_Z)
     site.water(mb, [DOCK], z=0.0)
     site.water(mb, [RIVER], z=0.0)
     R.define("A_ground", mb)
@@ -263,6 +264,9 @@ def build(R, coll, audit):
 
     # ================================================== signs
     _signs(R)
+
+    # ================================================== life
+    _life(R)
 
     # ================================================== metadata for Roblox / docs
     meta = {
@@ -523,3 +527,91 @@ def _streets(R):
     pavement(0.0, 244.0, 200.0, 248.0)
     R.define("A_streets", mb)
     R.place("A_streets", 0, 0)
+
+
+# ------------------------------------------------------------------ surfaces
+def _surface_bands():
+    """The estate is not one material.
+
+    The frontage is granite setts because it carries iron-shod wheels and
+    railway metals; the yards behind are compacted earth and gravel; the
+    forecourts of the public buildings are big stone flags. A single uniform
+    apron across 790 x 1120 m is the biggest give-away in a port model.
+    """
+    B = []
+    # frontage: setts along the whole waterfront
+    B.append((-30, -300, 0, 430, "setts"))
+    # north-east yard
+    B.append((0, 190, 330, 430, "yard"))
+    # terminal forecourt + station approach + custom house court (flags)
+    B.append((0, 20, 72, 124, "flags"))
+    B.append((0, 124, 66, 162, "flags"))
+    B.append((72, 124, 330, 190, "yard"))
+    # working yard between the forecourts and the north-east yard
+    B.append((72, 20, 330, 124, "yard"))
+    # south yard down to Trafalgar Dock coping
+    B.append((0, -60, 330, 20, "yard"))
+    B.append((0, -300, 330, -60, "yard"))
+    return B
+
+
+# ------------------------------------------------------------------ life
+def _life(R):
+    """People, drays, handcarts and loose cargo.
+
+    Placement is not random scatter: men stand where work happens (at the
+    gangway, at the shed doors, at the crane feet), carts stand where they would
+    be loaded, and rope sits at the bollards because that is where it is used.
+    """
+    from core import QUAY_Z
+    import life as L
+
+    prototypes = {
+        "A_man":       lambda mb: L.workman(mb, 0, 0, 0),
+        "A_men":       lambda mb: L.workman_pair(mb, 0, 0, 0),
+        "A_dray":      lambda mb: L.dray(mb, 0, 0, 0),
+        "A_handcart":  lambda mb: L.handcart(mb, 0, 0, 0),
+        "A_sacks":     lambda mb: L.sack_pile(mb, 0, 0, 0, seed=5),
+        "A_barrels":   lambda mb: L.barrel_group(mb, 0, 0, 0, seed=3),
+        "A_rope":      lambda mb: L.rope_coil(mb, 0, 0, 0),
+        "A_planks":    lambda mb: L.plank_stack(mb, 0, 0, 0),
+        "A_bales":     lambda mb: L.bale_stack(mb, 0, 0, 0, seed=7),
+        "A_ladder":    lambda mb: L.ladder(mb, 0, 0, 0),
+        "A_coalheap":  lambda mb: L.coal_heap(mb, 0, 0, 0),
+    }
+    for name, fn in prototypes.items():
+        mb = MeshBuilder(); fn(mb); R.define(name, mb)
+
+    # --- men along the working quay and at the public buildings
+    for x, y, rz in ((4, 40, 90), (7, 96, 80), (2, 150, 100), (10, 200, 70),
+                     (26, 58, 200), (34, 74, 180), (52, 30, 160), (64, 118, 210),
+                     (96, 60, 250), (120, 60, 280), (150, 100, 300), (44, 190, 120),
+                     (86, 200, 200), (200, 90, 20), (240, 130, 40)):
+        R.place("A_man", x, y, QUAY_Z, rz)
+    for x, y, rz in ((12, 88, 100), (30, 44, 190), (100, 130, 250)):
+        R.place("A_men", x, y, QUAY_Z, rz)
+    # --- carts where goods are handled
+    for x, y, rz in ((14, 110, 90), (20, 176, 95), (48, 140, 88), (206, 120, 20),
+                     (246, 200, 15), (100, 30, 180)):
+        R.place("A_dray", x, y, QUAY_Z, rz)
+    for x, y, rz in ((-6, 60, 90), (0, 132, 92), (56, 170, 100), (208, 100, 20),
+                     (30, 210, 120), (110, 128, 250)):
+        R.place("A_handcart", x, y, QUAY_Z, rz)
+    # --- loose cargo at the shed doors and on the apron
+    for x, y in ((-4, 84), (-2, 168), (44, 128), (58, 196), (208, 148), (252, 168),
+                 (14, 186), (120, 140)):
+        R.place("A_sacks", x, y, QUAY_Z, (x * 7) % 360)
+    for x, y in ((-8, 100), (40, 150), (204, 166), (250, 214), (64, 132)):
+        R.place("A_barrels", x, y, QUAY_Z, (y * 5) % 360)
+    for x, y in ((-22, 52), (-22, 96), (-22, 140), (-22, 196), (-22, 240),
+                 (66, 40), (66, 180), (66, 300)):
+        R.place("A_rope", x, y, QUAY_Z + 0.02)
+    for x, y, rz in ((8, 152, 0), (48, 162, 0), (210, 160, 90), (244, 236, 90)):
+        R.place("A_planks", x, y, QUAY_Z, rz)
+    for x, y in ((16, 146), (52, 124), (212, 110), (238, 246)):
+        R.place("A_bales", x, y, QUAY_Z, (x * 3) % 360)
+    for x, y, rz in ((2, 118, 20), (46, 240, 120), (206, 190, 10), (256, 130, 200)):
+        R.place("A_ladder", x, y, QUAY_Z, rz)
+    # --- coal on the staithe
+    for x, y in ((70, -60), (96, -66), (150, -62)):
+        R.place("A_coalheap", x, y, QUAY_Z)

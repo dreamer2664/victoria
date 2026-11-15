@@ -23,6 +23,8 @@ reports any pair that overlaps by more than 5 cm in both axes.
 | Port A after fixes | 46 | 396 | 786,186 | 1 → **0** |
 | Port B, first run | 36 | 269 | 262,423 | 0 |
 | Port B after dock fix | 41 | 291 | 377,162 | **0** |
+| Port A, realism pass (ground regions + life layer) | 57 | 462 | 795,120 | **0** |
+| Port B, realism pass | 50 | 340 | 384,082 | **0** |
 
 The one overlap caught was `A_goods_shed` ↔ `A_warehouse_3` (2.4 m). It was found by
 the auditor, not by eye, and the warehouse was moved 212 → 206 m along the quay.
@@ -130,6 +132,96 @@ Recorded because each of these cost real time and each has a lesson.
 
 6. **`site.py` shadowing the standard library.** Naming a module `site` inside a
    package breaks the interpreter's own `site` import. Renamed to `portsite.py`.
+
+---
+
+## 3A. The realism pass: sky, ground and population
+
+The brief for this pass was that the ports read as arch-vis rather than as places.
+Three things carried almost all of that gap, and one of them hid a real bug.
+
+### 3A.1 The sky was never doing anything
+
+`setup_sky()` mixes a procedural stratocumulus layer over a Nishita atmosphere.
+Four separate faults stacked on top of each other, and each one was invisible
+until the one before it was fixed:
+
+1. The horizon mask ran `From Min 0.015 → From Max 0.30` in Z. Every camera in
+   both ports looks along the horizon, so the mask was zero across the whole
+   visible sky: no clouds, in any frame, ever.
+2. The cloud field was sampled from `Texture Coordinate → Generated` in a world
+   shader, which does not reliably carry the view direction. The entire sky was
+   sampling a single noise value. `ShaderNodeNewGeometry → Incoming` is correct
+   and also gives the Z the horizon mask needs.
+3. The horizon mask was applied with a `ShaderNodeMix` set to FLOAT/MULTIPLY.
+   That node's float inputs and output do not behave as the RGBA variant's do,
+   and the multiply silently returned zero. Replaced with a `ShaderNodeMath`
+   MULTIPLY, which does.
+4. The cloud colour was authored in 0–1 units while the Nishita sky outputs on
+   the order of 4. Mixing a 0.9 white over a 4.0 sky does not produce a cloud,
+   it produces a hole. Cloud radiance now runs 2.6–4.6.
+
+The lesson is recorded here because it is general: a flat grey sky is what you
+get from *any* of these faults, and they all look identical in the render.
+
+### 3A.2 Coincident surfaces made every yard black
+
+The first attempt at ground variation laid paving quads 12 mm above the already
+paved land platform, and the results were black. The cause was not the material,
+the normals or the winding — it was that two surfaces a centimetre apart make
+every shadow ray self-intersect, so the upper sheet is lit by nothing but sky and
+reads as a flat dark blue-grey. Replacing them with thick slabs made it worse, not
+better: a single 258 × 410 m box face renders black in Cycles regardless of
+material (the same shadow-terminator failure `add_grid_quad` was written to avoid).
+
+The fix is structural, not cosmetic: `portsite.land_surface_bands()` paves the
+land once, in non-overlapping strips, each with its own material. Nothing is
+layered on top of anything.
+
+| Surface | Where | Mean albedo |
+|---|---|---|
+| `setts` | river frontage, slip heads, carriageways | 0.249 |
+| `flags` | terminal forecourt, station approach, custom house court | 0.249 |
+| `yard` | working yards, fitting-out ground, coal and scrap ground | 0.261 |
+| `ballast` | track beds | 0.166 |
+
+A second, quieter fault surfaced here too: the `yard` and `ballast` height fields
+were built from octaves as fine as 160 cells across a 1024 px tile. The normal
+map generator converts gradients at strength 2.2, so those normals lay almost
+flat and the surface shaded as if facing away from the sun. Height amplitude is
+now scaled to 0.18 (yard) and 0.30 (ballast) before the normal is taken.
+
+### 3A.3 The ports had nobody in them
+
+`blender/lib/life.py` adds the human layer: dock labourers (1.70 m, flat cap,
+long coat), two-wheel handcarts (2.1 m), four-wheel drays with a 16-hand horse,
+coal sacks, barrel groups, hawsers coiled at the bollards, plank stacks, bale
+stacks, ladders and coal heaps on the staithes.
+
+Placement is deliberate, not scattered: men stand at the gangway, at the shed
+doors and at the crane feet; carts stand where they would be loaded; rope sits at
+the bollards. Empty ground between these clusters is correct — evenly spaced
+props read as a showroom.
+
+Port A gains 11 life prototypes and 66 placements, Port B 9 and 49.
+
+### 3A.4 What this pass did not fix, and what it costs
+
+* **Resolution had to drop.** With the three new texture sets loaded, a
+  1152 x 648 render allocates ~1.2 GB anonymous memory and is OOM-killed on
+  this 2 GB sandbox (`dmesg`: `Killed process ... blender anon-rss:1213796kB`).
+  The full set is therefore rendered at **960 x 540, 24 samples**. The look is
+  unaffected; the fine detail is not as legible as the earlier 1152 x 648 set.
+* **Views looking into the sun wash out.** The Nishita sky plus the haze pass
+  puts a bright cream band across the upper third of `02_waterfront` and
+  `04_dockside`. That is physically what a backlit quay looks like, but it is a
+  weaker image than a side-lit one. The fix is a gentler horizon falloff on the
+  cloud mask (currently 0.02-0.14 in Z, which keeps cloud detail above about
+  8 degrees of elevation) and is not done.
+* **The graving dock floors are still black** (§3.3). This is now the single
+  worst defect in Port B: the docks read as holes in the ground rather than as
+  masonry basins.
+
 
 ---
 

@@ -44,6 +44,9 @@ MATERIALS = {
     "rubble":      dict(kind="tex", tile=2.40, rough=0.92),   # dock walls below coping
     "granite":     dict(kind="tex", tile=2.40, rough=0.74),   # coping, kerbs, dock altars
     "setts":       dict(kind="tex", tile=2.00, rough=0.82),   # carriageway paving
+    "flags":       dict(kind="tex", tile=3.60, rough=0.78),   # big stone flags
+    "yard":        dict(kind="tex", tile=4.00, rough=0.95),   # earth yard
+    "ballast":     dict(kind="tex", tile=1.20, rough=0.93),   # track ballast
     "terracotta":  dict(kind="tex", tile=1.20, rough=0.68),   # roof tiles, faience bands
     # roofs / timber / metal
     "slate":       dict(kind="tex", tile=1.20, rough=0.64),

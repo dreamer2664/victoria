@@ -9,7 +9,7 @@ period sources, and exported for Roblox.
 | Prototype | Liverpool: enclosed non-tidal dock system | Belfast: shipyard, graving docks, slips |
 | Distinctive works | floating landing stage, terminal, customs, baggage hall, station, transit sheds, coal staithes, cattle pens | Princess Graving Dock (800 × 80 ft, three caissons), No. 1 dock, three building slips, moulding loft, engineering/boiler shops, Titan crane, yard rail |
 | Berths | 4 (B1 212 m @ 11 m, B2 110 m @ 6.5 m, B3 132 m @ 9 m, B4 124 m @ 9 m) | 3 (fitting-out 210 m @ 10 m, service 320 m @ 9 m, No. 1 dock 120 m @ 8 m) |
-| Geometry | 46 prototypes, 396 instances, 786 k instanced tris | 41 prototypes, 291 instances, 377 k instanced tris |
+| Geometry | 57 prototypes, 462 instances, 795 k instanced tris | 50 prototypes, 340 instances, 384 k instanced tris |
 | Overlaps | 0 | 0 |
 
 Everything is built to one scale: **1 Roblox stud = 0.28 m**. The Blender source is
@@ -82,7 +82,7 @@ blender -b --factory-startup -noaudio --python blender/build_ports.py -- --port 
 A layout-only run takes about 4 s and prints the audit:
 
 ```
-prototypes: 46   instances placed: 381   instanced tris: 770154
+prototypes: 57   instances placed: 462   instanced tris: 795120
 overlaps: 0
 scene bbox (m): (-460, -560, -8) (300, 560, 36.9)
 BERTH A-B1   26.0 x 212.0 m  depth 11.0 m  env 180x 20x  9 m  OK (>=4 m clearance)
@@ -120,6 +120,16 @@ step, are in **[`docs/ROBLOX_SETUP.md`](docs/ROBLOX_SETUP.md)**. The short versi
 ---
 
 ## 4. Modular construction and connection points
+
+### Human-scale layer
+
+`blender/lib/life.py` supplies the population and loose cargo every working quay had:
+dock labourers at 1.70 m in flat cap and long coat, two-wheel handcarts (2.1 m),
+four-wheel drays with a 16-hand horse (1.63 m at the shoulder), coal sacks, barrel
+groups, hawsers coiled at the bollards, plank and bale stacks, ladders and coal heaps
+on the staithes. They are placed where work happens -- at the gangway, at the shed
+doors, at the crane feet -- rather than scattered, because evenly spaced props read as
+a showroom and empty ground between clusters reads as a working yard.
 
 Assets are built as prototypes in `_PROTOTYPES` and placed as linked duplicates, so a
 change to a prototype updates every instance. The connection conventions:

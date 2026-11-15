@@ -47,7 +47,23 @@ def add_land(mb, site, holes, top=QUAY_Z, bottom=-3.0, surf="setts",
     for (r,) in subtract(site, holes):
         x0, y0, x1, y1 = r
         mb.add_box(x0, y0, bottom, x1, y1, top - 0.02, side_mat)
-        mb.add_grid_quad(x0, y0, x1, y1, top, surf, step=7.5)
+        if surf:
+            mb.add_grid_quad(x0, y0, x1, y1, top, surf, step=7.5)
+
+
+def land_surface_bands(mb, bands, holes, top=QUAY_Z, step=7.5):
+    """Pave the land in strips, each with its own surface material.
+
+    `bands` is [(x0, y0, x1, y1, material)] and the strips must tile the land
+    without overlapping. Building the surface this way, rather than laying extra
+    quads over an already-paved platform, matters: two coincident surfaces a
+    centimetre apart make every shadow ray self-intersect, and the result is a
+    flat, unlit sheet -- which is exactly what happened the first time.
+    """
+    for (x0, y0, x1, y1, mat) in bands:
+        for (r,) in subtract((x0, y0, x1, y1), holes):
+            a, b, c, d = r
+            mb.add_grid_quad(a, b, c, d, top, mat, step=step)
 
 
 def water(mb, rects, z=0.0, mat="water", step=25.0):

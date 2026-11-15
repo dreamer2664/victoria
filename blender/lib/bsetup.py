@@ -256,10 +256,104 @@ def setup_world(strength=0.28, top=(0.42, 0.50, 0.60), bottom=(0.62, 0.58, 0.50)
     ramp = nt.nodes.new("ShaderNodeValToRGB"); ramp.location = (0, 0)
     ramp.color_ramp.elements[0].color = (*top, 1)
     ramp.color_ramp.elements[1].color = (*bottom, 1)
-    nt.links.new(texc.outputs["Generated"], mapn.inputs["Vector"])
+    nt.links.new(geo.outputs["Incoming"], mapn.inputs["Vector"])
     nt.links.new(mapn.outputs["Vector"], grad.inputs["Vector"])
     nt.links.new(grad.outputs["Fac"], ramp.inputs["Fac"])
     nt.links.new(ramp.outputs["Color"], bg.inputs["Color"])
+    nt.links.new(bg.outputs["Background"], out.inputs["Surface"])
+    return w
+
+
+def setup_sky(sun_az=215.0, sun_el=41.0, strength=0.62, cloud_cover=0.34,
+              cloud_scale=4.6, top=(0.30, 0.42, 0.60), bottom=(0.66, 0.66, 0.62)):
+    """A physical sky with a procedural cloud deck.
+
+    Two pieces, because they do different jobs:
+      * a Nishita atmosphere gives the real thing -- Rayleigh gradient, a warm
+        horizon and correct aerial colour with distance -- without an HDRI;
+      * a 3D noise field projected on the sky dome gives broken stratocumulus.
+
+    The sun disc is switched OFF in the sky node: the scene is lit by a separate
+    sun lamp, and a disc here as well would double the key and blow the
+    highlights. `sun_el` / `sun_az` are only used to warm the cloud near the sun.
+    """
+    w = bpy.data.worlds.new("PortSky")
+    bpy.context.scene.world = w
+    w.use_nodes = True
+    nt = w.node_tree
+    nt.nodes.clear()
+
+    out = nt.nodes.new("ShaderNodeOutputWorld"); out.location = (900, 0)
+    bg = nt.nodes.new("ShaderNodeBackground"); bg.location = (700, 0)
+    bg.inputs["Strength"].default_value = strength
+
+    # ---- physical atmosphere
+    sky = nt.nodes.new("ShaderNodeTexSky"); sky.location = (460, 200)
+    sky.sky_type = 'NISHITA'
+    sky.sun_disc = False
+    sky.sun_elevation = math.radians(sun_el)
+    sky.sun_rotation = math.radians(sun_az - 90.0)
+    sky.altitude = 60.0
+    sky.air_density = 1.0
+    sky.dust_density = 1.2
+
+    # ---- cloud field, projected on the dome
+    # NOTE: in a world shader "Generated" is not reliably populated, which
+    # silently collapses the whole cloud field to a single value. The geometry
+    # node's Incoming vector is the view direction and always is.
+    geo = nt.nodes.new("ShaderNodeNewGeometry"); geo.location = (-400, -180)
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ"); sep.location = (-200, -320)
+    nt.links.new(geo.outputs["Incoming"], sep.inputs["Vector"])
+
+    # horizon fade: clouds thin out and vanish at the horizon
+    hz = nt.nodes.new("ShaderNodeMapRange"); hz.location = (0, -380)
+    hz.inputs["From Min"].default_value = 0.02
+    hz.inputs["From Max"].default_value = 0.14
+    hz.inputs["To Min"].default_value = 0.0
+    hz.inputs["To Max"].default_value = 1.0
+    nt.links.new(sep.outputs["Z"], hz.inputs["Value"])
+
+    mapn = nt.nodes.new("ShaderNodeMapping"); mapn.location = (-200, -120)
+    mapn.inputs["Scale"].default_value = (1.0, 1.0, 2.2)
+    nt.links.new(geo.outputs["Incoming"], mapn.inputs["Vector"])
+
+    noise = nt.nodes.new("ShaderNodeTexNoise"); noise.location = (60, -120)
+    noise.inputs["Detail"].default_value = 9.0
+    noise.inputs["Roughness"].default_value = 0.62
+    noise.inputs["Scale"].default_value = cloud_scale
+    nt.links.new(mapn.outputs["Vector"], noise.inputs["Vector"])
+
+    ramp = nt.nodes.new("ShaderNodeValToRGB"); ramp.location = (260, -120)
+    ramp.color_ramp.interpolation = 'B_SPLINE'
+    lo = 1.0 - cloud_cover
+    ramp.color_ramp.elements[0].position = max(0.0, lo - 0.06)
+    ramp.color_ramp.elements[0].color = (0, 0, 0, 1)
+    ramp.color_ramp.elements[1].position = min(1.0, lo + 0.11)
+    ramp.color_ramp.elements[1].color = (1, 1, 1, 1)
+    nt.links.new(noise.outputs["Fac"], ramp.inputs["Fac"])
+
+    mask = nt.nodes.new("ShaderNodeMath"); mask.location = (460, -160)
+    mask.operation = 'MULTIPLY'
+    mask.use_clamp = True
+    nt.links.new(ramp.outputs["Color"], mask.inputs[0])
+    nt.links.new(hz.outputs["Result"], mask.inputs[1])
+
+    # ---- cloud colour: bright tops, grey bases, a touch warmer near the sun
+    ccol = nt.nodes.new("ShaderNodeValToRGB"); ccol.location = (460, -420)
+    ccol.color_ramp.elements[0].position = 0.0
+    ccol.color_ramp.elements[0].color = (2.60, 2.66, 2.74, 1)
+    ccol.color_ramp.elements[1].position = 1.0
+    ccol.color_ramp.elements[1].color = (4.60, 4.56, 4.44, 1)
+    nt.links.new(noise.outputs["Fac"], ccol.inputs["Fac"])
+
+    mix = nt.nodes.new("ShaderNodeMix"); mix.location = (700, 120)
+    mix.data_type = 'RGBA'
+    mix.blend_type = 'MIX'
+    nt.links.new(mask.outputs[0], mix.inputs["Factor"])
+    nt.links.new(sky.outputs["Color"], mix.inputs[6])
+    nt.links.new(ccol.outputs["Color"], mix.inputs[7])
+
+    nt.links.new(mix.outputs[2], bg.inputs["Color"])
     nt.links.new(bg.outputs["Background"], out.inputs["Surface"])
     return w
 
