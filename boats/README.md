@@ -91,6 +91,10 @@ plus one small high sun and a soft overhead key, with a plain sea plane at
   paints a bright parallelogram across the sea that reads as a light leak.
   Lamps are also `visible_camera = False` so none of them can appear in frame.
 
+The full story of how the render environment was arrived at — including the
+three failed attempts at the water — is in
+[`docs/REALISM_PASS.md`](docs/REALISM_PASS.md).
+
 Water is a flat plane with a stretched noise bump and low specular — enough to
 read as slow harbour water at 1240 × 800, not a wave model.
 
