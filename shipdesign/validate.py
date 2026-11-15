@@ -252,6 +252,46 @@ def check_walls(tol=0.30):
         ok("%d room wall faces all present and full height" % checked)
 
 
+def check_houses_are_enclosed():
+    """Every enclosed room must have HOUSE geometry around it, not just walls.
+
+    The beam render exposed deckhouses that had drifted away from the plan, so
+    the check is geometric: for each first/second-class room on the saloon and
+    promenade decks, there must be superstructure vertices above the deck at
+    both ends of the room.  If the house has moved, this fails.
+    """
+    try:
+        import bpy
+    except Exception:
+        return
+    houses = [bpy.data.objects.get(n) for n in
+              ("DeckHouse_SaloonDeck", "DeckHouse_Promenade")]
+    houses = [h for h in houses if h is not None]
+    if not houses:
+        warn("no deckhouse meshes present - enclosure check skipped")
+        return
+    xs = []
+    for h in houses:
+        xs.extend(v.co.x for v in h.data.vertices)
+    x0h, x1h = min(xs), max(xs)
+    missing = []
+    for r in ROOMS:
+        if r["use"] not in ("first", "second"):
+            continue
+        if r["deck"] not in ("main", "saloon"):
+            continue
+        if r["x0"] < x0h - 0.5 or r["x1"] > x1h + 0.5:
+            missing.append("%s (%s) x %.0f..%.0f outside house %.0f..%.0f"
+                           % (r["name"], r["deck"], r["x0"], r["x1"],
+                              x0h, x1h))
+    if missing:
+        fail("%d enclosed rooms lie outside the deckhouse: %s"
+             % (len(missing), "; ".join(missing[:3])))
+    else:
+        ok("all enclosed public rooms sit inside the deckhouse (x %.1f..%.1f)"
+           % (x0h, x1h))
+
+
 def check_boats():
     for kind, spec in LIFEBOATS.items():
         if spec["loa"] > 9.0:
@@ -304,7 +344,7 @@ def run():
                check_rooms_in_hull, check_vertical_clearance,
                check_rooms_do_not_overlap, check_walls, check_funnels_clear_of_rooms,
                check_masts_clear_of_rooms, check_doors_reachable,
-               check_stairs_connect, check_boats, check_displacement,
+               check_stairs_connect, check_houses_are_enclosed, check_boats, check_displacement,
                check_watertight_subdivision):
         try:
             fn()

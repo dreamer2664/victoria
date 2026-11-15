@@ -334,7 +334,10 @@ def build(col, P):
     ob["rudder"] = build_rudder(col, P)
     ob["bulwarks"] = join_objects(build_bulwarks(col, P), "Bulwarks")
     ob["ground"] = join_objects(build_hawse_and_anchors(col, P), "Anchors_Hawse")
-    ob["boottop"] = build_bands(col, P, T - 0.17, T + 0.17, "Boot_Top",
+    # The boot-top straddles the waterline: 0.10 m above it and 0.24 m below.
+    # A band sitting wholly above the waterline reads as a decorative stripe
+    # and is the first thing a naval architect notices is wrong.
+    ob["boottop"] = build_bands(col, P, T - 0.26, T + 0.10, "Boot_Top",
                                 P["boot_white"])
     return ob
 

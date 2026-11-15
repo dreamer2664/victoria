@@ -16,7 +16,18 @@ if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
 
-def add_sea(P, size=900, z=-0.045):
+def add_sea(P, size=900, z=None):
+    """Sea plane at the DESIGN WATERLINE, not at the keel.
+
+    The ship is modelled in ship-local coordinates with z = 0 at the base
+    line, so the water surface is at draft (6.50 m) -- not at zero.  With the
+    plane at zero the whole hull was submerged and the boot-top, which sits on
+    the waterline, appeared as a decorative stripe half-way up a black slab.
+    The small offset breaks z-fighting with the hull at the waterline.
+    """
+    from shipdesign.hull import T
+    if z is None:
+        z = float(T) - 0.045
     me = bpy.data.meshes.new("Sea")
     n = 2
     v = [(-size, -size, z), (size, -size, z), (size, size, z), (-size, size, z)]
@@ -123,18 +134,21 @@ def shoot(path, loc, look_at, lens=50, res=(1600, 900), samples=48,
 
 
 # The brief requires bow, stern, BOTH sides, from above and from below the
-# waterline.  s = starboard (-Y), p = port (+Y).
+# waterline.  Camera heights are above the WATERLINE (draft 6.50 m), and every
+# look-at point is on the superstructure, not on the keel.
+WL = 6.5
+HULL_MID = WL + 3.2          # roughly the saloon deck, the visual centre
 EXTERIOR_VIEWS = [
-    ("three_quarter_bow_stbd", (140, -120, 26), (10, 0, 8), 55),
-    ("three_quarter_bow_port", (140, 120, 26), (10, 0, 8), 55),
-    ("beam_starboard", (0, -190, 13), (0, 0, 9), 55),
-    ("beam_port", (0, 190, 13), (0, 0, 9), 55),
-    ("three_quarter_stern_stbd", (-132, -112, 24), (-20, 0, 8), 55),
-    ("three_quarter_stern_port", (-132, 112, 24), (-20, 0, 8), 55),
-    ("bow_on", (178, -18, 15), (56, 0, 8), 62),
-    ("stern_on", (-172, 22, 17), (-62, 0, 8), 62),
-    ("high_above", (48, -58, 168), (0, 0, 6), 45),
-    ("below_waterline", (62, -74, -26), (0, 0, 4), 50),
+    ("three_quarter_bow_stbd", (128, -108, WL + 17), (8, 0, HULL_MID), 55),
+    ("three_quarter_bow_port", (128, 108, WL + 17), (8, 0, HULL_MID), 55),
+    ("beam_starboard", (0, -178, WL + 6.5), (0, 0, HULL_MID), 55),
+    ("beam_port", (0, 178, WL + 6.5), (0, 0, HULL_MID), 55),
+    ("three_quarter_stern_stbd", (-120, -100, WL + 15), (-18, 0, HULL_MID), 55),
+    ("three_quarter_stern_port", (-120, 100, WL + 15), (-18, 0, HULL_MID), 55),
+    ("bow_on", (168, -16, WL + 8), (54, 0, HULL_MID), 62),
+    ("stern_on", (-162, 20, WL + 10), (-60, 0, HULL_MID), 62),
+    ("high_above", (44, -54, WL + 150), (0, 0, HULL_MID), 45),
+    ("below_waterline", (58, -70, WL - 22), (0, 0, WL - 1), 50),
 ]
 
 

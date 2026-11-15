@@ -185,7 +185,10 @@ def _lofted_house_side(name, x0, x1, z0, z1, side, inset, mat, win_rows):
     zz = win_rows[0]
     if zz:
         objs = [ob]
-        n = int((x1 - x0) / 1.55)
+        # 1889 deckhouses carry WINDOWS IN GROUPS, not a continuous ribbon:
+        # a run of three or four windows per cabin, then a solid pier.  At
+        # 1.55 m centres the house read as a modern hotel, not a liner.
+        n = max(4, int((x1 - x0) / 2.65))
         rows = [zz]
         # second row for the upper (promenade) tier
         rows.append((zz[0] + 2.55, zz[1]))
@@ -196,7 +199,7 @@ def _lofted_house_side(name, x0, x1, z0, z1, side, inset, mat, win_rows):
                 if not (b == b) or b < 1.2:
                     continue
                 v, f = box((xc, side * (b - side * 0.015), z_s + z_h / 2),
-                           (0.76, 0.03, z_h))
+                           (0.86, 0.03, z_h))
                 objs.append(mesh_object("{}_win".format(name), v, f, col=COL,
                                         mat=P["glass"]))
                 v, f = box((xc, side * (b + side * 0.02), z_s + z_h / 2),
@@ -411,6 +414,35 @@ def build_bridge():
     return objs
 
 
+def scuppers_and_freeing_ports():
+    """Open scuppers along the main deck edge and freeing ports in the
+    bulwarks.
+
+    A 1889 hull shows a dark row of these along the sheer strake and a line of
+    freeing ports just above the main deck - without them the hull reads as a
+    smooth slab of black, which is the main thing missing from the beam view.
+    """
+    objs = []
+    z_main = DECK_Z["main"]
+    for side in (1, -1):
+        x = -66.0
+        while x < 74.0:
+            b = float(layout.hull_side_halfbeam(x, z_main))
+            if b > 1.2:
+                # freeing port: a dark rectangular opening in the bulwark
+                v, f = box((x, side * (b - 0.10), z_main + 0.34),
+                           (0.95, 0.16, 0.30))
+                objs.append(mesh_object("Freeing_Port", v, f, col=COL,
+                                        mat=P["hull_black"]))
+                # scupper above it
+                v, f = box((x + 0.55, side * (b - 0.08), z_main - 0.55),
+                           (0.42, 0.14, 0.16))
+                objs.append(mesh_object("Scupper", v, f, col=COL,
+                                        mat=P["steel"]))
+            x += 2.4
+    return objs
+
+
 # ---------------------------------------------------------------------------
 # funnels
 # ---------------------------------------------------------------------------
@@ -612,32 +644,53 @@ def boat_hull(name, x, y, z, loa, beam, depth=0.85, colour=None):
     return ob
 
 
+def _boat_stations():
+    """Fore-and-aft positions for the ship's lifeboats.
+
+    Chosen so every boat lies on the OPEN boat deck, clear of the houses the
+    plan puts there (officers' quarters and the chart house at 12-24 m).
+    """
+    return (36.0, 28.0, -6.0, -13.0)
+
+
+def _boat_offset(x):
+    """Outboard offset of a boat at station x, from the real deck edge."""
+    z = DECK_Z["boat"]
+    b = float(layout.hull_side_halfbeam(x, z))
+    if b < 2.0:
+        ext = layout.DECK_EXT["boat"]
+        b = min(abs(x - ext[0]), abs(x - ext[1])) * 0.22 + 4.5
+    return max(b - 2.4, 3.2)
+
+
 def build_boats():
+    """Boats on the boat deck, positioned from spec.MASTS/FUNNELS clearances."""
     objs = []
     zb = DECK_Z["boat"] + 0.02
+    z_deck = zb                     # boats stand ON the boat deck plate
     # Inboard boat rows (the ship's own lifeboat outfit) + the two craft
     # reserved for Agent 02 on outboard davits.
     from shipdesign.spec import STARBOARD_BOATS, PORT_BOATS
     # lifeboats: 4 per side on the boat deck
     for side in (1, -1):
-        for i, x in enumerate((36.0, 20.0, -12.0, -28.0)):
-            y = side * 6.6
+        for i, x in enumerate(_boat_stations()):
+            y = side * _boat_offset(x)
             objs.append(boat_hull("Lifeboat_%d_%d" % (side, i), x, y,
-                                  zb + 0.75, 8.6, 2.9, 1.05,
+                                  zb + 1.05, 8.6, 2.9, 1.05,
                                   colour=P["upper_white"]))
             # davits
             for dx in (-4.2, 4.2):
                 objs += _davit(x + dx, y, zb, side)
             # boat cover
-            v, f = box((x, y, zb + 1.85), (8.2, 2.75, 0.06))
+            v, f = box((x, y, zb + 2.20), (8.2, 2.75, 0.06))
             objs.append(mesh_object("Boat_Cover", v, f, col=COL,
                                     mat=P["canvas"]))
     # Agent 02 craft: 25 ft steam cutter (stbd), rowing cutter (port)
     for side, spec_list in ((1, STARBOARD_BOATS), (-1, PORT_BOATS)):
         for (x, kind) in spec_list:
             b = LIFEBOATS[kind]
-            y = side * (HULL.half_beam_at(x, DECK_Z["prom"]) - 0.55)
-            objs.append(boat_hull("Agent02_" + kind, x, y, zb + 0.95,
+            y = side * _boat_offset(x)
+            objs.append(boat_hull("Agent02_" + kind, x, y, zb + 1.25,
                                   b["loa"], b["beam"], 0.95,
                                   colour=P["teak"] if "steam" in kind
                                   else P["upper_white"]))
@@ -802,6 +855,7 @@ def build(col, P_):
     groups["funnels"] = join_objects(build_funnels(), "Funnels")
     groups["masts"] = join_objects(build_masts(), "Masts")
     groups["rigging"] = join_objects(build_rigging(), "Rigging")
+    groups["scuppers"] = join_objects(scuppers_and_freeing_ports(), "Scuppers")
     groups["boats"] = join_objects(build_boats(), "Boats_Davits")
     groups["machinery"] = join_objects(deck_machinery(), "DeckMachinery")
     groups["navlights"] = join_objects(navigation_lights(), "NavLights")
