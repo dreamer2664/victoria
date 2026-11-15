@@ -151,6 +151,82 @@ def check_stairs_connect():
     ok("staircases connect every deck from the lower deck to the bridge")
 
 
+def check_walls(tol=0.30):
+    """Every polygon edge of every room must have a vertical wall face.
+
+    Tests the actual vertices of the merged Interior_Rooms mesh - the geometry
+    that was built, not the plan it was built from.  A face counts as the wall
+    for an edge when it spans the room's full height and its horizontal extent
+    lies ALONG the edge line (checked by distance to the line, not by
+    comparing X coordinates, which silently passes walls running fore-and-aft).
+    """
+    try:
+        import bpy
+    except Exception:
+        return
+    ob = bpy.data.objects.get("Interior_Rooms")
+    if ob is None:
+        warn("Interior_Rooms mesh not present - wall check skipped")
+        return
+    me = ob.data
+    vco = [v.co for v in me.vertices]
+    segs = []
+    for p in me.polygons:
+        vs = [vco[i] for i in p.vertices]
+        zs = [v.z for v in vs]
+        if max(zs) - min(zs) < 1.0:
+            continue
+        segs.append((min(zs), max(zs), [(v.x, v.y) for v in vs]))
+
+    def dist_to_line(px, py, ax, ay, bx, by):
+        dx, dy = bx - ax, by - ay
+        L = (dx * dx + dy * dy) ** 0.5
+        if L < 1e-6:
+            return ((px - ax) ** 2 + (py - ay) ** 2) ** 0.5
+        return abs((px - ax) * dy - (py - ay) * dx) / L
+
+    missing = []
+    checked = 0
+    for r in ROOMS:
+        poly = room_polygon(r)
+        if not poly or r["use"] not in ("first", "second", "third", "crew",
+                                        "machinery"):
+            continue
+        z0 = DECK_Z[r["deck"]]
+        z1 = layout.room_ceiling_z(r["deck"])[1]
+        n = len(poly)
+        for i in range(n):
+            ax, ay = poly[i]
+            bx, by = poly[(i + 1) % n]
+            if (bx - ax) ** 2 + (by - ay) ** 2 < 1.0:
+                continue
+            checked += 1
+            found = False
+            for (sz0, sz1, pts) in segs:
+                if sz0 > z0 + 0.45 or sz1 < z1 - 0.45:
+                    continue
+                on_line = [q for q in pts
+                           if dist_to_line(q[0], q[1], ax, ay, bx, by) < tol]
+                if len(on_line) >= 2:
+                    # the face must actually span the edge, not clip a corner
+                    t = []
+                    dx, dy = bx - ax, by - ay
+                    L2 = max(dx * dx + dy * dy, 1e-6)
+                    for q in on_line:
+                        t.append(((q[0] - ax) * dx + (q[1] - ay) * dy) / L2)
+                    if max(t) - min(t) > 0.55:
+                        found = True
+                        break
+            if not found:
+                missing.append("%s (%s): edge (%.1f,%.1f)-(%.1f,%.1f)"
+                               % (r["name"], r["deck"], ax, ay, bx, by))
+    if missing:
+        fail("%d of %d room walls have no full-height face, e.g. %s"
+             % (len(missing), checked, "; ".join(missing[:3])))
+    else:
+        ok("%d room wall faces all present and full height" % checked)
+
+
 def check_boats():
     for kind, spec in LIFEBOATS.items():
         if spec["loa"] > 9.0:
@@ -200,7 +276,7 @@ def check_watertight_subdivision():
 
 def run():
     for fn in (check_deck_order, check_rooms_in_hull, check_vertical_clearance,
-               check_rooms_do_not_overlap, check_funnels_clear_of_rooms,
+               check_rooms_do_not_overlap, check_walls, check_funnels_clear_of_rooms,
                check_masts_clear_of_rooms, check_doors_reachable,
                check_stairs_connect, check_boats, check_displacement,
                check_watertight_subdivision):

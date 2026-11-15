@@ -85,7 +85,13 @@ def room_shell(r, wall_h, wall_mat, floor_mat, ceil_mat, door_gaps=()):
     if not poly:
         return []
     z0 = DECK_Z[r["deck"]] + 0.001
-    z1 = min(layout.room_ceiling_z(r["deck"])[1], z0 + wall_h)
+    # The wall MUST reach the deck above.  Capping it at a nominal storey
+    # height left a black gap between the top of the wall and the real
+    # ceiling (which is the deck above) - visible as a dark band round the
+    # top of every small room.
+    z1 = layout.room_ceiling_z(r["deck"])[1]
+    if z1 - z0 < wall_h:            # only ever extend, never shorten
+        z1 = z0 + wall_h
     objs = []
     n = len(poly)
     for i in range(n):
@@ -131,7 +137,16 @@ def dado_and_panels(r, poly, z0, z1, dado_mat, panel_mat,
         if L < 0.8:
             continue
         ux, uy = dx / L, dy / L
-        nx, ny = -uy * 0.045, ux * 0.045
+        # orient the offset toward the room's interior: a fixed normal
+        # direction puts half the panelling OUTSIDE the room, where it is
+        # invisible and leaves the wall looking bare and dark
+        cx = sum(p[0] for p in poly) / len(poly)
+        cy = sum(p[1] for p in poly) / len(poly)
+        mx, my = (ax + bx) / 2, (ay + by) / 2
+        nxn, nyn = -uy, ux
+        if (cx - mx) * nxn + (cy - my) * nyn < 0:
+            nxn, nyn = -nxn, -nyn
+        nx, ny = nxn * 0.045, nyn * 0.045
         # dado band
         v, f = _quad((ax + nx, ay + ny, z0), (bx + nx, by + ny, z0),
                      (bx + nx, by + ny, z0 + dado_h),
@@ -416,91 +431,51 @@ def door_leaf(x, y, z, w=0.86, h=2.05, facing=0.0, mat=None, open_deg=0.0):
 def grand_staircase():
     """Grand staircase in the entrance hall, x = -9.0 .. 1.0.
 
-    Period arrangement (Ocean Magazine 1889, Teutonic): a broad central well
-    with flights rising fore and aft, galleries round it on each deck and a
-    glazed dome above.  We build two opposed flights per storey, each with a
-    half landing on the centreline.
+    Period arrangement (Ocean Magazine, Sept 1889): a well in the middle of
+    the hall with flights rising fore and aft, galleries round it on each
+    deck, and a glazed dome above.  The well is 3.6 m long, leaving a clear
+    2.2 m of open floor at each end and 1 m of gallery down both sides, so a
+    passenger can actually stand in the hall and walk round the well.  Both
+    storeys climb in the SAME direction, so one continuous open well serves
+    the saloon and promenade decks.
     """
     objs = []
     z_main = DECK_Z["main"]; z_sal = DECK_Z["saloon"]; z_prom = DECK_Z["prom"]
-    HW = 2.55                                     # half width of the well
+    HW = 2.35                       # half width of the well
+    WELL_X0, WELL_X1 = -7.4, -0.6   # well opening in the hall
+
     for (za, zb) in ((z_main, z_sal), (z_sal, z_prom)):
-        # forward flight rises from the aft end toward the forward end
-        objs += _flight(x0=-8.2, x1=-3.6, z_bottom=za, z_top=zb,
-                        y_left=-HW, y_right=0.0)
-        # aft flight rises from the forward end toward the aft end
-        objs += _flight(x0=-3.0, x1=1.0, z_bottom=za, z_top=zb,
-                        y_left=0.0, y_right=HW)
-        # centre landing platform
-        v, f = box((-3.3, 0, (za + zb) / 2), (0.7, 2 * HW, 0.08))
-        objs.append(mesh_object("Stair_Landing", v, f, col=COL,
-                                mat=P["deck_wood_light"]))
-        # balustrade round the well on the UPPER deck edge
-        for y in (-HW - 0.1, HW + 0.1):
-            objs += railing([(-9.4, y), (1.6, y)], zb, 0.95, 0.36, 0.045,
-                            col=COL, name="Stair_Rail",
-                            mat_rail=P["mahogany"], mat_stanchion=P["mahogany"])
-        for x in (-9.4, 1.6):
-            objs += railing([(x, -HW - 0.1), (x, HW + 0.1)], zb, 0.95, 0.5,
+        # single flight up the middle of the well
+        objs += _flight(x0=WELL_X0 + 0.2, x1=WELL_X1 - 0.2,
+                        z_bottom=za, z_top=zb, y_left=-HW, y_right=HW)
+        # balustrades round the well at the upper deck, on all four sides,
+        # leaving a 1.1 m gap at the forward end as the stair opening
+        for y in (-HW - 0.12, HW + 0.12):
+            objs += railing([(WELL_X0, y), (WELL_X1, y)], zb, 0.95, 0.34,
                             0.045, col=COL, name="Stair_Rail",
                             mat_rail=P["mahogany"], mat_stanchion=P["mahogany"])
-    # columns at the four corners of the well on the saloon deck
-    for x in (-9.0, 1.2):
-        for y in (-2.75, 2.75):
-            objs += column(x, y, z_sal, z_prom - 0.15, 0.20, P["marble"])
-    # the dome
-    objs += _dome(-4.0, 0, z_prom + 0.04, rx=4.2, ry=3.0, rise=1.35)
+        objs += railing([(WELL_X1, -HW), (WELL_X1, HW)], zb, 0.95, 0.34,
+                        0.045, col=COL, name="Stair_Rail",
+                        mat_rail=P["mahogany"], mat_stanchion=P["mahogany"])
+        # newel posts at the open end
+        for y in (-HW - 0.12, HW + 0.12):
+            v, f = cylinder((WELL_X0, y, zb + 0.55), 0.105, 1.10, segments=12)
+            objs.append(mesh_object("Newel", v, f, col=COL, mat=P["mahogany"]))
+    # colonnade down both sides of the hall, inside the walls
+    for x in (-8.0, -4.0, 0.0):
+        for y in (-4.2, 4.2):
+            objs += column(x, y, z_sal, z_prom - 0.15, 0.19, P["marble"])
+    # gallery soffit round the well (the underside of the gallery floor)
+    for y in (-HW - 0.5, HW + 0.5):
+        v, f = box((-4.0, y, z_prom + 0.06), (7.4, 0.90, 0.12))
+        objs.append(mesh_object("Gallery_Soffit", v, f, col=COL,
+                                mat=P["mahogany"]))
+    # the dome over the well
+    objs += _dome((WELL_X0 + WELL_X1) / 2, 0, z_prom + 0.04,
+                  rx=3.1, ry=2.35, rise=1.30)
     return objs
 
 
-def _flight(x0, x1, z_bottom, z_top, y_left, y_right, upward=True):
-    """A straight flight of steps with risers and treads (period: 0.18/0.28)."""
-    objs = []
-    rise = 0.178; going = 0.285
-    n = max(1, int(round((z_top - z_bottom) / rise)))
-    L = x1 - x0
-    for i in range(n):
-        z = z_bottom + i * rise
-        xa = x0 + L * i / n
-        xb = x0 + L * (i + 1) / n
-        v, f = box(((xa + xb) / 2, (y_left + y_right) / 2, z + rise / 2),
-                   (abs(xb - xa), abs(y_right - y_left), rise))
-        objs.append(mesh_object("Step", v, f, col=COL, mat=P["deck_wood_light"]))
-    # stringers
-    for y in (y_left - 0.06, y_right + 0.06):
-        v, f = box(((x0 + x1) / 2, y, (z_bottom + z_top) / 2),
-                   (abs(x1 - x0), 0.10, 0.34), rot_z=0.0)
-        objs.append(mesh_object("Stringer", v, f, col=COL, mat=P["mahogany"]))
-    return objs
-
-
-def _dome(cx, cy, z, rx=4.6, ry=3.4, rise=1.5, n=20, rings=6):
-    """Oval glass dome with a decorative rim, over the staircase - the
-    single most recognisable feature of a White Star first-class stairwell."""
-    verts = []; faces = []
-    for ring in range(rings + 1):
-        f_ = ring / rings
-        ang = f_ * math.pi / 2
-        sx = math.cos(ang) if ring else 1.0
-        zz = z + rise * math.sin(ang)
-        for i in range(n):
-            a = 2 * math.pi * i / n
-            verts.append((cx + rx * sx * math.cos(a),
-                          cy + ry * sx * math.sin(a), zz))
-    for rg in range(rings):
-        for i in range(n):
-            i2 = (i + 1) % n
-            a = rg * n + i; b = rg * n + i2
-            c = (rg + 1) * n + i2; d = (rg + 1) * n + i
-            faces.append((a, b, c, d))
-    ob = mesh_object("Stair_Dome", verts, faces, col=COL, mat=P["glass_ground"],
-                     smooth_angle=math.radians(60))
-    return [ob]
-
-
-# ---------------------------------------------------------------------------
-# FIRST CLASS: dining saloon
-# ---------------------------------------------------------------------------
 def dining_saloon():
     r = next(x for x in ROOMS if x["name"].startswith("First Class Dining"))
     z = DECK_Z["saloon"]

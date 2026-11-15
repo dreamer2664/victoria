@@ -199,7 +199,7 @@ FUNNEL_COLORS = {"body": (0.78, 0.62, 0.36), "top_band": (0.06, 0.06, 0.06),
 # block; every mast is on a trunk or a bulkhead, never inside a room.
 MASTS = [
     {"name": "foremast",  "x": 70.0, "rake_deg": 1.5, "height_m": 24.0, "diameter": 0.55},
-    {"name": "mainmast",  "x": -2.0, "rake_deg": 1.5, "height_m": 27.0, "diameter": 0.62},
+    {"name": "mainmast",  "x": 8.5, "rake_deg": 1.5, "height_m": 27.0, "diameter": 0.62},
     {"name": "mizzenmast","x": -45.6,"rake_deg": 1.5, "height_m": 21.0, "diameter": 0.48},
 ]
 # rig: schooner rig for fore & aft sails; no yards (Teutonic 1889 was the first
