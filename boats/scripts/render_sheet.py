@@ -24,6 +24,10 @@ ARGS = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 QUICK = "--quick" in ARGS
 ARGS = [a for a in ARGS if not a.startswith("--")]
 WHICH = ARGS[0] if ARGS else "both"
+# optional second argument: render only the named views (or "machinery").
+# Blender gets OOM-killed in this sandbox after roughly seven minutes, so a
+# view that sorts last never survives a full sheet; this lets it be re-run.
+ONLY = [a for a in ARGS[1:] if not a.startswith("--")] or None
 
 BLENDS = {
     "steam": "boats/blend/boat_a_steam_cutter.blend",
@@ -74,6 +78,8 @@ def render_boat(key):
     setup_grade()
 
     for name, v in VIEWS.items():
+        if ONLY and name not in ONLY:
+            continue
         cam = bl.frame_camera(f"{key}_{name}", v["direction"], look_at=v["look"],
                               lens=v["lens"], margin=1.10, aspect=1.55)
         bl.render(f"{ROOT}/boats/renders/{key}_{name}.png",
@@ -81,7 +87,7 @@ def render_boat(key):
                   samples=16 if QUICK else 88)
 
     # a machinery / interior detail view
-    if key == "steam":
+    if key == "steam" and (not ONLY or "machinery" in ONLY):
         bpy.ops.wm.open_mainfile(filepath=os.path.join(ROOT, BLENDS[key]))
         for ob in list(bpy.data.objects):
             if ob.type in {"CAMERA", "LIGHT"}:

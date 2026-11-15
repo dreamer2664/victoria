@@ -335,9 +335,11 @@ def _fittings(mb):
     for x in (0.9, -0.7):
         p = HULL.surface(HULL.xi_of(x), 0.98)
         parts.fender(mb, np.array([p[0], p[1] + 0.07, p[2] - 0.30]))
-    # boat hook stowed along the starboard side
-    p = HULL.surface(0.30, 0.94)
-    parts.boat_hook(mb, np.array([p[0], -p[1] - 0.04, p[2] - 0.02]), length=1.75)
+    # boat hook stowed along the starboard gunwale, inboard of the planking --
+    # it used to sit 40 mm outboard of the hull and read as a blade on the
+    # topsides from every angle
+    p = HULL.surface(0.30, 0.955)
+    parts.boat_hook(mb, np.array([p[0], -p[1] + 0.085, p[2] + 0.03]), length=1.75)
     # bailer
     p = HULL.surface(0.62, 0.12)
     cyl(mb, (p[0], 0.30, p[2] + 0.05), (p[0], 0.30, p[2] + 0.16), 0.075, seg=14,
