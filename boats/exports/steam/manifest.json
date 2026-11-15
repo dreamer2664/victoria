@@ -75,27 +75,27 @@
         0.0
       ],
       "bounds_min_m": [
-        -1.58,
+        -1.59,
         -0.9716,
-        0.7087
+        0.6204
       ],
       "bounds_max_m": [
-        1.38,
+        1.39,
         0.9716,
-        1.0159
+        1.0396
       ],
       "size_m": [
-        2.96,
+        2.98,
         1.9432,
-        0.3072
+        0.4192
       ],
       "size_studs": [
-        10.571,
+        10.643,
         6.94,
-        1.097
+        1.497
       ],
-      "vertices": 371,
-      "triangles": 552
+      "vertices": 1708,
+      "triangles": 2700
     },
     {
       "name": "Canopy_Frame",
@@ -404,8 +404,8 @@
         7.941,
         5.644
       ],
-      "vertices": 3142,
-      "triangles": 6139
+      "vertices": 5238,
+      "triangles": 10320
     },
     {
       "name": "Pipework_Fittings",
@@ -435,8 +435,8 @@
         2.908,
         5.039
       ],
-      "vertices": 934,
-      "triangles": 1748
+      "vertices": 1214,
+      "triangles": 2260
     },
     {
       "name": "Planking_Carvel",

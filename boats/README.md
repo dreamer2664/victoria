@@ -14,7 +14,7 @@ Roblox models and scripts, drawings and documentation.
 | Construction | carvel over double-diagonal, 12 frames | clinker, 11 strakes, oak frames |
 | Machinery | 5½ × 6 in inverted vertical engine, coal-fired vertical boiler, 2-bladed screw | 10 oars, steering by bank imbalance |
 | Blender file | `blend/boat_a_steam_cutter.blend` | `blend/boat_b_rowing_cutter.blend` |
-| Objects / faces | 20 / 39 865 | 24 / 28 826 |
+| Objects / faces | 20 / 43 086 | 24 / 30 257 |
 
 ![steam cutter](renders/steam_hero.png)
 ![rowing cutter](renders/rowing_hero.png)
@@ -72,9 +72,33 @@ generated from designed curves and then built up plank by plank:
 | `boatgen/specs.py` | the numbers — dimensions, weights, and the published interface spec |
 | `boatgen/bl.py` | Blender scene, materials, studio lighting, cameras, export |
 
+
+### Rendering
+
+The renders are produced by `render_sheet.py` and `render_cutaway.py`, which
+drop any cameras and lights out of the saved `.blend`, build a fresh rig, and
+frame each view from the evaluated geometry rather than from hand-placed
+cameras.
+
+The rig is deliberately neutral: an **overcast sky** (`world_strength` ≈ 2.6)
+plus one small high sun and a soft overhead key, with a plain sea plane at
+**z = 0** — the load waterline. Two consequences worth knowing:
+
+* the renders are also a **displacement check** — if the hydrostatics and the
+  modelled hull disagreed, the boat would float visibly too high or too low;
+* there are **no near-horizon lamps**. At the grazing angles a camera sees open
+  water from, a lamp near the horizon reflects almost totally (Fresnel) and
+  paints a bright parallelogram across the sea that reads as a light leak.
+  Lamps are also `visible_camera = False` so none of them can appear in frame.
+
+Water is a flat plane with a stretched noise bump and low specular — enough to
+read as slow harbour water at 1240 × 800, not a wave model.
+
 ## Rebuilding
 
-Requires Blender 4.2 LTS (installed at `/var/tmp/blender`).
+Requires Blender 4.2 LTS (installed at `/var/tmp/blender` — `scripts/setup_blender.sh`
+fetches it; do not unpack it inside the repo, it is 1.3 GB) and `matplotlib`
+for the drawing sheets (`pip install matplotlib`).
 
 ```bash
 cd boats/scripts
@@ -128,16 +152,20 @@ Recorded here rather than glossed over:
 1. **No traceable drawing for Boat A's hull.** The 1888 plan has no public
    image, so the lines are a reconstruction to the published dimensions. This
    is stated in the drawings, the evidence file and the render captions.
-2. **Gunwale detail.** The gunwale is a plain bar of correct section; a cap
-   rail with a moulded edge would be better and is the obvious next
-   improvement on Boat B, where the reference model shows a distinct capping
-   strip.
+2. **Gunwale and fittings are modelled, not joinery.** Both boats now carry a
+   moulded cap rail, a half-round rubbing strake and a metal stem band, but
+   the joints between them (scarphs, fastenings, the way the cap is let down
+   over the frame heads) are not modelled. At 1240 × 800 they read correctly;
+   at arm's length they would not.
 3. **Engine authority.** The steam engine is sized by reasoning from period
    practice (5½ × 6 in, ~5 ihp), not from a surviving drawing of this exact
    unit. It is mechanically complete — piston, crosshead, guides, con-rod,
    crank, valve gear, reversing link — but it is a reconstruction.
 4. **Roblox thrust values** are first estimates in Roblox force units and
    will need one tuning pass against the in-engine hull masses.
-5. **Cutting tools and loose gear** are modelled where they affect how the
+5. **The sea is a plane.** Water is a single flat surface at the load
+   waterline with a bump pattern; there is no wave model, no spray and no
+   wake. The render is a portrait of the boat, not a sea state.
+6. **Cutting tools and loose gear** are modelled where they affect how the
    boat works (shovel, bucket, boat hook). The boats are not populated with
    every item a real boat's inventory lists.
