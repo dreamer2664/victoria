@@ -249,7 +249,7 @@ def _setts():
     cx = np.floor(((xx + off) % w) / (w / cols)).astype(int)
     jit = (np.sin(ry * 11.1 + cx * 37.7) * 811.3) % 1.0
     jit2 = (np.sin(ry * 5.3 + cx * 91.7) * 331.7) % 1.0
-    base = np.array([0.174, 0.168, 0.158])
+    base = np.array([0.300, 0.290, 0.272])
     col = np.ones((h, w, 3), np.float32) * base
     col *= (0.62 + 0.56 * jit[..., None])
     col = col * (0.9 + 0.2 * jit2[..., None])

@@ -20,9 +20,9 @@ reports any pair that overlaps by more than 5 cm in both axes.
 |---|---|---|---|---|
 | Port A, first run | 40 | 290 | 520,906 | 0 |
 | Port A, first run vs. all berths | — | — | — | 4 berths reported **CHECK** |
-| Port A after fixes | 46 | 381 | 770,154 | 1 → **0** |
+| Port A after fixes | 46 | 396 | 786,186 | 1 → **0** |
 | Port B, first run | 36 | 269 | 262,423 | 0 |
-| Port B after dock fix | 41 | 291 | 378,170 | **0** |
+| Port B after dock fix | 41 | 291 | 377,162 | **0** |
 
 The one overlap caught was `A_goods_shed` ↔ `A_warehouse_3` (2.4 m). It was found by
 the auditor, not by eye, and the warehouse was moved 212 → 206 m along the quay.
@@ -70,7 +70,7 @@ is written down.
 | View | What was checked | Finding |
 |---|---|---|
 | A `01_aerial` | overall composition, density, water boundaries | **First version too sparse** — the yard read as tarmac. Densified with hotel, terrace, goods sheds, boundary wall, timber yard, cargo and winches; open ground re-surfaced with setts. |
-| A `01_aerial` | ground tone | Ground rendered near-black under AgX. Diagnosed as albedo, not lighting (see §3). Fixed in the texture palette. |
+| A `01_aerial` | ground tone | Ground rendered near-black under AgX. Diagnosed as albedo, not lighting (see §3). Settled at an albedo of 0.300 after two over-corrections (0.352 read as concrete; 0.174 read as tarmac at dusk). |
 | A `03_street` | street-level legibility, rail, lamps, cranes | Good after the camera was moved to the waterfront apron: rails, gas lamps, hydraulic cranes and a continuous building line all read. |
 | A `04_dockside` | quay edge, cabling, cargo | Reads; quay edge and mooring furniture present. |
 | A `05_landing_stage` | floating stage against the quay | Present and correctly floating; still water, no tide, as intended. |
@@ -121,7 +121,14 @@ Recorded because each of these cost real time and each has a lesson.
    Victorian dry dock. Graving docks are specified from the coping; the parameter now
    means that.
 
-5. **`site.py` shadowing the standard library.** Naming a module `site` inside a
+5. **The clearance proxy was being rendered.** `_PROXY_liner` — the 180 × 20 × 9 m
+   block-out used to test berth clearances — was visible in every Port A waterfront
+   frame, appearing as a large unexplained black mass sitting in the harbour. Two
+   camera moves and a lighting change were wasted on it before it was identified. It is
+   now hidden from render and viewport, and setting `PROXY_VISIBLE=1` brings it back for
+   a QC pass.
+
+6. **`site.py` shadowing the standard library.** Naming a module `site` inside a
    package breaks the interpreter's own `site` import. Renamed to `portsite.py`.
 
 ---
@@ -131,8 +138,8 @@ Recorded because each of these cost real time and each has a lesson.
 | Measure | Port A | Port B |
 |---|---|---|
 | Prototypes | 46 | 41 |
-| Instances | 381 | 291 |
-| Instanced triangles | 770,154 | 378,170 |
+| Instances | 396 | 291 |
+| Instanced triangles | 786,186 | 377,162 |
 | Drawn triangles (worst view, aerial) | ≈ 690 k | ≈ 350 k |
 | Materials | 51 shared | 51 shared |
 | Texture sets | 16, at 512² albedo/rough/normal | same |
@@ -162,4 +169,10 @@ Stated plainly so the next agent does not assume it was done.
   lighting rig; north-light and window glow carry them.
 - **The renders are architectural-visualisation quality, not photoreal.** They are
   honest, consistent and readable, and they are the weakest part of the deliverable
-  relative to the geometry.
+  relative to the geometry. The sun sits at azimuth 215°, elevation 41° for both ports,
+  chosen so that the west-facing waterfront elevations are lit rather than silhouetted;
+  an earlier azimuth of 285° back-lit every river view.
+
+- **The landing stage's pontoon sides read very dark.** They are tarred, which is
+  historically right, but at river level the stage fills the lower third of the frame
+  with near-black. The deck is light and the silhouette is clear.

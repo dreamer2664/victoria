@@ -366,13 +366,14 @@ def render_to(path, cam, res=(1600, 900), samples=64, denoise=True, threads=None
     sc.render.filepath = path
     sc.cycles.samples = samples
     sc.cycles.use_denoising = denoise
-    sc.cycles.max_bounces = 10
-    sc.cycles.diffuse_bounces = 6
-    sc.cycles.glossy_bounces = 4
+    sc.cycles.max_bounces = 7
+    sc.cycles.diffuse_bounces = 4
+    sc.cycles.glossy_bounces = 3
     sc.cycles.transmission_bounces = 4
     sc.cycles.caustics_reflective = False
     sc.cycles.caustics_refractive = False
     sc.cycles.use_fast_gi = False
+    sc.cycles.use_light_tree = True
     os.makedirs(os.path.dirname(path), exist_ok=True)
     bpy.ops.render.render(write_still=True)
     return path

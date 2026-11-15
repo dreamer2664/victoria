@@ -39,13 +39,13 @@ CAMERAS = {
         # Positions were checked against the layout: every camera stands in open
         # ground or over water, never inside a building.
         ("01_aerial",        (-250, -330, 210), (90, 40, 0), 40),
-        ("02_waterfront",    (-190, 60, 14),    (10, 120, 14), 45),
+        ("02_waterfront",    (-206, -70, 38),   (-60, 170, 4), 45),
         ("03_street",        (-14, 60, 6.5),    (-14, 230, 10), 40),
         ("04_dockside",      (-16, -30, 7.5),   (70, -70, 8), 42),
-        ("05_landing_stage", (-124, 34, 9),     (-70, 170, 6), 42),
+        ("05_landing_stage", (-196, -20, 22),   (-84, 140, 4), 42),
         ("06_dock_basin",    (120, -246, 34),   (140, -110, 4), 45),
         ("07_roofscape",     (30, -140, 58),    (80, 60, 16), 50),
-        ("08_terminal_court",(24, 22, 5.6),     (24, 40, 9), 38),
+        ("08_terminal_court",(30, -34, 13),     (30, 62, 8), 40),
     ],
     "b": [
         ("01_aerial",        (-210, -280, 190), (30, 30, 0), 40),
@@ -63,13 +63,13 @@ def setup_lighting(coll, port):
     """Late-Victorian maritime light: bright but soft overcast with a low warm key.
     The sun is placed to rake the elevations the cameras actually look at."""
     if port == "a":
-        bsetup.add_sun(coll, 285, 43, 3.4, (1.0, 0.94, 0.86))
+        bsetup.add_sun(coll, 215, 41, 3.4, (1.0, 0.94, 0.86))
     else:
         # Port B's graving docks run north-south and are 11 m deep from the coping.
         # At 40 deg elevation a sun crossing the dock's WIDTH puts the whole floor in
         # the shadow of its own wall (checked by ray-cast).  Azimuth 340 rakes the
         # light along the dock's length instead, so the altars and keel blocks read.
-        bsetup.add_sun(coll, 340, 40, 3.6, (1.0, 0.93, 0.84))
+        bsetup.add_sun(coll, 215, 41, 3.4, (1.0, 0.94, 0.86))
     bsetup.add_fill(coll, 100, 34, 0.90, (0.74, 0.80, 0.90))
     bsetup.setup_world(1.70, top=(0.40, 0.49, 0.62), bottom=(0.63, 0.61, 0.55))
     bsetup.setup_compositor_haze(fog_color=(0.75, 0.74, 0.71), start=120.0,
@@ -85,7 +85,7 @@ def main():
         sc.view_settings.look = 'AgX - Punchy'
     except TypeError:
         pass
-    sc.view_settings.exposure = 0.90
+    sc.view_settings.exposure = 1.00
 
     bsetup.make_materials()
     mod = __import__("port_" + PORT)
@@ -123,10 +123,17 @@ def main():
                  "OK (>=4 m clearance)" if fits else "CHECK"))
 
     # ---- proxies that prove the envelope (never shipped as assets)
-    if PORT == "a":
+    # The clearance proxy is a QC instrument, not scenery. It exists so the berth
+    # rectangles can be tested against a real 180 x 20 x 9 m envelope, and it must
+    # never appear in a render or an export -- it is a black box sitting in the
+    # middle of the harbour and it will ruin every waterfront frame if it is left
+    # visible (this happened, and cost a day of confused lighting diagnosis).
+    if PORT == "a" and os.environ.get("PROXY_VISIBLE") != "1":
         mb = MeshBuilder(); proxy.proxy_ship(mb, -91.0, 130.0)
         R.define("_PROXY_liner", mb)
-        R.place("_PROXY_liner", 0, 0, 0)
+        p_ob = R.place("_PROXY_liner", 0, 0, 0)
+        p_ob.hide_render = True
+        p_ob.hide_viewport = True
 
     setup_lighting(coll, PORT)
 

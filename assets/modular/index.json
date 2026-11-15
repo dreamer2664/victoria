@@ -1,0 +1,2195 @@
+{
+ "scale": {
+  "studs_per_metre": 3.571428571428571,
+  "note": "1 Roblox stud = 0.28 m"
+ },
+ "ports": {
+  "a": {
+   "name": "PORT OF ALDERMOUTH",
+   "prototypes": [
+    {
+     "name": "A_baggage_hall",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_baggage_hall.glb",
+     "size_m": [
+      60.8,
+      26.99,
+      15.52
+     ],
+     "size_studs": [
+      217.1,
+      96.4,
+      55.4
+     ],
+     "min_m": [
+      -0.4,
+      -0.5,
+      0.0
+     ],
+     "triangles": 10606,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_barge",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_barge.glb",
+     "size_m": [
+      4.8,
+      22.0,
+      2.25
+     ],
+     "size_studs": [
+      17.1,
+      78.6,
+      8.0
+     ],
+     "min_m": [
+      -2.4,
+      0.0,
+      -0.9
+     ],
+     "triangles": 36,
+     "instances": 0,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_bollard",
+     "class": "bollard",
+     "glb": "assets/glb/a/A_bollard.glb",
+     "size_m": [
+      0.84,
+      0.8,
+      1.1
+     ],
+     "size_studs": [
+      3.0,
+      2.9,
+      3.9
+     ],
+     "min_m": [
+      -0.42,
+      -0.4,
+      0.0
+     ],
+     "triangles": 222,
+     "instances": 83,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "16-20 m centres along a berth",
+     "shipped": true
+    },
+    {
+     "name": "A_boundary_wall",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_boundary_wall.glb",
+     "size_m": [
+      20.0,
+      0.84,
+      4.0
+     ],
+     "size_studs": [
+      71.4,
+      3.0,
+      14.3
+     ],
+     "min_m": [
+      -10.0,
+      -0.42,
+      3.9
+     ],
+     "triangles": 96,
+     "instances": 73,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_bridge_abutment",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_bridge_abutment.glb",
+     "size_m": [
+      5.2,
+      126.4,
+      1.92
+     ],
+     "size_studs": [
+      18.6,
+      451.4,
+      6.9
+     ],
+     "min_m": [
+      -31.2,
+      71.8,
+      2.2
+     ],
+     "triangles": 48,
+     "instances": 2,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_bufferstop",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_bufferstop.glb",
+     "size_m": [
+      1.9,
+      1.27,
+      1.01
+     ],
+     "size_studs": [
+      6.8,
+      4.5,
+      3.6
+     ],
+     "min_m": [
+      -0.95,
+      -0.77,
+      -0.06
+     ],
+     "triangles": 36,
+     "instances": 3,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_capstan",
+     "class": "bollard",
+     "glb": "assets/glb/a/A_capstan.glb",
+     "size_m": [
+      1.18,
+      1.18,
+      1.0
+     ],
+     "size_studs": [
+      4.2,
+      4.2,
+      3.6
+     ],
+     "min_m": [
+      -0.59,
+      -0.59,
+      0.0
+     ],
+     "triangles": 260,
+     "instances": 9,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "16-20 m centres along a berth",
+     "shipped": true
+    },
+    {
+     "name": "A_cargo",
+     "class": "stack",
+     "glb": "assets/glb/a/A_cargo.glb",
+     "size_m": [
+      4.26,
+      7.05,
+      2.7
+     ],
+     "size_studs": [
+      15.2,
+      25.2,
+      9.6
+     ],
+     "min_m": [
+      -2.01,
+      -3.92,
+      0.0
+     ],
+     "triangles": 614,
+     "instances": 14,
+     "connection_point": "base centre at QUAY_Z",
+     "connection_convention": "free placement, keep 1 m from a wall",
+     "shipped": true
+    },
+    {
+     "name": "A_chandlery",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_chandlery.glb",
+     "size_m": [
+      16.98,
+      12.98,
+      11.36
+     ],
+     "size_studs": [
+      60.6,
+      46.3,
+      40.6
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 3842,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_coalhoist",
+     "class": "crane",
+     "glb": "assets/glb/a/A_coalhoist.glb",
+     "size_m": [
+      5.05,
+      7.61,
+      6.3
+     ],
+     "size_studs": [
+      18.0,
+      27.2,
+      22.5
+     ],
+     "min_m": [
+      -1.5,
+      -4.76,
+      0.0
+     ],
+     "triangles": 228,
+     "instances": 6,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "rz = working direction; +X is the crane's reach",
+     "shipped": true
+    },
+    {
+     "name": "A_crane",
+     "class": "crane",
+     "glb": "assets/glb/a/A_crane.glb",
+     "size_m": [
+      6.6,
+      2.1,
+      5.82
+     ],
+     "size_studs": [
+      23.6,
+      7.5,
+      20.8
+     ],
+     "min_m": [
+      -1.05,
+      -1.05,
+      0.0
+     ],
+     "triangles": 504,
+     "instances": 10,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "rz = working direction; +X is the crane's reach",
+     "shipped": true
+    },
+    {
+     "name": "A_customhouse",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_customhouse.glb",
+     "size_m": [
+      59.31,
+      35.31,
+      36.92
+     ],
+     "size_studs": [
+      211.8,
+      126.1,
+      131.9
+     ],
+     "min_m": [
+      -0.66,
+      -2.65,
+      0.0
+     ],
+     "triangles": 52510,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_dock_shed",
+     "class": "dock",
+     "glb": "assets/glb/a/A_dock_shed.glb",
+     "size_m": [
+      24.99,
+      118.8,
+      15.3
+     ],
+     "size_studs": [
+      89.2,
+      424.3,
+      54.6
+     ],
+     "min_m": [
+      -0.5,
+      -0.4,
+      0.0
+     ],
+     "triangles": 15738,
+     "instances": 1,
+     "connection_point": "SW corner of the dock rectangle",
+     "connection_convention": "depth is measured DOWN FROM THE COPING",
+     "shipped": true
+    },
+    {
+     "name": "A_fingerpost",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_fingerpost.glb",
+     "size_m": [
+      1.58,
+      1.58,
+      4.5
+     ],
+     "size_studs": [
+      5.6,
+      5.6,
+      16.1
+     ],
+     "min_m": [
+      -0.08,
+      -0.08,
+      0.0
+     ],
+     "triangles": 80,
+     "instances": 5,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_gangway",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_gangway.glb",
+     "size_m": [
+      9.03,
+      1.64,
+      3.86
+     ],
+     "size_studs": [
+      32.3,
+      5.9,
+      13.8
+     ],
+     "min_m": [
+      -0.02,
+      -0.82,
+      -2.88
+     ],
+     "triangles": 356,
+     "instances": 0,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_gangway_bridge",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_gangway_bridge.glb",
+     "size_m": [
+      36.07,
+      3.87,
+      6.32
+     ],
+     "size_studs": [
+      128.8,
+      13.8,
+      22.6
+     ],
+     "min_m": [
+      -66.04,
+      -1.93,
+      1.28
+     ],
+     "triangles": 1356,
+     "instances": 2,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_gatehouse",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_gatehouse.glb",
+     "size_m": [
+      10.7,
+      7.7,
+      7.36
+     ],
+     "size_studs": [
+      38.2,
+      27.5,
+      26.3
+     ],
+     "min_m": [
+      -0.35,
+      -0.35,
+      0.0
+     ],
+     "triangles": 2890,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_goods_shed",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_goods_shed.glb",
+     "size_m": [
+      20.99,
+      52.8,
+      12.85
+     ],
+     "size_studs": [
+      75.0,
+      188.6,
+      45.9
+     ],
+     "min_m": [
+      -0.5,
+      -0.4,
+      0.0
+     ],
+     "triangles": 8074,
+     "instances": 3,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_ground",
+     "class": "quay",
+     "glb": "assets/glb/a/A_ground.glb",
+     "size_m": [
+      790.0,
+      1120.0,
+      8.0
+     ],
+     "size_studs": [
+      2821.4,
+      4000.0,
+      28.6
+     ],
+     "min_m": [
+      -460.0,
+      -560.0,
+      -4.0
+     ],
+     "triangles": 9722,
+     "instances": 0,
+     "connection_point": "coping line, centre of the 24 m module",
+     "connection_convention": "place at 24 m centres along a water edge; rz chooses which way the land lies",
+     "shipped": true
+    },
+    {
+     "name": "A_gully",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_gully.glb",
+     "size_m": [
+      0.62,
+      0.45,
+      0.13
+     ],
+     "size_studs": [
+      2.2,
+      1.6,
+      0.5
+     ],
+     "min_m": [
+      -0.31,
+      -0.22,
+      -0.07
+     ],
+     "triangles": 84,
+     "instances": 6,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_harbour_offices",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_harbour_offices.glb",
+     "size_m": [
+      40.98,
+      20.98,
+      18.46
+     ],
+     "size_studs": [
+      146.3,
+      74.9,
+      65.9
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 13554,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_hotel",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_hotel.glb",
+     "size_m": [
+      40.98,
+      26.98,
+      29.48
+     ],
+     "size_studs": [
+      146.3,
+      96.3,
+      105.3
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 22242,
+     "instances": 2,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_lamp",
+     "class": "lamp",
+     "glb": "assets/glb/a/A_lamp.glb",
+     "size_m": [
+      0.74,
+      0.61,
+      5.26
+     ],
+     "size_studs": [
+      2.6,
+      2.2,
+      18.8
+     ],
+     "min_m": [
+      -0.32,
+      -0.3,
+      0.0
+     ],
+     "triangles": 300,
+     "instances": 43,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "26-44 m centres along a street",
+     "shipped": true
+    },
+    {
+     "name": "A_landing_stage",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_landing_stage.glb",
+     "size_m": [
+      15.1,
+      210.3,
+      6.67
+     ],
+     "size_studs": [
+      53.9,
+      751.1,
+      23.8
+     ],
+     "min_m": [
+      -80.55,
+      29.85,
+      -0.5
+     ],
+     "triangles": 3846,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_loco",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_loco.glb",
+     "size_m": [
+      8.6,
+      3.52,
+      4.12
+     ],
+     "size_studs": [
+      30.7,
+      12.6,
+      14.7
+     ],
+     "min_m": [
+      -4.2,
+      -1.76,
+      -0.22
+     ],
+     "triangles": 516,
+     "instances": 4,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_office_row",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_office_row.glb",
+     "size_m": [
+      72.98,
+      16.98,
+      20.61
+     ],
+     "size_studs": [
+      260.6,
+      60.6,
+      73.6
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 26226,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_office_row2",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_office_row2.glb",
+     "size_m": [
+      56.98,
+      16.98,
+      17.11
+     ],
+     "size_studs": [
+      203.5,
+      60.6,
+      61.1
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 15338,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_pole",
+     "class": "lamp",
+     "glb": "assets/glb/a/A_pole.glb",
+     "size_m": [
+      2.2,
+      0.32,
+      8.5
+     ],
+     "size_studs": [
+      7.9,
+      1.1,
+      30.4
+     ],
+     "min_m": [
+      -1.1,
+      -0.16,
+      0.0
+     ],
+     "triangles": 212,
+     "instances": 15,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "26-44 m centres along a street",
+     "shipped": true
+    },
+    {
+     "name": "A_quay24",
+     "class": "quay",
+     "glb": "assets/glb/a/A_quay24.glb",
+     "size_m": [
+      24.0,
+      3.74,
+      12.0
+     ],
+     "size_studs": [
+      85.7,
+      13.4,
+      42.9
+     ],
+     "min_m": [
+      -12.0,
+      -0.54,
+      -8.0
+     ],
+     "triangles": 456,
+     "instances": 46,
+     "connection_point": "coping line, centre of the 24 m module",
+     "connection_convention": "place at 24 m centres along a water edge; rz chooses which way the land lies",
+     "shipped": true
+    },
+    {
+     "name": "A_rail",
+     "class": "rail",
+     "glb": "assets/glb/a/A_rail.glb",
+     "size_m": [
+      223.6,
+      622.0,
+      3.27
+     ],
+     "size_studs": [
+      798.6,
+      2221.4,
+      11.7
+     ],
+     "min_m": [
+      -23.6,
+      -250.0,
+      3.96
+     ],
+     "triangles": 46918,
+     "instances": 0,
+     "connection_point": "first sleeper centre at QUAY_Z",
+     "connection_convention": "runs along +X or +Z of the prototype",
+     "shipped": true
+    },
+    {
+     "name": "A_shop_small",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_shop_small.glb",
+     "size_m": [
+      18.98,
+      13.98,
+      11.89
+     ],
+     "size_studs": [
+      67.8,
+      49.9,
+      42.5
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 5090,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_signs",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_signs.glb",
+     "size_m": [
+      28.22,
+      108.07,
+      8.55
+     ],
+     "size_studs": [
+      100.8,
+      386.0,
+      30.5
+     ],
+     "min_m": [
+      5.34,
+      39.92,
+      4.89
+     ],
+     "triangles": 70,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_staithe",
+     "class": "stack",
+     "glb": "assets/glb/a/A_staithe.glb",
+     "size_m": [
+      9.4,
+      40.0,
+      3.23
+     ],
+     "size_studs": [
+      33.6,
+      142.9,
+      11.5
+     ],
+     "min_m": [
+      -0.2,
+      0.0,
+      0.0
+     ],
+     "triangles": 898,
+     "instances": 1,
+     "connection_point": "base centre at QUAY_Z",
+     "connection_convention": "free placement, keep 1 m from a wall",
+     "shipped": true
+    },
+    {
+     "name": "A_station",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_station.glb",
+     "size_m": [
+      72.55,
+      22.55,
+      10.2
+     ],
+     "size_studs": [
+      259.1,
+      80.5,
+      36.4
+     ],
+     "min_m": [
+      -0.28,
+      -0.28,
+      0.0
+     ],
+     "triangles": 24524,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_steamcrane",
+     "class": "crane",
+     "glb": "assets/glb/a/A_steamcrane.glb",
+     "size_m": [
+      10.23,
+      2.6,
+      4.85
+     ],
+     "size_studs": [
+      36.5,
+      9.3,
+      17.3
+     ],
+     "min_m": [
+      -3.1,
+      -1.3,
+      -0.25
+     ],
+     "triangles": 368,
+     "instances": 4,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "rz = working direction; +X is the crane's reach",
+     "shipped": true
+    },
+    {
+     "name": "A_streets",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_streets.glb",
+     "size_m": [
+      238.0,
+      444.3,
+      0.2
+     ],
+     "size_studs": [
+      850.0,
+      1586.8,
+      0.7
+     ],
+     "min_m": [
+      -10.0,
+      -196.3,
+      3.98
+     ],
+     "triangles": 192,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_terminal",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_terminal.glb",
+     "size_m": [
+      44.98,
+      46.98,
+      27.95
+     ],
+     "size_studs": [
+      160.6,
+      167.8,
+      99.8
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 18730,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_terrace",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_terrace.glb",
+     "size_m": [
+      46.98,
+      14.98,
+      15.53
+     ],
+     "size_studs": [
+      167.8,
+      53.5,
+      55.5
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 13306,
+     "instances": 5,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_timber",
+     "class": "stack",
+     "glb": "assets/glb/a/A_timber.glb",
+     "size_m": [
+      8.0,
+      4.4,
+      1.8
+     ],
+     "size_studs": [
+      28.6,
+      15.7,
+      6.4
+     ],
+     "min_m": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "triangles": 132,
+     "instances": 5,
+     "connection_point": "base centre at QUAY_Z",
+     "connection_convention": "free placement, keep 1 m from a wall",
+     "shipped": true
+    },
+    {
+     "name": "A_transit_shed",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_transit_shed.glb",
+     "size_m": [
+      60.8,
+      24.99,
+      14.5
+     ],
+     "size_studs": [
+      217.1,
+      89.2,
+      51.8
+     ],
+     "min_m": [
+      -0.4,
+      -0.5,
+      0.0
+     ],
+     "triangles": 10342,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_van",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_van.glb",
+     "size_m": [
+      5.3,
+      3.18,
+      3.08
+     ],
+     "size_studs": [
+      18.9,
+      11.4,
+      11.0
+     ],
+     "min_m": [
+      -2.65,
+      -1.59,
+      -0.16
+     ],
+     "triangles": 324,
+     "instances": 5,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_wagon",
+     "class": "rail",
+     "glb": "assets/glb/a/A_wagon.glb",
+     "size_m": [
+      5.2,
+      3.18,
+      2.51
+     ],
+     "size_studs": [
+      18.6,
+      11.4,
+      9.0
+     ],
+     "min_m": [
+      -2.6,
+      -1.59,
+      -0.16
+     ],
+     "triangles": 310,
+     "instances": 11,
+     "connection_point": "first sleeper centre at QUAY_Z",
+     "connection_convention": "runs along +X or +Z of the prototype",
+     "shipped": true
+    },
+    {
+     "name": "A_warehouse_3",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_warehouse_3.glb",
+     "size_m": [
+      32.76,
+      21.35,
+      18.17
+     ],
+     "size_studs": [
+      117.0,
+      76.3,
+      64.9
+     ],
+     "min_m": [
+      -0.38,
+      -0.97,
+      0.0
+     ],
+     "triangles": 24426,
+     "instances": 5,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_warehouse_4",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_warehouse_4.glb",
+     "size_m": [
+      34.76,
+      21.35,
+      21.61
+     ],
+     "size_studs": [
+      124.2,
+      76.3,
+      77.2
+     ],
+     "min_m": [
+      -0.38,
+      -0.97,
+      0.0
+     ],
+     "triangles": 29466,
+     "instances": 3,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_warehouse_wide",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_warehouse_wide.glb",
+     "size_m": [
+      41.35,
+      22.76,
+      18.98
+     ],
+     "size_studs": [
+      147.7,
+      81.3,
+      67.8
+     ],
+     "min_m": [
+      -0.38,
+      -0.38,
+      0.0
+     ],
+     "triangles": 28098,
+     "instances": 3,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_winch",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_winch.glb",
+     "size_m": [
+      1.96,
+      0.9,
+      1.16
+     ],
+     "size_studs": [
+      7.0,
+      3.2,
+      4.1
+     ],
+     "min_m": [
+      -0.75,
+      -0.45,
+      0.0
+     ],
+     "triangles": 140,
+     "instances": 13,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    }
+   ],
+   "count": 46
+  },
+  "b": {
+   "name": "PORT OF CARRICKMORE",
+   "prototypes": [
+    {
+     "name": "B_boiler_shop",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_boiler_shop.glb",
+     "size_m": [
+      44.64,
+      22.64,
+      18.0
+     ],
+     "size_studs": [
+      159.4,
+      80.8,
+      64.3
+     ],
+     "min_m": [
+      -0.32,
+      -0.32,
+      0.0
+     ],
+     "triangles": 6153,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_bollard",
+     "class": "bollard",
+     "glb": "assets/glb/b/B_bollard.glb",
+     "size_m": [
+      0.84,
+      0.8,
+      1.1
+     ],
+     "size_studs": [
+      3.0,
+      2.9,
+      3.9
+     ],
+     "min_m": [
+      -0.42,
+      -0.4,
+      0.0
+     ],
+     "triangles": 222,
+     "instances": 49,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "16-20 m centres along a berth",
+     "shipped": true
+    },
+    {
+     "name": "B_caisson",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_caisson.glb",
+     "size_m": [
+      24.4,
+      2.2,
+      8.8
+     ],
+     "size_studs": [
+      87.1,
+      7.9,
+      31.4
+     ],
+     "min_m": [
+      0.0,
+      -0.3,
+      -4.2
+     ],
+     "triangles": 228,
+     "instances": 2,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_caisson_s",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_caisson_s.glb",
+     "size_m": [
+      18.0,
+      2.2,
+      8.4
+     ],
+     "size_studs": [
+      64.3,
+      7.9,
+      30.0
+     ],
+     "min_m": [
+      0.0,
+      -0.3,
+      -4.2
+     ],
+     "triangles": 180,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_capstan",
+     "class": "bollard",
+     "glb": "assets/glb/b/B_capstan.glb",
+     "size_m": [
+      1.18,
+      1.18,
+      1.0
+     ],
+     "size_studs": [
+      4.2,
+      4.2,
+      3.6
+     ],
+     "min_m": [
+      -0.59,
+      -0.59,
+      0.0
+     ],
+     "triangles": 260,
+     "instances": 10,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "16-20 m centres along a berth",
+     "shipped": true
+    },
+    {
+     "name": "B_cargo",
+     "class": "stack",
+     "glb": "assets/glb/b/B_cargo.glb",
+     "size_m": [
+      5.22,
+      7.39,
+      2.4
+     ],
+     "size_studs": [
+      18.6,
+      26.4,
+      8.6
+     ],
+     "min_m": [
+      -2.77,
+      -3.97,
+      0.0
+     ],
+     "triangles": 640,
+     "instances": 9,
+     "connection_point": "base centre at QUAY_Z",
+     "connection_convention": "free placement, keep 1 m from a wall",
+     "shipped": true
+    },
+    {
+     "name": "B_crane",
+     "class": "crane",
+     "glb": "assets/glb/b/B_crane.glb",
+     "size_m": [
+      6.6,
+      2.1,
+      5.82
+     ],
+     "size_studs": [
+      23.6,
+      7.5,
+      20.8
+     ],
+     "min_m": [
+      -1.05,
+      -1.05,
+      0.0
+     ],
+     "triangles": 504,
+     "instances": 3,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "rz = working direction; +X is the crane's reach",
+     "shipped": true
+    },
+    {
+     "name": "B_engine_shop",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_engine_shop.glb",
+     "size_m": [
+      46.64,
+      24.64,
+      22.0
+     ],
+     "size_studs": [
+      166.6,
+      88.0,
+      78.6
+     ],
+     "min_m": [
+      -0.32,
+      -0.32,
+      0.0
+     ],
+     "triangles": 6805,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_fingerpost",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_fingerpost.glb",
+     "size_m": [
+      1.58,
+      1.58,
+      4.5
+     ],
+     "size_studs": [
+      5.6,
+      5.6,
+      16.1
+     ],
+     "min_m": [
+      -0.08,
+      -0.08,
+      0.0
+     ],
+     "triangles": 80,
+     "instances": 4,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_fitting_shed",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_fitting_shed.glb",
+     "size_m": [
+      22.99,
+      46.8,
+      13.87
+     ],
+     "size_studs": [
+      82.1,
+      167.1,
+      49.5
+     ],
+     "min_m": [
+      -0.5,
+      -0.4,
+      0.0
+     ],
+     "triangles": 7518,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_ground",
+     "class": "quay",
+     "glb": "assets/glb/b/B_ground.glb",
+     "size_m": [
+      800.0,
+      1120.0,
+      8.5
+     ],
+     "size_studs": [
+      2857.1,
+      4000.0,
+      30.4
+     ],
+     "min_m": [
+      -460.0,
+      -560.0,
+      -4.5
+     ],
+     "triangles": 9960,
+     "instances": 0,
+     "connection_point": "coping line, centre of the 24 m module",
+     "connection_convention": "place at 24 m centres along a water edge; rz chooses which way the land lies",
+     "shipped": true
+    },
+    {
+     "name": "B_gully",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_gully.glb",
+     "size_m": [
+      0.62,
+      0.45,
+      0.13
+     ],
+     "size_studs": [
+      2.2,
+      1.6,
+      0.5
+     ],
+     "min_m": [
+      -0.31,
+      -0.22,
+      -0.07
+     ],
+     "triangles": 84,
+     "instances": 8,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_joinershop",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_joinershop.glb",
+     "size_m": [
+      34.64,
+      18.64,
+      12.69
+     ],
+     "size_studs": [
+      123.7,
+      66.6,
+      45.3
+     ],
+     "min_m": [
+      -0.32,
+      -0.32,
+      0.0
+     ],
+     "triangles": 4917,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_lamp",
+     "class": "lamp",
+     "glb": "assets/glb/b/B_lamp.glb",
+     "size_m": [
+      0.74,
+      0.61,
+      5.26
+     ],
+     "size_studs": [
+      2.6,
+      2.2,
+      18.8
+     ],
+     "min_m": [
+      -0.32,
+      -0.3,
+      0.0
+     ],
+     "triangles": 300,
+     "instances": 38,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "26-44 m centres along a street",
+     "shipped": true
+    },
+    {
+     "name": "B_loco",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_loco.glb",
+     "size_m": [
+      8.6,
+      3.52,
+      4.12
+     ],
+     "size_studs": [
+      30.7,
+      12.6,
+      14.7
+     ],
+     "min_m": [
+      -4.2,
+      -1.76,
+      -0.22
+     ],
+     "triangles": 516,
+     "instances": 3,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_moulding_loft",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_moulding_loft.glb",
+     "size_m": [
+      50.6,
+      18.79,
+      15.11
+     ],
+     "size_studs": [
+      180.7,
+      67.1,
+      53.9
+     ],
+     "min_m": [
+      -0.3,
+      -0.4,
+      0.0
+     ],
+     "triangles": 4278,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_no1_dock",
+     "class": "dock",
+     "glb": "assets/glb/b/B_no1_dock.glb",
+     "size_m": [
+      18.6,
+      123.6,
+      9.7
+     ],
+     "size_studs": [
+      66.4,
+      441.4,
+      34.6
+     ],
+     "min_m": [
+      149.7,
+      38.2,
+      -4.6
+     ],
+     "triangles": 6684,
+     "instances": 1,
+     "connection_point": "SW corner of the dock rectangle",
+     "connection_convention": "depth is measured DOWN FROM THE COPING",
+     "shipped": true
+    },
+    {
+     "name": "B_offices",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_offices.glb",
+     "size_m": [
+      40.98,
+      16.98,
+      17.11
+     ],
+     "size_studs": [
+      146.3,
+      60.6,
+      61.1
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 12090,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_paintshop",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_paintshop.glb",
+     "size_m": [
+      40.8,
+      18.99,
+      12.02
+     ],
+     "size_studs": [
+      145.7,
+      67.8,
+      42.9
+     ],
+     "min_m": [
+      -0.4,
+      -0.5,
+      0.0
+     ],
+     "triangles": 6946,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_plates",
+     "class": "stack",
+     "glb": "assets/glb/b/B_plates.glb",
+     "size_m": [
+      6.73,
+      4.58,
+      1.0
+     ],
+     "size_studs": [
+      24.1,
+      16.4,
+      3.6
+     ],
+     "min_m": [
+      -2.05,
+      -1.47,
+      0.0
+     ],
+     "triangles": 96,
+     "instances": 6,
+     "connection_point": "base centre at QUAY_Z",
+     "connection_convention": "free placement, keep 1 m from a wall",
+     "shipped": true
+    },
+    {
+     "name": "B_plateshop",
+     "class": "stack",
+     "glb": "assets/glb/b/B_plateshop.glb",
+     "size_m": [
+      38.79,
+      20.64,
+      16.0
+     ],
+     "size_studs": [
+      138.5,
+      73.7,
+      57.1
+     ],
+     "min_m": [
+      -0.4,
+      -0.32,
+      0.0
+     ],
+     "triangles": 4742,
+     "instances": 1,
+     "connection_point": "base centre at QUAY_Z",
+     "connection_convention": "free placement, keep 1 m from a wall",
+     "shipped": true
+    },
+    {
+     "name": "B_pole",
+     "class": "lamp",
+     "glb": "assets/glb/b/B_pole.glb",
+     "size_m": [
+      2.2,
+      0.32,
+      8.5
+     ],
+     "size_studs": [
+      7.9,
+      1.1,
+      30.4
+     ],
+     "min_m": [
+      -1.1,
+      -0.16,
+      0.0
+     ],
+     "triangles": 212,
+     "instances": 9,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "26-44 m centres along a street",
+     "shipped": true
+    },
+    {
+     "name": "B_princess_dock",
+     "class": "dock",
+     "glb": "assets/glb/b/B_princess_dock.glb",
+     "size_m": [
+      25.0,
+      247.6,
+      12.7
+     ],
+     "size_studs": [
+      89.3,
+      884.3,
+      45.4
+     ],
+     "min_m": [
+      95.7,
+      18.2,
+      -7.6
+     ],
+     "triangles": 12288,
+     "instances": 1,
+     "connection_point": "SW corner of the dock rectangle",
+     "connection_convention": "depth is measured DOWN FROM THE COPING",
+     "shipped": true
+    },
+    {
+     "name": "B_pub",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_pub.glb",
+     "size_m": [
+      16.98,
+      12.98,
+      11.36
+     ],
+     "size_studs": [
+      60.6,
+      46.3,
+      40.6
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 4274,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_pump_house",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_pump_house.glb",
+     "size_m": [
+      16.89,
+      12.7,
+      26.5
+     ],
+     "size_studs": [
+      60.3,
+      45.4,
+      94.6
+     ],
+     "min_m": [
+      -0.45,
+      -0.35,
+      0.0
+     ],
+     "triangles": 8282,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_quay24",
+     "class": "quay",
+     "glb": "assets/glb/b/B_quay24.glb",
+     "size_m": [
+      24.0,
+      3.74,
+      12.0
+     ],
+     "size_studs": [
+      85.7,
+      13.4,
+      42.9
+     ],
+     "min_m": [
+      -12.0,
+      -0.54,
+      -8.0
+     ],
+     "triangles": 456,
+     "instances": 28,
+     "connection_point": "coping line, centre of the 24 m module",
+     "connection_convention": "place at 24 m centres along a water edge; rz chooses which way the land lies",
+     "shipped": true
+    },
+    {
+     "name": "B_rail",
+     "class": "rail",
+     "glb": "assets/glb/b/B_rail.glb",
+     "size_m": [
+      323.6,
+      686.0,
+      0.27
+     ],
+     "size_studs": [
+      1155.7,
+      2450.0,
+      0.9
+     ],
+     "min_m": [
+      -23.6,
+      -290.0,
+      3.96
+     ],
+     "triangles": 41944,
+     "instances": 0,
+     "connection_point": "first sleeper centre at QUAY_Z",
+     "connection_convention": "runs along +X or +Z of the prototype",
+     "shipped": true
+    },
+    {
+     "name": "B_sawmill",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_sawmill.glb",
+     "size_m": [
+      30.64,
+      18.64,
+      14.0
+     ],
+     "size_studs": [
+      109.4,
+      66.6,
+      50.0
+     ],
+     "min_m": [
+      -0.32,
+      -0.32,
+      0.0
+     ],
+     "triangles": 4509,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_sheerlegs",
+     "class": "crane",
+     "glb": "assets/glb/b/B_sheerlegs.glb",
+     "size_m": [
+      3.6,
+      12.39,
+      16.17
+     ],
+     "size_studs": [
+      12.9,
+      44.3,
+      57.7
+     ],
+     "min_m": [
+      -1.8,
+      -5.3,
+      -0.08
+     ],
+     "triangles": 72,
+     "instances": 1,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "rz = working direction; +X is the crane's reach",
+     "shipped": true
+    },
+    {
+     "name": "B_signs",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_signs.glb",
+     "size_m": [
+      27.42,
+      273.07,
+      6.57
+     ],
+     "size_studs": [
+      97.9,
+      975.2,
+      23.5
+     ],
+     "min_m": [
+      3.64,
+      -23.08,
+      4.91
+     ],
+     "triangles": 84,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_slip",
+     "class": "slip",
+     "glb": "assets/glb/b/B_slip.glb",
+     "size_m": [
+      36.36,
+      96.0,
+      15.8
+     ],
+     "size_studs": [
+      129.9,
+      342.9,
+      56.4
+     ],
+     "min_m": [
+      -1.18,
+      0.0,
+      -6.4
+     ],
+     "triangles": 1168,
+     "instances": 3,
+     "connection_point": "origin at the low (water) end",
+     "connection_convention": "rz=-90 turns the ways onto an E-W frontage",
+     "shipped": true
+    },
+    {
+     "name": "B_steamcrane",
+     "class": "crane",
+     "glb": "assets/glb/b/B_steamcrane.glb",
+     "size_m": [
+      10.23,
+      2.6,
+      4.85
+     ],
+     "size_studs": [
+      36.5,
+      9.3,
+      17.3
+     ],
+     "min_m": [
+      -3.1,
+      -1.3,
+      -0.25
+     ],
+     "triangles": 368,
+     "instances": 3,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "rz = working direction; +X is the crane's reach",
+     "shipped": true
+    },
+    {
+     "name": "B_store",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_store.glb",
+     "size_m": [
+      34.76,
+      21.35,
+      18.26
+     ],
+     "size_studs": [
+      124.2,
+      76.3,
+      65.2
+     ],
+     "min_m": [
+      -0.38,
+      -0.97,
+      0.0
+     ],
+     "triangles": 24066,
+     "instances": 2,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_store2",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_store2.glb",
+     "size_m": [
+      30.76,
+      19.35,
+      17.53
+     ],
+     "size_studs": [
+      109.9,
+      69.1,
+      62.6
+     ],
+     "min_m": [
+      -0.38,
+      -0.97,
+      0.0
+     ],
+     "triangles": 21522,
+     "instances": 2,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_terrace",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_terrace.glb",
+     "size_m": [
+      46.98,
+      14.98,
+      15.53
+     ],
+     "size_studs": [
+      167.8,
+      53.5,
+      55.5
+     ],
+     "min_m": [
+      -0.49,
+      -0.49,
+      0.0
+     ],
+     "triangles": 13306,
+     "instances": 6,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_timber",
+     "class": "stack",
+     "glb": "assets/glb/b/B_timber.glb",
+     "size_m": [
+      9.0,
+      4.8,
+      2.06
+     ],
+     "size_studs": [
+      32.1,
+      17.1,
+      7.4
+     ],
+     "min_m": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "triangles": 156,
+     "instances": 6,
+     "connection_point": "base centre at QUAY_Z",
+     "connection_convention": "free placement, keep 1 m from a wall",
+     "shipped": true
+    },
+    {
+     "name": "B_time_office",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_time_office.glb",
+     "size_m": [
+      11.7,
+      7.7,
+      7.36
+     ],
+     "size_studs": [
+      41.8,
+      27.5,
+      26.3
+     ],
+     "min_m": [
+      -0.35,
+      -0.35,
+      0.0
+     ],
+     "triangles": 3322,
+     "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_titan",
+     "class": "crane",
+     "glb": "assets/glb/b/B_titan.glb",
+     "size_m": [
+      24.62,
+      2.94,
+      24.72
+     ],
+     "size_studs": [
+      87.9,
+      10.5,
+      88.3
+     ],
+     "min_m": [
+      -8.45,
+      -0.95,
+      -0.17
+     ],
+     "triangles": 896,
+     "instances": 1,
+     "connection_point": "base plate centre at QUAY_Z",
+     "connection_convention": "rz = working direction; +X is the crane's reach",
+     "shipped": true
+    },
+    {
+     "name": "B_wagon",
+     "class": "rail",
+     "glb": "assets/glb/b/B_wagon.glb",
+     "size_m": [
+      5.2,
+      3.18,
+      2.51
+     ],
+     "size_studs": [
+      18.6,
+      11.4,
+      9.0
+     ],
+     "min_m": [
+      -2.6,
+      -1.59,
+      -0.16
+     ],
+     "triangles": 310,
+     "instances": 6,
+     "connection_point": "first sleeper centre at QUAY_Z",
+     "connection_convention": "runs along +X or +Z of the prototype",
+     "shipped": true
+    },
+    {
+     "name": "B_wall",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_wall.glb",
+     "size_m": [
+      20.0,
+      0.88,
+      3.95
+     ],
+     "size_studs": [
+      71.4,
+      3.1,
+      14.1
+     ],
+     "min_m": [
+      -10.0,
+      -0.44,
+      3.9
+     ],
+     "triangles": 24,
+     "instances": 71,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_winch",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_winch.glb",
+     "size_m": [
+      1.96,
+      0.9,
+      1.16
+     ],
+     "size_studs": [
+      7.0,
+      3.2,
+      4.1
+     ],
+     "min_m": [
+      -0.75,
+      -0.45,
+      0.0
+     ],
+     "triangles": 140,
+     "instances": 5,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    }
+   ],
+   "count": 41
+  }
+ }
+}

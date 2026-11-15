@@ -9,7 +9,7 @@ period sources, and exported for Roblox.
 | Prototype | Liverpool: enclosed non-tidal dock system | Belfast: shipyard, graving docks, slips |
 | Distinctive works | floating landing stage, terminal, customs, baggage hall, station, transit sheds, coal staithes, cattle pens | Princess Graving Dock (800 × 80 ft, three caissons), No. 1 dock, three building slips, moulding loft, engineering/boiler shops, Titan crane, yard rail |
 | Berths | 4 (B1 212 m @ 11 m, B2 110 m @ 6.5 m, B3 132 m @ 9 m, B4 124 m @ 9 m) | 3 (fitting-out 210 m @ 10 m, service 320 m @ 9 m, No. 1 dock 120 m @ 8 m) |
-| Geometry | 46 prototypes, 381 instances, 770 k instanced tris | 41 prototypes, 291 instances, 378 k instanced tris |
+| Geometry | 46 prototypes, 396 instances, 786 k instanced tris | 41 prototypes, 291 instances, 377 k instanced tris |
 | Overlaps | 0 | 0 |
 
 Everything is built to one scale: **1 Roblox stud = 0.28 m**. The Blender source is

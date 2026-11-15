@@ -49,6 +49,12 @@
         0.34,
         0.66
       ],
+      "rect": [
+        96.0,
+        20.0,
+        120.4,
+        264.0
+      ],
       "ship_envelope": {
         "L": 180.0,
         "B": 20.0,
@@ -65,6 +71,12 @@
       "width_m": 18.0,
       "entrance_depth_m": 8.0,
       "sections": 1,
+      "rect": [
+        150.0,
+        40.0,
+        168.0,
+        160.0
+      ],
       "basis": "Hamilton Dock, Belfast (1864-67): the older graving dock on the Co. Down side of the river, in use for repair and fitting out."
     }
   ],
@@ -74,6 +86,12 @@
       "y0": 42.0,
       "y1": 76.0,
       "width_m": 34.0,
+      "rect": [
+        -30.0,
+        42.0,
+        66.0,
+        76.0
+      ],
       "length_m": 96.0,
       "gradient": "2.6 deg",
       "basis": "Ocean Steamships (1891): the yard frontage lined with launching slips; up to fifteen vessels building at once."
@@ -83,6 +101,12 @@
       "y0": 92.0,
       "y1": 126.0,
       "width_m": 34.0,
+      "rect": [
+        -30.0,
+        92.0,
+        66.0,
+        126.0
+      ],
       "length_m": 96.0,
       "gradient": "2.6 deg",
       "basis": "Ocean Steamships (1891): the yard frontage lined with launching slips; up to fifteen vessels building at once."
@@ -92,6 +116,12 @@
       "y0": 142.0,
       "y1": 176.0,
       "width_m": 34.0,
+      "rect": [
+        -30.0,
+        142.0,
+        66.0,
+        176.0
+      ],
       "length_m": 96.0,
       "gradient": "2.6 deg",
       "basis": "Ocean Steamships (1891): the yard frontage lined with launching slips; up to fifteen vessels building at once."
