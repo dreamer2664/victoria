@@ -101,8 +101,20 @@ Recorded because each of these cost real time and each has a lesson.
    - a shadow ray from the floor toward the sun → hit the dock's own wall 12 m away.
 
    At 40° elevation a sun crossing a 24 m wide, 11 m deep dock puts the whole floor in
-   the shadow of its own wall. The fix was to move the sun's azimuth so it rakes along
-   the dock's length instead of across its width. **A dark pit is not a broken pit.**
+   the shadow of its own wall: a shadow-ray cast from the floor centre hit the dock wall
+   12 m away.
+
+   **Partially fixed, and still not right.** The sun's azimuth was moved from 300° to
+   340° so that it rakes along the dock's length instead of across its width, which
+   should have lifted most of the floor out of shadow. The rendered result barely
+   changed. The floor is present, correctly elevated, correctly normalled and visible
+   from above (verified by ray-cast and by forcing its base colour to pure red, which
+   lit up the whole interior), so this is a *shading* result rather than missing
+   geometry — but the azimuth change alone did not explain it, and the interior still
+   renders near-black. **This is an open issue.** It is documented rather than papered
+   over: the next agent should start by testing the dock floor's UV mapping against the
+   granite texture, since that is the remaining difference between the floor and the
+   coping that renders correctly beside it.
 
 4. **A dock 15 m deep.** The graving dock's `depth` parameter was being measured from
    water level instead of from the coping, which made the dock 3 m deeper than any
