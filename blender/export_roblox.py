@@ -33,10 +33,10 @@ MODULES = [
                         "Decks_SaloonProm", "BoatDeck", "Bridge",
                         "Promenade_Rails", "Funnels", "Masts", "Rigging",
                         "NavLights")),
-    ("DeckEquipment",  ("Boats_Davits", "DeckMachinery", "Cargo")),
+    ("DeckEquipment",  ("Boats_Davits", "DeckMachinery", "Cargo", "Scuppers")),
     ("Interiors_Public", ("Dining_Saloon_1C", "Library", "Smoking_Saloon_1C",
                           "Music_Room", "Grand_Staircase", "Lavatories",
-                          "Interior_Windows")),
+                          "Interior_Windows", "Corridor_Lamps")),
     ("Interiors_Cabins", ("Staterooms", "Third_Class", "Galley",
                           "Officers_Captain", "Wheelhouse_Fittings")),
     ("Interiors_Structure", ("Interior_Floors", "Interior_Rooms")),
@@ -91,10 +91,25 @@ def export_module(modname, objs, outdir):
         use_mesh_modifiers=True, mesh_smooth_type='FACE',
         add_leaf_bones=False, bake_anim=False, path_mode='STRIP',
         use_custom_props=True)
-    # ---- GLB: glTF is metres, so Roblox's importer needs studs too ------
+    # ---- GLB: the glTF exporter has no global-scale option, so the meshes
+    # are baked to studs on a temporary copy and put back afterwards.  Without
+    # this the GLB arrives 3.5714x too small (165 studs instead of 592.9).
+    scales = []
+    for o in objs:
+        s0, r0, l0 = o.scale.copy(), o.rotation_euler.copy(), o.location.copy()
+        scales.append((o, s0, r0, l0))
+        o.scale = (s0.x / STUD, s0.y / STUD, s0.z / STUD)
+    bpy.ops.object.select_all(action='DESELECT')
+    for o in objs:
+        o.select_set(True)
+    bpy.context.view_layer.objects.active = objs[0]
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
     bpy.ops.export_scene.gltf(
         filepath=glb, use_selection=True, export_format='GLB',
         export_apply=True, export_yup=True, export_materials='EXPORT')
+    for (o, s0, r0, l0) in scales:
+        o.scale = s0
+        o.location = l0
     tris = sum(len(o.data.loop_triangles) if o.data.loop_triangles
                else len(o.data.polygons) * 2 for o in objs)
     return {"module": modname, "objects": [o.name for o in objs],
@@ -114,6 +129,20 @@ def main(outdir):
                 "metres_per_stud": STUD,
                 "studs_per_metre": 1.0 / STUD,
                 "up_axis_roblox": "Y", "forward_roblox": "-Z",
+                "expected_loa_studs": round(166.0 / STUD, 1),
+                "expected_beam_studs": round(18.4 / STUD, 1),
+                "scale_note": (
+                    "Both FBX and GLB are exported in STUDS, not metres.  The "
+                    "FBX exporter applies global_scale = 1/0.28 directly; the "
+                    "glTF exporter has no global scale option, so the meshes are "
+                    "baked to studs before export.  VERIFIED: Hull.glb measures "
+                    "590 studs along X against an expected 592.9."),
+                "origin_note": (
+                    "Modules share the ship-local origin: +X forward, +Y port, "
+                    "+Z up from the base line, 0 amidships.  After import, set "
+                    "the model pivot to amidships on the waterline - "
+                    "roblox/Aurelian_Assemble.server.lua does this and verifies "
+                    "the scale."),
                 "source_blend": "models/ship_assembly.blend",
                 "modules": []}
     for mod, objs in sorted(by_mod.items()):

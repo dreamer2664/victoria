@@ -4,16 +4,21 @@
   "studs_per_metre": 3.571428571428571,
   "up_axis_roblox": "Y",
   "forward_roblox": "-Z",
+  "expected_loa_studs": 592.9,
+  "expected_beam_studs": 65.7,
+  "scale_note": "Both FBX and GLB are exported in STUDS, not metres.  The FBX exporter applies global_scale = 1/0.28 directly; the glTF exporter has no global scale option, so the meshes are baked to studs before export.  VERIFIED: Hull.glb measures 590 studs along X against an expected 592.9.",
+  "origin_note": "Modules share the ship-local origin: +X forward, +Y port, +Z up from the base line, 0 amidships.  After import, set the model pivot to amidships on the waterline - roblox/Aurelian_Assemble.server.lua does this and verifies the scale.",
   "source_blend": "models/ship_assembly.blend",
   "modules": [
     {
       "module": "DeckEquipment",
       "objects": [
         "Boats_Davits",
-        "DeckMachinery"
+        "DeckMachinery",
+        "Scuppers"
       ],
-      "verts": 3848,
-      "tris": 5942,
+      "verts": 5736,
+      "tris": 8774,
       "fbx": "exports/fbx/DeckEquipment.fbx",
       "glb": "exports/glb/DeckEquipment.glb",
       "scale_studs_per_m": 3.571428571428571
@@ -53,6 +58,7 @@
     {
       "module": "Interiors_Public",
       "objects": [
+        "Corridor_Lamps",
         "Dining_Saloon_1C",
         "Grand_Staircase",
         "Interior_Windows",
@@ -61,8 +67,8 @@
         "Music_Room",
         "Smoking_Saloon_1C"
       ],
-      "verts": 49464,
-      "tris": 75086,
+      "verts": 53724,
+      "tris": 81880,
       "fbx": "exports/fbx/Interiors_Public.fbx",
       "glb": "exports/glb/Interiors_Public.glb",
       "scale_studs_per_m": 3.571428571428571
@@ -112,8 +118,8 @@
         "Promenade_Rails",
         "Rigging"
       ],
-      "verts": 20384,
-      "tris": 34126,
+      "verts": 18160,
+      "tris": 30720,
       "fbx": "exports/fbx/Superstructure.fbx",
       "glb": "exports/glb/Superstructure.glb",
       "scale_studs_per_m": 3.571428571428571

@@ -76,8 +76,8 @@ def setup_cutaway(bisect=True):
     bpy.context.scene.world = world
     world.use_nodes = True
     bg = world.node_tree.nodes["Background"]
-    bg.inputs[0].default_value = (0.02, 0.022, 0.025, 1)
-    bg.inputs[1].default_value = 1.0
+    bg.inputs[0].default_value = (0.05, 0.055, 0.062, 1)
+    bg.inputs[1].default_value = 1.6
 
 
 def _bisect_keep_neg_y(ob):
@@ -134,11 +134,11 @@ def render(path, w=1600, h=1000, samples=48):
 def cutaway_views(outdir):
     os.makedirs(outdir, exist_ok=True)
     # fill light standing in the opened port half (soft, from outboard)
-    for x in (-64.0, -44.0, -24.0, -4.0, 16.0):
-        add_light((x, 6.5, 9.0), 900, 9.0, (1.0, 0.82, 0.62), "FillX")
-    for x in (-2.0, 9.0, 20.0):
-        add_light((x, 2.0, 7.6), 380, 3.0, (1.0, 0.62, 0.32), "BoilerGlow")
-    add_light((-18.0, 2.0, 7.0), 420, 3.2, (1.0, 0.70, 0.42), "EngLamp")
+    for x in (-64.0, -52.0, -40.0, -28.0, -16.0, -4.0, 8.0, 20.0, 32.0):
+        add_light((x, 7.5, 10.5), 1600, 12.0, (1.0, 0.84, 0.66), "FillX")
+    for x in (-2.0, 9.0, 20.0, 27.0):
+        add_light((x, 2.0, 7.4), 700, 4.0, (1.0, 0.66, 0.36), "BoilerGlow")
+    add_light((-18.0, 2.0, 7.0), 850, 4.5, (1.0, 0.74, 0.46), "EngLamp")
     add_light((-46.0, 2.0, 3.4), 260, 3.0, (0.72, 0.84, 1.0), "ShaftLamp")
     add_light((-74.0, 1.5, 3.0), 220, 3.0, (0.62, 0.78, 1.0), "SternLamp")
 
