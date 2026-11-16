@@ -4,7 +4,7 @@
 **Audit Date:** 2026-11-16  
 **Branches & Commits Audited:**
 - **Ocean Liner (`agent/ship`):** `75bf4ac` (*SS Aurelian*, 1889)
-- **Small Boats (`agent/boats`):** `ec4c3fa` (*25-ft Steam Cutter* & *25-ft Rowing Cutter*)
+- **Small Boats (`agent/boats`):** `ec4c3fa` (*25-ft Steam Cutter* & *25-ft Rowing Cutter*; note: upstream commit `c9a4598` landed after this audit snapshot, adding Boat C `whaler_27ft` and fixing the `gen_manifest.py` `parts = {{` brace typo while leaving all other Steam/Rowing Cutter geometry, BVH, material, export, and Lua defects open)
 - **Victorian Ports (`agent/ports`):** `dbcc091` (*Port of Aldermouth / Port A* & *Port of Carrickmore / Port B*)
 
 ---
