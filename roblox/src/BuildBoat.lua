@@ -31,6 +31,7 @@ local BuildBoat = {}
 local MANIFEST_MODULES = {
 	steam_cutter_1888 = "Manifest_steam_cutter_1888",
 	rowing_cutter_25ft = "Manifest_rowing_cutter_25ft",
+	whaler_27ft = "Manifest_whaler_27ft",
 }
 
 --- The imported meshes come in metres (1 GLB unit = 1 m); Roblox imports them

@@ -1,6 +1,6 @@
-# Roblox — the two ship's boats of OPERATION VICTORIA
+# Roblox — the three ship's boats of OPERATION VICTORIA
 
-Driveable, scripted versions of both boats, built from the Blender exports at
+Driveable, scripted versions of all three boats, built from the Blender exports at
 the project scale of **1 stud = 0.28 m**.
 
 | File | Where it goes | What it does |
@@ -10,6 +10,7 @@ the project scale of **1 stud = 0.28 m**.
 | `src/BoatClient.lua` | StarterPlayerScripts | keyboard input, HUD |
 | `src/SteamCutter.lua` | ModuleScript | steam cutter: engine start/stop, throttle, reverse, screw, rudder, smoke |
 | `src/RowingCutter.lua` | ModuleScript | rowing cutter: stroke cycle, ten animated oars, steering by bank |
+| `src/Whaler.lua` | ModuleScript | 27 ft whaler: five oars single banked, steering with the aft oar, centreboard |
 | `src/Hydrodynamics.lua` | ModuleScript | buoyancy probes, thrust, anisotropic hull drag, yaw |
 | `src/WaterSurface.lua` | ModuleScript | finds the water surface (Terrain water, a `WaterPlane` part, or a fallback level) and the wave field |
 | `src/BoatRig.lua` | ModuleScript | Motor6D rigging so oars/rudder/screw turn about their real pivots |
@@ -34,6 +35,8 @@ All twelve files compile clean under the Luau compiler and lint clean under
        { position = Vector3.new(-14, 4, 0) })
    BuildBoat.assemble("rowing_cutter_25ft", game.Workspace.RowingImport,
        { position = Vector3.new(14, 4, 0) })
+   BuildBoat.assemble("whaler_27ft", game.Workspace.WhalerImport,
+       { position = Vector3.new(0, 4, 24) })
    ```
 
    This scales by 3.5714, rotates the bow to −Z, picks the hull as the

@@ -11,6 +11,16 @@ so both sides agree.
 
 Key figures: 1 stud = 0.28 m; +X forward, +Y port, Z = 0 at the **load waterline**, origin on the centreline at mid-LOA; GLB export is Y-up.
 
+**Cross-project:** this file carries an `integration` block. It maps
+the liner's craft ids onto these boat ids
+(`cutter_steam_25` → `steam_cutter_1888`, `cutter_rowing_25` →
+`rowing_cutter_25ft`), states the export contract (metres, 19 000
+triangles per part, one UV layer, moving-part origins) and gives the
+**davit rating each boat requires**. The liner's published davit limit
+of 2000 kg cannot hoist the steam cutter, which weighs 3212 kg light and
+3532 kg loaded; the rating table says so in numbers rather than leaving
+the two specs to disagree quietly.
+
 _(auto-generated — do not edit by hand)_
 
 ## 25 ft Steam Cutter (1888 pattern)  (`steam_cutter_1888`)

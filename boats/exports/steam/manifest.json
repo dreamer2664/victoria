@@ -33,7 +33,10 @@
         4.278
       ],
       "vertices": 4069,
-      "triangles": 7016
+      "triangles": 7016,
+      "triangles_before_decimation": 7016,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Boiler_Internals",
@@ -64,7 +67,10 @@
         2.929
       ],
       "vertices": 380,
-      "triangles": 632
+      "triangles": 632,
+      "triangles_before_decimation": 632,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Canopy_Cover",
@@ -76,26 +82,29 @@
       ],
       "bounds_min_m": [
         -1.59,
-        -0.9716,
-        0.5836
+        -0.9735,
+        0.5826
       ],
       "bounds_max_m": [
-        1.39,
-        0.9716,
-        1.0392
+        1.3933,
+        0.9751,
+        1.0407
       ],
       "size_m": [
-        2.98,
-        1.9432,
-        0.4557
+        2.9833,
+        1.9486,
+        0.4582
       ],
       "size_studs": [
-        10.643,
-        6.94,
-        1.627
+        10.655,
+        6.959,
+        1.636
       ],
-      "vertices": 1708,
-      "triangles": 2700
+      "vertices": 3416,
+      "triangles": 6496,
+      "triangles_before_decimation": 6496,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Canopy_Frame",
@@ -126,7 +135,10 @@
         1.363
       ],
       "vertices": 1128,
-      "triangles": 2168
+      "triangles": 2168,
+      "triangles_before_decimation": 2168,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Coamings",
@@ -157,7 +169,10 @@
         0.74
       ],
       "vertices": 112,
-      "triangles": 200
+      "triangles": 200,
+      "triangles_before_decimation": 200,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Decks",
@@ -188,7 +203,10 @@
         0.985
       ],
       "vertices": 1692,
-      "triangles": 3328
+      "triangles": 3328,
+      "triangles_before_decimation": 3328,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Engine",
@@ -219,7 +237,10 @@
         3.047
       ],
       "vertices": 1010,
-      "triangles": 1784
+      "triangles": 1784,
+      "triangles_before_decimation": 1784,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Engine_Bearers_Floors",
@@ -250,7 +271,44 @@
         0.715
       ],
       "vertices": 296,
-      "triangles": 540
+      "triangles": 540,
+      "triangles_before_decimation": 540,
+      "uv_layers": 1,
+      "smooth_shaded": true
+    },
+    {
+      "name": "Floorboards",
+      "role": "furniture",
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_min_m": [
+        -2.1155,
+        -0.4436,
+        -0.4193
+      ],
+      "bounds_max_m": [
+        1.9631,
+        0.4436,
+        -0.3311
+      ],
+      "size_m": [
+        4.0786,
+        0.8872,
+        0.0882
+      ],
+      "size_studs": [
+        14.566,
+        3.169,
+        0.315
+      ],
+      "vertices": 1792,
+      "triangles": 3488,
+      "triangles_before_decimation": 3488,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Frames",
@@ -261,27 +319,30 @@
         0.0
       ],
       "bounds_min_m": [
-        -3.6134,
-        -1.0404,
-        -0.4962
+        -3.6037,
+        -1.0165,
+        -0.4724
       ],
       "bounds_max_m": [
-        3.6065,
-        1.0404,
-        0.8323
+        3.5998,
+        1.0165,
+        0.8341
       ],
       "size_m": [
-        7.22,
-        2.0808,
-        1.3284
+        7.2035,
+        2.0329,
+        1.3065
       ],
       "size_studs": [
-        25.786,
-        7.431,
-        4.744
+        25.727,
+        7.26,
+        4.666
       ],
-      "vertices": 5376,
-      "triangles": 10368
+      "vertices": 8448,
+      "triangles": 16512,
+      "triangles_before_decimation": 16512,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Funnel",
@@ -312,7 +373,10 @@
         3.638
       ],
       "vertices": 360,
-      "triangles": 712
+      "triangles": 712,
+      "triangles_before_decimation": 712,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Gear_Nav_Safety",
@@ -342,8 +406,11 @@
         8.037,
         6.389
       ],
-      "vertices": 3798,
-      "triangles": 7088
+      "vertices": 4664,
+      "triangles": 8800,
+      "triangles_before_decimation": 8800,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Inner_Diagonal_Skin",
@@ -356,25 +423,28 @@
       "bounds_min_m": [
         -2.5946,
         -1.0418,
-        -0.4734
+        -0.4763
       ],
       "bounds_max_m": [
-        3.6432,
+        3.6437,
         1.0418,
-        0.8675
+        0.8673
       ],
       "size_m": [
-        6.2377,
+        6.2383,
         2.0836,
-        1.3409
+        1.3436
       ],
       "size_studs": [
-        22.278,
+        22.28,
         7.441,
-        4.789
+        4.799
       ],
-      "vertices": 10955,
-      "triangles": 21240
+      "vertices": 9749,
+      "triangles": 18999,
+      "triangles_before_decimation": 21240,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Keel_Stem_Frames_Gunwale",
@@ -405,7 +475,10 @@
         5.644
       ],
       "vertices": 5238,
-      "triangles": 10320
+      "triangles": 10320,
+      "triangles_before_decimation": 10320,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Pipework_Fittings",
@@ -421,22 +494,25 @@
         -0.4744
       ],
       "bounds_max_m": [
-        1.85,
+        0.9345,
         0.4243,
         0.9364
       ],
       "size_m": [
-        4.075,
+        3.1595,
         0.7932,
         1.4108
       ],
       "size_studs": [
-        14.554,
+        11.284,
         2.833,
         5.039
       ],
-      "vertices": 1214,
-      "triangles": 2260
+      "vertices": 1222,
+      "triangles": 2272,
+      "triangles_before_decimation": 2272,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Planking_Carvel",
@@ -449,7 +525,7 @@
       "bounds_min_m": [
         -3.7871,
         -1.0668,
-        -0.5293
+        -0.5294
       ],
       "bounds_max_m": [
         3.778,
@@ -458,7 +534,7 @@
       ],
       "size_m": [
         7.5651,
-        2.1335,
+        2.1336,
         1.4314
       ],
       "size_studs": [
@@ -466,8 +542,11 @@
         7.62,
         5.112
       ],
-      "vertices": 11856,
-      "triangles": 23608
+      "vertices": 9552,
+      "triangles": 19000,
+      "triangles_before_decimation": 23608,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Propeller",
@@ -498,7 +577,10 @@
         1.26
       ],
       "vertices": 126,
-      "triangles": 200
+      "triangles": 200,
+      "triangles_before_decimation": 200,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Rudder",
@@ -529,7 +611,10 @@
         2.76
       ],
       "vertices": 152,
-      "triangles": 272
+      "triangles": 272,
+      "triangles_before_decimation": 272,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Seats",
@@ -560,7 +645,10 @@
         3.948
       ],
       "vertices": 376,
-      "triangles": 684
+      "triangles": 684,
+      "triangles_before_decimation": 684,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Shafting",
@@ -591,7 +679,10 @@
         1.739
       ],
       "vertices": 212,
-      "triangles": 392
+      "triangles": 392,
+      "triangles_before_decimation": 392,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Transom",
@@ -622,7 +713,10 @@
         3.001
       ],
       "vertices": 680,
-      "triangles": 1272
+      "triangles": 1272,
+      "triangles_before_decimation": 1272,
+      "uv_layers": 1,
+      "smooth_shaded": true
     }
   ]
 }

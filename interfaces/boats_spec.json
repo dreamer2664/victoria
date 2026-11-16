@@ -14,6 +14,31 @@
     "origin": "on centreline, at mid-length of the length overall; Z=0 at the light load waterline drawn on the lines plan",
     "roblox_import": "export GLB with +Y up conversion; in Roblox the boat's LookVector must be set to the vessel's +X"
   },
+  "integration": {
+    "craft_id_aliases": {
+      "cutter_steam_25": "steam_cutter_1888",
+      "cutter_rowing_25": "rowing_cutter_25ft",
+      "whaler_27": "whaler_27ft"
+    },
+    "craft_type_enum": [
+      "steam_cutter",
+      "rowing_cutter",
+      "whaler"
+    ],
+    "davit_rating_required_kg": {
+      "steam_cutter_1888": 3900,
+      "rowing_cutter_25ft": 2100,
+      "whaler_27ft": 1700
+    },
+    "davit_limit_conflict": "The liner's davit limit is published as 2000 kg. These boats are weighed, not guessed: the steam cutter is 3212 kg light and 3532 kg loaded, so a 2000 kg davit cannot hoist her. Either the davits are rated to the figures in davit_rating_required_kg, or the boat carried is the rowing cutter (1017 kg light).",
+    "export_contract": {
+      "units": "metres in GLB and FBX; the Roblox importer multiplies by 3.571429",
+      "per_part_triangle_limit": 19000,
+      "uv_layers": 1,
+      "parts": "one file per logical part; moving parts (oars, screw, rudder) keep their own origin",
+      "origin_of_moving_parts": "the rowlock for an oar, the shaft axis for the screw, the pintle line for the rudder"
+    }
+  },
   "boats": [
     {
       "id": "steam_cutter_1888",

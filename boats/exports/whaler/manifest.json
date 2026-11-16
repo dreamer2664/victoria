@@ -33,7 +33,10 @@
         1.843
       ],
       "vertices": 76,
-      "triangles": 132
+      "triangles": 132,
+      "triangles_before_decimation": 132,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Fenders",
@@ -64,7 +67,10 @@
         1.929
       ],
       "vertices": 564,
-      "triangles": 1048
+      "triangles": 1048,
+      "triangles_before_decimation": 1048,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Fittings",
@@ -81,21 +87,24 @@
       ],
       "bounds_max_m": [
         3.8957,
-        0.2569,
-        0.5396
+        0.385,
+        0.5635
       ],
       "size_m": [
         7.8113,
-        0.6358,
-        0.8968
+        0.7639,
+        0.9206
       ],
       "size_studs": [
         27.897,
-        2.271,
-        3.203
+        2.728,
+        3.288
       ],
-      "vertices": 982,
-      "triangles": 1852
+      "vertices": 1666,
+      "triangles": 3192,
+      "triangles_before_decimation": 3192,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Floorboards",
@@ -126,7 +135,10 @@
         0.226
       ],
       "vertices": 1568,
-      "triangles": 3052
+      "triangles": 3052,
+      "triangles_before_decimation": 3052,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Frames",
@@ -157,7 +169,10 @@
         3.757
       ],
       "vertices": 5936,
-      "triangles": 11448
+      "triangles": 11448,
+      "triangles_before_decimation": 11448,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Keel_Stems",
@@ -188,7 +203,10 @@
         4.521
       ],
       "vertices": 1322,
-      "triangles": 2505
+      "triangles": 2505,
+      "triangles_before_decimation": 2505,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Keelson_Gunwale",
@@ -219,7 +237,10 @@
         4.0
       ],
       "vertices": 2120,
-      "triangles": 4224
+      "triangles": 4224,
+      "triangles_before_decimation": 4224,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Masts_Yards_Rigging",
@@ -250,15 +271,18 @@
         18.225
       ],
       "vertices": 2294,
-      "triangles": 4612
+      "triangles": 4612,
+      "triangles_before_decimation": 4612,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Oar_P1",
       "role": "moving",
       "origin_m": [
-        -1.55,
-        0.3,
-        0.4949
+        1.7694,
+        0.7059,
+        0.6434
       ],
       "bounds_min_m": [
         -2.71,
@@ -281,15 +305,18 @@
         0.536
       ],
       "vertices": 320,
-      "triangles": 590
+      "triangles": 590,
+      "triangles_before_decimation": 590,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Oar_P2",
       "role": "moving",
       "origin_m": [
-        -1.49,
-        0.385,
-        0.5031
+        0.6584,
+        0.8135,
+        0.6327
       ],
       "bounds_min_m": [
         -2.65,
@@ -312,15 +339,18 @@
         0.536
       ],
       "vertices": 320,
-      "triangles": 590
+      "triangles": 590,
+      "triangles_before_decimation": 590,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Oar_P3",
       "role": "moving",
       "origin_m": [
-        -1.43,
-        0.3842,
-        0.4841
+        -0.4526,
+        0.8397,
+        0.6327
       ],
       "bounds_min_m": [
         -2.59,
@@ -343,15 +373,18 @@
         0.536
       ],
       "vertices": 320,
-      "triangles": 590
+      "triangles": 590,
+      "triangles_before_decimation": 590,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Oar_S4",
       "role": "moving",
       "origin_m": [
-        -1.37,
-        -0.3904,
-        0.5031
+        0.6584,
+        -0.8135,
+        0.6327
       ],
       "bounds_min_m": [
         -2.53,
@@ -374,15 +407,18 @@
         0.536
       ],
       "vertices": 320,
-      "triangles": 590
+      "triangles": 590,
+      "triangles_before_decimation": 590,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Oar_S5",
       "role": "moving",
       "origin_m": [
-        -1.31,
-        -0.3597,
-        0.4925
+        -1.5636,
+        -0.7756,
+        0.641
       ],
       "bounds_min_m": [
         -2.47,
@@ -405,7 +441,10 @@
         0.536
       ],
       "vertices": 320,
-      "triangles": 590
+      "triangles": 590,
+      "triangles_before_decimation": 590,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Planking_Clinker",
@@ -418,7 +457,7 @@
       "bounds_min_m": [
         -4.1016,
         -0.8361,
-        -0.4478
+        -0.4477
       ],
       "bounds_max_m": [
         4.1016,
@@ -428,15 +467,18 @@
       "size_m": [
         8.2033,
         1.6722,
-        1.155
+        1.1549
       ],
       "size_studs": [
         29.297,
         5.972,
-        4.125
+        4.124
       ],
-      "vertices": 12528,
-      "triangles": 24840
+      "vertices": 9608,
+      "triangles": 19000,
+      "triangles_before_decimation": 24840,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Rowlocks",
@@ -467,7 +509,10 @@
         0.592
       ],
       "vertices": 510,
-      "triangles": 960
+      "triangles": 960,
+      "triangles_before_decimation": 960,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Rudder",
@@ -498,7 +543,10 @@
         3.315
       ],
       "vertices": 84,
-      "triangles": 138
+      "triangles": 138,
+      "triangles_before_decimation": 138,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Structure_Details",
@@ -529,7 +577,10 @@
         3.547
       ],
       "vertices": 564,
-      "triangles": 1092
+      "triangles": 1092,
+      "triangles_before_decimation": 1092,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Thwart_Knees",
@@ -559,8 +610,11 @@
         5.421,
         0.753
       ],
-      "vertices": 64,
-      "triangles": 96
+      "vertices": 96,
+      "triangles": 176,
+      "triangles_before_decimation": 176,
+      "uv_layers": 1,
+      "smooth_shaded": true
     },
     {
       "name": "Thwarts_Benches",
@@ -591,7 +645,10 @@
         0.688
       ],
       "vertices": 372,
-      "triangles": 708
+      "triangles": 708,
+      "triangles_before_decimation": 708,
+      "uv_layers": 1,
+      "smooth_shaded": true
     }
   ]
 }

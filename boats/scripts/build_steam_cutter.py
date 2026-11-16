@@ -20,7 +20,7 @@ import bpy
 import numpy as np
 from mathutils import Matrix, Vector
 
-from boatgen import bl, machinery, parts, specs
+from boatgen import bl, layout, machinery, parts, specs
 from boatgen.geom import MeshBuilder, cyl, lerp, sphere, torus, unit
 from boatgen.hull import (
     MAT,
@@ -49,9 +49,13 @@ HULL = specs.STEM_CUTTER
 # --------------------------------------------------------------------------
 # installation layout (all measured from the hull, so it follows the design)
 # --------------------------------------------------------------------------
-X_BOILER = 0.50
-X_ENGINE = -0.78
-X_BUNKER = 1.62
+from boatgen.layout import STEAM as LAYOUT          # one source of truth
+
+X_BOILER = LAYOUT["boiler"]["x"]
+X_ENGINE = LAYOUT["engine"]["x"]
+# the bunker sits abaft the boiler, forward of the engine, where the fireman
+# works -- it used to be at x = +1.62, in the forward passenger cockpit
+X_BUNKER = LAYOUT["bunker"]["x"]
 X_SCREW = -3.42
 Z_SHAFT_CRANK = None      # computed below
 Y_BEARER = 0.42
@@ -76,13 +80,17 @@ col_gear = bl.collection("Gear")
 col_moving = bl.collection("MovingParts")
 
 
-def make(builder, name, collection, mirror=False, smooth=True):
+def make(builder, name, collection, mirror=False, smooth=True, thickness=None):
     mb = MeshBuilder(name)
     builder(mb)
     if mirror:
         mb.mirror_y()
     ob = bl.obj_from_builder(mb, name, mlist, collection, smooth=smooth)
-    print(f"  [{name}] verts={len(ob.data.vertices)} faces={len(ob.data.polygons)}")
+    n_ngon = bl.triangulate_ngons(ob)
+    if thickness:
+        bl.solidify(ob, thickness)
+    print(f"  [{name}] verts={len(ob.data.vertices)} faces={len(ob.data.polygons)}"
+          + (f" ngons->tris={n_ngon}" if n_ngon else ""))
     return ob
 
 
@@ -116,8 +124,14 @@ make(lambda mb: build_carvel_planking(mb, HULL, n_strakes=N_STRAKES, thickness=0
 make(lambda mb: (build_diagonal_skin(mb, HULL, n_strips=15, width=0.062, slope=1.9, direction=1,
                                      inset=0.024, thickness=0.011, xi0=0.02, xi1=0.98,
                                      mat=MAT["wood_timber"]),
+                 # the second diagonal is laid on the first, not through it, and
+                 # the frames are then fastened *over* both: planking 0-24 mm,
+                 # first diagonal 24-35, second 35-46, timbers 46-86.  The
+                 # 70 mm inset this started with pushed the skin inboard of the
+                 # frames instead of stacking the boat properly, which still cut
+                 # 11 727 triangle pairs through them.
                  build_diagonal_skin(mb, HULL, n_strips=15, width=0.062, slope=1.9, direction=-1,
-                                     inset=0.038, thickness=0.011, xi0=0.02, xi1=0.98,
+                                     inset=0.035, thickness=0.011, xi0=0.02, xi1=0.98,
                                      mat=MAT["wood_timber"])),
      "Inner_Diagonal_Skin", col_hull, mirror=True)
 
@@ -125,7 +139,12 @@ make(lambda mb: (build_diagonal_skin(mb, HULL, n_strips=15, width=0.062, slope=1
 # 2. structure
 # --------------------------------------------------------------------------
 make(lambda mb: build_frames(mb, HULL, spacing=0.152, depth=0.040, width=0.028, xi0=0.026,
-                             xi1=0.974, t0=0.010, t1=0.950, plank_thickness=0.024),
+                             xi1=0.974, t0=0.010, t1=0.950, plank_thickness=0.048,
+                             # 22 stations across the section: enough for a
+                             # smooth bilge in the cutaways, few enough that the
+                             # timbers stay under the 19 000-triangle export
+                             # budget without being decimated
+                             n_t=22),
      "Frames", col_structure, mirror=True)
 
 make(lambda mb: (
@@ -335,6 +354,22 @@ def _seating(mb):
 
 make(_seating, "Seats", col_furn)
 
+
+def _floorboards(mb):
+    """Gratings in the after cockpit.
+
+    Forward of the coaming the boat is decked; aft of it the passengers stood
+    on the bare planking over the bilge, which is both cold and a trip hazard.
+    A boat with a first-class cockpit has bottom boards in it.
+    """
+    parts.floor_gratings(mb, HULL, 0.575, 0.775, n_slats=5, slat_w=0.090, thick=0.024,
+                         t=0.085, lift=0.045)
+    parts.floor_gratings(mb, HULL, 0.245, 0.375, n_slats=3, slat_w=0.080, thick=0.022,
+                         t=0.085, lift=0.040)
+
+
+make(_floorboards, "Floorboards", col_furn)
+
 # canopy: a canvas hood carried on the coaming round the machinery, with
 # brass stanchions and a curved top -- the "canopy over the engine and boiler"
 # described for 25-32 ft steam cutters (Kipling Society / ORG 1905 notes).
@@ -449,7 +484,7 @@ def _canopy_cover(mb):
             0.010, seg=8, mat=MAT["brass"])
 
 
-make(_canopy_cover, "Canopy_Cover", col_deck)
+make(_canopy_cover, "Canopy_Cover", col_deck, thickness=0.0035)
 
 # --------------------------------------------------------------------------
 # 4. machinery
@@ -460,13 +495,15 @@ Z_BOILER_TOP = Z_FLOOR_MID + 0.16 + BOILER_H
 
 
 def _boiler(mb):
-    machinery.boiler(mb, (X_BOILER, 0.0, Z_FLOOR_MID + 0.16), r=0.360, height=0.860)
+    machinery.boiler(mb, (X_BOILER, 0.0, Z_FLOOR_MID + 0.16),
+                     r=LAYOUT["boiler"]["r"], height=LAYOUT["boiler"]["h"])
 
 
 make(_boiler, "Boiler", col_mach)
 
-make(lambda mb: machinery.boiler_cutaway(mb, (X_BOILER, 0.0, Z_FLOOR_MID + 0.16), r=0.360,
-                                         height=0.860),
+make(lambda mb: machinery.boiler_cutaway(mb, (X_BOILER, 0.0, Z_FLOOR_MID + 0.16),
+                                         r=LAYOUT["boiler"]["r"],
+                                         height=LAYOUT["boiler"]["h"]),
      "Boiler_Internals", col_mach)
 
 Z_CRANK = floor_z(X_ENGINE) + 0.46
@@ -475,8 +512,9 @@ make(lambda mb: machinery.engine(mb, (X_ENGINE, 0.0, Z_CRANK)), "Engine", col_ma
 # funnel through the canopy
 FUNNEL_TOP = sheer_at(X_BOILER) + 0.95
 FUNNEL_BASE = Z_BOILER_TOP + 0.10
-make(lambda mb: machinery.funnel(mb, (X_BOILER + 0.02, 0.0, FUNNEL_BASE),
-                                 FUNNEL_TOP, r_bottom=0.080, r_top=0.095, rake_x=0.05),
+make(lambda mb: machinery.funnel(mb, (LAYOUT["funnel"]["x"], 0.0, FUNNEL_BASE),
+                                 FUNNEL_TOP, r_bottom=0.080,
+                                 r_top=LAYOUT["funnel"]["r"], rake_x=0.05),
      "Funnel", col_deck)
 
 # shafting + screw + stern tube
@@ -580,11 +618,18 @@ def _pipes(mb):
     zt = floor_z(xt) + 0.09
     yt = min(0.35, clear_y(HULL, xt - 0.28, xt + 0.28, zt - 0.09, clear=0.03))
     mb.add_box((xt, 0.0, zt), (0.55, yt, 0.18), mat=MAT["copper"])
-    # coal bunker forward of the boiler
-    z = floor_z(X_BUNKER) + 0.14
-    yb = min(0.39, clear_y(HULL, X_BUNKER - 0.23, X_BUNKER + 0.23, z, clear=0.03))
-    mb.add_box((X_BUNKER, 0.0, z + 0.16), (0.46, yb, 0.42), mat=MAT["iron"])
-    mb.add_box((X_BUNKER, 0.0, z + 0.38), (0.44, yb - 0.02, 0.03), mat=MAT["coal"])
+    # coal bunker, abaft the boiler and forward of the engine: a riveted iron
+    # bin with the coal standing proud of its open top, where a fireman can
+    # reach over it with the shovel
+    k = LAYOUT["bunker"]
+    z = floor_z(k["x"]) + 0.14
+    yb = min(0.39, clear_y(HULL, k["x"] - k["hx"], k["x"] + k["hx"], z, clear=0.03))
+    mb.add_box((k["x"], 0.0, z + 0.14), (2 * k["hx"], yb, 0.36), mat=MAT["iron"])
+    mb.add_box((k["x"], 0.0, z + 0.31), (2 * k["hx"] - 0.03, yb - 0.02, 0.05),
+               mat=MAT["coal"])
+    # its hinged lid, standing open against the boiler
+    mb.add_box((k["x"] + k["hx"] - 0.02, 0.0, z + 0.44), (0.02, yb - 0.02, 0.20),
+               mat=MAT["iron"])
 
 
 make(_pipes, "Pipework_Fittings", col_mach)
@@ -618,9 +663,20 @@ def _gear(mb):
     cyl(mb, (xh, 0.42, zh), (xh - 1.9, 0.42, zh + 0.02), 0.020, seg=10, mat=MAT["wood_timber"])
     cyl(mb, (xh - 1.9, 0.42, zh + 0.02), (xh - 1.99, 0.42, zh + 0.045), 0.013, seg=8, mat=MAT["steel"])
     sphere(mb, (xh - 2.0, 0.42, zh + 0.05), 0.020, seg=8, rings=6, mat=MAT["steel"])
-    # lifebuoy (cork ring) on the canopy side
-    c = np.array([0.15, 0.62, sheer_at(0.15) + 0.42])
-    torus(mb, c, 0.20, 0.055, seg=24, rseg=10, axis="Y", mat=MAT["canvas"])
+    # Lifebuoy: a cork ring lashed FLAT on the canopy roof, which is where one
+    # is actually kept on an open launch -- not standing on its edge in mid-air
+    # over the canvas, which is what a ring placed by height alone does.
+    xb = -0.55
+    z_coam, half = _canopy_geom(xb)
+    z_roof = z_coam + CANOPY_RISE + 0.010
+    torus(mb, (xb, 0.0, z_roof + 0.052), 0.20, 0.052, seg=26, rseg=9, axis="Z",
+          mat=MAT["canvas"])
+    # four short lashings round the ring and through the canvas eyelets
+    for k in range(4):
+        a = math.pi / 4 + k * math.pi / 2
+        lx, ly = 0.215 * math.cos(a), 0.215 * math.sin(a)
+        cyl(mb, (xb + lx * 0.75, ly * 0.75, z_roof + 0.030),
+            (xb + lx, ly, z_roof + 0.075), 0.007, seg=6, mat=MAT["rope"])
     # stove-in bailer + bucket
     p = HULL.surface(0.70, 0.16)
     cyl(mb, (p[0], -0.35, p[2] + 0.06), (p[0], -0.35, p[2] + 0.20), 0.085, seg=14,
@@ -654,16 +710,47 @@ def _gear(mb):
     mb.add_box((xc, 0, zc + 0.05), (0.22, 0.22, 0.10), mat=MAT["wood_timber"])
     cyl(mb, (xc, 0, zc + 0.10), (xc, 0, zc + 0.13), 0.085, seg=18, mat=MAT["brass"])
     cyl(mb, (xc, 0, zc + 0.13), (xc, 0, zc + 0.135), 0.075, seg=18, mat=MAT["glass"])
-    # sidelights: port red, starboard green, on brackets at the canopy front
-    for s, m in ((1, MAT["red_lead"]), (-1, MAT["paint_hull"])):
-        xl = 1.15
-        zl = sheer_at(xl) + 0.30
-        mb.add_box((xl, s * 0.70, zl), (0.11, 0.11, 0.16), mat=m)
-        cyl(mb, (xl, s * 0.70, zl + 0.08), (xl, s * 0.70, zl + 0.13), 0.045, seg=12, mat=MAT["glass"])
-    # shovel & poker for the stokehold
+    # sidelights: brass housings with red to port and green to starboard.  The
+    # housing was carrying the colour, and the starboard one was painted hull
+    # black because no green existed in the palette -- the lens is the coloured
+    # part, and both housings are brass.
+    # A sidelight is a lamp on a bracket at the gunwale, outboard of the
+    # canopy: on a pedestal, high enough that the light is not hidden by the
+    # coaming or the canvas.  Mounting it flat on top of the canopy roof (where
+    # it started) is not how one is fitted and it read as a green box lying on
+    # the sailcloth.
+    for s, lens in ((1, MAT["glass_red"]), (-1, MAT["glass_green"])):
+        xl = 1.10
+        yl = s * 0.93
+        zs = sheer_at(xl)
+        mb.add_box((xl, yl, zs + 0.012), (0.11, 0.10, 0.024), mat=MAT["brass"])
+        cyl(mb, (xl, yl, zs + 0.024), (xl, yl, zs + 0.235), 0.020, seg=12, mat=MAT["brass"])
+        zl = zs + 0.305
+        mb.add_box((xl, yl, zl), (0.108, 0.096, 0.130), mat=MAT["brass"])
+        # a hooded lens facing forward-outboard, as a sidelight is built
+        cyl(mb, (xl + 0.052, yl - s * 0.008, zl + 0.012),
+            (xl + 0.076, yl - s * 0.010, zl + 0.012), 0.042, seg=14, mat=MAT["brass"])
+        cyl(mb, (xl + 0.075, yl - s * 0.010, zl + 0.012),
+            (xl + 0.080, yl - s * 0.010, zl + 0.012), 0.033, seg=14, mat=lens)
+        # hood over the lens, and a small vent cap on the lamp
+        mb.add_box((xl + 0.048, yl - s * 0.008, zl + 0.062), (0.078, 0.086, 0.012),
+                   mat=MAT["brass"])
+        cyl(mb, (xl, yl, zl + 0.065), (xl, yl, zl + 0.098), 0.030, seg=12, mat=MAT["brass"])
+    # shovel & poker for the stokehold, and the slice stowed against the boiler
     cyl(mb, (-0.15, -0.55, floor_z(-0.15) + 0.06), (0.35, -0.55, floor_z(-0.15) + 0.30), 0.014,
         seg=8, mat=MAT["steel"])
     mb.add_box((0.36, -0.55, floor_z(-0.15) + 0.31), (0.14, 0.16, 0.02), mat=MAT["steel"])
+    cyl(mb, (0.05, 0.44, floor_z(0.05) + 0.05), (0.05, 0.44, floor_z(0.05) + 0.62), 0.013,
+        seg=8, mat=MAT["steel"])
+    # a coil of mooring line, flaked down on the foredeck where the bowman
+    # handles it -- a boat with a painter ring and no line is a boat that has
+    # never been made fast
+    xc, yc = 2.62, 0.34
+    zc0 = sheer_at(xc) - DECK_DROP + 0.020
+    for ring, (r, n) in enumerate(((0.115, 3), (0.075, 2))):
+        for i in range(n):
+            torus(mb, (xc, yc, zc0 + 0.012 + 0.016 * ring), r - 0.010 * i,
+                  0.0105, seg=22, rseg=7, axis="Z", mat=MAT["rope"])
 
 
 make(_gear, "Gear_Nav_Safety", col_gear)

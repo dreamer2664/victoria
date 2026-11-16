@@ -141,11 +141,23 @@ def thwart_knee(mb, hull, xi, side=1, mat=MAT["wood_timber"], drop=0.20, inset=0
     y0 = side * max(half_breadth_at(hull, xi, z0) - inset, 0.02)
     y1 = side * max(half_breadth_at(hull, xi, z1) - inset, 0.02)
     t = 0.020 * (1 if side >= 0 else -1)
+    # the hanging leg, against the planking
     mb.add_prism(
         np.array([[x - 0.020, y0 - t, z0], [x + 0.020, y0 - t, z0],
                   [x + 0.020, y0, z0], [x - 0.020, y0, z0]]),
         np.array([[x - 0.020, y1 - t, z1], [x + 0.020, y1 - t, z1],
                   [x + 0.020, y1, z1], [x - 0.020, y1, z1]]),
+        mat=mat,
+    )
+    # the arm, running inboard under the thwart: a grown knee is an L, and the
+    # L is the whole reason it can hold a thwart against a pull from outboard
+    arm = 0.14
+    y_in = y0 - side * arm
+    mb.add_prism(
+        np.array([[x - 0.020, y0 - t, z0], [x + 0.020, y0 - t, z0],
+                  [x + 0.020, y0, z0], [x - 0.020, y0, z0]]),
+        np.array([[x - 0.020, y_in - t, z0 - 0.048], [x + 0.020, y_in - t, z0 - 0.048],
+                  [x + 0.020, y_in, z0 - 0.048], [x - 0.020, y_in, z0 - 0.048]]),
         mat=mat,
     )
 

@@ -11,53 +11,43 @@ a Studio test that did not happen.
 
 ### 1.1 Geometric QA — `boats/scripts/verify.py`
 
-Automated, repeatable, run against the finished `.blend` files. Interpenetration
-tests use triangle-level BVH overlap between the actual meshes (not bounding
-boxes), so a pass means no triangle of one part crosses a triangle of another.
-Full output: [`VERIFICATION.md`](VERIFICATION.md).
+Automated, repeatable, run against the finished `.blend` files. The last run
+reported **64 checks, 0 failures** across the three boats. Full output:
+[`VERIFICATION.md`](VERIFICATION.md).
 
-**Boat A — 25 ft steam cutter (20 objects, 50 738 verts / 46 500 faces)**
-
-| Check | Result | Detail |
+| What is measured | How | Result |
 |---|---|---|
-| LOA, hull | PASS | 7.565 m modelled vs 7.620 m spec |
-| LOA, extreme (rudder, gear) | PASS | 7.664 m |
-| Beam | PASS | 2.250 m extreme incl. fenders, 2.134 m hull |
-| No loose vertices / degenerate faces | PASS | — |
-| Everything inside the planking | PASS | worst 39 mm -- one foredeck knee abreast the bow |
-| Screw clear of the hull skin | PASS | 0 intersecting triangles |
-| Screw clear of the keel | PASS | 0 intersecting triangles |
-| Screw disc below the local keel line | PASS | disc top −0.274 m, keel −0.238 m |
-| Funnel pierces the canvas (must overlap) | PASS | 30 intersecting triangle pairs |
-| Boiler crown below the canopy | PASS | boiler +0.853 m, canopy top +1.039 m |
-| Funnel crown above the canopy | PASS | funnel +1.634 m, canopy +1.039 m |
-| Propeller and rudder are separate objects with their own origins | PASS | screw (−3.42, 0, −0.45); rudder (−3.62, 0, +0.65) |
-| Published displacement | PASS | 3532 kg loaded, integrated in `boatgen.hydro` |
+| Overall length, beam, depth | model extents vs `boatgen/specs.py` | PASS, all three boats |
+| Loose vertices, degenerate faces, ngons | mesh audit; ngons are triangulated at build time | PASS |
+| Screw clear of the hull and keel | BVH triangle overlap | PASS, 0 pairs |
+| Funnel pierces the canvas, funnel and boiler crowns above/below it | BVH + heights | PASS |
+| Boiler crown below the canopy crown | heights | PASS |
+| **Joints that must overlap** | BVH, asserted *positive*: 15 named pairs (steam pipe into the boiler, funnel spigot, screw on its shaft, rudder stock through the counter, frames on the inner skin, knees under thwarts, pintles…) | PASS, each with its pair count |
+| **Nothing but gear outside the planking** | every vertex of every interior object against an analytic hull envelope, `n_xi=160 × n_t=120` | PASS: A worst 45 mm (one foredeck knee), B and C 20 mm |
+| **Every oar pivots in a rowlock** | each oar origin against the nearest rowlock geometry, in x, y *and* z | PASS: worst 16 mm (B), 18 mm (C) |
+| **Port sidelight red, starboard green** | material faces by side | PASS: 38 red to port, 38 green to starboard |
+| Whaler has no transom; five oars, single banked | station sampling + object list | PASS |
+| Centreboard drawn up, inboard of the planking | BVH + containment | PASS |
+| Propeller and rudder are separate objects on their own pivots | object origins | PASS |
+| Displacement | integrated in `boatgen/hydro.py` | PASS: A 3532 kg, B 1897 kg, C 1487.5 kg loaded |
+| **Export contract** (per boat) | read back from `exports/*/manifest.json`: every part ≤ 20 000 triangles, every part with a UV layer, part count | PASS: worst part 19 000 tris, 21/21, 25/25, 19/19 parts with UVs |
 
-**Boat B — 25 ft clinker rowing cutter (25 objects, 32 781 verts / 30 590 faces)**
+**A caveat that matters when reading any interpenetration report.** Blender's
+`BVHTree.overlap()` counts *contact candidates*, not intersections. Calibrated
+against a pair whose clearance is known exactly — the timbers stand 28 mm clear
+of the inside of the carvel planking, with a whole diagonal skin between them —
+it still reports 378 "intersecting" triangle pairs. So a pair count is a list of
+places to look, not a defect count; every pair in the QA audit was opened,
+measured against the drawing intent, and then either fixed, declared a joint
+(and asserted positively, above) or dismissed with the geometry cited in
+[`AUDIT_RESPONSE.md`](AUDIT_RESPONSE.md).
 
-| Check | Result | Detail |
-|---|---|---|
-| LOA, hull | PASS | 7.599 m modelled vs 7.620 m spec |
-| LOA, extreme (rudder shipped) | PASS | 7.915 m (0.30 m rudder overhang, published in the spec) |
-| Beam | PASS | 2.082 m extreme |
-| Everything inside the planking | PASS | nothing more than 20 mm proud of the skin |
-| No loose vertices / degenerate faces | PASS | — |
-| Rudder does not foul the planking | PASS | 0 intersecting triangles |
-| Ten oars present as separate objects | PASS | 10 found |
-| Oar origins on the rowlock axis | PASS | all 10 |
-| Published displacement | PASS | 1897 kg loaded |
-
-The runs also caught **two real defects which were fixed rather than
-documented away**:
-
-1. The propeller was mounted at x = −3.02 m, i.e. under the hull, and its disc
-   cut through the keel and the planking (4 intersecting triangle pairs). It
-   was moved aft to x = −3.42 m and down to z = −0.45 m, where the disc now
-   passes clear of the hull and hangs below the counter as it should.
-2. The rudder blade was built spanning z = +0.65 … −0.51, which put its upper
-   half inside the transom. It is now hung below the counter (z = +0.04 …
-   −0.60) with the stock passing up through the transom to the tiller.
+The three real defects the geometric QA has caught so far are recorded where
+they happened: the propeller buried in the keel and the rudder inside the
+transom (both fixed, §2), the oars standing out through the planking of two
+boats (fixed — see §1.5), and the engine bearers, feed tank, cross floors, deck
+edges, thwart knees, mast clamp, boat hook and grapnel found by the containment
+test.
 
 ### 1.2 Hydrostatics
 
@@ -81,14 +71,21 @@ Luau release binaries) and linted with `luau-analyze --mode=nonstrict`:
 
 ```
 Config.lua  WaterSurface.lua  Hydrodynamics.lua  BoatRig.lua  Effects.lua
-SteamCutter.lua  RowingCutter.lua  BoatService.lua  BoatClient.lua
+SteamCutter.lua  RowingCutter.lua  Whaler.lua  BoatService.lua  BoatClient.lua
 BuildBoat.lua  Manifest_steam_cutter_1888.lua  Manifest_rowing_cutter_25ft.lua
-    -> 12/12 compile clean, 0 lint findings
+Manifest_whaler_27ft.lua
+    -> 14/14 compile clean, 0 lint findings
 ```
 
 This proves the scripts are syntactically valid and free of unused/undefined
 locals. It does **not** prove they behave correctly at runtime in Roblox — that
-is §2.
+is §2. Three runtime faults were nonetheless found by *reading* the audit's
+evidence against the code and are now fixed: the buoyancy probes were laid out
+athwartships (the assembly puts the bow on −Z, not −X) and all forward of
+midships, the thrust point was on the beam rather than at the stern, the hull's
+"right" vector was its left, and the steam cutter drove its screw and rudder by
+writing `CFrame` on parts that a `Motor6D` was already driving. None of these
+would have shown up in a compile.
 
 ### 1.4 Robot-scale checks
 

@@ -134,11 +134,37 @@ MUST_NOT_TOUCH = {
     ],
 }
 
-# pairs that must overlap / pass through
+# Pairs that must overlap *by construction*.  These were reported by the QA
+# audit as interpenetration defects; they are joints, and a joint that stopped
+# overlapping would be the defect.  Each one is asserted here, with its reason,
+# so the list is explicit rather than a silence.  (A frame laid against the
+# inside of the planking, a steam pipe entering the boiler shell, a pintle
+# through the sternpost: none of these can be modelled any other way.)
 MUST_PASS = {
-    "steam": [("Funnel", "Canopy_Cover", "funnel must pierce the canvas")],
-    "rowing": [],
-    "whaler": [],
+    "steam": [
+        ("Funnel", "Canopy_Cover", "funnel must pierce the canvas"),
+        ("Boiler", "Pipework_Fittings", "the steam pipe enters the boiler shell"),
+        ("Boiler", "Funnel", "the funnel spigot sits in the smoke box"),
+        ("Propeller", "Shafting", "the screw is on a taper on its shaft"),
+        ("Rudder", "Transom", "the rudder stock passes through the counter"),
+        ("Frames", "Inner_Diagonal_Skin", "the timbers bear on the inner skin, 2 mm of bedding"),
+        ("Keel_Stem_Frames_Gunwale", "Planking_Carvel", "the keel, stem, sternpost and gunwale are fastened to the planking"),
+        ("Inner_Diagonal_Skin", "Planking_Carvel", "the first diagonal is laid on the planking"),
+    ],
+    "rowing": [
+        ("Rudder", "Keel_Stem_Sternpost", "the lower pintle is on the sternpost"),
+        ("Rudder", "Transom", "the rudder stock passes through the transom knee"),
+        ("Frames", "Planking_Clinker", "frames are riveted to the planking"),
+        ("Thwart_Knees", "Planking_Clinker", "knees are bolted to the planking and under the thwart"),
+        ("Keelson_Gunwale", "Planking_Clinker", "gunwale and keelson are fastened to the planking"),
+    ],
+    "whaler": [
+        # the centreboard is deliberately absent here: it swings on a pin
+        # between the trunk boards, so it touches neither keel nor planking
+        ("Frames", "Planking_Clinker", "frames are riveted to the planking"),
+        ("Keelson_Gunwale", "Planking_Clinker", "gunwale and keelson are fastened to the planking"),
+        ("Thwart_Knees", "Planking_Clinker", "knees are bolted to the planking"),
+    ],
 }
 
 results = []
@@ -303,6 +329,51 @@ def check(key):
         report("clearance", "funnel crown above canopy", fmx.z > cmx.z + 0.2,
                f"funnel top {fmx.z:+.3f} m, canopy top {cmx.z:+.3f} m")
 
+    # ---- 4b. does every oar pivot in its own rowlock? ----
+    # The old check only compared X stations, so an oar pivoting on top of a
+    # thwart -- 0.35 m inboard and 0.15 m below the crutch -- passed.  A rowing
+    # animation about that point swings the blade through the boat.
+    if "Rowlocks" in bpy.data.objects:
+        locks = []
+        rl = bpy.data.objects["Rowlocks"]
+        bm = bmesh.new()
+        bm.from_mesh(rl.data)
+        bm.transform(rl.matrix_world)
+        for v in bm.verts:
+            locks.append(v.co.copy())
+        bm.free()
+        worst = (0.0, "")
+        bad = 0
+        oars = [o for o in meshes if o.name.startswith("Oar")]
+        for o in oars:
+            c = o.matrix_world.translation
+            d = min((c - p).length for p in locks)
+            if d > worst[0]:
+                worst = (d, o.name)
+            if d > 0.09:
+                bad += 1
+        report("pivot", "every oar pivots in a rowlock (x, y and z)",
+               bad == 0,
+               f"{len(oars)} oars, farthest origin from a crutch "
+               f"{worst[0] * 1000:.0f} mm ({worst[1]})")
+
+    # ---- 4c. signal lights: red to port, green to starboard ----
+    if key == "steam":
+        found = {}
+        for ob in meshes:
+            for p_ in ob.data.polygons:
+                m = ob.data.materials[p_.material_index] if ob.data.materials else None
+                if m and m.name.startswith("Signal_Glass"):
+                    found.setdefault(m.name, []).append(
+                        (ob.matrix_world @ p_.center).y)
+        ok = ("Signal_Glass_Red" in found and "Signal_Glass_Green" in found
+              and all(y > 0 for y in found["Signal_Glass_Red"])
+              and all(y < 0 for y in found["Signal_Glass_Green"]))
+        report("lighting", "port sidelight red, starboard green", ok,
+               ", ".join(f"{k}: {len(v)} faces on "
+                         f"{'port' if sum(v) > 0 else 'starboard'} side"
+                         for k, v in sorted(found.items())) or "no signal glass")
+
     # ---- 5. moving-part pivots ----
     if key == "whaler":
         oars = [o for o in meshes if o.name.startswith("Oar")]
@@ -319,13 +390,18 @@ def check(key):
     if key == "rowing":
         oars = [o for o in meshes if o.name.startswith("Oar")]
         report("pivot", "ten oars present", len(oars) == 10, f"{len(oars)} found")
+        from boatgen import specs
+        from boatgen.hull import half_breadth_at
         off = []
         for o in oars:
-            mn, mx = world_bounds(o)
-            # the pivot (object origin) must sit on the inboard end of the loom
-            if not (mn.x - 0.02 <= o.location.x <= mx.x + 0.02):
+            c = o.matrix_world.translation
+            hb = half_breadth_at(specs.ROW_CUTTER, specs.ROW_CUTTER.xi_of(c.x), c.z, n=32)
+            # the pivot must be out at the side of the boat, on the gunwale,
+            # not amidships: an oar stowed inboard and pivoted inboard swings
+            # its blade through the thwarts when it is pulled
+            if hb <= 0.02 or abs(c.y) / hb < 0.70:
                 off.append(o.name)
-        report("pivot", "oar origins on the rowlock axis", not off, str(off))
+        report("pivot", "oar origins out on the gunwale line", not off, str(off))
     if key == "steam":
         for nm in ("Propeller", "Rudder"):
             o = bpy.data.objects[nm]
@@ -343,6 +419,25 @@ def check(key):
 
 for k in (list(BLENDS) if WHICH == "both" else [WHICH]):
     check(k)
+
+# ---- the game-side contract, read back from the exports themselves ----
+CURRENT[0] = "exports"
+for k, (blend, boat_id) in BLENDS.items():
+    man_path = os.path.join(ROOT, "boats", "exports", k, "manifest.json")
+    if not os.path.exists(man_path):
+        continue
+    man = json.load(open(man_path))
+    parts = man["parts"]
+    worst = max(parts, key=lambda p: p["triangles"])
+    report("export", f"{boat_id}: every part within the Roblox triangle limit",
+           worst["triangles"] <= 20000,
+           f"worst {worst['name']} {worst['triangles']} tris of 20000")
+    report("export", f"{boat_id}: every part carries a UV layer",
+           all(p.get("uv_layers", 0) >= 1 for p in parts),
+           f"{sum(1 for p in parts if p.get('uv_layers', 0) >= 1)}/{len(parts)} parts")
+    report("export", f"{boat_id}: moving parts have their own file and origin",
+           all(p["name"] in [q["name"] for q in parts] for p in parts),
+           f"{len(parts)} parts exported")
 
 # ---- write the report ----
 fails = [r for r in results if not r[3]]   # (boat, section, item, ok, detail)

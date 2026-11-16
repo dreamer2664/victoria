@@ -22,6 +22,7 @@ local Workspace = game:GetService("Workspace")
 local Config = require(script.Parent.Config)
 local SteamCutter = require(script.Parent.SteamCutter)
 local RowingCutter = require(script.Parent.RowingCutter)
+local Whaler = require(script.Parent.Whaler)
 
 local remote = ReplicatedStorage:FindFirstChild("BoatControl")
 if not remote then
@@ -93,8 +94,10 @@ local function startBoat(model)
 	local ctrl
 	if id == "steam_cutter_1888" then
 		ctrl = SteamCutter.new(model, manifest)
+	elseif id == "whaler_27ft" then
+		ctrl = Whaler.new(model, manifest)
 	else
-		ctrl = RowingCutter.new(model, manifest)
+		ctrl = RowingCutter.new(model, manifest, id)
 	end
 	boats[model] = ctrl
 

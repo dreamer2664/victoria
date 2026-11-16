@@ -416,6 +416,13 @@ def _max_y(x0, x1, z, clear):
     return clear_y(HULL, x0, x1, z, clear=clear)
 
 
+def rowlock_pivot(xi, side):
+    """The throat of the crutch: the point the oar actually turns about, and
+    therefore the point the game must rotate it about."""
+    p = HULL.surface(xi, 0.985)
+    return np.array([p[0], side * (p[1] + 0.012), p[2] + 0.052])
+
+
 def stow_oar(name, xi, side, index, length=OAR_LEN):
     p = HULL.surface(xi, 0.80)
     # oars lie on top of the thwarts, which is how they are actually stowed
@@ -429,7 +436,8 @@ def stow_oar(name, xi, side, index, length=OAR_LEN):
     v = np.array(mb.verts) @ R.T + pivot
     mb.verts = [tuple(x) for x in v]
     ob = bl.obj_from_builder(mb, name, mlist, col_moving)
-    origin_to(ob, pivot)
+    # origin in the rowlock, geometry at the stowage position
+    origin_to(ob, rowlock_pivot(xi, side))
     return ob
 
 
@@ -510,6 +518,39 @@ def _fittings(mb):
     yb = min(0.28, half_breadth_at(HULL, 0.62, p[2] + 0.05) - 0.105)
     cyl(mb, (p[0], yb, p[2] + 0.05), (p[0], yb, p[2] + 0.17), 0.075, seg=14,
         mat=MAT["wood_deck"], r1=0.092)
+    # A whaler's working gear: a line tub and a water breaker.  The tub is the
+    # boat's defining piece of equipment -- the whale line is flaked into it so
+    # it runs out clear -- and the breaker is what keeps five men alive on a
+    # long pull.  Both are things you can see from outside the boat, which is
+    # what separates a modelled ship's boat from a modelled hull.
+    x_t = HULL.x_of(0.585)
+    pt = HULL.surface(0.585, 0.10)
+    # the tub is 0.29 m across, so it sits where the bilge is, not against the
+    # planking: clamped by the hull, like every other piece of loose gear
+    y_t = min(0.17, clear_y(HULL, x_t - 0.15, x_t + 0.15, pt[2] + 0.055, clear=0.15))
+    cyl(mb, (x_t, y_t, pt[2] + 0.055), (x_t, y_t, pt[2] + 0.235), 0.125, seg=18,
+        mat=MAT["wood_deck"], r1=0.145)
+    for k in range(4):
+        torus(mb, (x_t, y_t, pt[2] + 0.215 + 0.016 * k), 0.088 - 0.010 * k, 0.0135,
+              seg=20, rseg=6, axis="Z", mat=MAT["rope"])
+    # breaker: a wooden water cask with three brass hoops, lashed under the
+    # stern sheets
+    xb = HULL.x_of(0.80)
+    pb = HULL.surface(0.80, 0.11)
+    # keep the cask inboard of the planking: at 80% of the length the hull has
+    # closed to 0.30 m half-breadth at the bilge, and a 0.105 m cask set 0.19 m
+    # off the centreline stood 105 mm out through the topsides
+    yb = -min(0.19, clear_y(HULL, xb - 0.11, xb + 0.11, pb[2] + 0.06, clear=0.115))
+    cyl(mb, (xb, yb, pb[2] + 0.02), (xb, yb, pb[2] + 0.30), 0.105, seg=16,
+        mat=MAT["wood_deck"], r1=0.105)
+    for zz in (0.07, 0.15, 0.23):
+        cyl(mb, (xb, yb, pb[2] + zz), (xb, yb, pb[2] + zz + 0.014), 0.109, seg=16,
+            mat=MAT["brass"])
+    # boat's compass in its box, on the stern-sheets platform
+    xcc = HULL.x_of(0.755)
+    zcc = HULL.sheer_z(0.755) - 0.150
+    mb.add_box((xcc, 0.30, zcc + 0.045), (0.17, 0.17, 0.09), mat=MAT["wood_timber"])
+    cyl(mb, (xcc, 0.30, zcc + 0.09), (xcc, 0.30, zcc + 0.10), 0.065, seg=16, mat=MAT["brass"])
     # grapnel stowed forward of the centreboard case, standing on the bottom
     # boards: a whaler's anchor is a grapnel, and it is the one heavy item of
     # gear she carries, so it lives where two men can reach it

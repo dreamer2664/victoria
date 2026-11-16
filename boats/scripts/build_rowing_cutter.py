@@ -228,7 +228,7 @@ make(lambda mb: (parts.quarter_knee(mb, HULL, side=1),
                  parts.quarter_knee(mb, HULL, side=-1)),
      "Quarter_Knees", col_furniture)
 
-make(lambda mb: parts.floor_gratings(mb, HULL, 0.27, 0.73, n_slats=5, slat_w=0.098,
+make(lambda mb: parts.floor_gratings(mb, HULL, 0.27, 0.73, n_slats=7, slat_w=0.098,
                                     thick=0.026, t=0.085),
      "Floorboards", col_furniture)
 
@@ -257,6 +257,17 @@ def _oar_mesh():
     return mb
 
 
+def rowlock_pivot(xi, side):
+    """Where the oar turns: in the throat of the crutch on the gunwale.
+
+    This is the pivot the game rotates the oar about, so the object's origin has
+    to be here -- not at the stowed position inboard, which is where it used to
+    be.  Every oar in the boat was pivoting about a point on top of a thwart.
+    """
+    p = HULL.surface(xi, 0.985)
+    return np.array([p[0], side * (p[1] + 0.012), p[2] + 0.052])
+
+
 def place_oar(name, xi, side, outboard_angle_deg=38.0, feather_deg=8.0):
     """Place an oar in its rowlock.  side=+1 port, -1 starboard."""
     p = HULL.surface(xi, 0.985)
@@ -280,19 +291,28 @@ def place_oar(name, xi, side, outboard_angle_deg=38.0, feather_deg=8.0):
 
 
 def stow_oar(name, xi, side, index):
-    """Oars are stowed fore-and-aft along the thwarts when the boat is hoisted
-    at the davits -- the normal state of a ship's boat on passage."""
-    # laid fore-and-aft on the thwarts, blades forward, five to a side
-    p = HULL.surface(xi, 0.80)
-    pivot = np.array([-1.35 + 0.10 * (index // 2), side * (0.34 + 0.085 * index),
-                      HULL.sheer_z(xi) - 0.135 + 0.022 * (index % 2)])
+    """Oars stowed fore-and-aft on the thwarts, the state of a ship's boat on
+    passage -- but pivoted in the rowlock, not at the stowage position.
+
+    Two separate things went wrong here.  The oars lay at a fixed offset from
+    the centreline in a hull that closes in at both ends, so the blades stood
+    out through the planking; and the object origin sat at the stow position,
+    so the rowing animation turned every oar about a point on a thwart instead
+    of about its rowlock.
+    """
+    origin = rowlock_pivot(xi, side)
+    zc = HULL.sheer_z(xi) - 0.105 + 0.018 * (index % 2)
+    px = -1.35 + 0.10 * (index // 2)
+    ycap = clear_y(HULL, px - 1.10, px + OAR_LEN - 1.10, zc, clear=0.11)
+    y = side * min(0.30 + 0.075 * index, ycap)
     mb = _oar_mesh()
     roll = math.radians(90.0)       # blade flat, as stowed
-    R = np.array([[1, 0, 0], [0, math.cos(roll), -math.sin(roll)], [0, math.sin(roll), math.cos(roll)]])
-    v = np.array(mb.verts) @ R.T + pivot
+    R = np.array([[1, 0, 0], [0, math.cos(roll), -math.sin(roll)],
+                  [0, math.sin(roll), math.cos(roll)]])
+    v = np.array(mb.verts) @ R.T + np.array([px, y, zc])
     mb.verts = [tuple(x) for x in v]
     ob = bl.obj_from_builder(mb, name, mlist, col_moving)
-    origin_to(ob, pivot)
+    origin_to(ob, origin)
     return ob
 
 

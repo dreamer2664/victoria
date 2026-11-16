@@ -55,6 +55,8 @@ MAT = {
     "coal": 14,
     "water": 15,
     "red_lead": 16,
+    "glass_red": 17,    # port sidelight lens
+    "glass_green": 18,  # starboard sidelight lens
 }
 MAT_NAMES = list(MAT.keys())
 

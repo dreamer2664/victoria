@@ -17,6 +17,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import bmesh
 import bpy
 from mathutils import Vector
 
@@ -24,6 +25,11 @@ ROOT = "/home/user/victoria"
 ARGS = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else ["both"]
 WHICH = ARGS[0] if ARGS else "both"
 STUD = 1.0 / 0.28
+# Roblox refuses a MeshPart over 20 000 triangles, so each part is reduced to
+# fit before export.  The reduction is by edge collapse on the *export copy*
+# only: the .blend keeps the full-resolution model that the renders, the
+# drawings and the verification are all made from.
+TRI_LIMIT = 19000
 
 BLENDS = {
     "steam": ("boats/blend/boat_a_steam_cutter.blend", "steam_cutter_1888"),
@@ -63,6 +69,24 @@ def export_boat(key):
     # objects whose names look like Oar_* are moving parts too
     for ob in sorted(meshes, key=lambda o: o.name):
         role = ROLES.get(ob.name, "moving" if ob.name.startswith("Oar") else "other")
+        # triangle count: loop_triangles is empty until it is calculated, and
+        # the old code silently fell back to counting quads and ngons, which
+        # under-reported the real load a Roblox import would see
+        ob.data.calc_loop_triangles()
+        tris = len(ob.data.loop_triangles)
+        reduced = 0
+        if tris > TRI_LIMIT:
+            mod = ob.modifiers.new("Decimate", "DECIMATE")
+            mod.ratio = TRI_LIMIT / float(tris)
+            mod.use_collapse_triangulate = True
+            bpy.context.view_layer.objects.active = ob
+            bpy.ops.object.modifier_apply(modifier=mod.name)
+            ob.data.calc_loop_triangles()
+            reduced = tris
+            tris = len(ob.data.loop_triangles)
+        # a UV layer, so the part can take a texture rather than only a colour
+        if not ob.data.uv_layers:
+            ob.data.uv_layers.new(name="UVMap")
         # world-space bounds
         pts = [ob.matrix_world @ Vector(c) for c in ob.bound_box]
         mn = Vector((min(p.x for p in pts), min(p.y for p in pts), min(p.z for p in pts)))
@@ -77,7 +101,10 @@ def export_boat(key):
             "size_m": [round(v, 4) for v in (mx - mn)],
             "size_studs": [round(v * STUD, 3) for v in (mx - mn)],
             "vertices": len(ob.data.vertices),
-            "triangles": len(ob.data.loop_triangles) or len(ob.data.polygons),
+            "triangles": tris,
+            "triangles_before_decimation": reduced or tris,
+            "uv_layers": len(ob.data.uv_layers),
+            "smooth_shaded": True,
         })
         bpy.ops.object.select_all(action="DESELECT")
         ob.select_set(True)

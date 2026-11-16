@@ -22,10 +22,20 @@ Hydrodynamics.__index = Hydrodynamics
 
 local G = 196.2
 
---- probe layout along the hull: fraction of length from bow, half-beam fraction
+-- Probe layout.  Two things about this table are easy to get wrong, and both
+-- were wrong:
+--
+--   * the first column is the station as a fraction of the length *forward of
+--     midships*, so it runs from about -0.45 (a little in from the transom) to
+--     +0.45 (just abaft the stem).  Positive-only values put all six probes in
+--     the fore half of the boat, and a boat buoyed only forward floats with her
+--     stern under;
+--   * the hull is assembled bow-to-minus-Z, so a station along the boat is a Z
+--     offset, not an X one.  Spread along X and the probes go athwartships,
+--     which is what the original layout did.
 local PROBES = {
-	{ 0.86, 0.0 }, { 0.62, 0.55 }, { 0.62, -0.55 },
-	{ 0.30, 0.60 }, { 0.30, -0.60 }, { 0.08, 0.0 },
+	{ 0.45, 0.0 }, { 0.22, 0.55 }, { 0.22, -0.55 },
+	{ -0.15, 0.60 }, { -0.15, -0.60 }, { -0.42, 0.0 },
 }
 
 function Hydrodynamics.new(root, opts)
@@ -49,7 +59,7 @@ function Hydrodynamics.new(root, opts)
 	for i, p in ipairs(PROBES) do
 		local att = Instance.new("Attachment")
 		att.Name = string.format("Buoy%d", i)
-		att.Position = Vector3.new(p[1] * self.length, 0, p[2] * self.beam * 0.5)
+		att.Position = Vector3.new(p[2] * self.beam * 0.5, 0, -p[1] * self.length)
 		att.Parent = root
 		local vf = Instance.new("VectorForce")
 		vf.Name = "Buoyancy"
@@ -64,7 +74,8 @@ function Hydrodynamics.new(root, opts)
 	-- thrust applied at the stern, below the waterline
 	local thrustAtt = Instance.new("Attachment")
 	thrustAtt.Name = "ThrustPoint"
-	thrustAtt.Position = Vector3.new(-0.42 * self.length, -self.draft * 0.7, 0)
+	-- aft is +Z in the assembled boat, not -X
+	thrustAtt.Position = Vector3.new(0, -self.draft * 0.7, 0.42 * self.length)
 	thrustAtt.Parent = root
 	local thrust = Instance.new("VectorForce")
 	thrust.Name = "Thrust"
@@ -100,7 +111,10 @@ function Hydrodynamics:update(dt)
 	local pos = cf.Position
 
 	local fwd = self:forward()
-	local right = Vector3.new(fwd.Z, 0, -fwd.X)
+	-- right-hand side of the hull: forward yawed -90 deg about Y.  The old
+	-- expression produced the left-hand vector, so every lateral drag term had
+	-- the wrong sign and the boat slid into turns.
+	local right = Vector3.new(-fwd.Z, 0, fwd.X)
 
 	self.speed = vel:Dot(fwd)
 
@@ -119,8 +133,10 @@ function Hydrodynamics:update(dt)
 			local submergedFrac = math.clamp(depth / (self.draft * 1.15), 0, 1.25)
 			-- spring: displaced water weight + vertical damping
 			local f = perProbe * submergedFrac * 1.15
-			local vdamp = (vel.Y - (probe.att.CFrame:VectorToWorldSpace(Vector3.yAxis)).Y * 0) * 0.35
-			f = f - vdamp * perProbe * 0.06
+			-- vertical damping, proportional to how fast the probe is going
+			-- down; the old line multiplied a nonsense term by zero
+			local vdamp = vel.Y * perProbe * 0.06
+			f = f - vdamp
 			probe.force.Force = Vector3.new(0, math.max(0, f), 0)
 		else
 			probe.force.Force = Vector3.zero
@@ -148,7 +164,7 @@ function Hydrodynamics:update(dt)
 	local vLat = right * vel:Dot(right)
 	local dragLong = -vLong * math.abs(vLong) * 0.09 * self.mass * 0.02
 	local dragLat = -vLat * math.abs(vLat) * 0.85 * self.mass * 0.02
-	local dragForce = dragLong + dragLat - Vector3.new(0, 0, 0)
+	local dragForce = dragLong + dragLat
 	if dragForce.Magnitude > 0 then
 		-- fold drag into the stern probe so it acts below the waterline
 		self.thrust.Force = self.thrust.Force + dragForce

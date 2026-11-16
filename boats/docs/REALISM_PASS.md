@@ -241,3 +241,91 @@ over: it now carries a brass handrail on eight stanchions round the upper
 shell, and a maker's plate with a raised bezel on the side a passenger would
 see. Small things, but "manufactured object" cues like these are what separate
 a modelled machine from a modelled cylinder.
+
+---
+
+# Pass 4 — the QA audit, and what fixing it properly turned up
+
+An independent audit of this branch was read line by line and every finding
+tested against the current geometry before anything was changed. The full
+account, item by item, with the verdict for each, is in
+[`AUDIT_RESPONSE.md`](AUDIT_RESPONSE.md). What follows is the part that changed
+how the boats *look and how they are put together*, rather than the part that
+changed a number in a manifest.
+
+**The bunker moved, and with it a way of working.** The coal was in the forward
+passenger cockpit, a metre in front of the boiler, because the model was built
+from the drawings top-to-bottom while the sheet was written from the engine
+outwards. The bunker now sits abaft the boiler where the fireman stands, but
+the interesting fix is the cause: the machinery layout had been typed twice —
+once in the builder, once in the drawing generator. It is now a single table
+(`boatgen/layout.py`) read by both, so the model and the sheet cannot drift
+apart again. Anything drawn from a number that exists in two places will
+eventually be drawn wrong.
+
+**The sidelights became sidelights.** They were a brass box with a black lens,
+because the palette had no green in it at all. A port sidelight is a *red
+glass in a brass housing, hooded, facing forward-outboard*, and a starboard one
+is green: the colour is the fitting's whole purpose. Both are now modelled that
+way — brass body, brass hood, hooded lens facing forward — and the verification
+asserts the red is to port and the green to starboard, so a future edit cannot
+quietly swap them.
+
+**A boat is a stack of layers, in order.** The double-diagonal construction was
+built as three independent surfaces that happened to occupy the same space:
+planking, an inner diagonal, a second diagonal 38 mm in, and timbers from 24 mm.
+Every one of those layers was drawn where it looked right in isolation, and none
+of them were stacked. The order is now stated once — planking 0–24 mm, first
+diagonal 24–35, second diagonal 35–46, timbers 46–86, with 2 mm of bedding —
+which is not a fix to an overlap count, it is the boat's construction written
+down.
+
+**A sidelight hangs on a bracket.** Giving the two lamps a real colour was
+only half the job: they were sitting flat on top of the canvas, which is where
+a height-and-station placement puts a thing that nobody checked against a
+picture of a boat. A sidelight is a lamp on a brass pedestal at the gunwale,
+outboard of the canopy, standing high enough that the light is not hidden by
+the coaming -- so that is what they are now, base plate on the gunwale cap,
+pedestal, hooded lamp, lens facing forward-outboard. The lifebuoy had the same
+fault, worse: it was standing on its edge in mid-air over the canvas. It is a
+cork ring lashed **flat** on the canopy roof with four short lashings through
+the eyelets, which is where one is actually kept.
+
+**The camera fills the frame.** The published renders had the boats occupying
+about 40% of the picture, which is not a matter of taste — a bounding-box fit
+solves the distance for eight corners that, on a long thin hull seen on the
+quarter, are nowhere near any part of the boat. `frame_camera` now projects the
+model's actual vertices, not its box, and solves the distance against the true
+silhouette. The boats come out roughly a third larger with no risk of clipping,
+because every projected vertex is inside the frustum by construction.
+
+**Small gear that says the boat is used.** A steel slice stowed against the
+boiler and a coil of mooring line flaked on the foredeck of the steam cutter; a
+whale-line tub with the line coiled in it, a wooden water breaker with three
+brass hoops, and the boat's compass in its box for the whaler. Each is two
+minutes of geometry and each one is what a person who has actually been in the
+boat would notice was missing first: boats carry gear, and gear is lashed where
+the man who needs it stands. The tub and the breaker are also why the
+containment test exists — the first attempt at the breaker stood 105 mm out
+through the topsides, and the tub 32 mm, at a station where the hull has closed
+to 0.30 m half-breadth.
+
+**Oars, again, and for the last time.** The audit was right that the oar
+pivots were in the wrong place, and wrong about how: not just inboard, but with
+the stowed oars standing out through the planking at both ends, because they
+lay on a fixed offset from the centreline in a hull that closes at the stem and
+stern. Both faults had one cause — a stowed position being used as a pivot.
+Each oar's origin is now the throat of its own crutch and its stowed mesh is
+placed by the same width-limited clearance the rest of the gear uses, and the
+check measures all three axes.
+
+**What the audit could not see, and the test that could.** An interpenetration
+test between named pairs, and a pair of eyes on a finished render, both miss a
+thwart standing 10 mm out through the planking: there is no named pair, and the
+shadow is a dark sliver. Sampling every vertex of every interior object against
+an analytic hull envelope found ten such defects across the three boats — engine
+bearers 152 mm out through the bottom, a feed tank 116 mm out, cross floors
+160 mm up the topsides, deck edges laid to the breadth above deck level, a boat
+hook 589 mm through a bow, five oars 205 mm out, a grapnel hanging in mid-air
+outside the boat. That test is now part of every run, and the passage of it is
+the single most load-bearing line in `VERIFICATION.md`.

@@ -19,7 +19,7 @@ oars and a transom, and one with two masts and no transom at all.
 | Construction | carvel over double-diagonal, 12 frames | clinker, 11 strakes, oak frames | clinker, 9 strakes, 68 frames, drop keel |
 | Propulsion | 5½ × 6 in inverted vertical engine, coal-fired boiler, 2-bladed screw | 10 oars, double banked | 5 oars single banked + standing-lug yawl rig |
 | Blender file | `blend/boat_a_steam_cutter.blend` | `blend/boat_b_rowing_cutter.blend` | `blend/boat_c_whaler.blend` |
-| Objects / faces | 20 / 45 420 | 24 / 29 948 | 18 / 28 949 |
+| Objects / faces | 21 / 59 163 | 25 / 31 076 | 19 / 29 587 |
 
 ![steam cutter](renders/steam_hero.png)
 ![rowing cutter](renders/rowing_hero.png)
@@ -56,6 +56,7 @@ boats/
 │   ├── CONSTRUCTION_A_steam_cutter.md
 │   ├── CONSTRUCTION_B_rowing_cutter.md
 │   ├── CONSTRUCTION_C_whaler.md
+│   ├── AUDIT_RESPONSE.md how every QA finding was answered, finding by finding
 │   ├── TESTING.md
 │   ├── REALISM_PASS.md   how the models and renders were pushed to look right
 │   └── VERIFICATION.md   (generated)
@@ -120,8 +121,9 @@ B=/var/tmp/blender/blender
 
 $B -b --python build_steam_cutter.py -- --quick   # or omit --quick for full renders
 $B -b --python build_rowing_cutter.py -- --quick
+$B -b --python build_whaler.py -- --quick
 
-$B -b --python verify.py -- both        # 37 geometric checks
+$B -b --python verify.py -- both        # 64 geometric checks
 $B -b --python export_all.py -- both    # GLB/FBX + manifest
 $B -b --python render_sheet.py -- both  # published renders
 $B -b --python render_cutaway.py -- both
@@ -154,8 +156,11 @@ dimension are **reconstructed** to those dimensions and are labelled as such.
 ## Status
 
 * Geometry, drawings, documentation, interface spec — **complete and verified**
-  (37 automated checks over the three boats, 0 failures: `docs/VERIFICATION.md`).
-* All 13 Luau modules and all three generated manifests compile.
+  (64 automated checks over the three boats, 0 failures: `docs/VERIFICATION.md`).
+* The QA audit from `agent/qa-audit` has been worked through item by item;
+  every finding is answered in [`docs/AUDIT_RESPONSE.md`](docs/AUDIT_RESPONSE.md)
+  — fixed, declared a joint, or disputed with the geometry cited.
+* All 14 Luau modules and all three generated manifests compile.
 * Roblox scripts — **complete and compiling**, but **not yet run in Studio**;
   the acceptance test list to close that out is in `docs/TESTING.md` §2.
 

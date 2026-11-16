@@ -47,6 +47,15 @@ def obj_from_builder(mb, name, mats, col, smooth=True, auto_smooth=35.0):
     bm = bmesh.new()
     mb.to_bmesh(bm)
     bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-5)
+    # loose edges and stray vertices are what a mesh builder leaves behind when
+    # a strip is closed at one end and not the other; they are invisible, they
+    # survive into the exports, and they show up in every topology audit
+    loose_e = [e for e in bm.edges if not e.link_faces]
+    if loose_e:
+        bmesh.ops.delete(bm, geom=loose_e, context="EDGES")
+    loose_v = [v for v in bm.verts if not v.link_faces]
+    if loose_v:
+        bmesh.ops.delete(bm, geom=loose_v, context="VERTS")
     bm.normal_update()
     bm.to_mesh(me)
     bm.free()
@@ -65,6 +74,58 @@ def obj_from_builder(mb, name, mats, col, smooth=True, auto_smooth=35.0):
             ob.select_set(False)
         except Exception:
             pass
+    return ob
+
+
+def triangulate_ngons(ob):
+    """Split faces with more than four sides into triangles.
+
+    Lathe caps and boolean'd plates come out as ngons, and an ngon shades badly
+    and cannot be exported to a triangle-only runtime anyway.  Only ngons are
+    touched: quads are kept, because a quad is what a shipwright's planking
+    actually is and a quad mesh decimates and unwraps far better.
+    """
+    me = ob.data
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    ngons = [f for f in bm.faces if len(f.verts) > 4]
+    if ngons:
+        bmesh.ops.triangulate(bm, faces=ngons, quad_method="BEAUTY")
+        bm.to_mesh(me)
+        me.update()
+    bm.free()
+    return len(ngons)
+
+
+def solidify(ob, thickness=0.003, offset=1.0):
+    """Give a single-sided sheet real thickness.
+
+    A canvas hood modelled as a sheet is a sheet with 548 boundary edges: it
+    has no inside, it lights like paper, and any renderer that culls backfaces
+    will show a hole in it from above.
+    """
+    m = ob.modifiers.new("Solidify", "SOLIDIFY")
+    m.thickness = thickness
+    m.offset = offset
+    apply_modifiers(ob)
+    return ob
+
+
+def uv_unwrap(ob, scale=1.0):
+    """Give the mesh a UV layer so it can take a texture in the game engine."""
+    me = ob.data
+    if not me.uv_layers:
+        me.uv_layers.new(name="UVMap")
+    bpy.ops.object.select_all(action="DESELECT")
+    ob.select_set(True)
+    bpy.context.view_layer.objects.active = ob
+    try:
+        bpy.ops.object.mode_set(mode="EDIT")
+        bpy.ops.mesh.select_all(action="SELECT")
+        bpy.ops.uv.cube_project(cube_size=scale, correct_aspect=True)
+        bpy.ops.object.mode_set(mode="OBJECT")
+    finally:
+        ob.select_set(False)
     return ob
 
 
@@ -213,6 +274,13 @@ def build_materials():
     mats["rope"] = plain("Rope", (0.235, 0.185, 0.105), rough=0.88)
     mats["canvas"] = paint_material("Canvas", (0.150, 0.128, 0.086), rough=0.90, coat=0.02, grime=0.60)
     mats["glass"] = plain("Gauge_Glass", (0.9, 0.9, 0.9), rough=0.05, transmission=0.9, ior=1.5)
+    # signal lenses: a sidelight is coloured glass in a brass housing, not a
+    # painted box.  Port is red, starboard green -- the one rule at sea that
+    # every model of a ship's boat has to get right.
+    mats["glass_red"] = plain("Signal_Glass_Red", (0.62, 0.045, 0.030), rough=0.12,
+                              transmission=0.72, ior=1.5)
+    mats["glass_green"] = plain("Signal_Glass_Green", (0.030, 0.30, 0.085), rough=0.12,
+                                transmission=0.72, ior=1.5)
     mats["copper"] = metal_material("Copper", (0.72, 0.38, 0.20), rough=0.25)
     mats["leather"] = plain("Leather", (0.18, 0.11, 0.07), rough=0.65)
     mats["coal"] = plain("Coal", (0.035, 0.035, 0.038), rough=0.75)
@@ -426,6 +494,17 @@ def frame_camera(name, direction, look_at=None, lens=70.0, margin=1.16, aspect=1
     """
     mn, mx = scene_bounds()
     centre = (mn + mx) * 0.5
+    # the subject's actual vertices, not its box: on a long thin boat seen on
+    # the quarter, the box corners are nowhere near any part of the hull, so a
+    # box fit leaves the boat occupying 40% of the frame.  Fitting the vertices
+    # costs one pass over the meshes and gains a third of the frame back.
+    subject = []
+    for o in bpy.context.scene.objects:
+        if o.type != "MESH" or o.name in {"Backdrop", "Water", "Sea"} or o.hide_render:
+            continue
+        mw = o.matrix_world
+        for v in o.data.vertices:
+            subject.append(mw @ v.co)
     target = mathutils.Vector(look_at) if look_at is not None else centre
     cd = bpy.data.cameras.new(name)
     cd.lens = lens
@@ -442,13 +521,18 @@ def frame_camera(name, direction, look_at=None, lens=70.0, margin=1.16, aspect=1
     right.normalize()
     up = right.cross(fwd).normalized()
     dist = 0.0
-    for i in range(8):
-        c = mathutils.Vector((mx.x if i & 1 else mn.x,
-                              mx.y if i & 2 else mn.y,
-                              mx.z if i & 4 else mn.z)) - target
+    if len(subject) < 16:
+        subject = [mathutils.Vector((mx.x if i & 1 else mn.x,
+                                     mx.y if i & 2 else mn.y,
+                                     mx.z if i & 4 else mn.z)) for i in range(8)]
+    for p in subject:
+        c = p - target
         a, b, f = c.dot(right), c.dot(up), c.dot(fwd)
         dist = max(dist, abs(a) / th - f, abs(b) / tv - f)
     dist *= margin
+    # never inside the geometry: the perspective solve above is exact for the
+    # tangent planes, but a vertex behind the target needs the near plane clear
+    dist = max(dist, 0.6)
     loc = target + d * dist
     ob = bpy.data.objects.new(name, cd)
     ob.location = loc

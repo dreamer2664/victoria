@@ -33,11 +33,18 @@ RowingCutter.__index = RowingCutter
 
 local PHASE = { CATCH = "catch", DRIVE = "drive", FINISH = "finish", RECOVER = "recover" }
 
-function RowingCutter.new(model, manifest)
+--- `cfgId` selects the boat's own numbers from Config.BOATS.  Without it the
+--- module used the rowing cutter's dimensions for every boat that shares this
+--- stroke engine, which meant the 27 ft whaler was driven as a 25 ft cutter:
+--- wrong length (so wrong hull speed and wrong probe spread), wrong mass, wrong
+--- steering authority.
+function RowingCutter.new(model, manifest, cfgId)
 	local self = setmetatable({}, RowingCutter)
 	self.model = model
 	self.manifest = manifest
-	self.cfg = Config.BOATS.rowing_cutter_25ft
+	local id = cfgId or model:GetAttribute("BoatId") or "rowing_cutter_25ft"
+	self.cfg = Config.BOATS[id] or Config.BOATS.rowing_cutter_25ft
+	self.singleBanked = self.cfg.single_banked == true
 
 	self.root = model.PrimaryPart or model:FindFirstChildWhichIsA("BasePart")
 	assert(self.root, "rowing cutter model needs a PrimaryPart")
@@ -99,6 +106,17 @@ function RowingCutter:poseOar(oar, swing, feather)
 		* CFrame.Angles(feather, 0, 0)
 end
 
+--- The oar furthest aft on the boat -- the one a single-banked crew steers
+--- with.  Positions are in the root's local space, where the bow is -Z.
+function RowingCutter:aftmostOar()
+	local best, bestZ = nil, -math.huge
+	for _, oar in ipairs(self.oars) do
+		local z = self.root.CFrame:PointToObjectSpace(oar.part.Position).Z
+		if z > bestZ then best, bestZ = oar, z end
+	end
+	return best
+end
+
 function RowingCutter:step(dt)
 	WaterSurface.step(dt)
 
@@ -149,12 +167,25 @@ function RowingCutter:step(dt)
 	-- thrust: only during the drive, scaled by the bank balance
 	local driving = (self.phase == PHASE.DRIVE) and 1.0 or 0.0
 	local push = self.power * driving
-	-- differential: the bank the coxswain calls for pulls harder
-	local portBias = math.clamp(1 + self.helm * self.cfg.steer_from_bank, 0.2, 1.6)
-	local stbdBias = math.clamp(1 - self.helm * self.cfg.steer_from_bank, 0.2, 1.6)
-	local meanBias = (portBias + stbdBias) * 0.5
-	self.hydro:setThrottle(push * meanBias)
-	self.hydro:setHelm(self.helm * 0.6 + (portBias - stbdBias) * 0.3)
+	if self.singleBanked then
+		-- A single-banked boat (the whaler: three oars to port, two to
+		-- starboard) cannot steer by pulling one bank harder -- there is no
+		-- second bank to pull against.  She is steered from aft: the bow oar
+		-- and the stroke oar hold water on one side, which swings the stern.
+		self.hydro:setThrottle(push)
+		self.sternOar = self.sternOar or self:aftmostOar()
+		if self.sternOar then
+			self:poseOar(self.sternOar, swing - self.helm * math.rad(22), feather)
+		end
+		self.hydro:setHelm(self.helm * 0.92)
+	else
+		-- differential: the bank the coxswain calls for pulls harder
+		local portBias = math.clamp(1 + self.helm * self.cfg.steer_from_bank, 0.2, 1.6)
+		local stbdBias = math.clamp(1 - self.helm * self.cfg.steer_from_bank, 0.2, 1.6)
+		local meanBias = (portBias + stbdBias) * 0.5
+		self.hydro:setThrottle(push * meanBias)
+		self.hydro:setHelm(self.helm * 0.6 + (portBias - stbdBias) * 0.3)
+	end
 	self.hydro:update(dt)
 
 	if self.spray then

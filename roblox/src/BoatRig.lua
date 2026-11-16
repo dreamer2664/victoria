@@ -94,10 +94,27 @@ function BoatRig.rigOars(folder, root, manifest)
 	return oars
 end
 
+--- Put a smoke emitter anchor on the funnel crown.
+--- The exporter has no way to know the effect wants one, so the rig makes it:
+--- it is the top centre of the Funnel part, which is imported from the model.
+function BoatRig.ensureFunnelTip(folder, root)
+	local funnel = folder:FindFirstChild("Funnel", true)
+	if not funnel or not funnel:IsA("BasePart") then return nil end
+	local existing = funnel:FindFirstChild("FunnelTip")
+	if existing and existing:IsA("Attachment") then return existing end
+	local att = Instance.new("Attachment")
+	att.Name = "FunnelTip"
+	att.Position = Vector3.new(0, funnel.Size.Y * 0.5, 0)
+	att.Parent = funnel
+	return att
+end
+
+
 --- Rig the steam cutter's screw and rudder.
 function BoatRig.rigScrew(folder, root, manifest)
 	local screw = folder:FindFirstChild("Propeller", true)
 	local rudder = folder:FindFirstChild("Rudder", true)
+	BoatRig.ensureFunnelTip(folder, root)
 	local out = {}
 	if screw then
 		local pivotLocal = root.CFrame:PointToObjectSpace(screw.Position)

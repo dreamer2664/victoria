@@ -54,6 +54,10 @@ function SteamCutter.new(model, manifest)
 	self.screwMotor = rig.screwMotor
 	self.rudder = rig.rudder
 	self.rudderMotor = rig.rudderMotor
+	self.screwBase = self.screwMotor and self.screwMotor.C0 or CFrame.new()
+	self.rudderBase = self.rudderMotor and self.rudderMotor.C0 or CFrame.new()
+	self.screwAngle = 0
+	self.rudderAngle = 0
 
 	self.hydro = Hydrodynamics.new(self.root, {
 		length = self.cfg.loa_m / Config.M_PER_STUD,
@@ -148,24 +152,21 @@ function SteamCutter:step(dt)
 	local targetRpm = self.throttle * self.cfg.prop_max_rpm * self.pressure
 	self.rpm = self.rpm + (targetRpm - self.rpm) * math.min(1, dt * 1.6)
 
-	-- turn the screw about its shaft axis (local Z of the motor, X of the part)
+	-- Turn the screw and the rudder through their Motor6D joints, not by
+	-- writing CFrame.  BoatRig binds both parts with a Motor6D, and a part that
+	-- a joint is driving cannot also be moved by hand: the two fight each other
+	-- one frame apart, for as long as the boat exists.  Each joint is rebuilt
+	-- from its rest pose every frame, so the angles are absolute and cannot
+	-- accumulate.
+	self.screwAngle = (self.screwAngle or 0) + math.rad(self.rpm * 6) * dt
 	if self.screwMotor then
-		local spin = math.rad(self.rpm * 6) * dt
-		self.screwMotor.C0 = self.screwMotor.C0 * CFrame.Angles(0, 0, 0)
-		if self.screw then
-			-- the exported screw's origin is on the shaft axis; rotate about world X
-			self.screw.CFrame = self.screw.CFrame * CFrame.fromAxisAngle(Vector3.xAxis, spin)
-		end
+		self.screwMotor.C0 = self.screwBase * CFrame.Angles(0, 0, self.screwAngle)
 	end
-
-	-- rudder + tiller
-	if self.rudder then
+	if self.rudderMotor then
 		local target = self.helm * math.rad(32)
-		local cur = math.asin(math.clamp(self.rudder.CFrame.RightVector.Y, -1, 1))
-		local new = cur + (target - cur) * math.min(1, dt * 5)
-		local pivot = self.rudder.Position
-		self.rudder.CFrame = CFrame.new(pivot) * CFrame.Angles(0, new, 0)
-			* CFrame.new(-pivot) * self.rudder.CFrame
+		self.rudderAngle = (self.rudderAngle or 0)
+			+ (target - (self.rudderAngle or 0)) * math.min(1, dt * 5)
+		self.rudderMotor.C0 = self.rudderBase * CFrame.Angles(0, self.rudderAngle, 0)
 	end
 
 	-- the hull only answers the helm with water flowing past the rudder, and

@@ -122,7 +122,14 @@ Victorian steam plant.
 The engine is placed so the crank sits at z = −0.025 m relative to the load
 waterline — low in the boat, where the weight belongs. The shaft runs aft at
 about 9° from the crank to the stern tube and out to the screw at
-(−3.42, 0, −0.45). The screw hangs below the counter with its disc top 0.04 m
+(−3.42, 0, −0.45). **The rake is deliberate.** The engine stands on bearers on
+the floors, so its shaft centreline is well above the stern gland; a shaft
+brought out horizontally from the gland would have to pass through the engine
+bed, and one brought out level with the crank would leave the screw too deep to
+survive a grounding. 6–10° is the ordinary range for a launch of this size, it
+is what the stern tube and the hull gland are bored for, and the outboard
+length runs inside that tube in any case, so nothing of the shafting enters the
+water flow. The screw hangs below the counter with its disc top 0.04 m
 clear of the local keel line, so it turns in clean water without cutting into
 the planking — verified as a triangle-level interference test, not assumed.
 
@@ -147,11 +154,21 @@ boat.
 
 ## 6. Fuel and consumables
 
-* Coal bunker abaft the boiler at x = +1.62 m, 0.48 m wide, holding about
-  0.18 m³ (≈ 140 kg) of coal — roughly four hours at this plant's firing rate.
+* Coal bunker **abaft the boiler**, at x = −0.20 m, 0.48 m wide (0.24 m each
+  side of the centreline), holding about 0.18 m³ (≈ 140 kg) of coal — roughly
+  four hours at this plant's firing rate. It is an iron bin with riveted
+  corners, its coal standing proud of the open top, and a hinged lid stoved
+  back against the boiler shell. It sits where the fireman stands, between the
+  boiler front and the engine, which is the only place a man can shovel from.
 * Feed/water tank low down at x ≈ −1.95 m, below the after end of the
   machinery space, feeding the pump.
-* Bucket, shovel and ash rake stowed against the bunker.
+* Slice, shovel and ash rake stowed against the boiler front: a steel slice
+  stands on the floor plates beside the firehole door. You cannot fire a boiler
+  without a slice, and a slice is 1.5 m long, so it is always to be found
+  leaning where the fireman left it.
+* A coil of 12 mm mooring line, flaked down on the foredeck abeam of the
+  bowman's thwart and led aft to the painter ring. The boat has a painter ring,
+  so she carries a painter; the two go together.
 
 ## 7. Seating and accommodation
 
@@ -178,8 +195,10 @@ does not set sail; the historical examples with masts are rowing boats.
   exhaust run to the funnel is shorter still.
 * The screw is behind the rudder post position but ahead of the rudder blade,
   so the rudder gets clean water and the boat steers at low revolutions.
-* The bunker is abaft everything so that trimming the boat is a matter of
-  moving coal forward.
+* The bunker is between boiler and engine — abaft the firehole and forward of
+  the flywheel — so the fireman's shovel, the coal and the fire are all within
+  one step of each other, and a full bunker puts its weight amidships where the
+  hull can carry it.
 * The canopy keeps the rain off the machinery without hiding it from a
   passenger or blocking the helmsman's view.
 

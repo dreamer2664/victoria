@@ -207,6 +207,15 @@ def draw_inboard(hull, name, code, layout):
 
     for item in layout:
         kind = item["kind"]
+        if kind == "line":
+            (xa, za), (xb, zb) = item["from"], item["to"]
+            ax.plot([xa, xb], [za, zb], color=INK, lw=0.9, ls=(0, (5, 2)), zorder=4)
+            mx, mz = (xa + xb) / 2, (za + zb) / 2
+            ax.annotate(item["label"], xy=(mx, mz),
+                        xytext=(item.get("lx", mx), item.get("lz", mz + 0.34)),
+                        fontsize=6, color=ACCENT, ha="center", zorder=8,
+                        arrowprops=dict(arrowstyle="-", color=ACCENT, lw=0.5))
+            continue
         x0, x1 = item["x"]
         z0, z1 = item["z"]
         if kind == "box":
@@ -214,14 +223,28 @@ def draw_inboard(hull, name, code, layout):
                                    edgecolor=INK, lw=0.8, zorder=3))
         elif kind == "cyl":
             cx = (x0 + x1) / 2
-            ax.add_patch(Rectangle((x0, z0), x1 - x0, z1 - z0, facecolor="white",
+            # a riveted vertical boiler stands on legs, clear of the floor
+            # plates so the ashpan can be drawn: drawing it as a rectangle from
+            # the keel up makes it look like a solid block of iron
+            leg = item.get("legs", 0.0)
+            zb = z0 + leg
+            ax.add_patch(Rectangle((x0, zb), x1 - x0, z1 - zb, facecolor="white",
                                    edgecolor=INK, lw=0.8, zorder=3))
-            ax.add_patch(matplotlib.patches.Ellipse((cx, z0), x1 - x0, 0.08,
+            if leg > 0:
+                for frac in (0.14, 0.86):
+                    lx = x0 + (x1 - x0) * frac
+                    ax.add_patch(Rectangle((lx - 0.016, z0), 0.032, leg, facecolor="white",
+                                           edgecolor=INK, lw=0.7, zorder=3))
+                # firehole door on the front face
+                ax.add_patch(Rectangle((x0 + (x1 - x0) * 0.30, zb + leg * 0.4),
+                                       (x1 - x0) * 0.40, 0.13, facecolor="white",
+                                       edgecolor=INK, lw=0.6, zorder=4))
+            ax.add_patch(matplotlib.patches.Ellipse((cx, z1), x1 - x0, 0.08,
                                                     facecolor="none", edgecolor=INK, lw=0.6,
-                                                    zorder=3))
+                                                    zorder=4))
         ax.annotate(item["label"], xy=((x0 + x1) / 2, z1), xytext=(item.get("lx", (x0 + x1) / 2),
                                                                   item.get("lz", z1 + 0.30)),
-                    fontsize=6, color=ACCENT, ha="center",
+                    fontsize=6, color=ACCENT, ha="center", zorder=8,
                     arrowprops=dict(arrowstyle="-", color=ACCENT, lw=0.5))
         for p in (item.get("dim_at", None),):
             if p is not None:
@@ -277,6 +300,11 @@ WHALER_NOTES = [
 ]
 
 
+def spec_floor_z(hull):
+    """Inside bottom of the hull amidships, as the model computes it."""
+    return float(hull.inner(hull.xi_of(0.5), 0.02, 0.020)[2])
+
+
 def main():
     draw_lines(None, specs.STEM_CUTTER, "25 ft Steam Cutter — lines & general arrangement",
                "D-001 A", STEAM_NOTES)
@@ -285,21 +313,36 @@ def main():
     draw_lines(None, specs.WHALER, "27 ft Double-ended Whaler — lines & general arrangement",
                "D-004 C", WHALER_NOTES)
 
+    # the machinery layout comes from boatgen.layout, the same table the model
+    # is built from: a drawing that disagrees with the model is a specification
+    # that cannot be met, which is exactly what this sheet used to be
+    from boatgen.layout import STEAM as L
+    b, e, k = L["boiler"], L["engine"], L["bunker"]
+    zf = spec_floor_z(specs.STEM_CUTTER)
     steam_layout = [
-        {"kind": "cyl", "x": (0.50 - 0.18, 0.50 + 0.18), "z": (-0.37, 0.49),
-         "label": "Boiler 0.72 dia x 0.86", "lz": 1.30},
-        {"kind": "box", "x": (-0.78 - 0.20, -0.78 + 0.20), "z": (-0.30, 0.42),
-         "label": "Inverted vertical engine\n5½ in x 6 in", "lz": 1.05},
-        {"kind": "box", "x": (1.62 - 0.24, 1.62 + 0.24), "z": (-0.10, 0.52),
-         "label": "Coal bunker", "lz": 1.05},
-        {"kind": "box", "x": (-1.18, -1.02), "z": (-0.10, 0.12),
-         "label": "Thrust block", "lz": 0.62, "lx": -1.95},
-        {"kind": "box", "x": (-3.46, -3.38), "z": (-0.62, -0.28),
-         "label": "Screw 0.34 dia", "lz": 0.30, "lx": -2.95},
-        {"kind": "box", "x": (-3.78, -3.62), "z": (-0.60, 0.66),
-         "label": "Rudder", "lz": 0.95, "lx": -4.0},
-        {"kind": "box", "x": (1.10, 1.28), "z": (0.49, 1.63),
-         "label": "Funnel", "lz": 1.60, "lx": 1.95},
+        {"kind": "cyl", "x": (b["x"] - b["r"], b["x"] + b["r"]),
+         "z": (zf - 0.02, zf + 0.16 + b["h"]), "label": b["label"], "lz": 1.58,
+         "lx": -0.55, "legs": 0.18},
+        {"kind": "box", "x": (e["x"] - e["hx"], e["x"] + e["hx"]), "z": e["z"],
+         "label": e["label"], "lz": 1.05},
+        {"kind": "box", "x": (k["x"] - k["hx"], k["x"] + k["hx"]), "z": k["z"],
+         "label": k["label"], "lz": 1.05},
+        {"kind": "box", "x": L["thrust_block"]["x"], "z": L["thrust_block"]["z"],
+         "label": L["thrust_block"]["label"], "lz": 0.62, "lx": -1.95},
+        # the line of shafting: raked on purpose, see CONSTRUCTION_A §5
+        {"kind": "line", "from": (e["x"] + e["hx"] * 0.2, e["z"][0] + 0.06),
+         "to": (L["screw"]["x"] + 0.05, L["screw"]["z"]),
+         "label": "line of shafting, 6.3° to the waterline,\nthrough the stern tube",
+         "lx": -2.35, "lz": -0.72},
+        {"kind": "box", "x": (L["screw"]["x"] + 0.04, L["screw"]["x"] + 0.06),
+         "z": (L["screw"]["z"] - 0.17, L["screw"]["z"] + 0.17),
+         "label": L["screw"]["label"], "lz": 0.30, "lx": -2.95},
+        {"kind": "box", "x": L["rudder"]["x"], "z": L["rudder"]["z"],
+         "label": L["rudder"]["label"], "lz": 0.95, "lx": -4.0},
+        {"kind": "box", "x": (L["funnel"]["x"] - L["funnel"]["r"],
+                             L["funnel"]["x"] + L["funnel"]["r"]),
+         "z": (zf + 0.16 + b["h"] + 0.10, zf + 0.16 + b["h"] + 1.05),
+         "label": L["funnel"]["label"], "lz": 1.60, "lx": 1.95},
     ]
     draw_inboard(specs.STEM_CUTTER, "25 ft Steam Cutter — inboard profile", "D-002 A",
                  steam_layout)

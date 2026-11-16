@@ -56,6 +56,22 @@ can be rowed astern cleanly is a better sea boat in every other way too.
   rings, boat hook lying forward on the thwarts, bailer, the grapnel standing on
   the bottom boards forward of the trunk, a coir fender each side.
 
+  She also carries the three things that make a whaler a whaler rather than a
+  generic pulling boat. **The line tub** stands on the bottom boards just abaft
+  the after thwart, with the whale line flaked into it in four turns: the whole
+  point of the tub is that the line runs out clear when a fish is struck, so
+  the line is stowed *in* something, always. **The water breaker** is a wooden
+  cask with three brass hoops, lashed under the stern sheets -- six men on a
+  long pull drink. **The boat's compass** sits in its wooden box on the
+  stern-sheets platform, which is where a naval whaler's coxswain actually kept
+  it: a compass you have to unpack is a compass you cannot steer by.
+
+  All three are placed by `hull.clear_y()`, the same width-limited clearance
+  the oars and gratings use. The first attempt at the breaker stood 105 mm out
+  through the topsides and the tub 32 mm, at a station where the hull has
+  closed to 0.30 m half-breadth -- which is exactly the class of fault the
+  containment test exists to catch.
+
   Gear is a separate object from the hull furniture on purpose: every wooden
   fitting here is measured against the planking by `verify.py` (see
   `TESTING.md` §1.5), and a fender is the one thing on the boat that is outside

@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-16T07:05:50.081116</dc:date>
+    <dc:date>2026-11-16T09:57:52.058322</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -31,7 +31,7 @@ z
   <g id="axes_1">
    <g id="FillBetweenPolyCollection_1">
     <defs>
-     <path id="m0e1b2b361c" d="M 881.445963 -315.52446 
+     <path id="m9acc4dd411" d="M 881.445963 -315.52446 
 L 881.445963 -215.686221 
 L 877.471632 -214.203692 
 L 873.497301 -212.737965 
@@ -436,8 +436,8 @@ L 881.445963 -315.52446
 z
 " style="stroke: #f2ede2"/>
     </defs>
-    <g clip-path="url(#pbd6c829c84)">
-     <use xlink:href="#m0e1b2b361c" x="0" y="518.4" style="fill: #f2ede2; stroke: #f2ede2"/>
+    <g clip-path="url(#p96e2ce5459)">
+     <use xlink:href="#m9acc4dd411" x="0" y="518.4" style="fill: #f2ede2; stroke: #f2ede2"/>
     </g>
    </g>
    <g id="line2d_1">
@@ -470,7 +470,7 @@ L 114.400024 207.224779
 L 94.528368 205.340666 
 L 90.554037 204.943372 
 L 90.554037 204.943372 
-" clip-path="url(#pbd6c829c84)" style="fill: none; stroke: #1a1a1a; stroke-width: 1.2; stroke-linecap: square"/>
+" clip-path="url(#p96e2ce5459)" style="fill: none; stroke: #1a1a1a; stroke-width: 1.2; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 881.445963 302.713779 
@@ -519,7 +519,7 @@ L 110.425693 303.52668
 L 98.502699 299.364847 
 L 90.554037 296.477392 
 L 90.554037 296.477392 
-" clip-path="url(#pbd6c829c84)" style="fill: none; stroke: #1a1a1a; stroke-width: 1.2; stroke-linecap: square"/>
+" clip-path="url(#p96e2ce5459)" style="fill: none; stroke: #1a1a1a; stroke-width: 1.2; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
     <path d="M 881.445963 202.87554 
@@ -551,52 +551,46 @@ L 114.400024 219.17276
 L 94.528368 217.288647 
 L 90.554037 216.891353 
 L 90.554037 216.891353 
-" clip-path="url(#pbd6c829c84)" style="fill: none; stroke: #4a4a4a; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#p96e2ce5459)" style="fill: none; stroke: #4a4a4a; stroke-width: 0.7; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
     <path d="M 48.6 285.216969 
 L 923.4 285.216969 
-" clip-path="url(#pbd6c829c84)" style="fill: none; stroke-dasharray: 3.6,1.8; stroke-dashoffset: 0; stroke: #1f4e79; stroke-width: 0.6"/>
+" clip-path="url(#p96e2ce5459)" style="fill: none; stroke-dasharray: 3.6,1.8; stroke-dashoffset: 0; stroke: #1f4e79; stroke-width: 0.6"/>
    </g>
    <g id="line2d_5">
     <path d="M 90.158195 363.138584 
 L 90.158195 363.138584 
-" clip-path="url(#pbd6c829c84)" style="fill: none; stroke: #1a1a1a; stroke-width: 0.25; stroke-linecap: square"/>
+" clip-path="url(#p96e2ce5459)" style="fill: none; stroke: #1a1a1a; stroke-width: 0.25; stroke-linecap: square"/>
    </g>
    <g id="line2d_6">
     <path d="M 881.841805 363.138584 
 L 881.841805 363.138584 
-" clip-path="url(#pbd6c829c84)" style="fill: none; stroke: #1a1a1a; stroke-width: 0.25; stroke-linecap: square"/>
+" clip-path="url(#p96e2ce5459)" style="fill: none; stroke: #1a1a1a; stroke-width: 0.25; stroke-linecap: square"/>
    </g>
    <g id="patch_2">
-    <path d="M 519.246556 323.658299 
-L 556.648931 323.658299 
-L 556.648931 234.308181 
-L 519.246556 234.308181 
+    <path d="M 500.545368 318.935067 
+L 575.350119 318.935067 
+L 575.350119 229.584948 
+L 500.545368 229.584948 
 z
-" clip-path="url(#pbd6c829c84)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 537.947743 327.814119 
-C 542.907356 327.814119 547.664504 327.376235 551.17148 326.596907 
-C 554.678456 325.817579 556.648931 324.760435 556.648931 323.658299 
-C 556.648931 322.556163 554.678456 321.499019 551.17148 320.719691 
-C 547.664504 319.940363 542.907356 319.50248 537.947743 319.50248 
-C 532.988131 319.50248 528.230983 319.940363 524.724007 320.719691 
-C 521.217031 321.499019 519.246556 322.556163 519.246556 323.658299 
-C 519.246556 324.760435 521.217031 325.817579 524.724007 326.596907 
-C 528.230983 327.376235 532.988131 327.814119 537.947743 327.814119 
-L 537.947743 327.814119 
+    <path d="M 509.355705 337.636254 
+L 512.680361 337.636254 
+L 512.680361 318.935067 
+L 509.355705 318.935067 
 z
-" clip-path="url(#pbd6c829c84)" style="fill: none; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter"/>
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 537.947743 155.588004 
-Q 537.947743 193.946313 537.947743 232.304621 
-" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
-   </g>
-   <g id="text_1">
-    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="537.947743" y="150.152836" transform="rotate(-0 537.947743 150.152836)">Boiler 0.72 dia x 0.86</text>
+    <path d="M 563.215126 337.636254 
+L 566.539781 337.636254 
+L 566.539781 318.935067 
+L 563.215126 318.935067 
+z
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 384.182423 316.385615 
@@ -604,98 +598,49 @@ L 425.740618 316.385615
 L 425.740618 241.580865 
 L 384.182423 241.580865 
 z
-" clip-path="url(#pbd6c829c84)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
-    <path d="M 404.96152 182.166591 
-Q 404.96152 210.874666 404.96152 239.582741 
-" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
-   </g>
-   <g id="text_2">
-    <text style="font-size: 6px; font-family: 'DejaVu Sans'; fill: #8c1c13" transform="translate(369.068864 168.925067)">Inverted vertical engine</text>
-    <text style="font-size: 6px; font-family: 'DejaVu Sans'; fill: #8c1c13" transform="translate(387.177614 176.126708)">5½ in x 6 in</text>
+    <path d="M 440.285986 295.606518 
+L 490.155819 295.606518 
+L 490.155819 231.191316 
+L 440.285986 231.191316 
+z
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
-    <path d="M 629.375772 295.606518 
-L 679.245606 295.606518 
-L 679.245606 231.191316 
-L 629.375772 231.191316 
-z
-" clip-path="url(#pbd6c829c84)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
-   </g>
-   <g id="patch_8">
-    <path d="M 654.310689 181.569494 
-Q 654.310689 205.379428 654.310689 229.189361 
-" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
-   </g>
-   <g id="text_3">
-    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="654.310689" y="176.126708" transform="rotate(-0 654.310689 176.126708)">Coal bunker</text>
-   </g>
-   <g id="patch_9">
     <path d="M 363.403325 295.606518 
 L 380.026603 295.606518 
 L 380.026603 272.749511 
 L 363.403325 272.749511 
 z
-" clip-path="url(#pbd6c829c84)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="patch_10">
-    <path d="M 293.371346 225.282144 
-Q 331.688424 248.497957 370.005501 271.713769 
-" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
-   </g>
-   <g id="text_4">
-    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="283.4038" y="220.801767" transform="rotate(-0 283.4038 220.801767)">Thrust block</text>
-   </g>
-   <g id="patch_11">
-    <path d="M 126.521615 349.632171 
-L 134.833254 349.632171 
+   <g id="patch_8">
+    <path d="M 134.833254 349.632171 
+L 136.911164 349.632171 
+L 136.911164 314.307705 
 L 134.833254 314.307705 
-L 126.521615 314.307705 
 z
-" clip-path="url(#pbd6c829c84)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="patch_12">
-    <path d="M 174.318348 259.059812 
-Q 153.117185 285.899754 131.916023 312.739696 
-" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
-   </g>
-   <g id="text_5">
-    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="179.508314" y="254.048323" transform="rotate(-0 179.508314 254.048323)">Screw 0.34 dia</text>
-   </g>
-   <g id="patch_13">
+   <g id="patch_9">
     <path d="M 93.275059 347.554261 
 L 109.898337 347.554261 
 L 109.898337 216.645948 
 L 93.275059 216.645948 
 z
-" clip-path="url(#pbd6c829c84)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="patch_14">
-    <path d="M 76.736064 191.380821 
-Q 88.45912 203.29941 100.182176 215.217999 
-" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
-   </g>
-   <g id="text_6">
-    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="70.418052" y="186.516257" transform="rotate(-0 70.418052 186.516257)">Rudder</text>
-   </g>
-   <g id="patch_15">
-    <path d="M 600.285036 234.308181 
-L 618.986223 234.308181 
-L 618.986223 115.867325 
-L 600.285036 115.867325 
+   <g id="patch_10">
+    <path d="M 530.155582 219.195399 
+L 549.895724 219.195399 
+L 549.895724 120.494687 
+L 530.155582 120.494687 
 z
-" clip-path="url(#pbd6c829c84)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="patch_16">
-    <path d="M 674.648886 117.150156 
-Q 643.140234 116.528433 611.631581 115.906709 
-" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
-   </g>
-   <g id="text_7">
-    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="688.5962" y="118.98419" transform="rotate(-0 688.5962 118.98419)">Funnel</text>
-   </g>
-   <g id="patch_17">
+   <g id="patch_11">
     <path d="M 879.168703 363.138584 
 Q 485.997468 363.138584 92.826233 363.138584 
 " style="fill: none; stroke: #1a1a1a; stroke-width: 0.6; stroke-linecap: round"/>
@@ -708,15 +653,109 @@ L 92.826233 363.138584
 L 95.626233 361.738584 
 " style="fill: none; stroke: #1a1a1a; stroke-width: 0.6; stroke-linecap: round"/>
    </g>
-   <g id="text_8">
+   <g id="text_1">
     <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a1a" x="486" y="356.502404" transform="rotate(-0 486 356.502404)">L.O.A. 7.620 m</text>
    </g>
-   <g id="text_9">
+   <g id="text_2">
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1a1a1a" x="48.6" y="78.62077" transform="rotate(-0 48.6 78.62077)">INBOARD PROFILE — machinery arrangement (scale 1:12)</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 522.986793 311.454592 
+L 552.908694 311.454592 
+L 552.908694 297.948178 
+L 522.986793 297.948178 
+z
+" clip-path="url(#p96e2ce5459)" style="fill: #ffffff; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 537.947743 233.740767 
+C 547.866969 233.740767 557.381265 233.302884 564.395217 232.523556 
+C 571.409169 231.744228 575.350119 230.687084 575.350119 229.584948 
+C 575.350119 228.482812 571.409169 227.425668 564.395217 226.64634 
+C 557.381265 225.867012 547.866969 225.429129 537.947743 225.429129 
+C 528.028518 225.429129 518.514222 225.867012 511.50027 226.64634 
+C 504.486318 227.425668 500.545368 228.482812 500.545368 229.584948 
+C 500.545368 230.687084 504.486318 231.744228 511.50027 232.523556 
+C 518.514222 233.302884 528.028518 233.740767 537.947743 233.740767 
+L 537.947743 233.740767 
+z
+" clip-path="url(#p96e2ce5459)" style="fill: none; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 409.11734 310.151886 
+L 135.872209 331.969938 
+" clip-path="url(#p96e2ce5459)" style="fill: none; stroke-dasharray: 4.5,1.8; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-width: 0.9"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 439.075784 126.5509 
+Q 487.819286 177.346296 536.562788 228.141692 
+" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; fill: #8c1c13" transform="translate(393.358576 113.860459)">Boiler, vertical fire-tube</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; fill: #8c1c13" transform="translate(398.534513 121.0621)">0.72 m dia x 0.86 m</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 404.96152 182.166591 
+Q 404.96152 210.874666 404.96152 239.582741 
+" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; fill: #8c1c13" transform="translate(369.068864 168.925067)">Inverted vertical engine</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; fill: #8c1c13" transform="translate(384.303708 176.126708)">5 1/2 in x 6 in</text>
+   </g>
+   <g id="patch_16">
+    <path d="M 465.220903 181.569494 
+Q 465.220903 205.379428 465.220903 229.189361 
+" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="465.220903" y="176.126708" transform="rotate(-0 465.220903 176.126708)">Coal bunker</text>
+   </g>
+   <g id="patch_17">
+    <path d="M 293.371346 225.282144 
+Q 331.688424 248.497957 370.005501 271.713769 
+" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="283.4038" y="220.801767" transform="rotate(-0 283.4038 220.801767)">Thrust block</text>
+   </g>
+   <g id="patch_18">
+    <path d="M 251.532969 344.17845 
+Q 261.342183 333.360447 271.151397 322.542444 
+" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; fill: #8c1c13" transform="translate(185.623731 352.820079)">line of shafting, 6.3° to the waterline,</text>
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; fill: #8c1c13" transform="translate(207.780137 360.02172)">through the stern tube</text>
+   </g>
+   <g id="patch_19">
+    <path d="M 174.826409 259.122235 
+Q 155.925871 285.898169 137.025333 312.674102 
+" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="179.508314" y="254.048323" transform="rotate(-0 179.508314 254.048323)">Screw 0.34 m dia</text>
+   </g>
+   <g id="patch_20">
+    <path d="M 76.736064 191.380821 
+Q 88.45912 203.29941 100.182176 215.217999 
+" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="70.418052" y="186.516257" transform="rotate(-0 70.418052 186.516257)">Rudder</text>
+   </g>
+   <g id="patch_21">
+    <path d="M 674.651924 117.713437 
+Q 608.339201 119.083394 542.026477 120.453352 
+" style="fill: none; stroke: #8c1c13; stroke-width: 0.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8c1c13" x="688.5962" y="118.98419" transform="rotate(-0 688.5962 118.98419)">Funnel</text>
    </g>
   </g>
   <g id="axes_2">
-   <g id="patch_18">
+   <g id="patch_22">
     <path d="M 699.84 502.848 
 L 952.56 502.848 
 L 952.56 425.088 
@@ -726,45 +765,45 @@ z
    </g>
    <g id="matplotlib.axis_1"/>
    <g id="matplotlib.axis_2"/>
-   <g id="patch_19">
+   <g id="patch_23">
     <path d="M 699.84 502.848 
 L 699.84 425.088 
 " style="fill: none; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_20">
+   <g id="patch_24">
     <path d="M 952.56 502.848 
 L 952.56 425.088 
 " style="fill: none; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_21">
+   <g id="patch_25">
     <path d="M 699.84 502.848 
 L 952.56 502.848 
 " style="fill: none; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_22">
+   <g id="patch_26">
     <path d="M 699.84 425.088 
 L 952.56 425.088 
 " style="fill: none; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="text_10">
+   <g id="text_11">
     <text style="font-weight: 700; font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1a1a1a" x="707.4216" y="435.9744" transform="rotate(-0 707.4216 435.9744)">D-002 A</text>
    </g>
-   <g id="text_11">
+   <g id="text_12">
     <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4a4a4a" x="707.4216" y="449.9712" transform="rotate(-0 707.4216 449.9712)">25 ft Steam Cutter — inboard profile</text>
    </g>
-   <g id="text_12">
+   <g id="text_13">
     <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4a4a4a" x="707.4216" y="462.4128" transform="rotate(-0 707.4216 462.4128)">Longitudinal positions are measured from</text>
    </g>
-   <g id="text_13">
+   <g id="text_14">
     <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4a4a4a" x="707.4216" y="474.8544" transform="rotate(-0 707.4216 474.8544)">midships (+ forward). All machinery sits on the</text>
    </g>
-   <g id="text_14">
+   <g id="text_15">
     <text style="font-size: 6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4a4a4a" x="707.4216" y="487.296" transform="rotate(-0 707.4216 487.296)">centreline; boilers are coal-fired, riveted.</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pbd6c829c84">
+  <clipPath id="p96e2ce5459">
    <rect x="48.6" y="82.62077" width="874.8" height="311.686461"/>
   </clipPath>
  </defs>
