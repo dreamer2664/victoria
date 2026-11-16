@@ -33,6 +33,16 @@ WHICH = ARGS[0] if ARGS else "both"
 BLENDS = {
     "steam": ("boats/blend/boat_a_steam_cutter.blend", "steam_cutter_1888"),
     "rowing": ("boats/blend/boat_b_rowing_cutter.blend", "rowing_cutter_25ft"),
+    "whaler": ("boats/blend/boat_c_whaler.blend", "whaler_27ft"),
+}
+
+# Dimensions measured over "the boat" must not be measured over her spars and
+# oars: a 15 ft 3 in yard on a 6 ft beam boat overhangs by design, and so does
+# a stern-hung rudder.  Each boat declares its own allowance.
+DIM_ALLOW = {
+    "steam": dict(loa=0.42, beam=0.30, exclude=()),
+    "rowing": dict(loa=0.42, beam=0.30, exclude=()),
+    "whaler": dict(loa=0.62, beam=0.30, exclude=("Oar_", "Masts_Yards_Rigging")),
 }
 
 # pairs that must not touch: (a, b, why)
@@ -41,6 +51,10 @@ MUST_NOT_TOUCH = {
         ("Propeller", "Planking_Carvel", "screw must clear the hull skin"),
         ("Propeller", "Keel_Stem_Frames_Gunwale", "screw must clear the keel"),
         ("Funnel", None, "funnel passes through the canopy by design"),
+    ],
+    "whaler": [
+        ("Rudder", "Planking_Clinker", "rudder must clear the counter-stem planking"),
+        ("Centreboard", "Planking_Clinker", "trunk is inboard of the planking"),
     ],
     "rowing": [
         ("Rudder", "Planking_Clinker", "rudder must not foul the planking"),
@@ -99,21 +113,30 @@ def check(key):
         mn, mx = world_bounds(o)
         gmn = Vector((min(gmn[i], mn[i]) for i in range(3)))
         gmx = Vector((max(gmx[i], mx[i]) for i in range(3)))
-    loa = gmx.x - gmn.x
+    allow = DIM_ALLOW[key]
+    measured = [o for o in meshes
+                if not any(o.name.startswith(pfx) for pfx in allow["exclude"])]
+    lmn = Vector((1e9,) * 3)
+    lmx = Vector((-1e9,) * 3)
+    for o in measured:
+        mn, mx = world_bounds(o)
+        lmn = Vector((min(lmn[i], mn[i]) for i in range(3)))
+        lmx = Vector((max(lmx[i], mx[i]) for i in range(3)))
+    loa = lmx.x - lmn.x
     hull_obj = next((o for o in meshes if o.name.startswith("Planking")), None)
     loa_hull = None
     if hull_obj is not None:
         hmn, hmx = world_bounds(hull_obj)
         loa_hull = hmx.x - hmn.x
-    beam = gmx.y - gmn.y
+    beam = lmx.y - lmn.y
     want_loa = boat["dimensions"]["loa_m"]
     want_beam = boat["dimensions"]["beam_max_m"]
     if loa_hull is not None:
         report("dimensions", "LOA (hull)", abs(loa_hull - want_loa) < 0.06,
                f"hull {loa_hull:.3f} m vs spec {want_loa:.3f} m")
     report("dimensions", "LOA (extreme, incl. rudder/oars/gear)",
-           abs(loa - want_loa) < 0.42, f"model {loa:.3f} m vs hull {want_loa:.3f} m")
-    report("dimensions", "beam", abs(beam - want_beam) < 0.30,
+           abs(loa - want_loa) < allow["loa"], f"model {loa:.3f} m vs hull {want_loa:.3f} m")
+    report("dimensions", "beam", abs(beam - want_beam) < allow["beam"],
            f"model {beam:.3f} m vs spec {want_beam:.3f} m (extreme, incl. fenders/gunwale)")
 
     # ---- 2. mesh sanity ----
@@ -179,6 +202,18 @@ def check(key):
                f"funnel top {fmx.z:+.3f} m, canopy top {cmx.z:+.3f} m")
 
     # ---- 5. moving-part pivots ----
+    if key == "whaler":
+        oars = [o for o in meshes if o.name.startswith("Oar")]
+        report("pivot", "five oars present (single banked, 3 + 2)", len(oars) == 5,
+               f"{len(oars)} found")
+        report("form", "double ended -- no transom object",
+               "Transom" not in bpy.data.objects,
+               "no Transom in the scene: pointed stem and pointed stern")
+        cb = bpy.data.objects["Centreboard"]
+        cmn, cmx = world_bounds(cb)
+        report("clearance", "centreboard plate drawn up inside the hull",
+               cmn.z > -0.55,
+               f"lowest point of the centreboard assembly {cmn.z:+.3f} m")
     if key == "rowing":
         oars = [o for o in meshes if o.name.startswith("Oar")]
         report("pivot", "ten oars present", len(oars) == 10, f"{len(oars)} found")
@@ -204,7 +239,7 @@ def check(key):
            f"{boat['weights']['loaded_kg']} kg (integrated in boatgen.hydro)")
 
 
-for k in (["steam", "rowing"] if WHICH == "both" else [WHICH]):
+for k in (list(BLENDS) if WHICH == "both" else [WHICH]):
     check(k)
 
 # ---- write the report ----

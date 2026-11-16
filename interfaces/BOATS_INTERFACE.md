@@ -1,7 +1,7 @@
 # Boat interface summary
 
 **For the ship agent.** `interfaces/boats_spec.json` is the machine-readable
-contract for the two ship's boats: overall dimensions, beam and hull depth,
+contract for the three ship's boats: overall dimensions, beam and hull depth,
 davit/lifting attachment positions, cradle contact points, weight estimates,
 boarding locations, and export origin and orientation. The figures are generated
 from the same source as the 3D models (`boats/scripts/boatgen/specs.py`), so they
@@ -38,3 +38,16 @@ _(auto-generated — do not edit by hand)_
 - Cradle points: x=+1.55 z=-0.38, x=-1.55 z=-0.38
 - Boarding: x = +0.55 m, 0.675 m above the waterline
 - Stowage envelope: 8.02 x 2.205 x 0.42 m above the sheer
+
+## 27 ft Double-ended Clinker Whaler (c.1890)  (`whaler_27ft`)
+
+- LOA: 8.23 m / 27 ft 0 in
+- Beam max: 1.829 m / 6 ft 0 in
+- Depth moulded amidships: 1.032 m
+- Draft light / loaded: 0.346 / 0.436 m
+- Freeboard light / loaded: 0.686 / 0.596 m
+- Weight light / loaded: 1007.5 / 1487.5 kg
+- Davit slings at x = +1.85 m and -1.85 m (spread 3.7 m)
+- Cradle points: x=+1.60 z=-0.43, x=-1.60 z=-0.43
+- Boarding: x = +0.70 m, 0.596 m above the waterline
+- Stowage envelope: 8.58 x 2.129 x 4.4 m above the sheer

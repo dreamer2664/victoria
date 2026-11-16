@@ -57,6 +57,30 @@ Config.BOATS = {
 		steer_from_bank = 0.55,    -- how much differential rowing yaws the boat
 		boarding = { x = 0.55, z = 0.68 },
 	},
+	whaler_27ft = {
+		id = "whaler_27ft",
+		displayName = "27 ft Double-ended Whaler",
+		loa_m = 8.230,
+		beam_m = 1.829,
+		depth_m = 1.032,
+		light_kg = 1007.5,
+		loaded_kg = 1487.5,
+		draft_m = 0.436,
+		-- five oars, single banked: three to port, two to starboard
+		oars = 5,
+		single_banked = true,
+		oar_length_m = 5.18,
+		oar_stations_x_m = { 1.769, 0.658, -0.453, -1.564 },
+		davit_points = { { 1.85, 0, 0.62 }, { -1.85, 0, 0.62 } },
+		boarding = { x = 0.70, z = 0.59 },
+		max_speed_studs = 11,
+		stroke_rate = 24,
+		steer_from_bank = 0.50,
+		-- the rig is carried furled; the masts are 5.03 m and 3.96 m tall, so
+		-- she cannot be hoisted under davits with the mainmast stepped
+		masts = { main_m = 5.03, mizzen_m = 3.96 },
+		mainmast_x_m = 0.658,
+	},
 }
 
 -- Colours used by the procedural parts (seats, prompts) so the boats look

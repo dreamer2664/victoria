@@ -39,6 +39,8 @@ local function manifestFor(model)
 		return require(script.Parent.Manifest_steam_cutter_1888)
 	elseif id == "rowing_cutter_25ft" then
 		return require(script.Parent.Manifest_rowing_cutter_25ft)
+	elseif id == "whaler_27ft" then
+		return require(script.Parent.Manifest_whaler_27ft)
 	end
 	return nil
 end

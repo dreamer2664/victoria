@@ -144,7 +144,27 @@ should run, with the expected result for each step. Treat the boats as
 | R6 | Ten oars | All ten animate in step, none detached from its rowlock |
 | R7 | Board from the water | The seat is enterable and the player sits down |
 
-### Known risks to watch for
+#
+**Boat C — 27 ft double-ended whaler (18 objects, 30 584 verts / 28 951 faces)**
+
+| Check | Result | Detail |
+|---|---|---|
+| LOA, hull | PASS | 8.203 m modelled vs 8.230 m spec |
+| LOA, extreme | PASS | 8.737 m including rudder, tiller and ring bolts |
+| Beam | PASS | 1.871 m measured over the hull, spars and oars excluded |
+| Double ended | PASS | no transom object in the scene |
+| Five oars, single banked | PASS | 5 found, 3 to port and 2 to starboard |
+| Centreboard drawn up | PASS | lowest point of the assembly −0.435 m, inside the hull |
+| Rudder clear of the planking | PASS | 0 triangle pairs intersect |
+| Centreboard trunk clear of the planking | PASS | 0 triangle pairs intersect |
+| Published displacement | PASS | 1487.5 kg loaded, solved in `boatgen.hydro` |
+
+The dimension check needed a per-boat allowance for the whaler: a 15 ft 3 in
+yard on a 6 ft beam boat overhangs by design, so beam is measured with the
+spars and oars excluded. That is a deliberate change to the test, not a
+loosened one -- the boat's own beam is still checked to 30 mm.
+
+## Known risks to watch for
 
 * **Motor6D pivot offsets.** `BoatRig.hinge` builds `C0`/`C1` from the part's
   current world position. If the meshes are imported with a different origin

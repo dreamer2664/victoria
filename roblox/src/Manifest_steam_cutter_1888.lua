@@ -7,7 +7,7 @@
 return {
 	boat_id = "steam_cutter_1888",
 	stud_per_m = 3.571429,
-	parts = {{
+	parts = {
 		{ name = "Boiler", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(3.1757, 2.8996, 4.2779), verts = 4069 },
 		{ name = "Boiler_Internals", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(2.4286, 2.4286, 2.9286), verts = 380 },
 		{ name = "Canopy_Cover", role = "deck", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(10.6429, 6.94, 1.6275), verts = 1708 },
@@ -18,7 +18,7 @@ return {
 		{ name = "Engine_Bearers_Floors", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(10.3571, 4.1943, 0.7154), verts = 320 },
 		{ name = "Frames", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(25.7857, 7.4314, 4.7443), verts = 5376 },
 		{ name = "Funnel", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(0.9175, 1.3436, 3.6379), verts = 360 },
-		{ name = "Gear_Nav_Safety", role = "gear", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(25.7289, 8.0371, 6.3886), verts = 2258 },
+		{ name = "Gear_Nav_Safety", role = "gear", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(25.7289, 8.0371, 6.3886), verts = 3798 },
 		{ name = "Inner_Diagonal_Skin", role = "hull", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(22.2775, 7.4414, 4.7889), verts = 10955 },
 		{ name = "Keel_Stem_Frames_Gunwale", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(27.2132, 7.9414, 5.6436), verts = 5238 },
 		{ name = "Pipework_Fittings", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(14.5536, 2.9082, 5.0386), verts = 1214 },

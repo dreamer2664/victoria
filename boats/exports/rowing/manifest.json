@@ -20,20 +20,20 @@
       "bounds_max_m": [
         3.6199,
         1.092,
-        0.7365
+        0.7881
       ],
       "size_m": [
         7.2949,
         1.8283,
-        1.0335
+        1.0852
       ],
       "size_studs": [
         26.053,
         6.53,
-        3.691
+        3.876
       ],
-      "vertices": 1286,
-      "triangles": 2412
+      "vertices": 1996,
+      "triangles": 3804
     },
     {
       "name": "Floorboards",
@@ -161,7 +161,7 @@
     },
     {
       "name": "Mast_Clamp",
-      "role": "furniture",
+      "role": "rig",
       "origin_m": [
         0.0,
         0.0,

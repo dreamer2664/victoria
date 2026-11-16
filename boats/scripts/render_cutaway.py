@@ -32,6 +32,7 @@ WHICH = args[0] if args else "both"
 MODELS = {
     "steam": "boats/blend/boat_a_steam_cutter.blend",
     "rowing": "boats/blend/boat_b_rowing_cutter.blend",
+    "whaler": "boats/blend/boat_c_whaler.blend",
 }
 
 CUT_KEEP = {
@@ -39,6 +40,9 @@ CUT_KEEP = {
               "Pipework_Fittings", "Gear_Nav_Safety", "Seats", "Engine_Bearers_Floors",
               "Frames", "Decks", "Coamings", "Canopy_Frame", "Transom", "Funnel",
               "Keel_Stem_Frames_Gunwale", "Planking_Carvel", "Inner_Diagonal_Skin"],
+    "whaler": ["Planking_Clinker", "Frames", "Keel_Stems", "Keelson_Gunwale",
+               "Structure_Details", "Thwarts_Benches", "Thwart_Knees",
+               "Floorboards", "Centreboard", "Rudder", "Fittings"],
     "rowing": ["Planking_Clinker", "Frames", "Keel_Stem_Sternpost", "Transom",
                "Keelson_Gunwale", "Structure_Details", "Thwarts_Benches", "Thwart_Knees",
                "Quarter_Knees", "Floorboards", "Rowlocks", "Fittings", "Mast_Clamp",
@@ -82,7 +86,8 @@ def render_boat(key):
     for name in ("Canopy_Cover",):
         if name in bpy.data.objects:
             bpy.data.objects[name].hide_render = True
-    bisect_objects(-0.16 if key == "steam" else -0.10)
+    y_cut = -0.16 if key == "steam" else -0.10
+    bisect_objects(y_cut)
 
     # a sectioned model needs a section fill: give the cap a dark red lead tint
     sec = bpy.data.materials.new("SectionFill")
@@ -97,7 +102,7 @@ def render_boat(key):
             me = ob.data
             for p in me.polygons:
                 # faces created by the cap are the newest and are flat at y=cut
-                if abs(p.normal.y) > 0.9 and abs(p.center.y - (-0.16 if key == "steam" else -0.10)) < 0.01:
+                if abs(p.normal.y) > 0.9 and abs(p.center.y - y_cut) < 0.01:
                     p.material_index = idx
 
     bl.studio(world_strength=0.55, ground_z=-0.80, key_energy=1100)
@@ -106,6 +111,12 @@ def render_boat(key):
             "cutaway_a": ((5.6, -6.2, 3.1), (0.1, 0.1, 0.45), 50),
             "cutaway_b": ((1.2, -5.0, 2.2), (0.1, 0.1, 0.55), 42),
             "cutaway_c": ((-5.0, -5.4, 2.6), (-0.6, 0.1, 0.40), 50),
+        }
+    elif key == "whaler":
+        shots = {
+            "cutaway_a": ((5.0, -5.6, 2.8), (0.1, 0.1, 0.35), 50),
+            "cutaway_b": ((0.6, -4.8, 2.0), (0.0, 0.1, 0.30), 42),
+            "cutaway_c": ((-4.6, -4.8, 2.4), (-0.6, 0.1, 0.35), 50),
         }
     else:
         shots = {
@@ -120,5 +131,5 @@ def render_boat(key):
     print("CUTAWAY COMPLETE", key)
 
 
-for k in (["steam", "rowing"] if WHICH == "both" else [WHICH]):
+for k in (list(BLENDS) if WHICH == "both" else [WHICH]):
     render_boat(k)

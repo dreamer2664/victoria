@@ -115,7 +115,13 @@ def draw_lines(sheets, hull, name, code, extra_notes=()):
     ax.text(x[int(len(x) * 0.62)], zs[int(len(zs) * 0.62)] - 0.155, "deck", fontsize=5, color=THIN)
 
     xb, xsx = hull.x_bow, hull.x_stern
-    dim(ax, (xb, -0.72), (xsx, -0.72), f"L.O.A. {hull.loa:.2f} m  (25 ft 0 in)", offset=-0.10)
+    def _ft_in(m):
+        # round to whole inches *before* splitting, or 27 ft comes out as
+        # "26 ft 12 in" at the floating-point boundary
+        total_in = int(round(m / 0.0254))
+        return f"{total_in // 12} ft {total_in % 12} in"
+    dim(ax, (xb, -0.72), (xsx, -0.72),
+        f"L.O.A. {hull.loa:.2f} m  ({_ft_in(hull.loa)})", offset=-0.10)
     dim(ax, (0, hull.keel_z(1.35 / hull.loa + 0.5)), (0, 0.0),
         f"draft {abs(min(zk)):.2f} m", offset=0.22, vertical=True, colour=BLUE)
     dim(ax, (xb * 0.86, hull.keel_z(0.07)), (xb * 0.86, hull.sheer_z(0.07)),
@@ -144,7 +150,7 @@ def draw_lines(sheets, hull, name, code, extra_notes=()):
     dim(ax2, (xsx * 0.55, 0), (xsx * 0.55, hb_mid),
         f"½ beam {hb_mid:.3f} m", offset=-0.14, vertical=True)
     ax2.text(xsx + 0.1, half + 0.42,
-             f"beam max {hull.bmax:.3f} m (7 ft 0 in) · half-breadth shown",
+             f"beam max {hull.bmax * 2:.3f} m ({_ft_in(hull.bmax * 2)}) · half-breadth shown",
              fontsize=6, color=THIN)
     ax2.set_xlim(xsx - 0.3, xb + 0.3)
     ax2.set_ylim(-0.15, 1.35)
@@ -258,11 +264,26 @@ ROW_NOTES = [
 ]
 
 
+WHALER_NOTES = [
+ "1. Double ended: pointed stem and pointed stern, no transom. 27 ft x 6 ft, clinker built,",
+ "    nine strakes on 68 frames, wych elm, as the RN whaler type was built from the 1890s.",
+ "2. Draught 1 ft 5 in with the drop keel raised; the load waterline drawn here is solved from",
+ "    the weight table, not assumed, and lands within 5 mm of the documented figure.",
+ "3. Five oars, single banked: three from the port side and two from the starboard. The",
+ "    bowman's oar is a foot shorter than the other four.",
+ "4. Standing-lug yawl rig: 16 ft 6 in mainmast, 13 ft mizzen, 15 ft 3 in main yard. Canvas is",
+ "    carried furled and stopped along the yards, which is the stowed condition.",
+ "5. Drop keel in a trunk amidships, worked by an iron plate head and handle; plate shown up.",
+]
+
+
 def main():
     draw_lines(None, specs.STEM_CUTTER, "25 ft Steam Cutter — lines & general arrangement",
                "D-001 A", STEAM_NOTES)
     draw_lines(None, specs.ROW_CUTTER, "25 ft Clinker Rowing Cutter — lines & general arrangement",
                "D-003 B", ROW_NOTES)
+    draw_lines(None, specs.WHALER, "27 ft Double-ended Whaler — lines & general arrangement",
+               "D-004 C", WHALER_NOTES)
 
     steam_layout = [
         {"kind": "cyl", "x": (0.50 - 0.18, 0.50 + 0.18), "z": (-0.37, 0.49),

@@ -134,3 +134,33 @@ Admiralty-style drawings and adapted for liner service.
 | Structural system | medium-high — documented type | high — documented and visible on the model |
 | Machinery | medium — documented type, assumed sizing | n/a |
 | Finish and fittings | medium — period-attested, placement ours | medium-high |
+
+---
+
+# Boat C — 27 ft double-ended whaler
+
+## Sources
+
+| Ref | What it is | What it settles |
+|---|---|---|
+| RN whaler type (27 ft) | Standard Royal Navy seaboat from the 1890s to the 1960s, derived from the commercial whaleboat | 27 ft × 6 ft, draught 1 ft 5 in, double ended, clinker, drop keel, standing lug yawl, 20.5 cwt |
+| RNZN Naval Whalers (National Museum of the Royal New Zealand Navy) | Service history and rig detail of the type | five oars single banked (three one side, two the other); 17 ft oars, bowman's 16 ft; mainmast 16 ft 6 in, mizzen 13 ft, yard 15 ft 3 in |
+| RMG ZAZ7497, 'Whaleboat, 27ft' section | Admiralty sectional plan of the type | clinker strake count and the fine double-ended form |
+| RMG SLR1712 | 1:12 model of a related 27 ft whaler, rudder and tiller, oars | steering arrangement and stowage |
+
+## Documented / reconstructed
+
+| Element | Status | Note |
+|---|---|---|
+| Length 27 ft, beam 6 ft | **DOCUMENTED** | The two figures the whole form is hung on. |
+| Draught 1 ft 5 in with plate up | **DOCUMENTED** | The modelled loaded draught solves to 0.436 m against 0.432 m. |
+| Double ended, no transom | **DOCUMENTED** | The defining feature of the type. |
+| Clinker construction, elm | **DOCUMENTED** | Wych or sand elm in England. |
+| Drop keel | **DOCUMENTED** | Modelled with the plate up. |
+| Five oars single banked, 3 + 2 | **DOCUMENTED** | Modelled exactly so, with a shorter bowman's oar. |
+| Masts 16 ft 6 in / 13 ft, yard 15 ft 3 in | **DOCUMENTED** | Mast and yard lengths as modelled. |
+| Standing-lug yawl rig | **DOCUMENTED (type)** | The rigging arrangement is a reasonable reading, not a measured plan. |
+| Normal load 20.5 cwt | **DOCUMENTED** | The itemised weight table lands within 1.3% of it. |
+| Hull lines | **RECONSTRUCTED** | No Admiralty body plan was used; the form is drawn to the documented length, beam and draught with the type's characteristic fine ends. |
+| Frame spacing and scantlings | **RECONSTRUCTED** | Taken from period practice and the other two boats. |
+| Sails | **NOT MODELLED SET** | Canvas is modelled furled and stopped along the yards, which is the condition of a boat in the davits. |

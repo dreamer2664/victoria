@@ -28,6 +28,7 @@ STUD = 1.0 / 0.28
 BLENDS = {
     "steam": ("boats/blend/boat_a_steam_cutter.blend", "steam_cutter_1888"),
     "rowing": ("boats/blend/boat_b_rowing_cutter.blend", "rowing_cutter_25ft"),
+    "whaler": ("boats/blend/boat_c_whaler.blend", "whaler_27ft"),
 }
 
 # role of each part in the game model
@@ -44,6 +45,8 @@ ROLES = {
     "Seats": "furniture", "Thwarts_Benches": "furniture", "Thwart_Knees": "furniture",
     "Quarter_Knees": "furniture", "Floorboards": "furniture", "Mast_Clamp": "furniture",
     "Rowlocks": "gear", "Fittings": "gear", "Gear_Nav_Safety": "gear",
+    "Keel_Stems": "structure", "Centreboard": "structure",
+    "Masts_Yards_Rigging": "rig", "Mast_Clamp": "rig",
 }
 
 
@@ -100,6 +103,6 @@ def export_boat(key):
     print("EXPORTED", key, len(meshes), "parts ->", outdir)
 
 
-for k in (["steam", "rowing"] if WHICH == "both" else [WHICH]):
+for k in (list(BLENDS) if WHICH == "both" else [WHICH]):
     export_boat(k)
 print("EXPORT COMPLETE")

@@ -587,6 +587,29 @@ def _gear(mb):
     p = HULL.surface(0.70, 0.16)
     cyl(mb, (p[0], -0.35, p[2] + 0.06), (p[0], -0.35, p[2] + 0.20), 0.085, seg=14,
         mat=MAT["wood_deck"], r1=0.10)
+    # four oars stowed along the side benches, blades forward -- a steam
+    # cutter rows as well as steams, and oars are what she is first away with
+    # when the boiler is cold
+    for k, s_ in enumerate((1, -1)):
+        for j in range(2):
+            xi = HULL.xi_of(2.35 - 0.55 * j)
+            p = HULL.surface(xi, 0.86)
+            pivot = np.array([2.55 - 0.55 * j, s_ * (0.52 + 0.075 * k),
+                              HULL.sheer_z(xi) - DECK_DROP - 0.115 + 0.021 * k])
+            omb = MeshBuilder("Oar")
+            parts.oar(omb, length=3.30, inboard=0.95, blade_len=0.55,
+                      blade_w=0.145, pivot_origin=False)
+            roll = math.radians(92.0)
+            R = np.array([[1, 0, 0], [0, math.cos(roll), -math.sin(roll)],
+                          [0, math.sin(roll), math.cos(roll)]])
+            # local +X runs aft (blades forward means the oar points -X)
+            yaw = math.pi
+            Ry = np.array([[math.cos(yaw), -math.sin(yaw), 0], [math.sin(yaw), math.cos(yaw), 0], [0, 0, 1]])
+            mb.append_builder(omb, offset=pivot + np.array([-1.30, 0, 0]), rot=Ry @ R)
+    # grapnel stowed forward on the starboard side deck
+    xg = 2.95
+    zg = sheer_at(xg) - DECK_DROP + 0.03
+    parts.grapnel(mb, np.array([xg, -0.42, zg]), scale=0.9)
     # compass box on the foredeck
     xc = 3.30
     zc = sheer_at(xc) - DECK_DROP + 0.03

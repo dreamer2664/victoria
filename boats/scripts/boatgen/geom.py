@@ -284,6 +284,24 @@ class MeshBuilder:
             self.add_face([base + i for i in range(segments)][::-1], mat)
 
     # ---- symmetry --------------------------------------------------------
+    def append_builder(self, other, offset=(0.0, 0.0, 0.0), rot=None):
+        """Merge another builder's geometry into this one.
+
+        Lets a part that is authored in its own local space (an oar, a
+        swivelling rowlock) be stowed anywhere in the boat without every call
+        site re-deriving a transform.
+        """
+        base = len(self.verts)
+        off = np.asarray(offset, dtype=float)
+        for v in other.verts:
+            p = np.asarray(v, dtype=float)
+            if rot is not None:
+                p = rot @ p
+            self.verts.append(tuple(p + off))
+        for f, m in zip(other.faces, other.mat_indices):
+            self.add_face([base + i for i in f], m)
+        return base
+
     def mirror_y(self):
         """Append an XZ-mirror of everything built so far (starboard half).
 

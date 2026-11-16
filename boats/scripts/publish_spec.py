@@ -27,7 +27,7 @@ def main():
     lines = ["# Boat interface summary",
              "",
              "**For the ship agent.** `interfaces/boats_spec.json` is the machine-readable",
-             "contract for the two ship's boats: overall dimensions, beam and hull depth,",
+             "contract for the three ship's boats: overall dimensions, beam and hull depth,",
              "davit/lifting attachment positions, cradle contact points, weight estimates,",
              "boarding locations, and export origin and orientation. The figures are generated",
              "from the same source as the 3D models (`boats/scripts/boatgen/specs.py`), so they",

@@ -208,6 +208,106 @@
         "width_note": "boats are stowed with the 3.66 m oars laid inboard along the thwarts (the davit condition); with oars out in the rowlocks the boat needs beam + 4.2 m of clear water either side, so rowing is only possible after lowering",
         "height_above_sheer_m": 0.42
       }
+    },
+    {
+      "id": "whaler_27ft",
+      "name": "27 ft Double-ended Clinker Whaler (c.1890)",
+      "type": "pulling/sailing sea boat, lapstrake (clinker), double ended, drop keel",
+      "reference": "RN 27 ft whaler type (standard seaboat from the 1890s; RNZN Naval Whalers; RMG ZAZ7497 'Whaleboat, 27ft' sectional plan)",
+      "dimensions": {
+        "loa_m": 8.23,
+        "loa_ft": "27 ft 0 in",
+        "transom": "none -- pointed stem and pointed stern (double ended)",
+        "beam_max_m": 1.829,
+        "beam_ft": "6 ft 0 in",
+        "depth_moulded_amidships_m": 1.032,
+        "draft_light_m": 0.346,
+        "draft_loaded_m": 0.436,
+        "draft_note": "documented draught is 1 ft 5 in (0.432 m) with the plate up; the solved loaded draught above is within 5 mm of it",
+        "freeboard_light_m": 0.686,
+        "freeboard_loaded_m": 0.596,
+        "sheer_height_bow_m": 0.708,
+        "sheer_height_stern_m": 0.696
+      },
+      "weights": {
+        "hull_planking_9_strakes_kg": 395,
+        "keel_stems_aprons_kg": 105,
+        "gunwales_inwales_knees_kg": 78,
+        "thwarts_bench_floorboards_kg": 84,
+        "oars_5_kg": 97.5,
+        "masts_yards_rigging_sails_kg": 122,
+        "centreboard_case_plate_kg": 44,
+        "rudder_tiller_yoke_kg": 20,
+        "fittings_mooring_kg": 36,
+        "paint_varnish_kg": 26,
+        "light_kg": 1007.5,
+        "crew_kg": 480,
+        "loaded_kg": 1487.5
+      },
+      "hydrostatics_loaded": {
+        "waterline_z_m": 0.0,
+        "draft_m": 0.436,
+        "freeboard_amidships_m": 0.596,
+        "volume_m3": 1.4512,
+        "displacement_kg": 1487.5,
+        "lcb_m_from_mid": -0.148,
+        "lcf_m_from_mid": -0.157,
+        "waterplane_m2": 5.567,
+        "midship_area_m2": 0.2694,
+        "lwl_m": 8.01,
+        "block_coeff": 0.2212,
+        "prismatic_coeff": 0.6547
+      },
+      "hydrostatics_light": {
+        "waterline_z_m": -0.089,
+        "draft_m": 0.346,
+        "freeboard_amidships_m": 0.686,
+        "volume_m3": 0.9829,
+        "displacement_kg": 1007.5,
+        "lcb_m_from_mid": -0.144,
+        "lcf_m_from_mid": -0.161,
+        "waterplane_m2": 4.776,
+        "midship_area_m2": 0.1854,
+        "lwl_m": 8.01,
+        "block_coeff": 0.1885,
+        "prismatic_coeff": 0.6444
+      },
+      "davit_attachment_points": {
+        "note": "single pair of davits; hoisted by two slings, as for the cutters",
+        "fore_sling_x_m": 1.85,
+        "aft_sling_x_m": -1.85,
+        "sling_spread_m": 3.7,
+        "hook_height_above_sheer_m": 1.15,
+        "lifting_eyes": "galvanised eyebolts through the keelson at x=+1.85 / x=-1.85, clear of the centreboard trunk",
+        "mast_note": "masts are 5.03 m and 3.96 m; the mainmast must be lowered to hoist under davits with less than 5 m of headroom above the sheer"
+      },
+      "cradle_contact_points": [
+        {
+          "x_m": 1.6,
+          "z_m": -0.43,
+          "half_breadth_m": 0.52
+        },
+        {
+          "x_m": -1.6,
+          "z_m": -0.427,
+          "half_breadth_m": 0.52
+        }
+      ],
+      "boarding": {
+        "boarding_point": "port side at the after thwart, inboard of the mizzen",
+        "boarding_x_m": 0.7,
+        "boarding_height_above_waterline_m": 0.596,
+        "seat_capacity": 27,
+        "rowers": 5,
+        "coxswain_position_x_m": -1.6,
+        "oars_note": "five oars single banked -- three on the port side, two on the starboard side -- as the type was pulled"
+      },
+      "footprint_for_ship": {
+        "length_for_stowage_m": 8.58,
+        "width_for_stowage_m": 2.129,
+        "height_above_sheer_m": 4.4,
+        "height_note": "with the mainmast stepped; 0.45 m with both masts struck and laid in the boat"
+      }
     }
   ]
 }

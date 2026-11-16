@@ -1,23 +1,29 @@
 # OPERATION VICTORIA — the ship's boats
 
-Two small craft for the 1889 British ocean liner *Victoria*, built from first
+Three small craft for the 1889 British ocean liner *Victoria*, built from first
 principles as complete, operable vessels and delivered as Blender models,
 Roblox models and scripts, drawings and documentation.
 
-| | **Boat A** | **Boat B** |
-|---|---|---|
-| Type | 25 ft steam cutter / steam tender | 25 ft clinker rowing cutter, 10-oared |
-| Length overall | 7.620 m (25 ft 0 in) | 7.620 m (25 ft 0 in) |
-| Beam | 2.134 m (7 ft 0 in) | 1.905 m (6 ft 3 in) |
-| Draught loaded | 0.527 m | 0.397 m |
-| Displacement loaded | 3532 kg | 1897 kg |
-| Construction | carvel over double-diagonal, 12 frames | clinker, 11 strakes, oak frames |
-| Machinery | 5½ × 6 in inverted vertical engine, coal-fired vertical boiler, 2-bladed screw | 10 oars, steering by bank imbalance |
-| Blender file | `blend/boat_a_steam_cutter.blend` | `blend/boat_b_rowing_cutter.blend` |
-| Objects / faces | 20 / 45 420 | 24 / 29 948 |
+They are deliberately three different answers to the same question. A steamer,
+a pulling cutter and a double-ended sea boat: one with machinery, one with ten
+oars and a transom, and one with two masts and no transom at all.
+
+| | **Boat A** | **Boat B** | **Boat C** |
+|---|---|---|---|
+| Type | 25 ft steam cutter / steam tender | 25 ft clinker rowing cutter, 10-oared | 27 ft double-ended whaler |
+| Length overall | 7.620 m (25 ft 0 in) | 7.620 m (25 ft 0 in) | 8.230 m (27 ft 0 in) |
+| Beam | 2.134 m (7 ft 0 in) | 1.905 m (6 ft 3 in) | 1.829 m (6 ft 0 in) |
+| Draught loaded | 0.527 m | 0.397 m | 0.436 m |
+| Displacement loaded | 3532 kg | 1897 kg | 1487 kg |
+| Ends | transom | transom | **double ended — no transom** |
+| Construction | carvel over double-diagonal, 12 frames | clinker, 11 strakes, oak frames | clinker, 9 strakes, 68 frames, drop keel |
+| Propulsion | 5½ × 6 in inverted vertical engine, coal-fired boiler, 2-bladed screw | 10 oars, double banked | 5 oars single banked + standing-lug yawl rig |
+| Blender file | `blend/boat_a_steam_cutter.blend` | `blend/boat_b_rowing_cutter.blend` | `blend/boat_c_whaler.blend` |
+| Objects / faces | 20 / 45 420 | 24 / 29 948 | 18 / 28 949 |
 
 ![steam cutter](renders/steam_hero.png)
 ![rowing cutter](renders/rowing_hero.png)
+![whaler](renders/whaler_hero.png)
 
 The boats are rendered afloat on a sea surface placed at **z = 0**, which is
 the load waterline by the authoring convention — so the renders double as a
@@ -39,6 +45,7 @@ boats/
 │   ├── boatgen/          the geometry library (see below)
 │   ├── build_steam_cutter.py
 │   ├── build_rowing_cutter.py
+│   ├── build_whaler.py
 │   ├── render_sheet.py   the published render set
 │   ├── render_cutaway.py sectioned renders
 │   ├── export_all.py     GLB/FBX + manifest
@@ -48,8 +55,10 @@ boats/
 ├── docs/
 │   ├── CONSTRUCTION_A_steam_cutter.md
 │   ├── CONSTRUCTION_B_rowing_cutter.md
+│   ├── CONSTRUCTION_C_whaler.md
 │   ├── TESTING.md
-│   └── VERIFICATION.md   (generated: 23 checks, 0 failures)
+│   ├── REALISM_PASS.md   how the models and renders were pushed to look right
+│   └── VERIFICATION.md   (generated)
 ├── HISTORICAL_EVIDENCE.md
 └── refs/rmg/             the reference photographs
 ```
@@ -145,7 +154,8 @@ dimension are **reconstructed** to those dimensions and are labelled as such.
 ## Status
 
 * Geometry, drawings, documentation, interface spec — **complete and verified**
-  (23 automated checks, 0 failures: `docs/VERIFICATION.md`).
+  (30 automated checks over the three boats, 0 failures: `docs/VERIFICATION.md`).
+* All 13 Luau modules and all three generated manifests compile.
 * Roblox scripts — **complete and compiling**, but **not yet run in Studio**;
   the acceptance test list to close that out is in `docs/TESTING.md` §2.
 
@@ -153,9 +163,11 @@ dimension are **reconstructed** to those dimensions and are labelled as such.
 
 Recorded here rather than glossed over:
 
-1. **No traceable drawing for Boat A's hull.** The 1888 plan has no public
-   image, so the lines are a reconstruction to the published dimensions. This
-   is stated in the drawings, the evidence file and the render captions.
+1. **No traceable drawing for Boat A's hull, or for Boat C's.** The 1888 steam
+   cutter plan has no public image, so its lines are a reconstruction to the
+   published dimensions; the whaler is likewise a reconstruction of a *type* —
+   its length, beam, draught and weight are documented, its lines are not.
+   Both are stated in the drawings, the evidence file and the render captions.
 2. **Gunwale and fittings are modelled, not joinery.** Both boats now carry a
    moulded cap rail, a half-round rubbing strake and a metal stem band, but
    the joints between them (scarphs, fastenings, the way the cap is let down
@@ -173,3 +185,8 @@ Recorded here rather than glossed over:
 6. **Cutting tools and loose gear** are modelled where they affect how the
    boat works (shovel, bucket, boat hook). The boats are not populated with
    every item a real boat's inventory lists.
+7. **Boat C's sails are stowed, not set.** The canvas is modelled furled and
+   stopped along the yards, which is the condition of a boat in the davits.
+   There is no set sail to look at. The spars, hoops, gaskets, shrouds, stays
+   and halyards are all modelled, so setting the canvas would mean adding one
+   surface per sail, not rebuilding the rig.

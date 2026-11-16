@@ -30,7 +30,7 @@ import numpy as np
 from mathutils import Matrix, Vector
 
 from boatgen import bl, parts, specs
-from boatgen.geom import MeshBuilder, cyl, lerp, unit
+from boatgen.geom import MeshBuilder, cyl, lerp, torus, unit
 from boatgen.hull import (
     MAT,
     solid_between_sections,
@@ -340,6 +340,13 @@ def _fittings(mb):
     # topsides from every angle
     p = HULL.surface(0.30, 0.955)
     parts.boat_hook(mb, np.array([p[0], -p[1] + 0.085, p[2] + 0.03]), length=1.75)
+    # bilge pump beside the after thwart, on the starboard side of the keelson
+    p = HULL.surface(HULL.xi_of(-2.15), 0.10)
+    parts.bilge_pump(mb, np.array([p[0], -0.24, p[2] + 0.02]), height=0.50)
+    # painter, flaked down on the foredeck
+    for k in range(6):
+        c = np.array([2.20 - 0.055 * k, 0.10 + 0.030 * (k % 2), HULL.sheer_z(0.20) - 0.02 + 0.012 * k])
+        torus(mb, c, 0.135, 0.014, seg=18, rseg=5, mat=MAT["rope"])
     # bailer
     p = HULL.surface(0.62, 0.12)
     cyl(mb, (p[0], 0.30, p[2] + 0.05), (p[0], 0.30, p[2] + 0.16), 0.075, seg=14,

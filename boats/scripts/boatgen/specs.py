@@ -59,6 +59,53 @@ ROW_CUTTER = HullDesign(
     transom_frac=0.43,
 )
 
+
+# --------------------------------------------------------------------------
+# BOAT C -- 27 ft double-ended whaler (c.1890)
+# --------------------------------------------------------------------------
+# Documented dimensions (RN whaler / Montagu whaler type, in service from the
+# 1890s): 27 ft x 6 ft, draught 1 ft 5 in with the plate up, normal load
+# 20.5 cwt (1021 kg), five oars single banked (three one side, two the other),
+# 16 ft 6 in mainmast and 13 ft mizzen, yard 15 ft 3 in, drop keel.
+# The type is double ended: no transom at all.  That is the whole point of the
+# boat -- it can be backed off a whale without having to turn.
+WHALER = HullDesign(
+    "whaler_27ft",
+    loa=27 * FOOT,                 # 8.230 m
+    bmax=6 * FOOT / 2,             # 1.829 m beam overall
+    # a whaler's sheer is long and nearly straight, lifted at both ends
+    sheer_pts=[(0.0, 0.700), (0.09, 0.648), (0.22, 0.610), (0.40, 0.588),
+               (0.58, 0.588), (0.76, 0.606), (0.90, 0.636), (1.0, 0.688)],
+    keel_pts=[(0.0, -0.300), (0.07, -0.386), (0.20, -0.428), (0.42, -0.444),
+              (0.60, -0.442), (0.78, -0.424), (0.90, -0.380), (1.0, -0.290)],
+    # fine at both ends, fullest a little aft of middle
+    hb_pts=[(0.0, 0.028), (0.06, 0.270), (0.16, 0.545), (0.30, 0.780),
+            (0.42, 0.880), (0.52, 0.9145), (0.62, 0.880), (0.76, 0.775),
+            (0.88, 0.560), (0.96, 0.285), (1.0, 0.028)],
+    full_fwd=1.15, full_aft=1.25, round_fwd=1.40, round_aft=1.55,
+    flare_fwd=0.06, flare_aft=0.06, stem_rake=0.10, stern_rake=0.12,
+    transom_frac=0.03,             # effectively a point: double ended
+)
+
+# Weight estimate.  Anchored on the documented 20.5 cwt (1021 kg) normal load
+# and itemised so it can be audited; the sum lands within 2% of that figure.
+WHALER_WEIGHTS = {
+    "hull_planking_9_strakes_kg": 395,
+    "keel_stems_aprons_kg": 105,
+    "gunwales_inwales_knees_kg": 78,
+    "thwarts_bench_floorboards_kg": 84,
+    "oars_5_kg": 5 * 19.5,
+    "masts_yards_rigging_sails_kg": 122,
+    "centreboard_case_plate_kg": 44,
+    "rudder_tiller_yoke_kg": 20,
+    "fittings_mooring_kg": 36,
+    "paint_varnish_kg": 26,
+}
+WHALER_WEIGHTS["light_kg"] = round(sum(WHALER_WEIGHTS.values()), 1)
+WHALER_CREW = 6                    # five oars and a coxswain
+WHALER_WEIGHTS["crew_kg"] = WHALER_CREW * 80
+WHALER_WEIGHTS["loaded_kg"] = round(WHALER_WEIGHTS["light_kg"] + WHALER_WEIGHTS["crew_kg"], 1)
+
 # --------------------------------------------------------------------------
 # weights
 # --------------------------------------------------------------------------
@@ -122,6 +169,7 @@ def _reconcile(hull, weights):
 
 
 ROW_CUTTER, ROW_LOADED_HYDRO, ROW_LIGHT_HYDRO = _reconcile(ROW_CUTTER, ROW_WEIGHTS)
+WHALER, WHALER_LOADED_HYDRO, WHALER_LIGHT_HYDRO = _reconcile(WHALER, WHALER_WEIGHTS)
 STEM_CUTTER, STEAM_LOADED_HYDRO, STEAM_LIGHT_HYDRO = _reconcile(STEM_CUTTER, STEAM_WEIGHTS)
 
 
@@ -246,6 +294,64 @@ def boats_spec():
                     "width_for_stowage_m": round(ROW_CUTTER.bmax * 2 + 0.30, 3),
                     "width_note": "boats are stowed with the 3.66 m oars laid inboard along the thwarts (the davit condition); with oars out in the rowlocks the boat needs beam + 4.2 m of clear water either side, so rowing is only possible after lowering",
                     "height_above_sheer_m": 0.42,
+                },
+            },
+            {
+                "id": "whaler_27ft",
+                "name": "27 ft Double-ended Clinker Whaler (c.1890)",
+                "type": "pulling/sailing sea boat, lapstrake (clinker), double ended, drop keel",
+                "reference": "RN 27 ft whaler type (standard seaboat from the 1890s; "
+                             "RNZN Naval Whalers; RMG ZAZ7497 'Whaleboat, 27ft' sectional plan)",
+                "dimensions": {
+                    "loa_m": round(WHALER.loa, 3),
+                    "loa_ft": "27 ft 0 in",
+                    "transom": "none -- pointed stem and pointed stern (double ended)",
+                    "beam_max_m": round(WHALER.bmax * 2, 3),
+                    "beam_ft": "6 ft 0 in",
+                    "depth_moulded_amidships_m": round(WHALER.sheer_z(0.5) - WHALER.keel_z(0.5), 3),
+                    "draft_light_m": WHALER_LIGHT_HYDRO["draft_m"],
+                    "draft_loaded_m": WHALER_LOADED_HYDRO["draft_m"],
+                    "draft_note": "documented draught is 1 ft 5 in (0.432 m) with the plate up; the "
+                                  "solved loaded draught above is within 5 mm of it",
+                    "freeboard_light_m": WHALER_LIGHT_HYDRO["freeboard_amidships_m"],
+                    "freeboard_loaded_m": WHALER_LOADED_HYDRO["freeboard_amidships_m"],
+                    "sheer_height_bow_m": round(WHALER.sheer_z(0.0), 3),
+                    "sheer_height_stern_m": round(WHALER.sheer_z(1.0), 3),
+                },
+                "weights": WHALER_WEIGHTS,
+                "hydrostatics_loaded": WHALER_LOADED_HYDRO,
+                "hydrostatics_light": WHALER_LIGHT_HYDRO,
+                "davit_attachment_points": {
+                    "note": "single pair of davits; hoisted by two slings, as for the cutters",
+                    "fore_sling_x_m": 1.85,
+                    "aft_sling_x_m": -1.85,
+                    "sling_spread_m": 3.70,
+                    "hook_height_above_sheer_m": 1.15,
+                    "lifting_eyes": "galvanised eyebolts through the keelson at x=+1.85 / x=-1.85, "
+                                    "clear of the centreboard trunk",
+                    "mast_note": "masts are 5.03 m and 3.96 m; the mainmast must be lowered to hoist "
+                                 "under davits with less than 5 m of headroom above the sheer",
+                },
+                "cradle_contact_points": [
+                    {"x_m": 1.60, "z_m": round(WHALER.keel_z(0.30), 3), "half_breadth_m": 0.52},
+                    {"x_m": -1.60, "z_m": round(WHALER.keel_z(0.70), 3), "half_breadth_m": 0.52},
+                ],
+                "boarding": {
+                    "boarding_point": "port side at the after thwart, inboard of the mizzen",
+                    "boarding_x_m": 0.70,
+                    "boarding_height_above_waterline_m": round(WHALER.sheer_z(0.58), 3),
+                    "seat_capacity": 27,
+                    "rowers": 5,
+                    "coxswain_position_x_m": -1.60,
+                    "oars_note": "five oars single banked -- three on the port side, two on the "
+                                 "starboard side -- as the type was pulled",
+                },
+                "footprint_for_ship": {
+                    "length_for_stowage_m": round(WHALER.loa + 0.35, 3),
+                    "width_for_stowage_m": round(WHALER.bmax * 2 + 0.30, 3),
+                    "height_above_sheer_m": 4.40,
+                    "height_note": "with the mainmast stepped; 0.45 m with both masts struck and "
+                                   "laid in the boat",
                 },
             },
         ],

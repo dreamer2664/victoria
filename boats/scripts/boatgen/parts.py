@@ -305,6 +305,55 @@ def boat_hook(mb, pos, length=1.9, mat=MAT["wood_timber"], metal=MAT["steel"]):
     sphere(mb, tip + np.array([0.10, 0, 0.03]), 0.018, seg=8, rings=6, mat=metal)
 
 
+def grapnel(mb, pos, scale=1.0, mat=MAT["iron"], ring_mat=MAT["steel"]):
+    """Small boat's grapnel: shank, four curved arms, crown, and a shackle.
+
+    A ship's boat does not carry a bower anchor; it carries an iron grapnel
+    light enough for two men to row out and hook on with.
+    """
+    p = np.asarray(pos, dtype=float)
+    L = 0.42 * scale
+    arm = 0.20 * scale
+    # shank
+    cyl(mb, p, p + np.array([0, 0, L]), 0.018 * scale, seg=8, mat=mat)
+    # crown
+    cyl(mb, p + np.array([0, 0, -0.02 * scale]), p + np.array([0, 0, 0.03 * scale]),
+        0.030 * scale, seg=10, mat=mat)
+    # four arms, curving up and out
+    for k in range(4):
+        a = math.pi * 0.5 * k + math.pi * 0.25
+        d = np.array([math.cos(a), math.sin(a), 0.0])
+        pts = []
+        for i in range(5):
+            f = i / 4.0
+            pts.append(p + d * (arm * f) + np.array([0, 0, 0.10 * scale * math.sin(f * math.pi * 0.85)]))
+        mb.add_tube(np.array(pts), 0.013 * scale, segments=6, mat=mat, caps=True)
+        # fluke
+        tip = pts[-1]
+        cyl(mb, tip, tip + np.array([0, 0, 0.05 * scale]), 0.020 * scale, seg=6, mat=mat, r1=0.006)
+    # shackle at the head
+    torus(mb, p + np.array([0, 0, L + 0.02 * scale]), 0.030 * scale, 0.009 * scale,
+          seg=12, rseg=5, axis="Y", mat=ring_mat)
+
+
+def bilge_pump(mb, pos, height=0.55, mat=MAT["brass"], wood=MAT["wood_timber"]):
+    """Elm-tree pump / brass pump: barrel, cap, spear rod and a brake handle."""
+    p = np.asarray(pos, dtype=float)
+    cyl(mb, p, p + np.array([0, 0, 0.06]), 0.055, seg=14, mat=mat)      # foot
+    cyl(mb, p + np.array([0, 0, 0.05]), p + np.array([0, 0, height]), 0.042, seg=14, mat=mat)
+    cyl(mb, p + np.array([0, 0, height]), p + np.array([0, 0, height + 0.05]), 0.052, seg=14, mat=mat)
+    # spear rod and handle
+    cyl(mb, p + np.array([0, 0, height + 0.02]), p + np.array([0, 0, height + 0.30]),
+        0.012, seg=8, mat=MAT["steel"])
+    h = p + np.array([0, 0, height + 0.31])
+    cyl(mb, h, h + np.array([0.19, 0, 0.02]), 0.014, seg=8, mat=wood)
+    cyl(mb, h + np.array([0.19, 0, 0.02]), h + np.array([0.23, 0, 0.025]), 0.020, seg=8, mat=wood)
+    # discharge elbow
+    el = np.array([p[0] + 0.05, p[1], p[2] + height - 0.10])
+    cyl(mb, el, el + np.array([0.10, 0, 0]), 0.020, seg=10, mat=mat)
+    cyl(mb, el + np.array([0.10, 0, 0]), el + np.array([0.10, 0, 0.06]), 0.020, seg=10, mat=mat)
+
+
 def fender(mb, pos, mat=MAT["canvas"], rope=MAT["rope"], length=0.55, r=0.075):
     pos = np.asarray(pos, dtype=float)
     # A coir fender is a fat sausage with rounded ends, not a lens: full

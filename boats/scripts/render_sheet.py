@@ -30,6 +30,7 @@ WHICH = ARGS[0] if ARGS else "both"
 ONLY = [a for a in ARGS[1:] if not a.startswith("--")] or None
 
 BLENDS = {
+    "whaler": "boats/blend/boat_c_whaler.blend",
     "steam": "boats/blend/boat_a_steam_cutter.blend",
     "rowing": "boats/blend/boat_b_rowing_cutter.blend",
 }
