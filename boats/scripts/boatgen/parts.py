@@ -124,17 +124,28 @@ def thwart_plank(mb, hull, xi, top_drop=0.135, width=0.255, thick=0.042, mat=MAT
     return ys, z_top
 
 
-def thwart_knee(mb, hull, xi, side=1, mat=MAT["wood_timber"], drop=0.20):
-    """Small hanging knee under the end of a thwart."""
+def thwart_knee(mb, hull, xi, side=1, mat=MAT["wood_timber"], drop=0.20, inset=0.012):
+    """Small hanging knee under the end of a thwart.
+
+    The knee hangs down the inside of the planking, so its outer face has to
+    follow the hull as the topsides fall away -- a knee built as a vertical
+    slab stands 40 mm proud of a boat's side by the time it reaches the bottom
+    of its drop, which is exactly how one of these ends up poking through the
+    planking in a hull that is narrow at that station.
+    """
+    from .hull import half_breadth_at
     p = hull.surface(xi, 0.86)
-    y = side * p[1] * 0.93
     x = p[0]
     z0 = hull.sheer_z(xi) - 0.135
+    z1 = z0 - drop
+    y0 = side * max(half_breadth_at(hull, xi, z0) - inset, 0.02)
+    y1 = side * max(half_breadth_at(hull, xi, z1) - inset, 0.02)
+    t = 0.020 * (1 if side >= 0 else -1)
     mb.add_prism(
-        np.array([[x - 0.020, y - 0.02, z0], [x + 0.020, y - 0.02, z0],
-                  [x + 0.020, y + 0.02, z0], [x - 0.020, y + 0.02, z0]]),
-        np.array([[x - 0.020, y - 0.02, z0 - drop], [x + 0.020, y - 0.02, z0 - drop],
-                  [x + 0.020, y + 0.02, z0 - drop], [x - 0.020, y + 0.02, z0 - drop]]),
+        np.array([[x - 0.020, y0 - t, z0], [x + 0.020, y0 - t, z0],
+                  [x + 0.020, y0, z0], [x - 0.020, y0, z0]]),
+        np.array([[x - 0.020, y1 - t, z1], [x + 0.020, y1 - t, z1],
+                  [x + 0.020, y1, z1], [x - 0.020, y1, z1]]),
         mat=mat,
     )
 

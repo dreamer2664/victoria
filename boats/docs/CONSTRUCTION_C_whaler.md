@@ -53,7 +53,13 @@ can be rowed astern cleanly is a better sea boat in every other way too.
   centreboard trunk, stern sheets with the coxswain's bench, seven-slat
   gratings lifted clear of the planking.
 * **Gear.** Hoisting eyes on the keelson clear of the trunk, painter and stern
-  rings, boat hook, bailer, grapnel forward, a fender each side.
+  rings, boat hook lying forward on the thwarts, bailer, the grapnel standing on
+  the bottom boards forward of the trunk, a coir fender each side.
+
+  Gear is a separate object from the hull furniture on purpose: every wooden
+  fitting here is measured against the planking by `verify.py` (see
+  `TESTING.md` §1.5), and a fender is the one thing on the boat that is outside
+  the hull by design.
 
 ## Reconciliation with the documented figures
 

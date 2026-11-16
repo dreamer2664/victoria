@@ -48,6 +48,7 @@ from boatgen.hull import (
     build_keelson,
     build_stem,
     build_sternpost,
+    clear_y,
     half_breadth_at,
     solid_between_sections,
 )
@@ -157,10 +158,11 @@ make(lambda mb: (
 
 make(lambda mb: build_frames(mb, HULL, spacing=0.148, depth=0.032, width=0.023,
                             xi0=0.030, xi1=0.972, t0=0.012, t1=0.955,
-                            plank_thickness=0.018),
+                            plank_thickness=0.018, end_fade=0.34),
      "Frames", col_structure, mirror=True)
 
-make(lambda mb: (build_keelson(HULL, mb, width=0.086, height=0.066, xi0=0.05, xi1=0.95),
+make(lambda mb: (build_keelson(HULL, mb, width=0.086, height=0.066, xi0=0.05,
+                                xi1=0.95, end_taper=0.42),
                  build_gunwale(HULL, mb, out_width=0.044, in_width=0.086,
                                height=0.032, xi0=0.006, xi1=0.994)),
      "Keelson_Gunwale", col_structure, mirror=True)
@@ -234,9 +236,11 @@ make(_centreboard, "Centreboard", col_structure)
 # --------------------------------------------------------------------------
 def _seating(mb):
     for xi in XI_THWARTS:
-        parts.thwart_plank(mb, HULL, xi, top_drop=0.140, width=0.245, thick=0.042)
+        parts.thwart_plank(mb, HULL, xi, top_drop=0.140, width=0.245, thick=0.042,
+                           end_inset=0.030)
     # stern sheets: the coxswain's bench, set athwartships right aft
-    parts.bench(mb, HULL, XI_STERN_SHEETS, top_drop=0.150, width=0.34, thick=0.044)
+    parts.bench(mb, HULL, XI_STERN_SHEETS, top_drop=0.150, width=0.34, thick=0.044,
+                inset=0.050)
     # the pulling benches: side benches either side of the centreboard trunk
     for xi in (0.600, 0.665):
         z = HULL.sheer_z(xi) - 0.285
@@ -407,10 +411,18 @@ def place_oar(name, xi, side, outboard_angle_deg=36.0, feather_deg=8.0, length=O
     return ob
 
 
+def _max_y(x0, x1, z, clear):
+    """Widest |y| a stowed oar can take without its blades leaving the hull."""
+    return clear_y(HULL, x0, x1, z, clear=clear)
+
+
 def stow_oar(name, xi, side, index, length=OAR_LEN):
     p = HULL.surface(xi, 0.80)
-    pivot = np.array([-1.55 + 0.06 * index, side * (0.30 + 0.085 * index),
-                      HULL.sheer_z(xi) - 0.130 + 0.020 * (index % 2)])
+    # oars lie on top of the thwarts, which is how they are actually stowed
+    zc = HULL.sheer_z(xi) - 0.112 + 0.019 * (index % 2)
+    px = -1.55 + 0.06 * index
+    ycap = _max_y(px - 1.16, px + length - 1.16, zc, 0.10)
+    pivot = np.array([px, side * min(0.30 + 0.085 * index, ycap), zc])
     mb = _oar_mesh(length)
     roll = math.radians(90.0)
     R = np.array([[1, 0, 0], [0, math.cos(roll), -math.sin(roll)], [0, math.sin(roll), math.cos(roll)]])
@@ -488,24 +500,41 @@ def _fittings(mb):
     parts.eye_bolt(mb, np.array([p[0] - 0.10, 0.0, p[2]]), direction=(-1, 0, 0), scale=1.1)
     p = HULL.surface(0.986, 0.78)
     parts.eye_bolt(mb, np.array([p[0] + 0.10, 0.0, p[2]]), direction=(1, 0, 0), scale=1.0)
-    # boat hook and bailer, stowed as in the cutter
-    p = HULL.surface(0.32, 0.955)
-    parts.boat_hook(mb, np.array([p[0], -p[1] + 0.080, p[2] + 0.03]), length=1.90)
+    # boat hook and bailer, stowed as in the cutter.  The hook runs forward
+    # from its butt, so it has to start well aft of the bow or its head stands
+    # out through the planking: it lies on the thwarts, head forward.
+    zh = HULL.sheer_z(HULL.xi_of(1.00)) - 0.105
+    yh = -_max_y(1.00, 2.90, zh, 0.06)
+    parts.boat_hook(mb, np.array([1.00, yh, zh]), length=1.90)
     p = HULL.surface(0.62, 0.12)
-    cyl(mb, (p[0], 0.28, p[2] + 0.05), (p[0], 0.28, p[2] + 0.17), 0.075, seg=14,
+    yb = min(0.28, half_breadth_at(HULL, 0.62, p[2] + 0.05) - 0.105)
+    cyl(mb, (p[0], yb, p[2] + 0.05), (p[0], yb, p[2] + 0.17), 0.075, seg=14,
         mat=MAT["wood_deck"], r1=0.092)
-    # grapnel stowed forward -- a whaler's anchor is a grapnel
-    xg = HULL.x_of(0.88)
-    zg = HULL.sheer_z(0.88) - 0.06
-    parts.grapnel(mb, np.array([xg, -0.36, zg]), scale=0.85)
-    # a fender each side, for coming alongside
+    # grapnel stowed forward of the centreboard case, standing on the bottom
+    # boards: a whaler's anchor is a grapnel, and it is the one heavy item of
+    # gear she carries, so it lives where two men can reach it
+    xg = 1.34
+    pg = HULL.surface(HULL.xi_of(xg), 0.13)
+    parts.grapnel(mb, np.array([xg, 0.0, pg[2] + 0.012]), scale=0.85)
+
+
+make(_fittings, "Fittings", col_gear)
+
+
+def _fenders(mb):
+    """A coir fender each side, hanging over the topsides for coming alongside.
+
+    Kept in its own object because this is the one piece of gear that is
+    *meant* to be outside the planking, and the interference check treats
+    Fittings as gear that must be inside the boat.
+    """
     for s in (-1, 1):
         p = HULL.surface(HULL.xi_of(0.55), 0.975)
         parts.fender(mb, np.array([p[0], s * (p[1] + 0.07), p[2] - 0.28]),
                      mat=MAT["rope"], length=0.44, r=0.062)
 
 
-make(_fittings, "Fittings", col_gear)
+make(_fenders, "Fenders", col_gear)
 
 # --------------------------------------------------------------------------
 # report + save

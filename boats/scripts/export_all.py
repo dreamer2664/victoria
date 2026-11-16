@@ -45,6 +45,7 @@ ROLES = {
     "Seats": "furniture", "Thwarts_Benches": "furniture", "Thwart_Knees": "furniture",
     "Quarter_Knees": "furniture", "Floorboards": "furniture", "Mast_Clamp": "furniture",
     "Rowlocks": "gear", "Fittings": "gear", "Gear_Nav_Safety": "gear",
+    "Fenders": "gear",
     "Keel_Stems": "structure", "Centreboard": "structure",
     "Masts_Yards_Rigging": "rig", "Mast_Clamp": "rig",
 }

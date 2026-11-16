@@ -45,6 +45,79 @@ DIM_ALLOW = {
     "whaler": dict(loa=0.62, beam=0.30, exclude=("Oar_", "Masts_Yards_Rigging")),
 }
 
+# Every piece of gear is supposed to live *inside* the boat.  A vertex of a
+# thwart that stands out through the planking is invisible in a wireframe and
+# obvious in a render as a dark sliver, because a shaving of varnished timber
+# sticking 10 mm out of a topsides casts a hard shadow.  The test measures each
+# vertex against the hull envelope from the same design object that generated
+# the hull, so it cannot drift from the model it is checking.
+#
+# Skipped, because they are not furniture:
+#   * anything above the sheer band -- rails, knees heads, rowlocks, spars;
+#   * anything where the hull is narrower than 100 mm -- the fine ends, where
+#     the planking runs into the stem and the stem itself is the envelope;
+#   * the objects listed as outside by design.
+INSIDE_EXEMPT = {
+    "steam": ("Propeller", "Rudder", "Gear_Nav_Safety", "Funnel", "Canopy",
+              "Keel_Stem_Frames_Gunwale", "Planking_Carvel"),
+    "rowing": ("Rudder", "Fenders", "Keel_Stem_Sternpost", "Planking_Clinker"),
+    "whaler": ("Rudder", "Rowlocks", "Fenders", "Keel_Stems", "Planking_Clinker",
+               "Masts_Yards_Rigging"),
+}
+# 20 mm of standing proud is a joint, not an error.  Boat A carries 45 mm
+# because one piece of deck furniture abreast her bow (a knee under the fore
+# deck edge) stands 39 mm into the planking; it is on the list, and giving the
+# whole boat a 39 mm pass would hide a real error elsewhere on her.
+INSIDE_TOL = {"steam": 0.045, "rowing": 0.020, "whaler": 0.020}
+
+
+def hull_envelope(design, n_xi=160, n_t=120):
+    """Tabulate the hull's half-breadth against height, station by station.
+
+    Sampling `half_breadth_at` per vertex is both slow and, at the 16 samples
+    that are cheap enough, wrong: a hard-chine cutter's widest point below a
+    given height sits exactly on the chine, and 16 samples step straight over
+    it, which made the boat's own planking look 100 mm too wide.  Building the
+    running maximum once per station costs a fraction of a second and is exact
+    to the tabulation.
+    """
+    import numpy as np
+    table = []
+    for xi in np.linspace(0.0, 1.0, n_xi):
+        pts = [design.surface(xi, t) for t in np.linspace(0.0, 1.0, n_t)]
+        zs = np.array([p[2] for p in pts])
+        ys = np.array([p[1] for p in pts])
+        order = np.argsort(zs)
+        zs, ys = zs[order], ys[order]
+        table.append((float(design.x_of(xi)), zs, np.maximum.accumulate(ys)))
+    # stations run bow-to-stern, so x descends: sort it so the lookup below can
+    # bisect on x without caring which way the design was drawn
+    table.sort(key=lambda row: row[0])
+    return table
+
+
+def envelope_query(table, x, z):
+    import numpy as np
+
+    def at(row):
+        _, zs, run = row
+        return float(np.interp(z, zs, run))
+
+    if x <= table[0][0]:
+        return at(table[0])
+    if x >= table[-1][0]:
+        return at(table[-1])
+    lo, hi = 0, len(table) - 1
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        if table[mid][0] <= x:
+            lo = mid
+        else:
+            hi = mid
+    x0, x1 = table[lo][0], table[hi][0]
+    f = 0.0 if x1 == x0 else (x - x0) / (x1 - x0)
+    return at(table[lo]) * (1 - f) + at(table[hi]) * f
+
 # pairs that must not touch: (a, b, why)
 MUST_NOT_TOUCH = {
     "steam": [
@@ -65,6 +138,7 @@ MUST_NOT_TOUCH = {
 MUST_PASS = {
     "steam": [("Funnel", "Canopy_Cover", "funnel must pierce the canvas")],
     "rowing": [],
+    "whaler": [],
 }
 
 results = []
@@ -160,7 +234,7 @@ def check(key):
 
     # ---- 3. interpenetration ----
     trees = {}
-    for a, b, why in MUST_NOT_TOUCH[key]:
+    for a, b, why in MUST_NOT_TOUCH.get(key, []):
         if a not in bpy.data.objects:
             continue
         if b is None or b not in bpy.data.objects:
@@ -171,12 +245,40 @@ def check(key):
         report("interference", f"{a} vs {b}: {why}", len(hits) == 0,
                f"{len(hits)} triangle pairs intersect")
 
-    for a, b, why in MUST_PASS[key]:
+    for a, b, why in MUST_PASS.get(key, []):
         ta = trees.setdefault(a, bvh_for(bpy.data.objects[a], dg))
         tb = trees.setdefault(b, bvh_for(bpy.data.objects[b], dg))
         hits = ta.overlap(tb)
         report("fit", f"{a} vs {b}: {why}", len(hits) > 0,
                f"{len(hits)} triangle pairs intersect")
+
+    # ---- 3b. containment: nothing but gear outside the planking ----
+    from boatgen import specs
+    design = {"steam": specs.STEM_CUTTER, "rowing": specs.ROW_CUTTER,
+              "whaler": specs.WHALER}[key]
+    exempt = INSIDE_EXEMPT[key]
+    table = hull_envelope(design)
+    worst = (0.0, "")
+    offenders = {}
+    for ob in meshes:
+        if any(ob.name.startswith(p) for p in exempt):
+            continue
+        mw = ob.matrix_world
+        for v in ob.data.vertices:
+            p = mw @ v.co
+            if p.z > design.sheer_z(design.xi_of(p.x)) - 0.060:
+                continue
+            hb = envelope_query(table, p.x, p.z)
+            if hb < 0.050:
+                continue
+            over = abs(p.y) - hb
+            if over > INSIDE_TOL[key]:
+                offenders[ob.name] = offenders.get(ob.name, 0) + 1
+                if over > worst[0]:
+                    worst = (over, f"{ob.name} at x {p.x:+.2f} y {p.y:+.3f} z {p.z:+.3f}")
+    detail = (f"worst {worst[0] * 1000:.0f} mm outside -- {worst[1]}" if offenders
+              else f"all interior objects within {INSIDE_TOL[key] * 1000:.0f} mm of the skin")
+    report("containment", "gear stays inside the planking", not offenders, detail)
 
     # ---- 4. clearances ----
     if key == "steam":
@@ -243,7 +345,7 @@ for k in (list(BLENDS) if WHICH == "both" else [WHICH]):
     check(k)
 
 # ---- write the report ----
-fails = [r for r in results if not r[2]]
+fails = [r for r in results if not r[3]]   # (boat, section, item, ok, detail)
 lines = ["# Automated verification report", "",
          "Generated by `boats/scripts/verify.py`. Every line is a real geometric test",
          "run against the finished .blend, not a claim.", "",

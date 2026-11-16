@@ -36,6 +36,7 @@ from boatgen.hull import (
     build_stem,
     build_sternpost,
     build_transom,
+    clear_y,
     half_breadth_at,
     solid_between_sections,
 )
@@ -142,21 +143,48 @@ make(lambda mb: (
 make(lambda mb: build_transom(HULL, mb, t_lo=0.02, t_top=0.975), "Transom", col_structure)
 
 # engine bearers, boiler seating, floors
+def _bearer_ends():
+    """How far forward the engine bearers can run and stay inside the planking.
+
+    They are straight timbers at a fixed spacing, and the hull closes in on
+    them: run to x = 1.35, the outer edge of the starboard bearer stands
+    152 mm out through the bottom planking -- invisible under water, obvious
+    the moment the model is sectioned.
+    """
+    # measured at the bottom of the bearer, where the bilge is tightest: the
+    # bearer is 180 mm deep and its lower arris is what stands out
+    for x in np.arange(1.60, 0.10, -0.02):
+        if half_breadth_at(HULL, HULL.xi_of(x), floor_z(x) + 0.04, n=40) >= Y_BEARER + 0.16:
+            return float(x)
+    return 0.40
+
+
 def _bearers(mb):
+    xf = _bearer_ends()
     for s in (-1, 1):
-        xs = np.linspace(1.35, -1.55, 22)
+        xs = np.linspace(xf, -1.55, 22)
         grid = np.zeros((len(xs), 4, 3))
         for i, x in enumerate(xs):
             z = floor_z(x) + 0.12
-            grid[i, 0] = (x, s * (Y_BEARER - 0.05), z - 0.09)
-            grid[i, 1] = (x, s * (Y_BEARER + 0.05), z - 0.09)
-            grid[i, 2] = (x, s * (Y_BEARER + 0.05), z + 0.09)
-            grid[i, 3] = (x, s * (Y_BEARER - 0.05), z + 0.09)
+            zb, zt = z - 0.09, z + 0.09
+            # a bearer standing in the bilge has its lower outboard arris
+            # chamfered, not square: the bilge is 0.44 m half-breadth there, so
+            # a square section 0.47 m wide stands 61 mm out through the bottom.
+            # Follow the bilge instead, as the shipwright did.
+            out_b = min(Y_BEARER + 0.05,
+                        half_breadth_at(HULL, HULL.xi_of(x), zb, n=40) - 0.012)
+            grid[i, 0] = (x, s * (Y_BEARER - 0.05), zb)
+            grid[i, 1] = (x, s * out_b, zb)
+            grid[i, 2] = (x, s * (Y_BEARER + 0.05), zt)
+            grid[i, 3] = (x, s * (Y_BEARER - 0.05), zt)
         mb.add_grid(grid, MAT["wood_timber"], close_v=True)
     # cross floors under the bearers
-    for x in np.arange(1.3, -1.6, -0.28):
+    for x in np.arange(min(1.3, xf), -1.6, -0.28):
         z = floor_z(x)
-        half = half_breadth_at(HULL, HULL.xi_of(x), z + 0.16) * 0.94
+        # measure the breadth at the underside of the floor, not above it: a
+        # hull narrows downward, so taking the width 0.16 m up the topsides
+        # makes the floor timber 69 mm too long at the bilge
+        half = half_breadth_at(HULL, HULL.xi_of(x), z + 0.072, n=48) * 0.94
         mb.add_box((x, 0, z + 0.10), (0.09, half * 1.95, 0.055), mat=MAT["wood_timber"])
     # boiler foundation ring
     z0 = floor_z(X_BOILER) + 0.155
@@ -195,7 +223,7 @@ def _decks(mb):
         def edge(x, s=s):
             xi = HULL.xi_of(x)
             z = HULL.sheer_z(xi) - DECK_DROP
-            outer = half_breadth_at(HULL, xi, z + 0.07) - 0.015
+            outer = half_breadth_at(HULL, xi, z - 0.02, n=48) - 0.020
             inner = max(0.10, outer - 0.16)
             return (s * min(inner, outer), s * outer)
 
@@ -208,7 +236,10 @@ def _decks(mb):
     def fedge(x):
         xi = HULL.xi_of(x)
         z = HULL.sheer_z(xi) - DECK_DROP
-        half = half_breadth_at(HULL, xi, z + 0.07) - 0.015
+        # breadth at the deck's own level: measuring 70 mm above it reads the
+        # topsides where they are wider and stands the deck edge out through
+        # the planking abreast the bow
+        half = half_breadth_at(HULL, xi, z - 0.02, n=48) - 0.020
         return (-half, half)
 
     plank_panel(mb, xs, fedge,
@@ -225,7 +256,7 @@ def _decks(mb):
     def aedge(x):
         xi = HULL.xi_of(x)
         z = HULL.sheer_z(xi) - DECK_DROP
-        half = half_breadth_at(HULL, xi, z + 0.07) - 0.015
+        half = half_breadth_at(HULL, xi, z - 0.02, n=48) - 0.020
         return (-half, half)
 
     plank_panel(mb, xs2, aedge,
@@ -279,7 +310,8 @@ def _seating(mb):
         xi = HULL.xi_of(x)
         drop = DECK_DROP + 0.16
         ys, z_top = parts.thwart_plank(mb, HULL, xi, top_drop=drop, width=width,
-                                       thick=0.045, mat=MAT["wood_timber"])
+                                       thick=0.045, mat=MAT["wood_timber"],
+                                       end_inset=0.035)
         half = max(abs(ys[0]), abs(ys[-1]))
         # cleats under each end, let into the frames
         for s_ in (-1, 1):
@@ -541,12 +573,18 @@ def _pipes(mb):
     # throttle/reversing console by the engineer's seat
     for x, z0 in ((-1.30, 0.0),):
         pass
-    # feed water tank aft under the floor boards
-    mb.add_box((-1.95, 0.0, floor_z(-1.95) + 0.09), (0.55, 0.70, 0.18), mat=MAT["copper"])
+    # feed water tank aft under the floor boards.  A box that fills the bilge
+    # has to be sized from the bilge: 0.70 m wide is right amidships and 116 mm
+    # too wide at its after end, where the hull has closed in.
+    xt = -1.95
+    zt = floor_z(xt) + 0.09
+    yt = min(0.35, clear_y(HULL, xt - 0.28, xt + 0.28, zt - 0.09, clear=0.03))
+    mb.add_box((xt, 0.0, zt), (0.55, yt, 0.18), mat=MAT["copper"])
     # coal bunker forward of the boiler
     z = floor_z(X_BUNKER) + 0.14
-    mb.add_box((X_BUNKER, 0.0, z + 0.16), (0.46, 0.78, 0.42), mat=MAT["iron"])
-    mb.add_box((X_BUNKER, 0.0, z + 0.38), (0.44, 0.74, 0.03), mat=MAT["coal"])
+    yb = min(0.39, clear_y(HULL, X_BUNKER - 0.23, X_BUNKER + 0.23, z, clear=0.03))
+    mb.add_box((X_BUNKER, 0.0, z + 0.16), (0.46, yb, 0.42), mat=MAT["iron"])
+    mb.add_box((X_BUNKER, 0.0, z + 0.38), (0.44, yb - 0.02, 0.03), mat=MAT["coal"])
 
 
 make(_pipes, "Pipework_Fittings", col_mach)

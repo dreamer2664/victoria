@@ -83,6 +83,116 @@ boat instead of reading as an extrusion.
 **Floor gratings.** Lifted 55 mm onto cleats, so bilge water can run under them
 and air can reach the frames.
 
+## Boat C — 27 ft whaler
+
+**The double end.** A whaler has no transom and no sternpost: both ends are
+stem, and the after body is the fore body mirrored. It was worth getting right
+because it changes every line on the boat — sheer, waterline and section shape
+all run through amidships and repeat aft. The strakes are therefore laid as one
+continuous run from stem to stem over 76 stations and nine strakes, not as a
+fore body and an after body, so the two ends cannot drift apart: there is only
+one curve.
+
+**No transom, and no seat trying to be one.** On a transom boat the after
+thwart can sit on the counter; here there is no counter to sit on. The four
+pulling thwarts are narrow 245 mm moulded planks, the aftermost furniture is a
+340 mm stern-sheets bench set athwartships at 0.83 of the length, and two side
+benches flank the centreboard trunk for the passengers. `verify.py` asserts
+there is no object named `Transom` on this hull, which is a cheap guard against
+a later edit quietly giving the boat a flat stern.
+
+**The drop keel is drawn up.** The centreboard is a trunk between the frames
+with an iron plate on a pivot bolt and a lifting handle, the plate housed with
+its head above the case. Modelled down it would have been a 0.9 m fin under a
+boat that documents a 1 ft 5 in draught; drawn up, it is what you see in the
+davits. This also forced the interference test to earn its keep: the trunk
+cheeks have to clear the inside of the planking along the whole of their
+length, not just at the widest frame.
+
+**Clinker over nine strakes, finished in two schemes.** The bottom three
+strakes are painted, the six above varnished elm — which is how a naval whaler
+was actually finished, because the paint is the part that takes the beach. Each
+varnished strake gets its own timber tone, the same trick as Boat B: at 1240 px
+you read the plank count from the colour before you can resolve an 18 mm strake
+standing proud of the 12 mm lap below it.
+
+**A raked stem needed a different rudder setting-out.** The rudder hangs on the
+counter post, which on this boat rakes aft as it rises *and* sits at the
+minimum x, not the maximum: +X is forward. The first attempt placed the blade
+by maximising x and buried it 140 mm inside the planking; the interference
+check found 224 penetrations. Aft is now found by sampling the counter profile
+for the smallest x at each height, the blade stands 55 mm clear of it, and the
+assembly carries two pintles on the after face of the stem, a stock above the
+sheer and a forward-reaching tiller for the coxswain.
+
+**The standing-lug rig is stowed, not set.** Yard up and mast hoops on, sail
+rolled down on top of the yard and stopped with rope gaskets, exactly as a boat
+lying in davits carries it. A bare tapered spar reads as a scaffold pole; a
+bundle of canvas with ropes round it reads as a sail that has been put away.
+Boat C carries two masts to Boat B's one, so the stowed sails are also what
+keep the rig from looking like two sticks.
+
+**Thwart knees.** Four thwarts, each landing on a pair of grown knees against
+the planking rather than on a timber shelf. The knees are the detail that makes
+an open boat read as built rather than assembled: nothing in the interior meets
+at a right angle.
+
+## Third pass — what the containment test found
+
+The interference tests compare named pairs: propeller against hull, rudder
+against planking. They are blind to the thing that actually ruins a small-boat
+render, which is a piece of gear standing ten millimetres out through the
+outside of the planking and casting a hard shadow down a varnished topsides.
+
+So `verify.py` now measures every vertex of every interior object against the
+hull envelope, and the three boats between them had ten defects that no
+interference test had ever looked for:
+
+* **A's engine bearers** were a square 100 × 180 mm section standing in a bilge
+  that is 0.44 m wide at its lower arris — 152 mm of starboard bearer out
+  through the bottom planking, invisible under water and obvious the moment the
+  model is cut. They are chamfered on the lower outboard arris now, following
+  the bilge, which is what a bearer in a bilge is.
+* **A's feed-water tank and coal bunker** were boxes sized for a boat-shaped
+  hole. Both are sized from the bilge now.
+* **A's cross floors** measured the breadth of the hull 160 mm up the topsides,
+  where it is wider, and came out 69 mm too long.
+* **A's deck edges** were laid to the breadth of the sheer measured 70 mm above
+  the deck, and stood 39–55 mm outside the planking at the bow. A deck is only
+  as wide as the boat is at the deck.
+* **B's boat hook** — the second time this fitting has caused trouble — ran
+  forward from a butt abreast the fore thwart, which put its head 589 mm out
+  through the bow. It starts further aft now, and its offset is capped by the
+  narrowest station it passes.
+* **B's mast clamp** was cut to the breadth at the sheer, 70 mm above where it
+  is bolted.
+* **C's stowed oars** were the same mistake as the hook, five times over: a
+  5.18 m oar lying fore-and-aft at a fixed offset from the centreline leaves the
+  hull wherever it narrows. The blades were 205 mm outside the bow planking.
+  Oars now lie on the thwarts with their offset computed from the narrowest
+  station they cross, and they are where they belong — resting on the thwarts,
+  not hanging in the topsides.
+* **C's grapnel** was hung at a fixed offset near the after end, which on a
+  double ender is a place where the hull is 0.21 m wide, so it floated in the
+  air 340 mm outside the boat. It stands on the bottom boards forward of the
+  centreboard case now, which is also where two men would want it.
+* **C's thwart knees** were vertical slabs; a knee hanging 200 mm down a
+  topsides that is falling away needs its outer face tapered to the planking.
+* **C's frames and keelson** ran at full thickness into stems where the hull is
+  6 mm wide, so both are sided down over the last 0.45 m at each end.
+
+**Framing.** `frame_camera` fitted a bounding sphere, which on a boat with an
+8.7 m box and a 5 m mast spends most of the frame on air. It solves the distance
+from the projected corners of the box now: same arithmetic, tighter frame, and
+nothing can be clipped because every corner is inside the frustum by
+construction.
+
+**Fenders are their own part.** A fender hanging plumb outside a hull that
+curves away beneath it is meant to be outside the planking. Splitting it out of
+`Fittings` lets the containment test hold every other piece of gear to the hull
+without special cases, and the exports carry it as `gear` instead of dropping
+it as an unknown part.
+
 ## What was deliberately not done
 
 * No wave model, spray or wake — the sea is a plane. The render is a portrait

@@ -413,20 +413,42 @@ def scene_bounds(objs=None):
 def frame_camera(name, direction, look_at=None, lens=70.0, margin=1.16, aspect=1.55,
                  roll=0.0):
     """Place a camera along `direction` from the model centre, far enough back
-    that the whole boat sits inside `margin` of the frame."""
+    that the whole boat sits inside `margin` of the frame.
+
+    The distance is solved from the eight corners of the model's bounding box
+    projected into the camera frame, not from its bounding sphere.  A sphere
+    fit is easy but it wastes most of the frame on a long thin object: on the
+    27 ft whaler, whose box runs 8.7 m along the boat and 5.4 m up the masts,
+    the sphere radius is the diagonal, so the hull came out at 45% of the frame
+    width.  Projecting the corners is the same amount of arithmetic and is
+    always tighter, and it cannot clip: every corner is inside the frustum by
+    construction.
+    """
     mn, mx = scene_bounds()
     centre = (mn + mx) * 0.5
     target = mathutils.Vector(look_at) if look_at is not None else centre
-    radius = (mx - mn).length * 0.5
     cd = bpy.data.cameras.new(name)
     cd.lens = lens
     cd.sensor_fit = "HORIZONTAL"
     cd.sensor_width = 36.0
     hfov = 2 * math.atan(cd.sensor_width / (2 * lens))
     vfov = 2 * math.atan(math.tan(hfov / 2) / aspect)
-    fov = min(hfov, vfov)
-    dist = radius / math.tan(fov / 2) * margin
+    th, tv = math.tan(hfov / 2), math.tan(vfov / 2)
     d = mathutils.Vector(direction).normalized()
+    fwd = -d
+    right = fwd.cross(mathutils.Vector((0.0, 0.0, 1.0)))
+    if right.length < 1e-6:                      # a truly vertical view
+        right = mathutils.Vector((1.0, 0.0, 0.0))
+    right.normalize()
+    up = right.cross(fwd).normalized()
+    dist = 0.0
+    for i in range(8):
+        c = mathutils.Vector((mx.x if i & 1 else mn.x,
+                              mx.y if i & 2 else mn.y,
+                              mx.z if i & 4 else mn.z)) - target
+        a, b, f = c.dot(right), c.dot(up), c.dot(fwd)
+        dist = max(dist, abs(a) / th - f, abs(b) / tv - f)
+    dist *= margin
     loc = target + d * dist
     ob = bpy.data.objects.new(name, cd)
     ob.location = loc

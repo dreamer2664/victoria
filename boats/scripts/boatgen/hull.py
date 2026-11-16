@@ -451,6 +451,7 @@ def build_frames(
     taper=(0.75, 1.0),
     floor_timber=False,
     plank_thickness=0.016,
+    end_fade=1.0,
 ):
     """Steamed-oak transverse timbers against the inside of the planking."""
     span = (xi1 - xi0) * hull.loa
@@ -466,6 +467,14 @@ def build_frames(
             normals.append(nrm)
             w = lerp(taper[0], taper[1], smoothstep(t0, t1, t)) * width
             d = depth * lerp(0.85, 1.0, smoothstep(t0, t1, t))
+            if end_fade < 1.0:
+                # half-frames at the ends: a frame keeps its fore-and-aft
+                # thickness right up to the stem on a transom boat, but on a
+                # double ender the hull is only a few millimetres wide there
+                # and the blank stands out through the planking
+                f0 = lerp(end_fade, 1.0, smoothstep(xi0, xi0 + 0.055, xi))
+                f1 = lerp(end_fade, 1.0, smoothstep(xi1, xi1 - 0.055, xi))
+                w *= min(f0, f1)
             widths.append(w)
             depths.append(d)
         path = np.array(path)
@@ -739,16 +748,41 @@ def half_breadth_at(hull, xi, z, n=80):
     return best
 
 
-def build_keelson(hull, mb, width=0.085, height=0.060, xi0=0.06, xi1=0.93, mat=MAT["wood_timber"]):
+def clear_y(hull, x0, x1, z, clear=0.06, n=40):
+    """Widest |y| an object of half-width `clear` can occupy over x0..x1.
+
+    Stowed gear is straight and the hull is not: the usable offset for a boat
+    hook or an oar laid fore-and-aft is set by the narrowest station it passes,
+    not by the station it is lashed at.  Skipping this is how a 1.9 m boat hook
+    ends up with its head standing 0.6 m outside the planking abreast the bow.
+    """
+    worst = 1e9
+    for x in np.linspace(x0, x1, n):
+        worst = min(worst, half_breadth_at(hull, hull.xi_of(x), z, n=24))
+    return max(worst - clear, 0.05)
+
+
+def build_keelson(hull, mb, width=0.085, height=0.060, xi0=0.06, xi1=0.93,
+                  mat=MAT["wood_timber"], end_taper=1.0):
     n = 40
     xs = np.linspace(xi0, xi1, n)
     grid = np.zeros((n, 4, 3))
     for i, xi in enumerate(xs):
         p = hull.inner(xi, 0.012, 0.030)
-        grid[i, 0] = p + np.array([0, -width * 0.5, 0])
-        grid[i, 1] = p + np.array([0, width * 0.5, 0])
-        grid[i, 2] = p + np.array([0, width * 0.5, height])
-        grid[i, 3] = p + np.array([0, -width * 0.5, height])
+        w = width
+        h = height
+        if end_taper < 1.0:
+            # the keelson is sided down as it runs out to the stems, where the
+            # hull has no room for an 86 mm timber
+            f0 = lerp(end_taper, 1.0, smoothstep(xi0, xi0 + 0.07, xi))
+            f1 = lerp(end_taper, 1.0, smoothstep(xi1, xi1 - 0.07, xi))
+            f = min(f0, f1)
+            w = width * f
+            h = height * lerp(0.7, 1.0, f)
+        grid[i, 0] = p + np.array([0, -w * 0.5, 0])
+        grid[i, 1] = p + np.array([0, w * 0.5, 0])
+        grid[i, 2] = p + np.array([0, w * 0.5, h])
+        grid[i, 3] = p + np.array([0, -w * 0.5, h])
     base = mb.add_grid(grid, mat, close_v=True)
     mb.add_face([base + i for i in range(4)][::-1], mat)
     end = base + 4 * (n - 1)

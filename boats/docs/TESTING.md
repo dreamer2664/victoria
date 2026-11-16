@@ -16,30 +16,32 @@ tests use triangle-level BVH overlap between the actual meshes (not bounding
 boxes), so a pass means no triangle of one part crosses a triangle of another.
 Full output: [`VERIFICATION.md`](VERIFICATION.md).
 
-**Boat A — 25 ft steam cutter (20 objects, 49 222 verts / 45 420 faces)**
+**Boat A — 25 ft steam cutter (20 objects, 50 738 verts / 46 500 faces)**
 
 | Check | Result | Detail |
 |---|---|---|
 | LOA, hull | PASS | 7.565 m modelled vs 7.620 m spec |
 | LOA, extreme (rudder, gear) | PASS | 7.664 m |
-| Beam | PASS | 2.262 m extreme incl. fenders, 2.134 m hull |
+| Beam | PASS | 2.250 m extreme incl. fenders, 2.134 m hull |
 | No loose vertices / degenerate faces | PASS | — |
+| Everything inside the planking | PASS | worst 39 mm -- one foredeck knee abreast the bow |
 | Screw clear of the hull skin | PASS | 0 intersecting triangles |
 | Screw clear of the keel | PASS | 0 intersecting triangles |
 | Screw disc below the local keel line | PASS | disc top −0.274 m, keel −0.238 m |
-| Funnel pierces the canvas (must overlap) | PASS | 22 intersecting triangle pairs |
-| Boiler crown below the canopy | PASS | boiler +0.853 m, canopy top +1.016 m |
-| Funnel crown above the canopy | PASS | funnel +1.634 m, canopy +1.016 m |
+| Funnel pierces the canvas (must overlap) | PASS | 30 intersecting triangle pairs |
+| Boiler crown below the canopy | PASS | boiler +0.853 m, canopy top +1.039 m |
+| Funnel crown above the canopy | PASS | funnel +1.634 m, canopy +1.039 m |
 | Propeller and rudder are separate objects with their own origins | PASS | screw (−3.42, 0, −0.45); rudder (−3.62, 0, +0.65) |
 | Published displacement | PASS | 3532 kg loaded, integrated in `boatgen.hydro` |
 
-**Boat B — 25 ft clinker rowing cutter (24 objects, 32 071 verts / 29 948 faces)**
+**Boat B — 25 ft clinker rowing cutter (25 objects, 32 781 verts / 30 590 faces)**
 
 | Check | Result | Detail |
 |---|---|---|
 | LOA, hull | PASS | 7.599 m modelled vs 7.620 m spec |
 | LOA, extreme (rudder shipped) | PASS | 7.915 m (0.30 m rudder overhang, published in the spec) |
-| Beam | PASS | 2.089 m extreme |
+| Beam | PASS | 2.082 m extreme |
+| Everything inside the planking | PASS | nothing more than 20 mm proud of the skin |
 | No loose vertices / degenerate faces | PASS | — |
 | Rudder does not foul the planking | PASS | 0 intersecting triangles |
 | Ten oars present as separate objects | PASS | 10 found |
@@ -145,7 +147,7 @@ should run, with the expected result for each step. Treat the boats as
 | R7 | Board from the water | The seat is enterable and the player sits down |
 
 #
-**Boat C — 27 ft double-ended whaler (18 objects, 30 584 verts / 28 951 faces)**
+**Boat C — 27 ft double-ended whaler (19 objects, 30 584 verts / 28 951 faces)**
 
 | Check | Result | Detail |
 |---|---|---|
@@ -157,12 +159,43 @@ should run, with the expected result for each step. Treat the boats as
 | Centreboard drawn up | PASS | lowest point of the assembly −0.435 m, inside the hull |
 | Rudder clear of the planking | PASS | 0 triangle pairs intersect |
 | Centreboard trunk clear of the planking | PASS | 0 triangle pairs intersect |
+| Everything inside the planking | PASS | nothing more than 20 mm proud of the skin |
 | Published displacement | PASS | 1487.5 kg loaded, solved in `boatgen.hydro` |
 
 The dimension check needed a per-boat allowance for the whaler: a 15 ft 3 in
 yard on a 6 ft beam boat overhangs by design, so beam is measured with the
 spars and oars excluded. That is a deliberate change to the test, not a
 loosened one -- the boat's own beam is still checked to 30 mm.
+
+### 1.5 Containment: is the gear where the hull is?
+
+The interference tests ask whether two named objects touch. They cannot ask the
+matter that actually shows in a render: whether a thwart, an oar or a floor
+timber stands a few millimetres proud of the outside of the planking, where it
+casts a hard shadow and reads as a dark slash on a varnished topsides.
+
+`verify.py` now measures every vertex of every internal object against the hull
+envelope generated from the same design object that built the hull, sampled
+into a half-breadth table so the test takes seconds rather than minutes. Above
+the sheer band, forward of where the hull is 100 mm wide, and on the objects
+that are outside by design (rudder, rowlocks, fenders, spars, backbone timbers)
+are skipped.
+
+It found seven real defects that the interference tests had passed, all now
+fixed in the builds rather than excused:
+
+| Boat | Defect | How far out |
+|---|---|---|
+| A | engine bearers, square section in a 0.44 m bilge | 152 mm through the bottom |
+| A | feed-water tank and coal bunker, sized to a flat box | 116 mm |
+| A | cross floors measured 0.16 m up the topsides | 69 mm |
+| A | fore and side deck edges measured above deck level | 39-55 mm |
+| B | boat hook, started abreast the fore thwart so its head left the bow | 589 mm |
+| B | mast clamp, cut to the breadth at the sheer above it | 33 mm |
+| C | stowed oars, straight sticks in a hull that closes in at both ends | 205 mm |
+| C | boat hook head | 443 mm |
+| C | grapnel, hung in the air outboard of the after topsides | 340 mm |
+| C | thwart knees, built as vertical slabs against a falling topsides | 87 mm |
 
 ## Known risks to watch for
 

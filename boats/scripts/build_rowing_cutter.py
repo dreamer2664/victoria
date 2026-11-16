@@ -42,6 +42,7 @@ from boatgen.hull import (
     build_keelson,
     build_stem,
     build_sternpost,
+    clear_y,
     half_breadth_at,
     build_transom,
     build_clinker_planking,
@@ -199,8 +200,10 @@ make(_structure_details, "Structure_Details", col_structure, mirror=True)
 # --------------------------------------------------------------------------
 def _seating(mb):
     for xi in XI_THWARTS:
-        parts.thwart_plank(mb, HULL, xi, top_drop=0.145, width=0.250, thick=0.044)
-    parts.bench(mb, HULL, XI_STERN_BENCH, top_drop=0.155, width=0.36, thick=0.045)
+        parts.thwart_plank(mb, HULL, xi, top_drop=0.145, width=0.250, thick=0.044,
+                           end_inset=0.030)
+    parts.bench(mb, HULL, XI_STERN_BENCH, top_drop=0.155, width=0.36, thick=0.045,
+                inset=0.045)
     # side benches in the stern sheets
     for xi in (0.790, 0.845, 0.900):
         z = HULL.sheer_z(xi) - 0.30
@@ -331,15 +334,14 @@ def _fittings(mb):
     p = HULL.surface(0.995, 0.72)
     parts.eye_bolt(mb, np.array([p[0] + 0.10, 0.0, p[2]]), direction=(1, 0, 0), scale=1.0)
     # gunwale rubbing strake / oar notches already in the capping
-    # fenders on the port side
-    for x in (0.9, -0.7):
-        p = HULL.surface(HULL.xi_of(x), 0.98)
-        parts.fender(mb, np.array([p[0], p[1] + 0.07, p[2] - 0.30]))
-    # boat hook stowed along the starboard gunwale, inboard of the planking --
-    # it used to sit 40 mm outboard of the hull and read as a blade on the
-    # topsides from every angle
-    p = HULL.surface(0.30, 0.955)
-    parts.boat_hook(mb, np.array([p[0], -p[1] + 0.085, p[2] + 0.03]), length=1.75)
+    # boat hook stowed along the starboard gunwale, inboard of the planking.
+    # Two things go wrong with this: sat outboard of the sheer it reads as a
+    # blade lying on the topsides, and since the hook runs forward from its
+    # butt, a hook started abreast the fore thwart puts its head 0.6 m outside
+    # the bow.  Cap the offset by the narrowest station the hook passes.
+    zh = HULL.sheer_z(HULL.xi_of(1.15)) - 0.075
+    yh = -clear_y(HULL, 1.15, 1.15 + 1.75, zh, clear=0.065)
+    parts.boat_hook(mb, np.array([1.15, yh, zh]), length=1.75)
     # bilge pump beside the after thwart, on the starboard side of the keelson
     p = HULL.surface(HULL.xi_of(-2.15), 0.10)
     parts.bilge_pump(mb, np.array([p[0], -0.24, p[2] + 0.02]), height=0.50)
@@ -356,13 +358,30 @@ def _fittings(mb):
 make(_fittings, "Fittings", col_gear)
 
 
+def _fenders(mb):
+    """Coir fenders on the port side, hung over the topsides.
+
+    Their own object, because a fender hanging plumb outside a hull that curves
+    in below it is meant to be outside the planking -- and every other piece of
+    gear is not.
+    """
+    for x in (0.9, -0.7):
+        p = HULL.surface(HULL.xi_of(x), 0.98)
+        parts.fender(mb, np.array([p[0], p[1] + 0.07, p[2] - 0.30]))
+
+
+make(_fenders, "Fenders", col_gear)
+
+
 def _mast_clamp(mb):
     """Mast clamp / partners: a beam across the boat on the bow thwart with a
     square hole for the mast.  SLR0772 shows exactly this fitting where a
     single mast could be stepped for sailing."""
     p = HULL.surface(XI_MAST, 0.90)
-    half = p[1] * 0.96
     z = HULL.sheer_z(XI_MAST) - 0.115
+    # the clamp is a beam across the boat, so its length is the breadth of the
+    # hull at the height it is bolted, not at the sheer above it
+    half = min(p[1] * 0.96, clear_y(HULL, p[0] - 0.09, p[0] + 0.09, z - 0.070, clear=0.008))
     # two cheek pieces leaving a 90 mm square mast hole at the centreline
     for s in (-1, 1):
         y0, y1 = s * 0.045, s * half

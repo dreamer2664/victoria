@@ -121,7 +121,7 @@ B=/var/tmp/blender/blender
 $B -b --python build_steam_cutter.py -- --quick   # or omit --quick for full renders
 $B -b --python build_rowing_cutter.py -- --quick
 
-$B -b --python verify.py -- both        # 23 geometric checks
+$B -b --python verify.py -- both        # 37 geometric checks
 $B -b --python export_all.py -- both    # GLB/FBX + manifest
 $B -b --python render_sheet.py -- both  # published renders
 $B -b --python render_cutaway.py -- both
@@ -154,7 +154,7 @@ dimension are **reconstructed** to those dimensions and are labelled as such.
 ## Status
 
 * Geometry, drawings, documentation, interface spec — **complete and verified**
-  (30 automated checks over the three boats, 0 failures: `docs/VERIFICATION.md`).
+  (37 automated checks over the three boats, 0 failures: `docs/VERIFICATION.md`).
 * All 13 Luau modules and all three generated manifests compile.
 * Roblox scripts — **complete and compiling**, but **not yet run in Studio**;
   the acceptance test list to close that out is in `docs/TESTING.md` §2.
