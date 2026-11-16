@@ -96,6 +96,30 @@ def boiler(mb, base, r=0.430, height=1.150, mat=MAT["iron"], copper=MAT["copper"
         r1=r * 0.40)
     if detail:
         # ---- fittings ----
+        # ---- handrail round the top of the shell ----
+        # A vertical boiler is a thing you walk around and reach over; the
+        # rail is both a guard and a place to hold on when the boat rolls.
+        zr = bz + height * 0.86
+        rr = r * 1.10
+        for a in np.linspace(0, 2 * math.pi, 8, endpoint=False):
+            p0 = np.array([bx + rr * math.cos(a), by + rr * math.sin(a), bz + height * 0.70])
+            p1 = np.array([bx + rr * math.cos(a), by + rr * math.sin(a), zr])
+            cyl(mb, p0, p1, 0.009, seg=6, mat=brass)
+        ring = [(bx + rr * math.cos(a), by + rr * math.sin(a), zr)
+                for a in np.linspace(0, 2 * math.pi, 28, endpoint=False)]
+        for i in range(len(ring)):
+            cyl(mb, ring[i], ring[(i + 1) % len(ring)], 0.010, seg=6, mat=brass)
+        # ---- maker's plate on the shell, with a raised border ----
+        pl = np.array([bx + r * 0.62, by - r * 0.28, bz + height * 0.50])
+        pn = np.array([math.cos(math.atan2(-r * 0.28, r * 0.62)),
+                       math.sin(math.atan2(-r * 0.28, r * 0.62)), 0.0])
+        th = math.atan2(pn[1], pn[0])
+        rot = np.array([[math.cos(th), -math.sin(th), 0.0],
+                        [math.sin(th), math.cos(th), 0.0],
+                        [0.0, 0.0, 1.0]])
+        mb.add_box((pl[0], pl[1], pl[2]), (0.008, 0.115, 0.052), rot, brass)
+        mb.add_box((pl[0] + pn[0] * 0.006, pl[1] + pn[1] * 0.006, pl[2]),
+                   (0.006, 0.098, 0.036), rot, steel)
         # steam stop valve on the dome
         sv = np.array([bx + 0.10, by, bz + height + 0.14])
         cyl(mb, sv, sv + np.array([0, 0, 0.10]), 0.032, seg=12, mat=brass)

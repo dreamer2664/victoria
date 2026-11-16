@@ -10,8 +10,8 @@ run against the finished .blend, not a claim.
 | steam_cutter_1888 | dimensions | LOA (hull) | PASS | hull 7.565 m vs spec 7.620 m |
 | steam_cutter_1888 | dimensions | LOA (extreme, incl. rudder/oars/gear) | PASS | model 7.664 m vs hull 7.620 m |
 | steam_cutter_1888 | dimensions | beam | PASS | model 2.250 m vs spec 2.134 m (extreme, incl. fenders/gunwale) |
-| steam_cutter_1888 | mesh | no loose vertices or degenerate faces | PASS | 48774 verts / 45120 faces total |
-| steam_cutter_1888 | mesh | polygon budget | PASS | 45120 faces |
+| steam_cutter_1888 | mesh | no loose vertices or degenerate faces | PASS | 49222 verts / 45420 faces total |
+| steam_cutter_1888 | mesh | polygon budget | PASS | 45420 faces |
 | steam_cutter_1888 | interference | Propeller vs Planking_Carvel: screw must clear the hull skin | PASS | 0 triangle pairs intersect |
 | steam_cutter_1888 | interference | Propeller vs Keel_Stem_Frames_Gunwale: screw must clear the keel | PASS | 0 triangle pairs intersect |
 | steam_cutter_1888 | fit | Funnel vs Canopy_Cover: funnel must pierce the canvas | PASS | 30 triangle pairs intersect |

@@ -8,7 +8,7 @@ return {
 	boat_id = "steam_cutter_1888",
 	stud_per_m = 3.571429,
 	parts = {{
-		{ name = "Boiler", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(3.1757, 2.6871, 4.2779), verts = 3621 },
+		{ name = "Boiler", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(3.1757, 2.8996, 4.2779), verts = 4069 },
 		{ name = "Boiler_Internals", role = "machinery", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(2.4286, 2.4286, 2.9286), verts = 380 },
 		{ name = "Canopy_Cover", role = "deck", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(10.6429, 6.94, 1.6275), verts = 1708 },
 		{ name = "Canopy_Frame", role = "deck", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(10.25, 7.0364, 1.3632), verts = 1128 },

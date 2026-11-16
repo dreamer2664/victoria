@@ -16,7 +16,7 @@ tests use triangle-level BVH overlap between the actual meshes (not bounding
 boxes), so a pass means no triangle of one part crosses a triangle of another.
 Full output: [`VERIFICATION.md`](VERIFICATION.md).
 
-**Boat A — 25 ft steam cutter (20 objects, 48 774 verts / 45 120 faces)**
+**Boat A — 25 ft steam cutter (20 objects, 49 222 verts / 45 420 faces)**
 
 | Check | Result | Detail |
 |---|---|---|

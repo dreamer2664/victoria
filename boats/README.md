@@ -14,7 +14,7 @@ Roblox models and scripts, drawings and documentation.
 | Construction | carvel over double-diagonal, 12 frames | clinker, 11 strakes, oak frames |
 | Machinery | 5½ × 6 in inverted vertical engine, coal-fired vertical boiler, 2-bladed screw | 10 oars, steering by bank imbalance |
 | Blender file | `blend/boat_a_steam_cutter.blend` | `blend/boat_b_rowing_cutter.blend` |
-| Objects / faces | 20 / 45 120 | 24 / 29 948 |
+| Objects / faces | 20 / 45 420 | 24 / 29 948 |
 
 ![steam cutter](renders/steam_hero.png)
 ![rowing cutter](renders/rowing_hero.png)

@@ -125,3 +125,9 @@ a blade-shaped object appeared to lie on the topsides in every angle.
 **Lighting.** Interiors were reading as black holes in the plan views — not
 holes, as a ray cast confirmed, just unlit undersides of frames. A 9 m
 overhead sky-port fills open boats without putting a lamp near the horizon.
+
+**Boiler furniture.** A vertical boiler is something you walk round and reach
+over: it now carries a brass handrail on eight stanchions round the upper
+shell, and a maker's plate with a raised bezel on the side a passenger would
+see. Small things, but "manufactured object" cues like these are what separate
+a modelled machine from a modelled cylinder.
