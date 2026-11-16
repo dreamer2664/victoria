@@ -326,6 +326,14 @@ model's actual vertices, not its box, and solves the distance against the true
 silhouette. The boats come out roughly a third larger with no risk of clipping,
 because every projected vertex is inside the frustum by construction.
 
+**When to crop the rig.** Fitting the frame to every vertex is honest and, on
+the whaler, wrong: with a 16 ft 6 in mainmast and a 15 ft 3 in yard stepped in a
+27 ft hull, the honest fit put the boat at a third of the frame with two thirds
+of water beneath her. A photographer crops the rig. The four long views now fit
+the hull and gear and let the masts run out of the top of the frame; the plan
+and bow-on views, where the rig is the subject, still fit everything. Same
+arithmetic, different question.
+
 **Small gear that says the boat is used.** A steel slice stowed against the
 boiler and a coil of mooring line flaked on the foredeck of the steam cutter; a
 whale-line tub with the line coiled in it, a wooden water breaker with three

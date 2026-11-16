@@ -479,7 +479,7 @@ def scene_bounds(objs=None):
 
 
 def frame_camera(name, direction, look_at=None, lens=70.0, margin=1.16, aspect=1.55,
-                 roll=0.0):
+                 roll=0.0, fit_exclude=()):
     """Place a camera along `direction` from the model centre, far enough back
     that the whole boat sits inside `margin` of the frame.
 
@@ -502,6 +502,11 @@ def frame_camera(name, direction, look_at=None, lens=70.0, margin=1.16, aspect=1
     for o in bpy.context.scene.objects:
         if o.type != "MESH" or o.name in {"Backdrop", "Water", "Sea"} or o.hide_render:
             continue
+        if o.name in fit_exclude:
+            # a boat with her masts stepped: fitting the whole model puts the
+            # hull at a third of the frame.  Cropping the rig is what a
+            # photographer does, so the hull is what is fitted.
+            continue
         mw = o.matrix_world
         for v in o.data.vertices:
             subject.append(mw @ v.co)
@@ -520,6 +525,16 @@ def frame_camera(name, direction, look_at=None, lens=70.0, margin=1.16, aspect=1
         right = mathutils.Vector((1.0, 0.0, 0.0))
     right.normalize()
     up = right.cross(fwd).normalized()
+    # centre the silhouette, not the model origin: a boat with her masts
+    # stepped is a tall thin subject, and aiming at the waterline put two
+    # thirds of the frame below her.  Two passes: measure where the subject
+    # actually lands, then slide the aim point by half the error.
+    if len(subject) >= 16:
+        aa = [ (q - target).dot(right) for q in subject]
+        bb = [ (q - target).dot(up) for q in subject]
+        target = target + right * (0.5 * (min(aa) + max(aa))) \
+                        + up * (0.5 * (min(bb) + max(bb)))
+
     dist = 0.0
     if len(subject) < 16:
         subject = [mathutils.Vector((mx.x if i & 1 else mn.x,

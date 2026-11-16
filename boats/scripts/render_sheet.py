@@ -37,10 +37,14 @@ BLENDS = {
 
 # direction vectors are from the boat towards the camera
 VIEWS = {
-    "hero": dict(direction=(0.62, -0.72, 0.34), lens=72, look=(0, 0, 0.10)),
-    "broadside": dict(direction=(0.0, -1.0, 0.045), lens=85, look=(0, 0, 0.16)),
-    "bow_quarter": dict(direction=(0.88, -0.46, 0.22), lens=72, look=(0.9, 0, 0.14)),
-    "stern_quarter": dict(direction=(-0.86, -0.50, 0.26), lens=72, look=(-0.9, 0, 0.14)),
+    "hero": dict(direction=(0.62, -0.72, 0.34), lens=72, look=(0, 0, 0.10),
+                 fit_exclude=("Masts_Yards_Rigging",)),
+    "broadside": dict(direction=(0.0, -1.0, 0.045), lens=85, look=(0, 0, 0.16),
+                      fit_exclude=("Masts_Yards_Rigging",)),
+    "bow_quarter": dict(direction=(0.88, -0.46, 0.22), lens=72, look=(0.9, 0, 0.14),
+                        fit_exclude=("Masts_Yards_Rigging",)),
+    "stern_quarter": dict(direction=(-0.86, -0.50, 0.26), lens=72, look=(-0.9, 0, 0.14),
+                          fit_exclude=("Masts_Yards_Rigging",)),
     "from_above": dict(direction=(0.18, -0.36, 1.0), lens=68, look=(0, 0, 0.10)),
     "bow_on": dict(direction=(1.0, -0.16, 0.10), lens=85, look=(1.4, 0, 0.20)),
 }
@@ -82,7 +86,8 @@ def render_boat(key):
         if ONLY and name not in ONLY:
             continue
         cam = bl.frame_camera(f"{key}_{name}", v["direction"], look_at=v["look"],
-                              lens=v["lens"], margin=1.10, aspect=1.55)
+                              lens=v["lens"], margin=1.10, aspect=1.55,
+                              fit_exclude=v.get("fit_exclude", ()))
         bl.render(f"{ROOT}/boats/renders/{key}_{name}.png",
                   cam, res=(720, 465) if QUICK else (1240, 800),
                   samples=16 if QUICK else 88)
