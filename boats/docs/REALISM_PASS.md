@@ -291,13 +291,32 @@ fault, worse: it was standing on its edge in mid-air over the canvas. It is a
 cork ring lashed **flat** on the canopy roof with four short lashings through
 the eyelets, which is where one is actually kept.
 
-**A transom is capped, or it is a board.** The stern of the steam cutter read
+**A transom is capped and bedded, or it is a board.** The stern of the steam cutter read
 as a flat panel bolted to the outside of the boat: the panel's head stood
 93 mm above the after deck with nothing over it, and its top corners were
 square. A real transom is capped by the same moulding that runs along the
 gunwale, and that cap is what ties the panel into the boat — so the transom now
 carries a half-round cap rail swept across its full breadth, meeting the ends
 of the side rails. One swept band, and the stern stops reading as a shutter.
+
+Underneath that cap there was a second fault, and the cap only made it visible.
+The planking was carried aft to 99.7% of the hull's length, but the transom is
+*raked* — its head leans 0.27 m aft of its heel — so the plank ends stopped
+67 mm short of the panel at the sheer and the stern showed a gap with the
+transom's edge standing proud of the planking. The panel is now bedded 14 mm
+forward, so the aft ends of the planks bury in its 30 mm thickness, and the
+carvel planking is carried to 99.95%. Two numbers, but this is the class of
+error that a hundred renders will not reveal: it only shows where the eye
+expects a joint and finds a slot.
+
+**Paint: tried, and rejected.** Halfway through this pass the rowing cutter was
+repainted to match the steam cutter's black topsides and white sheer strake, on
+the argument that two boats from one boat department should wear the same
+finish. It was built and rendered, and it was worse: under paint the eleven
+clinker laps stopped reading as laps, and the hull became a pale shell with
+horizontal bands of colour on it. Clinker form is carried by the lap shadows,
+which need warm varnished wood to do their work. Reverted, with the reason
+written down here so nobody repeats the experiment as an "improvement".
 
 **The camera fills the frame.** The published renders had the boats occupying
 about 40% of the picture, which is not a matter of taste — a bounding-box fit
