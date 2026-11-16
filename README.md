@@ -9,7 +9,7 @@ period sources, and exported for Roblox.
 | Prototype | Liverpool: enclosed non-tidal dock system | Belfast: shipyard, graving docks, slips |
 | Distinctive works | floating landing stage, terminal, customs, baggage hall, station, transit sheds, coal staithes, cattle pens | Princess Graving Dock (800 × 80 ft, three caissons), No. 1 dock, three building slips, moulding loft, engineering/boiler shops, Titan crane, yard rail |
 | Berths | 4 (B1 212 m @ 11 m, B2 110 m @ 6.5 m, B3 132 m @ 9 m, B4 124 m @ 9 m) | 3 (fitting-out 210 m @ 10 m, service 320 m @ 9 m, No. 1 dock 120 m @ 8 m) |
-| Geometry | 57 prototypes, 466 instances, 795 k instanced tris | 50 prototypes, 342 instances, 384 k instanced tris |
+| Geometry | 61 prototypes, 485 instances, 796 k instanced tris | 54 prototypes, 356 instances, 385 k instanced tris |
 | Overlaps | 0 | 0 |
 
 Everything is built to one scale: **1 Roblox stud = 0.28 m**. The Blender source is
@@ -82,7 +82,7 @@ blender -b --factory-startup -noaudio --python blender/build_ports.py -- --port 
 A layout-only run takes about 4 s and prints the audit:
 
 ```
-prototypes: 57   instances placed: 466   instanced tris: 795120
+prototypes: 61   instances placed: 485   instanced tris: 796308
 overlaps: 0
 scene bbox (m): (-460, -560, -8) (300, 560, 36.9)
 BERTH A-B1   26.0 x 212.0 m  depth 11.0 m  env 180x 20x  9 m  OK (>=4 m clearance)

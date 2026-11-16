@@ -209,3 +209,56 @@ def ladder(mb, x, y, z, h=4.2, rz=0.0):
         b = (x + 0.22 * s, y - 0.22 * c)
         mb.add_box(min(a[0], b[0]) - 0.03, min(a[1], b[1]) - 0.03, zz,
                    max(a[0], b[0]) + 0.03, max(a[1], b[1]) + 0.03, zz + 0.04, "timber")
+
+
+def sleeper_stack(mb, x, y, z, rz=0.0, n=7):
+    """A stack of creosoted sleepers, 2.6 m x 0.25 m x 0.13 m, as left by the
+    permanent-way gang."""
+    c, s = math.cos(math.radians(rz)), math.sin(math.radians(rz))
+
+    def P(dx, dy):
+        return (x + dx * c - dy * s, y + dx * s + dy * c)
+
+    for k in range(n):
+        a = P(-1.3, -0.6); b = P(1.3, 0.6)
+        zz = z + k * 0.14
+        mb.add_box(min(a[0], b[0]), min(a[1], b[1]), zz,
+                   max(a[0], b[0]), max(a[1], b[1]), zz + 0.13, "timber")
+
+
+def rail_stack(mb, x, y, z, rz=0.0, n=5):
+    """Spare rails stacked on packers -- 9.1 m bullhead rails."""
+    c, s = math.cos(math.radians(rz)), math.sin(math.radians(rz))
+
+    def P(dx, dy):
+        return (x + dx * c - dy * s, y + dx * s + dy * c)
+
+    for k in range(n):
+        a = P(-4.5, -0.07 + k * 0.16); b = P(4.5, 0.07 + k * 0.16)
+        mb.add_box(min(a[0], b[0]), min(a[1], b[1]), z + 0.10,
+                   max(a[0], b[0]), max(a[1], b[1]), z + 0.25, "iron")
+
+
+def oil_drums(mb, x, y, z, n=4, seed=0):
+    """Barrels of oil and grease outside a shop door."""
+    import random
+    rnd = random.Random(seed)
+    for i in range(n):
+        px = x + rnd.uniform(-1.1, 1.1)
+        py = y + rnd.uniform(-0.8, 0.8)
+        mb.add_cyl(px, py, z, z + 0.88, 0.28, "steel_plate", seg=10)
+
+
+def puddle(mb, x, y, z, w=6.0, d=3.5, rz=0.0):
+    """Standing water in a hollow of the yard: a slab 8 mm proud of the paving.
+
+    Deliberately given thickness rather than laid flat on the ground -- two
+    coincident surfaces a millimetre apart make every shadow ray self-intersect,
+    and the puddle then renders as a black hole instead of a reflection.
+    """
+    c, s = math.cos(math.radians(rz)), math.sin(math.radians(rz))
+    pts = []
+    for dx, dy in ((-w / 2, -d / 2), (w / 2, -d / 2), (w / 2, d / 2), (-w / 2, d / 2)):
+        pts.append((x + dx * c - dy * s, y + dx * s + dy * c))
+    xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+    mb.add_box(min(xs), min(ys), z, max(xs), max(ys), z + 0.008, "puddle")

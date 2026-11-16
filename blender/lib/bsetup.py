@@ -316,8 +316,8 @@ def setup_sky(sun_az=215.0, sun_el=41.0, strength=0.62, cloud_cover=0.34,
 
     # horizon fade: clouds thin out and vanish at the horizon
     hz = nt.nodes.new("ShaderNodeMapRange"); hz.location = (0, -380)
-    hz.inputs["From Min"].default_value = 0.02
-    hz.inputs["From Max"].default_value = 0.14
+    hz.inputs["From Min"].default_value = 0.004
+    hz.inputs["From Max"].default_value = 0.070
     hz.inputs["To Min"].default_value = 0.0
     hz.inputs["To Max"].default_value = 1.0
     nt.links.new(sep.outputs["Z"], hz.inputs["Value"])

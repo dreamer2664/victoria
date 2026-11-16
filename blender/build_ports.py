@@ -63,14 +63,14 @@ def setup_lighting(coll, port):
     """Late-Victorian maritime light: bright but soft overcast with a low warm key.
     The sun is placed to rake the elevations the cameras actually look at."""
     if port == "a":
-        bsetup.add_sun(coll, 215, 41, 3.4, (1.0, 0.94, 0.86))
+        bsetup.add_sun(coll, 215, 41, 4.6, (1.0, 0.94, 0.86))
     else:
         # Port B's graving docks run north-south and are 11 m deep from the coping.
         # At 40 deg elevation a sun crossing the dock's WIDTH puts the whole floor in
         # the shadow of its own wall (checked by ray-cast).  Azimuth 340 rakes the
         # light along the dock's length instead, so the altars and keel blocks read.
-        bsetup.add_sun(coll, 215, 41, 3.4, (1.0, 0.94, 0.86))
-    bsetup.add_fill(coll, 100, 34, 0.90, (0.74, 0.80, 0.90))
+        bsetup.add_sun(coll, 215, 41, 4.6, (1.0, 0.94, 0.86))
+    bsetup.add_fill(coll, 100, 34, 0.55, (0.74, 0.80, 0.90))
     if os.environ.get("FLAT_SKY"):
         w = bpy.data.worlds.new("flat")
         w.use_nodes = True
@@ -97,6 +97,9 @@ def main():
     sc.view_settings.exposure = 0.92
 
     bsetup.make_materials()
+    # Diagnostic switches, used to isolate the black-dock fault: FLATMAT=1 strips
+    # every texture off every material, FLAT_SKY=1 replaces the sky with a plain
+    # white dome. Between them they separate "wrong material" from "no light".
     if os.environ.get("FLATMAT"):
         for m in bpy.data.materials:
             if not m.use_nodes:

@@ -433,6 +433,31 @@
      "shipped": true
     },
     {
+     "name": "A_drums",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_drums.glb",
+     "size_m": [
+      2.43,
+      1.65,
+      0.88
+     ],
+     "size_studs": [
+      8.7,
+      5.9,
+      3.1
+     ],
+     "min_m": [
+      -1.23,
+      -0.9,
+      0.0
+     ],
+     "triangles": 144,
+     "instances": 4,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
      "name": "A_fingerpost",
      "class": "bldg",
      "glb": "assets/glb/a/A_fingerpost.glb",
@@ -933,6 +958,31 @@
      "shipped": true
     },
     {
+     "name": "A_puddle",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_puddle.glb",
+     "size_m": [
+      9.0,
+      4.5,
+      0.01
+     ],
+     "size_studs": [
+      32.1,
+      16.1,
+      0.0
+     ],
+     "min_m": [
+      -4.5,
+      -2.25,
+      0.0
+     ],
+     "triangles": 12,
+     "instances": 8,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
      "name": "A_quay24",
      "class": "quay",
      "glb": "assets/glb/a/A_quay24.glb",
@@ -978,6 +1028,31 @@
      ],
      "triangles": 46918,
      "instances": 0,
+     "connection_point": "first sleeper centre at QUAY_Z",
+     "connection_convention": "runs along +X or +Z of the prototype",
+     "shipped": true
+    },
+    {
+     "name": "A_rails",
+     "class": "rail",
+     "glb": "assets/glb/a/A_rails.glb",
+     "size_m": [
+      9.0,
+      0.78,
+      0.15
+     ],
+     "size_studs": [
+      32.1,
+      2.8,
+      0.5
+     ],
+     "min_m": [
+      -4.5,
+      -0.07,
+      0.1
+     ],
+     "triangles": 60,
+     "instances": 3,
      "connection_point": "first sleeper centre at QUAY_Z",
      "connection_convention": "runs along +X or +Z of the prototype",
      "shipped": true
@@ -1078,6 +1153,31 @@
      ],
      "triangles": 70,
      "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "A_sleepers",
+     "class": "bldg",
+     "glb": "assets/glb/a/A_sleepers.glb",
+     "size_m": [
+      2.6,
+      1.2,
+      0.97
+     ],
+     "size_studs": [
+      9.3,
+      4.3,
+      3.5
+     ],
+     "min_m": [
+      -1.3,
+      -0.6,
+      0.0
+     ],
+     "triangles": 84,
+     "instances": 4,
      "connection_point": "SW footprint corner at world 0, door on the street side",
      "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
      "shipped": true
@@ -1433,7 +1533,7 @@
      "shipped": true
     }
    ],
-   "count": 57
+   "count": 61
   },
   "b": {
    "name": "PORT OF CARRICKMORE",
@@ -1709,6 +1809,31 @@
      ],
      "triangles": 312,
      "instances": 5,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_drums",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_drums.glb",
+     "size_m": [
+      2.52,
+      1.79,
+      0.88
+     ],
+     "size_studs": [
+      9.0,
+      6.4,
+      3.1
+     ],
+     "min_m": [
+      -1.37,
+      -0.94,
+      0.0
+     ],
+     "triangles": 144,
+     "instances": 3,
      "connection_point": "SW footprint corner at world 0, door on the street side",
      "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
      "shipped": true
@@ -2239,6 +2364,31 @@
      "shipped": true
     },
     {
+     "name": "B_puddle",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_puddle.glb",
+     "size_m": [
+      11.0,
+      5.5,
+      0.01
+     ],
+     "size_studs": [
+      39.3,
+      19.6,
+      0.0
+     ],
+     "min_m": [
+      -5.5,
+      -2.75,
+      0.0
+     ],
+     "triangles": 12,
+     "instances": 6,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
      "name": "B_pump_house",
      "class": "bldg",
      "glb": "assets/glb/b/B_pump_house.glb",
@@ -2309,6 +2459,31 @@
      ],
      "triangles": 41944,
      "instances": 0,
+     "connection_point": "first sleeper centre at QUAY_Z",
+     "connection_convention": "runs along +X or +Z of the prototype",
+     "shipped": true
+    },
+    {
+     "name": "B_rails",
+     "class": "rail",
+     "glb": "assets/glb/b/B_rails.glb",
+     "size_m": [
+      9.0,
+      0.78,
+      0.15
+     ],
+     "size_studs": [
+      32.1,
+      2.8,
+      0.5
+     ],
+     "min_m": [
+      -4.5,
+      -0.07,
+      0.1
+     ],
+     "triangles": 60,
+     "instances": 2,
      "connection_point": "first sleeper centre at QUAY_Z",
      "connection_convention": "runs along +X or +Z of the prototype",
      "shipped": true
@@ -2409,6 +2584,31 @@
      ],
      "triangles": 84,
      "instances": 1,
+     "connection_point": "SW footprint corner at world 0, door on the street side",
+     "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
+     "shipped": true
+    },
+    {
+     "name": "B_sleepers",
+     "class": "bldg",
+     "glb": "assets/glb/b/B_sleepers.glb",
+     "size_m": [
+      2.6,
+      1.2,
+      0.97
+     ],
+     "size_studs": [
+      9.3,
+      4.3,
+      3.5
+     ],
+     "min_m": [
+      -1.3,
+      -0.6,
+      0.0
+     ],
+     "triangles": 84,
+     "instances": 3,
      "connection_point": "SW footprint corner at world 0, door on the street side",
      "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
      "shipped": true
@@ -2689,7 +2889,7 @@
      "shipped": true
     }
    ],
-   "count": 50
+   "count": 54
   }
  }
 }

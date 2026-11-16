@@ -578,6 +578,10 @@ def _life(R):
         "A_bales":     lambda mb: L.bale_stack(mb, 0, 0, 0, seed=7),
         "A_ladder":    lambda mb: L.ladder(mb, 0, 0, 0),
         "A_coalheap":  lambda mb: L.coal_heap(mb, 0, 0, 0),
+        "A_sleepers":  lambda mb: L.sleeper_stack(mb, 0, 0, 0),
+        "A_rails":     lambda mb: L.rail_stack(mb, 0, 0, 0),
+        "A_drums":     lambda mb: L.oil_drums(mb, 0, 0, 0, seed=4),
+        "A_puddle":    lambda mb: L.puddle(mb, 0, 0, 0, w=9.0, d=4.5),
     }
     for name, fn in prototypes.items():
         mb = MeshBuilder(); fn(mb); R.define(name, mb)
@@ -612,6 +616,16 @@ def _life(R):
         R.place("A_bales", x, y, QUAY_Z, (x * 3) % 360)
     for x, y, rz in ((2, 118, 20), (46, 240, 120), (206, 190, 10), (256, 130, 200)):
         R.place("A_ladder", x, y, QUAY_Z, rz)
+    # --- permanent-way material and standing water along the running lines
+    for x, y, rz in ((-10, 24, 0), (-10, 186, 0), (46, 8, 90), (188, 16, 0)):
+        R.place("A_sleepers", x, y, QUAY_Z, rz)
+    for x, y, rz in ((-12, 300, 0), (30, -240, 90), (150, 240, 0)):
+        R.place("A_rails", x, y, QUAY_Z, rz)
+    for x, y in ((6, 132), (52, 168), (204, 124), (250, 200)):
+        R.place("A_drums", x, y, QUAY_Z, (x * 3) % 360)
+    for x, y, rz in ((-8, 150, 4), (24, -120, -3), (70, 60, 6), (120, 200, -5),
+                     (200, 60, 3), (60, 300, -7), (16, -250, 5), (170, -180, -4)):
+        R.place("A_puddle", x, y, QUAY_Z, rz)
     # --- coal on the staithe
     for x, y in ((70, -60), (96, -66), (150, -62)):
         R.place("A_coalheap", x, y, QUAY_Z)

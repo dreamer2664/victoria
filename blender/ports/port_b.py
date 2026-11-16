@@ -458,6 +458,10 @@ def _life(R):
         "B_coal":     lambda mb: L.coal_heap(mb, 0, 0, 0),
         "B_ladder":   lambda mb: L.ladder(mb, 0, 0, 0),
         "B_bales":    lambda mb: L.bale_stack(mb, 0, 0, 0, seed=11),
+        "B_sleepers": lambda mb: L.sleeper_stack(mb, 0, 0, 0),
+        "B_rails":    lambda mb: L.rail_stack(mb, 0, 0, 0),
+        "B_drums":    lambda mb: L.oil_drums(mb, 0, 0, 0, seed=9),
+        "B_puddle":   lambda mb: L.puddle(mb, 0, 0, 0, w=11.0, d=5.5),
     }
     for n, fn in protos.items():
         mb = MeshBuilder(); fn(mb); R.define(n, mb)
@@ -475,6 +479,16 @@ def _life(R):
         R.place("B_dray", x, y, QUAY_Z, rz)
     for x, y, rz in ((-10, 130, 90), (20, 190, 95), (70, -30, 20), (110, 250, 15)):
         R.place("B_cart", x, y, QUAY_Z, rz)
+    # permanent-way material, oil drums and standing water
+    for x, y, rz in ((20, -80, 0), (70, 150, 90), (140, -220, 0)):
+        R.place("B_sleepers", x, y, QUAY_Z, rz)
+    for x, y, rz in ((30, 230, 0), (200, -60, 90)):
+        R.place("B_rails", x, y, QUAY_Z, rz)
+    for x, y in ((90, 60), (160, 240), (60, -140)):
+        R.place("B_drums", x, y, QUAY_Z, (y * 3) % 360)
+    for x, y, rz in ((0, 60, 4), (40, -180, -4), (100, 120, 6), (180, 280, -3),
+                     (230, 40, 5), (80, 340, -6)):
+        R.place("B_puddle", x, y, QUAY_Z, rz)
     # plate and timber stacks in the yards
     for x, y, rz in ((100, -180, 0), (130, -180, 0), (160, -120, 90), (90, 320, 0),
                      (210, 250, 90)):

@@ -23,8 +23,8 @@ reports any pair that overlaps by more than 5 cm in both axes.
 | Port A after fixes | 46 | 396 | 786,186 | 1 → **0** |
 | Port B, first run | 36 | 269 | 262,423 | 0 |
 | Port B after dock fix | 41 | 291 | 377,162 | **0** |
-| Port A, realism pass (ground regions + life layer) | 57 | 466 | 795,120 | **0** |
-| Port B, realism pass | 50 | 342 | 384,082 | **0** |
+| Port A, realism pass (ground regions + life layer) | 61 | 485 | 796,308 | **0** |
+| Port B, realism pass | 54 | 356 | 384,958 | **0** |
 
 The one overlap caught was `A_goods_shed` ↔ `A_warehouse_3` (2.4 m). It was found by
 the auditor, not by eye, and the warehouse was moved 212 → 206 m along the quay.
@@ -203,7 +203,13 @@ doors and at the crane feet; carts stand where they would be loaded; rope sits a
 the bollards. Empty ground between these clusters is correct — evenly spaced
 props read as a showroom.
 
-Port A gains 11 life prototypes and 66 placements, Port B 9 and 49 (both totals
+Stacked sleepers, spare bullhead rails, oil drums and standing water (8 mm proud
+slabs, not coincident quads) are placed along the running lines and at the shop
+doors. Cranes are painted the dark dock-board green they actually were: the
+first value used, (0.075, 0.135, 0.105), was light enough to render as mint under
+a bright sky, which is not a colour any 1889 dock board used.
+
+Port A gains 15 life prototypes and 85 placements, Port B 13 and 63 (both totals
 include the four singletons -- land platform, water, boundary wall, ground -- that
 are now placed as instances rather than left in the hidden prototype collection).
 

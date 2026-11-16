@@ -61,7 +61,8 @@ MATERIALS = {
     "glass":       dict(kind="flat", color=(0.072, 0.086, 0.098), rough=0.16, metal=0.0, alpha=0.70),
     "glass_lit":   dict(kind="flat", color=(0.32, 0.22, 0.10), rough=0.20, emit=1.2),
     "paint_white": dict(kind="flat", color=(0.68, 0.67, 0.62), rough=0.55),
-    "paint_green": dict(kind="flat", color=(0.075, 0.135, 0.105), rough=0.60),   # dock-board green
+    "puddle":      dict(kind="flat", color=(0.038, 0.045, 0.048), rough=0.07, metal=0.25),
+    "paint_green": dict(kind="flat", color=(0.028, 0.055, 0.042), rough=0.62),   # dock-board green
     "paint_red":   dict(kind="flat", color=(0.32, 0.075, 0.055), rough=0.62),
     "brass":       dict(kind="flat", color=(0.52, 0.38, 0.16), rough=0.32, metal=0.9),
     "copper":      dict(kind="flat", color=(0.30, 0.39, 0.34), rough=0.45, metal=0.8),
