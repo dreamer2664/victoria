@@ -158,19 +158,39 @@ def draw_lines(sheets, hull, name, code, extra_notes=()):
     # ---------------- body plan ----------------
     ax3 = fig.add_axes([0.705, 0.52, 0.28, 0.42])
     frame(ax3, "BODY PLAN  (stations 0–10)")
-    for q in np.linspace(0.02, 0.98, 9):
-        ts = np.linspace(0.0, 1.0, 40)
+    # In a body plan a WATERLINE is a horizontal straight line (a plane of
+    # constant z cuts every section at the same height) and a BUTTOCK is a
+    # vertical one; only the sections are curves.  Drawing the waterlines as
+    # curves looks plausible and is simply wrong.
+    hbm = hull.half_beam(0.5)
+    for z in (-0.30, -0.15, 0.0, 0.25, 0.50):
+        col = BLUE if z == 0 else FAINT
+        ax3.plot([-hbm, hbm], [z, z], color=col, lw=0.5 if z == 0 else 0.3,
+                 ls=(0, (6, 3)) if z == 0 else (0, (1, 3)), zorder=1)
+        ax3.text(hbm + 0.04, z, f"{z:+.2f}", fontsize=4.2, color=FAINT, va="center")
+    for y in (0.2, 0.4, 0.6, 0.8):
+        if y < hbm:
+            ax3.plot([y, y], [-0.55, 0.62], color=FAINT, lw=0.25, ls=(0, (1, 3)), zorder=1)
+            ax3.plot([-y, -y], [-0.55, 0.62], color=FAINT, lw=0.25, ls=(0, (1, 3)), zorder=1)
+    for i, q in enumerate(np.linspace(0.02, 0.98, 9)):
+        ts = np.linspace(0.0, 1.0, 48)
         pts = [hull.surface(q, t) for t in ts]
         yy = [p[1] for p in pts]; zz = [p[2] for p in pts]
-        ax3.plot(yy, zz, color=INK, lw=0.6)
-        ax3.plot([-v for v in yy], zz, color=FAINT, lw=0.3)
-        ax3.text(yy[-1] + 0.03, zz[-1], f"{int(round(q*10))}", fontsize=4.5, color=FAINT)
-    ax3.axhline(0, color=BLUE, lw=0.5, ls=(0, (6, 3)))
+        ax3.plot(yy, zz, color=INK, lw=0.7, zorder=2)
+        ax3.plot([-v for v in yy], zz, color=THIN, lw=0.5, zorder=2)
+        up = 0.055 if i % 2 == 0 else 0.115
+        for sgn in (1, -1):
+            ax3.plot([sgn * yy[-1], sgn * yy[-1]], [zz[-1], zz[-1] + up * 0.7],
+                     color=FAINT, lw=0.3, zorder=2)
+            ax3.text(sgn * yy[-1], zz[-1] + up, f"{int(round(q*10))}", fontsize=4.4,
+                     color=FAINT, ha="center", va="bottom")
     ax3.axvline(0, color=FAINT, lw=0.4, ls=(0, (2, 3)))
-    hbm = hull.half_beam(0.5)
-    dim(ax3, (0, -0.80), (hbm, -0.80), f"½ beam {hbm:.3f}", offset=0.0)
-    ax3.set_xlim(-1.45, 1.45)
-    ax3.set_ylim(-0.92, 0.90)
+    ax3.set_aspect("equal", adjustable="box")
+    ax3.text(0.02, 0.02, "stations 0 (bow) – 10 (stern) · sections mirrored \u00b7 LWL in blue",
+             transform=ax3.transAxes, fontsize=4.6, color=FAINT)
+    dim(ax3, (0, -0.72), (hbm, -0.72), f"½ beam {hbm:.3f}", offset=0.0)
+    ax3.set_xlim(-hbm - 0.24, hbm + 0.24)
+    ax3.set_ylim(-0.80, 0.92)
 
     # ---------------- notes ----------------
     axn = fig.add_axes([0.05, 0.05, 0.62, 0.20])
