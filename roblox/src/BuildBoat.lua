@@ -83,10 +83,20 @@ function BuildBoat.assemble(boatId, importedFolder, opts)
 	hull.CustomPhysicalProperties = PhysicalProperties.new(
 		math.max(totalMass / math.max(volume, 1), 0.05), 0.3, 0.2, 1, 1)
 
-	-- weld everything else to the hull
-	local moving = { Propeller = true, Rudder = true }
+	-- Weld everything that a controller does not drive.  A part left un-welded
+	-- and never rigged is not "movable", it is unattached: it drifts off the
+	-- boat on the first frame.  Only the steam cutter drives a rudder (through
+	-- BoatRig.rigScrew); the two pulling boats carry theirs stowed, so it is
+	-- welded to the hull like the thwarts.
+	local moving = {}
 	for _, p in ipairs(manifest.parts) do
-		if p.role == "moving" then moving[p.name] = true end
+		if p.role == "moving" and p.name:match("^Oar") then
+			moving[p.name] = true                       -- rigged by rigOars
+		elseif boatId == "steam_cutter_1888" and p.name:match("^Propeller$") then
+			moving[p.name] = true                       -- rigged by rigScrew
+		elseif boatId == "steam_cutter_1888" and p.name:match("^Rudder$") then
+			moving[p.name] = true
+		end
 	end
 	BoatRig.weld(folder, hull, moving)
 

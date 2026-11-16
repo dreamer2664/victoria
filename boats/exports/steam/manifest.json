@@ -394,21 +394,21 @@
       "bounds_max_m": [
         3.5935,
         1.1252,
-        1.348
+        1.1603
       ],
       "size_m": [
         7.2041,
         2.2504,
-        1.7888
+        1.6012
       ],
       "size_studs": [
         25.729,
         8.037,
-        6.389
+        5.719
       ],
-      "vertices": 4664,
-      "triangles": 8800,
-      "triangles_before_decimation": 8800,
+      "vertices": 4818,
+      "triangles": 9068,
+      "triangles_before_decimation": 9068,
       "uv_layers": 1,
       "smooth_shaded": true
     },
@@ -523,7 +523,7 @@
         0.0
       ],
       "bounds_min_m": [
-        -3.7871,
+        -3.8062,
         -1.0668,
         -0.5294
       ],
@@ -533,12 +533,12 @@
         0.9021
       ],
       "size_m": [
-        7.5651,
+        7.5842,
         2.1336,
         1.4314
       ],
       "size_studs": [
-        27.018,
+        27.086,
         7.62,
         5.112
       ],
@@ -693,28 +693,28 @@
         0.0
       ],
       "bounds_min_m": [
-        -3.8539,
+        -3.8399,
         -0.6215,
         -0.0894
       ],
       "bounds_max_m": [
-        -3.5856,
+        -3.5716,
         0.6215,
-        0.751
+        0.775
       ],
       "size_m": [
         0.2683,
         1.243,
-        0.8404
+        0.8644
       ],
       "size_studs": [
         0.958,
         4.439,
-        3.001
+        3.087
       ],
-      "vertices": 680,
-      "triangles": 1272,
-      "triangles_before_decimation": 1272,
+      "vertices": 841,
+      "triangles": 1536,
+      "triangles_before_decimation": 1536,
       "uv_layers": 1,
       "smooth_shaded": true
     }

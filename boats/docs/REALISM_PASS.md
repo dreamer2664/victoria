@@ -291,6 +291,14 @@ fault, worse: it was standing on its edge in mid-air over the canvas. It is a
 cork ring lashed **flat** on the canopy roof with four short lashings through
 the eyelets, which is where one is actually kept.
 
+**A transom is capped, or it is a board.** The stern of the steam cutter read
+as a flat panel bolted to the outside of the boat: the panel's head stood
+93 mm above the after deck with nothing over it, and its top corners were
+square. A real transom is capped by the same moulding that runs along the
+gunwale, and that cap is what ties the panel into the boat — so the transom now
+carries a half-round cap rail swept across its full breadth, meeting the ends
+of the side rails. One swept band, and the stern stops reading as a shutter.
+
 **The camera fills the frame.** The published renders had the boats occupying
 about 40% of the picture, which is not a matter of taste — a bounding-box fit
 solves the distance for eight corners that, on a long thin hull seen on the

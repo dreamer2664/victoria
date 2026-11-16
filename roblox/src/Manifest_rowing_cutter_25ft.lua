@@ -32,6 +32,6 @@ return {
 		{ name = "Structure_Details", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(24.4193, 6.4668, 3.5957), verts = 548 },
 		{ name = "Thwart_Knees", role = "furniture", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(12.1171, 6.5929, 0.9336), verts = 120 },
 		{ name = "Thwarts_Benches", role = "furniture", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(19.2157, 6.4568, 1.1282), verts = 464 },
-		{ name = "Transom", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(0.8114, 2.9375, 2.9943), verts = 680 },
+		{ name = "Transom", role = "structure", origin = Vector3.new(0.0, 0.0, 0.0), size = Vector3.new(0.8114, 2.9375, 3.08), verts = 841 },
 	},
 }

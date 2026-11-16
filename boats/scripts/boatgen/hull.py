@@ -581,7 +581,7 @@ def build_sternpost(hull, mb, width=0.080, depth=0.095, mat=MAT["wood_timber"], 
 
 
 def build_transom(hull, mb, mat_out=MAT["wood_out"], mat_in=MAT["wood_in"], t_lo=0.0, t_top=0.998,
-                  camber=0.006, thick=0.030, n_y=15, n_t=20, rim=0.045):
+                  camber=0.006, thick=0.030, n_y=15, n_t=20, rim=0.045, cap=0.024, inset=0.014):
     """Raked transom: the flat stern panel the aftermost planking lands on."""
     ts = np.linspace(t_lo, t_top, n_t)
     ys = np.linspace(-1.0, 1.0, n_y)
@@ -591,7 +591,11 @@ def build_transom(hull, mb, mat_out=MAT["wood_out"], mat_in=MAT["wood_in"], t_lo
         half = p[1]
         for j, fy in enumerate(ys):
             cam = camber * (1.0 - fy ** 2) * (1.0 - 0.4 * abs(2 * t - 1))
-            grid_o[i, j] = np.array([p[0] - cam, fy * half, p[2]])
+            # `inset` beds the panel forward so the aft ends of the planking
+            # bury in it.  Built flush with the aft station, the plank lands
+            # stopped short of the panel and the stern showed a gap with the
+            # transom's edge standing proud of the planking.
+            grid_o[i, j] = np.array([p[0] - cam + inset, fy * half, p[2]])
     mb.add_grid(grid_o, mat_out)
     grid_i = grid_o.copy()
     grid_i[:, :, 0] += thick
@@ -605,6 +609,29 @@ def build_transom(hull, mb, mat_out=MAT["wood_out"], mat_in=MAT["wood_in"], t_lo
         strip = np.stack([[grid_o[i, j] for j in range(n_y)],
                           [grid_i[i, j] for j in range(n_y)]], axis=1)
         mb.add_grid(strip, mat_out, flip=flip)
+    # transom cap rail: the head of a transom is capped by the same moulding
+    # that runs along the gunwale, and without it the panel reads as a board
+    # standing on the stern rather than as part of the boat.  A half-round
+    # section, swept across the breadth, ending where the side rails end.
+    if cap > 0:
+        prev = None
+        for j, fy in enumerate(np.linspace(-1.0, 1.0, n_y + 8)):
+            p = hull.surface(1.0, t_top)
+            half = p[1] * 1.004
+            cam = camber * (1.0 - min(1.0, abs(fy)) ** 2)
+            y = fy * half
+            z0 = p[2]
+            ring = []
+            for ang in np.linspace(0.0, math.pi, 7):
+                ring.append(np.array([p[0] - cam + inset - cap * 0.55 * math.sin(ang),
+                                      y,
+                                      z0 + cap * 0.5 - cap * 0.5 * math.cos(ang)]))
+            if prev is not None:
+                strip = np.stack([np.array(prev), np.array(ring)], axis=1)
+                mb.add_grid(strip, mat_out)
+                mb.add_grid(strip[:, ::-1], mat_out, flip=True)
+            prev = ring
+
     # transom rim: a rubbing band round the edge that hides the plank lands
     if rim > 0:
         for j, flip in ((0, True), (n_y - 1, False)):
@@ -612,8 +639,8 @@ def build_transom(hull, mb, mat_out=MAT["wood_out"], mat_in=MAT["wood_in"], t_lo
             for i in range(n_t):
                 p = hull.surface(1.0, ts[i])
                 y = ys[j] * p[1]
-                pts_o.append(np.array([p[0] - camber * 0.5 - 0.004, y * 1.005, p[2]]))
-                pts_i.append(np.array([p[0] - rim, y * 0.985, p[2]]))
+                pts_o.append(np.array([p[0] - camber * 0.5 - 0.004 + inset, y * 1.005, p[2]]))
+                pts_i.append(np.array([p[0] - rim + inset, y * 0.985, p[2]]))
             a = np.array(pts_o)
             b = np.array(pts_i)
             strip = np.stack([a, b], axis=1)

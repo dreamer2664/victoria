@@ -116,6 +116,12 @@ for k in range(11):
     # actually uses to count strakes at a distance.
     v = 0.955 + 0.09 * ((k * 7) % 5) / 4.0
     warm = 1.0 + 0.06 * ((k * 3) % 4 - 1.5) / 1.5
+    # Varnished clinker, strake by strake: a boat department that varnished its
+    # steam cutter's topsides black and white would paint this one too, and
+    # that was tried -- but the lap shadows carry the form far better over warm
+    # varnished larch than under paint, and the two boats are already told apart
+    # by their ends, their oars and their machinery.  Kept varnished, with the
+    # strake tones varied so eleven laps do not read as one moulded shell.
     strake_mats.append(_register(bl.wood_material(
         f"Wood_Strake_{k:02d}",
         base=(0.32 * v * warm, 0.17 * v, 0.08 * v / warm),

@@ -117,7 +117,7 @@ N_STRAKES = 13
 carvel_mats = [MAT["paint_white"] if k >= N_STRAKES - 2 else
                (MAT["paint_hull"] if k >= 2 else MAT["red_lead"]) for k in range(N_STRAKES)]
 make(lambda mb: build_carvel_planking(mb, HULL, n_strakes=N_STRAKES, thickness=0.020, xi0=0.004,
-                                      xi1=0.997, n_xi=76, mat_out=carvel_mats,
+                                      xi1=0.9995, n_xi=76, mat_out=carvel_mats,
                                       mat_in=MAT["wood_timber"], seam=0.0022),
      "Planking_Carvel", col_hull, mirror=True)
 
