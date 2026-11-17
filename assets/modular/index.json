@@ -637,12 +637,12 @@
      "class": "quay",
      "glb": "assets/glb/a/A_ground.glb",
      "size_m": [
-      760.0,
+      800.0,
       1120.0,
       8.0
      ],
      "size_studs": [
-      2714.3,
+      2857.1,
       4000.0,
       28.6
      ],
@@ -651,7 +651,7 @@
       -560.0,
       -4.0
      ],
-     "triangles": 8050,
+     "triangles": 10022,
      "instances": 1,
      "connection_point": "coping line, centre of the 24 m module",
      "connection_convention": "place at 24 m centres along a water edge; rz chooses which way the land lies",
@@ -2983,7 +2983,7 @@
       -0.1
      ],
      "triangles": 24,
-     "instances": 51,
+     "instances": 68,
      "connection_point": "SW footprint corner at world 0, door on the street side",
      "connection_convention": "footprint rectangle is authoritative; doors face the street named in meta",
      "shipped": true

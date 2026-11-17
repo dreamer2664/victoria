@@ -212,6 +212,8 @@ def build(R, coll, audit):
     # Boundary walls
     for x in range(0, 331, 20):
         R.place("B_wall", x, 396, QUAY_Z)
+    for x in range(0, 331, 20):
+        R.place("B_wall", x, -296, QUAY_Z)
     for y in range(-280, 396, 20):
         R.place("B_wall", 336, y, QUAY_Z, 90)
 

@@ -88,12 +88,23 @@ def make_materials():
 
         # Victorian harbour water realism
         if name == "water":
-            bsdf.inputs["Roughness"].default_value = 0.08
+            bsdf.inputs["Roughness"].default_value = 0.05
             bsdf.inputs["IOR"].default_value = 1.333
             if "Transmission Weight" in bsdf.inputs:
-                bsdf.inputs["Transmission Weight"].default_value = 0.82
+                bsdf.inputs["Transmission Weight"].default_value = 0.88
             elif "Transmission" in bsdf.inputs:
-                bsdf.inputs["Transmission"].default_value = 0.82
+                bsdf.inputs["Transmission"].default_value = 0.88
+            wave_tex = nt.nodes.new("ShaderNodeTexWave")
+            wave_tex.location = (-320, -120)
+            wave_tex.inputs["Scale"].default_value = 0.18
+            wave_tex.inputs["Distortion"].default_value = 3.5
+            wave_tex.inputs["Detail"].default_value = 2.0
+            bump = nt.nodes.new("ShaderNodeBump")
+            bump.location = (-60, -120)
+            bump.inputs["Strength"].default_value = 0.08
+            bump.inputs["Distance"].default_value = 0.04
+            nt.links.new(wave_tex.outputs["Color"], bump.inputs["Height"])
+            nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
 
         m.diffuse_color = (*c, 1.0)
         _MATS[name] = m

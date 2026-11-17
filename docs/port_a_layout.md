@@ -12,9 +12,9 @@ An enclosed dock entered from the river, with the water level held constant by t
 
 | | |
 |---|---|
-| Site rectangle | x -30 → 300 m, y -260 → 400 m |
-| Site size | 330 × 660 m |
-| Site area | 21.8 ha |
+| Site rectangle | x -30 → 340 m, y -310 → 440 m |
+| Site size | 370 × 750 m |
+| Site area | 27.8 ha |
 | Quay coping | +4 m above water |
 | Water | mean level 0.00 m |
 

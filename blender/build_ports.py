@@ -71,7 +71,7 @@ def setup_lighting(coll, port):
         # At 40 deg elevation a sun crossing the dock's WIDTH puts the whole floor in
         # the shadow of its own wall (checked by ray-cast).  Azimuth 340 rakes the
         # light along the dock's length instead, so the altars and keel blocks read.
-        bsetup.add_sun(coll, 215, 41, 4.6, (1.0, 0.94, 0.86))
+        bsetup.add_sun(coll, 340, 41, 4.6, (1.0, 0.94, 0.86))
     bsetup.add_fill(coll, 100, 34, 0.55, (0.74, 0.80, 0.90))
     if os.environ.get("FLAT_SKY"):
         w = bpy.data.worlds.new("flat")

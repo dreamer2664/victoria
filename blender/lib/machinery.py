@@ -251,7 +251,7 @@ def rail_track(mb, x0, y0, x1, y1, z=QUAY_Z, gauge=GAUGE, sleeper_mat="timber",
             mb.add_quad((a[0] + px * 1.6, a[1] + py * 1.6, z - 0.02),
                         (b[0] + px * 1.6, b[1] + py * 1.6, z - 0.02),
                         (b[0] - px * 1.6, b[1] - py * 1.6, z - 0.02),
-                        (a[0] - px * 1.6, a[1] - py * 1.6, z - 0.02), "coal")
+                        (a[0] - px * 1.6, a[1] - py * 1.6, z - 0.02), "ballast")
     if sleepers:
         n = max(2, int(L / 0.72))
         for i in range(n):

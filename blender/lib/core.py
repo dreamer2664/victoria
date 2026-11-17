@@ -56,6 +56,7 @@ MATERIALS = {
     "plank":       dict(kind="tex", tile=2.40, rough=0.84),
     "creosote":    dict(kind="flat", color=(0.045, 0.038, 0.030), rough=0.92), # fender piles
     "iron":        dict(kind="tex", tile=1.00, rough=0.55, metal=0.65),
+    "steel":       dict(kind="tex", tile=2.00, rough=0.58, metal=0.70),
     "steel_plate": dict(kind="tex", tile=2.00, rough=0.58, metal=0.70),
     "coal":        dict(kind="tex", tile=1.00, rough=0.72),
     "canvas":      dict(kind="tex", tile=1.00, rough=0.92),
