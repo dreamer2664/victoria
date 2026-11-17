@@ -18,49 +18,53 @@ Layout.quayZ = 4.0
 
 -- ------------------------------------------------------------------ berths
 Layout.berths = {
-	{ id = "B-B1", name = "Fitting-out quay, river frontage", kind = "fitting_out",
+	{ id = "B-B1", name = "Fitting-out quay, river frontage (Day Summers 80t sheer legs)", kind = "fitting_out",
 	  rect = { -58.0, 186.0, -30.0, 396.0 },
 	  lengthM = 210.0, depthM = 10.0,
-	  envelope = { L = 180.0, B = 20.0, draft = 9.0 } },
+	  envelope = { L = 166.0, B = 18.0, draft = 6.5 } },
 	{ id = "B-B2", name = "Service quay south of the slips", kind = "repair",
 	  rect = { -58.0, -280.0, -30.0, 40.0 },
 	  lengthM = 320.0, depthM = 9.0,
 	  envelope = { L = 140.0, B = 18.0, draft = 8.0 } },
-	{ id = "B-B3", name = "No. 1 Graving Dock entrance", kind = "dry_dock",
-	  rect = { 150.0, 40.0, 168.0, 160.0 },
-	  lengthM = 120.0, depthM = 8.0,
-	  envelope = { L = 105.0, B = 13.0, draft = 6.5 } },
+	{ id = "B-B3", name = "Princess Graving Dock", kind = "dry_dock",
+	  rect = { 96.0, 20.0, 120.4, 264.0 },
+	  lengthM = 243.8, depthM = 11.0,
+	  envelope = { L = 166.0, B = 18.0, draft = 6.5 } },
 }
 
 -- ------------------------------------------------------------------ interactions
 Layout.interactions = {
 	{ id = "B-I1", name = "Time Office / Yard Gate", kind = "worker_gate", radius = 5,
 	  pos = { 70, -30, 4.0 } },
-	{ id = "B-I2", name = "Princess Dock Coping (north)", kind = "dock_caisson", radius = 6,
+	{ id = "B-I2", name = "Princess Dock Coping (North)", kind = "dock_caisson", radius = 6,
 	  pos = { 108, 262, 4.0 } },
-	{ id = "B-I3", name = "Princess Dock Floor", kind = "dock_floor_work", radius = 10,
-	  pos = { 108, 140, -11.0 } },
+	{ id = "B-I3", name = "Princess Dock Floor & Keel Blocks", kind = "dock_floor_work", radius = 10,
+	  pos = { 108, 140, -7.0 } },
 	{ id = "B-I4", name = "Moulding Loft Floor", kind = "loft_work", radius = 8,
 	  pos = { 165, 219, 4.0 } },
 	{ id = "B-I5", name = "Engineering Shop", kind = "workshop", radius = 8,
 	  pos = { 163, 252, 4.0 } },
-	{ id = "B-I6", name = "Slip 1 (shoring / keel blocks)", kind = "slip_work", radius = 8,
+	{ id = "B-I6", name = "Slip 1 (Shoring & Launch Ways)", kind = "slip_work", radius = 8,
 	  pos = { 10, 59, 4.0 } },
-	{ id = "B-I7", name = "Titan Crane Cab", kind = "crane_operate", radius = 4,
-	  pos = { 40, 200, 4.0 } },
+	{ id = "B-I7", name = "Day Summers 80t Sheer Legs Winch House", kind = "crane_operate", radius = 4,
+	  pos = { -28, 280, 4.0 } },
 	{ id = "B-I8", name = "Timber Yard", kind = "materials", radius = 8,
 	  pos = { 258, 158, 4.0 } },
-	{ id = "B-I9", name = "Plate Yard", kind = "materials", radius = 8,
+	{ id = "B-I9", name = "Plate Yard & Racks", kind = "materials", radius = 8,
 	  pos = { 232, 46, 4.0 } },
-	{ id = "B-I10", name = "Fitting-out Quay", kind = "fitting_out", radius = 8,
+	{ id = "B-I10", name = "Fitting-out Quay (Berth B-B1)", kind = "fitting_out", radius = 8,
 	  pos = { -34, 250, 4.0 } },
+	{ id = "B-I11", name = "No. 1 Graving Dock Entrance", kind = "dock_caisson", radius = 5,
+	  pos = { 159, 42, 4.0 } },
+	{ id = "B-I12", name = "Graving Dock Keel Blocks", kind = "keel_block_align", radius = 6,
+	  pos = { 108, 100, -7.0 } },
 }
 
 -- ------------------------------------------------------------------ paths
 Layout.paths = {
 	worker = { {{ 70, -30 }, { 70, 40 }, { 60, 120 }, { 20, 200 }, { 80, 240 }}, {{ 70, -30 }, { 20, -100 }, { 20, -60 }} },
 	vehicle = { {{ 340, -300 }, { 300, -100 }, { 300, 200 }, { 200, 260 }} },
-	rail = { {{ -16, -280 }, { -16, 380 }} },
+	rail = { {{ 72, -300 }, { 72, 400 }} },
 }
 
 Layout.spawns = {

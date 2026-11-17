@@ -12,9 +12,9 @@ An enclosed dock entered from the river, with the water level held constant by t
 
 | | |
 |---|---|
-| Site rectangle | x -30 → 330 m, y -300 → 430 m |
-| Site size | 360 × 730 m |
-| Site area | 26.3 ha |
+| Site rectangle | x -30 → 300 m, y -260 → 400 m |
+| Site size | 330 × 660 m |
+| Site area | 21.8 ha |
 | Quay coping | +4 m above water |
 | Water | mean level 0.00 m |
 
@@ -39,7 +39,7 @@ The berth rule applied by the layout auditor: a ship of the stated envelope must
 
 | Berth | Name | Kind | Envelope L×B×draft (m) | Clear water | Length | Depth | Checks |
 |---|---|---|---|---|---|---|---|
-| A-B1 | Trafalgar Landing Stage, West Face | passenger | 180 × 20 × 9 | 26 × 212 m | 204 m | 11 m | OK |
+| A-B1 | Trafalgar Landing Stage, West Face | passenger | 166 × 18 × 6.5 | 18 × 204 m | 204 m | 11 m | CHECK |
 | A-B2 | Trafalgar Landing Stage, East Berth (tender/steamer) | passenger | 100 × 14 × 5 | 20 × 110 m | 110 m | 6.5 m | OK |
 | A-B3 | Trafalgar Dock, North Quay (cargo) | cargo | 130 × 18 × 8 | 24 × 132 m | 132 m | 9 m | CHECK |
 | A-B4 | Trafalgar Dock, East Quay (cargo) | cargo | 116 × 17 × 8 | 22 × 124 m | 124 m | 9 m | OK |
@@ -52,18 +52,6 @@ Every point below is walked to by a player and is generated into the Roblox laye
 
 | ID | Point | Kind | Radius | Position (x, y, z) |
 |---|---|---|---|---|
-| A-I1 | Booking Office / Tickets | ticket_purchase | 4 m | 24, 34, 4 |
-| A-I2 | Baggage Hall (desk / weigh) | baggage_checkin | 6 m | 22, 90, 4 |
-| A-I3 | Customs Examination | customs | 6 m | 24, 120, 4 |
-| A-I4 | Gangway Bridge (shore end) 1 | board_via_bridge | 4 m | -28, 75, 4 |
-| A-I5 | Gangway Bridge (shore end) 2 | board_via_bridge | 4 m | -28, 195, 4 |
-| A-I6 | Landing Stage Deck | spawn_passenger | 10 m | -73, 130, 4 |
-| A-I7 | Ship Brow | board_ship | 3 m | -80, 130, 4 |
-| A-I8 | Mooring bollards (berth 1) | mooring | 3 m | -82, 60, 4 |
-| A-I9 | Coal Staithe / Hoist | coal_bunkering | 6 m | 100, -54, 4 |
-| A-I10 | Cargo Shed Door (dock) | cargo_work | 5 m | 204, -140, 4 |
-| A-I11 | Railway Platform | train_board | 6 m | 116, 48, 4 |
-| A-I12 | Dock Gate / Time Office | worker_gate | 4 m | 170, 150, 4 |
 
 ## 7. Known limitations
 
@@ -78,7 +66,3 @@ A North German Lloyd mail steamer of 1889 turned round in about 29 hours. Coalin
 
 ## 9. Circulation
 
-- **passenger** route 1: (-28, 75) → (2, 75) → (24, 60) → (24, 34)
-- **passenger** route 2: (-28, 195) → (-6, 195) → (-6, 120) → (2, 120)
-- **dockworker** route 1: (170, 150) → (170, 60) → (150, 20) → (60, -30) → (16, -60)
-- **vehicle** route 1: (170, 150) → (170, 200) → (100, 220) → (2, 220)

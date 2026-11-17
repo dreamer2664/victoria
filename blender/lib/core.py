@@ -1,5 +1,6 @@
 """
 core.py -- shared constants, material library and the MeshBuilder geometry engine.
+GENERATION II — OPERATION VICTORIA (PERICLES-II)
 
 CONVENTIONS
 -----------
@@ -9,37 +10,38 @@ CONVENTIONS
 * X runs along the quay wall for each port unless a module documents otherwise.
 * UVs are generated in WORLD-PLANAR projection scaled by each material's real
   tile size, so texel density is constant everywhere and bricks/stone keep a
-  true 215 mm course no matter how big the object is.
+  true course no matter how big the object is.
 
 ROBLOX CONVERSION
 -----------------
-1 Roblox stud = 0.28 m  ->  metres_to_studs = 1 / 0.28 = 3.5714286
-The exporter multiplies by STUDS_PER_METRE; see export.py.
+1 Roblox stud = 0.28 m  ->  metres_to_studs = 1 / 0.28 = 3.57142857
 """
 import math
 
-STUDS_PER_METRE = 1.0 / 0.28          # 3.571428...
+STUDS_PER_METRE = 1.0 / 0.28          # 3.57142857
 
 # ---------------------------------------------------------------- levels (m)
 WATER_Z = 0.00
+HIGH_WATER_Z = 1.20
+LOW_WATER_Z = -1.20
 QUAY_Z = 4.00          # top of quay coping
-SILL_Z = -10.50        # dock/lock entrance sill
-RIVER_BED_Z = -12.00
-DOCK_BED_Z = -8.00     # impounded wet dock bed (Port A)
-GRAVING_FLOOR_Z = -5.60  # Port B graving-dock floor relative to its coping
+SILL_Z = -4.50         # graving dock sill below water datum
+RIVER_BED_Z = -11.00   # River Alde / River Lagan channel bed
+DOCK_BED_Z = -9.00     # impounded wet dock bed (Trafalgar Dock)
+GRAVING_FLOOR_Z = -7.00 # Princess Graving Dock stone floor (11.0 m below coping)
 
-# liner envelope to design berths against (integration allowance)
-LINER_L = 180.0
-LINER_B = 20.0
-LINER_DRAFT = 9.0
+# liner envelope to design berths against (integration allowance for SS Aurelian)
+LINER_L = 166.0
+LINER_B = 18.4
+LINER_DRAFT = 6.5
 
 # ---------------------------------------------------------------- materials
-# name -> dict(kind='tex'|'flat', alb=..., nrm=..., tile=<metres>, rough=, color=, metal=)
 MATERIALS = {
     # masonry / brick
     "brick_soot":  dict(kind="tex", tile=2.25, rough=0.88),   # warehouses, soot-blackened
     "brick_buff":  dict(kind="tex", tile=2.25, rough=0.86),   # offices, station
     "brick_blue":  dict(kind="tex", tile=2.25, rough=0.80),   # engineering brick, plinths
+    "brick_red":   dict(kind="tex", tile=2.25, rough=0.85, color=(0.42, 0.16, 0.11)),
     "sandstone":   dict(kind="tex", tile=2.40, rough=0.82),   # Custom House, cornices
     "rubble":      dict(kind="tex", tile=2.40, rough=0.92),   # dock walls below coping
     "granite":     dict(kind="tex", tile=2.40, rough=0.74),   # coping, kerbs, dock altars
@@ -52,29 +54,33 @@ MATERIALS = {
     "slate":       dict(kind="tex", tile=1.20, rough=0.64),
     "timber":      dict(kind="tex", tile=1.20, rough=0.86),
     "plank":       dict(kind="tex", tile=2.40, rough=0.84),
-    "iron":        dict(kind="tex", tile=1.00, rough=0.55, metal=0.55),
-    "steel_plate": dict(kind="tex", tile=2.00, rough=0.58, metal=0.65),
+    "creosote":    dict(kind="flat", color=(0.045, 0.038, 0.030), rough=0.92), # fender piles
+    "iron":        dict(kind="tex", tile=1.00, rough=0.55, metal=0.65),
+    "steel_plate": dict(kind="tex", tile=2.00, rough=0.58, metal=0.70),
     "coal":        dict(kind="tex", tile=1.00, rough=0.72),
     "canvas":      dict(kind="tex", tile=1.00, rough=0.92),
     "stucco":      dict(kind="tex", tile=2.00, rough=0.80),
-    # untextured
+    # untextured / flat
+    "algae":       dict(kind="flat", color=(0.042, 0.075, 0.038), rough=0.92), # tidal mark
     "glass":       dict(kind="flat", color=(0.072, 0.086, 0.098), rough=0.16, metal=0.0, alpha=0.70),
-    "glass_lit":   dict(kind="flat", color=(0.32, 0.22, 0.10), rough=0.20, emit=1.2),
-    "paint_white": dict(kind="flat", color=(0.68, 0.67, 0.62), rough=0.55),
+    "glass_lit":   dict(kind="flat", color=(0.42, 0.28, 0.12), rough=0.20, emit=2.0),
+    "paint_white": dict(kind="flat", color=(0.72, 0.70, 0.65), rough=0.55),
     "puddle":      dict(kind="flat", color=(0.038, 0.045, 0.048), rough=0.07, metal=0.25),
-    "paint_green": dict(kind="flat", color=(0.028, 0.055, 0.042), rough=0.62),   # dock-board green
+    "paint_green": dict(kind="flat", color=(0.028, 0.055, 0.042), rough=0.62), # dock-board green
     "paint_red":   dict(kind="flat", color=(0.32, 0.075, 0.055), rough=0.62),
-    "brass":       dict(kind="flat", color=(0.52, 0.38, 0.16), rough=0.32, metal=0.9),
-    "copper":      dict(kind="flat", color=(0.30, 0.39, 0.34), rough=0.45, metal=0.8),
+    "brass":       dict(kind="flat", color=(0.58, 0.44, 0.18), rough=0.30, metal=0.92),
+    "bronze":      dict(kind="flat", color=(0.48, 0.35, 0.18), rough=0.35, metal=0.90),
+    "copper":      dict(kind="flat", color=(0.30, 0.39, 0.34), rough=0.45, metal=0.85),
     "rope":        dict(kind="flat", color=(0.255, 0.205, 0.135), rough=0.95),
-    "water":       dict(kind="flat", color=(0.052, 0.070, 0.076), rough=0.10, metal=0.42),
+    "water":       dict(kind="flat", color=(0.042, 0.065, 0.070), rough=0.08, metal=0.35),
     "mud":         dict(kind="flat", color=(0.105, 0.092, 0.072), rough=0.95),
-    "black":       dict(kind="flat", color=(0.028, 0.028, 0.030), rough=0.60),
+    "black":       dict(kind="flat", color=(0.024, 0.024, 0.026), rough=0.60),
     "interior":    dict(kind="flat", color=(0.128, 0.118, 0.106), rough=0.92),
+    "whitewash":   dict(kind="flat", color=(0.65, 0.62, 0.58), rough=0.90),
     "plaster":     dict(kind="flat", color=(0.412, 0.386, 0.330), rough=0.88),
     "lead":        dict(kind="flat", color=(0.115, 0.124, 0.132), rough=0.42, metal=0.75),
     "brick_in":    dict(kind="flat", color=(0.150, 0.106, 0.092), rough=0.94),
-    "lamp_glow":   dict(kind="flat", color=(1.0, 0.72, 0.35), rough=0.3, emit=3.0),
+    "lamp_glow":   dict(kind="flat", color=(1.0, 0.75, 0.38), rough=0.25, emit=4.0),
 }
 
 MAT_ORDER = list(MATERIALS.keys())
@@ -85,19 +91,27 @@ def tile_of(mat):
     return MATERIALS.get(mat, {}).get("tile", 1.0)
 
 
-# ---------------------------------------------------------------- builder
-def _sub(a, b): return (a[0] - b[0], a[1] - b[1], a[2] - b[2])
-def _cross(a, b): return (a[1] * b[2] - a[2] * b[1],
-                          a[2] * b[0] - a[0] * b[2],
-                          a[0] * b[1] - a[1] * b[0])
-def _dot(a, b): return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+# ---------------------------------------------------------------- vector helpers
+def _cross(a, b):
+    return (a[1] * b[2] - a[2] * b[1],
+            a[2] * b[0] - a[0] * b[2],
+            a[0] * b[1] - a[1] * b[0])
+
+def _sub(a, b):
+    return (a[0] - b[0], a[1] - b[1], a[2] - b[2])
+
+def _dot(a, b):
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+
 def _norm(a):
-    l = math.sqrt(_dot(a, a)) or 1.0
-    return (a[0] / l, a[1] / l, a[2] / l)
+    L = math.hypot(a[0], a[1], a[2])
+    if L < 1e-9: return (0.0, 0.0, 1.0)
+    return (a[0] / L, a[1] / L, a[2] / L)
 
 
+# ================================================================ MeshBuilder
 class MeshBuilder:
-    """Accumulates raw triangles/quads with per-face material and world-planar UVs."""
+    """Accumulates triangles and quads with per-face material and planar UVs."""
 
     __slots__ = ("verts", "faces", "fmats", "fuvs")
 
@@ -107,7 +121,6 @@ class MeshBuilder:
         self.fmats = []
         self.fuvs = []
 
-    # -- low level ---------------------------------------------------------
     def _v(self, p):
         self.verts.append((float(p[0]), float(p[1]), float(p[2])))
         return len(self.verts) - 1
@@ -211,16 +224,8 @@ class MeshBuilder:
             j = (i + 1) % seg
             self.add_quad(pts0[i], pts0[j], pts1[j], pts1[i], mat)
         if cap:
-            cen0 = (cx, cy, z0) if axis == "Z" else ((cx, cy, z0) if axis == "Y" else (cx, cy, z0))
-            if axis == "Z":
-                self.add_face(list(reversed(pts0)), mat)
-                self.add_face(pts1, mat)
-            elif axis == "X":
-                self.add_face(list(reversed(pts0)), mat)
-                self.add_face(pts1, mat)
-            else:
-                self.add_face(list(reversed(pts0)), mat)
-                self.add_face(pts1, mat)
+            self.add_face(list(reversed(pts0)), mat)
+            self.add_face(pts1, mat)
 
     def add_disc(self, cx, cy, cz, r, mat, seg=16, axis="Z", flip=False):
         pts = []
@@ -238,8 +243,7 @@ class MeshBuilder:
         self.add_face(pts, mat)
 
     def add_prism(self, profile, axis, a0, a1, mat, close=True):
-        """Extrude a 2D profile along `axis` ('X'|'Y'|'Z') from a0 to a1.
-        profile is a list of (u,v) in the plane orthogonal to axis."""
+        """Extrude a 2D profile along axis ('X'|'Y'|'Z') from a0 to a1."""
         def mk(a, u, v):
             if axis == "Z": return (u, v, a)
             if axis == "X": return (a, u, v)
@@ -250,17 +254,11 @@ class MeshBuilder:
         for i in range(n if close else n - 1):
             j = (i + 1) % n
             self.add_quad(A[i], A[j], B[j], B[i], mat)
-        # end caps (simple fan for convex profiles)
         self.add_face(list(reversed(A)), mat)
         self.add_face(B, mat)
 
     def add_grid_quad(self, x0, y0, x1, y1, z, mat, step=8.0, uv_off=(0.0, 0.0)):
-        """A horizontal surface subdivided into cells.
-
-        Large single quads carrying a normal map produce shading-normal shadow
-        terminator artefacts across hundreds of metres. Subdividing keeps shading
-        normals local and also lets Cycles distribute light properly.
-        """
+        """A horizontal surface subdivided into cells to avoid shading artefacts."""
         nx = max(1, int(abs(x1 - x0) / step))
         ny = max(1, int(abs(y1 - y0) / step))
         for i in range(nx):
@@ -274,35 +272,65 @@ class MeshBuilder:
 
     def add_gable_roof(self, x0, y0, x1, y1, z_eave, pitch_deg, mat, gable="Y",
                        overhang=0.35, ridge_mat=None, end_mat=None):
-        """Pitched roof. Ridge runs along the longer of X/Y as selected by `gable`."""
+        """Pitched roof with fully closed solid triangular gable masonry ends and bargeboards.
+        
+        gable='Y' means the ridge runs parallel to Y (gables at y0 and y1).
+        gable='X' means the ridge runs parallel to X (gables at x0 and x1).
+        """
+        em = end_mat or mat
         rise = (min(x1 - x0, y1 - y0) / 2) * math.tan(math.radians(pitch_deg))
         z_r = z_eave + rise
         ex0, ey0, ex1, ey1 = x0 - overhang, y0 - overhang, x1 + overhang, y1 + overhang
-        if gable == "Y":       # ridge runs parallel to Y
+
+        if gable == "Y":       # ridge runs parallel to Y (roof slopes West and East)
             xm = (x0 + x1) / 2
+            # West slope (faces -X, +Z)
             self.add_quad((ex0, ey0, z_eave), (ex0, ey1, z_eave), (xm, ey1, z_r), (xm, ey0, z_r), mat)
+            # East slope (faces +X, +Z)
             self.add_quad((xm, ey0, z_r), (xm, ey1, z_r), (ex1, ey1, z_eave), (ex1, ey0, z_eave), mat)
-            # ridge cap along the apex
-            self.add_box(xm - 0.13, ey0, z_r - 0.06, xm + 0.13, ey1, z_r + 0.09, ridge_mat or "lead")
-            # eaves fascia + cast-iron gutter at both eaves
-            for ex, sgn in ((ex0, -1), (ex1, 1)):
-                self.add_box(ex - 0.04, ey0, z_eave - 0.24, ex + 0.09, ey1, z_eave, "timber")
-                self.add_box(ex - 0.10, ey0, z_eave - 0.34, ex + 0.03, ey1, z_eave - 0.18, "iron")
-            # barge boards / gable ends
-            em = end_mat or mat
-            self.add_tri((ex0, y0, z_eave), (xm, y0, z_r), (x0, y0, z_eave), em)
-            self.add_tri((x1, y1, z_eave), (xm, y1, z_r), (ex1, y1, z_eave), em)
-        else:
-            ym = (y0 + y1) / 2
-            self.add_quad((ex0, ey0, z_eave), (ex1, ey0, z_eave), (ex1, ym, z_r), (ex0, ym, z_r), mat)
-            self.add_quad((ex0, ym, z_r), (ex1, ym, z_r), (ex1, ey1, z_eave), (ex0, ey1, z_eave), mat)
-            self.add_box(ex0, ym - 0.13, z_r - 0.06, ex1, ym + 0.13, z_r + 0.09, ridge_mat or "lead")
+            # Ridge roll / lead cap along the apex
+            self.add_box(xm - 0.14, ey0, z_r - 0.06, xm + 0.14, ey1, z_r + 0.10, ridge_mat or "lead")
+            # Eaves fascia + cast-iron gutters
+            for ex in (ex0, ex1):
+                self.add_box(ex - 0.05, ey0, z_eave - 0.22, ex + 0.08, ey1, z_eave, "timber")
+                self.add_box(ex - 0.12, ey0, z_eave - 0.32, ex + 0.02, ey1, z_eave - 0.18, "iron")
+
+            # SOLID MASONRY GABLE ENDS (completely closing the roof cavity)
+            # South gable at y = y0 (outward normal pointing -Y):
+            self.add_tri((x0, y0, z_eave), (x1, y0, z_eave), (xm, y0, z_r), em)
+            # North gable at y = y1 (outward normal pointing +Y):
+            self.add_tri((x1, y1, z_eave), (x0, y1, z_eave), (xm, y1, z_r), em)
+
+            # Verge bargeboard trim along the roof slope overhangs
             for ey, sgn in ((ey0, -1), (ey1, 1)):
-                self.add_box(ex0, ey - 0.04, z_eave - 0.24, ex1, ey + 0.09, z_eave, "timber")
-                self.add_box(ex0, ey - 0.10, z_eave - 0.34, ex1, ey + 0.03, z_eave - 0.18, "iron")
-            em = end_mat or mat
-            self.add_tri((x0, y0, z_eave), (x0, ym, z_r), (x0, y1, z_eave), em)
+                # West bargeboard
+                self.add_beam((ex0, ey, z_eave), (xm, ey, z_r), 0.08, 0.22, "timber")
+                # East bargeboard
+                self.add_beam((xm, ey, z_r), (ex1, ey, z_eave), 0.08, 0.22, "timber")
+        else:                  # ridge runs parallel to X (roof slopes South and North)
+            ym = (y0 + y1) / 2
+            # South slope (faces -Y, +Z)
+            self.add_quad((ex0, ey0, z_eave), (ex1, ey0, z_eave), (ex1, ym, z_r), (ex0, ym, z_r), mat)
+            # North slope (faces +Y, +Z)
+            self.add_quad((ex0, ym, z_r), (ex1, ym, z_r), (ex1, ey1, z_eave), (ex0, ey1, z_eave), mat)
+            # Ridge roll / lead cap
+            self.add_box(ex0, ym - 0.14, z_r - 0.06, ex1, ym + 0.14, z_r + 0.10, ridge_mat or "lead")
+            # Eaves fascia + cast-iron gutters
+            for ey in (ey0, ey1):
+                self.add_box(ex0, ey - 0.05, z_eave - 0.22, ex1, ey + 0.08, z_eave, "timber")
+                self.add_box(ex0, ey - 0.12, z_eave - 0.32, ex1, ey + 0.02, z_eave - 0.18, "iron")
+
+            # SOLID MASONRY GABLE ENDS (completely closing the roof cavity)
+            # West gable at x = x0 (outward normal pointing -X):
+            self.add_tri((x0, y1, z_eave), (x0, y0, z_eave), (x0, ym, z_r), em)
+            # East gable at x = x1 (outward normal pointing +X):
             self.add_tri((x1, y0, z_eave), (x1, y1, z_eave), (x1, ym, z_r), em)
+
+            # Verge bargeboard trim along the roof slope overhangs
+            for ex in (ex0, ex1):
+                self.add_beam((ex, ey0, z_eave), (ex, ym, z_r), 0.08, 0.22, "timber")
+                self.add_beam((ex, ym, z_r), (ex, ey1, z_eave), 0.08, 0.22, "timber")
+
         return z_r
 
     def add_hip_roof(self, x0, y0, x1, y1, z_eave, pitch_deg, mat, overhang=0.35):
@@ -319,6 +347,11 @@ class MeshBuilder:
         self.add_quad((ex1, ey1, z_eave), (ex0, ey1, z_eave), ra, rb, mat)
         self.add_tri((ex1, ey0, z_eave), (ex1, ey1, z_eave), rb, mat)
         self.add_tri((ex0, ey1, z_eave), (ex0, ey0, z_eave), ra, mat)
+        # Gutters along all four eaves
+        for ex in (ex0, ex1):
+            self.add_box(ex - 0.10, ey0, z_eave - 0.32, ex + 0.02, ey1, z_eave - 0.18, "iron")
+        for ey in (ey0, ey1):
+            self.add_box(ex0, ey - 0.10, z_eave - 0.32, ex1, ey + 0.02, z_eave - 0.18, "iron")
         return z_r
 
     # -- combination -------------------------------------------------------

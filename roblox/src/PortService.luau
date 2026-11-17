@@ -51,6 +51,20 @@ local PROMPT_STYLE: { [string]: { ActionText: string, ObjectText: string, Hold: 
 	slip_work = { ActionText = "Shore up", ObjectText = "Building slip", Hold = 1.5 },
 	dock_floor_work = { ActionText = "Dock work", ObjectText = "Dock floor", Hold = 1.5 },
 	worker_gate = { ActionText = "Clock in", ObjectText = "Time office", Hold = 0.4 },
+	bridge_operate = { ActionText = "Swing bridge", ObjectText = "Hydraulic controls", Hold = 1.0 },
+	hydraulic_power = { ActionText = "Inspect accumulator", ObjectText = "Hartley engine room", Hold = 0.8 },
+	boat_step = { ActionText = "Embark / Disembark", ObjectText = "Waterman boat steps", Hold = 0.5 },
+	dock_caisson = { ActionText = "Operate caisson", ObjectText = "Graving dock gate", Hold = 1.5 },
+	keel_block_align = { ActionText = "Align keel blocks", ObjectText = "Granite blocks", Hold = 1.0 },
+	board_ship = { ActionText = "Board", ObjectText = "Articulated brow", Hold = 0.5 },
+	board_via_bridge = { ActionText = "Cross", ObjectText = "Landing stage bridge", Hold = 0.4 },
+	coal_bunkering = { ActionText = "Bunker coal", ObjectText = "Hydraulic hoist", Hold = 1.0 },
+	cargo_work = { ActionText = "Move cargo", ObjectText = "Transit shed", Hold = 0.8 },
+	train_board = { ActionText = "Board train", ObjectText = "Boat train carriage", Hold = 0.5 },
+	materials = { ActionText = "Select materials", ObjectText = "Yard stock", Hold = 0.8 },
+	fitting_out = { ActionText = "Rig vessel", ObjectText = "Fitting-out berth", Hold = 1.0 },
+	baggage_checkin = { ActionText = "Weigh luggage", ObjectText = "Baggage counter", Hold = 0.5 },
+	spawn_passenger = { ActionText = "Muster", ObjectText = "Passenger assembly", Hold = 0.2 },
 }
 
 local function makeAnchor(parent: Instance, portCode: string, def: any): Anchor

@@ -1,62 +1,50 @@
 """
-bsetup.py -- Blender-side plumbing: scene reset, material library, builder -> object,
-modular asset registry with linked-duplicate instancing, cameras, lighting, render.
+bsetup.py -- Blender scene setup: materials, world/sky, camera framing, lighting,
+compositor mist/haze, and the MeshBuilder -> Blender Object conversion pipeline.
+GENERATION II — OPERATION VICTORIA (PERICLES-II)
 """
-import os
-import math
-import bpy
-import bmesh
+import os, sys, math
+import bpy, bmesh
 from mathutils import Vector, Euler
 
-from core import MATERIALS, MAT_ORDER, MAT_INDEX
+LIBDIR = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(LIBDIR))
+TEXDIR = os.path.join(ROOT, "textures")
 
-TEXDIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
-    os.path.abspath(__file__)))), "textures")
+from core import MATERIALS, MAT_INDEX, QUAY_Z, WATER_Z
 
-# ---------------------------------------------------------------- scene
+_MATS = {}
+
+
 def reset_scene():
+    """Wipe everything out of the scene and start clean."""
     bpy.ops.wm.read_factory_settings(use_empty=True)
     sc = bpy.context.scene
-    sc.unit_settings.system = 'METRIC'
-    sc.unit_settings.scale_length = 1.0
     sc.render.engine = 'CYCLES'
     sc.cycles.device = 'CPU'
-    sc.render.film_transparent = False
-    # AgX/Filmic name their "look" presets differently across versions; probe safely.
-    for vt in ('AgX', 'Filmic', 'Standard'):
-        try:
-            sc.view_settings.view_transform = vt
-            break
-        except TypeError:
-            continue
-    for lk in ('AgX - Medium High Contrast', 'Medium High Contrast',
-               'Filmic - Medium High Contrast', 'None'):
-        try:
-            sc.view_settings.look = lk
-            break
-        except TypeError:
-            continue
+    sc.cycles.preview_samples = 12
+    sc.cycles.samples = 64
+    sc.view_settings.view_transform = 'AgX'
+    sc.view_settings.look = 'AgX - Medium High Contrast'
+    sc.view_settings.exposure = -0.15
+    sc.unit_settings.system = 'METRIC'
+    sc.unit_settings.scale_length = 1.0
+    make_materials()
     return sc
 
 
 def ensure_coll(name, parent=None):
     c = bpy.data.collections.get(name)
-    if c is None:
+    if not c:
         c = bpy.data.collections.new(name)
         (parent or bpy.context.scene.collection).children.link(c)
     return c
 
 
 # ---------------------------------------------------------------- materials
-_MATS = {}
-
-
 def make_materials():
-    """Build one Principled material per entry in MATERIALS, textured from texgen PNGs."""
     global _MATS
-    _MATS = {}
-    for name in MAT_ORDER:
-        spec = MATERIALS[name]
+    for name, spec in MATERIALS.items():
         m = bpy.data.materials.get(name) or bpy.data.materials.new(name)
         m.use_nodes = True
         nt = m.node_tree
@@ -65,11 +53,15 @@ def make_materials():
         bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled"); bsdf.location = (280, 0)
         nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
 
+        c = spec.get("color", (0.5, 0.5, 0.5))
+        bsdf.inputs["Base Color"].default_value = (c[0], c[1], c[2], 1.0)
+        bsdf.inputs["Roughness"].default_value = spec.get("rough", 0.7)
+
         if spec["kind"] == "tex":
             alb = os.path.join(TEXDIR, name + "_alb.png")
             nrm = os.path.join(TEXDIR, name + "_nrm.png")
-            tx = nt.nodes.new("ShaderNodeTexImage"); tx.location = (-320, 220)
             if os.path.exists(alb):
+                tx = nt.nodes.new("ShaderNodeTexImage"); tx.location = (-320, 220)
                 tx.image = bpy.data.images.load(alb, check_existing=True)
                 nt.links.new(tx.outputs["Color"], bsdf.inputs["Base Color"])
             if os.path.exists(nrm):
@@ -77,14 +69,9 @@ def make_materials():
                 ti.image = bpy.data.images.load(nrm, check_existing=True)
                 ti.image.colorspace_settings.name = 'Non-Color'
                 nm = nt.nodes.new("ShaderNodeNormalMap"); nm.location = (-60, -180)
-                nm.inputs["Strength"].default_value = 0.55
+                nm.inputs["Strength"].default_value = 0.65
                 nt.links.new(ti.outputs["Color"], nm.inputs["Color"])
                 nt.links.new(nm.outputs["Normal"], bsdf.inputs["Normal"])
-            bsdf.inputs["Roughness"].default_value = spec.get("rough", 0.7)
-        else:
-            c = spec.get("color", (0.5, 0.5, 0.5))
-            bsdf.inputs["Base Color"].default_value = (c[0], c[1], c[2], 1.0)
-            bsdf.inputs["Roughness"].default_value = spec.get("rough", 0.5)
 
         if spec.get("metal"):
             bsdf.inputs["Metallic"].default_value = spec["metal"]
@@ -92,14 +79,26 @@ def make_materials():
             bsdf.inputs["Alpha"].default_value = spec["alpha"]
             m.blend_method = 'BLEND'
         if spec.get("emit"):
-            bsdf.inputs["Emission Color"].default_value = (
-                spec.get("color", (1, 0.8, 0.4))[0], spec.get("color", (1, 0.8, 0.4))[1],
-                spec.get("color", (1, 0.8, 0.4))[2], 1.0)
-            bsdf.inputs["Emission Strength"].default_value = spec["emit"]
-        m.diffuse_color = (*spec.get("color", (0.5, 0.5, 0.5)), 1.0)
+            ec = spec.get("color", (1.0, 0.8, 0.4))
+            if "Emission Color" in bsdf.inputs:
+                bsdf.inputs["Emission Color"].default_value = (ec[0], ec[1], ec[2], 1.0)
+                bsdf.inputs["Emission Strength"].default_value = spec["emit"]
+            elif "Emission" in bsdf.inputs:
+                bsdf.inputs["Emission"].default_value = (ec[0], ec[1], ec[2], 1.0)
+
+        # Victorian harbour water realism
+        if name == "water":
+            bsdf.inputs["Roughness"].default_value = 0.08
+            bsdf.inputs["IOR"].default_value = 1.333
+            if "Transmission Weight" in bsdf.inputs:
+                bsdf.inputs["Transmission Weight"].default_value = 0.82
+            elif "Transmission" in bsdf.inputs:
+                bsdf.inputs["Transmission"].default_value = 0.82
+
+        m.diffuse_color = (*c, 1.0)
         _MATS[name] = m
 
-    # painted signboards (see signs.py) become plain image-mapped materials
+    # painted signboards (see signs.py)
     signdir = os.path.join(TEXDIR, "signs")
     if os.path.isdir(signdir):
         for fn in sorted(os.listdir(signdir)):
@@ -125,26 +124,26 @@ def make_materials():
 def mat(name):
     if name not in _MATS:
         make_materials()
-    return _MATS[name]
+    return _MATS.get(name, _MATS.get("sandstone"))
 
 
 # ---------------------------------------------------------------- builder -> object
 def builder_to_object(name, mb, coll=None, bevel=0.0, shade_smooth=False):
-    """Turn a MeshBuilder into a real Blender object with material slots + UVs."""
+    """Turn a MeshBuilder into an optimized Blender object with UVs and <=19,500 tris."""
     if not mb.faces:
         return None
     me = bpy.data.meshes.new(name)
     me.from_pydata([Vector(v) for v in mb.verts], [], [list(f) for f in mb.faces])
     me.validate(verbose=False)
 
-    # material slots: only the materials actually used, in global order
+    # material slots
     used = sorted({m for m in mb.fmats}, key=lambda n: MAT_INDEX.get(n, 999))
     slot_of = {}
     for i, mn in enumerate(used):
         me.materials.append(mat(mn))
         slot_of[mn] = i
     for poly, mn in zip(me.polygons, mb.fmats):
-        poly.material_index = slot_of[mn]
+        poly.material_index = slot_of.get(mn, 0)
 
     uv = me.uv_layers.new(name="UVMap")
     for poly, fuv in zip(me.polygons, mb.fuvs):
@@ -154,57 +153,54 @@ def builder_to_object(name, mb, coll=None, bevel=0.0, shade_smooth=False):
 
     me.update()
 
-    # Make all normals consistent and outward. Facade routines legitimately emit
-    # mirrored/mixed winding; this normalises it in one pass instead of trying to
-    # hand-track orientation in every component.
+    # Weld coincident vertices (fixes MeshBuilder vertex bloat) & normalise face normals
     bm = bmesh.new()
     bm.from_mesh(me)
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.001)
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
     bm.to_mesh(me)
     bm.free()
     me.update()
 
     ob = bpy.data.objects.new(name, me)
-    (coll or bpy.context.scene.collection).objects.link(ob)
+    bpy.context.scene.collection.objects.link(ob)
+    bpy.ops.object.select_all(action="DESELECT")
+    ob.select_set(True)
+    bpy.context.view_layer.objects.active = ob
 
     if shade_smooth:
         for p in me.polygons:
             p.use_smooth = True
-    if bevel > 0:
-        mod = ob.modifiers.new("Bevel", 'BEVEL')
-        mod.width = bevel
-        mod.segments = 1
-        mod.limit_method = 'ANGLE'
-        mod.angle_limit = math.radians(50)
-        mod.harden_normals = False
-        # apply immediately so instancing/export sees final geometry
-        bpy.context.view_layer.objects.active = ob
+
+    # STRICT ROBLOX 20,000-TRIANGLE CEILING ENFORCEMENT
+    ob.data.calc_loop_triangles()
+    n_tris = len(ob.data.loop_triangles)
+    if n_tris > 19500:
+        mod = ob.modifiers.new("RobloxCap", 'DECIMATE')
+        mod.ratio = 18500.0 / n_tris
         bpy.ops.object.modifier_apply(modifier=mod.name)
+        ob.data.calc_loop_triangles()
+
+    if coll and coll != bpy.context.scene.collection:
+        bpy.context.scene.collection.objects.unlink(ob)
+        coll.objects.link(ob)
+
     return ob
 
 
 # ---------------------------------------------------------------- asset registry
 class Registry:
-    """Holds prototype objects (one mesh each) and instances them as linked duplicates.
-
-    Linked duplicates are the whole point of the modular pipeline: 40 identical
-    warehouses cost one mesh in the .blend and one mesh in the GLB, because the
-    exporter de-duplicates shared mesh data.
-    """
+    """Holds prototype objects and instances them as linked duplicates."""
 
     def __init__(self):
-        self.proto = {}          # name -> prototype object (mesh owner)
-        self.counts = {}         # name -> number of instances placed
-        self.hidden = ensure_coll("_PROTOTYPES")
-        # The prototypes ARE the first copy of every asset: they are built at
-        # world coordinates, and place() then creates a linked duplicate at
-        # (0,0,0), i.e. exactly on top of them. Leaving the collection visible
-        # to Cycles therefore renders every asset twice, coincident. On convex
-        # outside faces that only produces noise, but inside a cavity -- a
-        # graving dock, a shed -- the duplicate sits in the way of every shadow
-        # ray and the whole interior renders black. It also doubled the render
-        # memory, which is what pushed 1152x648 over this sandbox's 2 GB.
+        self.proto = {}
+        self.counts = {}
+        self.hidden = bpy.data.collections.get("_Prototypes") or \
+                      bpy.data.collections.new("_Prototypes")
+        if self.hidden.name not in bpy.context.scene.collection.children:
+            bpy.context.scene.collection.children.link(self.hidden)
         self.hidden.hide_render = True
+        self.hidden.hide_viewport = True
 
     def define(self, name, mb, bevel=0.0, smooth=False):
         ob = builder_to_object(name, mb, coll=self.hidden, bevel=bevel, shade_smooth=smooth)
@@ -217,7 +213,8 @@ class Registry:
     def exists(self, name):
         return name in self.proto
 
-    def place(self, name, x, y, z=0.0, rz=0.0, coll=None, label=None):
+    def place(self, name, x, y, z=QUAY_Z, rz=0.0, coll=None, label=None):
+        """Place an instance. Default elevation is QUAY_Z (+4.0 m)."""
         src = self.proto[name]
         ob = bpy.data.objects.new(label or name, src.data)     # linked duplicate
         ob.location = (x, y, z)
@@ -228,14 +225,25 @@ class Registry:
 
     def report(self):
         tot_inst = sum(self.counts.values())
-        tris = 0
-        for n, ob in self.proto.items():
-            me = ob.data
-            tris += sum(max(1, len(p.vertices) - 2) for p in me.polygons) * max(1, self.counts.get(n, 0))
-        return tot_inst, tris, len(self.proto)
+        tot_tris = 0
+        print(f"prototypes defined: {len(self.proto)}, total placed instances: {tot_inst}")
+        over_limit = []
+        for name, ob in sorted(self.proto.items()):
+            ob.data.calc_loop_triangles()
+            tris = len(ob.data.loop_triangles)
+            tot_tris += tris * self.counts[name]
+            if tris > 20000:
+                over_limit.append((name, tris))
+            print(f"  {name:24s} instances={self.counts[name]:3d} tris/proto={tris:6d}")
+        if over_limit:
+            print("WARNING: Prototypes exceeding Roblox 20k triangle limit:")
+            for n, t in over_limit:
+                print(f"  ** {n}: {t} tris")
+        else:
+            print("ALL PROTOTYPES PASS ROBLOX 20,000-TRIANGLE CEILING!")
+        return tot_inst, tot_tris, len(self.proto)
 
 
-# ---------------------------------------------------------------- environment
 def add_water(coll, x0, y0, x1, y1, z=0.0, matname="water"):
     mb = __import__("core").MeshBuilder()
     mb.add_quad((x0, y0, z), (x1, y0, z), (x1, y1, z), (x0, y1, z), matname)
@@ -248,6 +256,7 @@ def add_ground(coll, x0, y0, x1, y1, z=-0.2, matname="mud"):
     return builder_to_object("GROUND", mb, coll=coll)
 
 
+# ---------------------------------------------------------------- environment setup
 def setup_world(strength=0.28, top=(0.42, 0.50, 0.60), bottom=(0.62, 0.58, 0.50)):
     w = bpy.data.worlds.new("PortWorld")
     bpy.context.scene.world = w
@@ -261,7 +270,7 @@ def setup_world(strength=0.28, top=(0.42, 0.50, 0.60), bottom=(0.62, 0.58, 0.50)
     grad.gradient_type = 'EASING'
     mapn = nt.nodes.new("ShaderNodeMapping"); mapn.location = (-400, 0)
     mapn.inputs["Rotation"].default_value = (math.radians(90), 0, 0)
-    texc = nt.nodes.new("ShaderNodeTexCoord"); texc.location = (-600, 0)
+    geo = nt.nodes.new("ShaderNodeNewGeometry"); geo.location = (-600, 0)
     ramp = nt.nodes.new("ShaderNodeValToRGB"); ramp.location = (0, 0)
     ramp.color_ramp.elements[0].color = (*top, 1)
     ramp.color_ramp.elements[1].color = (*bottom, 1)
@@ -275,17 +284,7 @@ def setup_world(strength=0.28, top=(0.42, 0.50, 0.60), bottom=(0.62, 0.58, 0.50)
 
 def setup_sky(sun_az=215.0, sun_el=41.0, strength=0.62, cloud_cover=0.34,
               cloud_scale=4.6, top=(0.30, 0.42, 0.60), bottom=(0.66, 0.66, 0.62)):
-    """A physical sky with a procedural cloud deck.
-
-    Two pieces, because they do different jobs:
-      * a Nishita atmosphere gives the real thing -- Rayleigh gradient, a warm
-        horizon and correct aerial colour with distance -- without an HDRI;
-      * a 3D noise field projected on the sky dome gives broken stratocumulus.
-
-    The sun disc is switched OFF in the sky node: the scene is lit by a separate
-    sun lamp, and a disc here as well would double the key and blow the
-    highlights. `sun_el` / `sun_az` are only used to warm the cloud near the sun.
-    """
+    """A physical sky with a procedural cloud deck."""
     w = bpy.data.worlds.new("PortSky")
     bpy.context.scene.world = w
     w.use_nodes = True
@@ -296,7 +295,6 @@ def setup_sky(sun_az=215.0, sun_el=41.0, strength=0.62, cloud_cover=0.34,
     bg = nt.nodes.new("ShaderNodeBackground"); bg.location = (700, 0)
     bg.inputs["Strength"].default_value = strength
 
-    # ---- physical atmosphere
     sky = nt.nodes.new("ShaderNodeTexSky"); sky.location = (460, 200)
     sky.sky_type = 'NISHITA'
     sky.sun_disc = False
@@ -306,15 +304,10 @@ def setup_sky(sun_az=215.0, sun_el=41.0, strength=0.62, cloud_cover=0.34,
     sky.air_density = 1.0
     sky.dust_density = 1.2
 
-    # ---- cloud field, projected on the dome
-    # NOTE: in a world shader "Generated" is not reliably populated, which
-    # silently collapses the whole cloud field to a single value. The geometry
-    # node's Incoming vector is the view direction and always is.
     geo = nt.nodes.new("ShaderNodeNewGeometry"); geo.location = (-400, -180)
     sep = nt.nodes.new("ShaderNodeSeparateXYZ"); sep.location = (-200, -320)
     nt.links.new(geo.outputs["Incoming"], sep.inputs["Vector"])
 
-    # horizon fade: clouds thin out and vanish at the horizon
     hz = nt.nodes.new("ShaderNodeMapRange"); hz.location = (0, -380)
     hz.inputs["From Min"].default_value = 0.004
     hz.inputs["From Max"].default_value = 0.070
@@ -322,37 +315,29 @@ def setup_sky(sun_az=215.0, sun_el=41.0, strength=0.62, cloud_cover=0.34,
     hz.inputs["To Max"].default_value = 1.0
     nt.links.new(sep.outputs["Z"], hz.inputs["Value"])
 
-    mapn = nt.nodes.new("ShaderNodeMapping"); mapn.location = (-200, -120)
-    mapn.inputs["Scale"].default_value = (1.0, 1.0, 2.2)
-    nt.links.new(geo.outputs["Incoming"], mapn.inputs["Vector"])
-
-    noise = nt.nodes.new("ShaderNodeTexNoise"); noise.location = (60, -120)
-    noise.inputs["Detail"].default_value = 9.0
-    noise.inputs["Roughness"].default_value = 0.62
+    noise = nt.nodes.new("ShaderNodeTexNoise"); noise.location = (-100, -120)
+    noise.noise_dimensions = '3D'
     noise.inputs["Scale"].default_value = cloud_scale
-    nt.links.new(mapn.outputs["Vector"], noise.inputs["Vector"])
+    noise.inputs["Detail"].default_value = 4.0
+    noise.inputs["Roughness"].default_value = 0.58
+    nt.links.new(geo.outputs["Incoming"], noise.inputs["Vector"])
 
-    ramp = nt.nodes.new("ShaderNodeValToRGB"); ramp.location = (260, -120)
-    ramp.color_ramp.interpolation = 'B_SPLINE'
-    lo = 1.0 - cloud_cover
-    ramp.color_ramp.elements[0].position = max(0.0, lo - 0.06)
-    ramp.color_ramp.elements[0].color = (0, 0, 0, 1)
-    ramp.color_ramp.elements[1].position = min(1.0, lo + 0.11)
-    ramp.color_ramp.elements[1].color = (1, 1, 1, 1)
-    nt.links.new(noise.outputs["Fac"], ramp.inputs["Fac"])
+    cramp = nt.nodes.new("ShaderNodeValToRGB"); cramp.location = (160, -120)
+    cramp.color_ramp.elements[0].position = 1.0 - cloud_cover
+    cramp.color_ramp.elements[1].position = min(1.0, 1.0 - cloud_cover + 0.18)
+    nt.links.new(noise.outputs["Fac"], cramp.inputs["Fac"])
 
-    mask = nt.nodes.new("ShaderNodeMath"); mask.location = (460, -160)
+    mask = nt.nodes.new("ShaderNodeMath"); mask.location = (420, -180)
     mask.operation = 'MULTIPLY'
-    mask.use_clamp = True
-    nt.links.new(ramp.outputs["Color"], mask.inputs[0])
-    nt.links.new(hz.outputs["Result"], mask.inputs[1])
+    hz_out = hz.outputs.get("Result") or hz.outputs.get("Value") or hz.outputs[0]
+    nt.links.new(cramp.outputs["Color"], mask.inputs[0])
+    nt.links.new(hz_out, mask.inputs[1])
 
-    # ---- cloud colour: bright tops, grey bases, a touch warmer near the sun
     ccol = nt.nodes.new("ShaderNodeValToRGB"); ccol.location = (460, -420)
     ccol.color_ramp.elements[0].position = 0.0
-    ccol.color_ramp.elements[0].color = (2.60, 2.66, 2.74, 1)
+    ccol.color_ramp.elements[0].color = (0.60, 0.66, 0.74, 1)
     ccol.color_ramp.elements[1].position = 1.0
-    ccol.color_ramp.elements[1].color = (4.60, 4.56, 4.44, 1)
+    ccol.color_ramp.elements[1].color = (0.90, 0.88, 0.82, 1)
     nt.links.new(noise.outputs["Fac"], ccol.inputs["Fac"])
 
     mix = nt.nodes.new("ShaderNodeMix"); mix.location = (700, 120)
@@ -376,10 +361,6 @@ def add_sun(coll, azimuth_deg=140.0, elevation_deg=34.0, strength=3.0,
     ob = bpy.data.objects.new("Sun", l)
     coll.objects.link(ob)
     az, el = math.radians(azimuth_deg), math.radians(elevation_deg)
-    # `d` points FROM the scene TOWARD the sun (i.e. the sun's sky position).
-    # A sun lamp emits along its local -Z, so +Z must be aligned with d; light then
-    # travels along -d, i.e. downward out of the sky.
-    # azimuth_deg is the sun's bearing measured from +X, counter-clockwise.
     d = Vector((math.cos(el) * math.cos(az), math.cos(el) * math.sin(az), math.sin(el)))
     ob.rotation_euler = d.to_track_quat('Z', 'Y').to_euler()
     return ob
@@ -387,8 +368,6 @@ def add_sun(coll, azimuth_deg=140.0, elevation_deg=34.0, strength=3.0,
 
 def add_fill(coll, azimuth_deg=100.0, elevation_deg=28.0, strength=1.1,
              color=(0.72, 0.78, 0.88)):
-    """Soft sky-bounce fill from the shadow side. Keeps Victorian brick readable in
-    shadow without flattening the key light's form modelling."""
     l = bpy.data.lights.new("Fill", 'SUN')
     l.energy = strength
     l.color = color
@@ -415,7 +394,6 @@ def add_camera(coll, loc, look_at, lens=35.0, name="Cam"):
 
 
 def _out_by_name(node, names):
-    """Compositor socket names drift between Blender versions; take the first match."""
     for n in names:
         if n in node.outputs:
             return node.outputs[n]
@@ -423,11 +401,7 @@ def _out_by_name(node, names):
 
 
 def setup_compositor_haze(fog_color=(0.74, 0.72, 0.68), start=60.0, depth=520.0, max_fog=0.82):
-    """Cheap, physically-plausible aerial perspective using the Cycles Mist pass.
-
-    A volumetric domain over 1 km2 is far too slow for CPU rendering; the mist
-    pass gives the same industrial haze at a fraction of the cost.
-    """
+    """Aerial perspective using Cycles Mist pass."""
     sc = bpy.context.scene
     sc.use_nodes = True
     vl = sc.view_layers[0]
@@ -444,23 +418,14 @@ def setup_compositor_haze(fog_color=(0.74, 0.72, 0.68), start=60.0, depth=520.0,
     mix = nt.nodes.new("CompositorNodeMixRGB"); mix.location = (-100, 0)
     mix.blend_type = 'MIX'
     mix.inputs[2].default_value = (*fog_color, 1)
-    # CompositorNodeMapRange exposes its result as "Value" in 4.2 and "Result" later.
     mr_out = mr.outputs.get("Result") or mr.outputs.get("Value") or mr.outputs[0]
     nt.links.new(mr_out, mix.inputs[0])
     nt.links.new(rl.outputs["Image"], mix.inputs[1])
     comp = nt.nodes.new("CompositorNodeComposite"); comp.location = (200, 0)
     nt.links.new(mix.outputs[0], comp.inputs["Image"])
-    # gentle bloom on lamps/windows
-    gl = nt.nodes.new("CompositorNodeGlare"); gl.location = (0, -260)
-    gl.glare_type = 'FOG_GLOW'
-    gl.quality = 'MEDIUM'
-    gl.threshold = 1.4
-    gl.size = 7
-    nt.links.new(mix.outputs[0], gl.inputs["Image"])
-    nt.links.new(gl.outputs[0], comp.inputs["Image"])
 
 
-def render_to(path, cam, res=(1600, 900), samples=64, denoise=True, threads=None):
+def render_to(path, cam, res=(1600, 900), samples=64, denoise=False, threads=None):
     sc = bpy.context.scene
     sc.camera = cam
     sc.render.resolution_x, sc.render.resolution_y = res
@@ -468,7 +433,7 @@ def render_to(path, cam, res=(1600, 900), samples=64, denoise=True, threads=None
     sc.render.image_settings.file_format = 'PNG'
     sc.render.filepath = path
     sc.cycles.samples = samples
-    sc.cycles.use_denoising = denoise
+    sc.cycles.use_denoising = False
     sc.cycles.max_bounces = 7
     sc.cycles.diffuse_bounces = 4
     sc.cycles.glossy_bounces = 3

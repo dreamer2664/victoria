@@ -1,0 +1,225 @@
+{
+  "schema": "victoria.interfaces/harbour_interface",
+  "version": "2.0",
+  "generated": "2026-11-16",
+  "from_agent": "PERICLES-II — British Ports & Harbour Infrastructure",
+  "for_agents": [
+    "LEONIDAS-II — The Ocean Liner (SS Aurelian)",
+    "THEMISTOCLES-II — The Small Boats (Steam Cutter, Rowing Cutter, Whaler)"
+  ],
+  "units": {
+    "length": "metre",
+    "roblox_scale": "1 stud = 0.28 m (STUDS_PER_METRE = 3.57142857)",
+    "coordinates": "World coordinates: +X East, +Y North, +Z Up; Origin (0,0,0) at Mean Water Datum"
+  },
+  "datums": {
+    "water_datum_z_m": 0.0,
+    "high_water_springs_z_m": 1.2,
+    "low_water_springs_z_m": -1.2,
+    "quay_surface_z_m": 4.0,
+    "landing_stage_deck_z_m": 1.5,
+    "princess_dock_coping_z_m": 4.0,
+    "princess_dock_floor_z_m": -7.0,
+    "princess_dock_sill_z_m": -4.5,
+    "river_bed_z_m": -11.0,
+    "wet_dock_bed_z_m": -9.0
+  },
+  "ports": {
+    "port_a": {
+      "name": "Port of Aldermouth",
+      "type": "Passenger Terminal & Enclosed Wet Dock System (Liverpool / Mersey type)",
+      "footprint_m": {
+        "x_min": -460.0,
+        "x_max": 330.0,
+        "y_min": -560.0,
+        "y_max": 560.0
+      },
+      "berths": [
+        {
+          "id": "A-B1",
+          "name": "Prince's Landing Stage, Outer (West) Berth",
+          "purpose": "Transatlantic passenger liner embarkation (SS Aurelian)",
+          "extent_m": {
+            "x0": -106.0,
+            "x1": -80.0,
+            "y0": 24.0,
+            "y1": 236.0
+          },
+          "berth_length_m": 240.0,
+          "water_depth_m": 11.0,
+          "max_vessel_loa_m": 190.0,
+          "max_vessel_beam_m": 22.0,
+          "max_vessel_draft_m": 9.5,
+          "vessel_clearance": {
+            "fore_aft_clearance_m": 37.0,
+            "under_keel_clearance_m": 4.5
+          },
+          "boarding": {
+            "type": "Articulated ship brow from landing stage to vessel side shell doors",
+            "landing_stage_pos_m": [-80.0, 130.0, 1.5],
+            "vessel_contact_deck": "Saloon Deck",
+            "vessel_threshold_z_m": 5.3,
+            "brow_length_m": 9.0,
+            "brow_width_m": 1.8,
+            "incline_deg": 22.8
+          },
+          "mooring": {
+            "bollard_spacing_m": 20.0,
+            "bollard_count": 12,
+            "line_pattern": "2 head lines, 2 forward breast lines, 2 forward springs, 2 aft springs, 2 after breast lines, 2 stern lines"
+          }
+        },
+        {
+          "id": "A-B2",
+          "name": "Prince's Landing Stage, Inner (East) Berth",
+          "purpose": "Passenger tenders, coastal steamers & small boat operations",
+          "extent_m": {
+            "x0": -62.0,
+            "x1": -42.0,
+            "y0": 42.0,
+            "y1": 152.0
+          },
+          "berth_length_m": 110.0,
+          "water_depth_m": 6.5,
+          "small_craft_integration": {
+            "boat_steps_pos_m": [-66.0, 44.0, 0.4],
+            "cleat_spacing_m": 4.0,
+            "fendering": "horizontal rubber/rope and vertical oak fenders"
+          }
+        },
+        {
+          "id": "A-B3",
+          "name": "Trafalgar Dock, North Quay",
+          "purpose": "General cargo & coaling",
+          "extent_m": {
+            "x0": 68.0,
+            "x1": 200.0,
+            "y0": -84.0,
+            "y1": -60.0
+          },
+          "berth_length_m": 132.0,
+          "water_depth_m": 9.0,
+          "equipment": "Hydraulic portal luffing cranes, coal hoists, dual quayside rail tracks"
+        },
+        {
+          "id": "A-B4",
+          "name": "Trafalgar Dock, East Quay",
+          "purpose": "Transit shed package cargo discharge",
+          "extent_m": {
+            "x0": 178.0,
+            "x1": 200.0,
+            "y0": -194.0,
+            "y1": -70.0
+          },
+          "berth_length_m": 124.0,
+          "water_depth_m": 9.0,
+          "equipment": "Steam travelling cranes, continuous transit shed sliding doors"
+        }
+      ]
+    },
+    "port_b": {
+      "name": "Port of Carrickmore",
+      "type": "Shipyard, Graving Dock & Heavy Marine Engineering (Belfast / Lagan type)",
+      "footprint_m": {
+        "x_min": -460.0,
+        "x_max": 340.0,
+        "y_min": -560.0,
+        "y_max": 560.0
+      },
+      "berths": [
+        {
+          "id": "B-B1",
+          "name": "Fitting-Out Quay (South Berth)",
+          "purpose": "Fitting out, boiler installation, masting (SS Aurelian)",
+          "extent_m": {
+            "x0": -30.0,
+            "x1": 0.0,
+            "y0": 190.0,
+            "y1": 400.0
+          },
+          "berth_length_m": 210.0,
+          "water_depth_m": 10.0,
+          "equipment": "80-ton Day Summers tubular wrought-iron masting sheer legs (front legs raked over berth)",
+          "vessel_clearance": {
+            "fore_aft_clearance_m": 22.0,
+            "under_keel_clearance_m": 3.5
+          }
+        },
+        {
+          "id": "B-B2",
+          "name": "Fitting-Out Quay (North Basin Berth)",
+          "purpose": "General fitting-out and machinery staging",
+          "extent_m": {
+            "x0": -30.0,
+            "x1": 0.0,
+            "y0": -290.0,
+            "y1": 30.0
+          },
+          "berth_length_m": 320.0,
+          "water_depth_m": 9.0
+        },
+        {
+          "id": "B-B3",
+          "name": "Princess Graving Dock (Dry Dock)",
+          "purpose": "Hull inspection, propeller/rudder fitting, dry-dock overhaul (SS Aurelian)",
+          "dimensions_m": {
+            "length_overall_m": 244.0,
+            "width_coping_m": 24.4,
+            "width_floor_m": 20.0,
+            "depth_coping_to_floor_m": 11.0,
+            "sill_depth_below_water_m": 4.5,
+            "coping_elevation_m": 4.0,
+            "floor_elevation_m": -7.0
+          },
+          "caissons": {
+            "entrance_caisson_pos_m": [108.2, 262.0],
+            "intermediate_caisson_1_m": [108.2, 180.0],
+            "intermediate_caisson_2_m": [108.2, 100.0]
+          },
+          "vessel_fit_ss_aurelian": {
+            "vessel_loa_m": 166.0,
+            "vessel_beam_m": 18.4,
+            "vessel_draft_m": 6.5,
+            "length_clearance_m": 78.0,
+            "beam_clearance_m": 3.0,
+            "floor_shoring": "Oak keel blocks 1.2 m high, adjustable timber bilge blocks and vertical shores against granite altars"
+          }
+        },
+        {
+          "id": "B-B4",
+          "name": "No. 1 Graving Dock",
+          "purpose": "Coastal craft, tugs and small boat drydocking",
+          "dimensions_m": {
+            "length_m": 120.0,
+            "width_coping_m": 18.0,
+            "depth_m": 8.0
+          }
+        }
+      ],
+      "slips": [
+        {
+          "id": "Slip-1",
+          "extent_y_m": [42.0, 76.0],
+          "width_m": 34.0,
+          "length_m": 96.0,
+          "declivity": "1 in 16 (3.58 deg)",
+          "grounding": "Pitch-pine declivity ways with heavy oak keel and bilge blocks"
+        },
+        {
+          "id": "Slip-2",
+          "extent_y_m": [92.0, 126.0],
+          "width_m": 34.0,
+          "length_m": 96.0,
+          "declivity": "1 in 16"
+        },
+        {
+          "id": "Slip-3",
+          "extent_y_m": [142.0, 176.0],
+          "width_m": 34.0,
+          "length_m": 96.0,
+          "declivity": "1 in 16"
+        }
+      ]
+    }
+  }
+}

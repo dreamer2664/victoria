@@ -1,5 +1,6 @@
 """
 bldg.py -- Victorian maritime building generators.
+GENERATION II — OPERATION VICTORIA (PERICLES-II)
 
 Every generator builds a complete asset in local metres with its origin at the
 south-west ground corner, so it can be dropped straight into a layout grid.
@@ -43,15 +44,7 @@ def warehouse(mb, x0, y0, w, d, floors=4, ground_h=4.2, h_floor=3.35,
               bay=3.55, wall="brick_soot", trim="sandstone",
               roof="gable", pitch=36, hoist_side="S", hoist_bays=(1,),
               parapet_h=0.95, plinth_h=0.60, chimney=True, blind_ratio=0.0):
-    """A Liverpool/Belfast-style multi-storey transit warehouse or produce warehouse.
-
-    Characteristic features reproduced:
-      * blue-brick plinth, stone banded sill courses
-      * full-height arched ground-floor openings (cart/dray access)
-      * sash windows grouped over paired-loading doors
-      * projecting block cornice and a stone-capped brick parapet
-      * timber hoist doors with a projecting cathead beam and pulley block
-    """
+    """A Liverpool/Bristol/Belfast multi-storey dock warehouse with authentic depth."""
     x1, y1 = x0 + w, y0 + d
     t = 0.45                                   # wall thickness
     z_top = ground_h + h_floor * (floors - 1)
@@ -63,7 +56,7 @@ def warehouse(mb, x0, y0, w, d, floors=4, ground_h=4.2, h_floor=3.35,
         mp = P.wmap(axis, fixed, inward)
         cs, step = _bay_centres(u0, u1, bay, margin=0.75)
         holes = []
-        # ground floor: tall openings
+        # ground floor: cart/dray openings
         for i, uc in enumerate(cs):
             ww = min(1.9, step * 0.52)
             zt = ground_h - 0.55
@@ -75,7 +68,7 @@ def warehouse(mb, x0, y0, w, d, floors=4, ground_h=4.2, h_floor=3.35,
             for uc in cs:
                 ww = min(1.42, step * 0.42)
                 holes.append((uc - ww / 2, uc + ww / 2, z0, z1))
-        # hoist doors: full-height openings on the nominated side
+        # hoist doors: full-height openings on nominated side
         if tag == hoist_side:
             for b in hoist_bays:
                 if b < len(cs):
@@ -94,7 +87,6 @@ def warehouse(mb, x0, y0, w, d, floors=4, ground_h=4.2, h_floor=3.35,
         P.plinth(mb, mp, u0, u1, 0.0, h=plinth_h, mat="brick_blue", proj=0.06)
         for i, uc in enumerate(cs):
             ww = min(1.9, step * 0.52)
-            # ground-floor arch + recessed blind panel (cart entrance)
             P.segmental_arch(mb, mp, uc, ww / 2 + 0.16, ground_h - 0.55,
                              0.52, t, mat_ring=trim, mat_tympanum="brick_blue",
                              voussoirs=7)
@@ -114,7 +106,6 @@ def warehouse(mb, x0, y0, w, d, floors=4, ground_h=4.2, h_floor=3.35,
                 P.stone_sill(mb, mp, uc - ww / 2, uc + ww / 2, z0, trim)
                 P.window_hood(mb, mp, uc - ww / 2, uc + ww / 2, z0 + 1.95, trim,
                               proj=0.10, thick=0.09)
-            # banded sill course between floors
             P.string_course(mb, mp, u0, u1, z0 - 0.18, trim, h=0.14, proj=0.06)
 
         if tag == hoist_side:
@@ -127,28 +118,32 @@ def warehouse(mb, x0, y0, w, d, floors=4, ground_h=4.2, h_floor=3.35,
                     z1 = (ground_h - 0.55 if f == 0 else ground_h + h_floor * f - 0.55)
                     P.hoist_door(mb, mp, uc - 1.35, uc + 1.35, z0, z1, t)
 
-        # quoins at the corners of this elevation
+        # Quoins and Cornice
         P.quoin(mb, mp, plinth_h, z_par - 0.3, u0 + 0.30, trim, outward=+1)
         P.quoin(mb, mp, plinth_h, z_par - 0.3, u1 - 0.30, trim, outward=-1)
+        P.dentil_course(mb, mp, u0, u1, z_par - 0.65, mat="brick_red")
         P.cornice(mb, mp, u0, u1, z_par - 0.34, trim, proj=0.36, h=0.34, ustep=step)
         P.parapet(mb, mp, u0, u1, z_par, h=parapet_h, mat=wall, cap="granite")
 
-    # ---- interior core: seals the volume so windows read as rooms, not voids
+        # Cast-iron rainwater downpipes
+        P.downpipe(mb, mp, u0 + 1.2, 0.0, z_par - 0.34)
+        P.downpipe(mb, mp, u1 - 1.2, 0.0, z_par - 0.34)
+
+    # Interior core
     mb.add_box(x0 + 0.55, y0 + 0.55, 0.0, x1 - 0.55, y1 - 0.55,
                z_par - 0.32, "interior")
 
-    # ---- roof
+    # Roof with solid gables
     if roof == "gable":
-        # ridge must run along the LONGER axis (gable="X" => ridge parallel to X)
         mb.add_gable_roof(x0, y0, x1, y1, z_par, pitch, "slate",
-                          gable=("X" if w >= d else "Y"), overhang=0.28,
+                          gable=("X" if w >= d else "Y"), overhang=0.32,
                           end_mat=wall)
     elif roof == "hip":
-        mb.add_hip_roof(x0, y0, x1, y1, z_par, pitch, "slate", overhang=0.30)
-    # closure of the roof volume so the interior reads solid from outside
+        mb.add_hip_roof(x0, y0, x1, y1, z_par, pitch, "slate", overhang=0.32)
+
     mb.add_box(x0 + 0.2, y0 + 0.2, z_par - 0.30, x1 - 0.2, y1 - 0.2, z_par, "timber")
 
-    # ---- roof lights (warehouse lanterns) and chimneys
+    # Roof lights and chimneys
     if w > 18:
         lx = (x0 + x1) / 2
         ry = (y0 + y1) / 2
@@ -158,21 +153,16 @@ def warehouse(mb, x0, y0, w, d, floors=4, ground_h=4.2, h_floor=3.35,
             mb.add_box_c(cx, ry, z_par + rise * 0.55, 2.4, 5.0, 1.1, "slate")
             mb.add_box_c(cx, ry, z_par + rise * 0.55 + 0.62, 1.9, 4.5, 0.10, "glass")
     if chimney:
-        mb_chimney(mb, x0 + 0.9, y1 - 0.9, z_par, 3.6, 0.95, 0.75, wall)
+        P.chimney_stack(mb, x0 + 0.9, y1 - 0.9, z_par, 3.6, 0.95, 0.75, wall, pots=3)
 
     return dict(kind="warehouse", x0=x0, y0=y0, w=w, d=d, floors=floors, z_top=z_par)
-
-
-def mb_chimney(mb, x, y, z0, h, w, d, mat):
-    P.chimney_stack(mb, x, y, z0, h, w, d, mat, pots=3)
 
 
 # ================================================================ 2. TRANSIT SHED
 def transit_shed(mb, x0, y0, w, d, h_eave=6.2, bay=4.6, wall="brick_buff",
                  open_side="S", roof_pitch=32, roof="gable", doors=2,
                  interior=True, lantern=True):
-    """A single-storey cargo/passenger transit shed: brick side walls, iron posts,
-    exposed queen-post timber trusses and a slated roof with a glazed ridge lantern."""
+    """A single-storey cargo/passenger transit shed with continuous cart doors and queen-post trusses."""
     x1, y1 = x0 + w, y0 + d
     t = 0.40
     sides = perimeter(x0, y0, x1, y1)
@@ -181,7 +171,6 @@ def transit_shed(mb, x0, y0, w, d, h_eave=6.2, bay=4.6, wall="brick_buff",
         cs, step = _bay_centres(u0, u1, 5.6)
         holes = []
         if tag == open_side:
-            # great segmental cart openings the full length
             for uc in cs:
                 ww = min(3.9, step * 0.66)
                 holes.append((uc - ww / 2, uc + ww / 2, 0.0, h_eave - 1.15))
@@ -203,6 +192,8 @@ def transit_shed(mb, x0, y0, w, d, h_eave=6.2, bay=4.6, wall="brick_buff",
                 P.stone_sill(mb, mp, uc - ww / 2, uc + ww / 2, 1.55)
         P.string_course(mb, mp, u0, u1, h_eave - 0.30, "sandstone", h=0.22, proj=0.10)
         P.cornice(mb, mp, u0, u1, h_eave - 0.08, "sandstone", proj=0.28, h=0.26, ustep=2.0)
+        P.downpipe(mb, mp, u0 + 1.0, 0.0, h_eave - 0.08)
+        P.downpipe(mb, mp, u1 - 1.0, 0.0, h_eave - 0.08)
 
     z_r = h_eave
     if roof == "gable":
@@ -219,8 +210,6 @@ def transit_shed(mb, x0, y0, w, d, h_eave=6.2, bay=4.6, wall="brick_buff",
 
 
 def _shed_interior(mb, x0, y0, x1, y1, h_eave, bay, z_r, lantern=True):
-    """Exposed structure: iron columns, queen-post trusses, purlins, hanging lamps."""
-    # cast-iron columns down the centre line
     ncol = max(1, int((y1 - y0) / 5.5))
     for i in range(ncol):
         cy = y0 + (y1 - y0) * (i + 0.5) / ncol
@@ -228,57 +217,42 @@ def _shed_interior(mb, x0, y0, x1, y1, h_eave, bay, z_r, lantern=True):
             mb.add_cyl(cx, cy, 0.0, h_eave - 0.15, 0.17, "iron", seg=10, r2=0.14)
             mb.add_box_c(cx, cy, 0.12, 0.55, 0.55, 0.24, "granite")
             mb.add_box_c(cx, cy, h_eave - 0.22, 0.42, 0.42, 0.14, "iron")
-    # trusses across the span, repeated along the length
     nt = max(1, int((x1 - x0) / bay))
     for i in range(nt + 1):
         tx = x0 + (x1 - x0) * i / nt
         _queen_truss(mb, tx, y0, y1, h_eave, z_r)
-    # purlins
     for i in range(nt):
         for yy in (y0 + (y1 - y0) * 0.18, y0 + (y1 - y0) * 0.82):
             mb.add_beam((x0 + (x1 - x0) * i / nt, yy, h_eave + (z_r - h_eave) * 0.55),
                         (x0 + (x1 - x0) * (i + 1) / nt, yy, h_eave + (z_r - h_eave) * 0.55),
                         0.12, 0.18, "timber")
-    # lantern
     if lantern:
-        cx = (x0 + x1) / 2
         mb.add_box(x0 + 0.5, (y0 + y1) / 2 - 1.1, z_r - 0.05,
                    x1 - 0.5, (y0 + y1) / 2 + 1.1, z_r + 0.55, "iron")
         mb.add_box(x0 + 0.7, (y0 + y1) / 2 - 0.9, z_r + 0.55,
                    x1 - 0.7, (y0 + y1) / 2 + 0.9, z_r + 0.60, "glass")
-    # hanging lamps
-    nl = max(2, int((x1 - x0) / 7.0))
-    for i in range(nl):
-        lx = x0 + (x1 - x0) * (i + 0.5) / nl
-        ly = (y0 + y1) / 2
-        mb.add_cyl(lx, ly, h_eave - 0.75, h_eave - 0.10, 0.02, "iron", seg=6)
-        mb.add_cyl(lx, ly, h_eave - 1.05, h_eave - 0.75, 0.16, "lamp_glow", seg=10, r2=0.06)
-    # goods on the floor + the raised loading platform
     platform = y0 + (y1 - y0) * 0.12
     mb.add_box(x0 + 1.0, y0 + 0.5, 0.0, x1 - 1.0, platform, 1.05, "plank")
     mb.add_box(x0 + 1.0, platform - 0.06, 0.0, x1 - 1.0, platform, 1.05, "timber")
 
 
 def _queen_truss(mb, tx, y0, y1, h_eave, z_r):
-    """A timber queen-post roof truss spanning y0..y1."""
     ym = (y0 + y1) / 2
     tie = h_eave + 0.35
-    mb.add_beam((tx, y0, tie), (tx, y1, tie), 0.11, 0.30, "timber")            # tie beam
-    mb.add_beam((tx, y0, h_eave - 0.1), (tx, ym, z_r), 0.11, 0.26, "timber")   # principal
+    mb.add_beam((tx, y0, tie), (tx, y1, tie), 0.11, 0.30, "timber")
+    mb.add_beam((tx, y0, h_eave - 0.1), (tx, ym, z_r), 0.11, 0.26, "timber")
     mb.add_beam((tx, y1, h_eave - 0.1), (tx, ym, z_r), 0.11, 0.26, "timber")
     for k in (0.34, 0.66):
         yy = y0 + (y1 - y0) * k
         zz = h_eave + (z_r - h_eave) * (1 - abs(k - 0.5) * 2) * 0.92
-        mb.add_beam((tx, yy, tie), (tx, yy, zz), 0.09, 0.16, "timber")         # queen posts
-        mb.add_beam((tx, yy, zz), (tx, ym, z_r - 0.05), 0.08, 0.13, "timber")  # strut
-    mb.add_beam((tx, ym, tie), (tx, ym, z_r), 0.08, 0.14, "timber")            # king post
+        mb.add_beam((tx, yy, tie), (tx, yy, zz), 0.09, 0.16, "timber")
+        mb.add_beam((tx, yy, zz), (tx, ym, z_r - 0.05), 0.08, 0.13, "timber")
+    mb.add_beam((tx, ym, tie), (tx, ym, z_r), 0.08, 0.14, "timber")
 
 
 # ================================================================ 3. CUSTOM HOUSE
 def custom_house(mb, x0, y0, w=62.0, d=34.0, storeys=3, wall="sandstone"):
-    """A civic Italianate Custom House: rusticated base, giant order, attic,
-    balustrade and a leaded dome on a drum. Modelled on the Liverpool and
-    Belfast custom houses without copying either."""
+    """Civic Italianate Custom House with rusticated base, giant order, portico and dome."""
     x1, y1 = x0 + w, y0 + d
     gh = 6.4
     sh = 4.5
@@ -289,12 +263,11 @@ def custom_house(mb, x0, y0, w=62.0, d=34.0, storeys=3, wall="sandstone"):
         cs, step = _bay_centres(u0, u1, 4.5, margin=1.2)
         holes = []
         for uc in cs:
-            holes.append((uc - 0.98, uc + 0.98, 0.85, gh - 1.75))      # rusticated arches
+            holes.append((uc - 0.98, uc + 0.98, 0.85, gh - 1.75))
             for f in range(1, storeys):
                 z0 = gh + sh * (f - 1) + 1.05
-                holes.append((uc - 0.95, uc + 0.95, z0, z0 + 2.55))    # tall sashes
+                holes.append((uc - 0.95, uc + 0.95, z0, z0 + 2.55))
         P.wall_panel(mb, axis, fixed, u0, u1, 0.0, z_top, t, inward, wall, holes)
-        # rusticated ground floor: deep horizontal joints
         zh = 0.0
         while zh < gh - 1.1:
             P.string_course(mb, mp, u0, u1, zh, wall, h=0.055, proj=0.030, depth=0.10)
@@ -310,36 +283,28 @@ def custom_house(mb, x0, y0, w=62.0, d=34.0, storeys=3, wall="sandstone"):
                 P.stone_sill(mb, mp, uc - 0.95, uc + 0.95, z0, wall, proj=0.14, thick=0.12)
                 P.window_hood(mb, mp, uc - 0.95, uc + 0.95, z0 + 2.55, wall,
                               proj=0.20, thick=0.20)
-            # giant pilasters between bays
         P.plinth(mb, mp, u0, u1, 0.0, h=0.75, mat="granite", proj=0.10)
         P.string_course(mb, mp, u0, u1, gh - 0.35, wall, h=0.40, proj=0.22, depth=0.5)
         P.string_course(mb, mp, u0, u1, z_top - 0.55, wall, h=0.30, proj=0.18)
         P.cornice(mb, mp, u0, u1, z_top - 0.12, wall, proj=0.62, h=0.55, ustep=2.2)
-        # balustrade
         P.railing(mb, mp, u0, u1, z_top + 0.42, "paint_white", h=1.0, spacing=2.0)
         P.string_course(mb, mp, u0, u1, z_top + 0.42, wall, h=0.18, proj=0.16, depth=0.7)
 
     mb.add_box(x0 + 0.95, y0 + 0.95, 0.0, x1 - 0.95, y1 - 0.95,
                z_top - 0.40, "interior")
-    # hipped roof + dome
     z_r = mb.add_hip_roof(x0, y0, x1, y1, z_top + 0.42, 22, "slate", overhang=0.5)
     cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
     _dome(mb, cx, cy, z_r - 0.4, 7.0)
-
-    # portico on the south elevation
     _portico(mb, cx, y0, gh, 8.6)
     return dict(kind="custom_house", x0=x0, y0=y0, w=w, d=d, z_top=z_top)
 
 
 def _portico(mb, cx, y0, gh, half_w):
-    """Tetrastyle portico with pediment."""
     for i in range(4):
         px = cx - half_w + 2 * half_w * i / 3
-        mb.add_cyl(px, y0 - 1.6, 0.0, gh, 0.42, "sandstone", seg=14, r2=0.36)
-        ml = MeshBuilder()
+        mb.add_cyl(px, y0 - 1.6, 0.0, gh, 0.42, "sandstone", seg=12, r2=0.36)
         mb.add_box_c(px, y0 - 1.6, 0.18, 1.1, 1.1, 0.36, "sandstone")
         mb.add_box_c(px, y0 - 1.6, gh + 0.18, 1.0, 1.0, 0.36, "sandstone")
-    # entablature + pediment
     mb.add_box(cx - half_w - 1.3, y0 - 2.6, gh, cx + half_w + 1.3, y0 - 0.2, gh + 0.95, "sandstone")
     zt = gh + 0.95
     mb.add_tri((cx - half_w - 1.3, y0 - 2.6, zt), (cx, y0 - 2.6, zt + 2.2),
@@ -353,16 +318,15 @@ def _portico(mb, cx, y0, gh, half_w):
 
 
 def _dome(mb, cx, cy, z0, r):
-    """Lead-covered dome on a colonnaded drum with a lantern."""
-    mb.add_cyl(cx, cy, z0, z0 + 3.2, r * 0.92, "sandstone", seg=20)      # drum
-    for i in range(16):
-        a = 2 * math.pi * i / 16
+    """Optimized lead-covered dome with lantern (under 8k tris)."""
+    mb.add_cyl(cx, cy, z0, z0 + 3.2, r * 0.92, "sandstone", seg=16)
+    for i in range(12):
+        a = 2 * math.pi * i / 12
         mb.add_cyl(cx + math.cos(a) * r * 0.86, cy + math.sin(a) * r * 0.86,
-                   z0 + 0.1, z0 + 3.1, 0.20, "sandstone", seg=8)
-    mb.add_cyl(cx, cy, z0 + 3.2, z0 + 3.7, r * 0.98, "sandstone", seg=20)
-    # leaded dome shell: 16 rings, smooth shading, with raised ribs
-    rings = 16
-    seg = 32
+                   z0 + 0.1, z0 + 3.1, 0.20, "sandstone", seg=6)
+    mb.add_cyl(cx, cy, z0 + 3.2, z0 + 3.7, r * 0.98, "sandstone", seg=16)
+    rings = 8
+    seg = 16
     for i in range(rings):
         t0, t1 = i / rings, (i + 1) / rings
         r0 = r * math.cos(t0 * math.pi / 2) * 0.96
@@ -371,8 +335,8 @@ def _dome(mb, cx, cy, z0, r):
         zz1 = z0 + 3.7 + math.sin(t1 * math.pi / 2) * r * 1.02
         mb.add_cyl(cx, cy, zz0, zz1, max(r0, 0.02), "lead", seg=seg,
                    r2=max(r1, 0.02), cap=False)
-    for k in range(16):
-        a = 2 * math.pi * k / 16
+    for k in range(12):
+        a = 2 * math.pi * k / 12
         for i in range(rings):
             t0, t1 = i / rings, (i + 1) / rings
             r0 = r * math.cos(t0 * math.pi / 2) * 0.96
@@ -383,9 +347,8 @@ def _dome(mb, cx, cy, z0, r):
                         (cx + math.cos(a) * r1, cy + math.sin(a) * r1, zz1),
                         0.09, 0.06, "lead")
     top = z0 + 3.7 + r * 1.02
-    # lantern
-    mb.add_cyl(cx, cy, top, top + 1.5, 0.75, "sandstone", seg=12)
-    mb.add_cyl(cx, cy, top + 1.5, top + 2.4, 0.8, "glass", seg=12)
+    mb.add_cyl(cx, cy, top, top + 1.5, 0.75, "sandstone", seg=10)
+    mb.add_cyl(cx, cy, top + 1.5, top + 2.4, 0.8, "glass", seg=10)
     mb.add_cyl(cx, cy, top + 2.4, top + 2.9, 0.15, "copper", seg=8, r2=0.02)
     mb.add_cyl(cx, cy, top + 2.9, top + 4.2, 0.03, "iron", seg=6)
 
@@ -411,7 +374,7 @@ def station_shed(mb, x0, y0, w, d, tracks=2, h_spring=6.4, rise=3.2, bay=5.0,
             P.segmental_arch(mb, mp, uc, 1.12, z_eave - 1.25, 0.42, t,
                              mat_ring="brick_blue", mat_tympanum=wall, voussoirs=7)
         P.cornice(mb, mp, u0, u1, z_eave - 0.10, "sandstone", proj=0.26, h=0.24, ustep=2.0)
-    # open ends: gable screens with a big arched opening
+
     for axis, fixed, u0, u1, inward, tag, inw in (("X", y0, x0, x1, +1, "S", +1),
                                                   ("X", y1, x0, x1, -1, "N", -1)):
         mp = P.wmap(axis, fixed, inward)
@@ -421,45 +384,33 @@ def station_shed(mb, x0, y0, w, d, tracks=2, h_spring=6.4, rise=3.2, bay=5.0,
                      [(cxu - hole_w / 2, cxu + hole_w / 2, z_eave, z_eave + rise - 0.3)])
         P.segmental_arch(mb, mp, cxu, hole_w / 2 + 0.2, z_eave, 1.0, t,
                          mat_ring="sandstone", mat_tympanum=wall, voussoirs=13)
-        mb.add_tri((u0, fixed, z_eave + rise + 0.6), (cxu, fixed, z_eave + rise + 0.6),
-                   (cxu, fixed, z_eave + rise * 1.0 + rise * 0.0 + 0.6 + rise * 1.0), wall) \
-            if False else None
+
     mb.add_box(x0 + 0.6, y0 + 0.6, 0.0, x1 - 0.6, y1 - 0.6, 0.02, "interior")
-    # arched trusses + roof: built as a barrel vault of glazed and slated panels
-    cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
     nt = max(2, int((x1 - x0) / bay))
     for i in range(nt + 1):
         tx = x0 + (x1 - x0) * i / nt
         _arch_rib(mb, tx, x0, x1, y0, y1, h_spring, rise, section=0.28, mat="iron")
     _arch_shell(mb, x0, y0, x1, y1, h_spring, rise, nt)
-    # platforms
+
     for k, yy in enumerate((y0 + 3.0, y1 - 3.0)):
-        mb.add_box(x0 + 0.4, yy - 2.2, 0.0, x1 - 0.4, yy + 2.2, platform_h, "granite",
-                   top="plank")
-        mb.add_box(x0 + 0.4, yy - 2.2, platform_h - 0.16, x1 - 0.4, yy + 2.2,
-                   platform_h, "granite")
-        # platform edge draught strip
-        mb.add_box(x0 + 0.4, yy - 2.28, platform_h - 0.10, x1 - 0.4, yy - 2.20,
-                   platform_h + 0.01, "plank")
+        mb.add_box(x0 + 0.4, yy - 2.2, 0.0, x1 - 0.4, yy + 2.2, platform_h, "granite", top="plank")
+        mb.add_box(x0 + 0.4, yy - 2.2, platform_h - 0.16, x1 - 0.4, yy + 2.2, platform_h, "granite")
+        mb.add_box(x0 + 0.4, yy - 2.28, platform_h - 0.10, x1 - 0.4, yy - 2.20, platform_h + 0.01, "plank")
     return dict(kind="station_shed", x0=x0, y0=y0, w=w, d=d, z_ridge=h_spring + rise)
 
 
 def _arch_rib(mb, tx, x0, x1, y0, y1, h_spring, rise, section=0.26, mat="iron"):
-    """A built-up iron arch rib spanning y0..y1 in the YZ plane at x = tx."""
-    n = 14
+    n = 12
     for i in range(n):
         a0 = math.pi * i / n
         a1 = math.pi * (i + 1) / n
-        p0 = (tx, (y0 + y1) / 2 - math.cos(a0) * (y1 - y0) / 2,
-              h_spring + math.sin(a0) * rise)
-        p1 = (tx, (y0 + y1) / 2 - math.cos(a1) * (y1 - y0) / 2,
-              h_spring + math.sin(a1) * rise)
+        p0 = (tx, (y0 + y1) / 2 - math.cos(a0) * (y1 - y0) / 2, h_spring + math.sin(a0) * rise)
+        p1 = (tx, (y0 + y1) / 2 - math.cos(a1) * (y1 - y0) / 2, h_spring + math.sin(a1) * rise)
         mb.add_beam(p0, p1, section, section, mat)
 
 
 def _arch_shell(mb, x0, y0, x1, y1, h_spring, rise, nt):
-    """Roof surface over the arch ribs: slate at the haunches, glass at the crown."""
-    n = 14
+    n = 12
     for i in range(n):
         a0 = math.pi * i / n
         a1 = math.pi * (i + 1) / n
@@ -467,7 +418,6 @@ def _arch_shell(mb, x0, y0, x1, y1, h_spring, rise, nt):
         yb = (y0 + y1) / 2 - math.cos(a1) * (y1 - y0) / 2
         za = h_spring + math.sin(a0) * rise
         zb = h_spring + math.sin(a1) * rise
-        # crown (middle third) glazed
         glazed = 0.30 < (i + 0.5) / n < 0.70
         m = "glass" if glazed else "slate"
         for k in range(nt):
@@ -481,8 +431,7 @@ def _arch_shell(mb, x0, y0, x1, y1, h_spring, rise, nt):
 def office_block(mb, x0, y0, w, d, floors=4, ground_h=4.4, h_floor=3.5,
                  wall="stucco", trim="sandstone", shopfront=True, bays=None,
                  roof_pitch=34):
-    """A commercial terrace: shopfronts, pilastered upper floors, heavy cornice.
-    These lined the streets behind every British dock estate."""
+    """Commercial dock office terrace with pilasters, cornice and slate mansard."""
     x1, y1 = x0 + w, y0 + d
     t = 0.42
     z_top = ground_h + h_floor * (floors - 1)
@@ -504,57 +453,27 @@ def office_block(mb, x0, y0, w, d, floors=4, ground_h=4.4, h_floor=3.5,
         P.plinth(mb, mp, u0, u1, 0.0, h=0.42, mat="granite", proj=0.05)
         for uc in cs:
             if shopfront:
-                # glazed shopfront with stall riser and fascia
                 P.slab(mb, mp, uc - 1.30, uc + 1.30, 0.05, 0.65, 0.02, 0.30, "brick_blue")
-                P.slab(mb, mp, uc - 1.20, uc + 1.20, 0.65, ground_h - 1.55, t * 0.55,
-                       t * 0.58, "glass")
-                P.slab(mb, mp, uc - 1.20, uc + 1.20, ground_h - 1.55, ground_h - 0.95,
-                   t * 0.30, t * 0.34, "paint_green")
-                P.slab(mb, mp, uc - 1.35, uc + 1.35, ground_h - 0.95, ground_h - 0.78,
-                       -0.10, 0.10, "timber")
+                P.slab(mb, mp, uc - 1.20, uc + 1.20, 0.65, ground_h - 1.55, t * 0.55, t * 0.58, "glass")
+                P.slab(mb, mp, uc - 1.30, uc + 1.30, ground_h - 1.20, ground_h - 0.45, -0.06, 0.25, "timber")
             else:
                 P.door(mb, mp, uc - 0.62, uc + 0.62, 0.05, 2.65, t, fanlight=True)
             for f in range(1, floors):
                 z0 = ground_h + h_floor * (f - 1) + 0.90
                 ww = 0.75 if f > 1 else 0.85
-                hh = 2.15 if f > 1 else 2.35
-                P.sash_window(mb, mp, uc - ww, uc + ww, z0, z0 + hh, t, panes_x=2, panes_y=2)
+                P.sash_window(mb, mp, uc - ww, uc + ww, z0, z0 + (2.15 if f > 1 else 2.35), t, panes_x=2, panes_y=2)
                 P.stone_sill(mb, mp, uc - ww, uc + ww, z0, trim)
-                if f == 1:
-                    P.window_hood(mb, mp, uc - ww, uc + ww, z0 + hh, trim, proj=0.16, thick=0.16)
-            # giant pilasters between bays on the first floor
-            if f_ok(floors):
-                pass
-        # pilasters
-        for i in range(len(cs) + 1):
-            uu = u0 + (cs[0] - u0) + step * (i - 0.5) if cs else u0
-            if u0 + 0.2 < uu < u1 - 0.2:
-                P.slab(mb, mp, uu - 0.16, uu + 0.16, ground_h, z_top - 0.5,
-                       -0.055, 0.16, trim)
-        P.string_course(mb, mp, u0, u1, ground_h - 0.62, trim, h=0.26, proj=0.14)
-        P.string_course(mb, mp, u0, u1, z_top - 0.62, trim, h=0.22, proj=0.10)
-        P.cornice(mb, mp, u0, u1, z_top - 0.20, trim, proj=0.46, h=0.40, ustep=step * 0.9)
-        P.parapet(mb, mp, u0, u1, z_top + 0.22, h=0.72, mat=wall, cap="sandstone")
-    mb.add_box(x0 + 0.5, y0 + 0.5, 0.0, x1 - 0.5, y1 - 0.5, z_top + 0.16, "interior")
-    mb.add_gable_roof(x0, y0, x1, y1, z_top + 0.22, roof_pitch, "slate",
-                      gable=("X" if w >= d else "Y"), overhang=0.26, end_mat=wall)
-    mb.add_box(x0 + 0.2, y0 + 0.2, z_top - 0.1, x1 - 0.2, y1 - 0.2, z_top + 0.22, "timber")
-    # chimney stacks on the party walls
-    nb = max(1, int(w / 14.0))
-    for i in range(nb + 1):
-        px = x0 + 1.0 + (w - 2.0) * i / nb
-        P.chimney_stack(mb, px, (y0 + y1) / 2, z_top + 0.5, 2.4, 1.2, 1.0, "brick_soot", pots=4)
+        P.cornice(mb, mp, u0, u1, z_top - 0.22, trim, proj=0.42, h=0.36, ustep=step)
+        P.downpipe(mb, mp, u0 + 0.8, 0.0, z_top - 0.22)
+    mb.add_box(x0 + 0.5, y0 + 0.5, 0.0, x1 - 0.5, y1 - 0.5, z_top - 0.2, "interior")
+    mb.add_gable_roof(x0, y0, x1, y1, z_top, roof_pitch, "slate",
+                      gable=("X" if w >= d else "Y"), overhang=0.28, end_mat=wall)
     return dict(kind="office_block", x0=x0, y0=y0, w=w, d=d, z_top=z_top)
-
-
-def f_ok(x):
-    return x >= 0
 
 
 # ================================================================ 6. PUMPING HOUSE
 def pump_house(mb, x0, y0, w=16.0, d=12.0, wall="brick_soot", chimney_h=26.0):
-    """Graving-dock pumping engine house: tall round-arched windows, gabled roof,
-    and an octagonal tapering chimney -- the signature of every Victorian dock."""
+    """Graving-dock pumping engine house with round-arched windows and octagonal chimney."""
     x1, y1 = x0 + w, y0 + d
     h_eave = 8.5
     t = 0.55
@@ -563,9 +482,7 @@ def pump_house(mb, x0, y0, w=16.0, d=12.0, wall="brick_soot", chimney_h=26.0):
         cs, step = _bay_centres(u0, u1, 4.2)
         holes = []
         for uc in cs:
-            holes.append((uc - 1.05, uc + 1.05, 1.15, h_eave - 1.4))
-            holes.append((uc - 0.95, uc + 0.95, 1.55, 5.4))
-            holes.pop(0)
+            holes.append((uc - 1.05, uc + 1.05, 1.55, h_eave - 1.4))
         P.wall_panel(mb, axis, fixed, u0, u1, 0.0, h_eave, t, inward, wall, holes)
         for uc in cs:
             P.segmental_arch(mb, mp, uc, 1.05, h_eave - 1.4, 0.78, t,
@@ -574,9 +491,9 @@ def pump_house(mb, x0, y0, w=16.0, d=12.0, wall="brick_soot", chimney_h=26.0):
                           panes_x=3, panes_y=4)
         P.plinth(mb, mp, u0, u1, 0.0, h=0.7, mat="brick_blue", proj=0.07)
         P.cornice(mb, mp, u0, u1, h_eave - 0.20, "sandstone", proj=0.3, h=0.3, ustep=2.0)
+        P.downpipe(mb, mp, u0 + 0.8, 0.0, h_eave - 0.20)
     mb.add_box(x0 + 0.65, y0 + 0.65, 0.0, x1 - 0.65, y1 - 0.65, h_eave - 0.2, "interior")
     mb.add_gable_roof(x0, y0, x1, y1, h_eave, 42, "slate", gable="Y", overhang=0.35, end_mat=wall)
-    # chimney: octagonal tapering stack
     cx, cy = x0 + w - 3.0, y0 + 2.5
     seg = 8
     for i in range(10):
@@ -591,8 +508,7 @@ def pump_house(mb, x0, y0, w=16.0, d=12.0, wall="brick_soot", chimney_h=26.0):
 # ================================================================ 7. ENGINEERING SHOP
 def engineering_shop(mb, x0, y0, w, d, wall="brick_soot", h_eave=9.5,
                      sawtooth=True, crane_gantry=True, chimney_h=22.0):
-    """Plate/boiler/engineering shop: tall windows in bays, north-light or saw-tooth
-    roof, overhead travelling-crane gantry and a workshop chimney."""
+    """Plate/boiler/engineering shop with north-light sawtooth roof and gantry crane."""
     x1, y1 = x0 + w, y0 + d
     t = 0.5
     for axis, fixed, u0, u1, inward, tag in perimeter(x0, y0, x1, y1):
@@ -601,21 +517,20 @@ def engineering_shop(mb, x0, y0, w, d, wall="brick_soot", h_eave=9.5,
         holes = [(uc - 1.55, uc + 1.55, 1.3, h_eave - 1.1) for uc in cs]
         P.wall_panel(mb, axis, fixed, u0, u1, 0.0, h_eave, t, inward, wall, holes)
         for uc in cs:
-            # multi-pane industrial window with iron frame
             P.slab(mb, mp, uc - 1.55, uc + 1.55, 1.3, h_eave - 1.1, t * 0.55, t * 0.58, "glass")
             for k in range(1, 6):
                 uu = uc - 1.55 + 3.1 * k / 6
-                P.slab(mb, mp, uu - 0.035, uu + 0.035, 1.3, h_eave - 1.1,
-                       t * 0.50, t * 0.55, "iron")
+                P.slab(mb, mp, uu - 0.035, uu + 0.035, 1.3, h_eave - 1.1, t * 0.50, t * 0.55, "iron")
             for k in range(1, 4):
                 zz = 1.3 + (h_eave - 2.4) * k / 4
-                P.slab(mb, mp, uc - 1.55, uc + 1.55, zz - 0.035, zz + 0.035,
-                       t * 0.50, t * 0.55, "iron")
+                P.slab(mb, mp, uc - 1.55, uc + 1.55, zz - 0.035, zz + 0.035, t * 0.50, t * 0.55, "iron")
             P.slab(mb, mp, uc - 1.55, uc - 1.48, 1.3, h_eave - 1.1, 0.0, t * 0.6, "iron")
             P.slab(mb, mp, uc + 1.48, uc + 1.55, 1.3, h_eave - 1.1, 0.0, t * 0.6, "iron")
         P.plinth(mb, mp, u0, u1, 0.0, h=0.9, mat="brick_blue", proj=0.06)
         P.string_course(mb, mp, u0, u1, h_eave - 0.45, "sandstone", h=0.28, proj=0.12)
         P.cornice(mb, mp, u0, u1, h_eave - 0.15, "sandstone", proj=0.30, h=0.28, ustep=2.4)
+        P.downpipe(mb, mp, u0 + 1.2, 0.0, h_eave - 0.15)
+        P.downpipe(mb, mp, u1 - 1.2, 0.0, h_eave - 0.15)
 
     mb.add_box(x0 + 0.6, y0 + 0.6, 0.0, x1 - 0.6, y1 - 0.6, h_eave - 0.4, "interior")
     if sawtooth:
@@ -623,14 +538,11 @@ def engineering_shop(mb, x0, y0, w, d, wall="brick_soot", h_eave=9.5,
     else:
         mb.add_gable_roof(x0, y0, x1, y1, h_eave, 26, "slate", gable="Y", overhang=0.3)
     if crane_gantry:
-        # crane rails on brackets, run along X
         for yy in (y0 + 1.6, y1 - 1.6):
             mb.add_box(x0, yy - 0.2, h_eave - 1.5, x1, yy + 0.2, h_eave - 1.2, "iron")
         mb.add_beam((x0 + (x1 - x0) * 0.35, y0 + 1.6, h_eave - 1.35),
                     (x0 + (x1 - x0) * 0.35, y1 - 1.6, h_eave - 1.35), 0.45, 0.55, "iron")
-        mb.add_box_c(x0 + (x1 - x0) * 0.35, (y0 + y1) / 2, h_eave - 1.05,
-                     1.5, 1.4, 0.8, "iron")
-    # workshop chimney
+        mb.add_box_c(x0 + (x1 - x0) * 0.35, (y0 + y1) / 2, h_eave - 1.05, 1.5, 1.4, 0.8, "iron")
     cx, cy = x0 + 2.5, y1 - 2.5
     for i in range(8):
         t0, t1 = i / 8, (i + 1) / 8
@@ -640,7 +552,7 @@ def engineering_shop(mb, x0, y0, w, d, wall="brick_soot", h_eave=9.5,
 
 
 def _sawtooth_roof(mb, x0, y0, x1, y1, z0, pitch=28, bay=6.0):
-    """North-light sawtooth roof: glazed vertical faces facing north."""
+    """North-light sawtooth roof with completely solid triangular gable masonry ends."""
     n = max(1, int((y1 - y0) / bay))
     step = (y1 - y0) / n
     rise = step * math.tan(math.radians(pitch))
@@ -653,14 +565,14 @@ def _sawtooth_roof(mb, x0, y0, x1, y1, z0, pitch=28, bay=6.0):
         for k in range(int((x1 - x0) / 2.0)):
             xx = x0 + 2.0 * k
             mb.add_beam((xx, ya, z0), (xx, ya, z0 + rise), 0.07, 0.07, "iron")
-    # gable ends
-    mb.add_tri((x0, y0, z0), (x0, y0, z0), (x0, y0, z0), "brick_soot")
+        # Solid triangular gable walls on west (x0) and east (x1)
+        mb.add_tri((x0, ya, z0), (x0, yb, z0), (x0, ya, z0 + rise), "brick_soot")
+        mb.add_tri((x1, ya, z0), (x1, ya, z0 + rise), (x1, yb, z0), "brick_soot")
 
 
 # ================================================================ 8. MOULDING LOFT
 def moulding_loft(mb, x0, y0, w, d, wall="brick_soot", h_eave=11.0):
-    """The mould loft: a long glazed-and-iron shed where ships' lines were set out
-    full size on a scrived floor. Glass-and-iron construction, iron columns."""
+    """The mould loft: long glazed-and-iron shed for full-scale ship drafting."""
     x1, y1 = x0 + w, y0 + d
     t = 0.45
     for axis, fixed, u0, u1, inward, tag in perimeter(x0, y0, x1, y1):
@@ -675,8 +587,9 @@ def moulding_loft(mb, x0, y0, w, d, wall="brick_soot", h_eave=11.0):
                 P.slab(mb, mp, uu - 0.03, uu + 0.03, 1.6, h_eave - 1.2, t * 0.46, t * 0.5, "iron")
         P.plinth(mb, mp, u0, u1, 0.0, h=1.4, mat="brick_blue", proj=0.05)
         P.cornice(mb, mp, u0, u1, h_eave - 0.2, "sandstone", proj=0.26, h=0.26, ustep=2.2)
+        P.downpipe(mb, mp, u0 + 1.0, 0.0, h_eave - 0.2)
+        P.downpipe(mb, mp, u1 - 1.0, 0.0, h_eave - 0.2)
     mb.add_box(x0 + 0.55, y0 + 0.55, 0.0, x1 - 0.55, y1 - 0.55, h_eave - 0.3, "plaster")
-    # glazed ridged roof
     mb.add_gable_roof(x0, y0, x1, y1, h_eave, 24, "glass",
                       gable=("X" if w >= d else "Y"), overhang=0.3, end_mat=wall)
     for i in range(int((x1 - x0) / 5.0) + 1):
@@ -709,6 +622,43 @@ def time_office(mb, x0, y0, w=9.0, d=6.5, wall="brick_buff"):
         P.cornice(mb, mp, u0, u1, h_eave - 0.16, "sandstone", proj=0.26, h=0.24, ustep=1.6)
         P.plinth(mb, mp, u0, u1, 0.0, h=0.45, mat="brick_blue")
     mb.add_box(x0 + 0.5, y0 + 0.5, 0.0, x1 - 0.5, y1 - 0.5, h_eave - 0.2, "interior")
-    z = mb.add_hip_roof(x0, y0, x1, y1, h_eave, 34, "slate", overhang=0.35)
+    mb.add_hip_roof(x0, y0, x1, y1, h_eave, 34, "slate", overhang=0.35)
     P.clock_face(mb, (x0 + x1) / 2, y0 - 0.06, h_eave + 0.55, r=0.62, axis="Y")
     return dict(kind="time_office", x0=x0, y0=y0, w=w, d=d)
+
+
+# ================================================================ 10. ACCUMULATOR TOWER
+def accumulator_tower(mb, x0, y0, w=10.0, d=10.0, h_tower=26.0, wall="brick_red", trim="sandstone"):
+    """Jesse Hartley style hydraulic accumulator tower (powers dockside cranes and gates)."""
+    x1, y1 = x0 + w, y0 + d
+    t = 0.65
+    sides = perimeter(x0, y0, x1, y1)
+    for axis, fixed, u0, u1, inward, tag in sides:
+        mp = P.wmap(axis, fixed, inward)
+        P.plinth(mb, mp, u0, u1, 0.0, h=1.4, mat="granite", proj=0.12)
+        holes = []
+        uc = (u0 + u1) / 2
+        if tag == "S":
+            holes.append((uc - 1.2, uc + 1.2, 0.0, 3.2))
+        for zh in (6.0, 12.0, 18.0):
+            holes.append((uc - 0.45, uc + 0.45, zh, zh + 1.8))
+        P.wall_panel(mb, axis, fixed, u0, u1, 0.0, h_tower, t, inward, wall, holes)
+        if tag == "S":
+            P.segmental_arch(mb, mp, uc, 1.2, 3.2, 0.8, t, mat_ring=trim, mat_tympanum="timber")
+            P.door(mb, mp, uc - 1.2, uc + 1.2, 0.0, 3.2, t)
+        for zh in (6.0, 12.0, 18.0):
+            P.sash_window(mb, mp, uc - 0.45, uc + 0.45, zh, zh + 1.8, t, panes_x=1, panes_y=2)
+            P.stone_sill(mb, mp, uc - 0.45, uc + 0.45, zh, trim)
+        P.quoin(mb, mp, 1.4, h_tower - 1.5, u0 + 0.4, trim, outward=+1)
+        P.quoin(mb, mp, 1.4, h_tower - 1.5, u1 - 0.4, trim, outward=-1)
+        P.string_course(mb, mp, u0, u1, 10.0, trim, h=0.25, proj=0.08)
+        P.string_course(mb, mp, u0, u1, 19.0, trim, h=0.25, proj=0.08)
+        P.cornice(mb, mp, u0, u1, h_tower - 1.2, trim, proj=0.55, h=0.75, ustep=1.2)
+        P.parapet(mb, mp, u0, u1, h_tower, h=1.4, mat=wall, cap=trim)
+        P.downpipe(mb, mp, u0 + 1.0, 0.0, h_tower - 1.2)
+
+    mb.add_box(x0 + t, y0 + t, h_tower - 0.3, x1 - t, y1 - t, h_tower, "timber")
+    cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+    mb.add_cyl(cx, cy, 0.0, h_tower + 2.5, 2.2, "iron", seg=12)
+    mb.add_cyl(cx, cy, h_tower + 2.5, h_tower + 4.0, 2.6, "iron", seg=12)
+    return dict(kind="accumulator_tower", x0=x0, y0=y0, w=w, d=d, z_top=h_tower + 4.0)

@@ -1,10 +1,13 @@
 """
 machinery.py -- dockside plant, coal handling, railway and street furniture.
+GENERATION II — OPERATION VICTORIA (PERICLES-II)
 
-Period detail that separates a working 1889 dock from a decorated one: hydraulic
-jigger cranes, coal staithes with wagon hoists, travelling portal cranes, hand
-capstans, gas standards and the standard-gauge dock railway that threaded through
-every British port (the Mersey Docks estate alone ran 104 miles of it).
+Period-authentic 1889 British dockside equipment:
+  * Armstrong hydraulic portal cranes straddling quayside railway lines
+  * Day, Summers & Co. 80-ton tubular masting sheer legs (Carrickmore Berth 1)
+  * Hydraulic jigger cranes and coal hoists
+  * Standard-gauge dock railway permanent way, buffer stops, mineral wagons and saddle-tank locos
+  * Dray carts, gas lamps, telegraph poles and period cargo dressing
 """
 import math
 import random
@@ -15,72 +18,184 @@ GAUGE = 1.435          # standard gauge, metres
 SLEEPER = 2.60         # sleeper length
 
 
-# ================================================================ cranes
+# ================================================================ hydraulic portal cranes
+def armstrong_portal_crane(mb, x, y, z=QUAY_Z, reach=9.5, hook_z=None, jib_angle=48.0):
+    """William Armstrong & Co. hydraulic portal crane.
+
+    Straddles the quayside railway track on a 4-legged arched wrought-iron portal,
+    allowing mineral wagons and locomotives to pass underneath unimpeded.
+    Revolving superstructure with hydraulic jigger hoisting cylinder and lattice jib.
+    """
+    span = 4.2      # portal track gauge
+    leg_h = 4.8     # portal clearance height
+
+    # 4 legs and flanged track wheels
+    for dx in (-1.8, 1.8):
+        for dy in (-span / 2, span / 2):
+            px, py = x + dx, y + dy
+            # Wheel bogie box on rail
+            mb.add_box_c(px, py, z + 0.35, 1.1, 0.45, 0.45, "iron")
+            mb.add_cyl(px - 0.32, py, z + 0.15, z + 0.15, 0.28, "steel", seg=12, axis="X")
+            mb.add_cyl(px + 0.32, py, z + 0.15, z + 0.15, 0.28, "steel", seg=12, axis="X")
+            # Tapering box-girder leg rising to portal deck
+            mb.add_beam((px, py, z + 0.55), (x + dx * 0.72, y + dy * 0.72, z + leg_h), 0.32, 0.32, "iron")
+
+    # Portal deck and arched clearance girders
+    mb.add_box_c(x, y, z + leg_h + 0.25, 4.4, span + 0.4, 0.5, "iron")
+    # Arched portal clearance ribs underneath
+    for dx in (-1.4, 1.4):
+        mb.add_beam((x + dx, y - span / 2 * 0.7, z + leg_h), (x + dx, y + span / 2 * 0.7, z + leg_h),
+                    0.25, 0.35, "iron")
+
+    # Circular roller path and turntable
+    tz = z + leg_h + 0.5
+    mb.add_cyl(x, y, tz, tz + 0.25, 1.6, "iron", seg=16)
+
+    # Crane revolving deck and machinery house
+    dz = tz + 0.25
+    mb.add_box_c(x, y, dz + 0.3, 4.2, 2.6, 0.55, "paint_green")
+    # Rear counterweight ballast box
+    mb.add_box_c(x - 1.5, y, dz + 1.1, 1.4, 2.2, 1.2, "iron")
+    # Glazed operator's cabin with control levers
+    mb.add_box_c(x + 0.6, y + 0.65, dz + 1.2, 1.8, 1.1, 1.8, "timber")
+    mb.add_box_c(x + 0.6, y + 1.22, dz + 1.4, 1.4, 0.08, 0.9, "glass")
+
+    # Hydraulic jigger cylinder (inclined along back stay)
+    mb.add_cyl(x - 0.8, y, dz + 0.6, dz + 2.8, 0.32, "iron", seg=10)
+
+    # Curved lattice jib
+    jib_rad = math.radians(jib_angle)
+    jib_len = 11.2
+    tip_x = x + math.cos(jib_rad) * jib_len
+    tip_z = dz + math.sin(jib_rad) * jib_len
+    # Twin lattice chords
+    for dy in (-0.55, 0.55):
+        mb.add_beam((x + 1.1, y + dy, dz + 0.6), (tip_x, y + dy * 0.25, tip_z), 0.22, 0.22, "paint_green")
+        # Internal cross lacing
+        n_lace = 6
+        for i in range(n_lace):
+            t0, t1 = i / n_lace, (i + 1) / n_lace
+            p0 = (x + 1.1 + (tip_x - (x + 1.1)) * t0, y + dy * (1.0 - 0.75 * t0), dz + 0.6 + (tip_z - (dz + 0.6)) * t0)
+            p1 = (x + 1.1 + (tip_x - (x + 1.1)) * t1, y + dy * (1.0 - 0.75 * t1), dz + 0.6 + (tip_z - (dz + 0.6)) * t1)
+            mb.add_beam(p0, p1, 0.06, 0.06, "iron")
+
+    # Jib head pulley wheel
+    mb.add_cyl(tip_x, y, tip_z - 0.1, tip_z + 0.1, 0.38, "iron", seg=12, axis="Y")
+
+    # Hoisting chain and forged cargo hook
+    hz = hook_z if hook_z is not None else z + 1.8
+    mb.add_beam((tip_x, y, tip_z), (tip_x, y, hz + 0.6), 0.035, 0.035, "black")
+    mb.add_box_c(tip_x, y, hz + 0.45, 0.32, 0.26, 0.35, "iron")
+    mb.add_cyl(tip_x, y, hz + 0.12, hz + 0.30, 0.14, "steel", seg=10)
+    return dict(tip=(tip_x, y, tip_z), reach=reach)
+
+
+def day_summers_sheer_legs(mb, x, y, z=QUAY_Z, height=28.0, spread=12.0, overhang=9.0):
+    """Day, Summers & Co. 80-ton tubular masting sheer legs (c. 1889).
+
+    Standard British heavy-lift equipment for fitting marine boilers, triple-expansion
+    engines and lower masts into ocean steamships.
+    Two hollow raked tubular wrought-iron front legs pinned at the quay edge,
+    with a massive steam-driven screw back-stay leg running to a ground bed.
+    """
+    # Quay edge pivot pins for front legs
+    p_left = (x - spread / 2, y, z + 0.6)
+    p_right = (x + spread / 2, y, z + 0.6)
+    for px in (p_left, p_right):
+        mb.add_box_c(px[0], px[1], z + 0.3, 1.8, 1.8, 0.6, "granite")
+        mb.add_cyl(px[0], px[1], z + 0.5, z + 0.8, 0.55, "iron", seg=12, axis="X")
+
+    # Apex pin over water
+    p_apex = (x, y + overhang, z + height)
+
+    # Front tubular iron legs (diameter 1.1m tapering to 0.75m)
+    mb.add_beam(p_left, p_apex, 1.05, 1.05, "paint_green")
+    mb.add_beam(p_right, p_apex, 1.05, 1.05, "paint_green")
+    # Cross tie and diagonal brace between front legs
+    p_mid_l = (p_left[0] + (p_apex[0] - p_left[0]) * 0.45, p_left[1] + (p_apex[1] - p_left[1]) * 0.45, z + height * 0.45)
+    p_mid_r = (p_right[0] + (p_apex[0] - p_right[0]) * 0.45, p_right[1] + (p_apex[1] - p_right[1]) * 0.45, z + height * 0.45)
+    mb.add_beam(p_mid_l, p_mid_r, 0.45, 0.45, "paint_green")
+
+    # Back-stay leg running back to steam screw bed
+    p_bed = (x, y - 22.0, z + 0.8)
+    mb.add_beam(p_apex, p_bed, 1.15, 1.15, "paint_green")
+
+    # Horizontal steam screw engine trough on quay
+    mb.add_box_c(x, y - 18.0, z + 0.45, 3.2, 14.0, 0.9, "granite")
+    mb.add_box_c(x, y - 18.0, z + 0.95, 2.2, 12.0, 0.35, "iron")
+    # Massive forged steel worm screw shaft
+    mb.add_cyl(x, y - 18.0, z + 1.1, z + 1.1, 0.32, "steel", seg=12, axis="Y")
+
+    # Winding steam engine house
+    mb.add_box_c(x + 5.2, y - 18.0, z + 2.2, 4.5, 5.5, 4.4, "brick_red")
+    mb.add_gable_roof(x + 5.2 - 2.25, y - 18.0 - 2.75, x + 5.2 + 2.25, y - 18.0 + 2.75,
+                      z + 4.4, 32, "slate", gable="Y", end_mat="brick_red")
+    # Steam boiler iron chimney
+    mb.add_cyl(x + 6.4, y - 16.5, z + 4.4, z + 12.5, 0.42, "iron", seg=10)
+
+    # 8-part pulley blocks and 80-ton forged hook hanging over water
+    mb.add_box_c(p_apex[0], p_apex[1], p_apex[2] - 1.2, 1.4, 1.2, 1.6, "iron")
+    # Heavy multi-part steel wire falls
+    hook_z = z + 3.2
+    for fo in (-0.35, 0.0, 0.35):
+        mb.add_beam((p_apex[0] + fo, p_apex[1], p_apex[2] - 1.8),
+                    (p_apex[0] + fo, p_apex[1], hook_z + 1.4), 0.045, 0.045, "black")
+    # Lower travelling block and forged steel ramshorn hook
+    mb.add_box_c(p_apex[0], p_apex[1], hook_z + 1.1, 1.2, 1.0, 1.4, "iron")
+    mb.add_cyl(p_apex[0], p_apex[1], hook_z + 0.2, hook_z + 0.5, 0.28, "steel", seg=10)
+    mb.add_torus(p_apex[0], p_apex[1], hook_z - 0.2, 0.42, 0.12, "steel") if hasattr(mb, "add_torus") else \
+        mb.add_cyl(p_apex[0], p_apex[1], hook_z - 0.4, hook_z + 0.2, 0.45, "steel", seg=12)
+    return dict(apex=p_apex, capacity_t=80)
+
+
+def titan_crane(mb, x, y, z, span=15.0, height=21.0, jib=16.0, side="X"):
+    """Compatibility bridge: delegates to Day, Summers sheer legs for authentic 1889 heavy lift."""
+    return day_summers_sheer_legs(mb, x, y, z, height=28.0, spread=12.0, overhang=9.0)
+
+
 def hydraulic_crane(mb, x, y, z, reach=5.4, height=5.6, capacity_t=3,
                     colour="paint_green", hook_z=None):
-    """A hydraulic jigger crane: fixed cast-iron column, curved plate jib, tie rod,
-    pulley block and hook. The ubiquitous general-purpose dock crane of the 1880s."""
+    """Hydraulic jigger crane with curved plate jib."""
     mb.add_cyl(x, y, z, z + 0.30, 1.05, "granite", seg=12)
     mb.add_cyl(x, y, z + 0.30, z + 0.62, 0.78, "iron", seg=14)
     mb.add_cyl(x, y, z + 0.62, z + height, 0.50, colour, seg=14, r2=0.40)
     mb.add_cyl(x, y, z + height, z + height + 0.22, 0.55, "iron", seg=14)
-    # curved jib: quadratic arc from the column head out to full reach
     n = 8
     prev = None
     for i in range(n + 1):
         t = i / n
         r = 0.55 + (reach - 0.55) * t
         zz = z + height - 0.9 * t * t - 0.35 * t
-        p = (x + math.cos(math.radians(0)) * r, y + math.sin(math.radians(0)) * r, zz)
+        p = (x + r, y, zz)
         if prev:
             mb.add_beam(prev, p, 0.34, 0.30, colour)
         prev = p
     tip = prev
-    # jib plates: a second, thinner rib below to read as a fabrcated plate jib
-    prev2 = None
-    for i in range(n + 1):
-        t = i / n
-        r = 0.55 + (reach - 0.55) * t
-        zz = z + height - 0.9 * t * t - 0.35 * t - 0.55
-        p = (x + r, y, zz)
-        if prev2:
-            mb.add_beam(prev2, p, 0.30, 0.14, colour)
-        prev2 = p
-    # tie rod back to the column head
     mb.add_beam((x, y, z + height + 0.1), (tip[0], tip[1], tip[2] - 0.15), 0.10, 0.10, "iron")
-    # hoist rope, block and hook
     hz = hook_z if hook_z is not None else z + 1.2
     mb.add_beam((tip[0], tip[1], tip[2] - 0.1), (tip[0], tip[1], hz + 0.55), 0.035, 0.035, "black")
     mb.add_box_c(tip[0], tip[1], hz + 0.32, 0.30, 0.22, 0.42, "iron")
     mb.add_beam((tip[0], tip[1], hz + 0.10), (tip[0], tip[1], hz - 0.18), 0.07, 0.07, "iron")
     mb.add_cyl(tip[0], tip[1], hz - 0.34, hz - 0.18, 0.11, "iron", seg=8, r2=0.13)
-    # operator's hand wheel
     mb.add_cyl(x - 0.6, y, z + 1.4, z + 1.5, 0.26, "paint_red", seg=10)
     return dict(tip=tip, height=height, reach=reach)
 
 
 def coal_hoist(mb, x, y, z, height=6.2, reach=4.6):
-    """Hydraulic coal hoist: cage lifts a wagon to the tipping cradle, the coal runs
-    down chutes into a collier or barge. Replaces the older manual 'coal drops'."""
+    """Hydraulic coal hoist: lifts a wagon to the tipping cradle."""
     mb.add_box_c(x, y, z + 0.35, 3.0, 3.0, 0.7, "granite")
     for dx in (-1.2, 1.2):
         for dy in (-1.2, 1.2):
-            mb.add_beam((x + dx, y + dy, z + 0.7), (x + dx, y + dy, z + height),
-                        0.22, 0.22, "iron")
+            mb.add_beam((x + dx, y + dy, z + 0.7), (x + dx, y + dy, z + height), 0.22, 0.22, "iron")
     for hz in (z + height, z + height * 0.55):
         for dy in (-1.2, 1.2):
             mb.add_beam((x - 1.2, y + dy, hz), (x + 1.2, y + dy, hz), 0.16, 0.20, "iron")
         for dx in (-1.2, 1.2):
             mb.add_beam((x + dx, y - 1.2, hz), (x + dx, y + 1.2, hz), 0.16, 0.20, "iron")
-    # tipping cradle
     mb.add_box_c(x, y, z + 2.1, 2.7, 2.9, 0.35, "iron")
     mb.add_beam((x, y - 2.4, z + 2.1), (x, y - 0.9, z + 2.6), 0.30, 0.22, "iron")
-    # chute out over the water
-    mb.add_beam((x, y - 1.0, z + height * 0.72), (x, y - reach, z + height * 0.30),
-                1.30, 0.55, "iron")
-    mb.add_beam((x, y - reach + 0.8, z + height * 0.36), (x, y - reach, z + height * 0.30),
-                1.10, 0.45, "iron")
-    # machinery house
+    mb.add_beam((x, y - 1.0, z + height * 0.72), (x, y - reach, z + height * 0.30), 1.30, 0.55, "iron")
+    mb.add_beam((x, y - reach + 0.8, z + height * 0.36), (x, y - reach, z + height * 0.30), 1.10, 0.45, "iron")
     mb.add_box_c(x + 2.4, y + 1.6, z + 1.5, 2.0, 2.2, 3.0, "brick_soot")
     mb.add_box_c(x + 2.4, y + 1.6, z + 3.05, 2.3, 2.5, 0.12, "slate")
     return dict(height=height)
@@ -90,96 +205,28 @@ def coal_staithe(mb, x0, y0, length, width, z=QUAY_Z, h=3.0, drops=6):
     """Raised timber/stone coal staithe with wagon drops and bunker pockets."""
     mb.add_box(x0, y0, z, x0 + width, y0 + length, z + h * 0.55, "rubble")
     mb.add_box(x0 - 0.2, y0, z + h * 0.55, x0 + width + 0.2, y0 + length, z + h * 0.72, "granite")
-    # timber deck and side cheek walls
     mb.add_box(x0, y0, z + h * 0.72, x0 + width, y0 + length, z + h, "plank")
     for i in range(drops):
         yy = y0 + length * (i + 0.5) / drops
-        # the drop: a chute mouth in the quay edge
         mb.add_box(x0 + width * 0.15, yy - 0.7, z + 0.35, x0 + width * 0.85, yy + 0.7, z + h * 0.72, "coal")
         mb.add_beam((x0 + width * 0.2, yy, z + h * 0.6), (x0 + width * 0.2, yy, z + 0.3), 0.9, 0.12, "iron")
-    # rails along the staithe top for the wagons
     rail_track(mb, x0 + width * 0.5, y0, x0 + width * 0.5, y0 + length, z + h)
 
 
-def titan_crane(mb, x, y, z, span=15.0, height=21.0, jib=16.0, side="X"):
-    """A travelling portal (Titan) crane on rails: two legs, a lattice girder, a
-    slewing cantilever jib and a counterweight box. The heavy lift of the era."""
-    def leg(px, py):
-        for dx in (-0.55, 0.55):
-            for dy in (-0.55, 0.55):
-                mb.add_beam((px + dx, py + dy, z), (px + dx, py + dy, z + height),
-                            0.35, 0.35, "iron")
-        for hz in (z + 0.4, z + height * 0.5, z + height):
-            mb.add_beam((px - 0.55, py - 0.55, hz), (px + 0.55, py - 0.55, hz), 0.16, 0.16, "iron")
-            mb.add_beam((px + 0.55, py - 0.55, hz), (px + 0.55, py + 0.55, hz), 0.16, 0.16, "iron")
-            mb.add_beam((px + 0.55, py + 0.55, hz), (px - 0.55, py + 0.55, hz), 0.16, 0.16, "iron")
-            mb.add_beam((px - 0.55, py + 0.55, hz), (px - 0.55, py - 0.55, hz), 0.16, 0.16, "iron")
-        # bogie
-        mb.add_box_c(px, py, z + 0.5, 1.9, 1.9, 0.9, "iron")
-        for k in range(4):
-            mb.add_cyl(px + (-0.6 + 0.4 * k), py, z + 0.15, z + 0.15, 0.32, "iron", seg=8, axis="X")
-    if side == "X":
-        leg(x - span / 2, y); leg(x + span / 2, y)
-        p0 = (x - span / 2, y, z + height)
-        p1 = (x + span / 2, y, z + height)
-    else:
-        leg(x, y - span / 2); leg(x, y + span / 2)
-        p0 = (x, y - span / 2, z + height)
-        p1 = (x, y + span / 2, z + height)
-    # lattice girder
-    for dz in (0.0, 1.1):
-        mb.add_beam((p0[0], p0[1], p0[2] + dz), (p1[0], p1[1], p1[2] + dz), 0.55, 0.16, "iron")
-    n = int(span / 1.6)
-    for i in range(n):
-        t0, t1 = i / n, (i + 1) / n
-        a = (p0[0] + (p1[0] - p0[0]) * t0, p0[1] + (p1[1] - p0[1]) * t0, p0[2] + 0.1)
-        b = (p0[0] + (p1[0] - p0[0]) * t1, p0[1] + (p1[1] - p0[1]) * t1, p0[2] + 1.0)
-        mb.add_beam(a, b, 0.10, 0.10, "iron")
-    # slewing jib on the girder
-    jx = x
-    mb.add_cyl(jx, y, z + height + 1.1, z + height + 2.0, 0.75, "iron", seg=10)
-    jz = z + height + 1.8
-    mb.add_beam((jx, y, jz), (jx + jib, y, jz + 1.6), 0.9, 0.3, "iron")
-    mb.add_beam((jx, y, jz + 0.6), (jx + jib * 0.55, y, jz + 1.3), 0.14, 0.14, "iron")
-    mb.add_beam((jx, y, jz), (jx - 4.5, y, jz), 1.2, 0.35, "iron")
-    mb.add_box_c(jx - 5.0, y, jz - 0.4, 2.4, 1.8, 1.4, "iron")
-    # cab
-    mb.add_box_c(jx + 2.0, y + 1.1, jz + 0.3, 2.0, 1.7, 2.0, "paint_green")
-    mb.add_box_c(jx + 2.0, y + 1.95, jz + 0.9, 1.5, 0.08, 1.0, "glass")
-    # hook
-    mb.add_beam((jx + jib, y, jz + 1.5), (jx + jib, y, z + 6.0), 0.05, 0.05, "black")
-    mb.add_box_c(jx + jib, y, z + 5.6, 0.34, 0.26, 0.5, "iron")
-    return dict(jib=jib, height=height)
-
-
-def sheer_legs(mb, x, y, z, height=16.0, spread=5.0, reach=7.0):
-    """Two timber sheer legs with a back stay -- the heavy-lift of small yards."""
-    for s in (-1, 1):
-        mb.add_beam((x + s * 0.5, y, z), (x + s * 1.1, y - spread, z + height),
-                    0.55, 0.55, "timber")
-    mb.add_beam((x + 1.1, y - spread, z + height), (x, y + reach, z + 1.2), 0.22, 0.22, "rope")
-    mb.add_beam((x - 1.1, y - spread, z + height), (x, y + reach, z + 1.2), 0.22, 0.22, "rope")
-    mb.add_beam((x, y, z + height * 0.62), (x, y + reach, z + 1.2), 0.18, 0.18, "rope")
-    mb.add_box_c(x, y - spread + 1.2, z + 2.0, 3.6, 3.0, 0.4, "timber")
-
-
 def steam_crane(mb, x, y, z, angle=0.0, jib=7.0):
-    """Rail-mounted steam crane: vertical boiler, cab, sloped jib, on a 4-wheel chassis."""
+    """Rail-mounted steam crane with vertical cross-tube boiler and curved jib."""
     ca, sa = math.cos(angle), math.sin(angle)
     mb.add_box_c(x, y, z + 0.75, 6.2, 2.6, 0.6, "iron")
     for dx in (-2.4, 2.4):
         for dy in (-0.72, 0.72):
             mb.add_cyl(x + dx, y + dy * 1.0, z + 0.15, z + 0.55, 0.42, "iron", seg=10, axis="X")
     mb.add_box_c(x, y, z + 1.35, 4.2, 2.3, 0.6, "paint_green")
-    # boiler
     bx, by = x - 1.2, y
     mb.add_cyl(bx, by, z + 1.6, z + 3.9, 0.62, "paint_green", seg=14)
     mb.add_cyl(bx, by, z + 3.9, z + 4.6, 0.16, "black", seg=10, r2=0.22)
     mb.add_cyl(bx, by, z + 2.9, z + 3.1, 0.68, "brass", seg=14)
-    # cab
     mb.add_box_c(x + 1.5, y, z + 2.1, 2.2, 2.2, 2.6, "paint_green")
     mb.add_box_c(x + 1.5, y + 1.12, z + 2.6, 1.5, 0.06, 1.1, "glass")
-    # jib
     tipx, tipy = x + ca * jib, y + sa * jib
     mb.add_beam((x + 0.4, y, z + 2.6), (tipx, tipy, z + 4.4), 0.5, 0.35, "paint_green")
     mb.add_beam((tipx, tipy, z + 4.4), (tipx, tipy, z + 1.4), 0.04, 0.04, "black")
@@ -189,7 +236,7 @@ def steam_crane(mb, x, y, z, angle=0.0, jib=7.0):
 # ================================================================ railway
 def rail_track(mb, x0, y0, x1, y1, z=QUAY_Z, gauge=GAUGE, sleeper_mat="timber",
                sleepers=True, ballast=True):
-    """A length of standard-gauge permanent way."""
+    """Standard-gauge dock permanent way."""
     dx, dy = x1 - x0, y1 - y0
     L = math.hypot(dx, dy)
     if L < 0.1:
@@ -216,7 +263,7 @@ def rail_track(mb, x0, y0, x1, y1, z=QUAY_Z, gauge=GAUGE, sleeper_mat="timber",
     for s in (-1, 1):
         ox, oy = px * s * gauge / 2, py * s * gauge / 2
         mb.add_beam((x0 + ox, y0 + oy, z + 0.16), (x1 + ox, y1 + oy, z + 0.16),
-                    0.075, 0.14, "iron")
+                    0.075, 0.14, "steel")
 
 
 def buffer_stop(mb, x, y, z, angle=0.0):
@@ -226,7 +273,7 @@ def buffer_stop(mb, x, y, z, angle=0.0):
 
 
 def wagon(mb, x, y, z, angle=0.0, kind="mineral"):
-    """A wooden-bodied 8-ton mineral wagon or a covered goods van."""
+    """Wooden-bodied 8-ton mineral wagon or covered goods van."""
     ca, sa = math.cos(angle), math.sin(angle)
 
     def w(lx, ly, lz):
@@ -234,8 +281,6 @@ def wagon(mb, x, y, z, angle=0.0, kind="mineral"):
 
     L, W = 5.2, 2.4
     if kind == "mineral":
-        mb.add_box(w(-L / 2, -W / 2, 0.95)[0] - 0.0, 0, 0, 0, 0, 0, "timber") if False else None
-        # body: articulated open box
         corners = [w(-L / 2, -W / 2, 0.95), w(L / 2, -W / 2, 0.95), w(L / 2, W / 2, 0.95),
                    w(-L / 2, W / 2, 0.95)]
         top = [w(-L / 2, -W / 2, 2.35), w(L / 2, -W / 2, 2.35), w(L / 2, W / 2, 2.35),
@@ -246,7 +291,6 @@ def wagon(mb, x, y, z, angle=0.0, kind="mineral"):
         mb.add_quad(corners[3], corners[0], top[0], top[3], "timber")
         mb.add_quad(w(-L / 2 + 0.15, -W / 2 + 0.15, 1.9), w(L / 2 - 0.15, -W / 2 + 0.15, 1.9),
                     w(L / 2 - 0.15, W / 2 - 0.15, 1.9), w(-L / 2 + 0.15, W / 2 - 0.15, 1.9), "coal")
-        # underframe
         mb.add_box_c(x, y, z + 0.85, L, W - 0.15, 0.18, "iron")
     else:
         mb.add_box_c(x, y, z + 1.65, L, W, 2.3, "timber")
@@ -256,25 +300,24 @@ def wagon(mb, x, y, z, angle=0.0, kind="mineral"):
         for dy in (-W / 2 + 0.05, W / 2 - 0.05):
             p = w(dx, dy, 0.62)
             mb.add_cyl(p[0], p[1], z + 0.24, z + 1.0, 0.42, "iron", seg=10, axis="X")
-            # wheel tyre
             mb.add_cyl(p[0], p[1], z + 0.26, z + 0.36, 0.44, "black", seg=10, axis="X")
 
 
 def tank_loco(mb, x, y, z, angle=0.0):
-    """A small 0-6-0 saddle-tank dock locomotive (the standard dock shunter)."""
+    """Small 0-6-0 saddle-tank dock locomotive shunter."""
     ca, sa = math.cos(angle), math.sin(angle)
 
     def w(lx, ly, lz):
         return (x + lx * ca - ly * sa, y + lx * sa + ly * ca, z + lz)
 
     L, W = 8.4, 2.6
-    mb.add_box_c(x, y, z + 1.05, L, W, 0.5, "black")           # frames
-    mb.add_cyl(x, y, z + 1.85, z + 2.75, 0.98, "paint_green", seg=16)   # boiler
-    mb.add_cyl(x, y, z + 2.75, z + 2.95, 0.62, "black", seg=12)         # smokebox
-    mb.add_cyl(x - 2.9, y, z + 2.6, z + 3.9, 0.30, "black", seg=12, r2=0.42)  # chimney
-    mb.add_cyl(x + 1.1, y, z + 2.6, z + 3.05, 0.45, "brass", seg=12)    # dome
-    mb.add_box_c(x, y, z + 2.95, L * 0.72, W * 0.92, 0.55, "paint_green")  # saddle tank
-    mb.add_box_c(x + 3.1, y, z + 2.15, 2.0, W, 2.6, "paint_green")      # cab
+    mb.add_box_c(x, y, z + 1.05, L, W, 0.5, "black")
+    mb.add_cyl(x, y, z + 1.85, z + 2.75, 0.98, "paint_green", seg=16)
+    mb.add_cyl(x, y, z + 2.75, z + 2.95, 0.62, "black", seg=12)
+    mb.add_cyl(x - 2.9, y, z + 2.6, z + 3.9, 0.30, "black", seg=12, r2=0.42)
+    mb.add_cyl(x + 1.1, y, z + 2.6, z + 3.05, 0.45, "brass", seg=12)
+    mb.add_box_c(x, y, z + 2.95, L * 0.72, W * 0.92, 0.55, "paint_green")
+    mb.add_box_c(x + 3.1, y, z + 2.15, 2.0, W, 2.6, "paint_green")
     mb.add_box_c(x + 3.1, y, z + 3.5, 2.2, W + 0.1, 0.16, "black")
     for dx in (-2.6, 0.0, 2.6):
         for dy in (-W / 2, W / 2):
@@ -283,17 +326,14 @@ def tank_loco(mb, x, y, z, angle=0.0):
     mb.add_box_c(x + 4.2, y, z + 1.1, 0.4, 1.2, 0.3, "iron")
 
 
-# ================================================================ street
+# ================================================================ street & port dressing
 def gas_lamp(mb, x, y, z, h=4.2, mat="iron"):
-    """A cast-iron gas standard with a four-pane lantern and ladder rest."""
+    """Cast-iron gas standard with lantern and ladder rest."""
     mb.add_cyl(x, y, z, z + 0.22, 0.32, "granite", seg=10)
     mb.add_cyl(x, y, z + 0.22, z + 0.62, 0.20, mat, seg=12, r2=0.15)
     mb.add_cyl(x, y, z + 0.62, z + h, 0.10, mat, seg=10, r2=0.075)
-    # decorative collar
     mb.add_cyl(x, y, z + h - 0.55, z + h - 0.30, 0.15, mat, seg=10)
-    # ladder rest arm
     mb.add_beam((x, y, z + h - 1.3), (x + 0.42, y, z + h - 1.28), 0.05, 0.05, mat)
-    # lantern
     zb = z + h
     mb.add_cyl(x, y, zb, zb + 0.10, 0.26, mat, seg=6)
     for i in range(4):
@@ -303,6 +343,38 @@ def gas_lamp(mb, x, y, z, h=4.2, mat="iron"):
     mb.add_cyl(x, y, zb + 0.18, zb + 0.68, 0.18, "lamp_glow", seg=8)
     mb.add_cyl(x, y, zb + 0.78, zb + 0.96, 0.30, mat, seg=6, r2=0.06)
     mb.add_cyl(x, y, zb + 0.96, zb + 1.06, 0.05, mat, seg=6)
+
+
+def dray_cart(mb, x, y, z=QUAY_Z, rz=0.0):
+    """Horse-drawn wooden flatbed dray cart with iron-tyred spoked wheels and shafts."""
+    rad = math.radians(rz)
+    ca, sa = math.cos(rad), math.sin(rad)
+
+    def rot(lx, ly, lz):
+        return (x + lx * ca - ly * sa, y + lx * sa + ly * ca, z + lz)
+
+    # Flatbed timber deck
+    mb.add_box_c(rot(0, 0, 1.1)[0], rot(0, 0, 1.1)[1], z + 1.1, 4.2, 2.1, 0.14, "timber")
+    # Low side stakes
+    for sx in (-1.8, -0.6, 0.6, 1.8):
+        for sy in (-1.05, 1.05):
+            p = rot(sx, sy, 1.35)
+            mb.add_box_c(p[0], p[1], z + 1.35, 0.10, 0.10, 0.45, "timber")
+    # Iron-tyred large rear wheels
+    for sy in (-1.18, 1.18):
+        p = rot(-0.6, sy, 0.75)
+        mb.add_cyl(p[0], p[1], z + 0.15, z + 1.35, 0.62, "timber", seg=12, axis="Y")
+        mb.add_cyl(p[0], p[1], z + 0.15, z + 1.35, 0.64, "iron", seg=12, axis="Y")
+    # Small front wheels
+    for sy in (-1.10, 1.10):
+        p = rot(1.5, sy, 0.55)
+        mb.add_cyl(p[0], p[1], z + 0.15, z + 0.95, 0.42, "timber", seg=12, axis="Y")
+        mb.add_cyl(p[0], p[1], z + 0.15, z + 0.95, 0.44, "iron", seg=12, axis="Y")
+    # Forward horse shafts
+    p_shaft_l = rot(2.8, -0.45, 0.9)
+    p_shaft_r = rot(2.8, 0.45, 0.9)
+    mb.add_beam(rot(1.8, -0.45, 0.9), p_shaft_l, 0.08, 0.08, "timber")
+    mb.add_beam(rot(1.8, 0.45, 0.9), p_shaft_r, 0.08, 0.08, "timber")
 
 
 def telegraph_pole(mb, x, y, z, h=8.5, arms=2):
@@ -324,7 +396,6 @@ def fingerpost(mb, x, y, z, h=3.4):
 
 
 def paving_area(mb, x0, y0, x1, y1, z, mat="setts", kerb=False, kerb_mat="granite"):
-    """Carriageway/setts paving with an optional granite kerb along the +Y edge."""
     mb.add_quad((x0, y0, z), (x1, y0, z), (x1, y1, z), (x0, y1, z), mat)
     if kerb:
         mb.add_box(x0, y1 - 0.05, z - 0.16, x1, y1 + 0.32, z + 0.10, kerb_mat)
@@ -342,15 +413,11 @@ def drain_gully(mb, x, y, z, mat="iron"):
 def weighbridge_house(mb, x, y, z, w=3.4, d=2.8, h=3.2):
     mb.add_box(x, y, z, x + w, y + d, z + h, "brick_buff")
     mb.add_gable_roof(x, y, x + w, y + d, z + h, 34, "slate", gable="Y", overhang=0.25)
-    P.wmap("X", y, 1)
     mp = P.wmap("X", y, 1)
     P.sash_window(mb, mp, x + 1.0, x + 2.4, z + 1.1, z + 2.5, 0.35, panes_x=2, panes_y=2)
 
 
 def gangway(mb, x, y, z_low, z_high, length, width=1.6, side="X", netting=True):
-    """A ship's brow: an inclined timber gangway with rope handlines and side netting
-    -- the working counterpart to the passenger bridges on the landing stage."""
-    sgn = 1 if z_high > z_low else -1
     n = 8
     for i in range(n):
         t0, t1 = i / n, (i + 1) / n
@@ -364,7 +431,6 @@ def gangway(mb, x, y, z_low, z_high, length, width=1.6, side="X", netting=True):
             c = (x + width / 2, y + length * t1, z1); d = (x - width / 2, y + length * t1, z1)
         mb.add_quad(a, b, c, d, "plank")
         mb.add_quad(d, c, b, a, "timber")
-    # rope handlines
     for s in (-1, 1):
         if side == "X":
             p0 = (x, y + s * width / 2, z_low + 0.95); p1 = (x + length, y + s * width / 2, z_high + 0.95)
@@ -378,21 +444,24 @@ def gangway(mb, x, y, z_low, z_high, length, width=1.6, side="X", netting=True):
             else:
                 base = (x + s * width / 2, y + length * t, z_low + (z_high - z_low) * t)
             mb.add_beam(base, (base[0], base[1], base[2] + 0.95), 0.035, 0.035, "iron")
-    if netting:
-        for k in range(int(length / 0.6)):
-            t = k * 0.6 / length
-            if side == "X":
-                base = (x + length * t, y - width / 2, z_low + (z_high - z_low) * t)
-                mb.add_beam(base, (base[0], base[1], base[2] - 0.55), 0.02, 0.02, "rope")
 
 
 def winch(mb, x, y, z, mat="iron"):
-    """A small hand/steam dockside winch for warping and hauling."""
     mb.add_box_c(x, y, z + 0.22, 1.5, 0.9, 0.44, mat)
-    mb.add_cyl(x, y, z + 0.42, z + 0.52, 0.34, mat, seg=12, axis="Y")     # rope drum
+    mb.add_cyl(x, y, z + 0.42, z + 0.52, 0.34, mat, seg=12, axis="Y")
     mb.add_cyl(x, y, z + 0.52, z + 0.62, 0.26, mat, seg=12, axis="Y")
     mb.add_beam((x + 0.6, y, z + 0.5), (x + 1.05, y, z + 0.95), 0.06, 0.06, mat)
     mb.add_cyl(x + 1.05, y, z + 0.95, z + 1.0, 0.16, mat, seg=8, axis="Y")
+
+
+def plate_stack(mb, x, y, z=QUAY_Z, w=6.0, d=2.4):
+    """Stack of rolled steel hull plates resting on timber dunnage baulks."""
+    for dx in (-w * 0.35, 0.0, w * 0.35):
+        mb.add_box_c(x + dx, y, z + 0.12, 0.28, d + 0.4, 0.24, "timber")
+    pz = z + 0.24
+    for i in range(8):
+        mb.add_box_c(x, y, pz + 0.02, w, d, 0.04, "steel_plate")
+        pz += 0.05
 
 
 def crate(mb, x, y, z, s=0.9, r=0.0, mat="timber"):
@@ -406,14 +475,17 @@ def crate(mb, x, y, z, s=0.9, r=0.0, mat="timber"):
         mb.add_quad(lo[i], lo[j], hi[j], hi[i], mat)
     mb.add_quad(hi[0], hi[1], hi[2], hi[3], mat)
     mb.add_quad(lo[3], lo[2], lo[1], lo[0], mat)
+    # Stencilled shipping iron corner straps
+    for cr in (lo[0], lo[1], lo[2], lo[3]):
+        mb.add_beam(cr, (cr[0], cr[1], cr[2] + s), 0.04, 0.04, "black")
 
 
 def barrel(mb, x, y, z, h=0.95, r=0.30, mat="timber"):
     mb.add_cyl(x, y, z, z + h * 0.18, r * 0.86, mat, seg=12)
     mb.add_cyl(x, y, z + h * 0.18, z + h * 0.82, r, mat, seg=12)
     mb.add_cyl(x, y, z + h * 0.82, z + h, r * 0.86, mat, seg=12)
-    for k in (0.20, 0.80):
-        mb.add_cyl(x, y, z + h * k, z + h * k + 0.05, r * 1.02, "iron", seg=12)
+    for k in (0.18, 0.42, 0.62, 0.82):
+        mb.add_cyl(x, y, z + h * k, z + h * k + 0.04, r * 1.02, "iron", seg=12)
 
 
 def bale(mb, x, y, z, w=1.2, d=0.8, h=0.7, r=0.0, mat="canvas"):
@@ -426,65 +498,27 @@ def bale(mb, x, y, z, w=1.2, d=0.8, h=0.7, r=0.0, mat="canvas"):
         j = (i + 1) % 4
         mb.add_quad(lo[i], lo[j], hi[j], hi[i], mat)
     mb.add_quad(hi[0], hi[1], hi[2], hi[3], mat)
-    # hoop straps
     for k in (0.28, 0.72):
         mb.add_box_c(x, y, z + h * k, w + 0.03, d + 0.03, 0.05, "iron")
 
 
 def cargo_stack(mb, x, y, z, seed=1, spread=7.0):
-    """A working stack of crates, barrels and bales in a cargo shed or on a quay."""
+    """Working stack of crates, barrels and bales."""
     rnd = random.Random(seed)
-    for i in range(rnd.randint(5, 9)):
+    for i in range(rnd.randint(6, 11)):
         px = x + rnd.uniform(-spread / 2, spread / 2)
         py = y + rnd.uniform(-spread / 2, spread / 2)
         k = rnd.random()
         r = rnd.uniform(0, 3.14)
-        if k < 0.45:
+        if k < 0.42:
             layers = rnd.randint(1, 3)
-            s = rnd.choice([0.8, 0.9, 1.05])
+            s = rnd.choice([0.8, 0.95, 1.1])
             for L in range(layers):
                 crate(mb, px, py, z + L * s, s=s, r=r, mat="timber")
-        elif k < 0.75:
+        elif k < 0.72:
             for L in range(rnd.randint(1, 2)):
-                barrel(mb, px + L * 0.1, py, z + L * 0.95, r=0.30, mat="timber")
+                barrel(mb, px + L * 0.1, py, z + L * 0.95, r=0.32, mat="timber")
         else:
-            bale(mb, px, py, z, r=r, mat="canvas")
-
-
-def coal_barge(mb, x, y, z, length=0.0, axis="Y"):
-    """An open hopper barge of the type warped alongside to coal a liner
-    (Ocean Steamships, 1891: eight barges of 250-300 tons coaled a big
-    greyhound in about four and a half days)."""
-    L, W = 22.0, 4.6
-    if axis == "Y":
-        mb.add_box(x - W / 2, y, z - 0.9, x + W / 2, y + L, z + 0.55, "steel_plate")
-        mb.add_box(x - W / 2 + 0.25, y + 0.4, z + 0.55, x + W / 2 - 0.25, y + L - 0.4, z + 1.1, "coal")
-        mb.add_box(x - W / 2 - 0.1, y + L - 2.2, z + 0.55, x + W / 2 + 0.1, y + L, z + 1.35, "timber")
-    else:
-        mb.add_box(x, y - W / 2, z - 0.9, x + L, y + W / 2, z + 0.55, "steel_plate")
-        mb.add_box(x + 0.4, y - W / 2 + 0.25, z + 0.55, x + L - 0.4, y + W / 2 - 0.25, z + 1.1, "coal")
-
-
-def plate_stack(mb, x, y, z, seed=1):
-    """Stacks of steel plate in a shipyard plate yard."""
-    rnd = random.Random(seed)
-    for s in range(rnd.randint(2, 4)):
-        px = x + rnd.uniform(-4, 4)
-        py = y + rnd.uniform(-3, 3)
-        h = rnd.uniform(0.5, 1.4)
-        r = rnd.uniform(-0.15, 0.15)
-        crate(mb, px, py, z, s=1.0, r=r, mat="steel_plate")
-        mb.add_box(px - 2.6, py - 1.1, z, px + 2.6, py + 1.1, z + h, "steel_plate")
-        # packers between plates
-        for k in range(int(h / 0.28)):
-            mb.add_box(px - 2.2, py - 1.3, z + 0.28 * k, px + 2.2, py + 1.3,
-                       z + 0.28 * k + 0.05, "timber")
-
-
-def keel_blocks(mb, x, y0, y1, z, spacing=4.2):
-    """A line of keel blocks along a slip or dock floor."""
-    n = max(1, int((y1 - y0) / spacing))
-    for i in range(n):
-        yy = y0 + (y1 - y0) * (i + 0.5) / n
-        mb.add_box_c(x, yy, z + 0.85, 1.5, 1.4, 1.7, "timber")
-        mb.add_box_c(x, yy, z + 0.12, 1.9, 1.8, 0.24, "timber")
+            layers = rnd.randint(1, 2)
+            for L in range(layers):
+                bale(mb, px, py, z + L * 0.7, r=r, mat="canvas")
