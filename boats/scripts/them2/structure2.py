@@ -564,14 +564,20 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
     mb = MB("Gunwale")
     # ---- cap rail: follows the sheer edge on top of planking+inwale
     n = 56
-    xis = np.linspace(0.03, 0.97 if hull.transom else 0.94, n)
+    # Run the rails into the stem rabbet.  Starting them at xi=0.03 left both
+    # cap-rail ends visibly suspended well abaft of the stem once planking was
+    # omitted for the construction view.  A short, tapered scarf keeps the
+    # realistic full rail section clear of the centreline at the very fine end.
+    xi_fwd = 0.002
+    xis = np.linspace(xi_fwd, 0.97 if hull.transom else 0.94, n)
     pts = []; frames_ = []; shapes = []
     for xi in xis:
         t = hull.arc_to_t(xi, 0.995)
         p = hull.section_pt(xi, t, o_top + 0.002)
         nrm = hull.section_normal(xi, t)
+        taper = clamp(xi / 0.035, 0.12, 1.0)
         # rail sits on the top edge: raise to sheer top + half height
-        seg = superellipse_section(cap_w / 2, cap_h / 2, n=3.2, seg=12)
+        seg = superellipse_section(cap_w * taper / 2, cap_h * taper / 2, n=3.2, seg=12)
         shapes.append(seg)
         # local frame: u = outward normal (horizontal-ish), v = up
         u = unit(nrm - np.array([0, 0, nrm[2]]))
@@ -595,8 +601,9 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
         nrm = hull.section_normal(xi, t)
         u = unit(nrm - np.array([0, 0, nrm[2]]))
         v = np.array([0.0, 0.0, 1.0])
+        taper = clamp(xi / 0.035, 0.12, 1.0)
         pts2.append([p[0], p[1], p[2] - 0.012])
-        shapes2.append(superellipse_section(0.022, 0.024, n=2.4, seg=10))
+        shapes2.append(superellipse_section(0.022 * taper, 0.024 * taper, n=2.4, seg=10))
         frames2.append((-u, v))
     mb.add_sweep(pts2, shapes2, frames=frames2, mat=mat_inwale)
     # ---- rubbing strake (half-round beading outside)
@@ -609,8 +616,10 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
         nrm = unit(hull.section_normal(xi, t))
         u = unit(nrm - np.array([0, 0, nrm[2]]))
         v = np.array([0.0, 0.0, 1.0])
-        shapes3.append(np.array([(-rub_r, -rub_r * 0.4), (rub_r, -rub_r * 0.4),
-                                 (rub_r, rub_r * 0.7), (0, rub_r), (-rub_r, rub_r * 0.7)]))
+        taper = clamp(xi / 0.035, 0.12, 1.0)
+        rr = rub_r * taper
+        shapes3.append(np.array([(-rr, -rr * 0.4), (rr, -rr * 0.4),
+                                 (rr, rr * 0.7), (0, rr), (-rr, rr * 0.7)]))
         frames3.append((u, v))
         pts3.append(p + nrm * 0.002 + np.array([0, 0, 0.004]))
     mb.add_sweep(pts3, shapes3, frames=frames3, mat=mat_rub)
@@ -689,17 +698,21 @@ def breasthook(hull, f_arc=0.96, length=0.55, thk=0.035, mat=0, ahead=False,
                xi_end=0.0):
     """V-shaped horizontal knee behind the stem (or at the stern for whaler)."""
     mb = MB("Breasthook")
-    xi0 = xi_end + (0.0 if not ahead else 0.0)
-    xi0 = xi_end if xi_end > 0 else 0.012
+    # The forward breasthook is a real closing knee: its apex must land in the
+    # stem rabbet, not at an arbitrary first-plank station.  The former 0.012
+    # station left a conspicuous, unsupported 90 mm fore-and-aft gap between
+    # the knee/sheets and the stem when the shell was omitted for a construction
+    # inspection.  Hull2 supplies a valid raked centreline profile at xi=0.
+    xi0 = xi_end if xi_end > 0 else 0.0
     sgn = -1 if ahead else 1
-    t = hull.arc_to_t(max(0.012, xi0 if xi0 > 0.001 else 0.012), f_arc)
-    z = hull.section_pt(xi0 if xi0 > 0.001 else 0.012, t, 0)[2]
+    t = hull.arc_to_t(xi0, f_arc)
+    z = hull.section_pt(xi0, t, 0)[2]
     if xi_end > 0.9:
         xi_base = xi_end
         xip = xi_end - length / hull.loa
     else:
-        xi_base = 0.012
-        xip = 0.012 + length / hull.loa
+        xi_base = 0.0
+        xip = length / hull.loa
     pA = hull.section_pt(xi_base, hull.arc_to_t(xi_base, f_arc), -0.05)
     pB = hull.section_pt(xip, hull.arc_to_t(xip, f_arc), -0.06)
     outline = [(0.0, -pA[2]), ]
