@@ -1,0 +1,145 @@
+{
+  "id": "whaler_27ft",
+  "loaded": {
+    "draft_m": 0.511,
+    "lcb_m": -0.046,
+    "freeboard_amidships_m": 0.521,
+    "displacement_kg": 1487.5
+  },
+  "light": {
+    "draft_m": 0.297,
+    "waterline_z": -0.214,
+    "lcb_m": -0.033,
+    "freeboard_amidships_m": 0.735,
+    "displacement_kg": 1007.5
+  },
+  "weights": {
+    "hull_planking_9_strakes_kg": 395,
+    "keel_stems_aprons_kg": 105,
+    "gunwales_inwales_knees_kg": 78,
+    "thwarts_bench_floorboards_kg": 84,
+    "oars_5_kg": 97.5,
+    "masts_yards_rigging_sails_kg": 122,
+    "centreboard_case_plate_kg": 44,
+    "rudder_tiller_yoke_kg": 20,
+    "fittings_mooring_kg": 36,
+    "paint_varnish_kg": 26,
+    "light_kg": 1007.5,
+    "crew_kg": 480,
+    "loaded_kg": 1487.5
+  },
+  "pivots": {
+    "centreboard": {
+      "axis_x": 0.165,
+      "axis_z": -0.491
+    },
+    "rowlocks": [
+      {
+        "x": 1.9,
+        "y": 0.6818,
+        "z": 0.5797,
+        "side": 1
+      },
+      {
+        "x": 1.1,
+        "y": -0.7763,
+        "z": 0.5669,
+        "side": -1
+      },
+      {
+        "x": 0.3,
+        "y": 0.8275,
+        "z": 0.5653,
+        "side": 1
+      },
+      {
+        "x": -0.5,
+        "y": -0.8329,
+        "z": 0.5654,
+        "side": -1
+      },
+      {
+        "x": -1.3,
+        "y": 0.7901,
+        "z": 0.5704,
+        "side": 1
+      }
+    ],
+    "oars_moving": [
+      {
+        "part": "Oar_P1",
+        "pivot_world": [
+          1.9,
+          0.6818,
+          0.5797
+        ],
+        "side": "port(+Y)",
+        "station_x": 1.9,
+        "length_m": 5.182,
+        "single_banked": true,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S2",
+        "pivot_world": [
+          1.1,
+          -0.7763,
+          0.5669
+        ],
+        "side": "starboard(-Y)",
+        "station_x": 1.1,
+        "length_m": 5.182,
+        "single_banked": true,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P3",
+        "pivot_world": [
+          0.3,
+          0.8275,
+          0.5653
+        ],
+        "side": "port(+Y)",
+        "station_x": 0.3,
+        "length_m": 5.182,
+        "single_banked": true,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S4",
+        "pivot_world": [
+          -0.5,
+          -0.8329,
+          0.5654
+        ],
+        "side": "starboard(-Y)",
+        "station_x": -0.5,
+        "length_m": 5.182,
+        "single_banked": true,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P5",
+        "pivot_world": [
+          -1.3,
+          0.7901,
+          0.5704
+        ],
+        "side": "port(+Y)",
+        "station_x": -1.3,
+        "length_m": 5.182,
+        "single_banked": true,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      }
+    ],
+    "lifting_eyes_x": [
+      1.85,
+      -1.72
+    ],
+    "rudder_axis": [
+      -4.1128,
+      0.0,
+      0.0
+    ]
+  }
+}

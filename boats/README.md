@@ -19,7 +19,7 @@ oars and a transom, and one with two masts and no transom at all.
 | Construction | carvel over double-diagonal, 12 frames | clinker, 11 strakes, oak frames | clinker, 9 strakes, oak frames, drop keel |
 | Propulsion | compound vertical engine, coal-fired vertical boiler, 2-blade screw | 10 oars, double banked | 5 oars single banked + dipping-lug yawl rig (carried stowed) |
 | Blender file | `blend/boat_a2_steam_cutter.blend` | `blend/boat_b2_rowing_cutter.blend` | `blend/boat_c2_whaler.blend` |
-| Parts (Roblox) | 45 (≤19k tris/part) | 40 (≤19k tris/part) | 40 (≤19k tris/part) |
+| Parts (Roblox) | 50 (≤19k tris/part) | 43 (≤19k tris/part) | 43 (≤19k tris/part) |
 
 > **Second generation (THEMISTOCLES-II, 1889 figure revision).** The geometry
 > engine in `scripts/them2/` rebuilds all three boats from the same documented
@@ -32,6 +32,15 @@ oars and a transom, and one with two masts and no transom at all.
 > generation's sections could not physically displace the crew of ten at the
 > documented 0.397 m; the weight budget needs ~0.66 m). See
 > `docs/THEM2_INSPECTION_REPORT.md`.
+
+> **Fidelity pass (2026-11-16).** The finished models add service-life detail
+> without sacrificing the Roblox import contract: varnished, pore-and-grain
+> figured timber; tarnish/patina on brass, iron and copper; a worn three-zone
+> topside finish (mahogany, black boot-top and red-oxide antifouling); removable
+> bottom boards, stern backrests and working-style stem fairleads on the pulling
+> boats; and, on the steamer, chequer-plate sole panels, lagged uptake,
+> mushroom ventilators, engine guard rails and a glazed cabin skylight.
+> The part counts above are the current exported counts.
 
 ![steam cutter](renders/them2/steam_b_hero.png)
 ![rowing cutter](renders/them2/rowing_b_hero.png)

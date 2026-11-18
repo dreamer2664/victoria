@@ -474,6 +474,24 @@
         0.0
       ]
     },
+    "Bottom_Boards": {
+      "file_glb": "bottom_boards.glb",
+      "file_fbx": "bottom_boards.fbx",
+      "object": "Bottom_Boards",
+      "vertices": 720,
+      "triangles": 360,
+      "decimated": false,
+      "dimensions_m": [
+        6.2546,
+        1.0,
+        0.1133
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
     "Rowlocks": {
       "file_glb": "rowlocks.glb",
       "file_fbx": "rowlocks.fbx",
@@ -575,6 +593,42 @@
         0.48,
         0.48,
         0.4
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Line_Tub_Fwd": {
+      "file_glb": "line_tub_fwd.glb",
+      "file_fbx": "line_tub_fwd.fbx",
+      "object": "Line_Tub_Fwd",
+      "vertices": 801,
+      "triangles": 1576,
+      "decimated": false,
+      "dimensions_m": [
+        0.48,
+        0.48,
+        0.4
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Stem_Fairleads": {
+      "file_glb": "stem_fairleads.glb",
+      "file_fbx": "stem_fairleads.fbx",
+      "object": "Stem_Fairleads",
+      "vertices": 272,
+      "triangles": 232,
+      "decimated": false,
+      "dimensions_m": [
+        8.1746,
+        0.054,
+        0.0656
       ],
       "origin_m": [
         0.0,

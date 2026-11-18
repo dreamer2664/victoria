@@ -73,7 +73,8 @@ def main():
             "moving_parts": list(meta["pivots"].keys()),
             "export": {"dir": f"boats/exports/{d}/",
                        "combined_glb": f"{cls}.glb",
-                       "combined_fbx": f"{cls}.fbx"},
+                       "combined_fbx": f"{cls}.fbx",
+                       "part_count": len(meta["parts"])},
         })
     spec = {
         "schema": "victoria.boats/2.0",

@@ -18,6 +18,7 @@ return {
 	parts = {
 		{ name = "Baler", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(0.5357, 0.5221, 0.8604), verts = 138, tris = 246 },
 		{ name = "BoatHooks", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(18.2279, 3.1282, 0.3689), verts = 364, tris = 672 },
+		{ name = "Bottom_Boards", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(22.3379, 3.5714, 0.4046), verts = 720, tris = 360 },
 		{ name = "Bow_Bench_Knees", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(1.0718, 1.9850, 0.7143), verts = 96, tris = 160 },
 		{ name = "Bow_Sheets", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(2.0575, 2.2993, 0.0893), verts = 384, tris = 752 },
 		{ name = "Bow_Stem", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(0.7064, 0.3893, 3.5864), verts = 196, tris = 384 },
@@ -37,6 +38,7 @@ return {
 		{ name = "Keelson", role = "structure", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(22.3571, 0.2500, 0.6564), verts = 122, tris = 240 },
 		{ name = "Lifting_Eyes", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(13.1643, 0.1857, 1.0761), verts = 408, tris = 760 },
 		{ name = "Line_Tub", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(1.7143, 1.7143, 1.4286), verts = 801, tris = 1576 },
+		{ name = "Line_Tub_Fwd", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(1.7143, 1.7143, 1.4286), verts = 801, tris = 1576 },
 		{ name = "Mast_Fit", role = "rig", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(7.3571, 0.7836, 2.2493), verts = 384, tris = 304 },
 		{ name = "Oar_P1", role = "moving", origin = Vector3.new(6.7857, 2.4350, 2.0704), size = Vector3.new(18.5057, 0.3071, 0.8214), verts = 760, tris = 1508 },
 		{ name = "Oar_P3", role = "moving", origin = Vector3.new(1.0714, 2.9554, 2.0189), size = Vector3.new(18.5057, 0.3071, 0.8214), verts = 760, tris = 1508 },
@@ -51,6 +53,7 @@ return {
 		{ name = "Risers", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(12.4286, 4.9436, 0.1786), verts = 960, tris = 440 },
 		{ name = "Rowlocks", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(11.8929, 6.4518, 0.5039), verts = 4730, tris = 7420 },
 		{ name = "Rudder", role = "moving", origin = Vector3.new(-14.6886, 0.0000, 0.0000), size = Vector3.new(5.0414, 0.2500, 4.0489), verts = 321, tris = 598 },
+		{ name = "Stem_Fairleads", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(29.1950, 0.1929, 0.2343), verts = 272, tris = 232 },
 		{ name = "Stern_Bench_Knees", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(1.5125, 2.2679, 0.7143), verts = 96, tris = 160 },
 		{ name = "Stern_Post", role = "structure", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(0.3082, 0.3725, 3.3882), verts = 196, tris = 384 },
 		{ name = "Stern_Sheets", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(2.4982, 2.6239, 0.0893), verts = 384, tris = 752 },

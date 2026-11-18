@@ -1,0 +1,86 @@
+{
+  "id": "steam_cutter_1888",
+  "loaded": {
+    "draft_m": 0.769,
+    "lcb_m": -0.181,
+    "freeboard_amidships_m": 0.434,
+    "displacement_kg": 3532.0
+  },
+  "light": {
+    "draft_m": 0.529,
+    "waterline_z": -0.24,
+    "lcb_m": -0.173,
+    "freeboard_amidships_m": 0.674,
+    "displacement_kg": 3212.0
+  },
+  "weights": {
+    "hull_double_skin_kg": 560,
+    "frames_and_structure_kg": 235,
+    "deck_canopy_bulkheads_kg": 145,
+    "boiler_full_of_water_kg": 760,
+    "engine_and_shaft_kg": 430,
+    "propeller_rudder_steering_kg": 85,
+    "funnel_pipework_fittings_kg": 155,
+    "coal_bunker_full_kg": 300,
+    "seats_locker_joinery_kg": 105,
+    "mooring_lifting_nav_gear_kg": 85,
+    "fresh_water_tank_and_stores_kg": 320,
+    "paint_varnish_kg": 32,
+    "light_kg": 3212,
+    "crew_kg": 320,
+    "loaded_kg": 3532
+  },
+  "pivots": {
+    "wheel": [
+      -2.8956000000000004,
+      0,
+      0.2903392054484662
+    ],
+    "rudder_axis": [
+      -3.9073,
+      0.0,
+      0.0
+    ],
+    "boiler_face": [
+      0.0,
+      0.396,
+      -0.369
+    ],
+    "boiler_top": [
+      0.0,
+      0,
+      0.621
+    ],
+    "engine": {
+      "crank_x": [
+        0.307,
+        0.607
+      ],
+      "bed_z": -0.029
+    },
+    "propeller": {
+      "hub_pt": [
+        -3.7956,
+        0.0,
+        -0.331
+      ],
+      "axis_dir": [
+        -0.9986,
+        0.0,
+        -0.0521
+      ]
+    },
+    "funnel_top": [
+      0.0,
+      0,
+      1.981
+    ],
+    "cabin": {
+      "door_x": -3.696
+    },
+    "lifting_eyes_x": [
+      2.1,
+      -1.85
+    ]
+  }
+}

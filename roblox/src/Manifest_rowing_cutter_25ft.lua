@@ -23,6 +23,7 @@ return {
 	parts = {
 		{ name = "Baler", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(0.5357, 0.5221, 0.8600), verts = 138, tris = 246 },
 		{ name = "BoatHooks", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(17.4657, 3.1282, 0.3689), verts = 364, tris = 672 },
+		{ name = "Bottom_Boards", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(20.6843, 3.5714, 0.7218), verts = 720, tris = 360 },
 		{ name = "Bow_Knees", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(1.3275, 2.9104, 0.7143), verts = 96, tris = 160 },
 		{ name = "Bow_Sheets", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(2.3132, 3.2900, 0.0893), verts = 384, tris = 752 },
 		{ name = "Breaker", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(1.3571, 0.9771, 0.9621), verts = 432, tris = 856 },
@@ -55,6 +56,8 @@ return {
 		{ name = "Risers", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(13.0000, 5.9646, 0.1786), verts = 960, tris = 440 },
 		{ name = "Rowlocks", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(12.4643, 7.3304, 0.6743), verts = 4730, tris = 7420 },
 		{ name = "Rudder", role = "moving", origin = Vector3.new(-13.9007, 0.0000, 0.0000), size = Vector3.new(5.0414, 0.2500, 3.7432), verts = 321, tris = 598 },
+		{ name = "Stem_Fairlead", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(0.1786, 0.1929, 0.1946), verts = 136, tris = 116 },
+		{ name = "Stern_Backrest", role = "gear", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(0.1821, 2.7693, 0.7411), verts = 168, tris = 144 },
 		{ name = "Stern_Knees", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(2.4161, 4.8425, 0.7143), verts = 96, tris = 160 },
 		{ name = "Stern_Sheets", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(3.4018, 5.0589, 0.0893), verts = 384, tris = 752 },
 		{ name = "Stretchers", role = "furniture", origin = Vector3.new(0.0000, 0.0000, 0.0000), size = Vector3.new(12.1429, 1.5000, 0.4761), verts = 1440, tris = 660 },

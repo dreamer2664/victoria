@@ -781,6 +781,95 @@ def state_cabin(hull, xi_range=(0.80, 0.985), mat=21, mat_roof=21):
     return {"mb": mb, "info": info}
 
 
+def glazed_skylight(center, size=(0.46, 0.30), h=0.085, mat=21, mat_brass=3,
+                    mat_glass=9):
+    """Glazed cabin skylight on its curb: cambered top with four glass panes
+    in brass bars, end cheeks, and a brass ridge strip."""
+    cx, cy, cz = center
+    sx, sy = size
+    mb = MB("Glazed_Skylight")
+    # curb rails
+    mb.add_box((cx, cy - sy / 2 + 0.012, cz + 0.025), (sx, 0.024, 0.05), mat=mat)
+    mb.add_box((cx, cy + sy / 2 - 0.012, cz + 0.025), (sx, 0.024, 0.05), mat=mat)
+    mb.add_box((cx - sx / 2 + 0.012, cy, cz + 0.025), (0.024, sy, 0.05), mat=mat)
+    mb.add_box((cx + sx / 2 - 0.012, cy, cz + 0.025), (0.024, sy, 0.05), mat=mat)
+    # cambered glass: two panes each side of a brass ridge, tilted 7 deg
+    ang = math.radians(7)
+    zr = cz + 0.05
+    for sgny in (-1, 1):
+        for sgnx in (-1, 1):
+            mb.add_box((cx + sgnx * sx * 0.25, cy + sgny * sy * 0.235,
+                        zr + 0.018),
+                       (sx / 2 - 0.030, sy / 2 - 0.030, 0.006), mat=mat_glass,
+                       rot=rot_axis((1, 0, 0), -sgny * ang))
+    # ridge + glazing bars
+    mb.add_box((cx, cy, zr + 0.031), (sx, 0.018, 0.016), mat=mat_brass,
+               chamfer=0.005)
+    mb.add_box((cx, cy - sy * 0.48, zr + 0.010), (sx, 0.012, 0.012),
+               mat=mat_brass)
+    mb.add_box((cx, cy + sy * 0.48, zr + 0.010), (sx, 0.012, 0.012),
+               mat=mat_brass)
+    mb.add_box((cx, cy, zr + 0.020), (0.014, sy, 0.014), mat=mat_brass,
+               rot=rot_axis((1, 0, 0), 0))
+    return mb
+
+
+def ventilator_mushroom(base, r=0.070, h=0.34, mat=10, mat_in=20):
+    """Mushroom ventilator on a short coaming: neck, dished cap on three
+    legs, red-lead painted underside, crown knob."""
+    bx, by, bz = base
+    mb = MB("Ventilator")
+    cyl(mb, (bx, by, bz - 0.010), (bx, by, bz + 0.005), r * 0.72, seg=14,
+        mat=mat)                                   # coaming flange
+    cyl(mb, (bx, by, bz), (bx, by, bz + h), r * 0.44, seg=12, mat=mat)
+    torus(mb, (bx, by, bz + h), r * 0.44, 0.007, seg=12, rseg=4, axis="Z",
+          mat=mat)
+    # cap: dished dome, red underneath, held on three legs
+    cyl(mb, (bx, by, bz + h + 0.012), (bx, by, bz + h + 0.020), r * 0.98,
+        seg=14, mat=mat_in)
+    dome(mb, (bx, by, bz + h + 0.030), r, seg=16, rings=6, mat=mat,
+         squash=0.45)
+    for k in range(3):
+        a = math.radians(k * 120 + 30)
+        px, py = bx + r * 0.80 * math.cos(a), by + r * 0.80 * math.sin(a)
+        cyl(mb, (px, py, bz + h - 0.005), (px, py, bz + h + 0.028), 0.0045,
+            seg=6, mat=mat)
+    sphere(mb, (bx, by, bz + h + 0.030 + r * 0.45), 0.010, seg=8, rings=5,
+           mat=mat)
+    return mb
+
+
+def floor_plates(x0, x1, y_half, z, pw=0.34, mat=26):
+    """Chequer-plate steel sole plates through the machinery space."""
+    mb = MB("Floor_Plates")
+    n = max(1, int((x1 - x0) / pw))
+    for i in range(n):
+        cx = x0 + (i + 0.5) * (x1 - x0) / n
+        mb.add_box((cx, 0, z), ((x1 - x0) / n - 0.012, y_half * 2, 0.007),
+                   mat=mat, chamfer=0.004)
+    return mb
+
+
+def engine_guard_rail(x0, x1, y_half, z0, h=0.40, mat=3):
+    """Polished brass guard rail around the machinery bay: six stanchions
+    with globe tops and two horizontal rails, corners eased."""
+    mb = MB("Engine_Guard")
+    e = 0.06                                   # corner ease
+    per = [(x0 + e, -y_half), (x1 - e, -y_half), (x1, -y_half + e),
+           (x1, y_half - e), (x1 - e, y_half), (x0 + e, y_half),
+           (x0, y_half - e), (x0, -y_half + e)]
+    for zrail in (z0 + h, z0 + h * 0.55):
+        pts = [np.array([px, py, zrail]) for px, py in per]
+        pts.append(pts[0].copy())
+        mb.add_tube(pts, 0.0105, segments=8, mat=mat)
+    for px, py in per[::2]:
+        cyl(mb, (px, py, z0), (px, py, z0 + h), 0.0085, seg=8, mat=mat)
+        sphere(mb, (px, py, z0 + h), 0.013, seg=8, rings=5, mat=mat)
+        cyl(mb, (px, py, z0 - 0.004), (px, py, z0 + 0.012), 0.016, seg=10,
+            mat=mat)
+    return mb
+
+
 def sidelight_pair(hull):
     """Port/starboard sidelights in brass housings at the bow."""
     mb = MB()

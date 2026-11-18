@@ -36,7 +36,7 @@ def main(quick=False):
 
     # ---- hull skins ----------------------------------------------------------
     plan = st.clinker_strakes(hull, 11, 0.016, nx=55, npb=12,
-                              mat=0, mat_top=22)
+                              mat=25, mat_top=22)
     plan.mirror_y()
     objects["Planking_Clinker"] = plan
 
@@ -44,7 +44,7 @@ def main(quick=False):
     keel.append(st.stem_post(hull, moulded=0.105, sided=0.050, mat=2))
     objects["Keel_Stem_Sternpost"] = keel
 
-    objects["Transom"] = st.transom_plate(hull, thk=0.052, mat=0, mat_edge=2)
+    objects["Transom"] = st.transom_plate(hull, thk=0.052, mat=25, mat_edge=2)
 
     fr = st.frames(hull, 11, 0.016, spacing=0.150, siding=0.022, mould_lo=0.042,
                    mould_hi=0.024, mat=2)
@@ -89,6 +89,11 @@ def main(quick=False):
     gr = P.foot_grating(-1.20, -0.10, 0.26, zgr + 0.02, mat=1)
     gr.append(P.foot_grating(0.16, 1.30, 0.275, zgr + 0.03, mat=1))
     objects["Floor_Gratings"] = gr
+
+    # loose-laid bottom boards over the floors (service pattern)
+    objects["Bottom_Boards"] = BL.bottom_boards(hull)
+    # cambered back board across the stern sheets
+    objects["Stern_Backrest"] = BL.stern_backrest(hull)
 
     # stretchers under each thwart zone
     str_mb = MB("Stretchers")
@@ -154,6 +159,7 @@ def main(quick=False):
         cyl(eyemb, (xx, 0, zr - 0.10), (xx, 0, zr + 0.02), 0.012, seg=10, mat=5)
         torus(eyemb, (xx, 0, zr + 0.05), 0.032, 0.010, seg=12, rseg=6, axis="Y", mat=5)
     objects["Ring_Bolts"] = eyemb
+    objects["Stem_Fairlead"] = BL.stem_fairlead(hull)
 
     # ---- standard gear ---------------------------------------------------------
     for name, gmb in BL.standard_gear(hull, kind="rowing"):

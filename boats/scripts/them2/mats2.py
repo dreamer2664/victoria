@@ -48,42 +48,80 @@ def _tex_coord(nt, scale=(1, 1, 1)):
 
 def wood(name, c_dark, c_mid, c_light, rough=0.32, varnish=0.55, scale=6.0,
          rings=90.0):
+    """Layered procedural wood: elongated growth rings distorted by noise for
+    the figure, a fine pore layer on top, grain-linked roughness so the varnish
+    pools believably, and a per-object tone shift so no two parts match."""
     m, nt = _mat(name)
     bs = _out(nt)
-    tc, mp = _tex_coord(nt)
+    tc, mp = _tex_coord(nt, scale=(0.55, 3.2, 3.2))   # stretch cells along grain
     noise = nt.nodes.new("ShaderNodeTexNoise")
-    noise.location = (-500, 200)
+    noise.location = (-700, 220)
     noise.inputs["Scale"].default_value = scale
-    noise.inputs["Detail"].default_value = 5.0
-    noise.inputs["Roughness"].default_value = 0.75
+    noise.inputs["Detail"].default_value = 6.0
+    noise.inputs["Roughness"].default_value = 0.72
     nt.links.new(mp.outputs["Vector"], noise.inputs["Vector"])
     wave = nt.nodes.new("ShaderNodeTexWave")
-    wave.location = (-500, -120)
+    wave.location = (-700, -60)
     wave.wave_type = 'RINGS'
     wave.rings_direction = 'Z'
     wave.inputs["Scale"].default_value = rings
-    wave.inputs["Distortion"].default_value = 7.0
-    wave.inputs["Detail"].default_value = 5.0
+    wave.inputs["Distortion"].default_value = 9.0
+    wave.inputs["Detail"].default_value = 6.0
     nt.links.new(noise.outputs["Fac"], wave.inputs["Vector"])  # unstable vec; ok
+    pore = nt.nodes.new("ShaderNodeTexWave")
+    pore.location = (-700, -320)
+    pore.wave_type = 'RINGS'
+    pore.rings_direction = 'Z'
+    pore.inputs["Scale"].default_value = rings * 3.4
+    pore.inputs["Distortion"].default_value = 3.5
+    pore.inputs["Detail"].default_value = 3.0
+    nt.links.new(noise.outputs["Fac"], pore.inputs["Vector"])
+    blend = nt.nodes.new("ShaderNodeMixRGB")
+    blend.blend_type = 'MULTIPLY'
+    blend.location = (-420, -140)
+    blend.inputs["Fac"].default_value = 0.30
+    nt.links.new(wave.outputs["Color"], blend.inputs[1])
+    nt.links.new(pore.outputs["Color"], blend.inputs[2])
     mix = nt.nodes.new("ShaderNodeValToRGB")
-    mix.location = (-220, 60)
+    mix.location = (-200, 60)
     cr = mix.color_ramp
     cr.elements.remove(cr.elements[1])
-    for pos, col in ((0.0, c_dark), (0.45, c_mid), (1.0, c_light)):
+    lite = tuple(min(1.0, cl * 0.98) for cl in c_light)
+    for pos, col in ((0.0, c_dark), (0.40, c_mid), (0.80, c_light), (1.0, lite)):
         el = cr.elements.new(pos) if pos > 0 else cr.elements[0]
         el.position = pos
         el.color = (*col, 1.0)
-    nt.links.new(wave.outputs["Color"], mix.inputs["Fac"])
-    nt.links.new(mix.outputs["Color"], bs.inputs["Base Color"])
+    nt.links.new(blend.outputs["Color"], mix.inputs["Fac"])
+    # per-object tone shift (subtle; keeps parts from looking cloned)
+    oi = nt.nodes.new("ShaderNodeObjectInfo")
+    oi.location = (-200, 340)
+    hs = nt.nodes.new("ShaderNodeHueSaturation")
+    hs.location = (60, 160)
+    hs.inputs["Saturation"].default_value = 1.0
+    nt.links.new(mix.outputs["Color"], hs.inputs["Color"])
+    sat_m = nt.nodes.new("ShaderNodeMath"); sat_m.operation = 'MULTIPLY_ADD'
+    sat_m.location = (-60, 330)
+    nt.links.new(oi.outputs["Random"], sat_m.inputs[0])
+    sat_m.inputs[1].default_value = 0.10
+    sat_m.inputs[2].default_value = 0.93
+    nt.links.new(sat_m.outputs[0], hs.inputs["Value"])
+    nt.links.new(hs.outputs["Color"], bs.inputs["Base Color"])
     bs.inputs["Roughness"].default_value = rough
-    bs.inputs["Coat Weight"].default_value = varnish * 0.4
-    bs.inputs["Coat Roughness"].default_value = 0.25
-    # subtle grain bump
+    bs.inputs["Coat Weight"].default_value = varnish * 0.5
+    bs.inputs["Coat Roughness"].default_value = 0.22
+    # varnish sinks into the figure: roughness breathes with the grain
+    rm = nt.nodes.new("ShaderNodeMath"); rm.operation = 'MULTIPLY_ADD'
+    rm.location = (60, -60)
+    nt.links.new(blend.outputs["Color"], rm.inputs[0])
+    rm.inputs[1].default_value = 0.10
+    rm.inputs[2].default_value = rough - 0.05
+    nt.links.new(rm.outputs[0], bs.inputs["Roughness"])
+    # grain bump (figure + pores)
     bump = nt.nodes.new("ShaderNodeBump")
     bump.location = (350, -220)
-    bump.inputs["Strength"].default_value = 0.35
-    bump.inputs["Distance"].default_value = 0.002
-    nt.links.new(mix.outputs["Color"], bump.inputs["Height"])
+    bump.inputs["Strength"].default_value = 0.30
+    bump.inputs["Distance"].default_value = 0.0018
+    nt.links.new(blend.outputs["Color"], bump.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bs.inputs["Normal"])
     return m
 
@@ -110,7 +148,10 @@ def solid(name, color, rough=0.7, metallic=0.0, bump_scale=None, bump_str=0.0):
     return m
 
 
-def metal(name, color, rough=0.25, tarnish=0.25):
+def metal(name, color, rough=0.25, tarnish=0.25, patina=None):
+    """Polished metal with mottled tarnish; `patina` adds oxidation pockets
+    (green for brass/copper, rust for iron) in the low-noise recesses and
+    roughens them."""
     m, nt = _mat(name)
     bs = _out(nt)
     tc, mp = _tex_coord(nt)
@@ -126,7 +167,33 @@ def metal(name, color, rough=0.25, tarnish=0.25):
     mix.color_ramp.elements[1].color = (*color, 1)
     mix.color_ramp.elements[1].position = 0.75
     nt.links.new(noise.outputs["Fac"], mix.inputs["Fac"])
-    nt.links.new(mix.outputs["Color"], bs.inputs["Base Color"])
+    col_socket = mix.outputs["Color"]
+    rough_add = 0.0
+    if patina is not None:
+        pn = nt.nodes.new("ShaderNodeTexNoise")
+        pn.location = (-500, -260)
+        pn.inputs["Scale"].default_value = 2.6
+        pn.inputs["Detail"].default_value = 4.5
+        pn.inputs["Roughness"].default_value = 0.8
+        nt.links.new(mp.outputs["Vector"], pn.inputs["Vector"])
+        pramp = nt.nodes.new("ShaderNodeValToRGB")
+        pramp.location = (-230, -260)
+        pramp.color_ramp.interpolation = 'EASE'
+        pramp.color_ramp.elements[0].position = 0.28   # pockets -> full patina
+        pramp.color_ramp.elements[1].position = 0.52   # high spots -> bare metal
+        nt.links.new(pn.outputs["Fac"], pramp.inputs["Fac"])
+        pmix = nt.nodes.new("ShaderNodeMixRGB")
+        pmix.location = (30, 120)
+        pmix.inputs[2].default_value = (*patina, 1)
+        nt.links.new(pramp.outputs["Color"], pmix.inputs["Fac"])
+        nt.links.new(mix.outputs["Color"], pmix.inputs[1])
+        col_socket = pmix.outputs["Color"]
+        prm = nt.nodes.new("ShaderNodeMath"); prm.operation = 'MULTIPLY'
+        prm.location = (30, -120)
+        nt.links.new(pramp.outputs["Color"], prm.inputs[0])
+        prm.inputs[1].default_value = 0.30             # patina roughness lift
+        rough_add = prm.outputs[0]
+    nt.links.new(col_socket, bs.inputs["Base Color"])
     bs.inputs["Metallic"].default_value = 0.95
     bs.inputs["Roughness"].default_value = rough
     mf = nt.nodes.new("ShaderNodeMath"); mf.operation = 'MULTIPLY'
@@ -134,7 +201,13 @@ def metal(name, color, rough=0.25, tarnish=0.25):
     mf.inputs[1].default_value = 0.22
     rr = nt.nodes.new("ShaderNodeMath"); rr.operation = 'ADD'
     nt.links.new(mf.outputs[0], rr.inputs[0]); rr.inputs[1].default_value = rough
-    nt.links.new(rr.outputs[0], bs.inputs["Roughness"])
+    if patina is not None:
+        rr2 = nt.nodes.new("ShaderNodeMath"); rr2.operation = 'ADD'
+        nt.links.new(rr.outputs[0], rr2.inputs[0])
+        nt.links.new(rough_add, rr2.inputs[1])
+        nt.links.new(rr2.outputs[0], bs.inputs["Roughness"])
+    else:
+        nt.links.new(rr.outputs[0], bs.inputs["Roughness"])
     return m
 
 
@@ -190,6 +263,111 @@ def rope_mat(name, color=(0.52, 0.42, 0.28)):
     return m
 
 
+def topsides(name="TM2_Topsides", z_af=0.0, z_band=0.235):
+    """Service paint scheme keyed to the hull, not the texture space: object-
+    space Z (Z=0 = loaded waterline) splits varnished mahogany topsides /
+    black boot-top band / red-oxide antifouling, with wear noise feathering
+    the paint edges.  Only applied to shell + transom parts."""
+    m, nt = _mat(name)
+    bs = _out(nt)
+    tc, mp = _tex_coord(nt, scale=(0.55, 3.2, 3.2))
+    noise = nt.nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = 6.0
+    noise.inputs["Detail"].default_value = 6.0
+    noise.inputs["Roughness"].default_value = 0.72
+    nt.links.new(mp.outputs["Vector"], noise.inputs["Vector"])
+    wave = nt.nodes.new("ShaderNodeTexWave")
+    wave.wave_type = 'RINGS'
+    wave.rings_direction = 'Z'
+    wave.inputs["Scale"].default_value = 70.0
+    wave.inputs["Distortion"].default_value = 9.0
+    wave.inputs["Detail"].default_value = 6.0
+    nt.links.new(noise.outputs["Fac"], wave.inputs["Vector"])
+    wramp = nt.nodes.new("ShaderNodeValToRGB")
+    cr = wramp.color_ramp
+    cr.elements.remove(cr.elements[1])
+    for pos, col in ((0.0, (0.026, 0.013, 0.007)), (0.40, (0.070, 0.033, 0.014)),
+                     (0.80, (0.155, 0.082, 0.034)), (1.0, (0.185, 0.098, 0.040))):
+        el = cr.elements.new(pos) if pos > 0 else cr.elements[0]
+        el.position = pos
+        el.color = (*col, 1.0)
+    nt.links.new(wave.outputs["Color"], wramp.inputs["Fac"])
+    # object-space Z with wear feather
+    tco = nt.nodes.new("ShaderNodeTexCoord")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(tco.outputs["Object"], sep.inputs["Vector"])
+    wear = nt.nodes.new("ShaderNodeTexNoise")
+    wear.inputs["Scale"].default_value = 22.0
+    wear.inputs["Detail"].default_value = 3.0
+    nt.links.new(mp.outputs["Vector"], wear.inputs["Vector"])
+    wm = nt.nodes.new("ShaderNodeMath"); wm.operation = 'MULTIPLY_ADD'
+    nt.links.new(wear.outputs["Fac"], wm.inputs[0])
+    wm.inputs[1].default_value = 0.020
+    wm.inputs[2].default_value = -0.010
+    zadd = nt.nodes.new("ShaderNodeMath"); zadd.operation = 'ADD'
+    nt.links.new(sep.outputs["Z"], zadd.inputs[0])
+    nt.links.new(wm.outputs[0], zadd.inputs[1])
+    lt_af = nt.nodes.new("ShaderNodeMath"); lt_af.operation = 'LESS_THAN'
+    nt.links.new(zadd.outputs[0], lt_af.inputs[0]); lt_af.inputs[1].default_value = z_af
+    lt_band = nt.nodes.new("ShaderNodeMath"); lt_band.operation = 'LESS_THAN'
+    nt.links.new(zadd.outputs[0], lt_band.inputs[0]); lt_band.inputs[1].default_value = z_band
+    band_m = nt.nodes.new("ShaderNodeMath"); band_m.operation = 'SUBTRACT'
+    nt.links.new(lt_band.outputs[0], band_m.inputs[0])
+    nt.links.new(lt_af.outputs[0], band_m.inputs[1])
+    af_mix = nt.nodes.new("ShaderNodeMixRGB")
+    af_mix.inputs[2].default_value = (0.30, 0.095, 0.055, 1)    # red oxide
+    nt.links.new(lt_af.outputs[0], af_mix.inputs["Fac"])
+    nt.links.new(wramp.outputs["Color"], af_mix.inputs[1])
+    band_mix = nt.nodes.new("ShaderNodeMixRGB")
+    band_mix.inputs[2].default_value = (0.012, 0.014, 0.016, 1)  # boot-top black
+    nt.links.new(band_m.outputs[0], band_mix.inputs["Fac"])
+    nt.links.new(af_mix.outputs["Color"], band_mix.inputs[1])
+    nt.links.new(band_mix.outputs["Color"], bs.inputs["Base Color"])
+    bs.inputs["Coat Weight"].default_value = 0.12
+    bs.inputs["Coat Roughness"].default_value = 0.22
+    # roughness: varnish above, paint at band, chalky antifouling below
+    rvar = nt.nodes.new("ShaderNodeMath"); rvar.operation = 'MULTIPLY'
+    nt.links.new(lt_af.outputs[0], rvar.inputs[0]); rvar.inputs[1].default_value = 0.28
+    rband = nt.nodes.new("ShaderNodeMath"); rband.operation = 'MULTIPLY'
+    nt.links.new(band_m.outputs[0], rband.inputs[0]); rband.inputs[1].default_value = 0.08
+    rsum = nt.nodes.new("ShaderNodeMath"); rsum.operation = 'ADD'
+    nt.links.new(rvar.outputs[0], rsum.inputs[0]); nt.links.new(rband.outputs[0], rsum.inputs[1])
+    rfin = nt.nodes.new("ShaderNodeMath"); rfin.operation = 'ADD'
+    nt.links.new(rsum.outputs[0], rfin.inputs[0]); rfin.inputs[1].default_value = 0.28
+    nt.links.new(rfin.outputs[0], bs.inputs["Roughness"])
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.28
+    bump.inputs["Distance"].default_value = 0.0018
+    nt.links.new(wave.outputs["Color"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bs.inputs["Normal"])
+    return m
+
+
+def chequer_steel(name="TM2_Chequer_Steel"):
+    """Rolled steel chequer plate: crossed tread bars, semi-bright."""
+    m, nt = _mat(name)
+    bs = _out(nt)
+    bs.inputs["Base Color"].default_value = (0.135, 0.145, 0.155, 1)
+    bs.inputs["Metallic"].default_value = 0.78
+    bs.inputs["Roughness"].default_value = 0.42
+    tc, mp = _tex_coord(nt, scale=(1, 1, 1))
+    wx = nt.nodes.new("ShaderNodeTexWave"); wx.wave_type = 'BANDS'
+    wx.bands_direction = 'X'; wx.inputs["Scale"].default_value = 230.0
+    wy = nt.nodes.new("ShaderNodeTexWave"); wy.wave_type = 'BANDS'
+    wy.bands_direction = 'Y'; wy.inputs["Scale"].default_value = 230.0
+    nt.links.new(mp.outputs["Vector"], wx.inputs["Vector"])
+    nt.links.new(mp.outputs["Vector"], wy.inputs["Vector"])
+    mm = nt.nodes.new("ShaderNodeMath"); mm.operation = 'MULTIPLY'
+    nt.links.new(wx.outputs["Color"], mm.inputs[0])
+    nt.links.new(wy.outputs["Color"], mm.inputs[1])
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.5
+    bump.inputs["Distance"].default_value = 0.0028
+    nt.links.new(mm.outputs[0], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bs.inputs["Normal"])
+    return m
+
+
 def water(name="Sea_Water"):
     m, nt = _mat(name)
     bs = _out(nt)
@@ -221,8 +399,10 @@ def build_palette():
                   (0.34, 0.235, 0.125), rough=0.36, varnish=0.6, rings=95))        # 1
     P.append(wood("TM2_Oak_Dark", (0.035, 0.024, 0.012), (0.095, 0.062, 0.030),
                   (0.21, 0.145, 0.075), rough=0.5, varnish=0.3, rings=80))         # 2
-    P.append(metal("TM2_Brass", (0.44, 0.27, 0.09), rough=0.16, tarnish=0.35))     # 3
-    P.append(metal("TM2_Iron", (0.055, 0.06, 0.07), rough=0.45, tarnish=0.3))      # 4
+    P.append(metal("TM2_Brass", (0.44, 0.27, 0.09), rough=0.16, tarnish=0.35,
+                  patina=(0.055, 0.095, 0.070)))                        # 3
+    P.append(metal("TM2_Iron", (0.055, 0.06, 0.07), rough=0.45, tarnish=0.30,
+                  patina=(0.135, 0.055, 0.022)))                        # 4
     P.append(metal("TM2_Galvanised", (0.36, 0.39, 0.42), rough=0.42, tarnish=0.25))# 5
     P.append(solid("TM2_Leather", (0.13, 0.075, 0.04), rough=0.55, bump_scale=40,
                    bump_str=0.25))                                                 # 6
@@ -234,7 +414,8 @@ def build_palette():
     P.append(solid("TM2_Card", (0.92, 0.90, 0.83), rough=0.9))                     # 11
     P.append(glass("TM2_Lens_Red", tint=(0.8, 0.02, 0.008), rough=0.05))           # 12
     P.append(glass("TM2_Lens_Green", tint=(0.01, 0.30, 0.05), rough=0.05))         # 13
-    P.append(metal("TM2_Copper", (0.42, 0.17, 0.09), rough=0.30, tarnish=0.4))     # 14
+    P.append(metal("TM2_Copper", (0.42, 0.17, 0.09), rough=0.30, tarnish=0.40,
+                  patina=(0.085, 0.215, 0.165)))                        # 14
     P.append(metal("TM2_Steel", (0.32, 0.35, 0.39), rough=0.24, tarnish=0.2))      # 15
     P.append(canvas("TM2_Lagging", color=(0.80, 0.78, 0.72)))                      # 16
     P.append(solid("TM2_Coal", (0.018, 0.018, 0.021), rough=0.42, metallic=0.25,
@@ -250,6 +431,8 @@ def build_palette():
                    bump_scale=10, bump_str=0.06))                                  # 23
     P.append(wood("TM2_Spar_Varnish", (0.06, 0.040, 0.016), (0.16, 0.105, 0.05),
                   (0.34, 0.245, 0.13), rough=0.26, varnish=0.9, rings=120))        # 24
+    P.append(topsides())                                                           # 25
+    P.append(chequer_steel())                                                      # 26
     return P
 
 

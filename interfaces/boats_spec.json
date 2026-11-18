@@ -100,7 +100,8 @@
       "export": {
         "dir": "boats/exports/rowing2/",
         "combined_glb": "rowing_cutter_25ft.glb",
-        "combined_fbx": "rowing_cutter_25ft.fbx"
+        "combined_fbx": "rowing_cutter_25ft.fbx",
+        "part_count": 43
       }
     },
     {
@@ -165,7 +166,8 @@
       "export": {
         "dir": "boats/exports/whaler2/",
         "combined_glb": "whaler_27ft.glb",
-        "combined_fbx": "whaler_27ft.fbx"
+        "combined_fbx": "whaler_27ft.fbx",
+        "part_count": 43
       }
     },
     {
@@ -236,7 +238,8 @@
       "export": {
         "dir": "boats/exports/steam2/",
         "combined_glb": "steam_cutter_1888.glb",
-        "combined_fbx": "steam_cutter_1888.fbx"
+        "combined_fbx": "steam_cutter_1888.fbx",
+        "part_count": 50
       }
     }
   ]

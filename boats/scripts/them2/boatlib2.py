@@ -292,6 +292,72 @@ def side_bench_pair(hull, at_stern=True, z=0.30, width=0.30, thk=0.025,
     return mb, supports
 
 
+def bottom_boards(hull, xi0=0.15, xi1=0.85, z_off=0.155, board_w=0.078,
+                  gap=0.016, rise=0.20, mat=1):
+    """Loose-laid bottom boards port + starboard of the keelson, following
+    the deadrise, in three lift-out panels per side (service pattern)."""
+    mb = MB("Bottom_Boards")
+    loa = hull.loa
+    for sgn in (-1, 1):
+        for k in range(5):
+            y = sgn * (0.085 + k * (board_w + gap))
+            shrink = 1.0 - 0.10 * k
+            xa = loa / 2 - xi1 * loa * shrink
+            xb = loa / 2 - xi0 * loa * shrink
+            za = hull.keel_z((loa / 2 - xa) / loa) + z_off + rise * abs(y)
+            zb = hull.keel_z((loa / 2 - xb) / loa) + z_off + rise * abs(y)
+            for f0, f1 in ((0.0, 0.32), (0.35, 0.66), (0.69, 1.0)):
+                p0 = np.array([lerp(xa, xb, f0), y, lerp(za, zb, f0)])
+                p1 = np.array([lerp(xa, xb, f1), y, lerp(za, zb, f1)])
+                mid = (p0 + p1) / 2
+                L = float(np.linalg.norm(p1 - p0))
+                ang = math.atan2(float(p1[2] - p0[2]), float(p1[0] - p0[0]))
+                mb.add_box(tuple(mid), (L, board_w, 0.016), mat=mat,
+                           rot=rot_axis((0, 1, 0), -ang))
+    return mb
+
+
+def stern_backrest(hull, xi=0.950, z0=0.315, h=0.15, mat=1, mat_st=3):
+    """Cambered back board across the stern sheets on brass stanchions."""
+    mb = MB("Stern_Backrest")
+    x = hull.X(xi)
+    hw = abs(hull.section_pt(xi, 0.90, -0.10)[1]) * 0.78
+    n = 5
+    ys = np.linspace(-hw, hw, n + 1)
+    pts = []
+    for y in ys:
+        pts.append(np.array([x - 0.05 * (y / hw) ** 2, y,
+                             z0 + h + 0.03 * (y / hw) ** 2]))
+    for i in range(n):
+        p0, p1 = pts[i], pts[i + 1]
+        mid = (p0 + p1) / 2
+        L = float(np.linalg.norm(p1 - p0))
+        ang = math.atan2(float(p1[2] - p0[2]), float(p1[1] - p0[1]))
+        mb.add_box(tuple(mid), (0.016, L, 0.055), mat=mat,
+                   rot=rot_axis((1, 0, 0), ang))
+    for y in (-hw * 0.7, 0.0, hw * 0.7):
+        top = z0 + h + 0.03 * (y / hw) ** 2
+        cyl(mb, (x - 0.05 * (y / hw) ** 2, y, z0),
+            (x - 0.05 * (y / hw) ** 2, y, top - 0.02), 0.009, seg=8, mat=mat_st)
+    return mb
+
+
+def stem_fairlead(hull, aft=False, mat=3):
+    """Brass fairlead sheave + pin on the stemhead (or sternpost) for the
+    painter, so the rope does not chafe the wood."""
+    if aft:
+        x = -hull.loa / 2 + 0.06
+        z = hull.sheer_z(0.98) - 0.02
+    else:
+        x = hull.loa / 2 - 0.045
+        z = hull.sheer_z(0.02) - 0.02
+    mb = MB("Stem_Fairlead")
+    mb.add_box((x, 0, z), (0.05, 0.024, 0.045), mat=mat, chamfer=0.008)
+    cyl(mb, (x, -0.020, z + 0.012), (x, 0.020, z + 0.012), 0.020, seg=12, mat=mat)
+    cyl(mb, (x, -0.027, z + 0.012), (x, 0.027, z + 0.012), 0.005, seg=8, mat=4)
+    return mb
+
+
 def mast_step_clamp(hull, x_step, z_kelson, thwart_x=None, mat_iron=4, mat_wood=2):
     """Mast step (wood block with socket on the keelson) + iron half-band mast
     clamp on the bow thwart."""

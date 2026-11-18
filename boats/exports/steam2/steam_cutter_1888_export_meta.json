@@ -541,6 +541,78 @@
         0.0
       ]
     },
+    "Floor_Plates": {
+      "file_glb": "floor_plates.glb",
+      "file_fbx": "floor_plates.fbx",
+      "object": "Floor_Plates",
+      "vertices": 192,
+      "triangles": 88,
+      "decimated": false,
+      "dimensions_m": [
+        0.7008,
+        0.6,
+        0.007
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Exhaust_Uptake": {
+      "file_glb": "exhaust_uptake.glb",
+      "file_fbx": "exhaust_uptake.fbx",
+      "object": "Exhaust_Uptake",
+      "vertices": 192,
+      "triangles": 352,
+      "decimated": false,
+      "dimensions_m": [
+        0.491,
+        0.1025,
+        0.5213
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Ventilators": {
+      "file_glb": "ventilators.glb",
+      "file_fbx": "ventilators.fbx",
+      "object": "Ventilators",
+      "vertices": 590,
+      "triangles": 1088,
+      "decimated": false,
+      "dimensions_m": [
+        2.664,
+        0.74,
+        0.4215
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Engine_Guard": {
+      "file_glb": "engine_guard.glb",
+      "file_fbx": "engine_guard.fbx",
+      "object": "Engine_Guard",
+      "vertices": 424,
+      "triangles": 792,
+      "decimated": false,
+      "dimensions_m": [
+        0.8132,
+        0.712,
+        0.397
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
     "Fore_Cabin": {
       "file_glb": "fore_cabin.glb",
       "file_fbx": "fore_cabin.fbx",
@@ -552,6 +624,24 @@
         1.4695,
         1.5442,
         0.7125
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Cabin_Skylight": {
+      "file_glb": "cabin_skylight.glb",
+      "file_fbx": "cabin_skylight.fbx",
+      "object": "Cabin_Skylight",
+      "vertices": 360,
+      "triangles": 176,
+      "decimated": false,
+      "dimensions_m": [
+        0.46,
+        0.3,
+        0.089
       ],
       "origin_m": [
         0.0,

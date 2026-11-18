@@ -16,15 +16,34 @@ pair to `HISTORICAL_EVIDENCE.md` (which records the period sources) and
 | `hull2.py` | `Hull2` parametric hull (sheer, keel-profile, half-breadth curves + per-station section super-ellipses), section sampling with true arc-length mapping, waterplane integration, draught solving |
 | `structure2.py` | shell & skeleton: clinker strake stack, carvel, double-diagonal skin, keel/stem/sternpost/transom, bent frames, keelson, gunwale/inwale/rubbing strake, breast hook, risers, side benches |
 | `parts2.py` | oars (from documented scantlings, loomed/leathered/blank-stop rowed), swivel rowlocks, plate rudders w/ pintles and tiller, foot gratings, stretchers, fenders, painter coils, anchors & grapnels, boat hooks, water breaker, bucket, baler, sidelights, binnacle compass, ensigns, harpoon (sheathed), centreboard + case, line tub |
-| `machinery2.py` | vertical multitubular boiler (open fire door + coal heap + hold-down stays + brass cleading bands), boiler mountings (gauge glass, pressure gauge, Ramsbottom safety valve, whistle, feed check), compound inverted cylinder engine with Stephenson-link eccentrics, shaft line w/ couplings + stern tube, helical 2-blade propeller, funnel w/ guy stays and spark arrestor, lagged pipes, coal bunker w/ heap, fire irons, copper feed tank, hand force pump, engine bearers, helm station (wheel on pedestal), steering chain run, teak fore cabin with cambered roof + panelled door, canopy tracks, dagger-board (canopy) stowage |
-| `boatlib2.py` | placement logic: thwarts w/ hanging knees + risers, rowlock placement rows, oar stowage in the boat, stowed lug rig (masts + yards with furled sails lashed with gaskets), boat's gear outfit per the HMS Bombay model inventory, lifting eyes |
+| `machinery2.py` | vertical multitubular boiler (open fire door + coal heap + hold-down stays + brass cleading bands), boiler mountings (gauge glass, pressure gauge, Ramsbottom safety valve, whistle, feed check), compound inverted cylinder engine with Stephenson-link eccentrics, shaft line w/ couplings + stern tube, helical 2-blade propeller, funnel w/ guy stays and spark arrestor, lagged pipes, coal bunker w/ heap, fire irons, copper feed tank, hand force pump, engine bearers, helm station (wheel on pedestal), steering chain run, teak fore cabin with cambered roof + panelled door, canopy tracks, dagger-board (canopy) stowage; **glazed cabin skylight, mushroom ventilators, chequer-plate sole panels and engine guard rail** |
+| `boatlib2.py` | placement logic: thwarts w/ hanging knees + risers, rowlock placement rows, oar stowage in the boat, stowed lug rig (masts + yards with furled sails lashed with gaskets), boat's gear outfit per the HMS Bombay model inventory, lifting eyes; **lift-out bottom boards, cambered stern backrests and stem fairleads** |
 | `specs2.py` | the single source of truth: hull definitions, weight budgets, hydrostatic reconciliation |
-| `mats2.py` / `studio2.py` / `bl2.py` | procedural PBR materials (wood ring-grain, tarnished metals, canvas weave, rope twist, glass, coal, lagging), studio environment (cyclorama, three-point), Blender plumbing (mesh→object with per-face palette, GLB/FBX export, camera fitting) |
+| `mats2.py` / `studio2.py` / `bl2.py` | procedural PBR materials (multi-frequency pore/ring-grain varnished wood, tarnish and selective verdigris/rust patina, canvas weave, rope twist, glass, coal, lagging, worn mahogany/black/red-oxide topsides and chequer steel), studio environment (cyclorama, three-point), Blender plumbing (mesh→object with per-face palette, GLB/FBX export, camera fitting) |
 
 The three *build scripts* (`build2_rowing_cutter.py`, `build2_whaler.py`,
 `build2_steam_cutter.py`) assemble complete boats from these libraries and save
 `.blend` files.  `render2.py` renders the published sets with view-framed
 cameras; `export2.py` writes per-part GLB + FBX and the manifest JSON.
+
+## Fidelity pass — surface, outfit and machinery legibility
+
+The final fidelity pass added geometry that is visibly and functionally distinct
+at inspection distance, rather than merely increasing polygon density.  The
+rowing cutter and whaler gained individual lift-out bottom boards shaped to the
+deadrise, brass fairleads at their stems and cambered stern backrests on brass
+stanchions.  The whaler also carries its forward line tub as a separate outfit
+component.  The steam cutter gained a run of raised chequer-plate floor panels,
+a lagged exhaust uptake, two dished mushroom ventilators (including red-lead
+undersides), a glazed and barred cabin skylight, and a perimeter rail around the
+engine. These are all independently exported named parts where appropriate.
+
+The visual material pass introduces object-space grain, pores and small tone
+variation in timber; localized corrosion/patina in metals; and a noise-feathered
+three-zone paint finish below the rail: varnished mahogany above, black boot-top
+at the load-waterline region, and red-oxide antifouling beneath. It is an
+appearance treatment only: it does not alter the hydrostatic body or the Z=0
+loaded-waterline convention.
 
 ## Hydrostatics — what was wrong and what now passes
 
@@ -47,11 +66,15 @@ second generation solves the waterline:
 
 ## Render sets
 
-`renders/them2/` holds the published sets: per boat, nine exterior angles
-(broadside, bow quarter, stern quarter, bow-on, stern-on, overhead, underside,
-hero, high profile), interior top/down-angle, skeletal construction study
-(planking hidden), on-water in-situ hero, and for the steamer a machinery-room
-study.  All views computed from the model bounds — no hand-placed cameras.
+`renders/them2/` holds the 45-view fidelity-pass set: 15 views per boat.
+Each craft has nine exterior angles (broadside, bow quarter, stern quarter,
+bow-on, stern-on, overhead, underside, hero, high profile), an interior study,
+a skeletal construction study (planking hidden), and four on-water compositions;
+the steam cutter's fourth contextual view is a machinery-room study. All views
+are computed from model bounds — no hand-placed cameras. The published set uses
+16-sample denoised Cycles at 960 × 600 so all 45 inspection views can be
+regenerated deterministically in the build sandbox; the modeling/export gate is
+independent of render sampling.
 
 ## Roblox delivery
 

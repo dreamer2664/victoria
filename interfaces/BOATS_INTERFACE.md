@@ -31,8 +31,10 @@ decision belongs to the ship side (heavier davits, or which boat gets carried).
 - Boarding: x = +0.35 m, +0.60 m above the loaded waterline
 - Moving parts: `Propeller` (2-blade screw, origin at hub), `Rudder` (origin at
   pintle line); engine room is fully furnished — boiler, compound engine,
-  funnel, pipes, bunker, tank and pump are separate parts to allow cutaways
-- Combined model: `boats/exports/steam2/steam_cutter_1888.glb` (+FBX, 45 parts)
+  funnel, pipes, bunker, tank and pump are separate parts to allow cutaways.
+  The fidelity pass adds a guarded chequer-plate sole, lagged uptake, paired
+  mushroom vents and a glazed cabin skylight.
+- Combined model: `boats/exports/steam2/steam_cutter_1888.glb` (+FBX, 50 parts)
 
 ## 25 ft Clinker Rowing Cutter, 10-oared  (`rowing_cutter_25ft`)
 
@@ -43,8 +45,10 @@ decision belongs to the ship side (heavier davits, or which boat gets carried).
 - Boarding: x = +0.55 m, +0.52 m above the waterline
 - Five double-banked rowing stations (rowlock stations x = 2.02, 1.18, 0.34,
   −0.50, −1.34 m); oars are separate moving objects `Oar_P1..P5` / `Oar_S1..S5`
-  pivoted at their own rowlocks; stowed in the boat in the delivered model
-- Combined model: `boats/exports/rowing2/rowing_cutter_25ft.glb` (+FBX, 40 parts)
+  pivoted at their own rowlocks; stowed in the boat in the delivered model.
+  Removable bottom boards, a cambered stern backrest and brass stem fairlead
+  are separate outfit parts in this fidelity pass.
+- Combined model: `boats/exports/rowing2/rowing_cutter_25ft.glb` (+FBX, 43 parts)
 
 ## 27 ft Double-ended Clinker Whaler  (`whaler_27ft`)
 
@@ -55,8 +59,10 @@ decision belongs to the ship side (heavier davits, or which boat gets carried).
 - Boarding: x = +0.70 m, +0.45 m above the waterline
 - Five oars single-banked, alternating sides (P, S, P, S, P), 17 ft service
   oars; main-mast and mizzen carried stowed, dipping-lug yards furled; drop
-  keel (centreboard) shown lowered, case amidships
-- Combined model: `boats/exports/whaler2/whaler_27ft.glb` (+FBX, 40 parts)
+  keel (centreboard) shown lowered, case amidships.  Removable bottom boards,
+  a dedicated forward line tub, and fore-and-aft brass fairleads are distinct
+  outfit components in this fidelity pass.
+- Combined model: `boats/exports/whaler2/whaler_27ft.glb` (+FBX, 43 parts)
 
 ---
 

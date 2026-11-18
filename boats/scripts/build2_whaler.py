@@ -33,7 +33,7 @@ def main(quick=False):
     meta = {"id": "whaler_27ft", "loaded": loaded, "light": light,
             "weights": S.WHALER_WEIGHTS, "pivots": {}}
 
-    plan = st.clinker_strakes(hull, 9, 0.016, nx=48, npb=10, mat=0, mat_top=22)
+    plan = st.clinker_strakes(hull, 9, 0.016, nx=48, npb=10, mat=25, mat_top=22)
     plan.mirror_y()
     objects["Planking_Clinker"] = plan
     keel = st.keel_assembly(hull, sided=0.048, depth=0.105, mat=2)
@@ -84,6 +84,8 @@ def main(quick=False):
     gr = P.foot_grating(-1.55, -0.30, 0.24, zfloor + 0.02, mat=1)
     gr.append(P.foot_grating(0.10, 1.35, 0.24, zfloor + 0.03, mat=1))
     objects["Floor_Gratings"] = gr
+    # loose-laid bottom boards over the floors
+    objects["Bottom_Boards"] = BL.bottom_boards(hull)
 
     # rowlocks + oars: FIVE oars single-banked, alternating sides (stations 1..5
     # P,S,P,S,P with stroke handled on #1).  17 ft service oars.
@@ -145,6 +147,13 @@ def main(quick=False):
     objects["Harpoons"] = harpoons
     objects["Harpoons"].append(harp2)
     objects["Line_Tub"] = P.line_tub((-0.9, -0.20, zfloor + 0.02))
+    # second whale-line tub forward (whalers carried line at both ends)
+    objects["Line_Tub_Fwd"] = P.line_tub((hull.loa / 2 - 1.35, 0.22, zfloor + 0.02))
+    # brass fairlead sheaves on both stemheads (double-ended boat)
+    fl = MB("Stem_Fairleads")
+    fl.append(BL.stem_fairlead(hull))
+    fl.append(BL.stem_fairlead(hull, aft=True))
+    objects["Stem_Fairleads"] = fl
 
     # gunwale fenders outside + painters at both stems, gear set
     fends = MB("Fenders")

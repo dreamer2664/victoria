@@ -35,14 +35,14 @@ def main(quick=False):
 
     # ---- hull: double-diagonal skin ------------------------------------------
     skin = st.double_skin(hull, n_diag=26, spacing=0.085, nx=56, nt=24,
-                          mat_outer=0, mat_inner=21)
+                          mat_outer=25, mat_inner=21)
     skin.mirror_y()
     objects["Planking_DoubleDiagonal"] = skin
 
     keel = st.keel_assembly(hull, sided=0.050, depth=0.115, mat=2)
     keel.append(st.stem_post(hull, moulded=0.115, sided=0.052, mat=2))
     objects["Keel_Stem_Sternpost"] = keel
-    objects["Transom"] = st.transom_plate(hull, thk=0.052, mat=0, mat_edge=2)
+    objects["Transom"] = st.transom_plate(hull, thk=0.052, mat=25, mat_edge=2)
     fr = st.frames(hull, 26, 0.016, spacing=0.165, siding=0.024, mould_lo=0.048,
                    mould_hi=0.028, mat=2)
     fr.mirror_y()
@@ -144,12 +144,32 @@ def main(quick=False):
     # coal bunker + irons
     objects["Coal_Bunker"] = MC.coal_bunker(hull, xi_range=(0.60, 0.72))
     objects["Fire_Irons"] = MC.fire_irons((x_eq - 0.02, 0.34, z_floor + 0.10))
+    # chequer-plate steel sole through the machinery space
+    objects["Floor_Plates"] = MC.floor_plates(eng_x - 0.55, x_eq + 0.62, 0.30,
+                                              z_floor + 0.010)
+    # exhaust uptake: lagged pipe from the engine stop valve up into the funnel
+    up = MB("Exhaust_Uptake")
+    MC.lagged_pipe(up, [(eng_x, 0, z_floor + 1.02), (eng_x, 0, z_floor + 1.42),
+                        (x_eq + 0.02, 0, z_floor + 1.50)], r=0.042)
+    objects["Exhaust_Uptake"] = up
+    # mushroom ventilators for the machinery space
+    vents = MB("Ventilators")
+    vents.append(MC.ventilator_mushroom((x_eq + 1.00, -0.30, 0.34)))
+    vents.append(MC.ventilator_mushroom((hull.X(0.70), 0.30, 0.34)))
+    objects["Ventilators"] = vents
+    # polished brass guard rail around the machinery bay
+    objects["Engine_Guard"] = MC.engine_guard_rail(eng_x - 0.58, x_eq + 0.66,
+                                                   0.34, z_floor + 0.06, h=0.38)
 
     # ---- accommodation + outfit ----------------------------------------------
     # fore state cabin (aft cabin on the cutter is documented)
     cab = MC.state_cabin(hull, xi_range=(0.80, 0.985), mat=21)
     objects["Fore_Cabin"] = cab["mb"]
     meta["pivots"]["cabin"] = cab["info"]
+    xi_cab = 0.8925
+    z_cab_roof = hull.keel_z(xi_cab) + 0.18 + 0.58 + 0.115
+    objects["Cabin_Skylight"] = MC.glazed_skylight((hull.X(xi_cab), 0,
+                                                    z_cab_roof + 0.018))
     # canopy supports: dagger boards only stored (per outfit)
     dag = MC.dagger_boards_stowed((-0.9, 0.30, hull.keel_z(0.3) + 0.45))
     objects["Dagger_Boards"] = dag

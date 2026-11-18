@@ -1,16 +1,16 @@
 {
   "id": "rowing_cutter_25ft",
   "loaded": {
-    "draft_m": 0.645,
-    "lcb_m": 0.644,
-    "freeboard_amidships_m": 0.422,
+    "draft_m": 0.663,
+    "lcb_m": -0.184,
+    "freeboard_amidships_m": 0.402,
     "displacement_kg": 1992.0
   },
   "light": {
-    "draft_m": -0.324,
-    "waterline_z": -0.319,
-    "lcb_m": 0.754,
-    "freeboard_amidships_m": 0.741,
+    "draft_m": 0.313,
+    "waterline_z": -0.35,
+    "lcb_m": -0.145,
+    "freeboard_amidships_m": 0.752,
     "displacement_kg": 1112.0
   },
   "weights": {
@@ -32,62 +32,184 @@
       {
         "x": 2.02,
         "y": -0.7256,
-        "z": 0.5198,
+        "z": 0.5006,
         "side": -1
       },
       {
         "x": 2.02,
         "y": 0.7256,
-        "z": 0.5198,
+        "z": 0.5006,
         "side": 1
       },
       {
         "x": 1.18,
         "y": -0.8581,
-        "z": 0.4883,
+        "z": 0.469,
         "side": -1
       },
       {
         "x": 1.18,
         "y": 0.8581,
-        "z": 0.4883,
+        "z": 0.469,
         "side": 1
       },
       {
         "x": 0.34,
         "y": -0.9292,
-        "z": 0.4699,
+        "z": 0.4503,
         "side": -1
       },
       {
         "x": 0.34,
         "y": 0.9292,
-        "z": 0.4699,
+        "z": 0.4503,
         "side": 1
       },
       {
         "x": -0.5,
         "y": -0.9559,
-        "z": 0.4613,
+        "z": 0.441,
         "side": -1
       },
       {
         "x": -0.5,
         "y": 0.9559,
-        "z": 0.4613,
+        "z": 0.441,
         "side": 1
       },
       {
         "x": -1.34,
         "y": -0.9278,
-        "z": 0.4585,
+        "z": 0.4385,
         "side": -1
       },
       {
         "x": -1.34,
         "y": 0.9278,
-        "z": 0.4585,
+        "z": 0.4385,
         "side": 1
+      }
+    ],
+    "oars_moving": [
+      {
+        "part": "Oar_S1",
+        "pivot_world": [
+          2.02,
+          -0.7256,
+          0.5006
+        ],
+        "side": "starboard(-Y)",
+        "station_x": 2.02,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P1",
+        "pivot_world": [
+          2.02,
+          0.7256,
+          0.5006
+        ],
+        "side": "port(+Y)",
+        "station_x": 2.02,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S2",
+        "pivot_world": [
+          1.18,
+          -0.8581,
+          0.469
+        ],
+        "side": "starboard(-Y)",
+        "station_x": 1.18,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P2",
+        "pivot_world": [
+          1.18,
+          0.8581,
+          0.469
+        ],
+        "side": "port(+Y)",
+        "station_x": 1.18,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S3",
+        "pivot_world": [
+          0.34,
+          -0.9292,
+          0.4503
+        ],
+        "side": "starboard(-Y)",
+        "station_x": 0.34,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P3",
+        "pivot_world": [
+          0.34,
+          0.9292,
+          0.4503
+        ],
+        "side": "port(+Y)",
+        "station_x": 0.34,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S4",
+        "pivot_world": [
+          -0.5,
+          -0.9559,
+          0.441
+        ],
+        "side": "starboard(-Y)",
+        "station_x": -0.5,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P4",
+        "pivot_world": [
+          -0.5,
+          0.9559,
+          0.441
+        ],
+        "side": "port(+Y)",
+        "station_x": -0.5,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S5",
+        "pivot_world": [
+          -1.34,
+          -0.9278,
+          0.4385
+        ],
+        "side": "starboard(-Y)",
+        "station_x": -1.34,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P5",
+        "pivot_world": [
+          -1.34,
+          0.9278,
+          0.4385
+        ],
+        "side": "port(+Y)",
+        "station_x": -1.34,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
       }
     ],
     "lifting_eyes_x": [
@@ -98,48 +220,6 @@
       -3.8922,
       0.0,
       0.0
-    ],
-    "oars": [
-      {
-        "station_x": 2.02,
-        "side": -1
-      },
-      {
-        "station_x": 2.02,
-        "side": 1
-      },
-      {
-        "station_x": 1.18,
-        "side": -1
-      },
-      {
-        "station_x": 1.18,
-        "side": 1
-      },
-      {
-        "station_x": 0.34,
-        "side": -1
-      },
-      {
-        "station_x": 0.34,
-        "side": 1
-      },
-      {
-        "station_x": -0.5,
-        "side": -1
-      },
-      {
-        "station_x": -0.5,
-        "side": 1
-      },
-      {
-        "station_x": -1.34,
-        "side": -1
-      },
-      {
-        "station_x": -1.34,
-        "side": 1
-      }
     ]
   }
 }
