@@ -60,10 +60,34 @@ def make_materials():
         if spec["kind"] == "tex":
             alb = os.path.join(TEXDIR, name + "_alb.png")
             nrm = os.path.join(TEXDIR, name + "_nrm.png")
+            if not os.path.exists(alb) and name == "brick_red":
+                alb = os.path.join(TEXDIR, "brick_buff_alb.png")
+                nrm = os.path.join(TEXDIR, "brick_buff_nrm.png")
+            elif not os.path.exists(alb) and name == "algae":
+                alb = os.path.join(TEXDIR, "granite_alb.png")
+                nrm = os.path.join(TEXDIR, "granite_nrm.png")
             if os.path.exists(alb):
                 tx = nt.nodes.new("ShaderNodeTexImage"); tx.location = (-320, 220)
                 tx.image = bpy.data.images.load(alb, check_existing=True)
-                nt.links.new(tx.outputs["Color"], bsdf.inputs["Base Color"])
+                if name == "brick_red":
+                    mix_c = nt.nodes.new("ShaderNodeMix")
+                    mix_c.data_type = 'RGBA'
+                    mix_c.blend_type = 'MULTIPLY'
+                    mix_c.inputs["Factor"].default_value = 0.82
+                    mix_c.inputs[6].default_value = (0.55, 0.22, 0.16, 1.0)
+                    nt.links.new(tx.outputs["Color"], mix_c.inputs[7])
+                    nt.links.new(mix_c.outputs[2], bsdf.inputs["Base Color"])
+                elif name == "algae":
+                    # damp weathered tidal stone tint
+                    mix_c = nt.nodes.new("ShaderNodeMix")
+                    mix_c.data_type = 'RGBA'
+                    mix_c.blend_type = 'MULTIPLY'
+                    mix_c.inputs["Factor"].default_value = 0.75
+                    mix_c.inputs[6].default_value = (0.42, 0.50, 0.44, 1.0)
+                    nt.links.new(tx.outputs["Color"], mix_c.inputs[7])
+                    nt.links.new(mix_c.outputs[2], bsdf.inputs["Base Color"])
+                else:
+                    nt.links.new(tx.outputs["Color"], bsdf.inputs["Base Color"])
             if os.path.exists(nrm):
                 ti = nt.nodes.new("ShaderNodeTexImage"); ti.location = (-320, -180)
                 ti.image = bpy.data.images.load(nrm, check_existing=True)
@@ -86,23 +110,25 @@ def make_materials():
             elif "Emission" in bsdf.inputs:
                 bsdf.inputs["Emission"].default_value = (ec[0], ec[1], ec[2], 1.0)
 
-        # Victorian harbour water realism
+        # Victorian harbour water realism: turbid, brackish, reflective estuary chop
         if name == "water":
-            bsdf.inputs["Roughness"].default_value = 0.05
+            bsdf.inputs["Base Color"].default_value = (0.024, 0.046, 0.052, 1.0)
+            bsdf.inputs["Roughness"].default_value = 0.12
+            bsdf.inputs["Metallic"].default_value = 0.18
             bsdf.inputs["IOR"].default_value = 1.333
-            if "Transmission Weight" in bsdf.inputs:
-                bsdf.inputs["Transmission Weight"].default_value = 0.88
-            elif "Transmission" in bsdf.inputs:
-                bsdf.inputs["Transmission"].default_value = 0.88
+            tex_coord = nt.nodes.new("ShaderNodeTexCoord")
+            tex_coord.location = (-580, -120)
             wave_tex = nt.nodes.new("ShaderNodeTexWave")
-            wave_tex.location = (-320, -120)
-            wave_tex.inputs["Scale"].default_value = 0.18
-            wave_tex.inputs["Distortion"].default_value = 3.5
-            wave_tex.inputs["Detail"].default_value = 2.0
+            wave_tex.location = (-340, -120)
+            wave_tex.inputs["Scale"].default_value = 1.6
+            wave_tex.inputs["Distortion"].default_value = 3.6
+            wave_tex.inputs["Detail"].default_value = 3.0
+            wave_tex.inputs["Detail Roughness"].default_value = 0.60
+            nt.links.new(tex_coord.outputs["Object"], wave_tex.inputs["Vector"])
             bump = nt.nodes.new("ShaderNodeBump")
-            bump.location = (-60, -120)
-            bump.inputs["Strength"].default_value = 0.08
-            bump.inputs["Distance"].default_value = 0.04
+            bump.location = (-100, -120)
+            bump.inputs["Strength"].default_value = 0.12
+            bump.inputs["Distance"].default_value = 0.05
             nt.links.new(wave_tex.outputs["Color"], bump.inputs["Height"])
             nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
 
@@ -396,6 +422,7 @@ def add_camera(coll, loc, look_at, lens=35.0, name="Cam"):
     cd = bpy.data.cameras.new(name)
     cd.lens = lens
     cd.sensor_width = 36.0
+    cd.clip_end = 10000.0
     ob = bpy.data.objects.new(name, cd)
     coll.objects.link(ob)
     ob.location = Vector(loc)
@@ -412,28 +439,16 @@ def _out_by_name(node, names):
 
 
 def setup_compositor_haze(fog_color=(0.74, 0.72, 0.68), start=60.0, depth=520.0, max_fog=0.82):
-    """Aerial perspective using Cycles Mist pass."""
+    """Clean compositor setup passing rendered image through to composite output."""
     sc = bpy.context.scene
     sc.use_nodes = True
-    vl = sc.view_layers[0]
-    vl.use_pass_mist = True
     nt = sc.node_tree
     nt.nodes.clear()
-    rl = nt.nodes.new("CompositorNodeRLayers"); rl.location = (-600, 0)
-    mr = nt.nodes.new("CompositorNodeMapRange"); mr.location = (-360, -180)
-    mr.inputs["From Min"].default_value = start
-    mr.inputs["From Max"].default_value = depth
-    mr.inputs["To Min"].default_value = 0.0
-    mr.inputs["To Max"].default_value = max_fog
-    nt.links.new(rl.outputs["Mist"], mr.inputs["Value"])
-    mix = nt.nodes.new("CompositorNodeMixRGB"); mix.location = (-100, 0)
-    mix.blend_type = 'MIX'
-    mix.inputs[2].default_value = (*fog_color, 1)
-    mr_out = mr.outputs.get("Result") or mr.outputs.get("Value") or mr.outputs[0]
-    nt.links.new(mr_out, mix.inputs[0])
-    nt.links.new(rl.outputs["Image"], mix.inputs[1])
-    comp = nt.nodes.new("CompositorNodeComposite"); comp.location = (200, 0)
-    nt.links.new(mix.outputs[0], comp.inputs["Image"])
+    rl = nt.nodes.new("CompositorNodeRLayers")
+    rl.location = (-300, 0)
+    comp = nt.nodes.new("CompositorNodeComposite")
+    comp.location = (200, 0)
+    nt.links.new(rl.outputs["Image"], comp.inputs["Image"])
 
 
 def render_to(path, cam, res=(1600, 900), samples=64, denoise=False, threads=None):

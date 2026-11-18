@@ -23,7 +23,7 @@ CODE = "B"
 
 # ------------------------------------------------------------------ boundaries
 SITE = (-30.0, -300.0, 340.0, 400.0)
-RIVER = (-460.0, -560.0, -30.0, 560.0)
+RIVER = (-4000.0, -4000.0, -30.0, 4000.0)
 
 # Three building slips cut back from river frontage
 SLIPS = [(42.0, 76.0), (92.0, 126.0), (142.0, 176.0)]   # (y0, y1)
@@ -149,7 +149,7 @@ def build(R, coll, audit):
     site.water(mb, [(SLIP_X0, a, SLIP_X1, b) for a, b in SLIPS], z=0.0)
     site.water(mb, [(NO1_DOCK[0], NO1_DOCK[1], NO1_DOCK[0] + NO1_DOCK[3],
                      NO1_DOCK[1] + NO1_DOCK[2] - 1.6)], z=0.0, step=12.0)
-    site.water(mb, [RIVER], z=0.0)
+    site.water(mb, [RIVER], z=0.0, step=80.0)
     R.define("B_ground", mb)
     R.place("B_ground", 0, 0, 0.0)
 
@@ -222,7 +222,7 @@ def build(R, coll, audit):
         R.place("B_cargo", x, y, QUAY_Z)
     for x, y in ((216, 40), (232, 76), (216, 96)):
         R.place("B_plates", x, y, QUAY_Z)
-    for x, y in ((286, 180), (286, 196), (60, 250)):
+    for x, y in ((286, 180), (286, 196)):
         R.place("B_timber", x, y, QUAY_Z)
 
     # Dray carts and draught horses
@@ -441,5 +441,5 @@ def _life(R):
         R.place("B_rails", x, y, QUAY_Z, 0)
     for x, y in ((150, 270), (190, 270)):
         R.place("B_drums", x, y, QUAY_Z)
-    for x, y, rz in ((10, 20, 15), (100, 100, -25), (200, 220, 35)):
+    for x, y, rz in ((20, -60, 15), (200, 220, 35)):
         R.place("B_puddle", x, y, QUAY_Z, rz)

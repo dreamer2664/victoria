@@ -435,7 +435,7 @@ def gangway_bridge(mb, x0, y0, z_low, x1, z_high, width=3.8, canopy=True,
 
 # ================================================================ graving dock
 def graving_dock(mb, x0, y0, length, width, depth=9.6, coping="granite",
-                 altar_steps=3, altar_w=2.4, entrance="N", stairs=True,
+                 altar_steps=6, altar_w=3.4, entrance="N", stairs=True,
                  keel_blocks=True, caissons=()):
     """Victorian graving (dry) dock of the Belfast Alexandra Graving Dock type."""
     x1, y1 = x0 + width, y0 + length
@@ -444,18 +444,19 @@ def graving_dock(mb, x0, y0, length, width, depth=9.6, coping="granite",
 
     mb.add_box(x0, y0, floor_z - 0.6, x1, y1, floor_z, "granite")
 
+    step_h = (depth - 1.2) / altar_steps
     for side, (fx0, fx1) in (("W", (x0, x0 + t)), ("E", (x1 - t, x1))):
         n = altar_steps
         for i in range(n):
-            zt = floor_z + 0.65 * (i + 1)
-            inset = altar_w * (1 - (i + 1) / (n + 0.6))
+            zt = floor_z + step_h * (i + 1)
+            inset = altar_w * (1 - (i + 1) / (n + 0.4))
             if side == "W":
                 a = x0 + inset
                 mb.add_box(a, y0, floor_z, fx1, y1, zt, "granite")
             else:
                 b = x1 - inset
                 mb.add_box(fx0, y0, floor_z, b, y1, zt, "granite")
-        zt = floor_z + 0.65 * n
+        zt = floor_z + step_h * n
         mb.add_box(fx0, y0, zt, fx1, y1, QUAY_Z - 0.55, "rubble")
         if side == "W":
             mb.add_box(x0 - 0.3, y0, QUAY_Z - 0.55, x0 + 1.5, y1, QUAY_Z, coping)
@@ -473,13 +474,23 @@ def graving_dock(mb, x0, y0, length, width, depth=9.6, coping="granite",
         mb.add_box(x1 - 2.2, yy - 0.9, floor_z, x1, yy + 0.9, QUAY_Z - 1.2, "granite")
 
     if keel_blocks:
-        nb = int(length / 4.2)
+        nb = int(length / 3.4)
         for i in range(nb):
             yy = y0 + length * (i + 0.5) / nb
             if yy < y0 + 4 or yy > y1 - 4:
                 continue
-            mb.add_box_c((x0 + x1) / 2, yy, floor_z + 0.85, 1.5, 1.4, 1.7, "timber")
-            mb.add_box_c((x0 + x1) / 2, yy, floor_z + 0.12, 1.9, 1.8, 0.24, "timber")
+            # Solid oak keel blocks on dock floor centerline
+            mb.add_box_c((x0 + x1) / 2, yy, floor_z + 0.85, 1.6, 1.4, 1.7, "timber")
+            mb.add_box_c((x0 + x1) / 2, yy, floor_z + 0.12, 2.0, 1.8, 0.24, "timber")
+
+        # Heavy diagonal timber bilge shores propping vessel hull position
+        nb_shores = int(length / 7.2)
+        for i in range(nb_shores):
+            yy = y0 + 6.0 + (length - 12.0) * (i + 0.5) / nb_shores
+            mb.add_beam((x0 + altar_w * 0.65, yy, floor_z + depth * 0.42),
+                        ((x0 + x1) / 2 - 2.0, yy, floor_z + 1.8), 0.28, 0.28, "timber")
+            mb.add_beam((x1 - altar_w * 0.65, yy, floor_z + depth * 0.42),
+                        ((x0 + x1) / 2 + 2.0, yy, floor_z + 1.8), 0.28, 0.28, "timber")
 
     if stairs:
         for k in range(3):

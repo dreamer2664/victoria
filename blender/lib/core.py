@@ -41,7 +41,7 @@ MATERIALS = {
     "brick_soot":  dict(kind="tex", tile=2.25, rough=0.88),   # warehouses, soot-blackened
     "brick_buff":  dict(kind="tex", tile=2.25, rough=0.86),   # offices, station
     "brick_blue":  dict(kind="tex", tile=2.25, rough=0.80),   # engineering brick, plinths
-    "brick_red":   dict(kind="tex", tile=2.25, rough=0.85, color=(0.42, 0.16, 0.11)),
+    "brick_red":   dict(kind="tex", tile=2.25, rough=0.86, color=(0.28, 0.12, 0.08)),
     "sandstone":   dict(kind="tex", tile=2.40, rough=0.82),   # Custom House, cornices
     "rubble":      dict(kind="tex", tile=2.40, rough=0.92),   # dock walls below coping
     "granite":     dict(kind="tex", tile=2.40, rough=0.74),   # coping, kerbs, dock altars
@@ -62,7 +62,7 @@ MATERIALS = {
     "canvas":      dict(kind="tex", tile=1.00, rough=0.92),
     "stucco":      dict(kind="tex", tile=2.00, rough=0.80),
     # untextured / flat
-    "algae":       dict(kind="flat", color=(0.042, 0.075, 0.038), rough=0.92), # tidal mark
+    "algae":       dict(kind="tex", tile=2.40, rough=0.88, color=(0.25, 0.32, 0.28)), # damp weathered granite
     "glass":       dict(kind="flat", color=(0.072, 0.086, 0.098), rough=0.16, metal=0.0, alpha=0.70),
     "glass_lit":   dict(kind="flat", color=(0.42, 0.28, 0.12), rough=0.20, emit=2.0),
     "paint_white": dict(kind="flat", color=(0.72, 0.70, 0.65), rough=0.55),

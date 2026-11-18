@@ -22,7 +22,7 @@ CODE = "A"
 
 # ------------------------------------------------------------------ boundaries
 SITE = (-30.0, -310.0, 340.0, 440.0)
-RIVER = (-460.0, -560.0, -30.0, 560.0)
+RIVER = (-4000.0, -4000.0, -30.0, 4000.0)
 LOCK_CHANNEL = (-30.0, -146.0, -10.0, -114.0)
 DOCK_BASIN   = (-10.0, -200.0, 200.0, -60.0)
 WATER_HOLES  = [LOCK_CHANNEL, DOCK_BASIN]
@@ -211,7 +211,7 @@ def build(R, coll, audit):
     site.add_land(mb, SITE, WATER_HOLES, top=QUAY_Z, bottom=-4.0, surf=None)
     site.land_surface_bands(mb, _surface_bands(), WATER_HOLES, top=QUAY_Z)
     site.water(mb, WATER_HOLES, z=0.0)
-    site.water(mb, [RIVER], z=0.0)
+    site.water(mb, [RIVER], z=0.0, step=80.0)
     R.define("A_ground", mb)
     R.place("A_ground", 0, 0, 0.0)
 
@@ -220,7 +220,7 @@ def build(R, coll, audit):
 
     # ================================================== hydraulic infrastructure
     R.place("A_swing_bridge", 0, 0, 0.0)
-    R.place("A_accumulator_tower", 24, -52, QUAY_Z)
+    R.place("A_accumulator_tower", 24, -34, QUAY_Z)
     R.place("A_boat_steps", 0, 0, 0.0)
 
     # ================================================== buildings
@@ -419,7 +419,7 @@ def _furniture(R):
 
     # Armstrong hydraulic portal cranes along river frontage (straddling railway)
     for y in range(-20, 360, 48):
-        R.place("A_portal_crane", -20.0, y, QUAY_Z)
+        R.place("A_portal_crane", -22.0, y, QUAY_Z)
 
     for x in range(-8, 180, 38):
         R.place("A_coalhoist", x, -64.0, QUAY_Z)
