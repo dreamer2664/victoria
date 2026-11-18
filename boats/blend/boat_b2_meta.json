@@ -1,0 +1,145 @@
+{
+  "id": "rowing_cutter_25ft",
+  "loaded": {
+    "draft_m": 0.645,
+    "lcb_m": 0.644,
+    "freeboard_amidships_m": 0.422,
+    "displacement_kg": 1992.0
+  },
+  "light": {
+    "draft_m": -0.324,
+    "waterline_z": -0.319,
+    "lcb_m": 0.754,
+    "freeboard_amidships_m": 0.741,
+    "displacement_kg": 1112.0
+  },
+  "weights": {
+    "hull_planking_11_strakes_kg": 470,
+    "keel_stem_sternpost_transom_kg": 105,
+    "gunwales_inwales_knees_kg": 78,
+    "thwarts_benches_floorboards_kg": 96,
+    "oars_10_kg": 175.0,
+    "rig_spars_sails_kg": 95,
+    "rudder_tiller_kg": 26,
+    "fittings_mooring_rowlocks_kg": 38,
+    "paint_varnish_kg": 29,
+    "light_kg": 1112.0,
+    "crew_kg": 880,
+    "loaded_kg": 1992.0
+  },
+  "pivots": {
+    "rowlocks": [
+      {
+        "x": 2.02,
+        "y": -0.7256,
+        "z": 0.5198,
+        "side": -1
+      },
+      {
+        "x": 2.02,
+        "y": 0.7256,
+        "z": 0.5198,
+        "side": 1
+      },
+      {
+        "x": 1.18,
+        "y": -0.8581,
+        "z": 0.4883,
+        "side": -1
+      },
+      {
+        "x": 1.18,
+        "y": 0.8581,
+        "z": 0.4883,
+        "side": 1
+      },
+      {
+        "x": 0.34,
+        "y": -0.9292,
+        "z": 0.4699,
+        "side": -1
+      },
+      {
+        "x": 0.34,
+        "y": 0.9292,
+        "z": 0.4699,
+        "side": 1
+      },
+      {
+        "x": -0.5,
+        "y": -0.9559,
+        "z": 0.4613,
+        "side": -1
+      },
+      {
+        "x": -0.5,
+        "y": 0.9559,
+        "z": 0.4613,
+        "side": 1
+      },
+      {
+        "x": -1.34,
+        "y": -0.9278,
+        "z": 0.4585,
+        "side": -1
+      },
+      {
+        "x": -1.34,
+        "y": 0.9278,
+        "z": 0.4585,
+        "side": 1
+      }
+    ],
+    "lifting_eyes_x": [
+      1.95,
+      -1.6
+    ],
+    "rudder_axis": [
+      -3.8922,
+      0.0,
+      0.0
+    ],
+    "oars": [
+      {
+        "station_x": 2.02,
+        "side": -1
+      },
+      {
+        "station_x": 2.02,
+        "side": 1
+      },
+      {
+        "station_x": 1.18,
+        "side": -1
+      },
+      {
+        "station_x": 1.18,
+        "side": 1
+      },
+      {
+        "station_x": 0.34,
+        "side": -1
+      },
+      {
+        "station_x": 0.34,
+        "side": 1
+      },
+      {
+        "station_x": -0.5,
+        "side": -1
+      },
+      {
+        "station_x": -0.5,
+        "side": 1
+      },
+      {
+        "station_x": -1.34,
+        "side": -1
+      },
+      {
+        "station_x": -1.34,
+        "side": 1
+      }
+    ]
+  }
+}

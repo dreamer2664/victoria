@@ -1,0 +1,905 @@
+{
+  "class": "steam_cutter_1888",
+  "frame_of_reference": {
+    "origin": "design waterline amidships (Z=0 = LOADED waterline this generation)",
+    "axes": "+X = bow, +Y = starboard, +Z = up",
+    "units": "metres"
+  },
+  "hydrostatics": {
+    "loaded": {
+      "draft_m": 0.769,
+      "lcb_m": -0.181,
+      "freeboard_amidships_m": 0.434,
+      "displacement_kg": 3532.0
+    },
+    "light": {
+      "draft_m": 0.529,
+      "waterline_z": -0.24,
+      "lcb_m": -0.173,
+      "freeboard_amidships_m": 0.674,
+      "displacement_kg": 3212.0
+    }
+  },
+  "weights_kg": {
+    "hull_double_skin_kg": 560,
+    "frames_and_structure_kg": 235,
+    "deck_canopy_bulkheads_kg": 145,
+    "boiler_full_of_water_kg": 760,
+    "engine_and_shaft_kg": 430,
+    "propeller_rudder_steering_kg": 85,
+    "funnel_pipework_fittings_kg": 155,
+    "coal_bunker_full_kg": 300,
+    "seats_locker_joinery_kg": 105,
+    "mooring_lifting_nav_gear_kg": 85,
+    "fresh_water_tank_and_stores_kg": 320,
+    "paint_varnish_kg": 32,
+    "light_kg": 3212,
+    "crew_kg": 320,
+    "loaded_kg": 3532
+  },
+  "pivots": {
+    "wheel": [
+      -2.8956000000000004,
+      0,
+      0.2903392054484662
+    ],
+    "rudder_axis": [
+      -3.9073,
+      0.0,
+      0.0
+    ],
+    "boiler_face": [
+      0.0,
+      0.396,
+      -0.369
+    ],
+    "boiler_top": [
+      0.0,
+      0,
+      0.621
+    ],
+    "engine": {
+      "crank_x": [
+        0.307,
+        0.607
+      ],
+      "bed_z": -0.029
+    },
+    "propeller": {
+      "hub_pt": [
+        -3.7956,
+        0.0,
+        -0.331
+      ],
+      "axis_dir": [
+        -0.9986,
+        0.0,
+        -0.0521
+      ]
+    },
+    "funnel_top": [
+      0.0,
+      0,
+      1.981
+    ],
+    "cabin": {
+      "door_x": -3.696
+    },
+    "lifting_eyes_x": [
+      2.1,
+      -1.85
+    ]
+  },
+  "parts": {
+    "Planking_DoubleDiagonal": {
+      "file_glb": "planking_doublediagonal.glb",
+      "file_fbx": "planking_doublediagonal.fbx",
+      "object": "Planking_DoubleDiagonal",
+      "vertices": 9924,
+      "triangles": 19000,
+      "decimated": true,
+      "dimensions_m": [
+        7.9058,
+        2.133,
+        1.4402
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Keel_Stem_Sternpost": {
+      "file_glb": "keel_stem_sternpost.glb",
+      "file_fbx": "keel_stem_sternpost.fbx",
+      "object": "Keel_Stem_Sternpost",
+      "vertices": 520,
+      "triangles": 1024,
+      "decimated": false,
+      "dimensions_m": [
+        7.8211,
+        0.1194,
+        1.6773
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Transom": {
+      "file_glb": "transom.glb",
+      "file_fbx": "transom.fbx",
+      "object": "Transom",
+      "vertices": 484,
+      "triangles": 372,
+      "decimated": false,
+      "dimensions_m": [
+        0.17,
+        1.2842,
+        0.8819
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Frames": {
+      "file_glb": "frames.glb",
+      "file_fbx": "frames.fbx",
+      "object": "Frames",
+      "vertices": 9684,
+      "triangles": 19000,
+      "decimated": true,
+      "dimensions_m": [
+        6.8699,
+        1.3306,
+        0.9415
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Keelson": {
+      "file_glb": "keelson.glb",
+      "file_fbx": "keelson.fbx",
+      "object": "Keelson",
+      "vertices": 122,
+      "triangles": 240,
+      "decimated": false,
+      "dimensions_m": [
+        5.8127,
+        0.08,
+        0.3285
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Gunwale_Inwale_Rub": {
+      "file_glb": "gunwale_inwale_rub.glb",
+      "file_fbx": "gunwale_inwale_rub.fbx",
+      "object": "Gunwale_Inwale_Rub",
+      "vertices": 3388,
+      "triangles": 6744,
+      "decimated": false,
+      "dimensions_m": [
+        7.5303,
+        2.2196,
+        1.0572
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Breasthook": {
+      "file_glb": "breasthook.glb",
+      "file_fbx": "breasthook.fbx",
+      "object": "Breasthook",
+      "vertices": 8,
+      "triangles": 12,
+      "decimated": false,
+      "dimensions_m": [
+        0.62,
+        0.9708,
+        0.038
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Engine_Bearers": {
+      "file_glb": "engine_bearers.glb",
+      "file_fbx": "engine_bearers.fbx",
+      "object": "Engine_Bearers",
+      "vertices": 5476,
+      "triangles": 2888,
+      "decimated": false,
+      "dimensions_m": [
+        2.7432,
+        0.24,
+        0.1804
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Flooring": {
+      "file_glb": "flooring.glb",
+      "file_fbx": "flooring.fbx",
+      "object": "Flooring",
+      "vertices": 2832,
+      "triangles": 1300,
+      "decimated": false,
+      "dimensions_m": [
+        4.572,
+        0.627,
+        0.054
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Gusset_Plates": {
+      "file_glb": "gusset_plates.glb",
+      "file_fbx": "gusset_plates.fbx",
+      "object": "Gusset_Plates",
+      "vertices": 128,
+      "triangles": 192,
+      "decimated": false,
+      "dimensions_m": [
+        5.8012,
+        0.5714,
+        0.2683
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Helm_Station": {
+      "file_glb": "helm_station.glb",
+      "file_fbx": "helm_station.fbx",
+      "object": "Helm_Station",
+      "vertices": 452,
+      "triangles": 704,
+      "decimated": false,
+      "dimensions_m": [
+        0.504,
+        0.5108,
+        0.872
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Steering_Chain": {
+      "file_glb": "steering_chain.glb",
+      "file_fbx": "steering_chain.fbx",
+      "object": "Steering_Chain",
+      "vertices": 96,
+      "triangles": 184,
+      "decimated": false,
+      "dimensions_m": [
+        0.8136,
+        0.7936,
+        0.0121
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Boiler": {
+      "file_glb": "boiler.glb",
+      "file_fbx": "boiler.fbx",
+      "object": "Boiler",
+      "vertices": 3865,
+      "triangles": 6856,
+      "decimated": false,
+      "dimensions_m": [
+        0.8827,
+        0.8883,
+        1.1772
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Boiler_Mountings": {
+      "file_glb": "boiler_mountings.glb",
+      "file_fbx": "boiler_mountings.fbx",
+      "object": "Boiler_Mountings",
+      "vertices": 1197,
+      "triangles": 2170,
+      "decimated": false,
+      "dimensions_m": [
+        0.5465,
+        0.5823,
+        0.98
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Engine": {
+      "file_glb": "engine.glb",
+      "file_fbx": "engine.fbx",
+      "object": "Engine",
+      "vertices": 1546,
+      "triangles": 2184,
+      "decimated": false,
+      "dimensions_m": [
+        0.9311,
+        0.46,
+        1.2023
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Shaft_Line": {
+      "file_glb": "shaft_line.glb",
+      "file_fbx": "shaft_line.fbx",
+      "object": "Shaft_Line",
+      "vertices": 152,
+      "triangles": 272,
+      "decimated": false,
+      "dimensions_m": [
+        4.1553,
+        0.09,
+        0.2709
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Propeller": {
+      "file_glb": "propeller.glb",
+      "file_fbx": "propeller.fbx",
+      "object": "Propeller",
+      "vertices": 101,
+      "triangles": 180,
+      "decimated": false,
+      "dimensions_m": [
+        0.1806,
+        0.6412,
+        0.1543
+      ],
+      "origin_m": [
+        -3.7956,
+        0.0,
+        -0.331
+      ]
+    },
+    "Shaft_Bracket": {
+      "file_glb": "shaft_bracket.glb",
+      "file_fbx": "shaft_bracket.fbx",
+      "object": "Shaft_Bracket",
+      "vertices": 146,
+      "triangles": 144,
+      "decimated": false,
+      "dimensions_m": [
+        0.1309,
+        0.03,
+        0.2021
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Funnel": {
+      "file_glb": "funnel.glb",
+      "file_fbx": "funnel.fbx",
+      "object": "Funnel",
+      "vertices": 831,
+      "triangles": 1502,
+      "decimated": false,
+      "dimensions_m": [
+        1.8725,
+        1.826,
+        1.6821
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Steam_Pipes": {
+      "file_glb": "steam_pipes.glb",
+      "file_fbx": "steam_pipes.fbx",
+      "object": "Steam_Pipes",
+      "vertices": 480,
+      "triangles": 880,
+      "decimated": false,
+      "dimensions_m": [
+        2.8582,
+        0.283,
+        0.4598
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Feed_Tank": {
+      "file_glb": "feed_tank.glb",
+      "file_fbx": "feed_tank.fbx",
+      "object": "Feed_Tank",
+      "vertices": 3459,
+      "triangles": 5962,
+      "decimated": false,
+      "dimensions_m": [
+        0.5465,
+        0.3037,
+        0.3073
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Hand_Pump": {
+      "file_glb": "hand_pump.glb",
+      "file_fbx": "hand_pump.fbx",
+      "object": "Hand_Pump",
+      "vertices": 168,
+      "triangles": 312,
+      "decimated": false,
+      "dimensions_m": [
+        0.435,
+        0.107,
+        0.64
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Feed_Pipe": {
+      "file_glb": "feed_pipe.glb",
+      "file_fbx": "feed_pipe.fbx",
+      "object": "Feed_Pipe",
+      "vertices": 96,
+      "triangles": 176,
+      "decimated": false,
+      "dimensions_m": [
+        0.5783,
+        0.3142,
+        0.1985
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Coal_Bunker": {
+      "file_glb": "coal_bunker.glb",
+      "file_fbx": "coal_bunker.fbx",
+      "object": "Coal_Bunker",
+      "vertices": 1522,
+      "triangles": 1800,
+      "decimated": false,
+      "dimensions_m": [
+        1.2456,
+        0.9456,
+        0.4411
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Fire_Irons": {
+      "file_glb": "fire_irons.glb",
+      "file_fbx": "fire_irons.fbx",
+      "object": "Fire_Irons",
+      "vertices": 238,
+      "triangles": 280,
+      "decimated": false,
+      "dimensions_m": [
+        0.384,
+        0.15,
+        0.6282
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Fore_Cabin": {
+      "file_glb": "fore_cabin.glb",
+      "file_fbx": "fore_cabin.fbx",
+      "object": "Fore_Cabin",
+      "vertices": 515,
+      "triangles": 614,
+      "decimated": false,
+      "dimensions_m": [
+        1.4695,
+        1.5442,
+        0.7125
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Dagger_Boards": {
+      "file_glb": "dagger_boards.glb",
+      "file_fbx": "dagger_boards.fbx",
+      "object": "Dagger_Boards",
+      "vertices": 592,
+      "triangles": 888,
+      "decimated": false,
+      "dimensions_m": [
+        1.502,
+        0.3872,
+        0.058
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Canopy_Tracks": {
+      "file_glb": "canopy_tracks.glb",
+      "file_fbx": "canopy_tracks.fbx",
+      "object": "Canopy_Tracks",
+      "vertices": 240,
+      "triangles": 472,
+      "decimated": false,
+      "dimensions_m": [
+        5.1852,
+        2.1695,
+        0.1292
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Stern_Sheets": {
+      "file_glb": "stern_sheets.glb",
+      "file_fbx": "stern_sheets.fbx",
+      "object": "Stern_Sheets",
+      "vertices": 384,
+      "triangles": 752,
+      "decimated": false,
+      "dimensions_m": [
+        0.5715,
+        1.7108,
+        0.025
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Stern_Knees": {
+      "file_glb": "stern_knees.glb",
+      "file_fbx": "stern_knees.fbx",
+      "object": "Stern_Knees",
+      "vertices": 96,
+      "triangles": 160,
+      "decimated": false,
+      "dimensions_m": [
+        0.2955,
+        1.6134,
+        0.2
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Bow_Sheets": {
+      "file_glb": "bow_sheets.glb",
+      "file_fbx": "bow_sheets.fbx",
+      "object": "Bow_Sheets",
+      "vertices": 384,
+      "triangles": 752,
+      "decimated": false,
+      "dimensions_m": [
+        0.6096,
+        1.3407,
+        0.025
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Bow_Knees": {
+      "file_glb": "bow_knees.glb",
+      "file_fbx": "bow_knees.fbx",
+      "object": "Bow_Knees",
+      "vertices": 96,
+      "triangles": 160,
+      "decimated": false,
+      "dimensions_m": [
+        0.3336,
+        1.2269,
+        0.2
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Lifting_Eyes": {
+      "file_glb": "lifting_eyes.glb",
+      "file_fbx": "lifting_eyes.fbx",
+      "object": "Lifting_Eyes",
+      "vertices": 408,
+      "triangles": 760,
+      "decimated": false,
+      "dimensions_m": [
+        4.066,
+        0.052,
+        0.3013
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Sidelights": {
+      "file_glb": "sidelights.glb",
+      "file_fbx": "sidelights.fbx",
+      "object": "Sidelights",
+      "vertices": 842,
+      "triangles": 1244,
+      "decimated": false,
+      "dimensions_m": [
+        0.185,
+        0.9943,
+        0.1425
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Compass": {
+      "file_glb": "compass.glb",
+      "file_fbx": "compass.fbx",
+      "object": "Compass",
+      "vertices": 589,
+      "triangles": 684,
+      "decimated": false,
+      "dimensions_m": [
+        0.111,
+        0.11,
+        0.175
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Painter": {
+      "file_glb": "painter.glb",
+      "file_fbx": "painter.fbx",
+      "object": "Painter",
+      "vertices": 1092,
+      "triangles": 2180,
+      "decimated": false,
+      "dimensions_m": [
+        0.517,
+        0.282,
+        0.1433
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Anchor": {
+      "file_glb": "anchor.glb",
+      "file_fbx": "anchor.fbx",
+      "object": "Anchor",
+      "vertices": 360,
+      "triangles": 548,
+      "decimated": false,
+      "dimensions_m": [
+        0.986,
+        0.7225,
+        0.7879
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Grapnel": {
+      "file_glb": "grapnel.glb",
+      "file_fbx": "grapnel.fbx",
+      "object": "Grapnel",
+      "vertices": 416,
+      "triangles": 772,
+      "decimated": false,
+      "dimensions_m": [
+        0.3889,
+        0.3889,
+        0.4658
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Fenders": {
+      "file_glb": "fenders.glb",
+      "file_fbx": "fenders.fbx",
+      "object": "Fenders",
+      "vertices": 5442,
+      "triangles": 10788,
+      "decimated": false,
+      "dimensions_m": [
+        4.4798,
+        2.414,
+        0.9953
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "BoatHooks": {
+      "file_glb": "boathooks.glb",
+      "file_fbx": "boathooks.fbx",
+      "object": "BoatHooks",
+      "vertices": 364,
+      "triangles": 672,
+      "decimated": false,
+      "dimensions_m": [
+        4.738,
+        0.8359,
+        0.1033
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Baler": {
+      "file_glb": "baler.glb",
+      "file_fbx": "baler.fbx",
+      "object": "Baler",
+      "vertices": 138,
+      "triangles": 246,
+      "decimated": false,
+      "dimensions_m": [
+        0.15,
+        0.1462,
+        0.2408
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Bucket": {
+      "file_glb": "bucket.glb",
+      "file_fbx": "bucket.fbx",
+      "object": "Bucket",
+      "vertices": 394,
+      "triangles": 780,
+      "decimated": false,
+      "dimensions_m": [
+        0.2326,
+        0.2467,
+        0.3235
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Breaker": {
+      "file_glb": "breaker.glb",
+      "file_fbx": "breaker.fbx",
+      "object": "Breaker",
+      "vertices": 432,
+      "triangles": 856,
+      "decimated": false,
+      "dimensions_m": [
+        0.38,
+        0.2736,
+        0.2694
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Flags": {
+      "file_glb": "flags.glb",
+      "file_fbx": "flags.fbx",
+      "object": "Flags",
+      "vertices": 141,
+      "triangles": 256,
+      "decimated": false,
+      "dimensions_m": [
+        0.3698,
+        0.044,
+        0.5068
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Rudder": {
+      "file_glb": "rudder.glb",
+      "file_fbx": "rudder.fbx",
+      "object": "Rudder",
+      "vertices": 321,
+      "triangles": 598,
+      "decimated": false,
+      "dimensions_m": [
+        1.4116,
+        0.07,
+        1.0821
+      ],
+      "origin_m": [
+        -3.9073,
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

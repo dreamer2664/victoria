@@ -13,17 +13,29 @@ oars and a transom, and one with two masts and no transom at all.
 | Type | 25 ft steam cutter / steam tender | 25 ft clinker rowing cutter, 10-oared | 27 ft double-ended whaler |
 | Length overall | 7.620 m (25 ft 0 in) | 7.620 m (25 ft 0 in) | 8.230 m (27 ft 0 in) |
 | Beam | 2.134 m (7 ft 0 in) | 1.905 m (6 ft 3 in) | 1.829 m (6 ft 0 in) |
-| Draught loaded | 0.527 m | 0.397 m | 0.436 m |
-| Displacement loaded | 3532 kg | 1897 kg | 1487 kg |
+| Draught light / loaded (solved) | 0.529 / 0.769 m | 0.313 / 0.663 m | 0.297 / 0.511 m |
+| Displacement light / loaded | 3212 / 3532 kg | 1112 / 1992 kg | 1007 / 1487 kg |
 | Ends | transom | transom | **double ended — no transom** |
-| Construction | carvel over double-diagonal, 12 frames | clinker, 11 strakes, oak frames | clinker, 9 strakes, 68 frames, drop keel |
-| Propulsion | 5½ × 6 in inverted vertical engine, coal-fired boiler, 2-bladed screw | 10 oars, double banked | 5 oars single banked + standing-lug yawl rig |
-| Blender file | `blend/boat_a_steam_cutter.blend` | `blend/boat_b_rowing_cutter.blend` | `blend/boat_c_whaler.blend` |
-| Objects / faces | 21 / 59 163 | 25 / 31 076 | 19 / 29 587 |
+| Construction | carvel over double-diagonal, 12 frames | clinker, 11 strakes, oak frames | clinker, 9 strakes, oak frames, drop keel |
+| Propulsion | compound vertical engine, coal-fired vertical boiler, 2-blade screw | 10 oars, double banked | 5 oars single banked + dipping-lug yawl rig (carried stowed) |
+| Blender file | `blend/boat_a2_steam_cutter.blend` | `blend/boat_b2_rowing_cutter.blend` | `blend/boat_c2_whaler.blend` |
+| Parts (Roblox) | 45 (≤19k tris/part) | 40 (≤19k tris/part) | 40 (≤19k tris/part) |
 
-![steam cutter](renders/steam_hero.png)
-![rowing cutter](renders/rowing_hero.png)
-![whaler](renders/whaler_hero.png)
+> **Second generation (THEMISTOCLES-II, 1889 figure revision).** The geometry
+> engine in `scripts/them2/` rebuilds all three boats from the same documented
+> principal dimensions with second-generation fittings, material and renders;
+> the first-generation assets under `blend/boat_[abc]_*.blend` are retained for
+> reference. The waterline convention for this generation is **Z = 0 at the
+> LOADED waterline**; solved light draughts are tabulated above and in
+> `interfaces/boats_spec.json`. Second-generation draughts are deeper than the
+> first generation's because the midship sections were made fuller (the first
+> generation's sections could not physically displace the crew of ten at the
+> documented 0.397 m; the weight budget needs ~0.66 m). See
+> `docs/THEM2_INSPECTION_REPORT.md`.
+
+![steam cutter](renders/them2/steam_b_hero.png)
+![rowing cutter](renders/them2/rowing_b_hero.png)
+![whaler](renders/them2/whaler_b_hero.png)
 
 The boats are rendered afloat on a sea surface placed at **z = 0**, which is
 the load waterline by the authoring convention — so the renders double as a

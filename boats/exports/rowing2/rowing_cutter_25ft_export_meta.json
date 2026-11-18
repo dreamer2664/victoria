@@ -1,0 +1,954 @@
+{
+  "class": "rowing_cutter_25ft",
+  "frame_of_reference": {
+    "origin": "design waterline amidships (Z=0 = LOADED waterline this generation)",
+    "axes": "+X = bow, +Y = starboard, +Z = up",
+    "units": "metres"
+  },
+  "hydrostatics": {
+    "loaded": {
+      "draft_m": 0.663,
+      "lcb_m": -0.184,
+      "freeboard_amidships_m": 0.402,
+      "displacement_kg": 1992.0
+    },
+    "light": {
+      "draft_m": 0.313,
+      "waterline_z": -0.35,
+      "lcb_m": -0.145,
+      "freeboard_amidships_m": 0.752,
+      "displacement_kg": 1112.0
+    }
+  },
+  "weights_kg": {
+    "hull_planking_11_strakes_kg": 470,
+    "keel_stem_sternpost_transom_kg": 105,
+    "gunwales_inwales_knees_kg": 78,
+    "thwarts_benches_floorboards_kg": 96,
+    "oars_10_kg": 175.0,
+    "rig_spars_sails_kg": 95,
+    "rudder_tiller_kg": 26,
+    "fittings_mooring_rowlocks_kg": 38,
+    "paint_varnish_kg": 29,
+    "light_kg": 1112.0,
+    "crew_kg": 880,
+    "loaded_kg": 1992.0
+  },
+  "pivots": {
+    "rowlocks": [
+      {
+        "x": 2.02,
+        "y": -0.7256,
+        "z": 0.5006,
+        "side": -1
+      },
+      {
+        "x": 2.02,
+        "y": 0.7256,
+        "z": 0.5006,
+        "side": 1
+      },
+      {
+        "x": 1.18,
+        "y": -0.8581,
+        "z": 0.469,
+        "side": -1
+      },
+      {
+        "x": 1.18,
+        "y": 0.8581,
+        "z": 0.469,
+        "side": 1
+      },
+      {
+        "x": 0.34,
+        "y": -0.9292,
+        "z": 0.4503,
+        "side": -1
+      },
+      {
+        "x": 0.34,
+        "y": 0.9292,
+        "z": 0.4503,
+        "side": 1
+      },
+      {
+        "x": -0.5,
+        "y": -0.9559,
+        "z": 0.441,
+        "side": -1
+      },
+      {
+        "x": -0.5,
+        "y": 0.9559,
+        "z": 0.441,
+        "side": 1
+      },
+      {
+        "x": -1.34,
+        "y": -0.9278,
+        "z": 0.4385,
+        "side": -1
+      },
+      {
+        "x": -1.34,
+        "y": 0.9278,
+        "z": 0.4385,
+        "side": 1
+      }
+    ],
+    "oars_moving": [
+      {
+        "part": "Oar_S1",
+        "pivot_world": [
+          2.02,
+          -0.7256,
+          0.5006
+        ],
+        "side": "starboard(-Y)",
+        "station_x": 2.02,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P1",
+        "pivot_world": [
+          2.02,
+          0.7256,
+          0.5006
+        ],
+        "side": "port(+Y)",
+        "station_x": 2.02,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S2",
+        "pivot_world": [
+          1.18,
+          -0.8581,
+          0.469
+        ],
+        "side": "starboard(-Y)",
+        "station_x": 1.18,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P2",
+        "pivot_world": [
+          1.18,
+          0.8581,
+          0.469
+        ],
+        "side": "port(+Y)",
+        "station_x": 1.18,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S3",
+        "pivot_world": [
+          0.34,
+          -0.9292,
+          0.4503
+        ],
+        "side": "starboard(-Y)",
+        "station_x": 0.34,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P3",
+        "pivot_world": [
+          0.34,
+          0.9292,
+          0.4503
+        ],
+        "side": "port(+Y)",
+        "station_x": 0.34,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S4",
+        "pivot_world": [
+          -0.5,
+          -0.9559,
+          0.441
+        ],
+        "side": "starboard(-Y)",
+        "station_x": -0.5,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P4",
+        "pivot_world": [
+          -0.5,
+          0.9559,
+          0.441
+        ],
+        "side": "port(+Y)",
+        "station_x": -0.5,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_S5",
+        "pivot_world": [
+          -1.34,
+          -0.9278,
+          0.4385
+        ],
+        "side": "starboard(-Y)",
+        "station_x": -1.34,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      },
+      {
+        "part": "Oar_P5",
+        "pivot_world": [
+          -1.34,
+          0.9278,
+          0.4385
+        ],
+        "side": "port(+Y)",
+        "station_x": -1.34,
+        "length_m": 3.66,
+        "stowed_rot_z_deg_from_outboard": 90.0
+      }
+    ],
+    "lifting_eyes_x": [
+      1.95,
+      -1.6
+    ],
+    "rudder_axis": [
+      -3.8922,
+      0.0,
+      0.0
+    ]
+  },
+  "parts": {
+    "Planking_Clinker": {
+      "file_glb": "planking_clinker.glb",
+      "file_fbx": "planking_clinker.fbx",
+      "object": "Planking_Clinker",
+      "vertices": 9544,
+      "triangles": 19000,
+      "decimated": true,
+      "dimensions_m": [
+        7.8463,
+        1.9049,
+        1.0748
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Keel_Stem_Sternpost": {
+      "file_glb": "keel_stem_sternpost.glb",
+      "file_fbx": "keel_stem_sternpost.fbx",
+      "object": "Keel_Stem_Sternpost",
+      "vertices": 520,
+      "triangles": 1024,
+      "decimated": false,
+      "dimensions_m": [
+        7.777,
+        0.109,
+        1.489
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Transom": {
+      "file_glb": "transom.glb",
+      "file_fbx": "transom.fbx",
+      "object": "Transom",
+      "vertices": 484,
+      "triangles": 372,
+      "decimated": false,
+      "dimensions_m": [
+        0.17,
+        0.8231,
+        0.8909
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Frames": {
+      "file_glb": "frames.glb",
+      "file_fbx": "frames.fbx",
+      "object": "Frames",
+      "vertices": 9700,
+      "triangles": 19000,
+      "decimated": true,
+      "dimensions_m": [
+        6.864,
+        1.5788,
+        1.0029
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Keelson": {
+      "file_glb": "keelson.glb",
+      "file_fbx": "keelson.fbx",
+      "object": "Keelson",
+      "vertices": 122,
+      "triangles": 240,
+      "decimated": false,
+      "dimensions_m": [
+        5.8082,
+        0.075,
+        0.2717
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Gunwale_Inwale_Rubstrake": {
+      "file_glb": "gunwale_inwale_rubstrake.glb",
+      "file_fbx": "gunwale_inwale_rubstrake.fbx",
+      "object": "Gunwale_Inwale_Rubstrake",
+      "vertices": 3388,
+      "triangles": 6744,
+      "decimated": false,
+      "dimensions_m": [
+        7.5103,
+        1.9886,
+        0.9042
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Breasthook_Knees": {
+      "file_glb": "breasthook_knees.glb",
+      "file_fbx": "breasthook_knees.fbx",
+      "object": "Breasthook_Knees",
+      "vertices": 8,
+      "triangles": 12,
+      "decimated": false,
+      "dimensions_m": [
+        0.6,
+        0.7018,
+        0.038
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Thwarts": {
+      "file_glb": "thwarts.glb",
+      "file_fbx": "thwarts.fbx",
+      "object": "Thwarts",
+      "vertices": 290,
+      "triangles": 520,
+      "decimated": false,
+      "dimensions_m": [
+        4.6774,
+        0.25,
+        0.031
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Thwart_Knees": {
+      "file_glb": "thwart_knees.glb",
+      "file_fbx": "thwart_knees.fbx",
+      "object": "Thwart_Knees",
+      "vertices": 160,
+      "triangles": 280,
+      "decimated": false,
+      "dimensions_m": [
+        3.388,
+        1.4891,
+        0.28
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Risers": {
+      "file_glb": "risers.glb",
+      "file_fbx": "risers.fbx",
+      "object": "Risers",
+      "vertices": 960,
+      "triangles": 440,
+      "decimated": false,
+      "dimensions_m": [
+        3.64,
+        1.6701,
+        0.05
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Stern_Sheets": {
+      "file_glb": "stern_sheets.glb",
+      "file_fbx": "stern_sheets.fbx",
+      "object": "Stern_Sheets",
+      "vertices": 384,
+      "triangles": 752,
+      "decimated": false,
+      "dimensions_m": [
+        0.9525,
+        1.4165,
+        0.025
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Stern_Knees": {
+      "file_glb": "stern_knees.glb",
+      "file_fbx": "stern_knees.fbx",
+      "object": "Stern_Knees",
+      "vertices": 96,
+      "triangles": 160,
+      "decimated": false,
+      "dimensions_m": [
+        0.6765,
+        1.3559,
+        0.2
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Bow_Sheets": {
+      "file_glb": "bow_sheets.glb",
+      "file_fbx": "bow_sheets.fbx",
+      "object": "Bow_Sheets",
+      "vertices": 384,
+      "triangles": 752,
+      "decimated": false,
+      "dimensions_m": [
+        0.6477,
+        0.9212,
+        0.025
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Bow_Knees": {
+      "file_glb": "bow_knees.glb",
+      "file_fbx": "bow_knees.fbx",
+      "object": "Bow_Knees",
+      "vertices": 96,
+      "triangles": 160,
+      "decimated": false,
+      "dimensions_m": [
+        0.3717,
+        0.8149,
+        0.2
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Floor_Gratings": {
+      "file_glb": "floor_gratings.glb",
+      "file_fbx": "floor_gratings.fbx",
+      "object": "Floor_Gratings",
+      "vertices": 3360,
+      "triangles": 1540,
+      "decimated": false,
+      "dimensions_m": [
+        2.5,
+        0.581,
+        0.054
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Stretchers": {
+      "file_glb": "stretchers.glb",
+      "file_fbx": "stretchers.fbx",
+      "object": "Stretchers",
+      "vertices": 1440,
+      "triangles": 660,
+      "decimated": false,
+      "dimensions_m": [
+        3.4,
+        0.42,
+        0.1333
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Rowlocks": {
+      "file_glb": "rowlocks.glb",
+      "file_fbx": "rowlocks.fbx",
+      "object": "Rowlocks",
+      "vertices": 4730,
+      "triangles": 7420,
+      "decimated": false,
+      "dimensions_m": [
+        3.49,
+        2.0525,
+        0.1888
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Rig_Stowed": {
+      "file_glb": "rig_stowed.glb",
+      "file_fbx": "rig_stowed.fbx",
+      "object": "Rig_Stowed",
+      "vertices": 1460,
+      "triangles": 2800,
+      "decimated": false,
+      "dimensions_m": [
+        6.4436,
+        0.3059,
+        0.2368
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Mast_Fit": {
+      "file_glb": "mast_fit.glb",
+      "file_fbx": "mast_fit.fbx",
+      "object": "Mast_Fit",
+      "vertices": 384,
+      "triangles": 304,
+      "decimated": false,
+      "dimensions_m": [
+        2.3,
+        0.2194,
+        0.7721
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Lifting_Eyes": {
+      "file_glb": "lifting_eyes.glb",
+      "file_fbx": "lifting_eyes.fbx",
+      "object": "Lifting_Eyes",
+      "vertices": 408,
+      "triangles": 760,
+      "decimated": false,
+      "dimensions_m": [
+        3.666,
+        0.052,
+        0.3013
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Ring_Bolts": {
+      "file_glb": "ring_bolts.glb",
+      "file_fbx": "ring_bolts.fbx",
+      "object": "Ring_Bolts",
+      "vertices": 184,
+      "triangles": 360,
+      "decimated": false,
+      "dimensions_m": [
+        7.544,
+        0.024,
+        0.3009
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Painter": {
+      "file_glb": "painter.glb",
+      "file_fbx": "painter.fbx",
+      "object": "Painter",
+      "vertices": 1092,
+      "triangles": 2180,
+      "decimated": false,
+      "dimensions_m": [
+        0.517,
+        0.282,
+        0.1433
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Grapnel": {
+      "file_glb": "grapnel.glb",
+      "file_fbx": "grapnel.fbx",
+      "object": "Grapnel",
+      "vertices": 416,
+      "triangles": 772,
+      "decimated": false,
+      "dimensions_m": [
+        0.4346,
+        0.4346,
+        0.5206
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Fenders": {
+      "file_glb": "fenders.glb",
+      "file_fbx": "fenders.fbx",
+      "object": "Fenders",
+      "vertices": 5442,
+      "triangles": 10788,
+      "decimated": false,
+      "dimensions_m": [
+        4.1422,
+        2.1727,
+        0.9269
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "BoatHooks": {
+      "file_glb": "boathooks.glb",
+      "file_fbx": "boathooks.fbx",
+      "object": "BoatHooks",
+      "vertices": 364,
+      "triangles": 672,
+      "decimated": false,
+      "dimensions_m": [
+        4.8904,
+        0.8759,
+        0.1033
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Baler": {
+      "file_glb": "baler.glb",
+      "file_fbx": "baler.fbx",
+      "object": "Baler",
+      "vertices": 138,
+      "triangles": 246,
+      "decimated": false,
+      "dimensions_m": [
+        0.15,
+        0.1462,
+        0.2408
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Bucket": {
+      "file_glb": "bucket.glb",
+      "file_fbx": "bucket.fbx",
+      "object": "Bucket",
+      "vertices": 394,
+      "triangles": 780,
+      "decimated": false,
+      "dimensions_m": [
+        0.2326,
+        0.2467,
+        0.3235
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Breaker": {
+      "file_glb": "breaker.glb",
+      "file_fbx": "breaker.fbx",
+      "object": "Breaker",
+      "vertices": 432,
+      "triangles": 856,
+      "decimated": false,
+      "dimensions_m": [
+        0.38,
+        0.2736,
+        0.2694
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Compass": {
+      "file_glb": "compass.glb",
+      "file_fbx": "compass.fbx",
+      "object": "Compass",
+      "vertices": 589,
+      "triangles": 684,
+      "decimated": false,
+      "dimensions_m": [
+        0.111,
+        0.11,
+        0.175
+      ],
+      "origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Rudder": {
+      "file_glb": "rudder.glb",
+      "file_fbx": "rudder.fbx",
+      "object": "Rudder",
+      "vertices": 321,
+      "triangles": 598,
+      "decimated": false,
+      "dimensions_m": [
+        1.4116,
+        0.07,
+        1.0481
+      ],
+      "origin_m": [
+        -3.8922,
+        0.0,
+        0.0
+      ]
+    },
+    "Oar_S1": {
+      "file_glb": "oar_s1.glb",
+      "file_fbx": "oar_s1.fbx",
+      "object": "Oar_S1",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        2.02,
+        -0.7256,
+        0.5006
+      ]
+    },
+    "Oar_P1": {
+      "file_glb": "oar_p1.glb",
+      "file_fbx": "oar_p1.fbx",
+      "object": "Oar_P1",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        2.02,
+        0.7256,
+        0.5006
+      ]
+    },
+    "Oar_S2": {
+      "file_glb": "oar_s2.glb",
+      "file_fbx": "oar_s2.fbx",
+      "object": "Oar_S2",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        1.18,
+        -0.8581,
+        0.469
+      ]
+    },
+    "Oar_P2": {
+      "file_glb": "oar_p2.glb",
+      "file_fbx": "oar_p2.fbx",
+      "object": "Oar_P2",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        1.18,
+        0.8581,
+        0.469
+      ]
+    },
+    "Oar_S3": {
+      "file_glb": "oar_s3.glb",
+      "file_fbx": "oar_s3.fbx",
+      "object": "Oar_S3",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        0.34,
+        -0.9292,
+        0.4503
+      ]
+    },
+    "Oar_P3": {
+      "file_glb": "oar_p3.glb",
+      "file_fbx": "oar_p3.fbx",
+      "object": "Oar_P3",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        0.34,
+        0.9292,
+        0.4503
+      ]
+    },
+    "Oar_S4": {
+      "file_glb": "oar_s4.glb",
+      "file_fbx": "oar_s4.fbx",
+      "object": "Oar_S4",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        -0.5,
+        -0.9559,
+        0.441
+      ]
+    },
+    "Oar_P4": {
+      "file_glb": "oar_p4.glb",
+      "file_fbx": "oar_p4.fbx",
+      "object": "Oar_P4",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        -0.5,
+        0.9559,
+        0.441
+      ]
+    },
+    "Oar_S5": {
+      "file_glb": "oar_s5.glb",
+      "file_fbx": "oar_s5.fbx",
+      "object": "Oar_S5",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        -1.34,
+        -0.9278,
+        0.4385
+      ]
+    },
+    "Oar_P5": {
+      "file_glb": "oar_p5.glb",
+      "file_fbx": "oar_p5.fbx",
+      "object": "Oar_P5",
+      "vertices": 760,
+      "triangles": 1508,
+      "decimated": false,
+      "dimensions_m": [
+        3.66,
+        0.086,
+        0.23
+      ],
+      "origin_m": [
+        -1.34,
+        0.9278,
+        0.4385
+      ]
+    }
+  }
+}

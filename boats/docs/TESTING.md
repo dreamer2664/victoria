@@ -217,3 +217,34 @@ fixed in the builds rather than excused:
 The boats are not being presented as Studio-tested. Everything that *has*
 been tested is listed with its result in §1, and everything that has not is
 listed in §2 with a procedure for closing it.
+
+---
+
+## THEMISTOCLES-II additions (2026-11-17)
+
+### `boats/scripts/verify2.py` — headless QA gate (no Blender needed)
+
+Runs against the exported metadata JSON:
+
+1. **Hydrostatic consistency** — the weight budget must equal the solved
+   displacement, loaded and light, for all three boats.
+2. **Moving-part pivots** — every animated part (10 cutter oars, 5 whaler
+   oars, rudder, propeller) must carry a pivot, at rail height for oars, aft
+   and submerged for the screw, at the stern for the rudder.
+3. **Roblox triangle budget** — no part over 19 000 triangles.
+4. **Envelope sanity** — no part longer than the boat (+stowage allowance),
+   nothing wider than the fenders.
+5. **Manifest reproducibility** — `gen_manifest2.py` run on the export
+   metadata must regenerate the committed `roblox/src/Manifest_*.lua`
+   byte-for-byte; drift means someone edited one side by hand.
+
+Status at commit: **all 30 checks pass** (`python3 boats/scripts/verify2.py`).
+
+### Studio play-test status (unchanged from generation 1)
+
+The Lua controllers are byte-compatible with the QA'd generation-1 control
+stack (same part-name contract, same manifest schema).  They have been
+statically reviewed and the manifests machine-verified (table balance,
+moving-part cross-references), but the boats have **not** been sailed in a
+Roblox Studio session on this branch.  That remains the honest state of the
+deliverable until someone opens Studio.

@@ -1,6 +1,6 @@
 {
-  "schema": "victoria.boats/1.0",
-  "generated_by": "agent-02 ships boats",
+  "schema": "victoria.boats/2.0",
+  "generated_by": "THEMISTOCLES-II (boats division, second generation)",
   "ship": "SS Victoria (fictional, 1889) -- OPERATION VICTORIA",
   "units": {
     "model": "metres",
@@ -8,11 +8,11 @@
     "stud_per_m": 3.571429
   },
   "orientation": {
-    "forward_axis": "+X (stem/stemhead direction)",
+    "forward_axis": "+X (stem direction)",
     "up_axis": "+Z",
     "port": "+Y",
-    "origin": "on centreline, at mid-length of the length overall; Z=0 at the light load waterline drawn on the lines plan",
-    "roblox_import": "export GLB with +Y up conversion; in Roblox the boat's LookVector must be set to the vessel's +X"
+    "origin": "centreline at mid-LOA; Z=0 at the LOADED waterline (changed from gen 1)",
+    "roblox_import": "GLB with +Y up; set LookVector to vessel +X"
   },
   "integration": {
     "craft_id_aliases": {
@@ -26,37 +26,164 @@
       "whaler"
     ],
     "davit_rating_required_kg": {
-      "steam_cutter_1888": 3900,
-      "rowing_cutter_25ft": 2100,
-      "whaler_27ft": 1700
+      "rowing_cutter_25ft": 2091,
+      "whaler_27ft": 1561,
+      "steam_cutter_1888": 3708
     },
-    "davit_limit_conflict": "The liner's davit limit is published as 2000 kg. These boats are weighed, not guessed: the steam cutter is 3212 kg light and 3532 kg loaded, so a 2000 kg davit cannot hoist her. Either the davits are rated to the figures in davit_rating_required_kg, or the boat carried is the rowing cutter (1017 kg light).",
+    "davit_limit_conflict": "The liner's davit limit is published as 2000 kg. These boats are weighed, not guessed: solved displacements are rowing_cutter_25ft light 1112 kg / loaded 1992 kg, whaler_27ft light 1008 kg / loaded 1488 kg, steam_cutter_1888 light 3212 kg / loaded 3532 kg. A 2000 kg davit cannot hoist the steam cutter (3532 kg loaded); rate the davits to davit_rating_required_kg or carry the rowing cutter (1112 kg light).",
     "export_contract": {
-      "units": "metres in GLB and FBX; the Roblox importer multiplies by 3.571429",
+      "units": "metres in GLB and FBX; Roblox importer multiplies by 3.571429",
       "per_part_triangle_limit": 19000,
       "uv_layers": 1,
-      "parts": "one file per logical part; moving parts (oars, screw, rudder) keep their own origin",
-      "origin_of_moving_parts": "the rowlock for an oar, the shaft axis for the screw, the pintle line for the rudder"
+      "parts": "one file per logical part; moving parts keep origin at pivot",
+      "origin_of_moving_parts": "rowlock for oars; shaft hub for the screw; pintle line for the rudder"
     }
   },
   "boats": [
     {
+      "id": "rowing_cutter_25ft",
+      "name": "25 ft 0 in Clinker boat (THEMISTOCLES-II)",
+      "type": "clinker rowing cutter, 10-oared double-banked",
+      "dimensions": {
+        "loa_m": 7.62,
+        "loa_ft": "25 ft 0 in",
+        "beam_max_m": 1.905,
+        "beam_ft": "6 ft 3 in",
+        "depth_moulded_amidships_m": 1.065,
+        "draft_light_m": 0.313,
+        "draft_loaded_m": 0.663,
+        "freeboard_light_m": 0.752,
+        "freeboard_loaded_m": 0.402,
+        "sheer_height_bow_m": 0.73,
+        "sheer_height_stern_m": 0.6
+      },
+      "weights": {
+        "hull_planking_11_strakes_kg": 470,
+        "keel_stem_sternpost_transom_kg": 105,
+        "gunwales_inwales_knees_kg": 78,
+        "thwarts_benches_floorboards_kg": 96,
+        "oars_10_kg": 175.0,
+        "rig_spars_sails_kg": 95,
+        "rudder_tiller_kg": 26,
+        "fittings_mooring_rowlocks_kg": 38,
+        "paint_varnish_kg": 29,
+        "light_kg": 1112.0,
+        "crew_kg": 880,
+        "loaded_kg": 1992.0
+      },
+      "hydrostatics_loaded": {
+        "waterline_z_m": 0.0,
+        "draft_m": 0.663,
+        "displacement_kg": 1992.0,
+        "lcb_m_fwd_of_midships": -0.184
+      },
+      "hydrostatics_light": {
+        "waterline_z_m": -0.35,
+        "draft_m": 0.313,
+        "displacement_kg": 1112.0,
+        "lcb_m_fwd_of_midships": -0.145
+      },
+      "davit_slings_x_m": [
+        1.95,
+        -1.6
+      ],
+      "boarding_m": {
+        "x": 0.55,
+        "z": 0.52
+      },
+      "moving_parts": [
+        "rowlocks",
+        "oars_moving",
+        "lifting_eyes_x",
+        "rudder_axis"
+      ],
+      "export": {
+        "dir": "boats/exports/rowing2/",
+        "combined_glb": "rowing_cutter_25ft.glb",
+        "combined_fbx": "rowing_cutter_25ft.fbx"
+      }
+    },
+    {
+      "id": "whaler_27ft",
+      "name": "27 ft 0 in Double-Ended boat (THEMISTOCLES-II)",
+      "type": "double-ended clinker whaler, 5-oared single-banked",
+      "dimensions": {
+        "loa_m": 8.23,
+        "loa_ft": "27 ft 0 in",
+        "beam_max_m": 1.829,
+        "beam_ft": "6 ft 0 in",
+        "depth_moulded_amidships_m": 1.032,
+        "draft_light_m": 0.297,
+        "draft_loaded_m": 0.511,
+        "freeboard_light_m": 0.735,
+        "freeboard_loaded_m": 0.521,
+        "sheer_height_bow_m": 0.7,
+        "sheer_height_stern_m": 0.69
+      },
+      "weights": {
+        "hull_planking_9_strakes_kg": 395,
+        "keel_stems_aprons_kg": 105,
+        "gunwales_inwales_knees_kg": 78,
+        "thwarts_bench_floorboards_kg": 84,
+        "oars_5_kg": 97.5,
+        "masts_yards_rigging_sails_kg": 122,
+        "centreboard_case_plate_kg": 44,
+        "rudder_tiller_yoke_kg": 20,
+        "fittings_mooring_kg": 36,
+        "paint_varnish_kg": 26,
+        "light_kg": 1007.5,
+        "crew_kg": 480,
+        "loaded_kg": 1487.5
+      },
+      "hydrostatics_loaded": {
+        "waterline_z_m": 0.0,
+        "draft_m": 0.511,
+        "displacement_kg": 1487.5,
+        "lcb_m_fwd_of_midships": -0.046
+      },
+      "hydrostatics_light": {
+        "waterline_z_m": -0.214,
+        "draft_m": 0.297,
+        "displacement_kg": 1007.5,
+        "lcb_m_fwd_of_midships": -0.033
+      },
+      "davit_slings_x_m": [
+        1.85,
+        -1.72
+      ],
+      "boarding_m": {
+        "x": 0.7,
+        "z": 0.45
+      },
+      "moving_parts": [
+        "centreboard",
+        "rowlocks",
+        "oars_moving",
+        "lifting_eyes_x",
+        "rudder_axis"
+      ],
+      "export": {
+        "dir": "boats/exports/whaler2/",
+        "combined_glb": "whaler_27ft.glb",
+        "combined_fbx": "whaler_27ft.fbx"
+      }
+    },
+    {
       "id": "steam_cutter_1888",
-      "name": "25 ft Steam Cutter (1888 pattern)",
-      "type": "steam cutter / steam tender, open boat with engine & boiler canopy",
-      "reference": "RMG NPC9572, 'Proposed 25ft Steam Cutter', Dangerfield Lith., 18 Jan 1888, scale 1:16",
+      "name": "25 ft 0 in Steam boat (THEMISTOCLES-II)",
+      "type": "steam cutter / steam tender (1888 pattern)",
       "dimensions": {
         "loa_m": 7.62,
         "loa_ft": "25 ft 0 in",
         "beam_max_m": 2.134,
         "beam_ft": "7 ft 0 in",
         "depth_moulded_amidships_m": 1.203,
-        "draft_light_m": 0.5,
-        "draft_loaded_m": 0.532,
-        "freeboard_light_m": 0.703,
-        "freeboard_loaded_m": 0.671,
-        "sheer_height_bow_m": 0.908,
-        "sheer_height_stern_m": 0.773
+        "draft_light_m": 0.529,
+        "draft_loaded_m": 0.769,
+        "freeboard_light_m": 0.674,
+        "freeboard_loaded_m": 0.434,
+        "sheer_height_bow_m": 0.775,
+        "sheer_height_stern_m": 0.64
       },
       "weights": {
         "hull_double_skin_kg": 560,
@@ -77,261 +204,39 @@
       },
       "hydrostatics_loaded": {
         "waterline_z_m": 0.0,
-        "draft_m": 0.532,
-        "freeboard_amidships_m": 0.671,
-        "volume_m3": 3.4459,
-        "displacement_kg": 3532.1,
-        "lcb_m_from_mid": -0.329,
-        "lcf_m_from_mid": -0.398,
-        "waterplane_m2": 9.931,
-        "midship_area_m2": 0.7066,
-        "lwl_m": 7.31,
-        "block_coeff": 0.3984,
-        "prismatic_coeff": 0.64
+        "draft_m": 0.769,
+        "displacement_kg": 3532.0,
+        "lcb_m_fwd_of_midships": -0.181
       },
       "hydrostatics_light": {
-        "waterline_z_m": -0.032,
-        "draft_m": 0.5,
-        "freeboard_amidships_m": 0.703,
-        "volume_m3": 3.1337,
-        "displacement_kg": 3212.1,
-        "lcb_m_from_mid": -0.322,
-        "lcf_m_from_mid": -0.398,
-        "waterplane_m2": 9.677,
-        "midship_area_m2": 0.6504,
-        "lwl_m": 7.31,
-        "block_coeff": 0.3853,
-        "prismatic_coeff": 0.6323
+        "waterline_z_m": -0.24,
+        "draft_m": 0.529,
+        "displacement_kg": 3212.0,
+        "lcb_m_fwd_of_midships": -0.173
       },
-      "davit_attachment_points": {
-        "note": "two single-arm davits, one pair; slings pass under the hull at the marked stations",
-        "fore_sling_x_m": 2.05,
-        "aft_sling_x_m": -1.55,
-        "sling_spread_m": 3.6,
-        "hook_height_above_sheer_m": 1.15,
-        "lifting_eyes": "forged galvanised eyebolts through the keelson at x=+2.05 and x=-1.55, 24 mm shank",
-        "max_sling_angle_deg": 12
-      },
-      "cradle_contact_points": [
-        {
-          "x_m": 1.6,
-          "z_m": -0.506,
-          "half_breadth_m": 0.62
-        },
-        {
-          "x_m": -1.6,
-          "z_m": -0.509,
-          "half_breadth_m": 0.66
-        }
+      "davit_slings_x_m": [
+        2.1,
+        -1.85
       ],
-      "boarding": {
-        "boarding_point": "port side amidships, abreast the after thward",
-        "boarding_x_m": 0.35,
-        "boarding_height_above_waterline_m": 0.677,
-        "seat_capacity": 10,
-        "coxswain_position_x_m": -2.55
+      "boarding_m": {
+        "x": 0.35,
+        "z": 0.6
       },
-      "footprint_for_ship": {
-        "length_for_stowage_m": 7.72,
-        "width_for_stowage_m": 2.494,
-        "height_above_sheer_m": 1.62,
-        "note": "height includes the canopy and funnel top; funnel may be lowered for stowage under a davit head"
-      }
-    },
-    {
-      "id": "rowing_cutter_25ft",
-      "name": "25 ft Clinker Rowing Cutter (10-oared)",
-      "type": "pulling/sailing cutter, lapstrake (clinker) construction",
-      "reference": "RMG SLR1818 clinker cutter; RMG SLR0772 (1838, 1:24); RMG J0780 10-oared 25 ft cutter plan",
-      "dimensions": {
-        "loa_m": 7.62,
-        "loa_ft": "25 ft 0 in",
-        "loa_overall_with_rudder_m": 7.915,
-        "loa_note": "7.620 m is the hull (stem head to transom). The stern-hung plate rudder shipped on the transom projects 0.30 m aft, giving 7.915 m overall; the boat is stowed and hoisted with the rudder shipped, so the stowage length below is the overall figure.",
-        "beam_max_m": 1.905,
-        "beam_ft": "6 ft 3 in",
-        "depth_moulded_amidships_m": 1.065,
-        "draft_light_m": 0.272,
-        "draft_loaded_m": 0.397,
-        "freeboard_light_m": 0.794,
-        "freeboard_loaded_m": 0.668,
-        "sheer_height_bow_m": 0.875,
-        "sheer_height_stern_m": 0.755
-      },
-      "weights": {
-        "hull_planking_11_strakes_kg": 470,
-        "keel_stem_sternpost_transom_kg": 105,
-        "gunwales_inwales_knees_kg": 78,
-        "thwarts_benches_floorboards_kg": 96,
-        "oars_10_kg": 175.0,
-        "rudder_tiller_kg": 26,
-        "fittings_mooring_rowlocks_kg": 38,
-        "paint_varnish_kg": 29,
-        "light_kg": 1017.0,
-        "crew_kg": 880,
-        "loaded_kg": 1897.0
-      },
-      "hydrostatics_loaded": {
-        "waterline_z_m": 0.0,
-        "draft_m": 0.397,
-        "freeboard_amidships_m": 0.668,
-        "volume_m3": 1.8508,
-        "displacement_kg": 1897.0,
-        "lcb_m_from_mid": -0.366,
-        "lcf_m_from_mid": -0.418,
-        "waterplane_m2": 7.441,
-        "midship_area_m2": 0.4101,
-        "lwl_m": 7.37,
-        "block_coeff": 0.3212,
-        "prismatic_coeff": 0.5922
-      },
-      "hydrostatics_light": {
-        "waterline_z_m": -0.125,
-        "draft_m": 0.272,
-        "freeboard_amidships_m": 0.794,
-        "volume_m3": 0.9922,
-        "displacement_kg": 1017.0,
-        "lcb_m_from_mid": -0.319,
-        "lcf_m_from_mid": -0.41,
-        "waterplane_m2": 6.061,
-        "midship_area_m2": 0.2395,
-        "lwl_m": 7.004,
-        "block_coeff": 0.2515,
-        "prismatic_coeff": 0.5437
-      },
-      "davit_attachment_points": {
-        "note": "single pair of davits; the boat is hoisted by two slings under the hull",
-        "fore_sling_x_m": 1.95,
-        "aft_sling_x_m": -1.6,
-        "sling_spread_m": 3.55,
-        "hook_height_above_sheer_m": 1.1,
-        "lifting_eyes": "galvanised eyebolts through keelson at x=+1.95 / x=-1.60 (as on SLR1818, which shows large eyes fore and aft on the keelson for hoisting to davits)"
-      },
-      "cradle_contact_points": [
-        {
-          "x_m": 1.55,
-          "z_m": -0.375,
-          "half_breadth_m": 0.55
-        },
-        {
-          "x_m": -1.55,
-          "z_m": -0.376,
-          "half_breadth_m": 0.58
-        }
+      "moving_parts": [
+        "wheel",
+        "rudder_axis",
+        "boiler_face",
+        "boiler_top",
+        "engine",
+        "propeller",
+        "funnel_top",
+        "cabin",
+        "lifting_eyes_x"
       ],
-      "boarding": {
-        "boarding_point": "port side at the after thwart; boat hooks and fenders both sides",
-        "boarding_x_m": 0.55,
-        "boarding_height_above_waterline_m": 0.675,
-        "seat_capacity": 11,
-        "rowers": 10,
-        "coxswain_position_x_m": -2.3
-      },
-      "footprint_for_ship": {
-        "length_for_stowage_m": 8.02,
-        "width_for_stowage_m": 2.205,
-        "width_note": "boats are stowed with the 3.66 m oars laid inboard along the thwarts (the davit condition); with oars out in the rowlocks the boat needs beam + 4.2 m of clear water either side, so rowing is only possible after lowering",
-        "height_above_sheer_m": 0.42
-      }
-    },
-    {
-      "id": "whaler_27ft",
-      "name": "27 ft Double-ended Clinker Whaler (c.1890)",
-      "type": "pulling/sailing sea boat, lapstrake (clinker), double ended, drop keel",
-      "reference": "RN 27 ft whaler type (standard seaboat from the 1890s; RNZN Naval Whalers; RMG ZAZ7497 'Whaleboat, 27ft' sectional plan)",
-      "dimensions": {
-        "loa_m": 8.23,
-        "loa_ft": "27 ft 0 in",
-        "transom": "none -- pointed stem and pointed stern (double ended)",
-        "beam_max_m": 1.829,
-        "beam_ft": "6 ft 0 in",
-        "depth_moulded_amidships_m": 1.032,
-        "draft_light_m": 0.346,
-        "draft_loaded_m": 0.436,
-        "draft_note": "documented draught is 1 ft 5 in (0.432 m) with the plate up; the solved loaded draught above is within 5 mm of it",
-        "freeboard_light_m": 0.686,
-        "freeboard_loaded_m": 0.596,
-        "sheer_height_bow_m": 0.708,
-        "sheer_height_stern_m": 0.696
-      },
-      "weights": {
-        "hull_planking_9_strakes_kg": 395,
-        "keel_stems_aprons_kg": 105,
-        "gunwales_inwales_knees_kg": 78,
-        "thwarts_bench_floorboards_kg": 84,
-        "oars_5_kg": 97.5,
-        "masts_yards_rigging_sails_kg": 122,
-        "centreboard_case_plate_kg": 44,
-        "rudder_tiller_yoke_kg": 20,
-        "fittings_mooring_kg": 36,
-        "paint_varnish_kg": 26,
-        "light_kg": 1007.5,
-        "crew_kg": 480,
-        "loaded_kg": 1487.5
-      },
-      "hydrostatics_loaded": {
-        "waterline_z_m": 0.0,
-        "draft_m": 0.436,
-        "freeboard_amidships_m": 0.596,
-        "volume_m3": 1.4512,
-        "displacement_kg": 1487.5,
-        "lcb_m_from_mid": -0.148,
-        "lcf_m_from_mid": -0.157,
-        "waterplane_m2": 5.567,
-        "midship_area_m2": 0.2694,
-        "lwl_m": 8.01,
-        "block_coeff": 0.2212,
-        "prismatic_coeff": 0.6547
-      },
-      "hydrostatics_light": {
-        "waterline_z_m": -0.089,
-        "draft_m": 0.346,
-        "freeboard_amidships_m": 0.686,
-        "volume_m3": 0.9829,
-        "displacement_kg": 1007.5,
-        "lcb_m_from_mid": -0.144,
-        "lcf_m_from_mid": -0.161,
-        "waterplane_m2": 4.776,
-        "midship_area_m2": 0.1854,
-        "lwl_m": 8.01,
-        "block_coeff": 0.1885,
-        "prismatic_coeff": 0.6444
-      },
-      "davit_attachment_points": {
-        "note": "single pair of davits; hoisted by two slings, as for the cutters",
-        "fore_sling_x_m": 1.85,
-        "aft_sling_x_m": -1.85,
-        "sling_spread_m": 3.7,
-        "hook_height_above_sheer_m": 1.15,
-        "lifting_eyes": "galvanised eyebolts through the keelson at x=+1.85 / x=-1.85, clear of the centreboard trunk",
-        "mast_note": "masts are 5.03 m and 3.96 m; the mainmast must be lowered to hoist under davits with less than 5 m of headroom above the sheer"
-      },
-      "cradle_contact_points": [
-        {
-          "x_m": 1.6,
-          "z_m": -0.43,
-          "half_breadth_m": 0.52
-        },
-        {
-          "x_m": -1.6,
-          "z_m": -0.427,
-          "half_breadth_m": 0.52
-        }
-      ],
-      "boarding": {
-        "boarding_point": "port side at the after thwart, inboard of the mizzen",
-        "boarding_x_m": 0.7,
-        "boarding_height_above_waterline_m": 0.596,
-        "seat_capacity": 27,
-        "rowers": 5,
-        "coxswain_position_x_m": -1.6,
-        "oars_note": "five oars single banked -- three on the port side, two on the starboard side -- as the type was pulled"
-      },
-      "footprint_for_ship": {
-        "length_for_stowage_m": 8.58,
-        "width_for_stowage_m": 2.129,
-        "height_above_sheer_m": 4.4,
-        "height_note": "with the mainmast stepped; 0.45 m with both masts struck and laid in the boat"
+      "export": {
+        "dir": "boats/exports/steam2/",
+        "combined_glb": "steam_cutter_1888.glb",
+        "combined_fbx": "steam_cutter_1888.fbx"
       }
     }
   ]
