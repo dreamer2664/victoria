@@ -128,6 +128,8 @@ def place_camera(t, d, D, lens, right, up, name="TM2_Cam"):
 def keel_points(objs, n=2):
     """Lowest boat point near two stations, for the keel blocks."""
     V = world_verts(objs, step=1)
+    if len(V) == 0:
+        return [], -1.0
     lo, hi = V.min(axis=0), V.max(axis=0)
     L = hi[0] - lo[0]
     pts = []
@@ -157,6 +159,7 @@ def main():
     ap.add_argument("--margin", type=float, default=0.0)
     ap.add_argument("--dir", default="")
     ap.add_argument("--lens", type=float, default=0.0)
+    ap.add_argument("--focus", default="")
     args = ap.parse_args(argv)
 
     s = bpy.context.scene
@@ -210,6 +213,13 @@ def main():
                 if ob and not ob.hide_render:
                     ob.hide_render = True
                     hidden_env.append(ob)
+        if args.focus:
+            # diagnostic close-ups only: fit the camera to a box
+            # "x0,x1,y0,y1,z0,z1" (never used for GEN-1 release frames)
+            b = [float(c) for c in args.focus.split(",")]
+            m = ((Vv[:, 0] >= b[0]) & (Vv[:, 0] <= b[1]) & (Vv[:, 1] >= b[2]) &
+                 (Vv[:, 1] <= b[3]) & (Vv[:, 2] >= b[4]) & (Vv[:, 2] <= b[5]))
+            Vv = Vv[m]
         t, D, right, up = fit_camera(Vv, d, v["lens"], v["margin"], rx / ry)
         place_camera(t, d, D, v["lens"], right, up)
         fname = args.name if (args.name and len(views) == 1) else f"{args.prefix}_{vname}.png"

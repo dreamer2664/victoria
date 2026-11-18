@@ -165,7 +165,8 @@ def main(quick=False):
     objects["Stem_Fairlead"] = BL.stem_fairlead(hull)
 
     # ---- standard gear ---------------------------------------------------------
-    for name, gmb in BL.standard_gear(hull, kind="rowing", zfloor=z_boards):
+    for name, gmb in BL.standard_gear(hull, kind="rowing", zfloor=z_boards,
+                                          z_thwart=0.100, board_fn=zfn):
         objects[name] = gmb
 
     # compass on the after thwart (coxswain's), small binnacle

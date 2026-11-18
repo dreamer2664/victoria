@@ -47,9 +47,9 @@ def main(quick=False):
                    mould_hi=0.028, mat=2)
     fr.mirror_y()
     objects["Frames"] = fr
-    objects["Keelson"] = st.keelson(hull, depth=0.16, sided=0.080, mat=2)
+    objects["Keelson"] = st.keelson(hull, depth=0.16, sided=0.080, mat=2, cap_w=0.11)
     gw = st.gunwale_set(hull, 26, 0.016, cap_w=0.082, cap_h=0.030, mat_cap=1,
-                        mat_inwale=2, mat_rub=10)
+                        mat_inwale=2, mat_rub=10, rub_off=0.008)
     gw.mirror_y()
     gw.append(st.stem_band(hull, mat=3))   # on the centreline: after the mirror
     objects["Gunwale_Inwale_Rub"] = gw
@@ -67,10 +67,14 @@ def main(quick=False):
     x_eq = hull.X(0.50)
     z_floor = hull.keel_z(0.5) + 0.24
     zgr = hull.keel_z(0.5) + 0.135
+    # GEN-1: flooring = bottom boards landed ON the floors fore and aft of
+    # the machinery space (the old foot gratings floated at a fixed height).
+    zfn = BL.floor_top_fn(hull, 0.016)
     fl = MB("Flooring")
-    fl.append(P.foot_grating(x_eq + 0.40, hull.X(0.20), 0.30, zgr + 0.02, mat=21))
-    fl.append(P.foot_grating(hull.X(0.62), hull.X(0.80), 0.30, zgr + 0.03, mat=21))
+    fl.append(BL.bottom_boards(hull, xi0=0.10, xi1=0.30, z_fn=zfn, mat=21))
+    fl.append(BL.bottom_boards(hull, xi0=0.62, xi1=0.86, z_fn=zfn, mat=21))
     objects["Flooring"] = fl
+    board_top = lambda x, y=0.15: zfn(x, y) + 0.008 + 0.016
     gus = MB("Gusset_Plates")
     for xi in np.linspace(0.12, 0.88, 8):
         xs = hull.X(xi)
@@ -193,13 +197,20 @@ def main(quick=False):
     # nav lamps, compass, bell, gear
     objects["Sidelights"] = MC.sidelight_pair(hull)
     objects["Compass"] = P.compass_binnacle((helm_x + 0.02, 0.0, 0.36), mat_brass=3)
-    objects["Ships_Bell"] = MB("Ships_Bell")
+    # bell on a gallows bracket standing on the breasthook, abaft the stem
+    xb = hull.X(0.045)
+    objects["Ships_Bell"] = P.ships_bell((xb, 0.0, hull.sheer_z(0.045) + 0.004),
+                                         facing_y=False)
     gear = []
     gear.append(("Painter", P.painter_coil((hull.loa / 2 - 0.80, 0.24, hull.keel_z(0.06) + 0.10))))
-    gear.append(("Anchor", P.stocked_anchor((-hull.loa / 2 + 0.95, -0.26,
-                                             hull.keel_z(0.92) + 0.02), scale=0.85)))
-    gear.append(("Grapnel", P.grapnel((-hull.loa / 2 + 0.85, 0.28,
-                                       hull.keel_z(0.92) + 0.02), s=0.85)))
+    # GEN-1: anchor + grapnel stowed lying on the after flooring (they used
+    # to stand upright at keel level and broke out through the bottom).
+    xa = hull.X(0.80)
+    gear.append(("Anchor", P.stocked_anchor((xa, -0.02, board_top(xa, 0.10) + 0.002),
+                                            scale=0.62, lie=True)))
+    xg = hull.X(0.70)
+    gear.append(("Grapnel", P.grapnel((xg, 0.20, board_top(xg, 0.20) + 0.002),
+                                      s=0.80, lie=True)))
     fends = MB("Fenders")
     for xf in (2.7, 0.6, -1.6):
         for sgn in (-1, 1):

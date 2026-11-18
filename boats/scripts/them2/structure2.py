@@ -408,12 +408,31 @@ def frames(hull, n_planks, thk, spacing=0.16, siding=0.022, mould_lo=0.040,
         m_t = lambda t: (mould_lo + (mould_hi - mould_lo) * t
                          + (floor_extra * (1 - min(1.0, t / 0.25)) if is_floor else 0.0))
         n_pts = 30
-        ts = np.linspace(t_lo, t_hi, n_pts)
+        # GEN-1: in the narrow forefoot / heel the timber's heel ran out
+        # through the garboards beside the stem; start each timber where the
+        # inside of the planking is clear of the hog (|y| >= 0.06 m).
+        t0 = t_lo
+        while t0 < 0.5 and abs(hull.section_pt(xi, t0, inside_off)[1]) < 0.06:
+            t0 += 0.01
+        ts = np.linspace(t0, t_hi, n_pts)
         # path: on inside face of planking (with the clinker steps averaged out)
         pts = []
         depth = hull.depth(xi)
+        dxi = 0.004
         for t in ts:
             p = hull.section_pt(xi, t, inside_off)
+            # GEN-1: bevel allowance.  Toward the fine ends the planking runs
+            # obliquely across the frame, so a timber laid on the surface at
+            # its centre plane stood out through the planking at its fore or
+            # after face.  Step it in by (siding/2) x the surface's normal
+            # run-off per metre of length.
+            nrm = unit(np.asarray(hull.section_normal(xi, t), float))
+            pa = hull.section_pt(max(0.0, xi - dxi), t, inside_off)
+            pb = hull.section_pt(min(1.0, xi + dxi), t, inside_off)
+            dx = abs(pb[0] - pa[0])
+            if dx > 1e-9:
+                run = abs(float(np.dot(np.asarray(pb) - np.asarray(pa), nrm))) / dx
+                p = np.asarray(p, float) - nrm * (siding / 2 * run + 0.001)
             pts.append(p)
         # rectangle cross-section: siding along X, moulding along inward normal
         shapes = []

@@ -69,12 +69,20 @@ def thwart_layout(hull, stations_x, z_top=0.145, thk=0.028, width=0.24,
             # thwart's underside, so the thwart end rests on it
             rh, rt = 0.050, 0.018
             xa, xb = xs - 0.30, xs + 0.30
-            for (x0, x1) in ((xa, xs - 0.002), (xs + 0.002, xb)):
+            # GEN-1: the riser follows the frame faces in 0.10 m lengths --
+            # as two straight 0.3 m boxes its forward end stood out through
+            # the planking where the bow narrows.
+            segs = np.linspace(xa, xb, 7)
+            for (x0, x1) in zip(segs[:-1], segs[1:]):
                 xm = (x0 + x1) / 2
-                xim = clamp((hull.loa / 2 - xm) / hull.loa, 0.0, 1.0)
-                yf = _inner_y(hull, xim, zb - rh / 2, frame_face)
+                ys = []
+                for xx in (x0, x1):
+                    xim = clamp((hull.loa / 2 - xx) / hull.loa, 0.0, 1.0)
+                    ys.append(min(_inner_y(hull, xim, zb - rh, frame_face),
+                                  _inner_y(hull, xim, zb, frame_face)))
+                yf = min(ys)
                 risers.add_box((xm, sgn * (yf - rt / 2 + 0.002), zb - rh / 2),
-                               (x1 - x0, rt, rh), mat=mat_knee, chamfer=0.003)
+                               (x1 - x0 + 0.002, rt, rh), mat=mat_knee, chamfer=0.003)
             # hanging knee in the athwartships plane at the thwart's centre:
             # arm under the thwart, throat, leg down the inside of the planking
             leg = 0.26
@@ -154,9 +162,20 @@ def build_oar_set(hull, pivots, length=3.66, inboard_frac=0.34, stow_z=None,
         sx = piv["x"] + 0.50 - inb
         sx = max(sx, (-loa / 2 + 0.25) + (length - inb))   # keep blade tip fwd of stern
         sx = min(sx, (loa / 2 - 0.20) - inb)               # keep handle tip aft of bow
-        stow = np.array([sx + dx,
-                         sgn * min(abs(piv["y"]) - 0.42, 0.25 + 0.05 * slot),
-                         rest_z])
+        sy = min(abs(piv["y"]) - 0.42, 0.25 + 0.05 * slot)
+        # GEN-1: the aftmost oars' blades ran out through the quarters where
+        # the boat narrows.  Slide each stowed oar fore-and-aft (and if need
+        # be closer to the centreline) until blade tip AND handle are aboard
+        # with the blade's half-width as clearance.
+        for _try in range(8):
+            p0 = np.array([sx + dx - (length - inb), sgn * sy, rest_z])
+            p1 = np.array([sx + dx + inb, sgn * sy, rest_z])
+            q0, q1 = _fit_inside(hull, p0.copy(), p1.copy(), 0.085)
+            if abs((q1[0] - q0[0]) - length) < 1e-6:
+                sx = q1[0] - inb - dx
+                break
+            sy = max(0.06, sy - 0.05)
+        stow = np.array([sx + dx, sgn * sy, rest_z])
         merged = MB("Oar")
         merged.append(oar, offset=stow, rot=R)
         merged.append(gear, offset=stow, rot=R)
@@ -164,6 +183,45 @@ def build_oar_set(hull, pivots, length=3.66, inboard_frac=0.34, stow_z=None,
         oars.append({"mb": merged, "pivot": pivot_world, "side": sgn,
                      "station_x": piv["x"]})
     return oars
+
+
+def _x_limits_inside(hull, y, z, clear=0.03):
+    """Fore and aft x between which the point (x, y, z) is inside the
+    planking (inner face) with `clear` clearance -- used to keep long stowed
+    gear inside the fine ends (GEN-1)."""
+    def inside(xi):
+        # half-breadth of the inner planking surface at height z
+        lo, hi = 0.0, 1.0
+        if hull.section_pt(xi, 1.0, -0.02)[2] < z:
+            return False
+        if hull.section_pt(xi, 0.0, -0.02)[2] > z:
+            return False
+        for _ in range(20):
+            md = 0.5 * (lo + hi)
+            if hull.section_pt(xi, md, -0.02)[2] < z:
+                lo = md
+            else:
+                hi = md
+        return abs(hull.section_pt(xi, 0.5 * (lo + hi), -0.02)[1]) >= abs(y) + clear
+    xs = np.linspace(0.0, 1.0, 121)
+    ok = [xi for xi in xs if inside(xi)]
+    return hull.X(max(ok)), hull.X(min(ok))      # (aft x, fwd x)
+
+
+def _fit_inside(hull, p0, p1, r):
+    """Slide a straight spar p0->p1 (along +X) fore/aft so both ends are
+    inside the boat; shorten only if it cannot fit."""
+    xa0, xf0 = _x_limits_inside(hull, p0[1], p0[2], clear=r + 0.02)
+    xa1, xf1 = _x_limits_inside(hull, p1[1], p1[2], clear=r + 0.02)
+    xa, xf = max(xa0, xa1), min(xf0, xf1)
+    L = p1[0] - p0[0]
+    if L > xf - xa:
+        p0[0], p1[0] = xa, xf
+    elif p1[0] > xf:
+        p1[0] = xf; p0[0] = xf - L
+    elif p0[0] < xa:
+        p0[0] = xa; p1[0] = xa + L
+    return p0, p1
 
 
 def rigging_stowed(hull, specs, mat_spar=24, mat_canvas=8, mat_rope=7):
@@ -175,7 +233,7 @@ def rigging_stowed(hull, specs, mat_spar=24, mat_canvas=8, mat_rope=7):
     """
     out = []
     loa = hull.loa
-    zl = 0.24
+    zl = specs.get("z", 0.24)
     # --- masts (tapered poles, leathered at the partners) -------------------
     for (lbl, xl, ll, rr) in specs.get("masts", []):
         mb = MB("Mast_" + lbl)
@@ -184,6 +242,8 @@ def rigging_stowed(hull, specs, mat_spar=24, mat_canvas=8, mat_rope=7):
         if xl - ll * 0.45 < -loa / 2 + 0.2:
             p0[0] = -loa / 2 + 0.2
             p1[0] = p0[0] + ll
+        # GEN-1: the rowing cutter's foremast ran 0.1 m out through the stem
+        p0, p1 = _fit_inside(hull, p0, p1, rr)
         mb.add_tube([p0, p1], rr, segments=12, mat=mat_spar,
                     radii=[rr * (1.0 - 0.45 * i / 11) for i in range(12)])
         # leather bands
@@ -198,6 +258,7 @@ def rigging_stowed(hull, specs, mat_spar=24, mat_canvas=8, mat_rope=7):
         x_mid = specs.get("yard_x", 0.0) + (0.10 if "fore" in lbl else 0.0)
         p0 = np.array([x_mid - yl / 2, 0.02 if "main" in lbl else -0.10, zl + 0.07])
         p1 = np.array([x_mid + yl / 2, 0.02 if "main" in lbl else -0.10, zl + 0.07])
+        p0, p1 = _fit_inside(hull, p0, p1, 0.07)
         mb.add_tube([p0, p1], rr, segments=10, mat=mat_spar,
                     radii=[rr * (1.0 - 0.4 * i / 11) for i in range(12)])
         # furled sail: canvas sausage hugging the yard with slight sags
@@ -243,7 +304,8 @@ def lifting_eyes(hull, xs_list, z, mat=5):
     return mb
 
 
-def standard_gear(hull, kind="rowing", zfloor=None):
+def standard_gear(hull, kind="rowing", zfloor=None, z_thwart=None, hook_x=0.6,
+                  board_fn=None):
     """
     The boat's loose gear, per the HMS Bombay model outfit list:
     painter, anchors/grapnel, fenders, boat hooks, baler, bucket, breaker.
@@ -273,16 +335,24 @@ def standard_gear(hull, kind="rowing", zfloor=None):
             f = P.fender((xf, sgn * (abs(p[1]) + 0.06), p[2] + 0.02))
             fends.append(f)
     gear.append(("Fenders", fends))
-    # boat hooks laid along the side benches
+    # boat hooks.  GEN-1: they were 0.62*LOA (4.9 m) long and laid at
+    # y=+-0.42 just above the bottom boards, so both ends ran out through
+    # the planking at the fine bow and stern.  Now 10 ft (3.05 m) service
+    # hooks, stowed fore-and-aft ON the thwarts outboard of the oars.
     bh = MB("BoatHooks")
+    zt = z_thwart if z_thwart is not None else zfloor + 0.30
     for i, sgn in enumerate((-1, 1)):
-        b = P.boat_hook((0.2, sgn * 0.42, zfloor + 0.06 + 0.03 * i), length=loa * 0.62,
-                        along=X)
+        b = P.boat_hook((hook_x, sgn * 0.50, zt + 0.0145), length=3.05, along=X)
         bh.append(b)
     gear.append(("BoatHooks", bh))
     gear.append(("Baler", P.baler((-loa / 4, 0.28, zfloor + 0.09))))
     gear.append(("Bucket", P.bucket((-loa / 4 + 0.3, -0.22, zfloor))))
     gear.append(("Breaker", P.breaker((0.45, 0.0, zfloor + 0.14), r=0.115, l=0.38)))
+    if board_fn is not None:
+        rf = rest_fn(hull, board_fn)
+        for name, gmb in gear:
+            if name in ("Painter", "Grapnel", "Anchor", "Baler", "Bucket", "Breaker"):
+                settle(gmb, rf)
     return gear
 
 
@@ -318,11 +388,17 @@ def side_bench_pair(hull, at_stern=True, z=0.30, width=0.30, thk=0.025,
             xi = clamp((hull.loa / 2 - xs) / hull.loa, 0.0, 1.0)
             dep = hull.depth(xi)
             t = clamp((z - hull.keel_z(xi)) / dep, 0.1, 0.9)
-            pin = hull.section_pt(xi, t, -0.055)
-            yin = abs(pin[1])
-            out = [(side * yin, 0.0), (side * (yin - width * 0.8), 0.0),
-                   (side * (yin - width * 0.8), -0.05), (side * (yin - 0.1), -0.12),
-                   (side * (yin - 0.06), -0.20), (side * yin, -0.16)]
+            # GEN-1: the knee's outboard edge follows the planking down (it
+            # was vertical, so on a flared hull it stood out through the side)
+            yz = lambda dz: min(_inner_y(hull, clamp(xi + dd, 0.0, 1.0), z - thk + dz, -0.060)
+                                for dd in (-0.0025, 0.0, 0.0025))
+            y0, y10, y20 = yz(0.0), yz(-0.10), yz(-0.20)
+            out = [(side * y0, 0.0), (side * (y0 - width * 0.8), 0.0),
+                   (side * (y0 - width * 0.8), -0.05), (side * (y10 - 0.10), -0.12),
+                   (side * (y20 - 0.04), -0.20), (side * y20, -0.20),
+                   (side * y10, -0.10)]
+            if side < 0:
+                out = out[::-1]
             supports.add_plate(out, 0.024, origin=(xs - 0.012, 0, z - thk),
                                mat=mat, basis=(Y, Z, X))
     return mb, supports
@@ -330,7 +406,7 @@ def side_bench_pair(hull, at_stern=True, z=0.30, width=0.30, thk=0.025,
 
 def bottom_boards(hull, xi0=0.15, xi1=0.85, z_off=0.155, board_w=0.078,
                   gap=0.008, rise=0.20, mat=1, y0=0.058, n_boards=5,
-                  z_fn=None):
+                  z_fn=None, max_climb=0.11, max_lift=0.32, z_ref=None):
     """Loose-laid bottom boards port + starboard of the keelson, following
     the deadrise, in lift-out lengths (service pattern).
 
@@ -350,6 +426,35 @@ def bottom_boards(hull, xi0=0.15, xi1=0.85, z_off=0.155, board_w=0.078,
             shrink = 1.0 - 0.07 * k
             xa = loa / 2 - (0.5 + (xi1 - 0.5) * shrink) * loa
             xb = loa / 2 - (0.5 + (xi0 - 0.5) * shrink) * loa
+            if z_fn is not None:
+                # GEN-1: trim each board where the bottom turns up into the
+                # bilge / fine ends -- untrimmed, the outboard boards of the
+                # whaler climbed the planking to the waterline at their ends.
+                def _ok(xx):
+                    return (z_fn(xx, abs(y)) - z_fn(xx, y0) <= max_climb and
+                            z_fn(xx, abs(y)) <= z_ref + max_lift)
+                if z_ref is None:
+                    z_ref = z_fn(0.0, y0)
+                xm = 0.5 * (xa + xb)
+                if not _ok(xm):
+                    continue
+                for end in ("a", "b"):
+                    xe = xa if end == "a" else xb
+                    lo_, hi_ = xm, xe          # lo_ ok, find limit toward hi_
+                    if not _ok(xe):
+                        for _ in range(30):
+                            md = 0.5 * (lo_ + hi_)
+                            if _ok(md):
+                                lo_ = md
+                            else:
+                                hi_ = md
+                        xe = lo_
+                    if end == "a":
+                        xa = xe
+                    else:
+                        xb = xe
+                if abs(xb - xa) < 0.40:
+                    continue
             cuts = [0.0] + list(butts[k % len(butts)]) + [1.0]
             for c0, c1 in zip(cuts[:-1], cuts[1:]):
                 f0 = c0 + (0.003 if c0 > 0 else 0.0)
@@ -455,3 +560,31 @@ def floor_top_fn(hull, thk, floor_depth=0.075):
     """z_fn for bottom_boards: top of the floors (timber + floor moulding)."""
     off = -thk - floor_depth
     return lambda x, y: z_on_surface(hull, x, max(y, 0.0), off)
+
+
+def rest_fn(hull, board_fn=None, board_ymax=0.49, thk=0.016):
+    """Height a loose object can rest at, at (x, |y|): on the bottom boards
+    where they are laid, never below the inner face of the planking."""
+    def f(x, y):
+        y = abs(y)
+        z = z_on_surface(hull, x, max(y, 0.0), -thk - 0.002)
+        if board_fn is not None and y <= board_ymax:
+            z = max(z, board_fn(x, y) + 0.024)
+        return z
+    return f
+
+
+def settle(mb, zfun, clear=0.002, n_probe=160):
+    """GEN-1: land a loose item ON whatever it rests on.  Gear used to be
+    placed at a single fixed 'zfloor' height, so anything off the centreline
+    (baler, bucket, grapnel flukes, painter coil) went down through the
+    deadrise of the bottom boards and out through the planking.
+    Moves the whole mesh vertically so its lowest probe vertices just touch."""
+    if not mb.verts:
+        return mb
+    V = np.array(mb.verts)
+    order = np.argsort(V[:, 2])
+    probe = V[order[:n_probe]]
+    dz = max(zfun(float(p[0]), float(p[1])) - float(p[2]) for p in probe) + clear
+    mb.verts = [(float(a), float(b), float(c) + dz) for a, b, c in V]
+    return mb

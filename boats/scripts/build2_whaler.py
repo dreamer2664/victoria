@@ -33,7 +33,8 @@ def main(quick=False):
     meta = {"id": "whaler_27ft", "loaded": loaded, "light": light,
             "weights": S.WHALER_WEIGHTS, "pivots": {}}
 
-    plan = st.clinker_strakes(hull, 9, 0.016, nx=48, npb=10, mat=25, mat_top=22)
+    plan = st.clinker_strakes(hull, 9, 0.016, nx=48, npb=10, mat=25, mat_top=22,
+                              mat_inner=21)   # bright timber inside
     plan.mirror_y()
     objects["Planking_Clinker"] = plan
     keel = st.keel_assembly(hull, sided=0.048, depth=0.105, mat=2)
@@ -46,16 +47,18 @@ def main(quick=False):
                    mould_hi=0.024, mat=2)
     fr.mirror_y()
     objects["Frames"] = fr
-    objects["Keelson"] = st.keelson(hull, depth=0.13, sided=0.070, mat=2)
+    objects["Keelson"] = st.keelson(hull, depth=0.13, sided=0.070, mat=2, cap_w=0.10)
     gw = st.gunwale_set(hull, 9, 0.016, cap_w=0.078, cap_h=0.028, mat_cap=1,
-                        mat_inwale=2, mat_rub=10)
+                        mat_inwale=2, mat_rub=10, rub_off=0.008)
     gw.mirror_y()
     objects["Gunwale_Set"] = gw
     objects["Breasthooks"] = st.breasthook(hull, length=0.55, thk=0.036)  # fwd hook
 
-    # centreboard + case (lowered plate shown, per davit spec)
+    # centreboard + case.  GEN-1: shown HOUSED (raised) -- the boat is
+    # modelled in its stowed / at-the-davits state, and a lowered plate
+    # stood through the keel blocks.  It pivots (meta) to lower in-game.
     z_k = hull.keel_z(0.48)
-    cb = P.centreboard((hull.X(0.48), 0, z_k + 0.02), lowered=True, mat=4)
+    cb = P.centreboard((hull.X(0.48), 0, z_k + 0.02), lowered=False, mat=4)
     objects["Centreboard"] = cb
     case = P.centreboard_case(hull, xi=0.48, length=1.55, mat=1)
     objects["Centreboard_Case"] = case
@@ -80,12 +83,11 @@ def main(quick=False):
     objects["Bow_Sheets"] = bb
     objects["Bow_Bench_Knees"] = bk
 
-    zfloor = hull.keel_z(0.5) + 0.135
-    gr = P.foot_grating(-1.55, -0.30, 0.24, zfloor + 0.02, mat=1)
-    gr.append(P.foot_grating(0.10, 1.35, 0.24, zfloor + 0.03, mat=1))
-    objects["Floor_Gratings"] = gr
-    # loose-laid bottom boards over the floors
-    objects["Bottom_Boards"] = BL.bottom_boards(hull)
+    # loose-laid bottom boards landed ON the floors.  GEN-1: the separate
+    # foot gratings were removed (two floors interpenetrating).
+    zfn = BL.floor_top_fn(hull, 0.016)
+    objects["Bottom_Boards"] = BL.bottom_boards(hull, z_fn=zfn)
+    zfloor = zfn(0.0, 0.10) + 0.008 + 0.016        # board top near the centreline
 
     # rowlocks + oars: FIVE oars single-banked, alternating sides (stations 1..5
     # P,S,P,S,P with stroke handled on #1).  17 ft service oars.
@@ -130,7 +132,7 @@ def main(quick=False):
     objects["Rig_Stowed"] = rigm
 
     objects["Mast_Fit"] = BL.mast_step_clamp(hull, x_step=0.42,
-                                             z_kelson=hull.keel_z(0.5) + 0.11,
+                                             z_kelson=hull.keel_z(0.5) + 0.18,   # keelson top (GEN-1)
                                              thwart_x=stations_thw[0])
     objects["Lifting_Eyes"] = BL.lifting_eyes(hull, [1.85, -1.72],
                                               z=hull.keel_z(0.5) + 0.26)
@@ -175,11 +177,13 @@ def main(quick=False):
     objects["Painter_Aft"] = P.painter_coil((-hull.loa / 2 + 0.75, 0.18, zfloor + 0.10))
 
     gear = []
-    gear.append(("Grapnel", P.grapnel((-hull.loa / 2 + 1.15, -0.30, zfloor + 0.02), s=0.95)))
+    gear.append(("Grapnel", P.grapnel((-1.75, -0.16, zfloor + 0.004), lie=True, s=0.95)))
     bh = MB("BoatHooks")
     for i, sgn in enumerate((-1, 1)):
-        bh.append(P.boat_hook((0.15, sgn * 0.42, zfloor + 0.05 + 0.03 * i),
-                              length=hull.loa * 0.60, along=(1, 0, 0)))
+        # GEN-1: 10 ft hooks ON the thwarts (the 4.9 m ones on the boards
+        # ran out through the fine ends)
+        bh.append(P.boat_hook((0.70, sgn * 0.50, 0.135 + 0.0145),
+                              length=3.05, along=(1, 0, 0)))
     gear.append(("BoatHooks", bh))
     gear.append(("Baler", P.baler((-1.4, 0.26, zfloor + 0.09))))
     gear.append(("Bucket", P.bucket((-1.15, -0.20, zfloor))))

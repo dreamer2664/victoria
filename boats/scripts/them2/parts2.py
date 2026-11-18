@@ -370,9 +370,12 @@ def painter_coil(center, R=0.13, r_rope=0.011, mat=7):
     return mb
 
 
-def stocked_anchor(center, scale=1.0, mat_iron=4, mat_wood=0):
+def stocked_anchor(center, scale=1.0, mat_iron=4, mat_wood=0, lie=False):
     """Kedge anchor, Admiralty pattern: shank, arms with palms, wooden stock,
-    ring + shackle.  Built upright, centre at the crown."""
+    ring + shackle.  Built upright, centre at the crown.
+    lie=True (GEN-1): stowed as in a boat -- stock unshipped and lashed along
+    the shank, anchor laid flat on the bottom boards, shank fore-and-aft with
+    the crown aft; `center` is then the crown position ON the boards."""
     mb = MB("Anchor")
     cx, cy, cz = center
     s = scale
@@ -396,13 +399,59 @@ def stocked_anchor(center, scale=1.0, mat_iron=4, mat_wood=0):
                      mat=mat_iron, basis=(X, Z, -Y))
     # stock (wood, two cheeks) near the top
     z_st = cz + shank_l * 0.86
-    mb.add_box((cx + 0.001, cy, z_st), (0.028 * s, 0.85 * s, 0.05 * s), mat=mat_wood,
-               chamfer=0.004, rot=rot_x(0.0))
+    if lie:
+        # stock lashed alongside the shank
+        mb.add_box((cx, cy + 0.045 * s, cz + shank_l * 0.52), (0.05 * s, 0.03 * s, 0.85 * s),
+                   mat=mat_wood, chamfer=0.004)
+    else:
+        mb.add_box((cx + 0.001, cy, z_st), (0.028 * s, 0.85 * s, 0.05 * s), mat=mat_wood,
+                   chamfer=0.004, rot=rot_x(0.0))
     # ring + shackle
     torus(mb, (cx, cy, cz + shank_l + 0.035 * s), 0.035 * s, 0.008 * s, seg=14,
           rseg=6, axis="Y", mat=mat_iron)
     cyl(mb, (cx, cy, cz + shank_l - 0.02 * s), (cx, cy, cz + shank_l + 0.02 * s),
         0.024 * s, seg=10, mat=mat_iron)
+    if lie:
+        c = np.array([cx, cy, cz])
+        V = np.array(mb.verts) - c
+        # local Z (shank) -> +X (ring forward), local X (arms) -> Y, Y -> -Z
+        V = np.stack([V[:, 2], V[:, 0], -V[:, 1]], axis=1)
+        V[:, 2] -= V[:, 2].min()
+        mb.verts = [tuple(v) for v in (V + c)]
+    return mb
+
+
+def ships_bell(center, r=0.075, mat_brass=3, mat_iron=4, facing_y=False):
+    """Small boat's bell (GEN-1: the Ships_Bell part used to be EMPTY).
+    Lathe-turned brass bell hung by its crown from an iron gallows bracket
+    whose foot stands at `center`."""
+    mb = MB("Ships_Bell")
+    cx, cy, cz = center
+    h = r * 1.25
+    zb = cz + 0.24                       # bell mouth height
+    prof = [(r * 1.00, 0.0), (r * 0.98, h * 0.06), (r * 0.80, h * 0.22),
+            (r * 0.66, h * 0.45), (r * 0.60, h * 0.72), (r * 0.56, h * 0.90),
+            (r * 0.40, h * 1.0), (0.0, h * 1.04)]
+    inner = [(r * 0.90, h * 0.02), (r * 0.70, h * 0.22), (r * 0.52, h * 0.70),
+             (0.0, h * 0.92)]
+    mb.add_lathe(prof, segments=24, axis="Z", center=(cx, cy, zb), mat=mat_brass)
+    mb.add_lathe(inner[::-1] + [(r * 0.99, 0.0)][:0], segments=24, axis="Z",
+                 center=(cx, cy, zb), mat=mat_brass)
+    # lip bead
+    torus(mb, (cx, cy, zb + 0.004), r * 1.0, 0.006, seg=24, rseg=6, axis="Z",
+          mat=mat_brass)
+    # clapper
+    cyl(mb, (cx, cy, zb + h * 0.9), (cx, cy, zb + 0.02), 0.004, seg=6, mat=mat_iron)
+    sphere(mb, (cx, cy, zb + 0.02), 0.014, seg=10, rings=6, mat=mat_iron)
+    # crown + gallows: post, arm, hanger
+    top = zb + h * 1.04
+    cyl(mb, (cx, cy, top), (cx, cy, top + 0.03), 0.010, seg=8, mat=mat_brass)
+    off = (0.0, 0.11) if facing_y else (0.11, 0.0)
+    px, py = cx + off[0], cy + off[1]
+    cyl(mb, (px, py, cz), (px, py, top + 0.05), 0.012, seg=8, mat=mat_iron)
+    cyl(mb, (px, py, top + 0.045), (cx, cy, top + 0.045), 0.010, seg=8, mat=mat_iron)
+    cyl(mb, (cx, cy, top + 0.03), (cx, cy, top + 0.05), 0.008, seg=8, mat=mat_iron)
+    cyl(mb, (px, py, cz), (px, py, cz + 0.012), 0.035, seg=12, mat=mat_iron)
     return mb
 
 
