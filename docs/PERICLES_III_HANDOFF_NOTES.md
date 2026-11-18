@@ -33,4 +33,4 @@ The supplied handoff is useful direction, but it does not exactly describe the c
 
 ## Credential handling
 
-A personal access token was included in the conversation. It was **not** copied to files, shell history, or workspace. Treat it as exposed and revoke/rotate it in GitHub. Public read access was sufficient for branch review; publishing changes requires a fresh token via a proper secret manager or an enabled GitHub integration, not a checked-in or workspace plaintext file.
+No credential is committed to or stored inside this repository. Use a secure, least-privilege credential mechanism for any future GitHub operations.
