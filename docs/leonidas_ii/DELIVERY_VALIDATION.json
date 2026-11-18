@@ -279,39 +279,20 @@
     },
     {
       "check": "Complete current-source evidence set",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "detail": {
-        "missing": [
-          "Exterior_Bow_Port",
-          "Exterior_Broadside_Port",
-          "Exterior_Overhead",
-          "Exterior_Stern_Starboard",
-          "Interior_Bakery",
-          "Interior_Bar",
-          "Interior_Barber",
-          "Interior_Bath",
-          "Interior_Cabin_First",
-          "Interior_Cabin_Second",
-          "Interior_Captain",
-          "Interior_Cargo",
-          "Interior_Cold_Store",
-          "Interior_Crew",
-          "Interior_Dining_First",
-          "Interior_Dining_Second",
-          "Interior_Grand_Stair",
-          "Interior_Hospital",
-          "Interior_Lavatory",
-          "Interior_Library",
-          "Interior_Mail",
-          "Interior_Music",
-          "Interior_Officer",
-          "Interior_Pantry",
-          "Interior_Purser",
-          "Interior_Second_Lounge",
-          "Interior_Smoking",
-          "Interior_Third_Class",
-          "Interior_Writing"
-        ],
+        "expected": 254,
+        "major": 51,
+        "rooms": 203,
+        "missing": [],
+        "invalid": []
+      }
+    },
+    {
+      "check": "Supplementary crew-mess correction evidence",
+      "status": "PASS",
+      "detail": {
+        "expected": 2,
         "invalid": []
       }
     },
@@ -322,43 +303,24 @@
     },
     {
       "check": "Manual review coverage and exact image hashes",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "detail": {
-        "reviewed_major": 22,
+        "reviewed_major": 51,
         "reviewed_surveys": 203,
-        "missing": [
-          "Exterior_Bow_Port",
-          "Exterior_Broadside_Port",
-          "Exterior_Overhead",
-          "Exterior_Stern_Starboard",
-          "Interior_Bakery",
-          "Interior_Bar",
-          "Interior_Barber",
-          "Interior_Bath",
-          "Interior_Cabin_First",
-          "Interior_Cabin_Second",
-          "Interior_Captain",
-          "Interior_Cargo",
-          "Interior_Cold_Store",
-          "Interior_Crew",
-          "Interior_Dining_First",
-          "Interior_Dining_Second",
-          "Interior_Grand_Stair",
-          "Interior_Hospital",
-          "Interior_Lavatory",
-          "Interior_Library",
-          "Interior_Mail",
-          "Interior_Music",
-          "Interior_Officer",
-          "Interior_Pantry",
-          "Interior_Purser",
-          "Interior_Second_Lounge",
-          "Interior_Smoking",
-          "Interior_Third_Class",
-          "Interior_Writing"
-        ],
+        "missing": [],
         "stale": [],
-        "recorded_status": "IN_PROGRESS"
+        "recorded_status": "VIEWS_REVIEWED_WITH_LIMITATIONS"
+      }
+    },
+    {
+      "check": "Supplementary correction views manually reviewed",
+      "status": "PASS",
+      "detail": {
+        "reviewed": [
+          "Supplement_Crew_Mess_Port",
+          "Supplement_Crew_Mess_Starboard"
+        ],
+        "invalid": []
       }
     },
     {
@@ -367,25 +329,9 @@
       "detail": ""
     },
     {
-      "check": "Visual acceptance / open exceptions",
-      "status": "UNVERIFIED",
-      "detail": [
-        {
-          "id": "CAMERA_CREW",
-          "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
-          "detail": "Eye-level crew camera was inside a bunk; free-standing-vantage selection added and low-resolution probe opened successfully."
-        },
-        {
-          "id": "COOKING_RANGE",
-          "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
-          "detail": "Galley/bakery range doors faced the close bulkhead. Ranges rotated to face the working aisles; dedicated front views and explicit reachability gate added."
-        },
-        {
-          "id": "CREW_MESS",
-          "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
-          "detail": "Narrow crew mess/berth rooms lacked a mess table. A two-seat alcove added in each existing berth-free entrance bay, opposite the door and clear of the centre aisle. Berth counts unchanged."
-        }
-      ]
+      "check": "No unresolved visual blockers; reviewed statuses recorded",
+      "status": "PASS",
+      "detail": "VIEWS_REVIEWED_WITH_LIMITATIONS"
     },
     {
       "check": "Own-change scope; no other agents assets / projects tree",
@@ -399,7 +345,7 @@
     }
   ],
   "summary": {
-    "PASS": 42,
-    "UNVERIFIED": 4
+    "PASS": 47,
+    "UNVERIFIED": 1
   }
 }

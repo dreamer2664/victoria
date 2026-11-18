@@ -1,8 +1,8 @@
 {
   "schema": "victoria.leonidas-ii.manual-visual-review/1.0",
   "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
-  "status": "IN_PROGRESS",
-  "method": "Actual files opened through image viewer. Major images opened individually; room surveys inspected on native-grid six-room sheets preserving each 640x480 room frame without resizing. Exact final source-image and sheet hashes recorded separately. File presence, thumbnails, metrics and gallery creation are not counted as review.",
+  "status": "VIEWS_REVIEWED_WITH_LIMITATIONS",
+  "method": "Actual files opened through image viewer. Major images opened individually; room surveys inspected on native-grid six-room sheets preserving each 640x480 room frame without resizing. Exact final source-image and sheet hashes recorded separately. File presence, thumbnails, metrics and gallery creation are not counted as review. Supplementary wall/roof-removed crew-mess details individually opened at final full resolution and registered separately; they do not replace any planned main image or survey.",
   "expected_major_images": 51,
   "expected_room_surveys": 203,
   "room_surveys": [
@@ -2639,7 +2639,10 @@
       "review_basis": "Opened this native 640x480 panel on a six-room conventional JPEG sheet preserving image dimensions; exact final source-image and sheet hashes recorded.",
       "native_page": 9,
       "native_page_sha256": "e46e9686bc5b15d598004b0d13eeb36b540034da069a2b7745092b88bf5efaf1",
-      "notes": "Long narrow lower crew room shows berth banks, continuous central strip and small contrasting entrance mess-table bay. This overview is insufficient to inspect the two bench seats or live approach; dedicated mess-alcove evidence remains separately required before closing that blocker."
+      "notes": "Long narrow lower crew room shows berth banks, continuous central strip and small contrasting entrance mess-table bay. This overview alone cannot inspect the bench. The separate final oblique crew-mess correction view for this same room has now been individually opened; its exact final hash is linked below. Roof/wall-removed details are not live seating or access acceptance.",
+      "supplementary_evidence": [
+        "Supplement_Crew_Mess_Port"
+      ]
     },
     {
       "file": "renders/leonidas_ii/rooms/Room_O_CrewS.jpg",
@@ -2656,7 +2659,10 @@
       "review_basis": "Opened this native 640x480 panel on a six-room conventional JPEG sheet preserving image dimensions; exact final source-image and sheet hashes recorded.",
       "native_page": 9,
       "native_page_sha256": "e46e9686bc5b15d598004b0d13eeb36b540034da069a2b7745092b88bf5efaf1",
-      "notes": "Long narrow lower crew room shows berth banks, continuous central strip and small contrasting entrance mess-table bay. This overview is insufficient to inspect the two bench seats or live approach; dedicated mess-alcove evidence remains separately required before closing that blocker."
+      "notes": "Long narrow lower crew room shows berth banks, continuous central strip and small contrasting entrance mess-table bay. This overview alone cannot inspect the bench. The separate final oblique crew-mess correction view for this same room has now been individually opened; its exact final hash is linked below. Roof/wall-removed details are not live seating or access acceptance.",
+      "supplementary_evidence": [
+        "Supplement_Crew_Mess_Starboard"
+      ]
     },
     {
       "file": "renders/leonidas_ii/rooms/Room_O_Hold.jpg",
@@ -2877,7 +2883,8 @@
       "review_basis": "Opened native 640x480 panel on an unscaled six-room conventional JPEG sheet; exact final source-image/sheet hashes recorded.",
       "native_page": 4,
       "native_page_sha256": "9513e21a49218fb0acfc01b5f9bb6c1fb472e291c0d4b1c8ff14803f6c1ee3c0",
-      "notes": "Long narrow bar/drinks-store survey shows finished floor and light-edged counter/partition perimeter; stock, taps and serving face are not legible from this roof-off view. Dedicated bar eye-level view remains separately required; do not infer detailed bar acceptance from this survey."
+      "notes": "Long narrow bar/drinks-store roof-off survey shows finished floor and light-edged counter/partition perimeter; stock, taps and serving face are not legible from this survey. The subsequently opened dedicated Interior_Bar view supplies visible bottle/goblet/counter evidence separately. Do not infer hidden contacts or live serving/access from either view.",
+      "supplementary_major_image": "Interior_Bar"
     },
     {
       "file": "renders/leonidas_ii/rooms/Room_P_Barber.jpg",
@@ -3484,7 +3491,7 @@
     "Visual inspection covers the views shown, not all hidden surfaces, self-intersections or universal material fidelity.",
     "No Roblox Studio, avatar, multiplayer, device FPS or cross-agent acceptance."
   ],
-  "updated_utc": "2026-11-17T11:43:11.227209+00:00",
+  "updated_utc": "2026-11-18T11:30:48.576324+00:00",
   "previous_camera_revision_opened_major_images": [
     {
       "image": "Interior_Dining_First",
@@ -3937,25 +3944,448 @@
       "status": "REVIEWED_WITH_LIMITATIONS",
       "review_basis": "Opened full-resolution final processed image via image viewer.",
       "notes": "Opened full-resolution processed JPG. Three firing/oven fronts now visibly face the broad work aisle, not the close bulkhead. Modeled firebrick range/base, separate pots/handles, shelf and hood/common flue visible with tiled floor and room enclosure retained. Foreground lamp and cropped preparation bench limit whole-room coverage; roof-off survey and static firing-position gate remain separate."
-    }
-  ],
-  "blocking_issues": [
-    {
-      "id": "CAMERA_CREW",
-      "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
-      "detail": "Eye-level crew camera was inside a bunk; free-standing-vantage selection added and low-resolution probe opened successfully."
     },
     {
-      "id": "COOKING_RANGE",
-      "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
-      "detail": "Galley/bakery range doors faced the close bulkhead. Ranges rotated to face the working aisles; dedicated front views and explicit reachability gate added."
+      "file": "renders/leonidas_ii/Exterior_Bow_Port.jpg",
+      "sha256": "93b1edd5907852c7641ef84d7ecffb1f42d3a92137b1dd2073e7abd608e2df00",
+      "pixels": [
+        2400,
+        1400
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": null,
+      "image": "Exterior_Bow_Port",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Full port-bow dry-background view shows continuous black/red shell, counter-stern profile, tiered enclosed/promenade decks, two funnels, three masts/rigging and side gangway. No boats are installed at the host sockets and no sea/port/people are shown. Fine fasteners/rigging are soft at whole-ship scale; not a historical-fidelity, lifeboat, world-fit, strength or performance certification."
     },
     {
-      "id": "CREW_MESS",
-      "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
-      "detail": "Narrow crew mess/berth rooms lacked a mess table. A two-seat alcove added in each existing berth-free entrance bay, opposite the door and clear of the centre aisle. Berth counts unchanged."
+      "file": "renders/leonidas_ii/Exterior_Stern_Starboard.jpg",
+      "sha256": "5a61a2c79a7000cefbbf871152eaf95c5b5a07611e2b559168d8f5b4e781d2f7",
+      "pixels": [
+        2400,
+        1400
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": null,
+      "image": "Exterior_Stern_Starboard",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Full starboard after-quarter dry inspection shows connected counter/stern-aperture silhouette, screw/rudder separation, open host davits, deckhouse tiers and rails. No boats/sea/world contacts represented. Dedicated stern close-up and structural bound are separate evidence; this distant view does not prove fine contacts or operational clearance."
+    },
+    {
+      "file": "renders/leonidas_ii/Exterior_Broadside_Port.jpg",
+      "sha256": "efb099844e032ce99ce8025936dba4d414ba17ecb2b5140bdad53cc93085a8f4",
+      "pixels": [
+        2600,
+        1050
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": null,
+      "image": "Exterior_Broadside_Port",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Complete port profile shows single-screw liner envelope, continuous lower body, three-mast/two-funnel silhouette, sheer/deckhouse tiers and lowered side gangway. Empty boat sockets and capacity/lifesaving shortfall explicit. Whole-profile image cannot certify local plate/rigging detail, port-waterline fit or structural adequacy."
+    },
+    {
+      "file": "renders/leonidas_ii/Exterior_Overhead.jpg",
+      "sha256": "8a40be96131481d5e45e495965b1b424791b4c2b9b4df91402408568bd0901a5",
+      "pixels": [
+        2400,
+        1600
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": null,
+      "image": "Exterior_Overhead",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Upper-quarter view shows fore/after decks, narrow deckhouses, skylight, funnel bases, rails, rigging and host-davit locations. No supplied boats or complete lifesaving inventory. Dry photographic stage, not a live navigation/boarding demonstration; fine hardware and every local deck contact remain outside this view."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Bakery.jpg",
+      "sha256": "5285695632e7af9acd21de5477ea17740aa30438a4f99037f1b935c8158b9a0f",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_Bakery",
+      "image": "Interior_Bakery",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Enclosed bakery full-resolution view clearly shows the three range/oven firing fronts oriented toward the broad tiled working floor, with cookware, supported hood/flue, side preparation bench and retained walls/ceiling. This closes the wrong-way-range visual correction together with the previously opened galley view and static approach test. No oven-door animation, thermal/fire safety or live avatar acceptance."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Bath.jpg",
+      "sha256": "78e2dc2cdc7adb01daac3d6ebd0bc78b496ad923a35b7bc9324afa1331f739c0",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_Bath_P",
+      "image": "Interior_Bath",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Narrow enclosed bath room shows hollow clawfoot tub, paired brass tap/spout forms, end bowl/jug washstand, tiled floor and paneled walls. Near tub and end wall dominate the photographic frame; supply/drain plumbing, privacy, door sweep and live avatar approach are not certified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Hospital.jpg",
+      "sha256": "a0c9926b5a5ad77c5b35c6c278a3590cb38703cf235fb8638d77a796460cd213",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "P_Hospital",
+      "image": "Interior_Hospital",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Enclosed tiled hospital shows two separate brass bedsteads, mattresses/blankets/pillows, central writing/work table and chair, wardrobe and bottle/plate shelves. Purpose-specific room is visible; hidden bed/table contacts, medical-equipment completeness and patient/avatar use remain unverified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Lavatory.jpg",
+      "sha256": "d3f67e15dfb596e432bdcaa9196463d7cc3366c3124672bcfbb12e0681ab32de",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_Bath_S",
+      "image": "Interior_Lavatory",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Enclosed lavatory shows high cistern and downpipe, pull chain, bowl/seat, near washbasin/mirror, tiled floor and retained walls/ceiling. Plumbing operation, fixture internals, privacy and live door/avatar clearance are untested."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Pantry.jpg",
+      "sha256": "a81712eb31f37b8c058ed2b9082daff32c869aa3a26db6fc90cfed3988143139",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_Pantry",
+      "image": "Interior_Pantry",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Enclosed pantry shows multiple supported plate racks with separate plate stacks, central work/writing table and open surrounding floor, with walls/ceiling intact. Furniture/stock repeat intentionally; every shelf contact, inventory completeness and live serving/access are not certified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Purser.jpg",
+      "sha256": "275bb65c89a4a2ab4c8e4c591877bfd690d03664e3ca5c841e18bc7375ea4f17",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_Purser",
+      "image": "Interior_Purser",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in the image viewer; not approved from a thumbnail, raw frame or file count.",
+      "notes": "Enclosed purser office shows paneled writing desk, chair and floor-standing safe with visible handle/wheel plus perimeter/ceiling. Desk/safe functional internals, opening sweep, privacy and live chair/door clearance unverified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Bar.jpg",
+      "sha256": "499ae10d1b0cc4e17ffc444cec439aefdf0b5ca2e4036fc9dbc26a6fff8ce92b",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "P_Bar",
+      "image": "Interior_Bar",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed narrow bar/drinks-store eye-level view clearly exposes the repeated bottle shelves, individual bottle/label forms, goblets, counter/drawers and continuous service strip that the roof-off survey could not resolve. Stock repeats deliberately. No functioning taps, serving interaction, breakable glass or live avatar/door clearance accepted."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Barber.jpg",
+      "sha256": "f3b11642a8d21e55bdd005ef9766bbab799df50360dbb120790d920afc8eb75d",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "P_Barber",
+      "image": "Interior_Barber",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed barber room shows three upholstered high-backed chairs with headrests and pedestal bases facing washstand/bowl/jug/mirror stations, with retained ceiling/walls and side door strip. Near chair is cropped by the photographic view. Chair mechanisms, all local contacts, tools/hygiene and live avatar/door use unverified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Cargo.jpg",
+      "sha256": "236b0e320d2b40804898a373ef087f0f04179fdc56c9a7f78072ec50726e8b88",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "O_Hold",
+      "image": "Interior_Cargo",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed hold/chain-store view shows separate slatted crates with straps/handles, banded barrels and a floor-standing dark bin with simplified chain coils, flanking a central working strip. Lashing/load paths, real anchor-chain link construction, lifting and live avatar clearance are not certified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Cold_Store.jpg",
+      "sha256": "efbb3b655ee23758fc5b0aa05cbceb6d19aac613c020f0341fabfbf6fbfd7ef7",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_ColdStore",
+      "image": "Interior_Cold_Store",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed tiled cold/provision room shows an insulated four-door ice cabinet with hinges/handles and drain/drip-pan detail, perimeter door/finish and clear floor. Cabinet is a simplified static ice-storage fixture, not a proven powered refrigeration plant, thermal-capacity or interactive-door simulation."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Mail.jpg",
+      "sha256": "9e459621658debe88b2a65da25afd19a9b3e0fa712511c545f73900833f182fe",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_Mail",
+      "image": "Interior_Mail",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed mail/specie room view exposes tall sorting cubbies with repeated individual pale mail/packet forms and label tabs, retained ceiling/walls, door and floor strip. Repetition is explicit; labels and the office end are not fully legible/in frame. No secure-locking, mail-handling or live avatar-use acceptance."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Cabin_First.jpg",
+      "sha256": "f57725d98750e594e0c1a405ae20ee5322d63730bfb2fdce59eec87276293eae",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "A030",
+      "image": "Interior_Cabin_First",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed first-class cabin shows the permanent brass bed/mattress/blanket/pillow, washstand/bowl/jug/mirror, reading/bell plate and upholstered convertible settee at right. The near foot/wardrobe is cropped; this is not two permanent beds and no conversion/live sleeping animation or universal avatar clearance is accepted."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Cabin_Second.jpg",
+      "sha256": "12a0ad92ba0be698ad0492b24f34c6676c9cb835be0aa4996df87f0a90164f11",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "C006",
+      "image": "Interior_Cabin_Second",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed second-class cabin clearly shows paired two-tier bunk assemblies with lower/upper mattresses, retaining rails, ladders and an end washstand/mirror around a central standing strip. The composition is tight and near posts are cropped. Lower-berth headroom, door sweep and actual avatar use remain unverified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Captain.jpg",
+      "sha256": "aacfb27a05db74ef4ce20b8c5b60cc2bb7a0afb663721504a3ffd16ef1b208a0",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "B_Captain",
+      "image": "Interior_Captain",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed captain cabin shows permanent brass bed, writing desk/chair, washstand, bell plate, carpet, glazing/paneling and open floor; sofa/storage at the opposite end is outside this composition and is covered by the roof-off survey. No live office/sleeping/door clearance acceptance."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Officer.jpg",
+      "sha256": "7eed341da34bda124a02ccf0b8b0ebd97983a670f664d4ccaabfbe3270ab454a",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "B_Officer_1",
+      "image": "Interior_Officer",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed officer cabin shows one two-tier bunk with ladder/rails, washstand/bowl/jug/mirror, reading/bell plate and clear adjacent floor. Upper berth is near the room ceiling; actual headroom/climbing/door use is not accepted from the image."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Third_Class.jpg",
+      "sha256": "018816b90b06923b9fd09581bb6e4cfe4060b825831cd364c0a49f3f79077854",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "M_ForwardThird",
+      "image": "Interior_Third_Class",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed steerage view from the shared table/bench bay shows repeated two-tier bunks, separate frames/mattresses/rails/ladders, center aisle and end door with walls/ceiling retained. Live headroom, lower-berth access, crowd movement and sleeping use unverified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Crew.jpg",
+      "sha256": "a1c9e61052d21b53e255100413a4eafd4b38837fc15d7ae1bd57bcaf86b80eba",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "O_CrewP",
+      "image": "Interior_Crew",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Current enclosed crew view is from the real center standing aisle, not inside a mattress or bunk. Both berth levels, ladders, ceiling/walls and open aisle are legible; a small mess table appears mid-right but its bench is partly occluded. The two separately opened supplementary oblique cutaways, not this eye-level composition, expose the supported benches. No live headroom/access/carry/seating acceptance.",
+      "supplementary_evidence": [
+        "Supplement_Crew_Mess_Port",
+        "Supplement_Crew_Mess_Starboard"
+      ]
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Dining_First.jpg",
+      "sha256": "72a8c9bf1baaf6e59066a0e8710f026133ef8bb8ab1eaeca2251a3fd6663329f",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_Dining",
+      "image": "Interior_Dining_First",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed first-class dining room shows repeated long laid tables, distinct pedestal chairs/cushions, plates/cups/cutlery, paneled walls, glazing, beams/columns and suspended lamps. Dense seating rows are visible; near column/edge is cropped. Static inventory is 96 chairs, not the 228-seat target, and image review does not accept live chair access/crowd circulation or lamp/headroom clearance."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Library.jpg",
+      "sha256": "89b56aa16d540f6a249f0b006e5d24e08a2b1bde4e4e3ecbf61b697c1da0d650",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "P_Library",
+      "image": "Interior_Library",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed library shows individual book spines on glazed/slender-framed cases, writing tables with blotters/paper/inkwells, green pedestal chairs, settee and a broad visible floor strip to the end door. Repeated furniture design and softened small books are explicit; shelf/door interaction and actual avatar access remain unverified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Smoking.jpg",
+      "sha256": "147e18d3c3144c997389ee8cd01640b22219851c5af14b4b83c0a36f2b28a474",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "P_Smoking",
+      "image": "Interior_Smoking",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed smoking-room view shows red armchairs around turned-pedestal tables, upholstered settees, patterned floor, windows and wall panels with ceiling/beams/lamps retained. Close furnishing groups require live seating and route checks; smoke/fire use, unseen contact surfaces and universal clearance are not accepted from the image."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Music.jpg",
+      "sha256": "277c88fd516fa64c63a109ef5989f4a643a9667b4464bf6e54546a154814d3eb",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_Music",
+      "image": "Interior_Music",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed music-room view clearly shows modeled keyboard, sheet/music stand, case/legs and pedestal piano chair, alongside upholstered armchairs/settee and tables. Instrument and chairs are simplified/repeated forms, with the near chair cropped. Piano is a static furnishing, not a playable/audio mechanism; close furniture/headroom/avatar use remains unverified."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Writing.jpg",
+      "sha256": "89089edea722fd1fae56ac4702ed852f6d465c9745d765db441056bc4b021646",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "P_Writing",
+      "image": "Interior_Writing",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed writing room shows rows of desks with green blotters, paper, inkwell/pen forms and separate pedestal chairs, bookcases, a settee and paneled ceiling/walls. Broad visible floor strips are not continuous avatar-circulation proof; library/writing reuse the same furniture family, and fine text/pen detail is denoised/soft."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Grand_Stair.jpg",
+      "sha256": "bc218894d7c6a70453e7821ed41be7815b4cb39161bd2907c7b2c23a4c223969",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "M_Entrance",
+      "image": "Interior_Grand_Stair",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Actual lower stair-hall eye-level composition shows modeled risers/treads, stringer, handrails/balusters, upper return flight/landing and real rectangular deck opening with adjacent paneled walls/doors. Near steps and upper destinations are cropped and riser-edge seams are visible. This is a composition check, not continuous walking, guard/headroom or hidden joint certification; use the native deck/room surveys and live route tests as well."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Dining_Second.jpg",
+      "sha256": "4e738bf17691a211037c894d85b8703fa516d4b46cd277e8b917806e57c2db9c",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "S_SecondDining",
+      "image": "Interior_Dining_Second",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed second-class dining shows laid long tables, red pedestal chairs, plates/cups/cutlery, beams/columns/lamps and paneled enclosure. It deliberately reuses the dining furniture family rather than being a unique historic replica. Native inventory is 48 chairs; crowd movement, seated clearance and unseen fittings require Studio review."
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Second_Lounge.jpg",
+      "sha256": "f22214465e632e45f1beffa0391d486b8b80cf75bd3e8b9324b370f746a96ee0",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "room_id": "P_SecondLounge",
+      "image": "Interior_Second_Lounge",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final full-resolution JPG individually opened in image viewer.",
+      "notes": "Enclosed second-class lounge shows separate armchairs/tables, wall settees, windows, paneled finishes and lamps, with a visible middle floor strip. Furniture families repeat the other public-room types; this view does not prove live seating/crowd clearance, door sweep, headroom or hidden contacts."
     }
   ],
+  "blocking_issues": [],
   "preflight_camera_probes": {
     "scope": "Not final high-resolution review. All eleven 25%-resolution engineering images opened; corrected stokehold overhead decks/tank top and shaft-alley floor visibly present. Crew/galley/bakery/music 25% probes also opened after build-10 corrections.",
     "master_source_sha256": "82219356d3ceb32218a56d1c4f8bec7decea4445cc1b759a400561bd17ef552f",
@@ -4978,6 +5408,49 @@
       ],
       "structural_auditor_sha256": "b671e3636b676296db945591004e49e1c3c33f76c28f6840f4424aa3b5fc41dc",
       "resolution": "Actual-shell containment, observed stern contacts and continuous propeller/frame/shell rotational-envelope gates pass in current auditor 1.2. Opened final stern and skeleton JPGs no longer show rejected fins/disconnected shoe. No strength/Boolean/live certification implied."
+    },
+    {
+      "id": "COOKING_RANGE",
+      "status": "RESOLVED_IN_OPENED_FINAL_IMAGES_WITH_LIMITATIONS",
+      "detail": "Current galley and bakery final images opened individually: firing/oven fronts face clear working floor instead of the close bulkhead; static approach test also passes. Heat/fire safety, working doors and live avatar use remain unverified.",
+      "evidence": [
+        {
+          "file": "renders/leonidas_ii/Interior_Galley.jpg",
+          "sha256": "6238fbd3742271d59d05a9dfac319487e0604961b41fc8f5c5fb70a7d9eff1f9"
+        },
+        {
+          "file": "renders/leonidas_ii/Interior_Bakery.jpg",
+          "sha256": "5285695632e7af9acd21de5477ea17740aa30438a4f99037f1b935c8158b9a0f"
+        }
+      ]
+    },
+    {
+      "id": "CAMERA_CREW",
+      "status": "RESOLVED_IN_OPENED_FINAL_IMAGE_WITH_LIMITATIONS",
+      "detail": "Full-resolution Interior_Crew opened: photographic eye is visibly in the center standing aisle, with no enclosing mattress/frame occlusion. Static furniture-clear camera selection also passes; live avatar/headroom acceptance remains open.",
+      "evidence": [
+        {
+          "file": "renders/leonidas_ii/Interior_Crew.jpg",
+          "sha256": "a1c9e61052d21b53e255100413a4eafd4b38837fc15d7ae1bd57bcaf86b80eba"
+        }
+      ]
+    },
+    {
+      "id": "CREW_MESS",
+      "status": "RESOLVED_IN_OPENED_DETAIL_CUTAWAYS_WITH_LIMITATIONS",
+      "detail": "Both existing two-position bench/table alcoves are separately visible with supported bench/floor contacts and no apparent overlap with adjacent bunks. The earlier overhead close-ups still hid most bench geometry and were rejected. Final close oblique wall/roof-removed diagnostics supplement, not replace, the intact eye-level crew image and native room surveys. Exact source/driver/image identities recorded; live avatar sitting/knee room/access and hidden contacts remain unverified.",
+      "evidence": [
+        {
+          "file": "renders/leonidas_ii/Supplement_Crew_Mess_Port.jpg",
+          "sha256": "eda5e7e3b6dcddf5b4ecdcaf2009c7e98e3489bed6774dbebe3a9fe554ab1daf",
+          "detail_driver_sha256": "98027c753bc04c56e03e6b3a6723968429b62e13a49350903d276428df6f29cd"
+        },
+        {
+          "file": "renders/leonidas_ii/Supplement_Crew_Mess_Starboard.jpg",
+          "sha256": "09582539a916196d34c11f5cf22095f6cdb38cd13f4984c801c2b8dc3bd01914",
+          "detail_driver_sha256": "98027c753bc04c56e03e6b3a6723968429b62e13a49350903d276428df6f29cd"
+        }
+      ]
     }
   ],
   "opened_native_room_pages": [
@@ -5492,12 +5965,55 @@
     }
   ],
   "coverage_summary": {
-    "major_images_reviewed": 22,
+    "major_images_reviewed": 51,
     "major_images_expected": 51,
     "room_surveys_reviewed": 203,
     "room_surveys_expected": 203,
     "native_room_pages_opened": 34,
     "analytical_svgs_opened": 3,
-    "note": "Room-survey coverage is complete; major-image coverage and the listed blocking revisions remain in progress."
+    "note": "All 51 planned major views, all 203 room surveys on 34 native-grid pages, two additional correction cutaways and three analytical SVGs opened and hash-registered. No unresolved image-revision blocker. This is completed image coverage with declared view limitations, not Roblox Studio, live access, performance, safety or capacity acceptance.",
+    "supplementary_images_reviewed": 2,
+    "supplementary_images_expected": 2
+  },
+  "expected_supplementary_images": 2,
+  "supplementary_images": [
+    {
+      "file": "renders/leonidas_ii/Supplement_Crew_Mess_Port.jpg",
+      "sha256": "eda5e7e3b6dcddf5b4ecdcaf2009c7e98e3489bed6774dbebe3a9fe554ab1daf",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "detail_driver": "blender/leonidas_ii/render_crew_details.py",
+      "detail_driver_sha256": "98027c753bc04c56e03e6b3a6723968429b62e13a49350903d276428df6f29cd",
+      "room_id": "O_CrewP",
+      "image": "Supplement_Crew_Mess_Port",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final 1600x1000 JPG individually opened in image viewer after rejecting the previous overhead composition.",
+      "notes": "Port close oblique diagnostic clearly exposes the full separate bench seat top, four splayed iron support legs/floor contacts, table top/apron/turned pedestals/base, adjacent bunk frames/ladders and the berth-free bay. Original furniture/floor/bunks are retained; the room joined walls and ceiling are deliberately omitted, and the camera is outside the omitted wall. This is not an intact-room photograph or certification of hidden faces, seat/knee-room comfort, actual avatar sitting/approach or door operation."
+    },
+    {
+      "file": "renders/leonidas_ii/Supplement_Crew_Mess_Starboard.jpg",
+      "sha256": "09582539a916196d34c11f5cf22095f6cdb38cd13f4984c801c2b8dc3bd01914",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+      "renderer_sha256": "7eb7e8fe29a90ace7cf6f3d7579610f2f81fc878e0d191bb5dfc000c1ca747df",
+      "detail_driver": "blender/leonidas_ii/render_crew_details.py",
+      "detail_driver_sha256": "98027c753bc04c56e03e6b3a6723968429b62e13a49350903d276428df6f29cd",
+      "room_id": "O_CrewS",
+      "image": "Supplement_Crew_Mess_Starboard",
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "review_basis": "Exact final 1600x1000 JPG individually opened in image viewer after rejecting the previous overhead composition.",
+      "notes": "Starboard close oblique diagnostic clearly exposes the full separate bench seat top, four splayed iron support legs/floor contacts, table top/apron/turned pedestals/base, adjacent bunk frames/ladders and the berth-free bay. Original furniture/floor/bunks are retained; the room joined walls and ceiling are deliberately omitted, and the camera is outside the omitted wall. This is not an intact-room photograph or certification of hidden faces, seat/knee-room comfort, actual avatar sitting/approach or door operation."
+    }
+  ],
+  "supplementary_composition_history": {
+    "status": "FIRST_OVERHEAD_COMPOSITION_REJECTED_AND_REPLACED",
+    "detail": "Opened initial roof-off views showed only a thin sliver of bench beyond the tabletop, not usable support/contact detail. They are not registered as final reviewed evidence. Dedicated driver now omits joined room walls/ceiling explicitly for an oblique view, without hiding adjacent bunks or modifying ship geometry."
   }
 }

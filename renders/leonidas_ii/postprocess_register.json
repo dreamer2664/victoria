@@ -1798,5 +1798,253 @@
     "height": 480,
     "sha256": "066e8af0a600f227417e011cc8444f94375daa24a45182a0817412d1ae8f534d",
     "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Exterior_Bow_Port.png",
+    "final": "Exterior_Bow_Port.jpg",
+    "width": 2400,
+    "height": 1400,
+    "sha256": "93b1edd5907852c7641ef84d7ecffb1f42d3a92137b1dd2073e7abd608e2df00",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Exterior_Broadside_Port.png",
+    "final": "Exterior_Broadside_Port.jpg",
+    "width": 2600,
+    "height": 1050,
+    "sha256": "efb099844e032ce99ce8025936dba4d414ba17ecb2b5140bdad53cc93085a8f4",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Exterior_Overhead.png",
+    "final": "Exterior_Overhead.jpg",
+    "width": 2400,
+    "height": 1600,
+    "sha256": "8a40be96131481d5e45e495965b1b424791b4c2b9b4df91402408568bd0901a5",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Exterior_Stern_Starboard.png",
+    "final": "Exterior_Stern_Starboard.jpg",
+    "width": 2400,
+    "height": 1400,
+    "sha256": "5a61a2c79a7000cefbbf871152eaf95c5b5a07611e2b559168d8f5b4e781d2f7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Bakery.png",
+    "final": "Interior_Bakery.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "5285695632e7af9acd21de5477ea17740aa30438a4f99037f1b935c8158b9a0f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Bath.png",
+    "final": "Interior_Bath.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "78e2dc2cdc7adb01daac3d6ebd0bc78b496ad923a35b7bc9324afa1331f739c0",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Hospital.png",
+    "final": "Interior_Hospital.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "a0c9926b5a5ad77c5b35c6c278a3590cb38703cf235fb8638d77a796460cd213",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Lavatory.png",
+    "final": "Interior_Lavatory.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "d3f67e15dfb596e432bdcaa9196463d7cc3366c3124672bcfbb12e0681ab32de",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Pantry.png",
+    "final": "Interior_Pantry.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "a81712eb31f37b8c058ed2b9082daff32c869aa3a26db6fc90cfed3988143139",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Purser.png",
+    "final": "Interior_Purser.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "275bb65c89a4a2ab4c8e4c591877bfd690d03664e3ca5c841e18bc7375ea4f17",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Bar.png",
+    "final": "Interior_Bar.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "499ae10d1b0cc4e17ffc444cec439aefdf0b5ca2e4036fc9dbc26a6fff8ce92b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Barber.png",
+    "final": "Interior_Barber.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "f3b11642a8d21e55bdd005ef9766bbab799df50360dbb120790d920afc8eb75d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Cargo.png",
+    "final": "Interior_Cargo.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "236b0e320d2b40804898a373ef087f0f04179fdc56c9a7f78072ec50726e8b88",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Cold_Store.png",
+    "final": "Interior_Cold_Store.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "efbb3b655ee23758fc5b0aa05cbceb6d19aac613c020f0341fabfbf6fbfd7ef7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Mail.png",
+    "final": "Interior_Mail.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "9e459621658debe88b2a65da25afd19a9b3e0fa712511c545f73900833f182fe",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Cabin_First.png",
+    "final": "Interior_Cabin_First.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "f57725d98750e594e0c1a405ae20ee5322d63730bfb2fdce59eec87276293eae",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Cabin_Second.png",
+    "final": "Interior_Cabin_Second.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "12a0ad92ba0be698ad0492b24f34c6676c9cb835be0aa4996df87f0a90164f11",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Captain.png",
+    "final": "Interior_Captain.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "aacfb27a05db74ef4ce20b8c5b60cc2bb7a0afb663721504a3ffd16ef1b208a0",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Crew.png",
+    "final": "Interior_Crew.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "a1c9e61052d21b53e255100413a4eafd4b38837fc15d7ae1bd57bcaf86b80eba",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Officer.png",
+    "final": "Interior_Officer.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "7eed341da34bda124a02ccf0b8b0ebd97983a670f664d4ccaabfbe3270ab454a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Third_Class.png",
+    "final": "Interior_Third_Class.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "018816b90b06923b9fd09581bb6e4cfe4060b825831cd364c0a49f3f79077854",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Dining_First.png",
+    "final": "Interior_Dining_First.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "72a8c9bf1baaf6e59066a0e8710f026133ef8bb8ab1eaeca2251a3fd6663329f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Dining_Second.png",
+    "final": "Interior_Dining_Second.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "4e738bf17691a211037c894d85b8703fa516d4b46cd277e8b917806e57c2db9c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Grand_Stair.png",
+    "final": "Interior_Grand_Stair.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "bc218894d7c6a70453e7821ed41be7815b4cb39161bd2907c7b2c23a4c223969",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Library.png",
+    "final": "Interior_Library.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "89b56aa16d540f6a249f0b006e5d24e08a2b1bde4e4e3ecbf61b697c1da0d650",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Music.png",
+    "final": "Interior_Music.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "277c88fd516fa64c63a109ef5989f4a643a9667b4464bf6e54546a154814d3eb",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Second_Lounge.png",
+    "final": "Interior_Second_Lounge.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "f22214465e632e45f1beffa0391d486b8b80cf75bd3e8b9324b370f746a96ee0",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Smoking.png",
+    "final": "Interior_Smoking.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "147e18d3c3144c997389ee8cd01640b22219851c5af14b4b83c0a36f2b28a474",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Writing.png",
+    "final": "Interior_Writing.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "89089edea722fd1fae56ac4702ed852f6d465c9745d765db441056bc4b021646",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Supplement_Crew_Mess_Port.png",
+    "final": "Supplement_Crew_Mess_Port.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "eda5e7e3b6dcddf5b4ecdcaf2009c7e98e3489bed6774dbebe3a9fe554ab1daf",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Supplement_Crew_Mess_Starboard.png",
+    "final": "Supplement_Crew_Mess_Starboard.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "09582539a916196d34c11f5cf22095f6cdb38cd13f4984c801c2b8dc3bd01914",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
   }
 ]

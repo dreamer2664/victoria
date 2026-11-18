@@ -82,6 +82,20 @@ for name in sorted(expected.intersection(by_stem)):
  if name in major and name.startswith('Interior_') and min(r['pixels'])<1000:bad.append([name,'major interior resolution too small'])
 if missing and '--require-evidence' not in sys.argv:unverified('Complete current-source evidence set',dict(missing=missing,invalid=bad))
 else:check('Complete current-source evidence set',not missing and not bad,dict(expected=len(expected),major=len(major),rooms=len(ROOMS),missing=missing,invalid=bad))
+# Dedicated correction views are additional diagnostics, never substitutes
+# for a missing planned major view or roof-off compartment survey. Bind the
+# small driver as well as the unchanged common renderer and original master.
+supplementary={'Supplement_Crew_Mess_Port':'O_CrewP','Supplement_Crew_Mess_Starboard':'O_CrewS'}
+detail_driver='blender/leonidas_ii/render_crew_details.py';detail_hash=sha((ROOT/detail_driver).read_bytes());supp_bad=[]
+for name,rid in supplementary.items():
+ v=by_stem.get(name,{})
+ p=ROOT/v.get('file','__missing_supplementary__')
+ if not p.is_file() or p.suffix!='.jpg':supp_bad.append([name,'missing final JPG']);continue
+ if v.get('source_sha256')!=source_hash or v.get('renderer_sha256')!=renderer_hash or v.get('detail_driver')!=detail_driver or v.get('detail_driver_sha256')!=detail_hash:supp_bad.append([name,'stale source/renderer/detail driver'])
+ if v.get('sha256')!=sha(p.read_bytes()) or v.get('pixels')!=[1600,1000] or list(Image.open(p).size)!=v.get('pixels'):supp_bad.append([name,'image identity/dimensions'])
+ if v.get('cutaway') is not True or v.get('supplementary') is not True or v.get('room_id')!=rid:supp_bad.append([name,'diagnostic/room labels'])
+if supp_bad and '--require-evidence' not in sys.argv:unverified('Supplementary crew-mess correction evidence',supp_bad)
+else:check('Supplementary crew-mess correction evidence',not supp_bad,dict(expected=len(supplementary),invalid=supp_bad))
 manual=DOC/'VISUAL_REVIEW.json'
 if manual.exists():
  r=load(manual);check('Manual review register source matches',r.get('source_sha256')==source_hash)
@@ -92,6 +106,13 @@ if manual.exists():
  detail=dict(reviewed_major=len(set(major)&coverage),reviewed_surveys=len(coverage-set(major)),missing=sorted(expected-coverage),stale=stale,recorded_status=r.get('status'))
  if expected-coverage and '--require-reviewed' not in sys.argv:unverified('Manual review coverage and exact image hashes',detail)
  else:check('Manual review coverage and exact image hashes',not(expected-coverage) and not stale and len(opened)==len(expected),detail)
+ sup_opened=r.get('supplementary_images',[]);sup_names=[v.get('image') for v in sup_opened];sup_stale=[]
+ for v in sup_opened:
+  p=ROOT/v.get('file','__missing_review__');entry=by_stem.get(v.get('image'),{})
+  if not p.is_file() or v.get('sha256')!=sha(p.read_bytes()) or v.get('file')!=entry.get('file') or any(v.get(k)!=entry.get(k) for k in ('source_sha256','renderer_sha256','detail_driver_sha256')) or v.get('status') not in ('REVIEWED','REVIEWED_WITH_LIMITATIONS'):sup_stale.append(v.get('image'))
+ sup_ok=r.get('expected_supplementary_images')==len(supplementary) and len(sup_names)==len(supplementary) and set(sup_names)==set(supplementary) and not sup_stale
+ if not sup_ok and '--require-reviewed' not in sys.argv:unverified('Supplementary correction views manually reviewed',dict(reviewed=sup_names,invalid=sup_stale))
+ else:check('Supplementary correction views manually reviewed',sup_ok,dict(reviewed=sup_names,invalid=sup_stale))
  tech=r.get('technical_sheets',[]);expected_tech={f'drawings/leonidas_ii/{n}.svg' for n in ('General_Arrangement','Dimensions_And_Datums','Machinery_Flow')}
  check('Opened analytical-sheet register matches current SVGs',{v['file'] for v in tech}==expected_tech and all((ROOT/v['file']).exists() and v.get('sha256')==sha((ROOT/v['file']).read_bytes()) for v in tech))
  if '--require-reviewed' in sys.argv:

@@ -6,9 +6,13 @@ A **new reconstruction of the project's fictional Atlantic express passenger/mai
 
 **Release status: review candidate, not a Studio-certified playable release.** Geometry, furnishings, machinery, materials, import pipeline and runtime have been rebuilt. Actual-model evidence, measured counts, open issues and the unverified live tests are distinguished in the delivery documentation. A successful generator or exterior render alone is not acceptance.
 
-### Immediate progress report
+### Current review checkpoint
 
-**Interim snapshot: 225/254 planned images reviewed — all 203 room surveys plus 22/51 major views.** The remaining 29 major views and Studio/live acceptance are still open. Read the [detailed progress report with renders](docs/leonidas_ii/PROGRESS_REPORT.md), or open its [self-contained illustrated HTML version](docs/leonidas_ii/PROGRESS_REPORT.html). This is a progress publication, not a declaration that the complete brief has passed.
+**All 254 planned images are now reviewed: 51 major views + 203 room surveys.** Two additional close crew-mess correction cutaways bring the retained image evidence to **256**, with three analytical SVGs reviewed separately. The strict evidence/review delivery gate returns **47 PASS / 1 UNVERIFIED / 0 FAIL**; the open gate is Roblox Studio/live/FPS acceptance. See the [current delivery report](docs/leonidas_ii/DELIVERY_REPORT.md), [embedded evidence index](docs/leonidas_ii/EVIDENCE_INDEX.html) and [exact manual-review register](docs/leonidas_ii/VISUAL_REVIEW.json). Completed image coverage is **not** a completed playable release: Studio, live access/carry/performance, cross-agent integration and capacity shortfalls remain open.
+
+### Earlier requested progress report
+
+The **225-image interim snapshot** (all 203 surveys plus 22/51 major views) was pushed and remote-verified at `6938aeb31d708d3f11e77cd9d5408cb172ecaec2`. Its [detailed progress report with renders](docs/leonidas_ii/PROGRESS_REPORT.md), [self-contained HTML version](docs/leonidas_ii/PROGRESS_REPORT.html) and [snapshot register](docs/leonidas_ii/PROGRESS_SNAPSHOT.json) are preserved unchanged as the historical checkpoint. The 29 major views recorded as remaining there have since been reviewed; use the current report above for the latest state.
 
 ### Start here
 
@@ -52,6 +56,8 @@ python3 tools/make_leonidas_review.py
 # Open/review every image and record exact hashes before this strict gate:
 python3 tools/check_leonidas_delivery.py --require-evidence --require-reviewed
 ```
+
+The default serial render batch includes the two additional crew-mess close-ups after the planned set. `blender/leonidas_ii/render_crew_details.py` reuses the unchanged common renderer, separately hashes its own camera/visibility driver, and explicitly omits room walls/roof for these diagnostics; it does not change ship geometry. Run only `LII_GROUPS=crew_details bash tools/render_leonidas_evidence.sh` to reproduce those details after the full-resolution public views are available.
 
 `tools/build_leonidas_ii.sh` orders the master build, actual-shell/stern structural audit, lower-tessellation GAME build, packed map preparation, closed-component GLB export, regional kit, exact exported component/normal audit and static validation. `build/` directories are regenerable scratch, not delivery dependencies. **Do not run `tools/leonidas_revision_fixes.py`: it records a one-off, non-idempotent migration already applied to the source.**
 

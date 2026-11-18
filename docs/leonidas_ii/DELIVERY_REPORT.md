@@ -1,6 +1,6 @@
 # SS Aurelian · LEONIDAS-II delivery report
 
-**Status: reconstruction review candidate, not an accepted playable release.** The current build-12 source/export checks, including actual-shell structural regression and independent normal/precision gates, are complete. The current-source render and manual visual-review pass is in progress. Roblox Studio acceptance remains open; exact local-commit and remote-publication outcomes belong to the local receipt / final handoff. Do not infer completion from the exterior or the counts below.
+**Status: reconstruction review candidate with completed image-evidence review, not an accepted playable release.** The current build-12 source/export checks, including actual-shell structural regression and independent normal/precision gates, are complete. All **51 major views + 203 room surveys + 2 supplementary correction cutaways = 256 actual-model images** are opened and hash-registered, with three analytical SVGs reviewed separately. The strict evidence/review checker returns **47 PASS / 1 UNVERIFIED / 0 FAIL**. The unverified gate is Roblox Studio/live/FPS acceptance; capacity and cross-agent limitations also remain. Exact local-commit and remote-publication outcomes belong to the local receipt / final handoff. Do not infer a completed playable release from image coverage or the counts below.
 
 ## 1. What was preserved, rebuilt and added
 
@@ -92,11 +92,37 @@ The **executed current build-12 re-audit** covers all **860 unique meshes / 2,16
 
 Coincident contacts have more than two balanced edge uses; these are reported separately, not passed off as a two-manifold Boolean union or proof of no intersections. Signed net component volumes do not certify every local face, physical pressure boundary or ship strength. This audit does not replace Studio import review.
 
-### Actual-model visual evidence — review in progress
+### Actual-model visual evidence — views reviewed with limitations
 
-The planned set is **51 major/technical views + 203 roof-off physical-space surveys**. Eye-level interiors and explicitly named technical cutaways are distinct. All come from the delivered Blender geometry using Cycles; OIDN processing and image hashes are registered. Major views use up to 12 adaptive samples and surveys up to six on the limited CPU host, with two diffuse/glossy bounces and a temporary 1K texture cache (the original delivered 2K maps are unchanged); soft fine detail, residual noise and denoising edge artefacts are disclosed. Raw PNGs and render tiles remain excluded scratch; the full-resolution processed JPGs are the retained evidence. No AI-generated concept, historical photograph or analytical SVG is passed off as an actual model or in-game screenshot.
+The complete planned set is **51/51 major/technical views + 203/203 roof-off physical-space surveys**, with **two additional crew-mess detail cutaways**. All 51 major JPGs and both details were opened individually; every survey was inspected on one of 34 native-grid pages preserving its original 640×480 pixels without resizing. The three analytical SVGs are separately registered and are not included in the 256-image count. `VISUAL_REVIEW.json` has status **`VIEWS_REVIEWED_WITH_LIMITATIONS`**, with **zero unresolved image-revision blockers**, not universal geometry or gameplay approval.
 
-The opened-file review list, reviewed exceptions and source hash are recorded incrementally in `VISUAL_REVIEW.json`; [EVIDENCE_INDEX.html](EVIDENCE_INDEX.html) is the embedded-thumbnail index, with full-resolution JPG paths on each card. `all_cameras.json` records cameras, true pixel dimensions, source/renderer identities and cutaway flags. Presence of a file alone is not visual acceptance.
+The final detail views expose each small crew bench seat, its four support legs/floor contacts, table supports and adjacent bunks. The first overhead detail attempt still hid most of the bench and was rejected. Final oblique diagnostics deliberately omit the joined room walls and ceiling; their camera is outside the omitted wall. They retain the original floor and furniture, are explicitly marked technical cutaways, and do not replace the enclosed eye-level crew view or certify avatar sitting/knee room. Their separate camera/visibility driver hash is checked in addition to the unchanged common renderer/master identities.
+
+Eye-level interiors and explicitly named technical cutaways are distinct. All come from the delivered Blender geometry using Cycles; OIDN processing and image hashes are registered. Major views use up to 12 adaptive samples and surveys up to six on the limited CPU host, with two diffuse/glossy bounces and a temporary 1K texture cache (the original delivered 2K maps are unchanged); soft fine detail, residual noise and denoising edge artefacts are disclosed. Raw PNGs and render tiles remain excluded scratch; the full-resolution processed JPGs are the retained evidence. No AI-generated concept, historical photograph or analytical SVG is passed off as an actual model or in-game screenshot.
+
+The exact opened-file review list, view-specific limitations and source hash are recorded in `VISUAL_REVIEW.json`; [EVIDENCE_INDEX.html](EVIDENCE_INDEX.html) is the regenerated 256-image embedded-thumbnail index, with full-resolution JPG paths on each card. `all_cameras.json` records cameras, true pixel dimensions, source/renderer identities and cutaway flags. Presence of a file alone is not visual acceptance.
+
+The final executed command is `python3 tools/check_leonidas_delivery.py --require-evidence --require-reviewed`: **47 PASS / 1 UNVERIFIED / 0 FAIL**, including the additional detail evidence/driver and manual-review checks. A pre-completion negative control refused the then-missing public/detail evidence, supplementary reviews and unresolved crew blocker while all other gates passed. The final strict result supersedes that intentionally failing intermediate run, and differs from the preserved non-strict interim snapshot.
+
+### Selected actual-model renders
+
+These are links to retained full-resolution Cycles JPGs, not gameplay screenshots; the embedded index above works without external image requests.
+
+![Actual model, port-bow exterior](../../renders/leonidas_ii/Exterior_Bow_Port.jpg)
+
+*Port-bow exterior, original 2400×1400 frame. No live-world or sea-speed claim.*
+
+![Enclosed first-class dining room](../../renders/leonidas_ii/Interior_Dining_First.jpg)
+
+*Enclosed first-class dining: 96 modeled chairs, not the 228-seat target. Live chair/crowd clearance unverified.*
+
+![Triple-expansion engine technical cutaway](../../renders/leonidas_ii/Engineering_Engine_Cutaway.jpg)
+
+*Explicit isolated plant cutaway; not an intact engine-room photograph or pressure-vessel certification.*
+
+![Port crew mess bench and table correction detail](../../renders/leonidas_ii/Supplement_Crew_Mess_Port.jpg)
+
+*Wall/roof-removed diagnostic showing the original bench/table and neighboring bunks. Live sitting, knee room and hidden contacts unverified.*
 
 ## 6. Sources and cross-agent interfaces
 
@@ -114,9 +140,11 @@ Three ship-owned mount/cradle/davit interfaces: steam cutter SWL requirement **3
 * Three editable analytical sheets plus vector PDF in `drawings/leonidas_ii/`; actual deck cutaways are separate model renders. Drawings are neither museum tracings nor certified construction sheets.
 * Audit, inventories, source/attribution, static/format/runtime/delivery checks and installation sheet in `docs/leonidas_ii/`.
 
-Branch **`agent/leonidas-ii`**, parent `75bf4ac5770b803919b36c8dbdb5374df82d88ac`. The exact local commit and publication outcome are recorded in the local `PUBLICATION.json` receipt / final handoff; this report cannot include its own commit's hash without a circular dependency.
+Branch **`agent/leonidas-ii`**, original base `75bf4ac5770b803919b36c8dbdb5374df82d88ac`. The follow-up is a child of the already-published progress snapshot below, not a replacement for it. The exact local commit and publication outcome are recorded in the local `PUBLICATION.json` receipt / final handoff; this report cannot include its own commit's hash without a circular dependency.
 
-**Publication status is recorded in the local receipt / final handoff, not inferred from this report.** The earlier anonymous dry-run lacked authentication. After renewed explicit authorization, a read-only authenticated repository write-permission check succeeded; that is not itself a push. The publisher requires the exact reviewed commit, strict evidence/review gates and a clean worktree before an ordinary fast-forward branch push. No force-push or other branch overwrite is authorized. The authorized credential is held transiently for the requested push, not saved in repository files, remote URLs or reports. Rotate the credential after use. The final push and remote exact-commit outcome must be read from the local publication receipt / final handoff. For a normal authenticated checkout, after verifying the branch/commit:
+**An explicitly requested interim progress snapshot was pushed and remote-verified at commit `6938aeb31d708d3f11e77cd9d5408cb172ecaec2`.** It includes the [detailed illustrated progress report](PROGRESS_REPORT.md), editable/import deliverables and 225 reviewed images: all 203 room surveys plus 22/51 major views. Its 42 PASS / 4 UNVERIFIED delivery result was intentionally an **in-progress publication, not strict final acceptance**. See `PROGRESS_SNAPSHOT.json`; the current image-review register may subsequently contain more reviewed views.
+
+The complete-evidence follow-up publisher still requires the exact reviewed commit, strict evidence/review gates and a clean worktree before an ordinary fast-forward branch update. The earlier anonymous dry-run and authenticated permission check were not themselves pushes; the interim commit above was separately pushed and verified. No force-push or other branch overwrite is authorized. The credential is transient, not saved in repository files, remote URLs or reports; rotate it after all authorized pushes. Exact follow-up commit/publication outcomes belong to the local `PUBLICATION.json` receipt / final handoff, because this report cannot include its own commit's hash. For a normal authenticated checkout, after verifying the branch/commit:
 
 ```bash
 git switch agent/leonidas-ii
@@ -128,11 +156,11 @@ If the remote has advanced, fetch and review; do not force-push. Only this agent
 
 ## 8. Remaining acceptance work
 
-1. **Finish/accept actual-image review** of every major area and all physical-space surveys; record issues, not only successful exits.
+1. **Obtain external/Studio acceptance of the reviewed rebuild.** The 256-image headless view-review pass is complete with stated limitations; no universal hidden-geometry, avatar or gameplay approval follows from it.
 2. Import all regions in Studio, review PBR/UV/normal/glass fidelity and exact hierarchy, then run the supplied structural smoke test.
 3. Walk every route/compartment and operate doors/gangways with the intended largest avatar. Pay attention to shallow headroom, gallery transitions and furniture clearances.
 4. Test seated/standing/jumping passengers, boarding/disembarking and reversing machinery with two clients under latency. Carry is a prototype, not a certified solution.
 5. Benchmark target-device client/server frame times, draw calls, memory, replication and streaming. The substantial whole-ship asset has **no proven performance target**.
 6. Test real port/quay/world navigation collision and mooring/boat launch/hoist behavior; the controller is anchored-root kinematics, not hydrodynamic contact solving.
 7. Resolve accommodation/dining/lifesaving shortfalls if the original capacity is mandatory, and obtain cross-agent approval. No stability/structural/pressure-vessel/safety certification is supplied.
-8. Publish the reviewed local commit using secure GitHub write access. Until these open gates are accepted, describe this as a reviewable rebuild, **not a completed playable release**.
+8. Verify the complete-evidence follow-up publication against the exact commit in the final handoff/local receipt; the earlier requested progress snapshot is already pushed and verified as recorded above. Even a successful follow-up push does not clear items 1–7. Until the Studio/live and capacity gates are actually accepted, describe this as a reviewable rebuild, **not a completed playable release**.

@@ -43,7 +43,16 @@ record=ROOT/'docs'/'leonidas_ii'/'PUBLICATION.json'
 if not record.exists():
  print('Base metadata restored. New work is still uncommitted; review git status.');sys.exit(0)
 r=json.loads(record.read_text())
-assert r['parent']==BASE and r['branch']==BRANCH
+assert r.get('base',BASE)==BASE and r['branch']==BRANCH
+parent=r.get('parent',BASE)
+assert len(parent)==40 and all(c in '0123456789abcdef' for c in parent)
+# The user requested an early progress push before final image acceptance.
+# Later updates therefore have that already-published commit as their parent,
+# not BASE. Fetch its tree read-only before reconstructing the exact update;
+# reset --mixed changes index/ref only and never replaces working files.
+if parent!=BASE:
+ git('fetch','--depth=1','origin',parent)
+ git('reset','--mixed','FETCH_HEAD')
 # Reconstitute exactly the recorded own-change tree, not everything in the
 # workspace. Missing/edited deliverables fail the tree check, rather than
 # inventing a replacement commit or overwriting the user's working files.
@@ -55,9 +64,9 @@ if tree!=r['tree']:sys.exit('Working files differ from the recorded tree. Kept a
 env=os.environ.copy()
 for role in ('author','committer'):
  for key in ('name','email','date'):env['GIT_'+role.upper()+'_'+key.upper()]=r[role][key]
-p=git('commit-tree',tree,'-p',BASE,input=r['message'],capture_output=True,env=env)
+p=git('commit-tree',tree,'-p',parent,input=r['message'],capture_output=True,env=env)
 commit=p.stdout.strip()
 assert commit==r['commit'],(commit,r['commit'])
-git('update-ref','refs/heads/'+BRANCH,commit,BASE)
+git('update-ref','refs/heads/'+BRANCH,commit,parent)
 print('Recreated exact recorded local commit',commit)
 print('No remote write occurred. Publish only after reviewing with: git push -u origin '+BRANCH)

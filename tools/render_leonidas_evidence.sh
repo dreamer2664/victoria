@@ -9,9 +9,15 @@ if [[ -z "$BLENDER_BIN" || ! -x "$BLENDER_BIN" ]]; then echo 'Set BLENDER_BIN to
 BLENDER_LIB="$(dirname "$BLENDER_BIN")/lib"
 export LD_LIBRARY_PATH="$BLENDER_LIB${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" OMP_NUM_THREADS=2
 export LII_SAMPLES="${LII_SAMPLES:-12}" LII_AUDIT_SAMPLES="${LII_AUDIT_SAMPLES:-6}" LII_RESUME="${LII_RESUME:-1}"
-for group in ${LII_GROUPS:-public accommodation service engineering exterior plans rooms}; do
+for group in ${LII_GROUPS:-public accommodation service engineering exterior plans rooms crew_details}; do
  echo "EVIDENCE GROUP BEGIN $group $(date -u +%FT%TZ)"
- "$BLENDER_BIN" -b models/leonidas_ii/Aurelian_1889.blend -t 2 --python-exit-code 1 -P blender/leonidas_ii/render.py -- "$group" "${LII_RENDER_PERCENT:-100}"
+ if [[ "$group" == crew_details ]]; then
+  # Additional 1600x1000 wall/roof-removed diagnostics; requires final
+  # public images and preserves every common-renderer evidence identity.
+  "$BLENDER_BIN" -b models/leonidas_ii/Aurelian_1889.blend -t 2 --python-exit-code 1 -P blender/leonidas_ii/render_crew_details.py
+ else
+  "$BLENDER_BIN" -b models/leonidas_ii/Aurelian_1889.blend -t 2 --python-exit-code 1 -P blender/leonidas_ii/render.py -- "$group" "${LII_RENDER_PERCENT:-100}"
+ fi
  OIDN_LIBRARY="$BLENDER_LIB/libOpenImageDenoise.so.2" python3 tools/denoise_leonidas_renders.py
  echo "EVIDENCE GROUP FINISHED $group $(date -u +%FT%TZ)"
 done
