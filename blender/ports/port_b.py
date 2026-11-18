@@ -78,6 +78,26 @@ def build(R, coll, audit):
     machinery.dray_cart(mb, 0, 0, z=0.0)
     R.define("B_dray_cart", mb)
 
+    # Pierhead lighthouse
+    mb = MeshBuilder()
+    bldg.pierhead_lighthouse(mb, 0, 0, 0.0, h_tower=14.0)
+    R.define("B_lighthouse", mb, bevel=0.02)
+
+    # Harbour signal station
+    mb = MeshBuilder()
+    bldg.harbour_signal_station(mb, 0, 0, 0.0)
+    R.define("B_signal_station", mb, bevel=0.02)
+
+    # Shipyard 3-roller plate bending machine
+    mb = MeshBuilder()
+    machinery.plate_bending_rolls(mb, 0, 0, z=0.0)
+    R.define("B_plate_rolls", mb, bevel=0.02)
+
+    # Clydesdale draught horse
+    mb = MeshBuilder()
+    machinery.draught_horse(mb, 0, 0, 0.0)
+    R.define("B_draught_horse", mb)
+
     # Buildings
     mb = MeshBuilder(); bldg.moulding_loft(mb, 0, 0, 50, 18); R.define("B_moulding_loft", mb, bevel=0.02)
     mb = MeshBuilder(); bldg.engineering_shop(mb, 0, 0, 46, 24, chimney_h=22.0); R.define("B_engine_shop", mb, bevel=0.02)
@@ -205,9 +225,21 @@ def build(R, coll, audit):
     for x, y in ((286, 180), (286, 196), (60, 250)):
         R.place("B_timber", x, y, QUAY_Z)
 
-    # Dray carts
+    # Dray carts and draught horses
     R.place("B_dray_cart", 40.0, -10.0, QUAY_Z, 20.0)
+    R.place("B_draught_horse", 43.5, -9.0, QUAY_Z, 20.0)
     R.place("B_dray_cart", 160.0, 180.0, QUAY_Z, -80.0)
+    R.place("B_draught_horse", 160.0, 176.0, QUAY_Z, -80.0)
+    R.place("B_dray_cart", 24.0, 260.0, QUAY_Z, 45.0)
+    R.place("B_draught_horse", 26.5, 262.5, QUAY_Z, 45.0)
+
+    # Platers' yard heavy 3-roller plate bending machines
+    R.place("B_plate_rolls", 100.0, 150.0, QUAY_Z, 0.0)
+    R.place("B_plate_rolls", 160.0, 160.0, QUAY_Z, 90.0)
+
+    # Pierhead lighthouse and harbour signal station
+    R.place("B_lighthouse", -26.0, 380.0, QUAY_Z)
+    R.place("B_signal_station", 70.0, -50.0, QUAY_Z)
 
     # Boundary walls
     for x in range(0, 331, 20):

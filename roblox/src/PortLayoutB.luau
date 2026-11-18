@@ -58,6 +58,14 @@ Layout.interactions = {
 	  pos = { 159, 42, 4.0 } },
 	{ id = "B-I12", name = "Graving Dock Keel Blocks", kind = "keel_block_align", radius = 6,
 	  pos = { 108, 100, -7.0 } },
+	{ id = "B-I13", name = "Pierhead Lighthouse & Fog Bell", kind = "navigation_aid", radius = 6,
+	  pos = { -26, 380, 4.0 } },
+	{ id = "B-I14", name = "Harbour Signal Station Lookout", kind = "storm_warning", radius = 6,
+	  pos = { 70, -50, 4.0 } },
+	{ id = "B-I15", name = "Shipyard 3-Roller Plate Bending Machine", kind = "plate_rolling", radius = 6,
+	  pos = { 100, 150, 4.0 } },
+	{ id = "B-I16", name = "Upper Mould Loft Drafting Floor", kind = "loft_drafting", radius = 8,
+	  pos = { 165, 219, 9.2 } },
 }
 
 -- ------------------------------------------------------------------ paths

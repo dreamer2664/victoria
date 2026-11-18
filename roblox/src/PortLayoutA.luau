@@ -69,6 +69,16 @@ Layout.interactions = {
 	  pos = { 24, -52, 4.0 } },
 	{ id = "A-I15", name = "Waterman Boat Steps (Small Craft)", kind = "boat_step", radius = 3,
 	  pos = { -30, 10, 0.5 } },
+	{ id = "A-I16", name = "Pierhead Lighthouse & Fog Bell", kind = "navigation_aid", radius = 6,
+	  pos = { -28, -250, 4.0 } },
+	{ id = "A-I17", name = "Harbour Signal Station (Storm Warning)", kind = "storm_warning", radius = 6,
+	  pos = { -26, 372, 4.0 } },
+	{ id = "A-I18", name = "Hydraulic Wagon Tipper (Coal Staithe)", kind = "coal_tipper", radius = 5,
+	  pos = { 140, -52, 4.0 } },
+	{ id = "A-I19", name = "Ocean Terminal Grand Concourse", kind = "passenger_concourse", radius = 8,
+	  pos = { 24, 63, 4.0 } },
+	{ id = "A-I20", name = "Victorian Long Room (Custom House)", kind = "customs_longroom", radius = 8,
+	  pos = { 31, 142, 4.0 } },
 }
 
 -- ------------------------------------------------------------------ gangways

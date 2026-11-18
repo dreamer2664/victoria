@@ -23,8 +23,10 @@ CODE = "A"
 # ------------------------------------------------------------------ boundaries
 SITE = (-30.0, -310.0, 340.0, 440.0)
 RIVER = (-460.0, -560.0, -30.0, 560.0)
-DOCK = (-30.0, -200.0, 200.0, -60.0)
-WATER_HOLES = [DOCK]
+LOCK_CHANNEL = (-30.0, -146.0, -10.0, -114.0)
+DOCK_BASIN   = (-10.0, -200.0, 200.0, -60.0)
+WATER_HOLES  = [LOCK_CHANNEL, DOCK_BASIN]
+DOCK         = (-30.0, -200.0, 200.0, -60.0)
 
 # The Prince's Landing Stage (Liverpool model): floating pontoon in the river
 STAGE = (-84.0, 36.0, -66.0, 240.0)
@@ -43,7 +45,7 @@ def build(R, coll, audit):
 
     # Hydraulic swing bridge over lock entrance
     mb = MeshBuilder()
-    maritime.swing_bridge(mb, -30.0, -130.0, z_quay=QUAY_Z, length=32.0, width=6.5, angle_deg=0.0)
+    maritime.swing_bridge(mb, -22.0, -130.0, z_quay=QUAY_Z, length=34.0, width=6.8, angle_deg=90.0)
     R.define("A_swing_bridge", mb, bevel=0.0)
 
     # Hartley hydraulic accumulator tower
@@ -61,19 +63,37 @@ def build(R, coll, audit):
     machinery.dray_cart(mb, 0, 0, z=0.0)
     R.define("A_dray_cart", mb)
 
+    # Pierhead lighthouse
+    mb = MeshBuilder()
+    bldg.pierhead_lighthouse(mb, 0, 0, 0.0, h_tower=14.0)
+    R.define("A_lighthouse", mb, bevel=0.02)
+
+    # Harbour signal station
+    mb = MeshBuilder()
+    bldg.harbour_signal_station(mb, 0, 0, 0.0)
+    R.define("A_signal_station", mb, bevel=0.02)
+
+    # Hydraulic wagon tipper
+    mb = MeshBuilder()
+    machinery.hydraulic_wagon_tipper(mb, 0, 0, 0.0)
+    R.define("A_wagon_tipper", mb, bevel=0.02)
+
+    # Draught horse
+    mb = MeshBuilder()
+    machinery.draught_horse(mb, 0, 0, 0.0)
+    R.define("A_draught_horse", mb)
+
     # Buildings
     mb = MeshBuilder()
     bldg.custom_house(mb, 0, 0, 58, 32, storeys=3, wall="sandstone")
     R.define("A_customhouse", mb, bevel=0.02)
 
     mb = MeshBuilder()
-    bldg.warehouse(mb, 0, 0, 44, 46, floors=4, ground_h=4.6, h_floor=3.6,
-                   wall="brick_buff", trim="sandstone", roof="hip", pitch=32,
-                   hoist_side="W", hoist_bays=(1, 3))
+    bldg.passenger_terminal(mb, 0, 0, 44, 46, floors=3, wall="brick_buff", trim="sandstone")
     R.define("A_terminal", mb, bevel=0.02)
 
     mb = MeshBuilder()
-    bldg.transit_shed(mb, 0, 0, 60, 26, h_eave=7.0, wall="brick_buff", open_side="S")
+    bldg.baggage_hall(mb, 0, 0, 60, 26, h_eave=7.0, wall="brick_buff", trim="sandstone")
     R.define("A_baggage_hall", mb, bevel=0.02)
 
     mb = MeshBuilder()
@@ -190,7 +210,7 @@ def build(R, coll, audit):
     mb = MeshBuilder()
     site.add_land(mb, SITE, WATER_HOLES, top=QUAY_Z, bottom=-4.0, surf=None)
     site.land_surface_bands(mb, _surface_bands(), WATER_HOLES, top=QUAY_Z)
-    site.water(mb, [DOCK], z=0.0)
+    site.water(mb, WATER_HOLES, z=0.0)
     site.water(mb, [RIVER], z=0.0)
     R.define("A_ground", mb)
     R.place("A_ground", 0, 0, 0.0)
@@ -257,24 +277,31 @@ def build(R, coll, audit):
     for x, y in ((16, 20), (60, 190), (196, 20), (256, 24)):
         R.place("A_winch", x, y, QUAY_Z)
 
-    # Dray carts
+    # Dray carts and draught horses
     R.place("A_dray_cart", 14.0, 30.0, QUAY_Z, 15.0)
+    R.place("A_draught_horse", 17.5, 30.5, QUAY_Z, 15.0)
     R.place("A_dray_cart", 48.0, 110.0, QUAY_Z, -40.0)
+    R.place("A_draught_horse", 51.5, 107.0, QUAY_Z, -40.0)
     R.place("A_dray_cart", 110.0, 130.0, QUAY_Z, 90.0)
+    R.place("A_draught_horse", 110.0, 134.0, QUAY_Z, 90.0)
+    # Forecourt dray carts
+    R.place("A_dray_cart", 54.0, 50.0, QUAY_Z, 10.0)
+    R.place("A_draught_horse", 57.8, 50.5, QUAY_Z, 10.0)
+    R.place("A_dray_cart", 58.0, 75.0, QUAY_Z, -35.0)
+    R.place("A_draught_horse", 61.2, 73.0, QUAY_Z, -35.0)
 
-    # Landing stage and bridges
+    # South coaling yard hydraulic wagon tippers
+    R.place("A_wagon_tipper", 140.0, -52.0, QUAY_Z, 0.0)
+    R.place("A_wagon_tipper", 170.0, -52.0, QUAY_Z, 0.0)
+
+    # Pierhead lighthouse and harbour signal station
+    R.place("A_lighthouse", -28.0, -250.0, QUAY_Z)
+    R.place("A_signal_station", -26.0, 372.0, QUAY_Z)
+
+    # Landing stage and articulated bowstring bridges
     R.place("A_landing_stage", 0, 0, 0.0)
     for by in BRIDGE_Y:
         R.place("A_gangway_bridge", 0, by, 0.0)
-
-    # Bridge abutments
-    mb = MeshBuilder()
-    for by in BRIDGE_Y:
-        mb.add_box(-31.2, by - 3.0, 2.2, -29.4, by + 3.0, QUAY_Z, "granite")
-        mb.add_box(-30.2, by - 3.2, QUAY_Z, -26.0, by + 3.2, QUAY_Z + 0.12, "plank")
-    R.define("A_bridge_abutment", mb)
-    for by in BRIDGE_Y:
-        R.place("A_bridge_abutment", 0, 0, 0.0)
 
     _furniture(R)
     _railway(R)
@@ -328,14 +355,22 @@ def _quay_module():
 
 def _quays(R):
     """Place modular quays facing correctly outward toward water."""
-    # River frontage, north of dock entrance: x = -30.0, y from -60 to 380 (water at -X, land at +X)
-    _run_frontage(R, -30.0, -60.0, 380.0, rz=-90.0)
-    # River frontage, south of dock entrance: x = -30.0, y from -260 to -200 (water at -X, land at +X)
-    _run_frontage(R, -30.0, -260.0, -200.0, rz=-90.0)
-    # Trafalgar Dock North Quay: y = -60.0, x from -30 to 200 (water at -Y, land at +Y)
-    _run_dock_x(R, -60.0, -30.0, 200.0, rz=0.0)
-    # Trafalgar Dock South Quay: y = -200.0, x from -30 to 200 (water at +Y, land at -Y)
-    _run_dock_x(R, -200.0, -30.0, 200.0, rz=180.0)
+    # River frontage, north of dock entrance: x = -30.0, y from -114 to 380 (water at -X, land at +X)
+    _run_frontage(R, -30.0, -114.0, 380.0, rz=-90.0)
+    # River frontage, south of dock entrance: x = -30.0, y from -260 to -146 (water at -X, land at +X)
+    _run_frontage(R, -30.0, -260.0, -146.0, rz=-90.0)
+    # North Lock Entrance Wall: y = -114.0, x from -30 to -10 (water at -Y, land at +Y)
+    _run_dock_x(R, -114.0, -30.0, -10.0, rz=0.0)
+    # South Lock Entrance Wall: y = -146.0, x from -30 to -10 (water at +Y, land at -Y)
+    _run_dock_x(R, -146.0, -30.0, -10.0, rz=180.0)
+    # Trafalgar Dock Basin West Wall (North of lock): x = -10.0, y from -114 to -60 (water at +X, land at -X)
+    _run_frontage(R, -10.0, -114.0, -60.0, rz=90.0)
+    # Trafalgar Dock Basin West Wall (South of lock): x = -10.0, y from -200 to -146 (water at +X, land at -X)
+    _run_frontage(R, -10.0, -200.0, -146.0, rz=90.0)
+    # Trafalgar Dock North Quay: y = -60.0, x from -10 to 200 (water at -Y, land at +Y)
+    _run_dock_x(R, -60.0, -10.0, 200.0, rz=0.0)
+    # Trafalgar Dock South Quay: y = -200.0, x from -10 to 200 (water at +Y, land at -Y)
+    _run_dock_x(R, -200.0, -10.0, 200.0, rz=180.0)
     # Trafalgar Dock East Quay: x = 200.0, y from -200 to -60 (water at -X, land at +X)
     _run_frontage(R, 200.0, -200.0, -60.0, rz=-90.0)
 
@@ -359,26 +394,34 @@ def _run_dock_x(R, fixed_y, x0, x1, rz=0.0):
 
 
 def _furniture(R):
-    for y in range(-56, 376, 16):
+    for y in range(-110, 376, 16):
+        R.place("A_bollard", -27.5, y, QUAY_Z)
+    for y in range(-250, -150, 16):
         R.place("A_bollard", -27.5, y, QUAY_Z)
     for y in range(-196, -61, 16):
         R.place("A_bollard", 197.5, y, QUAY_Z)
-    for x in range(-26, 196, 16):
+    for x in range(-8, 196, 16):
         R.place("A_bollard", x, -62.5, QUAY_Z)
         R.place("A_bollard", x, -197.5, QUAY_Z)
 
     for y in range(36, 236, 20):
         R.place("A_bollard", -83.5, y, 1.42)
 
-    for y in range(-40, 360, 48):
+    for y in range(-100, 360, 48):
         R.place("A_capstan", -14.0, y, QUAY_Z)
         R.place("A_winch", -22.0, y + 8, QUAY_Z)
+
+    # Lock knuckle warping capstans
+    R.place("A_capstan", -26.0, -110.0, QUAY_Z)
+    R.place("A_capstan", -26.0, -150.0, QUAY_Z)
+    R.place("A_capstan", -14.0, -110.0, QUAY_Z)
+    R.place("A_capstan", -14.0, -150.0, QUAY_Z)
 
     # Armstrong hydraulic portal cranes along river frontage (straddling railway)
     for y in range(-20, 360, 48):
         R.place("A_portal_crane", -20.0, y, QUAY_Z)
 
-    for x in range(-10, 180, 38):
+    for x in range(-8, 180, 38):
         R.place("A_coalhoist", x, -64.0, QUAY_Z)
     for y in range(-190, -70, 36):
         R.place("A_steamcrane", 192.0, y, QUAY_Z, 180.0)
@@ -397,17 +440,12 @@ def _furniture(R):
 def _railway(R):
     """Dockside railway permanent way routed strictly on land and across swing bridge."""
     mb = MeshBuilder()
-    # Three lines along River Quay (North of lock): y = -50 to y = 372
+    # Three lines along River Quay (North of lock): y = -114.0 to y = 372.0 on solid land
     for x in (-22.0, -16.0, -10.0):
-        machinery.rail_track(mb, x, -50.0, x, 372.0, z=QUAY_Z)
-    # South of lock: y = -250 to y = -210 with buffer stops
+        machinery.rail_track(mb, x, -114.0, x, 372.0, z=QUAY_Z)
+    # South of lock: y = -250.0 to y = -146.0 on solid land
     for x in (-22.0, -16.0, -10.0):
-        machinery.rail_track(mb, x, -250.0, x, -210.0, z=QUAY_Z)
-
-    # Track across swing bridge connecting North and South quays across lock entrance
-    machinery.rail_track(mb, -22.0, -146.0, -22.0, -114.0, z=QUAY_Z)
-    machinery.rail_track(mb, -22.0, -210.0, -22.0, -146.0, z=QUAY_Z)
-    machinery.rail_track(mb, -22.0, -114.0, -22.0, -50.0, z=QUAY_Z)
+        machinery.rail_track(mb, x, -250.0, x, -146.0, z=QUAY_Z)
 
     # Station throat branches
     machinery.rail_track(mb, -16.0, 44.0, 80.0, 44.0, z=QUAY_Z)
@@ -434,9 +472,15 @@ def _railway(R):
         R.place("A_van", 40 + i * 6.0, -52.0, QUAY_Z, 90)
     for i in range(4):
         R.place("A_wagon", 74 + i * 5.6, -52.0, QUAY_Z + 3.0)
-    R.place("A_bufferstop", -22.0, -210.0, QUAY_Z)
-    R.place("A_bufferstop", -16.0, -210.0, QUAY_Z)
-    R.place("A_bufferstop", -10.0, -210.0, QUAY_Z)
+
+    # Terminal buffer stops at south end of quayside tracks
+    R.place("A_bufferstop", -22.0, -250.0, QUAY_Z)
+    R.place("A_bufferstop", -16.0, -250.0, QUAY_Z)
+    R.place("A_bufferstop", -10.0, -250.0, QUAY_Z)
+
+    # Buffer stops for the dead-end sidings north of the lock
+    R.place("A_bufferstop", -16.0, -114.0, QUAY_Z)
+    R.place("A_bufferstop", -10.0, -114.0, QUAY_Z)
 
 
 def _signs(R):

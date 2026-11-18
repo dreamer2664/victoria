@@ -522,3 +522,129 @@ def cargo_stack(mb, x, y, z, seed=1, spread=7.0):
             layers = rnd.randint(1, 2)
             for L in range(layers):
                 bale(mb, px, py, z + L * 0.7, r=r, mat="canvas")
+
+
+def plate_bending_rolls(mb, x, y, z=QUAY_Z, rz=0.0, length=6.8):
+    """Heavy shipyard 3-roller plate bending machine for forming hull plates and boiler shells."""
+    rad = math.radians(rz)
+    ca, sa = math.cos(rad), math.sin(rad)
+
+    def rot(lx, ly, lz):
+        return (x + lx * ca - ly * sa, y + lx * sa + ly * ca, z + lz)
+
+    mb.add_box_c(rot(0, 0, 0.2)[0], rot(0, 0, 0.2)[1], z + 0.2, length + 2.4, 3.2, 0.4, "granite")
+    half_L = length * 0.5
+    for end_x in (-half_L, half_L):
+        p = rot(end_x, 0, 1.4)
+        mb.add_box_c(p[0], p[1], z + 1.4, 0.65, 2.6, 2.4, "iron")
+        p_top = rot(end_x, 0, 2.8)
+        mb.add_box_c(p_top[0], p_top[1], z + 2.8, 0.55, 0.8, 0.6, "iron")
+        p_hand = rot(end_x, 0, 3.2)
+        mb.add_cyl(p_hand[0], p_hand[1], z + 3.1, z + 3.3, 0.35, "iron", seg=8)
+
+    p_b1_start = rot(-half_L + 0.35, -0.48, 0.85)
+    p_b1_end = rot(half_L - 0.35, -0.48, 0.85)
+    mb.add_beam(p_b1_start, p_b1_end, 0.44, 0.44, "steel_plate")
+
+    p_b2_start = rot(-half_L + 0.35, 0.48, 0.85)
+    p_b2_end = rot(half_L - 0.35, 0.48, 0.85)
+    mb.add_beam(p_b2_start, p_b2_end, 0.44, 0.44, "steel_plate")
+
+    p_top_start = rot(-half_L + 0.35, 0.0, 1.48)
+    p_top_end = rot(half_L - 0.35, 0.0, 1.48)
+    mb.add_beam(p_top_start, p_top_end, 0.62, 0.62, "steel")
+
+    drive_p = rot(half_L + 0.6, 0.0, 1.0)
+    mb.add_box_c(drive_p[0], drive_p[1], z + 1.0, 0.8, 1.8, 1.6, "iron")
+    gear_p = rot(half_L + 1.05, 0.0, 1.3)
+    mb.add_cyl(gear_p[0], gear_p[1], z + 0.5, z + 2.1, 0.75, "iron", seg=12, axis="X")
+
+    plate_pts = [
+        rot(-half_L + 0.5, -1.8, 0.5),
+        rot(half_L - 0.5, -1.8, 0.5),
+        rot(half_L - 0.5, 0.0, 1.15),
+        rot(-half_L + 0.5, 0.0, 1.15),
+    ]
+    mb.add_quad(plate_pts[0], plate_pts[1], plate_pts[2], plate_pts[3], "steel_plate")
+    plate_pts2 = [
+        rot(-half_L + 0.5, 0.0, 1.15),
+        rot(half_L - 0.5, 0.0, 1.15),
+        rot(half_L - 0.5, 1.8, 0.75),
+        rot(-half_L + 0.5, 1.8, 0.75),
+    ]
+    mb.add_quad(plate_pts2[0], plate_pts2[1], plate_pts2[2], plate_pts2[3], "steel_plate")
+
+
+def hydraulic_wagon_tipper(mb, x, y, z=QUAY_Z, rz=0.0):
+    """Hydraulic coal wagon end-tipping cradle and discharge chute."""
+    rad = math.radians(rz)
+    ca, sa = math.cos(rad), math.sin(rad)
+
+    def rot(lx, ly, lz):
+        return (x + lx * ca - ly * sa, y + lx * sa + ly * ca, z + lz)
+
+    mb.add_box_c(rot(0, 0, 0.2)[0], rot(0, 0, 0.2)[1], z + 0.2, 7.5, 4.2, 0.4, "granite")
+    for side_y in (-1.8, 1.8):
+        p_col = rot(0.5, side_y, 4.5)
+        mb.add_box_c(p_col[0], p_col[1], z + 4.5, 0.8, 0.8, 8.6, "iron")
+        p_sheave = rot(0.5, side_y, 8.9)
+        mb.add_cyl(p_sheave[0], p_sheave[1], z + 8.5, z + 9.3, 0.55, "iron", seg=8, axis="Y")
+    mb.add_beam(rot(0.5, -1.8, 8.8), rot(0.5, 1.8, 8.8), 0.35, 0.5, "iron")
+
+    mb.add_cyl(rot(-0.5, 0, 0.2)[0], rot(-0.5, 0, 0.2)[1], z + 0.2, z + 3.2, 0.38, "iron", seg=8)
+    mb.add_cyl(rot(-0.5, 0, 3.2)[0], rot(-0.5, 0, 3.2)[1], z + 3.2, z + 4.8, 0.22, "steel", seg=8)
+
+    p_cradle = rot(0.2, 0, 3.6)
+    mb.add_box_c(p_cradle[0], p_cradle[1], z + 3.6, 6.2, 2.6, 0.35, "iron")
+    for ry in (-0.71, 0.71):
+        mb.add_beam(rot(-2.6, ry, 3.85), rot(3.0, ry, 3.85), 0.12, 0.14, "steel")
+
+    wagon(mb, rot(0.2, 0, 3.9)[0], rot(0.2, 0, 3.9)[1], z + 3.9, angle=rz, kind="mineral")
+
+    chute_start = rot(3.2, 0, 3.5)
+    chute_end = rot(6.2, 0, 1.2)
+    mb.add_beam(chute_start, chute_end, 2.2, 0.15, "steel_plate")
+    mb.add_beam(rot(3.2, -1.1, 3.8), rot(6.2, -1.1, 1.5), 0.12, 0.6, "iron")
+    mb.add_beam(rot(3.2, 1.1, 3.8), rot(6.2, 1.1, 1.5), 0.12, 0.6, "iron")
+    mb.add_box_c(rot(6.8, 0, 0.5)[0], rot(6.8, 0, 0.5)[1], z + 0.5, 2.8, 2.4, 1.0, "coal")
+
+
+def draught_horse(mb, x, y, z=QUAY_Z, rz=0.0, coat="timber"):
+    """Working Victorian heavy draught horse (Clydesdale/Shire) with harness."""
+    rad = math.radians(rz)
+    ca, sa = math.cos(rad), math.sin(rad)
+
+    def rot(lx, ly, lz):
+        return (x + lx * ca - ly * sa, y + lx * sa + ly * ca, z + lz)
+
+    p_body = rot(0, 0, 1.45)
+    mb.add_box_c(p_body[0], p_body[1], z + 1.45, 1.55, 0.75, 0.85, coat)
+    p_chest = rot(0.7, 0, 1.50)
+    mb.add_box_c(p_chest[0], p_chest[1], z + 1.50, 0.65, 0.70, 0.80, coat)
+    p_rump = rot(-0.65, 0, 1.45)
+    mb.add_box_c(p_rump[0], p_rump[1], z + 1.45, 0.65, 0.72, 0.82, coat)
+
+    for fx in (-0.6, 0.65):
+        for sy in (-0.28, 0.28):
+            mb.add_beam(rot(fx, sy, 1.2), rot(fx, sy, 0.55), 0.20, 0.20, coat)
+            mb.add_box_c(rot(fx, sy, 0.3)[0], rot(fx, sy, 0.3)[1], z + 0.3, 0.24, 0.24, 0.30, "paint_white")
+            mb.add_box_c(rot(fx, sy, 0.08)[0], rot(fx, sy, 0.08)[1], z + 0.08, 0.22, 0.22, 0.16, "black")
+
+    p_neck_base = rot(0.85, 0, 1.6)
+    p_neck_top = rot(1.25, 0, 2.15)
+    mb.add_beam(p_neck_base, p_neck_top, 0.45, 0.38, coat)
+
+    p_head = rot(1.42, 0, 2.10)
+    mb.add_box_c(p_head[0], p_head[1], z + 2.10, 0.50, 0.32, 0.38, coat)
+    p_muzzle = rot(1.68, 0, 1.95)
+    mb.add_box_c(p_muzzle[0], p_muzzle[1], z + 1.95, 0.28, 0.24, 0.26, "black")
+    for ey in (-0.12, 0.12):
+        mb.add_beam(rot(1.30, ey, 2.25), rot(1.30, ey, 2.45), 0.08, 0.08, coat)
+
+    mb.add_beam(rot(-0.95, 0, 1.6), rot(-1.25, 0, 0.7), 0.14, 0.14, "black")
+
+    mb.add_box_c(rot(0.72, 0, 1.55)[0], rot(0.72, 0, 1.55)[1], z + 1.55, 0.20, 0.78, 0.85, "brass")
+    mb.add_box_c(rot(0.0, 0, 1.50)[0], rot(0.0, 0, 1.50)[1], z + 1.50, 0.14, 0.77, 0.87, "black")
+    for ty in (-0.38, 0.38):
+        mb.add_beam(rot(0.7, ty, 1.25), rot(-1.1, ty, 1.05), 0.04, 0.04, "black")
+

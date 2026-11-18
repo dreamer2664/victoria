@@ -132,47 +132,131 @@ def boat_steps(mb, axis, fixed, u0, u1, inward, z_quay=QUAY_Z, z_water=WATER_Z, 
 
 
 # ================================================================ hydraulic swing bridge
-def swing_bridge(mb, x_pivot, y_pivot, z_quay=QUAY_Z, length=32.0, width=6.5, angle_deg=0.0):
-    """Victorian hydraulic wrought-iron swing bridge crossing dock lock entrance."""
-    mb.add_cyl(x_pivot, y_pivot, DOCK_BED_Z, z_quay - 0.4, 4.5, "granite", seg=20)
-    mb.add_cyl(x_pivot, y_pivot, z_quay - 0.4, z_quay - 0.1, 4.8, "granite", seg=20)
-    mb.add_cyl(x_pivot, y_pivot, z_quay - 0.1, z_quay + 0.25, 4.2, "iron", seg=20)
-
+def swing_bridge(mb, x_pivot, y_pivot, z_quay=QUAY_Z, length=34.0, width=6.8, angle_deg=90.0):
+    """Victorian hydraulic wrought-iron swing bridge crossing dock lock entrance.
+    
+    Spans squarely across the lock channel between North and South lock walls.
+    Rests on heavy dressed granite abutments built into both lock entrance walls.
+    Pivot pier sits in the lock channel with hydraulic turning engine cabin.
+    Continuous rail track runs along the deck connecting both sides of the lock.
+    """
     rad = math.radians(angle_deg)
     dx = math.cos(rad)
     dy = math.sin(rad)
     nx = -dy
     ny = dx
 
-    t0 = -length * 0.35
-    t1 = length * 0.65
+    t0 = -length / 2
+    t1 = length / 2
     p_start = (x_pivot + dx * t0, y_pivot + dy * t0)
     p_end = (x_pivot + dx * t1, y_pivot + dy * t1)
 
+    # --- CENTRAL GRANITE PIVOT PIER ---
+    mb.add_cyl(x_pivot, y_pivot, DOCK_BED_Z, z_quay - 0.40, 4.5, "granite", seg=18)
+    mb.add_cyl(x_pivot, y_pivot, z_quay - 0.40, z_quay - 0.10, 4.8, "granite", seg=18)
+    mb.add_cyl(x_pivot, y_pivot, z_quay - 0.10, z_quay + 0.15, 4.2, "iron", seg=18)
+    mb.add_cyl(x_pivot, y_pivot, z_quay + 0.15, z_quay + 0.45, 1.2, "steel", seg=12)
+
+    # --- SHORE RESTING ABUTMENTS IN LOCK MASONRY ---
+    for pt_abut, sgn in ((p_start, -1), (p_end, +1)):
+        ax0 = pt_abut[0] - abs(nx) * (width / 2 + 1.2) - abs(dx) * 1.5
+        ax1 = pt_abut[0] + abs(nx) * (width / 2 + 1.2) + abs(dx) * 1.5
+        ay0 = pt_abut[1] - abs(ny) * (width / 2 + 1.2) - abs(dy) * 1.5
+        ay1 = pt_abut[1] + abs(ny) * (width / 2 + 1.2) + abs(dy) * 1.5
+        mb.add_box(min(ax0, ax1), min(ay0, ay1), DOCK_BED_Z,
+                   max(ax0, ax1), max(ay0, ay1), z_quay - 0.15, "granite")
+        # Heavy cast-iron bearing shoes and hydraulic wedge locking sockets
+        for s in (-width / 2, width / 2):
+            bx = pt_abut[0] + nx * s
+            by = pt_abut[1] + ny * s
+            mb.add_box_c(bx, by, z_quay - 0.05, 1.1, 1.1, 0.22, "iron")
+
+    # --- MAIN FISHBELLY / HOGBACK THROUGH-TRUSS GIRDERS ---
+    n_seg = 16
     for side in (-width / 2, width / 2):
-        g0 = (p_start[0] + nx * side, p_start[1] + ny * side, z_quay + 0.3)
-        g1 = (p_end[0] + nx * side, p_end[1] + ny * side, z_quay + 0.3)
-        mb.add_beam(g0, g1, 0.45, 1.8, "iron")
-        mb.add_beam((g0[0], g0[1], z_quay + 1.2), (g1[0], g1[1], z_quay + 1.2), 0.65, 0.15, "iron")
+        pts_bot = []
+        pts_top = []
+        for i in range(n_seg + 1):
+            t = t0 + (t1 - t0) * i / n_seg
+            px = x_pivot + dx * t + nx * side
+            py = y_pivot + dy * t + ny * side
+            # Parabolic hogback arch profile: ends 1.4m above deck, center 4.2m above deck
+            parab = 1.0 - (t / (length / 2)) ** 2
+            h_truss = 1.45 + parab * 2.85
+            pts_bot.append((px, py, z_quay - 0.10))
+            pts_top.append((px, py, z_quay + h_truss))
 
-    deck_c = (x_pivot + dx * (t0 + t1) / 2, y_pivot + dy * (t0 + t1) / 2)
-    mb.add_box_c(deck_c[0], deck_c[1], z_quay + 0.15, length, width - 0.2, 0.25, "timber")
+        # Bottom box tension chord
+        for i in range(n_seg):
+            mb.add_beam(pts_bot[i], pts_bot[i + 1], 0.45, 0.55, "iron")
+        # Top compression arch boom
+        for i in range(n_seg):
+            mb.add_beam(pts_top[i], pts_top[i + 1], 0.40, 0.48, "iron")
+        # Vertical posts & diagonal cross-ties
+        for i in range(n_seg + 1):
+            mb.add_beam(pts_bot[i], pts_top[i], 0.14, 0.14, "iron")
+        for i in range(n_seg):
+            mb.add_beam(pts_bot[i], pts_top[i + 1], 0.07, 0.07, "iron")
+            mb.add_beam(pts_top[i], pts_bot[i + 1], 0.07, 0.07, "iron")
 
+    # --- TRANSVERSE FLOORBEAMS & SOLID TIMBER DECK ---
+    for i in range(n_seg + 1):
+        t = t0 + (t1 - t0) * i / n_seg
+        c0 = (x_pivot + dx * t - nx * (width / 2), y_pivot + dy * t - ny * (width / 2), z_quay - 0.12)
+        c1 = (x_pivot + dx * t + nx * (width / 2), y_pivot + dy * t + ny * (width / 2), z_quay - 0.12)
+        mb.add_beam(c0, c1, 0.30, 0.42, "iron")
+
+    # Solid oak bridge deck
+    for i in range(n_seg):
+        t_a = t0 + (t1 - t0) * i / n_seg
+        t_b = t0 + (t1 - t0) * (i + 1) / n_seg
+        p00 = (x_pivot + dx * t_a - nx * (width / 2 - 0.1), y_pivot + dy * t_a - ny * (width / 2 - 0.1), z_quay + 0.10)
+        p01 = (x_pivot + dx * t_b - nx * (width / 2 - 0.1), y_pivot + dy * t_b - ny * (width / 2 - 0.1), z_quay + 0.10)
+        p11 = (x_pivot + dx * t_b + nx * (width / 2 - 0.1), y_pivot + dy * t_b - ny * (width / 2 - 0.1), z_quay + 0.10)
+        p10 = (x_pivot + dx * t_a + nx * (width / 2 - 0.1), y_pivot + dy * t_a - ny * (width / 2 - 0.1), z_quay + 0.10)
+        mb.add_quad(p00, p01, p11, p10, "plank")
+        mb.add_quad(p10, p11, p01, p00, "timber")
+
+    # Solid curb timbers / wheel guards along outer walkway edges
+    for s in (-width / 2 + 0.25, width / 2 - 0.25):
+        q0 = (p_start[0] + nx * s, p_start[1] + ny * s, z_quay + 0.22)
+        q1 = (p_end[0] + nx * s, p_end[1] + ny * s, z_quay + 0.22)
+        mb.add_beam(q0, q1, 0.22, 0.22, "timber")
+
+    # --- CONTINUOUS STANDARD GAUGE RAILWAY TRACK ACROSS BRIDGE ---
     for r_off in (-0.7175, 0.7175):
-        r0 = (p_start[0] + nx * r_off, p_start[1] + ny * r_off, z_quay + 0.32)
-        r1 = (p_end[0] + nx * r_off, p_end[1] + ny * r_off, z_quay + 0.32)
-        mb.add_beam(r0, r1, 0.08, 0.12, "steel")
+        r0 = (p_start[0] + nx * r_off, p_start[1] + ny * r_off, z_quay + 0.22)
+        r1 = (p_end[0] + nx * r_off, p_end[1] + ny * r_off, z_quay + 0.22)
+        mb.add_beam(r0, r1, 0.08, 0.14, "steel")
+    # Check rails inside running rails
+    for c_off in (-0.62, 0.62):
+        c0 = (p_start[0] + nx * c_off, p_start[1] + ny * c_off, z_quay + 0.20)
+        c1 = (p_end[0] + nx * c_off, p_end[1] + ny * c_off, z_quay + 0.20)
+        mb.add_beam(c0, c1, 0.06, 0.12, "steel")
 
-    for side in (-width / 2 - 0.1, width / 2 + 0.1):
-        r_start = (p_start[0] + nx * side, p_start[1] + ny * side, z_quay + 1.2)
-        r_end = (p_end[0] + nx * side, p_end[1] + ny * side, z_quay + 1.2)
-        mb.add_beam(r_start, r_end, 0.08, 1.0, "iron")
+    # --- CENTRAL PIVOT SUSPENSION TOWER & PORTAL ---
+    for t_tw in (-2.2, 2.2):
+        for s in (-width / 2, width / 2):
+            px = x_pivot + dx * t_tw + nx * s
+            py = y_pivot + dy * t_tw + ny * s
+            mb.add_beam((px, py, z_quay), (px, py, z_quay + 5.2), 0.22, 0.22, "iron")
+        # Overhead transverse tie frame
+        pa = (x_pivot + dx * t_tw - nx * (width / 2), y_pivot + dy * t_tw - ny * (width / 2), z_quay + 5.0)
+        pb = (x_pivot + dx * t_tw + nx * (width / 2), y_pivot + dy * t_tw - ny * (width / 2), z_quay + 5.0)
+        mb.add_beam(pa, pb, 0.22, 0.28, "iron")
 
-    # Hydraulic engine cabin
-    cx = x_pivot + nx * (width / 2 + 1.8)
-    cy = y_pivot + ny * (width / 2 + 1.8)
-    mb.add_box_c(cx, cy, z_quay + 1.8, 2.4, 2.0, 2.6, "timber")
-    mb.add_box_c(cx, cy, z_quay + 3.2, 2.6, 2.2, 0.4, "slate")
+    # --- HYDRAULIC ENGINE CABIN ---
+    cx = x_pivot + nx * (width / 2 + 2.2)
+    cy = y_pivot + ny * (width / 2 + 2.2)
+    # Cantilevered iron bracket support
+    mb.add_box_c(cx, cy, z_quay - 0.2, 2.8, 2.4, 0.4, "iron")
+    # Timber panelled cabin
+    mb.add_box_c(cx, cy, z_quay + 1.4, 2.6, 2.2, 2.6, "timber")
+    # Hipped slate roof with lead ridge roll
+    mb.add_hip_roof(cx - 1.45, cy - 1.25, cx + 1.45, cy + 1.25, z_quay + 2.7, 28, "slate")
+    # Glazed viewing windows
+    mb.add_box_c(cx, cy - 1.12, z_quay + 1.5, 1.8, 0.08, 1.1, "glass")
+
     return dict(pivot=(x_pivot, y_pivot), length=length)
 
 
@@ -211,57 +295,141 @@ def pontoon(mb, x0, y0, x1, y1, z_deck=1.35, thickness=1.5, lanes=2):
     return dict(deck=z_deck, zroof=zr + 0.75)
 
 
-def gangway_bridge(mb, x0, y0, z_low, x1, z_high, width=3.6, canopy=True,
+# ================================================================ landing stage gangway bridge
+def gangway_bridge(mb, x0, y0, z_low, x1, z_high, width=3.8, canopy=True,
                    side="Y", lattice=True):
-    """Articulated shore-to-pontoon gangway bridge with iron lattice and canopy."""
+    """Articulated shore-to-pontoon landing stage bowstring lattice bridge.
+    
+    Includes massive dressed granite shore abutment pylons, cast-iron trunnion bearings,
+    heavy wrought-iron bowstring lattice through-trusses, solid timber deck, curved zinc canopy,
+    mid-span floating pontoon support bent, and pontoon-end roller bogie carriage on steel tracks.
+    """
     length = abs(x1 - x0)
+    z_shore = z_low
+    z_pont = z_high
 
-    def pt(t, d=0.0, z_off=0.0, side_off=0.0):
+    # --- 1. SHORE ABUTMENT PYLONS & TRUNNION BEARINGS (at x = x0) ---
+    for s in (-1, 1):
+        py = y0 + s * (width / 2 + 1.15)
+        # Heavy dressed granite pylon
+        mb.add_box(x0 - 0.3, py - 0.75, 1.2, x0 + 2.8, py + 0.75, 7.8, "granite")
+        # Moulded sandstone cap
+        mb.add_box(x0 - 0.4, py - 0.85, 7.8, x0 + 2.9, py + 0.85, 8.2, "sandstone")
+        # Cast-iron trunnion hinge pillow block
+        mb.add_cyl(x0 + 0.1, y0 + s * (width / 2), z_shore + 0.20, z_shore + 0.48, 0.42, "iron", seg=12, axis="Y")
+        mb.add_cyl(x0 - 0.2, y0 + s * (width / 2), z_shore + 0.34, z_shore + 0.34, 0.12, "steel", seg=8, axis="Y")
+
+    # Overhead cast-iron arch tie portal across roadway entrance
+    mb.add_beam((x0 + 0.5, y0 - width / 2 - 1.15, 7.4),
+                (x0 + 0.5, y0 + width / 2 + 1.15, 7.4), 0.28, 0.45, "iron")
+
+    # Granite / flagstone shore approach platform
+    mb.add_box(x0, y0 - width / 2 - 0.2, z_shore - 0.25,
+               x0 + 3.2, y0 + width / 2 + 0.2, z_shore + 0.12, "granite", top="flags")
+
+    # --- 2. MAIN BOWSTRING THROUGH-TRUSS GIRDERS (x0 to x1) ---
+    n = 16
+    def pt(t, z_off=0.0, side_off=0.0):
         xx = x0 + (x1 - x0) * t
-        zz = z_low + (z_high - z_low) * t + z_off
-        if side == "Y":
-            return (xx + d, y0 + side_off, zz)
-        return (y0 + side_off, xx + d, zz)
-
-    n = max(3, int(length / 2.6))
-    for i in range(n):
-        t0, t1 = i / n, (i + 1) / n
-        mb.add_quad(pt(t0, 0, 0, -width / 2), pt(t1, 0, 0, -width / 2),
-                    pt(t1, 0, 0, width / 2), pt(t0, 0, 0, width / 2), "plank")
-        mb.add_quad(pt(t0, 0, -0.22, width / 2), pt(t1, 0, -0.22, width / 2),
-                    pt(t1, 0, -0.22, -width / 2), pt(t0, 0, -0.22, -width / 2), "timber")
-        for s in (-1, 1):
-            mb.add_quad(pt(t0, 0, 0, s * width / 2), pt(t0, 0, -0.22, s * width / 2),
-                        pt(t1, 0, -0.22, s * width / 2), pt(t1, 0, 0, s * width / 2), "iron")
+        zz = z_shore + (z_pont - z_shore) * t + z_off
+        return (xx, y0 + side_off, zz)
 
     for s in (-1, 1):
+        so = s * (width / 2)
+        pts_bot = []
+        pts_top = []
         for i in range(n + 1):
             t = i / n
-            mb.add_beam(pt(t, 0, 0, s * width / 2), pt(t, 0, 1.05, s * width / 2), 0.07, 0.07, "iron")
-        for hz in (1.05, 0.55):
-            mb.add_beam(pt(0, 0, hz, s * width / 2), pt(1, 0, hz, s * width / 2), 0.06, 0.06, "iron")
-        if lattice:
-            for i in range(n):
-                t0, t1 = i / n, (i + 1) / n
-                mb.add_beam(pt(t0, 0, 0.10, s * width / 2), pt(t1, 0, 0.95, s * width / 2), 0.035, 0.035, "iron")
-                mb.add_beam(pt(t0, 0, 0.95, s * width / 2), pt(t1, 0, 0.10, s * width / 2), 0.035, 0.035, "iron")
+            # Parabolic bowstring arch rise: 3.2 m above deck at midspan (t = 0.5)
+            arch_h = 1.2 + 4.0 * t * (1.0 - t) * 2.8
+            pts_bot.append(pt(t, 0.0, so))
+            pts_top.append(pt(t, arch_h, so))
 
+        # Bottom box tension chord
+        for i in range(n):
+            mb.add_beam(pts_bot[i], pts_bot[i + 1], 0.45, 0.55, "iron")
+        # Top compression arch boom
+        for i in range(n):
+            mb.add_beam(pts_top[i], pts_top[i + 1], 0.40, 0.45, "iron")
+        # Vertical struts & diagonal lattice cross-bracing
+        for i in range(n + 1):
+            mb.add_beam(pts_bot[i], pts_top[i], 0.12, 0.12, "iron")
+        for i in range(n):
+            mb.add_beam(pts_bot[i], pts_top[i + 1], 0.06, 0.06, "iron")
+            mb.add_beam(pts_top[i], pts_bot[i + 1], 0.06, 0.06, "iron")
+
+    # --- 3. TRANSVERSE FLOORBEAMS, TIMBER DECK & CURVED CANOPY ---
+    for i in range(n + 1):
+        t = i / n
+        mb.add_beam(pt(t, -0.15, -width / 2), pt(t, -0.15, width / 2), 0.28, 0.38, "iron")
+
+    for i in range(n):
+        t0, t1 = i / n, (i + 1) / n
+        # Solid timber deck
+        mb.add_quad(pt(t0, 0.06, -width / 2 + 0.05), pt(t1, 0.06, -width / 2 + 0.05),
+                    pt(t1, 0.06, width / 2 - 0.05), pt(t0, 0.06, width / 2 - 0.05), "plank")
+        mb.add_quad(pt(t0, -0.06, width / 2 - 0.05), pt(t1, -0.06, width / 2 - 0.05),
+                    pt(t1, -0.06, -width / 2 + 0.05), pt(t0, -0.06, -width / 2 + 0.05), "timber")
+
+    # Overhead curved zinc/lead canopy
     if canopy:
-        for s in (-1, 1):
-            for i in range(0, n + 1, 2):
-                t = i / n
-                mb.add_beam(pt(t, 0, 0, s * width / 2), pt(t, 0, 3.1, s * width / 2 * 0.92), 0.07, 0.07, "iron")
-            mb.add_beam(pt(0, 0, 3.05, s * width / 2 * 0.92),
-                        pt(1, 0, 3.05, s * width / 2 * 0.92), 0.06, 0.10, "iron")
         for i in range(n):
             t0, t1 = i / n, (i + 1) / n
-            for s0, s1 in ((-1, 0), (0, 1)):
-                w0 = width / 2 * 0.95
-                mb.add_quad(
-                    pt(t0, 0, 3.35 + 0.25 * (1 - abs(s0)), s0 * w0),
-                    pt(t0, 0, 3.35 + 0.25 * (1 - abs(s1)), s1 * w0),
-                    pt(t1, 0, 3.35 + 0.25 * (1 - abs(s1)), s1 * w0),
-                    pt(t1, 0, 3.35 + 0.25 * (1 - abs(s0)), s0 * w0), "canvas")
+            cz0 = 1.2 + 4.0 * t0 * (1.0 - t0) * 2.8 + 0.25
+            cz1 = 1.2 + 4.0 * t1 * (1.0 - t1) * 2.8 + 0.25
+            # North and South slopes of curved canopy roof
+            p_nw = pt(t0, cz0, -width / 2 * 0.96)
+            p_ne = pt(t1, cz1, -width / 2 * 0.96)
+            p_cw0 = pt(t0, cz0 + 0.35, 0.0)
+            p_ce0 = pt(t1, cz1 + 0.35, 0.0)
+            p_sw = pt(t0, cz0, width / 2 * 0.96)
+            p_se = pt(t1, cz1, width / 2 * 0.96)
+            # Solid lead / zinc roofing
+            mb.add_quad(p_nw, p_ne, p_ce0, p_cw0, "lead")
+            mb.add_quad(p_cw0, p_ce0, p_se, p_sw, "lead")
+            # Underside ceiling
+            mb.add_quad(p_cw0, p_ce0, p_ne, p_nw, "timber")
+            mb.add_quad(p_sw, p_se, p_ce0, p_cw0, "timber")
+            # Eaves valance boards
+            for s in (-1, 1):
+                mb.add_beam(pt(t0, cz0 - 0.12, s * width / 2 * 0.96),
+                            pt(t1, cz1 - 0.12, s * width / 2 * 0.96), 0.08, 0.22, "iron")
+
+    # --- 4. MID-SPAN FLOATING PONTOON SUPPORT BENT (at x = -48.0, t = 0.5) ---
+    t_mid = 0.5
+    p_mid = pt(t_mid, 0.0, 0.0)
+    p_mx, p_mz = p_mid[0], p_mid[2]
+    # Intermediate iron pontoon float in the river
+    mb.add_box(p_mx - 3.2, y0 - width / 2 - 1.8, -0.6,
+               p_mx + 3.2, y0 + width / 2 + 1.8, 1.25, "iron")
+    # Structural iron support trestle stool rising from pontoon deck to bridge underside
+    mb.add_box(p_mx - 2.2, y0 - width / 2 - 0.6, 1.25,
+               p_mx + 2.2, y0 + width / 2 + 0.6, p_mz - 0.22, "iron")
+    # Timber rubbing fender around intermediate pontoon
+    mb.add_box(p_mx - 3.4, y0 - width / 2 - 2.0, 0.2,
+               p_mx + 3.4, y0 + width / 2 + 2.0, 1.35, "creosote")
+
+    # --- 5. PONTOON-END ROLLER BOGIE CARRIAGE ON STEEL TRACKWAYS (at x = x1) ---
+    # Flanged steel roller wheels and bearing pedestals
+    for s in (-1, 1):
+        so = s * (width / 2)
+        wx, wy = x1, y0 + so
+        # Dual steel roller wheels (front & back)
+        for dx_w in (-0.55, 0.55):
+            mb.add_cyl(wx + dx_w, wy, z_pont - 0.25, z_pont + 0.25, 0.32, "steel", seg=12, axis="Y")
+        # Heavy cast-iron bearing horncheek carriage
+        mb.add_box(wx - 0.95, wy - 0.22, z_pont - 0.15, wx + 0.95, wy + 0.22, z_pont + 0.35, "iron")
+        # Steel rail trackway embedded in pontoon deck
+        mb.add_box(x1 - 2.6, wy - 0.18, z_pont - 0.20, x1 + 2.6, wy + 0.18, z_pont - 0.02, "steel")
+        # Heavy buffer stop blocks at track end
+        mb.add_box(x1 - 2.8, wy - 0.22, z_pont - 0.20, x1 - 2.4, wy + 0.22, z_pont + 0.28, "iron")
+
+    # Articulated transition apron flap onto pontoon deck
+    mb.add_quad((x1, y0 - width / 2, z_pont + 0.08), (x1 - 2.2, y0 - width / 2, z_pont),
+                (x1 - 2.2, y0 + width / 2, z_pont), (x1, y0 + width / 2, z_pont + 0.08), "plank")
+    mb.add_quad((x1, y0 + width / 2, z_pont + 0.08), (x1 - 2.2, y0 + width / 2, z_pont),
+                (x1 - 2.2, y0 - width / 2, z_pont), (x1, y0 - width / 2, z_pont + 0.08), "timber")
+
     return dict(length=length)
 
 

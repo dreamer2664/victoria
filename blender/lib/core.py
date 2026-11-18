@@ -287,8 +287,12 @@ class MeshBuilder:
             xm = (x0 + x1) / 2
             # West slope (faces -X, +Z)
             self.add_quad((ex0, ey0, z_eave), (ex0, ey1, z_eave), (xm, ey1, z_r), (xm, ey0, z_r), mat)
+            self.add_quad((xm, ey0, z_r), (xm, ey1, z_r), (ex0, ey1, z_eave), (ex0, ey0, z_eave), "interior")
             # East slope (faces +X, +Z)
             self.add_quad((xm, ey0, z_r), (xm, ey1, z_r), (ex1, ey1, z_eave), (ex1, ey0, z_eave), mat)
+            self.add_quad((ex1, ey0, z_eave), (ex1, ey1, z_eave), (xm, ey1, z_r), (xm, ey0, z_r), "interior")
+            # Solid horizontal ceiling plate closing eaves
+            self.add_box(x0 + 0.1, y0 + 0.1, z_eave - 0.08, x1 - 0.1, y1 - 0.1, z_eave, "interior")
             # Ridge roll / lead cap along the apex
             self.add_box(xm - 0.14, ey0, z_r - 0.06, xm + 0.14, ey1, z_r + 0.10, ridge_mat or "lead")
             # Eaves fascia + cast-iron gutters
@@ -299,8 +303,10 @@ class MeshBuilder:
             # SOLID MASONRY GABLE ENDS (completely closing the roof cavity)
             # South gable at y = y0 (outward normal pointing -Y):
             self.add_tri((x0, y0, z_eave), (x1, y0, z_eave), (xm, y0, z_r), em)
+            self.add_tri((xm, y0, z_r), (x1, y0, z_eave), (x0, y0, z_eave), em)
             # North gable at y = y1 (outward normal pointing +Y):
             self.add_tri((x1, y1, z_eave), (x0, y1, z_eave), (xm, y1, z_r), em)
+            self.add_tri((xm, y1, z_r), (x0, y1, z_eave), (x1, y1, z_eave), em)
 
             # Verge bargeboard trim along the roof slope overhangs
             for ey, sgn in ((ey0, -1), (ey1, 1)):
@@ -312,8 +318,12 @@ class MeshBuilder:
             ym = (y0 + y1) / 2
             # South slope (faces -Y, +Z)
             self.add_quad((ex0, ey0, z_eave), (ex1, ey0, z_eave), (ex1, ym, z_r), (ex0, ym, z_r), mat)
+            self.add_quad((ex0, ym, z_r), (ex1, ym, z_r), (ex1, ey0, z_eave), (ex0, ey0, z_eave), "interior")
             # North slope (faces +Y, +Z)
             self.add_quad((ex0, ym, z_r), (ex1, ym, z_r), (ex1, ey1, z_eave), (ex0, ey1, z_eave), mat)
+            self.add_quad((ex0, ey1, z_eave), (ex1, ey1, z_eave), (ex1, ym, z_r), (ex0, ym, z_r), "interior")
+            # Solid horizontal ceiling plate closing eaves
+            self.add_box(x0 + 0.1, y0 + 0.1, z_eave - 0.08, x1 - 0.1, y1 - 0.1, z_eave, "interior")
             # Ridge roll / lead cap
             self.add_box(ex0, ym - 0.14, z_r - 0.06, ex1, ym + 0.14, z_r + 0.10, ridge_mat or "lead")
             # Eaves fascia + cast-iron gutters
@@ -324,8 +334,10 @@ class MeshBuilder:
             # SOLID MASONRY GABLE ENDS (completely closing the roof cavity)
             # West gable at x = x0 (outward normal pointing -X):
             self.add_tri((x0, y1, z_eave), (x0, y0, z_eave), (x0, ym, z_r), em)
+            self.add_tri((x0, ym, z_r), (x0, y0, z_eave), (x0, y1, z_eave), em)
             # East gable at x = x1 (outward normal pointing +X):
             self.add_tri((x1, y0, z_eave), (x1, y1, z_eave), (x1, ym, z_r), em)
+            self.add_tri((x1, ym, z_r), (x1, y1, z_eave), (x1, y0, z_eave), em)
 
             # Verge bargeboard trim along the roof slope overhangs
             for ex in (ex0, ex1):
@@ -344,10 +356,18 @@ class MeshBuilder:
             ra, rb = (ex0 + ins, cy, z_r), (ex1 - ins, cy, z_r)
         else:
             ra, rb = (cx, ey0 + ins, z_r), (cx, ey1 - ins, z_r)
+        # Top roof slopes
         self.add_quad((ex0, ey0, z_eave), (ex1, ey0, z_eave), rb, ra, mat)
         self.add_quad((ex1, ey1, z_eave), (ex0, ey1, z_eave), ra, rb, mat)
         self.add_tri((ex1, ey0, z_eave), (ex1, ey1, z_eave), rb, mat)
         self.add_tri((ex0, ey1, z_eave), (ex0, ey0, z_eave), ra, mat)
+        # Underside ceiling slopes (prevents backface culling)
+        self.add_quad(ra, rb, (ex1, ey0, z_eave), (ex0, ey0, z_eave), "interior")
+        self.add_quad(rb, ra, (ex0, ey1, z_eave), (ex1, ey1, z_eave), "interior")
+        self.add_tri(rb, (ex1, ey1, z_eave), (ex1, ey0, z_eave), "interior")
+        self.add_tri(ra, (ex0, ey0, z_eave), (ex0, ey1, z_eave), "interior")
+        # Solid horizontal ceiling plate across eaves
+        self.add_box(x0 + 0.1, y0 + 0.1, z_eave - 0.08, x1 - 0.1, y1 - 0.1, z_eave, "interior")
         # Gutters along all four eaves
         for ex in (ex0, ex1):
             self.add_box(ex - 0.10, ey0, z_eave - 0.32, ex + 0.02, ey1, z_eave - 0.18, "iron")

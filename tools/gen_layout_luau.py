@@ -72,6 +72,16 @@ Layout.interactions = {
 	  pos = { 24, -52, 4.0 } },
 	{ id = "A-I15", name = "Waterman Boat Steps (Small Craft)", kind = "boat_step", radius = 3,
 	  pos = { -30, 10, 0.5 } },
+	{ id = "A-I16", name = "Pierhead Lighthouse & Fog Bell", kind = "navigation_aid", radius = 6,
+	  pos = { -28, -250, 4.0 } },
+	{ id = "A-I17", name = "Harbour Signal Station (Storm Warning)", kind = "storm_warning", radius = 6,
+	  pos = { -26, 372, 4.0 } },
+	{ id = "A-I18", name = "Hydraulic Wagon Tipper (Coal Staithe)", kind = "coal_tipper", radius = 5,
+	  pos = { 140, -52, 4.0 } },
+	{ id = "A-I19", name = "Ocean Terminal Grand Concourse", kind = "passenger_concourse", radius = 8,
+	  pos = { 24, 63, 4.0 } },
+	{ id = "A-I20", name = "Victorian Long Room (Custom House)", kind = "customs_longroom", radius = 8,
+	  pos = { 31, 142, 4.0 } },
 }
 
 -- ------------------------------------------------------------------ gangways
@@ -160,6 +170,14 @@ Layout.interactions = {
 	  pos = { 159, 42, 4.0 } },
 	{ id = "B-I12", name = "Graving Dock Keel Blocks", kind = "keel_block_align", radius = 6,
 	  pos = { 108, 100, -7.0 } },
+	{ id = "B-I13", name = "Pierhead Lighthouse & Fog Bell", kind = "navigation_aid", radius = 6,
+	  pos = { -26, 380, 4.0 } },
+	{ id = "B-I14", name = "Harbour Signal Station Lookout", kind = "storm_warning", radius = 6,
+	  pos = { 70, -50, 4.0 } },
+	{ id = "B-I15", name = "Shipyard 3-Roller Plate Bending Machine", kind = "plate_rolling", radius = 6,
+	  pos = { 100, 150, 4.0 } },
+	{ id = "B-I16", name = "Upper Mould Loft Drafting Floor", kind = "loft_drafting", radius = 8,
+	  pos = { 165, 219, 9.2 } },
 }
 
 -- ------------------------------------------------------------------ paths
