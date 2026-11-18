@@ -35,8 +35,9 @@ def mb_to_object(mb, name, coll=None, palette_mats=None, smooth=True,
     origin_at: world point that shall become the object's origin (moving
     parts: rowlock pivot, propeller hub, rudder pintle)."""
     if origin_at is not None:
-        mb = mb.translated(tuple(-np.asarray(origin_at, float))) \
-            if hasattr(mb, "translated") else None
+        # MB.translated returns a copy; do not mutate the source mesh or
+        # silently replace it with None if a different builder is supplied.
+        mb = mb.translated(tuple(-np.asarray(origin_at, float)))
     me = bpy.data.meshes.new(name)
     verts = mb.verts
     faces = mb.faces
@@ -64,6 +65,11 @@ def mb_to_object(mb, name, coll=None, palette_mats=None, smooth=True,
     except Exception:
         pass
     bm.free()
+    # GEN-1: smooth shading used to run across every welded edge, so flat
+    # boards with welded edges (benches, thwarts, transom, keel) shaded as
+    # soft pillows.  Mark edges sharper than 35 deg as sharp (auto smooth).
+    if smooth and hasattr(me, "set_sharp_from_angle"):
+        me.set_sharp_from_angle(angle=math.radians(35.0))
     return obj
 
 
@@ -147,15 +153,27 @@ class RenderRig:
             L.data.color = color
             if hasattr(L.data, 'visible_camera'):
                 L.data.visible_camera = False
+            # GEN-1: aim every lamp at the boat.  They used to be left at the
+            # default orientation (straight down), so the low warm rim lamp
+            # threw a bright pool on the studio floor that read as a lit
+            # band / false horizon in the bow-on and stern-on views.
+            from mathutils import Vector
+            L.location = loc
+            d = Vector((0.0, 0.0, 0.0)) - Vector(loc)
+            L.rotation_mode = 'QUATERNION'
+            L.rotation_quaternion = d.to_track_quat('-Z', 'Y')
+            if hasattr(L.data, 'spread'):
+                L.data.spread = math.radians(60.0)   # keep light off the cove walls
             return L
-        area("TM2_Key", (6, -7, 9), 1900 * 0.38, 5.0, (1.0, 0.94, 0.86))
-        area("TM2_Fill", (-5, 6, 5), 1400 * 0.32, 6.0, (0.75, 0.85, 1.0))
-        area("TM2_Top", (0, 1, 12), 2100 * 0.40, 4.0, (0.95, 0.97, 1.0))
-        area("TM2_Rim", (-7, -4, 2.5), 900 * 0.30, 3.0, (1.0, 0.85, 0.65))
+        area("TM2_Key", (6, -7, 9), 1900 * 0.38 * 0.32, 5.0, (1.0, 0.94, 0.86))
+        area("TM2_Fill", (-5, 6, 5), 1400 * 0.32 * 0.45, 6.0, (0.75, 0.85, 1.0))
+        area("TM2_Top", (-4.5, 5.0, 10.0), 2100 * 0.40 * 0.45,   # GEN-1: off the plan-view axis (specular glare)
+             4.0, (0.95, 0.97, 1.0))
+        area("TM2_Rim", (-7, -4, 5.0), 900 * 0.30 * 0.50, 3.0, (1.0, 0.85, 0.65))
         if studio:
             from .studio2 import cyclorama, tune_scene
             cyclorama(drop_z=floor_z)
-            tune_scene(scene)
+            tune_scene(scene, exposure=-0.75)   # GEN-1: aimed lamps
         else:
             # GEN-1: afloat views are lit by sky + sun only.  The studio area
             # lamps reflect in open water as detached white discs.

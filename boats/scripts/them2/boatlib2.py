@@ -315,7 +315,11 @@ def standard_gear(hull, kind="rowing", zfloor=None, z_thwart=None, hook_x=0.6,
     if zfloor is None:
         zfloor = hull.keel_z(0.5) + 0.14
     gear = []
-    gear.append(("Painter", P.painter_coil((loa / 2 - 0.75, 0.20, zfloor + 0.10))))
+    # GEN-1: the painter is coiled down on the starboard bow sheet (settled on
+    # the sloping planking of the fine bow it rode up to the gunwale)
+    xp = hull.X(0.095)
+    yp = -(_inner_y(hull, 0.095, 0.30, -0.056) - 0.15)
+    gear.append(("Painter", P.painter_coil((xp, yp, 0.30 + 0.012))))
     if kind == "rowing":
         # GEN-1: stowed on the bottom boards near the centreline, abaft the
         # stroke thwart (at y=-0.30 near the stern its flukes stood out
@@ -351,7 +355,7 @@ def standard_gear(hull, kind="rowing", zfloor=None, z_thwart=None, hook_x=0.6,
     if board_fn is not None:
         rf = rest_fn(hull, board_fn)
         for name, gmb in gear:
-            if name in ("Painter", "Grapnel", "Anchor", "Baler", "Bucket", "Breaker"):
+            if name in ("Grapnel", "Anchor", "Baler", "Bucket", "Breaker"):
                 settle(gmb, rf)
     return gear
 

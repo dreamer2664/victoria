@@ -35,8 +35,10 @@ VIEWS = {
     "broadside":     dict(dir=(0.0, -1.0, 0.20), lens=60, margin=1.10),
     "bow_quarter":   dict(dir=(1.0, -0.95, 0.50), lens=55, margin=1.10),
     "stern_quarter": dict(dir=(-1.0, -0.90, 0.48), lens=55, margin=1.10),
-    "bow_on":        dict(dir=(1.0, -0.06, 0.24), lens=70, margin=1.18),
-    "stern_on":      dict(dir=(-1.0, -0.06, 0.26), lens=70, margin=1.18),
+    # True centreline views: the old -0.06 Y bias made the stem/rudder
+    # appear displaced and weakened these images as symmetry checks.
+    "bow_on":        dict(dir=(1.0, 0.0, 0.24), lens=70, margin=1.18),
+    "stern_on":      dict(dir=(-1.0, 0.0, 0.26), lens=70, margin=1.18),
     "top":           dict(dir=(0.0, -0.10, 1.0), lens=60, margin=1.12),
     "underside":     dict(dir=(0.55, -0.80, -0.95), lens=55, margin=1.12),
     "interior":      dict(dir=(0.38, -0.55, 1.0), lens=50, margin=1.06),

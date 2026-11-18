@@ -363,6 +363,7 @@ def transom_plate(hull, thk=0.05, mat=0, mat_edge=1, framing=True):
         return hull.section_pt(1.0, t, 0.0)[0]
     # plate spans x in [0, thk] (+X = inboard); bedded 12 mm into the plank ends
     mb.add_plate(outline2, thk, plane="YZ", origin=(-0.012, 0, 0), mat=mat)
+    plate_nv = len(mb.verts)
     if framing:
         z_top = max(p[2] for p in edge_s)
         zr = z_top - 0.07
@@ -372,10 +373,35 @@ def transom_plate(hull, thk=0.05, mat=0, mat_edge=1, framing=True):
         for yy in (-0.40, 0.0, 0.40):
             yv = yy * 2 * y_top
             zb = zmin + 0.05 if yy == 0.0 else zmin + 0.25
+            if yy != 0.0:
+                # GEN-1: the side uprights' heels stood outside the V of the
+                # transom (a dark block on each quarter).  Start each upright
+                # where the transom is wide enough to hold it.
+                tq = 0.0
+                while tq < 0.95 and abs(hull.section_pt(1.0, tq, -0.03)[1]) < abs(yv) + 0.050:
+                    tq += 0.01
+                zb = max(zb, z0 + (z1 - z0) * tq + 0.01)
             mb.add_box((thk - 0.012 + 0.028, yv, (zr + zb) / 2),
                        (0.056, 0.070, (zr - zb)), mat=mat_edge, chamfer=0.006)
-    # shear onto the raked transom plane
-    mb.verts = [(x + x_end(z), y, z) for (x, y, z) in mb.verts]
+    # Shear onto the raked plane and bevel the inboard perimeter to the
+    # actual hull at that face.  Using the after-face outline unchanged
+    # across 52 mm of thickness left two corners outside the garboards.
+    shaped = []
+    for i, (x, y, z) in enumerate(mb.verts):
+        xx = x + x_end(z)
+        if i < plate_nv and x > 0:
+            xi = clamp((hull.loa / 2 - xx) / hull.loa, 0.0, 1.0)
+            lo, hi = 0.0, 1.0
+            for _ in range(24):
+                tm = (lo + hi) * 0.5
+                if hull.section_pt(xi, tm, -0.018)[2] < z:
+                    lo = tm
+                else:
+                    hi = tm
+            lim = max(0.0, hull.section_pt(xi, (lo + hi) * 0.5, -0.018)[1])
+            y = float(clamp(y, -lim, lim))
+        shaped.append((xx, y, z))
+    mb.verts = shaped
     return mb
 
 
@@ -471,8 +497,21 @@ def keelson(hull, depth=0.14, sided=0.075, mat=0, xi_range=(0.12, 0.88),
         z = hull.keel_z(xi) + 0.055
         d = depth * (1.0 - 0.55 * (smoothstep(xi_range[0] + 0.13, xi_range[0], xi) +
                                    smoothstep(xi_range[1] - 0.13, xi_range[1], xi)))
-        paths.append([x, 0, z - 0.02])
-        shapes.append(np.array([(-sided / 2, 0), (sided / 2, 0), (sided / 2, d),
+        # Bevel the heel into the fine V at each end.  A full-width
+        # rectangular heel at keel+35 mm put its lower corners through the
+        # garboards; keep the designed crown/height and taper only the foot.
+        zbase = z - 0.02
+        lo, hi = 0.0, 1.0
+        for _ in range(24):
+            tm = (lo + hi) * 0.5
+            if hull.section_pt(xi, tm, -0.018)[2] < zbase:
+                lo = tm
+            else:
+                hi = tm
+        yin = hull.section_pt(xi, (lo + hi) * 0.5, -0.018)[1]
+        foot = min(sided / 2, max(0.004, yin - 0.002))
+        paths.append([x, 0, zbase])
+        shapes.append(np.array([(-foot, 0), (foot, 0), (sided / 2, d),
                                 (-sided / 2, d)]))
     # GEN-1 correction (shared root cause with the keel): with the implicit
     # frame the inner keelson was swept DOWNWARD through the bottom of the
