@@ -56,7 +56,8 @@ renders/port_b/           01_aerial .. 07_roofscape
 reference/
   reference_board.html    annotated period plates (self-contained, images embedded)
   plates/                 18 public-domain plates
-roblox/src/               Luau: Config, layouts, PortService, ShipService, Mooring, server, client
+roblox/src/               Luau: Config, layouts, PortService, ShipService, Mooring, tide, server, client
+tests/test_tide_math.py   regression checks for tide, gangway pitch and roller travel
 tools/gen_layout_docs.py  regenerates the two layout specs from the meta JSON
 HISTORICAL_EVIDENCE.md    every decision -> its source
 ASSET_LICENSES.md         everything about provenance
@@ -179,8 +180,13 @@ Honest state of the work, as of this commit:
 - Port A's south-east corner is open quay / reserved land rather than built up.
 - No ship is modelled anywhere. `proxy.py` is a clearance block-out and is exported
   under the reserved name `_PROXY_liner`; **delete it before shipping**.
-- The landing stage is static: these docks are non-tidal, so there is no tide to
-  animate.
+- Gen-III now includes a server tide clock and client-side smooth interpolation. The
+  exported Gen-II landing stage is still static until its water meshes and gangway
+  subassemblies are split/tagged in Roblox Studio; see `docs/TIDAL_SIMULATION.md`.
+- The checked-in per-prototype GLBs are mostly empty 132-byte files. The exporter now
+  validates mesh primitives and temporarily unhides the prototype collection, but a
+  Blender rebuild is required before modular Roblox import; see
+  `docs/PERICLES_III_HANDOFF_NOTES.md`.
 - See `docs/QC_REPORT.md` for the full inspection record, including what failed.
 
 ---

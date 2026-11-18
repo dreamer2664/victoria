@@ -211,3 +211,24 @@ gangway.Parent = workspace.Ports
 - Interior lighting rigs.
 - Any `.rbxl` place file — everything here is a source kit plus instructions, which is
   what the brief asked for.
+
+## 7. Dynamic tide and landing-stage rig (Gen III)
+
+The Gen-III tide clock is implemented in `roblox/src/TideMath.luau` and
+`roblox/src/TidalController.luau`; the client interpolator is
+`roblox/src/TidalClient.client.luau`. Put the two modules under
+`ReplicatedStorage/Shared`, and the client script in
+`StarterPlayer/StarterPlayerScripts`. `PortServer.server.luau` already starts the
+server controller.
+
+**Asset preparation is required before the stage can move.** The current Gen-II
+`A_ground` GLB combines land and water, and the current `A_gangway_bridge` GLB
+combines static abutments with its moving span. Split these into separate surfaces
+and assemblies before import. Follow the tag and attribute table in
+[`TIDAL_SIMULATION.md`](TIDAL_SIMULATION.md); do not tag the old whole gangway mesh
+as the moving span.
+
+The server publishes `Workspace.VictoriaTideA_M`, `VictoriaTideB_M`, and
+`VictoriaTideEpoch`. Port A follows the handoff's `-2.0 m .. +3.5 m` operating
+range and its impounded dock surface stays at `+3.2 m`. Port B follows a total
+`3.5 m` range. The default 20-minute high-to-high period is compressed for play.

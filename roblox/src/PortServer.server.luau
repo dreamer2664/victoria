@@ -26,6 +26,7 @@ local Config = require(Shared.Config)
 local PortService = require(Shared.PortService)
 local ShipService = require(Shared.ShipService)
 local Mooring = require(Shared.Mooring)
+local TidalController = require(Shared.TidalController)
 local LayoutA = require(Shared.PortLayoutA)
 local LayoutB = require(Shared.PortLayoutB)
 
@@ -207,8 +208,9 @@ end
 assignBerthToMoorings("a", LayoutA)
 assignBerthToMoorings("b", LayoutB)
 
--- ------------------------------------------------------------------ 4. clock
+-- ------------------------------------------------------------------ 4. clocks and environmental simulation
 ShipService.startLoop()
+TidalController.start()
 
 print(("[port] %s and %s online: %d berths, %d interaction anchors.")
 	:format(Config.PORTS.A.name, Config.PORTS.B.name,

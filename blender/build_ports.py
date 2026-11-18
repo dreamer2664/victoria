@@ -7,7 +7,7 @@ Usage (inside Blender):
 
 Stages: layout | render | export | save | all
 """
-import os, sys, json, math, time
+import os, sys, json, math, time, struct
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -224,6 +224,29 @@ def _scene_bbox():
     return lo + hi
 
 
+def _assert_populated_glb(path, asset_name):
+    """Fail the export stage if a GLB is malformed or contains no mesh primitives."""
+    with open(path, "rb") as src:
+        header = src.read(12)
+        if len(header) != 12:
+            raise RuntimeError("truncated GLB for %s: %s" % (asset_name, path))
+        magic, version, total_length = struct.unpack("<4sII", header)
+        if magic != b"glTF" or version != 2 or total_length != os.path.getsize(path):
+            raise RuntimeError("invalid GLB header for %s: %s" % (asset_name, path))
+        document = None
+        while src.tell() + 8 <= total_length:
+            chunk_length, chunk_type = struct.unpack("<II", src.read(8))
+            chunk = src.read(chunk_length)
+            if len(chunk) != chunk_length:
+                raise RuntimeError("truncated GLB chunk for %s: %s" % (asset_name, path))
+            if chunk_type == 0x4E4F534A:  # ASCII "JSON" in little-endian GLB chunk order
+                document = json.loads(chunk.decode("utf-8").rstrip(" "))
+                break
+        meshes = document.get("meshes", []) if document else []
+        if not any(mesh.get("primitives") for mesh in meshes):
+            raise RuntimeError("GLB export contains no mesh primitives for %s: %s" % (asset_name, path))
+
+
 def export_all(R, meta):
     """Write GLB + FBX for the whole port and for each modular asset separately."""
     glb_dir = os.path.join(ROOT, "assets", "glb", PORT)
@@ -233,22 +256,39 @@ def export_all(R, meta):
     sc = bpy.context.scene
     sc.unit_settings.scale_length = 1.0
 
-    # 1. one GLB per prototype: this is the modular kit Roblox users import
+    # 1. one GLB per prototype: this is the modular kit Roblox users import.
+    # The registry stores prototypes in a hidden collection so they do not appear
+    # in renders. The glTF exporter honours collection visibility even when an
+    # object is selected; exporting while hidden silently produced empty 132-byte
+    # GLBs. Temporarily reveal the collection and restore its state even on error.
     hidden = R.hidden
-    for name, ob in R.proto.items():
-        if name.startswith("_"):
-            continue        # QC instruments (the clearance proxy) are not assets
+    was_hidden_render = hidden.hide_render
+    was_hidden_viewport = hidden.hide_viewport
+    exported = 0
+    try:
+        hidden.hide_render = False
+        hidden.hide_viewport = False
+        for name, ob in R.proto.items():
+            if name.startswith("_"):
+                continue        # QC instruments (the clearance proxy) are not assets
+            for o in bpy.context.selected_objects:
+                o.select_set(False)
+            ob.select_set(True)
+            bpy.context.view_layer.objects.active = ob
+            path = os.path.join(glb_dir, name + ".glb")
+            bpy.ops.export_scene.gltf(
+                filepath=path, export_format='GLB', use_selection=True,
+                export_apply=True, export_yup=True, export_texcoords=True,
+                export_normals=True, export_materials='EXPORT',
+                export_image_format='AUTO', export_cameras=False, export_lights=False)
+            _assert_populated_glb(path, name)
+            exported += 1
+    finally:
         for o in bpy.context.selected_objects:
             o.select_set(False)
-        ob.select_set(True)
-        bpy.context.view_layer.objects.active = ob
-        path = os.path.join(glb_dir, name + ".glb")
-        bpy.ops.export_scene.gltf(
-            filepath=path, export_format='GLB', use_selection=True,
-            export_apply=True, export_yup=True, export_texcoords=True,
-            export_normals=True, export_materials='EXPORT',
-            export_image_format='AUTO', export_cameras=False, export_lights=False)
-    print("exported %d modular GLBs" % len(R.proto))
+        hidden.hide_render = was_hidden_render
+        hidden.hide_viewport = was_hidden_viewport
+    print("exported %d populated modular GLBs" % exported)
 
     # 2. whole-port GLB (needed for a one-piece import / visual check)
     for o in bpy.context.selected_objects:
@@ -260,12 +300,14 @@ def export_all(R, meta):
         if (ob.type == 'MESH' and R.hidden not in ob.users_collection
                 and not ob.hide_render and not ob.hide_viewport):
             ob.select_set(True)
+    full_glb = os.path.join(glb_dir, "port_%s_full.glb" % PORT)
     bpy.ops.export_scene.gltf(
-        filepath=os.path.join(glb_dir, "port_%s_full.glb" % PORT),
+        filepath=full_glb,
         export_format='GLB', use_selection=True, export_apply=True,
         export_yup=True, export_materials='EXPORT', export_cameras=False,
         export_lights=False)
-    print("exported full-port GLB")
+    _assert_populated_glb(full_glb, "port_%s_full" % PORT)
+    print("exported and validated full-port GLB")
 
     # 3. FBX for anyone on the older import path
     bpy.ops.export_scene.fbx(
