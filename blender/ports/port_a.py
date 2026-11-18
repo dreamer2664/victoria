@@ -16,6 +16,8 @@ import bldg
 import maritime
 import machinery
 import portsite as site
+import vessels
+import clutter
 
 NAME = "Aldermouth"
 CODE = "A"
@@ -206,6 +208,23 @@ def build(R, coll, audit):
     mb = MeshBuilder(); machinery.cargo_stack(mb, 0, 0, 0, seed=3); R.define("A_cargo", mb)
     mb = MeshBuilder(); machinery.buffer_stop(mb, 0, 0, 0); R.define("A_bufferstop", mb)
 
+    # Historic vessels and harbour craft
+    mb = MeshBuilder(); vessels.build_transatlantic_liner(mb); R.define("A_liner", mb)
+    mb = MeshBuilder(); vessels.build_cargo_steamer(mb); R.define("A_collier", mb)
+    mb = MeshBuilder(); vessels.build_steam_tug(mb); R.define("A_tug", mb)
+    mb = MeshBuilder(); vessels.build_harbour_lighter(mb); R.define("A_lighter", mb)
+
+    # Quayside, street and warehouse clutter
+    mb = MeshBuilder(); clutter.crate_pyramid(mb); R.define("A_crate_stack", mb)
+    mb = MeshBuilder(); clutter.barrel_cluster(mb); R.define("A_barrel_group", mb)
+    mb = MeshBuilder(); clutter.cotton_bale_stack(mb); R.define("A_cotton_bales", mb)
+    mb = MeshBuilder(); clutter.grain_sack_pile(mb); R.define("A_grain_sacks", mb)
+    mb = MeshBuilder(); clutter.cable_spool_depot(mb); R.define("A_cable_spools", mb)
+    mb = MeshBuilder(); clutter.anchor_chain_heap(mb); R.define("A_anchor_chains", mb)
+    mb = MeshBuilder(); clutter.lifebuoy_stand(mb); R.define("A_lifebuoy", mb)
+    mb = MeshBuilder(); clutter.horse_water_trough(mb); R.define("A_horse_trough", mb)
+    mb = MeshBuilder(); clutter.warehouse_cathead_lucam(mb); R.define("A_lucam", mb)
+
     # ================================================== land + water
     mb = MeshBuilder()
     site.add_land(mb, SITE, WATER_HOLES, top=QUAY_Z, bottom=-4.0, surf=None)
@@ -302,6 +321,45 @@ def build(R, coll, audit):
     R.place("A_landing_stage", 0, 0, 0.0)
     for by in BRIDGE_Y:
         R.place("A_gangway_bridge", 0, by, 0.0)
+
+    # Historic vessels and harbour craft
+    R.place("A_liner", -93.0, 138.0, 0.0, 0.0)
+    R.place("A_collier", 45.0, -74.0, 0.0, -90.0)
+    R.place("A_tug", -10.0, -125.0, 0.0, 60.0)
+    R.place("A_lighter", 25.0, -145.0, 0.0, 15.0)
+    R.place("A_lighter", 60.0, -115.0, 0.0, -25.0)
+
+    # Quayside and North Quay cargo clutter
+    for x in (-4, 20, 48, 76, 104, 132, 160):
+        R.place("A_crate_stack", x, -44.0, QUAY_Z, (x * 17) % 45)
+    for x in (12, 36, 64, 92, 120, 148):
+        R.place("A_barrel_group", x, -44.0, QUAY_Z, (x * 13) % 45)
+    for x in (28, 80, 136):
+        R.place("A_cotton_bales", x, -44.0, QUAY_Z)
+        R.place("A_grain_sacks", x + 10, -44.0, QUAY_Z)
+        R.place("A_cable_spools", x + 18, -44.0, QUAY_Z)
+        R.place("A_anchor_chains", x - 8, -44.0, QUAY_Z)
+
+    # Forecourt and street clutter
+    R.place("A_horse_trough", 12.0, 24.0, QUAY_Z, 0.0)
+    R.place("A_horse_trough", 42.0, 85.0, QUAY_Z, 90.0)
+    R.place("A_horse_trough", 165.0, 142.0, QUAY_Z, 0.0)
+    R.place("A_crate_stack", 22.0, 28.0, QUAY_Z, 15.0)
+    R.place("A_crate_stack", 46.0, 68.0, QUAY_Z, -20.0)
+    R.place("A_barrel_group", 28.0, 32.0, QUAY_Z, 30.0)
+    R.place("A_cotton_bales", 52.0, 80.0, QUAY_Z, -10.0)
+
+    # Quayside safety lifebuoys
+    for y in (-40.0, 0.0, 40.0, 80.0, 120.0, 160.0, 200.0, 240.0, 280.0, 320.0):
+        R.place("A_lifebuoy", -28.5, y, QUAY_Z, 90.0)
+    for x in (10.0, 40.0, 70.0, 100.0, 130.0, 160.0, 190.0):
+        R.place("A_lifebuoy", x, -61.5, QUAY_Z, 0.0)
+
+    # Warehouse hoist lucams (cathead dormers)
+    R.place("A_lucam", 16.0, 196.0, QUAY_Z + 14.5, 180.0)
+    R.place("A_lucam", 40.0, 196.0, QUAY_Z + 11.5, 180.0)
+    R.place("A_lucam", 100.0, 116.0, QUAY_Z + 14.5, 180.0)
+    R.place("A_lucam", 226.0, 230.0, QUAY_Z + 11.5, 180.0)
 
     _furniture(R)
     _railway(R)

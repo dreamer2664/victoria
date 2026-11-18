@@ -17,6 +17,8 @@ import bldg
 import maritime
 import machinery
 import portsite as site
+import vessels
+import clutter
 
 NAME = "Carrickmore"
 CODE = "B"
@@ -97,6 +99,60 @@ def build(R, coll, audit):
     mb = MeshBuilder()
     machinery.draught_horse(mb, 0, 0, 0.0)
     R.define("B_draught_horse", mb)
+
+    # Historic vessels and maritime craft
+    mb = MeshBuilder()
+    vessels.build_drydock_hull(mb, length=110.0, beam=14.4)
+    R.define("B_drydock_ship", mb)
+
+    mb = MeshBuilder()
+    vessels.build_slipway_hull(mb, length=68.0, beam=10.4)
+    R.define("B_slipway_hull", mb)
+
+    mb = MeshBuilder()
+    vessels.build_steam_tug(mb, length=26.0, beam=6.2)
+    R.define("B_tug", mb)
+
+    mb = MeshBuilder()
+    vessels.build_harbour_lighter(mb, length=18.0, beam=4.6)
+    R.define("B_lighter", mb)
+
+    # Clutter and shipyard equipment
+    mb = MeshBuilder()
+    clutter.shipyard_plate_rack(mb)
+    R.define("B_plate_rack", mb)
+
+    mb = MeshBuilder()
+    clutter.spare_ship_propeller(mb)
+    R.define("B_propeller", mb)
+
+    mb = MeshBuilder()
+    clutter.anchor_chain_heap(mb)
+    R.define("B_anchor_chains", mb)
+
+    mb = MeshBuilder()
+    clutter.cable_spool_depot(mb)
+    R.define("B_cable_spools", mb)
+
+    mb = MeshBuilder()
+    clutter.crate_pyramid(mb)
+    R.define("B_crate_stack", mb)
+
+    mb = MeshBuilder()
+    clutter.barrel_cluster(mb)
+    R.define("B_barrel_group", mb)
+
+    mb = MeshBuilder()
+    clutter.timber_staging(mb)
+    R.define("B_timber_staging", mb)
+
+    mb = MeshBuilder()
+    clutter.lifebuoy_stand(mb)
+    R.define("B_lifebuoy", mb)
+
+    mb = MeshBuilder()
+    clutter.horse_water_trough(mb)
+    R.define("B_horse_trough", mb)
 
     # Buildings
     mb = MeshBuilder(); bldg.moulding_loft(mb, 0, 0, 50, 18); R.define("B_moulding_loft", mb, bevel=0.02)
@@ -250,6 +306,59 @@ def build(R, coll, audit):
         R.place("B_wall", 336, y, QUAY_Z, 90)
 
     # ================================================== furniture
+    # Historic vessels and shipyard assemblies
+    # Large steamer propped inside Princess Graving Dock
+    R.place("B_drydock_ship", 108.2, 100.0, -6.8, 0.0)
+
+    # Iron hull framed on slipway 1 (gradient 6.06 deg, z=-0.90 at x=18)
+    R.place("B_slipway_hull", 18.0, 59.0, -0.90, -90.0, rx=6.06)
+
+    # Steam tug berthed under Day Summers 80t sheer legs for machinery installation
+    R.place("B_tug", -36.0, 280.0, 0.0, 0.0)
+
+    # Harbour lighters
+    R.place("B_lighter", -36.0, 320.0, 0.0, -15.0)
+    R.place("B_lighter", -36.0, -20.0, 0.0, 10.0)
+
+    # Shipyard plate racks, spare propellers, and heavy chains
+    for x, y in ((110.0, 150.0), (110.0, 160.0), (150.0, 210.0), (150.0, 222.0), (200.0, 100.0)):
+        R.place("B_plate_rack", x, y, QUAY_Z, 0.0)
+
+    R.place("B_propeller", 88.0, 80.0, QUAY_Z, 0.0)
+    R.place("B_propeller", 88.0, 120.0, QUAY_Z, 15.0)
+    R.place("B_propeller", -12.0, 260.0, QUAY_Z, -20.0)
+    R.place("B_propeller", -12.0, 300.0, QUAY_Z, 10.0)
+
+    R.place("B_anchor_chains", 88.0, 60.0, QUAY_Z)
+    R.place("B_anchor_chains", 88.0, 140.0, QUAY_Z)
+    R.place("B_anchor_chains", -14.0, 250.0, QUAY_Z)
+    R.place("B_anchor_chains", -14.0, 310.0, QUAY_Z)
+
+    R.place("B_cable_spools", 130.0, 220.0, QUAY_Z)
+    R.place("B_cable_spools", 180.0, 220.0, QUAY_Z)
+    R.place("B_cable_spools", 235.0, 70.0, QUAY_Z)
+
+    R.place("B_timber_staging", 50.0, 30.0, QUAY_Z)
+    R.place("B_timber_staging", 50.0, 82.0, QUAY_Z)
+    R.place("B_timber_staging", 50.0, 132.0, QUAY_Z)
+
+    R.place("B_crate_stack", 130.0, 200.0, QUAY_Z, 15.0)
+    R.place("B_crate_stack", 175.0, 210.0, QUAY_Z, -30.0)
+    R.place("B_crate_stack", 235.0, 110.0, QUAY_Z, 25.0)
+    R.place("B_barrel_group", 135.0, 202.0, QUAY_Z, 10.0)
+    R.place("B_barrel_group", 182.0, 212.0, QUAY_Z, -15.0)
+    R.place("B_barrel_group", 240.0, 112.0, QUAY_Z, 40.0)
+
+    R.place("B_horse_trough", 35.0, -10.0, QUAY_Z, 0.0)
+    R.place("B_horse_trough", 150.0, 180.0, QUAY_Z, 90.0)
+    R.place("B_horse_trough", 18.0, 260.0, QUAY_Z, 0.0)
+
+    for y in range(-280, 380, 40):
+        R.place("B_lifebuoy", -28.5, y, QUAY_Z, 90.0)
+    for y in range(40, 240, 40):
+        R.place("B_lifebuoy", 94.5, y, QUAY_Z, 90.0)
+        R.place("B_lifebuoy", 121.5, y, QUAY_Z, -90.0)
+
     for y in range(-290, 396, 16):
         if any(a - 2 < y < b + 2 for a, b in SLIPS):
             continue

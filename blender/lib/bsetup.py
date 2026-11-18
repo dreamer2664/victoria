@@ -96,6 +96,16 @@ def make_materials():
                 nm.inputs["Strength"].default_value = 0.65
                 nt.links.new(ti.outputs["Color"], nm.inputs["Color"])
                 nt.links.new(nm.outputs["Normal"], bsdf.inputs["Normal"])
+            rgh = os.path.join(TEXDIR, name + "_rgh.png")
+            if not os.path.exists(rgh) and name == "brick_red":
+                rgh = os.path.join(TEXDIR, "brick_buff_rgh.png")
+            elif not os.path.exists(rgh) and name == "algae":
+                rgh = os.path.join(TEXDIR, "granite_rgh.png")
+            if os.path.exists(rgh):
+                tr = nt.nodes.new("ShaderNodeTexImage"); tr.location = (-320, -380)
+                tr.image = bpy.data.images.load(rgh, check_existing=True)
+                tr.image.colorspace_settings.name = 'Non-Color'
+                nt.links.new(tr.outputs["Color"], bsdf.inputs["Roughness"])
 
         if spec.get("metal"):
             bsdf.inputs["Metallic"].default_value = spec["metal"]
@@ -250,12 +260,12 @@ class Registry:
     def exists(self, name):
         return name in self.proto
 
-    def place(self, name, x, y, z=QUAY_Z, rz=0.0, coll=None, label=None):
+    def place(self, name, x, y, z=QUAY_Z, rz=0.0, rx=0.0, ry=0.0, coll=None, label=None):
         """Place an instance. Default elevation is QUAY_Z (+4.0 m)."""
         src = self.proto[name]
         ob = bpy.data.objects.new(label or name, src.data)     # linked duplicate
         ob.location = (x, y, z)
-        ob.rotation_euler = Euler((0, 0, math.radians(rz)), 'XYZ')
+        ob.rotation_euler = Euler((math.radians(rx), math.radians(ry), math.radians(rz)), 'XYZ')
         (coll or bpy.context.scene.collection).objects.link(ob)
         self.counts[name] += 1
         return ob
