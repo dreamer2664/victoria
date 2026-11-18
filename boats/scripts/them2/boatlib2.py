@@ -20,54 +20,86 @@ def z_at_arc(hull, xi, f_arc, off=0.0):
     return hull.section_pt(xi, t, off)
 
 
+def _inner_y(hull, xi, z, off):
+    """Half-breadth of the surface `off` (outward m) at height z, station xi."""
+    dep = hull.depth(xi)
+    t = clamp((z - hull.keel_z(xi)) / dep, 0.0, 1.0)
+    return abs(hull.section_pt(xi, t, off)[1])
+
+
 def thwart_layout(hull, stations_x, z_top=0.145, thk=0.028, width=0.24,
-                  mat=0, mat_knee=2):
-    """Thwarts spanning the planking with rounded ends and hanging knees."""
+                  mat=0, mat_knee=2, frame_face=-0.050):
+    """Thwarts spanning the boat athwartships, landing on risers, with grown
+    hanging knees whose legs follow the planking down.
+
+    GEN-1 corrections (THEMISTOCLES-III):
+    * the plate outline is (athwartships, fore-and-aft); it used to be built
+      in default XY, so every 'thwart' lay fore-and-aft and the five of them
+      overlapped down the boat as one long board (the black cockpit slots);
+    * the thwart ends now reach the frame faces and BEAR on the risers
+      (they used to stop 4 mm short, beside the riser, carried by nothing);
+    * the knee leg follows the inside of the planking (it used to hang
+      130-210 mm inboard of the side, in mid air).
+    `frame_face`: outward offset of the inboard face of the timbers.
+    """
     mb = MB("Thwarts")
     knees = MB("Thwart_Knees")
     risers = MB("Risers")
     lay = []
+    # explicit, right-handed plate basis: u = athwartships (+Y),
+    # v = fore-and-aft (-X), thickness = +Z   (Y x -X = +Z)
+    TB = (Y, -X, Z)
     for xs in stations_x:
         xi = clamp((hull.loa / 2 - xs) / hull.loa, 0.02, 0.98)
-        # width of inside planking at z_top
-        dep = hull.depth(xi)
-        t = clamp((z_top - hull.keel_z(xi)) / dep, 0.05, 0.95)
-        pin = hull.section_pt(xi, t, -0.060)
-        hw = abs(pin[1]) - 0.01
+        zb = z_top - thk
+        hw = min(_inner_y(hull, xi, zb, frame_face),
+                 _inner_y(hull, xi, z_top, frame_face)) + 0.004
         w2 = width / 2
-        outl = [(-hw + 0.04, -w2), (hw - 0.04, -w2)]
-        for k in range(5):
-            a = k / 4 * math.pi / 2
-            outl.append((hw - 0.04 + 0.04 * math.cos(a), w2 - 0.04 + 0.04 * math.sin(a)))
-        outl.append((-hw + 0.04, w2))
-        for k in range(5):
-            a = k / 4 * math.pi / 2
-            outl.append((-hw + 0.04 - 0.04 * math.cos(a), -w2 + 0.04 * math.cos(math.pi / 2 - a)))
-        mb.add_plate(outl, thk, plane="XY", origin=(xs, 0, z_top - thk), mat=mat)
-        # edge moulding strip on the thwart face
+        r = 0.035
+        outl = [(-hw, -w2 + r), (-hw + r, -w2), (hw - r, -w2), (hw, -w2 + r),
+                (hw, w2 - r), (hw - r, w2), (-hw + r, w2), (-hw, w2 - r)]
+        mb.add_plate(outl, thk, origin=(xs, 0, zb), mat=mat, basis=TB)
+        # rounded edge mouldings along the fore and after edges (athwartships)
         for sgn in (-1, 1):
-            cyl(mb, (xs - hw + 0.02, sgn * w2, z_top - 0.002),
-                (xs + hw - 0.02, sgn * w2, z_top - 0.002), 0.005, seg=8, mat=mat_knee,
+            cyl(mb, (xs + sgn * w2, -hw + 0.03, z_top - 0.006),
+                (xs + sgn * w2, hw - 0.03, z_top - 0.006), 0.006, seg=8, mat=mat,
                 caps=True)
-        # riser strips under the ends (fastened inside frames)
         for sgn in (-1, 1):
-            rn = MB()
-            t_in = t
-            p0 = hull.section_pt(xi - 0.10, t_in, -0.058)
-            p1 = hull.section_pt(xi + 0.10, t_in, -0.058)
-            y0 = sgn * abs(p0[1]); y1 = sgn * abs(p1[1])
-            risers.add_box(((p0[0] + p1[0]) / 2, (y0 + y1) / 2, z_top - 0.028),
-                           (0.28, 0.016, 0.050), mat=mat_knee, chamfer=0.004)
-            # hanging knee: standing arm under thwart + hanging leg down the side
-            y_edge = sgn * (hw - 0.10)
-            out = [(y_edge, 0.0), (y_edge - sgn * 0.20, 0.0),
-                   (y_edge - sgn * 0.20, -0.05),
-                   (y_edge - sgn * 0.08, -0.10),
-                   (y_edge - sgn * 0.03, -0.28), (y_edge - sgn * 0.07, -0.28),
-                   (y_edge - sgn * 0.11, -0.08), (y_edge, -0.05)]
+            # riser: a fore-and-aft strip on the frame faces, its top at the
+            # thwart's underside, so the thwart end rests on it
+            rh, rt = 0.050, 0.018
+            xa, xb = xs - 0.30, xs + 0.30
+            for (x0, x1) in ((xa, xs - 0.002), (xs + 0.002, xb)):
+                xm = (x0 + x1) / 2
+                xim = clamp((hull.loa / 2 - xm) / hull.loa, 0.0, 1.0)
+                yf = _inner_y(hull, xim, zb - rh / 2, frame_face)
+                risers.add_box((xm, sgn * (yf - rt / 2 + 0.002), zb - rh / 2),
+                               (x1 - x0, rt, rh), mat=mat_knee, chamfer=0.003)
+            # hanging knee in the athwartships plane at the thwart's centre:
+            # arm under the thwart, throat, leg down the inside of the planking
+            leg = 0.26
+            zs = np.linspace(zb, zb - leg, 7)
+            side = [(_inner_y(hull, xi, z, frame_face - 0.018) , z) for z in zs]
+            arm = 0.22
+            prof = []
+            prof.append((side[0][0] - arm, zb))          # arm tip, top
+            prof.append((side[0][0], zb))                # top at the side
+            prof += [(y, z) for (y, z) in side[1:]]      # down the planking
+            yl, zl = side[-1]
+            prof.append((yl - 0.032, zl + 0.004))        # leg toe
+            # inner edge of leg rising back up, then the throat curve to the arm
+            for k in range(5, 0, -1):
+                y, z = side[k]
+                f = (zb - z) / leg
+                prof.append((y - 0.034 - 0.05 * (1 - f) ** 3, z))
+            prof.append((side[0][0] - 0.12, zb - 0.045))
+            prof.append((side[0][0] - arm, zb - 0.030))  # arm tip, underside
+            prof = [(sgn * y, z) for (y, z) in prof]
+            if sgn < 0:
+                prof = prof[::-1]
             kb = MB()
-            kb.add_plate(out, 0.028, origin=(xs - 0.014, 0, z_top - thk - 0.004),
-                         mat=mat_knee, basis=(Y, Z, X))
+            kb.add_plate(prof, 0.032, origin=(xs - 0.016, 0, 0), mat=mat_knee,
+                         basis=(Y, Z, X))
             knees.append(kb)
         lay.append({"x": xs, "z": z_top, "half_w": hw, "xi": xi})
     return {"thwarts": mb, "knees": knees, "risers": risers, "layout": lay}
@@ -211,18 +243,22 @@ def lifting_eyes(hull, xs_list, z, mat=5):
     return mb
 
 
-def standard_gear(hull, kind="rowing"):
+def standard_gear(hull, kind="rowing", zfloor=None):
     """
     The boat's loose gear, per the HMS Bombay model outfit list:
     painter, anchors/grapnel, fenders, boat hooks, baler, bucket, breaker.
     Returns list of (name, MB).
     """
     loa = hull.loa
-    zfloor = hull.keel_z(0.5) + 0.14
+    if zfloor is None:
+        zfloor = hull.keel_z(0.5) + 0.14
     gear = []
     gear.append(("Painter", P.painter_coil((loa / 2 - 0.75, 0.20, zfloor + 0.10))))
     if kind == "rowing":
-        gear.append(("Grapnel", P.grapnel((-loa / 2 + 0.95, -0.30, zfloor + 0.02),
+        # GEN-1: stowed on the bottom boards near the centreline, abaft the
+        # stroke thwart (at y=-0.30 near the stern its flukes stood out
+        # through the planking)
+        gear.append(("Grapnel", P.grapnel((-loa / 2 + 2.05, -0.16, zfloor + 0.004), lie=True,
                                           s=0.95)))
     else:
         gear.append(("Anchor", P.stocked_anchor((-loa / 2 + 1.05, -0.30, zfloor),
@@ -293,27 +329,43 @@ def side_bench_pair(hull, at_stern=True, z=0.30, width=0.30, thk=0.025,
 
 
 def bottom_boards(hull, xi0=0.15, xi1=0.85, z_off=0.155, board_w=0.078,
-                  gap=0.016, rise=0.20, mat=1):
+                  gap=0.008, rise=0.20, mat=1, y0=0.058, n_boards=5,
+                  z_fn=None):
     """Loose-laid bottom boards port + starboard of the keelson, following
-    the deadrise, in three lift-out panels per side (service pattern)."""
+    the deadrise, in lift-out lengths (service pattern).
+
+    GEN-1 correction: the butt joints of all boards used to fall at the same
+    two stations with 0.15 m gaps, and the inboard board stopped 47 mm short
+    of the keelson -- together they read as black voids across and along the
+    boat.  Joints are now 6 mm, staggered board by board, and the inboard
+    board butts to the keelson cap.
+    `z_fn(x, y)` (optional) gives the board underside height at a point --
+    used to land the boards on the floors instead of on a guessed offset."""
     mb = MB("Bottom_Boards")
     loa = hull.loa
+    butts = [(0.33, 0.67), (0.22, 0.56), (0.42, 0.78), (0.28, 0.62), (0.38, 0.72)]
     for sgn in (-1, 1):
-        for k in range(5):
-            y = sgn * (0.085 + k * (board_w + gap))
-            shrink = 1.0 - 0.10 * k
-            xa = loa / 2 - xi1 * loa * shrink
-            xb = loa / 2 - xi0 * loa * shrink
-            za = hull.keel_z((loa / 2 - xa) / loa) + z_off + rise * abs(y)
-            zb = hull.keel_z((loa / 2 - xb) / loa) + z_off + rise * abs(y)
-            for f0, f1 in ((0.0, 0.32), (0.35, 0.66), (0.69, 1.0)):
-                p0 = np.array([lerp(xa, xb, f0), y, lerp(za, zb, f0)])
-                p1 = np.array([lerp(xa, xb, f1), y, lerp(za, zb, f1)])
-                mid = (p0 + p1) / 2
-                L = float(np.linalg.norm(p1 - p0))
-                ang = math.atan2(float(p1[2] - p0[2]), float(p1[0] - p0[0]))
+        for k in range(n_boards):
+            y = sgn * (y0 + board_w / 2 + k * (board_w + gap))
+            shrink = 1.0 - 0.07 * k
+            xa = loa / 2 - (0.5 + (xi1 - 0.5) * shrink) * loa
+            xb = loa / 2 - (0.5 + (xi0 - 0.5) * shrink) * loa
+            cuts = [0.0] + list(butts[k % len(butts)]) + [1.0]
+            for c0, c1 in zip(cuts[:-1], cuts[1:]):
+                f0 = c0 + (0.003 if c0 > 0 else 0.0)
+                f1 = c1 - (0.003 if c1 < 1 else 0.0)
+                pa = np.array([lerp(xa, xb, f0), y, 0.0])
+                pb = np.array([lerp(xa, xb, f1), y, 0.0])
+                for pp in (pa, pb):
+                    if z_fn is not None:
+                        pp[2] = z_fn(pp[0], abs(y)) + 0.008
+                    else:
+                        pp[2] = hull.keel_z((loa / 2 - pp[0]) / loa) + z_off + rise * abs(y)
+                mid = (pa + pb) / 2
+                L = float(np.linalg.norm(pb - pa))
+                ang = math.atan2(float(pb[2] - pa[2]), float(pb[0] - pa[0]))
                 mb.add_box(tuple(mid), (L, board_w, 0.016), mat=mat,
-                           rot=rot_axis((0, 1, 0), -ang))
+                           rot=rot_axis((0, 1, 0), -ang), chamfer=0.003)
     return mb
 
 
@@ -380,3 +432,26 @@ def mast_step_clamp(hull, x_step, z_kelson, thwart_x=None, mat_iron=4, mat_wood=
             mb.add_box((thwart_x + sgn * 0.035, -0.122, zc + 0.055), (0.05, 0.016, 0.035),
                        mat=mat_iron, chamfer=0.003)
     return mb
+
+
+def z_on_surface(hull, x, y, off):
+    """Height of the hull surface at outward offset `off` where its
+    half-breadth equals y, at longitudinal position x (bisection in t).
+    Used to land loose-laid boards and gear on the floors of the boat."""
+    xi = clamp((hull.loa / 2 - x) / hull.loa, 0.0, 1.0)
+    lo, hi = 0.0, 1.0
+    if abs(hull.section_pt(xi, 0.0, off)[1]) >= y and hull.section_pt(xi, 0.0, off)[1] >= 0:
+        return hull.section_pt(xi, 0.0, off)[2]
+    for _ in range(40):
+        mid = (lo + hi) / 2
+        if hull.section_pt(xi, mid, off)[1] < y:
+            lo = mid
+        else:
+            hi = mid
+    return hull.section_pt(xi, (lo + hi) / 2, off)[2]
+
+
+def floor_top_fn(hull, thk, floor_depth=0.075):
+    """z_fn for bottom_boards: top of the floors (timber + floor moulding)."""
+    off = -thk - floor_depth
+    return lambda x, y: z_on_surface(hull, x, max(y, 0.0), off)

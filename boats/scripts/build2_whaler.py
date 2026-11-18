@@ -40,7 +40,7 @@ def main(quick=False):
     keel.append(st.stem_post(hull, moulded=0.105, sided=0.050, mat=2))
     # double-ended: stem-like sternpost at xi=1 (separate object for material order)
     objects["Stern_Post"] = aft_stem(hull, moulded=0.105, sided=0.050, mat=2)
-    objects["Bow_Stem"] = st.stem_post(hull, moulded=0.105, sided=0.050, mat=2)
+    # (GEN-1: a second, coincident "Bow_Stem" copy of the stem was removed)
     objects["Keel"] = keel
     fr = st.frames(hull, 9, 0.016, spacing=0.160, siding=0.022, mould_lo=0.040,
                    mould_hi=0.024, mat=2)
@@ -72,11 +72,11 @@ def main(quick=False):
 
     # stern sheets (double-ended: small stern bench + platform)
     sb, sk = BL.side_bench_pair(hull, z=0.28, width=0.26, xi_range=(0.90, 0.985), mat=1)
-    sb.mirror_y(); sk.mirror_y()
+    # (side_bench_pair builds both sides: no mirror -- GEN-1 duplicate fix)
     objects["Stern_Sheets"] = sb
     objects["Stern_Bench_Knees"] = sk
     bb, bk = BL.side_bench_pair(hull, z=0.28, width=0.24, xi_range=(0.05, 0.12), mat=1)
-    bb.mirror_y(); bk.mirror_y()
+    # (side_bench_pair builds both sides: no mirror -- GEN-1 duplicate fix)
     objects["Bow_Sheets"] = bb
     objects["Bow_Bench_Knees"] = bk
 

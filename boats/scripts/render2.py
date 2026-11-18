@@ -1,50 +1,142 @@
 """
-render2.py -- THEMISTOCLES-II render driver.
+render2.py -- THEMISTOCLES render driver (GEN-1 revision, THEMISTOCLES-III).
 
 Usage:
-  blender -b <blend> --python render2.py -- --out <dir> --prefix rowing2 \
-      [--views hero,broadside,...] [--quick] [--hide "Planking*|Sea"] \
-      [--only "Engine|Boiler"] [--target x,y,z] [--sea 0]
-Views are framed from the bounds of the visible boat parts (no hand-placed
-cameras):  camera = bounds_centre + direction * fitted_distance.
+  blender -b <blend> --python render2.py -- --out <dir> --prefix rowing \
+      --views broadside[,bow_quarter,...] [--studio 1 --sea 0 | --studio 0 --sea 1]
+      [--res 960x600] [--samples 64] [--name exact_file.png]
+      [--hide "regex|regex"] [--only "regex"]
+
+What changed for GEN-1 (and why):
+* `--res` is honoured (it used to be parsed and ignored); `--samples`
+  overrides the sample count; `--name` writes one view to an exact filename.
+* Dry studio views no longer put a plane at the waterline.  The old rig
+  dropped a flat grey "sea" at Z=0 into studio renders, which flooded every
+  open interior to the waterline and hid the thwarts.  The boat now stands on
+  timber keel blocks on the studio floor, placed under the actual keel.
+* Afloat views drop the studio lamps (they reflected in the water as
+  detached white discs); sky + sun light the scene.
+* The camera is fitted to the projected VERTICES of the visible boat (not a
+  bounding sphere) and oriented explicitly, so every hull end has a stated
+  margin and the top view lays the boat lengthwise in a landscape frame.
 """
-import os, sys, re, math, json
+import os, sys, re, math
 import numpy as np
 import bpy
+from mathutils import Matrix, Vector
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from them2 import bl2
 
+# dir: camera position direction from the target (+X bow, +Y port, +Z up)
+# margin: fraction of the half-frame the subject may fill is 1/margin
 VIEWS = {
-    "broadside":      dict(dir=(0.02, -1.0, 0.16), lens=58, margin=1.10, hint=None),
-    "bow_quarter":    dict(dir=(1.0, -0.95, 0.52), lens=52, margin=1.15),
-    "stern_quarter":  dict(dir=(-1.0, -0.85, 0.48), lens=52, margin=1.15),
-    "bow_on":         dict(dir=(1.0, 0.0, 0.14), lens=62, margin=1.10),
-    "stern_on":       dict(dir=(-1.0, 0.0, 0.18), lens=62, margin=1.10),
-    "top":            dict(dir=(0.10, 0.0, 1.0), lens=52, margin=0.95),
-    "underside":      dict(dir=(0.55, -0.75, -1.0), lens=52, margin=1.20),
-    "interior":       dict(dir=(0.35, -0.75, 1.0), lens=46, margin=0.85),
-    "hero":           dict(dir=(0.9, -1.05, 0.50), lens=54, margin=1.14),
-    "profile_high":   dict(dir=(0.25, -1.0, 0.55), lens=60, margin=1.15),
-    "construction":   dict(dir=(0.75, -0.85, 0.60), lens=50, margin=1.20),
+    "broadside":     dict(dir=(0.0, -1.0, 0.20), lens=60, margin=1.10),
+    "bow_quarter":   dict(dir=(1.0, -0.95, 0.50), lens=55, margin=1.10),
+    "stern_quarter": dict(dir=(-1.0, -0.90, 0.48), lens=55, margin=1.10),
+    "bow_on":        dict(dir=(1.0, -0.06, 0.24), lens=70, margin=1.18),
+    "stern_on":      dict(dir=(-1.0, -0.06, 0.26), lens=70, margin=1.18),
+    "top":           dict(dir=(0.0, -0.10, 1.0), lens=60, margin=1.12),
+    "underside":     dict(dir=(0.55, -0.80, -0.95), lens=55, margin=1.12),
+    "interior":      dict(dir=(0.38, -0.55, 1.0), lens=50, margin=1.06),
+    "hero":          dict(dir=(0.95, -1.10, 0.42), lens=55, margin=1.08),
+    "profile_high":  dict(dir=(0.20, -1.0, 0.62), lens=60, margin=1.08),
+    "construction":  dict(dir=(0.75, -0.85, 0.70), lens=55, margin=1.10),
+    "machinery":     dict(dir=(0.35, -0.80, 0.85), lens=50, margin=1.06),
 }
 
 
-def scene_bounds():
-    lo = np.array([1e9] * 3)
-    hi = -lo.copy()
-    for o in bpy.context.scene.objects:
-        if o.type != 'MESH' or o.hide_render or not o.visible_get():
-            continue
-        if o.name.startswith("TM2_"):
-            continue
+def visible_boat_objects():
+    return [o for o in bpy.context.scene.objects
+            if o.type == 'MESH' and not o.name.startswith("TM2_")
+            and not o.hide_render]
+
+
+def world_verts(objs, step=1):
+    out = []
+    for o in objs:
         mw = np.array(o.matrix_world)
-        for c in o.bound_box:
-            v = mw[:3, :3] @ np.array(c) + mw[:3, 3]
-            lo = np.minimum(lo, v)
-            hi = np.maximum(hi, v)
-    return lo, hi
+        n = len(o.data.vertices)
+        if n == 0:
+            continue
+        co = np.empty(n * 3)
+        o.data.vertices.foreach_get("co", co)
+        co = co.reshape(-1, 3)[::step]
+        out.append(co @ mw[:3, :3].T + mw[:3, 3])
+    return np.concatenate(out) if out else np.zeros((0, 3))
+
+
+def fit_camera(V, d, lens, margin, aspect, centre_hint=None):
+    """Return (target, distance) so every vertex in V projects inside the
+    frame with the given margin, for a camera looking along -d."""
+    d = d / np.linalg.norm(d)
+    f = -d
+    zup = np.array([0.0, 0.0, 1.0])
+    right = np.cross(f, zup)
+    if np.linalg.norm(right) < 1e-6:
+        right = np.array([1.0, 0, 0])
+    right /= np.linalg.norm(right)
+    up = np.cross(right, f)
+    tan_h = 18.0 / lens
+    tan_v = tan_h / aspect
+    t = V.mean(axis=0) if centre_hint is None else np.asarray(centre_hint, float)
+    D = 1.0
+    for _ in range(6):
+        r = V - t
+        x = r @ right; y = r @ up; z = r @ d
+        # recentre on the projected extent (orthographic approximation)
+        t = t + right * (x.max() + x.min()) / 2 + up * (y.max() + y.min()) / 2
+        r = V - t
+        x = r @ right; y = r @ up; z = r @ d
+        D = float(max(np.max(z + np.abs(x) * margin / tan_h),
+                      np.max(z + np.abs(y) * margin / tan_v)))
+        # perspective recentre: shift so the projected extremes are balanced
+        px = x / (D - z); py = y / (D - z)
+        t = t + right * (px.max() + px.min()) / 2 * D + up * (py.max() + py.min()) / 2 * D
+    r = V - t
+    x = r @ right; y = r @ up; z = r @ d
+    D = float(max(np.max(z + np.abs(x) * margin / tan_h),
+                  np.max(z + np.abs(y) * margin / tan_v)))
+    return t, D, right, up
+
+
+def place_camera(t, d, D, lens, right, up, name="TM2_Cam"):
+    cam = bpy.data.objects.get(name)
+    if cam is None:
+        cam = bpy.data.objects.new(name, bpy.data.cameras.new(name))
+        bpy.context.scene.collection.objects.link(cam)
+    for c in list(cam.constraints):
+        cam.constraints.remove(c)
+    d = d / np.linalg.norm(d)
+    pos = t + d * D
+    # camera looks down its -Z; +Y is up, +X is right
+    M = Matrix(((right[0], up[0], d[0], pos[0]),
+                (right[1], up[1], d[1], pos[1]),
+                (right[2], up[2], d[2], pos[2]),
+                (0, 0, 0, 1)))
+    cam.matrix_world = M
+    cam.data.lens = lens
+    cam.data.sensor_fit = 'HORIZONTAL'
+    cam.data.sensor_width = 36.0
+    cam.data.clip_start = 0.05
+    cam.data.clip_end = 500.0
+    bpy.context.scene.camera = cam
+    return cam
+
+
+def keel_points(objs, n=2):
+    """Lowest boat point near two stations, for the keel blocks."""
+    V = world_verts(objs, step=1)
+    lo, hi = V.min(axis=0), V.max(axis=0)
+    L = hi[0] - lo[0]
+    pts = []
+    for fx in (0.30, 0.70):
+        xc = lo[0] + fx * L
+        sel = V[(np.abs(V[:, 0] - xc) < 0.12) & (np.abs(V[:, 1]) < 0.06)]
+        if len(sel):
+            pts.append((xc, float(sel[:, 2].min())))
+    return pts, float(lo[2])
 
 
 def main():
@@ -53,87 +145,83 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True)
     ap.add_argument("--prefix", default="boat")
-    ap.add_argument("--views", default="broadside,bow_quarter,stern_quarter,bow_on,top,underside,interior,hero")
+    ap.add_argument("--views", default="broadside")
+    ap.add_argument("--name", default="")
     ap.add_argument("--quick", action="store_true")
     ap.add_argument("--hide", default="")
     ap.add_argument("--only", default="")
-    ap.add_argument("--target", default="")
-    ap.add_argument("--sea", type=int, default=1)
+    ap.add_argument("--sea", type=int, default=0)
     ap.add_argument("--studio", type=int, default=1)
-    ap.add_argument("--res", default="")
+    ap.add_argument("--res", default="960x600")
+    ap.add_argument("--samples", type=int, default=0)
+    ap.add_argument("--margin", type=float, default=0.0)
+    ap.add_argument("--dir", default="")
+    ap.add_argument("--lens", type=float, default=0.0)
     args = ap.parse_args(argv)
 
     s = bpy.context.scene
-    bpy.data.objects.remove(bpy.data.objects.get("TM2_Studio_BG"), do_unlink=True) if bpy.data.objects.get("TM2_Studio_BG") else None
     pats_hide = [re.compile(p) for p in args.hide.split("|") if p] if args.hide else []
     pat_only = re.compile(args.only) if args.only else None
     for o in s.objects:
-        if o.type != 'MESH':
+        if o.type != 'MESH' or o.name.startswith("TM2_"):
             continue
-        if o.name.startswith("TM2_"):
-            continue
-        hide = False
-        if pat_only and not pat_only.search(o.name):
-            hide = True
+        hide = bool(pat_only and not pat_only.search(o.name))
         if not hide and any(p.search(o.name) for p in pats_hide):
             hide = True
         o.hide_render = hide
         o.hide_viewport = hide
 
-    rig = bl2.RenderRig(s, sea=bool(args.sea),
-                        res=(960, 600) if args.quick else (1360, 850),
-                        samples=16 if args.quick else 56,
-                        studio=bool(args.studio))
-    if not args.sea:
-        bl2.set_sea_visible(False)
-
-    lo, hi = scene_bounds()
-    centre = (lo + hi) / 2
-    radius = float(np.linalg.norm(hi - lo) / 2)
+    rx, ry = (int(v) for v in args.res.lower().split("x"))
+    samples = args.samples or (24 if args.quick else 96)
+    objs = visible_boat_objects()
+    kpts, z_low = keel_points(objs)
+    floor_z = z_low - 0.25
+    rig = bl2.RenderRig(s, sea=bool(args.sea) and not args.studio, res=(rx, ry),
+                        samples=samples, studio=bool(args.studio), floor_z=floor_z)
+    if args.studio:
+        from them2.studio2 import keel_blocks
+        keel_blocks(kpts, floor_z)
 
     os.makedirs(args.out, exist_ok=True)
     views = [v for v in args.views.split(",") if v]
-    boat_objs = [o for o in bpy.context.scene.objects
-                 if o.type == 'MESH' and not o.name.startswith("TM2_")]
+    V = world_verts(objs, step=3)
     for vname in views:
-        v = VIEWS[vname]
-        tgt = centre
-        if args.target:
-            tgt = np.array([float(x) for x in args.target.split(",")])
+        v = dict(VIEWS[vname])
+        if args.dir:
+            v["dir"] = tuple(float(c) for c in args.dir.split(","))
+        if args.lens:
+            v["lens"] = args.lens
+        if args.margin:
+            v["margin"] = args.margin
+        d = np.asarray(v["dir"], float); d /= np.linalg.norm(d)
         lift = 0.0
-        saved_world_col = None
+        hidden_env = []
+        Vv = V
         if vname == "underside":
-            # hoist the boat clear of the floor so the below-camera sees the run
-            lift = max(1.6, (hi[2] - lo[2]) * 1.6)
-            for o in boat_objs:
+            # a technical view from below: the boat is hoisted off the floor
+            # and the studio shell is removed so the camera sees open sky
+            lift = 3.0
+            for o in objs:
                 o.location.z += lift
-            tgt = centre + np.array([0, 0, lift])
-            # remove the studio shell + brighten the world for the low camera
-            for nm in ("TM2_Studio_BG", "TM2_Sea"):
+            Vv = V + np.array([0, 0, lift])
+            rig.bg_cam.inputs[0].default_value = (0.24, 0.27, 0.32, 1.0)
+            for nm in ("TM2_Studio_BG", "TM2_Sea", "TM2_KeelBlocks"):
                 ob = bpy.data.objects.get(nm)
-                if ob:
+                if ob and not ob.hide_render:
                     ob.hide_render = True
-            w = bpy.context.scene.world
-            if w and w.use_nodes:
-                for node in w.node_tree.nodes:
-                    if node.bl_idname == "ShaderNodeMixShader":
-                        bg = node.inputs[2].links[0].from_node \
-                            if node.inputs[2].is_linked else None
-                        if bg is not None:
-                            saved_world_col = tuple(bg.inputs[0].default_value)
-                            bg.inputs[0].default_value = (0.28, 0.34, 0.42, 1.0)
-                            bg.inputs[1].default_value = 1.0
-        rig.camera(tgt, v["dir"], lens=v.get("lens", 54),
-                   margin=v.get("margin", 1.15), size_hint=radius)
-        rig.render(os.path.join(args.out, f"{args.prefix}_{vname}.png"))
+                    hidden_env.append(ob)
+        t, D, right, up = fit_camera(Vv, d, v["lens"], v["margin"], rx / ry)
+        place_camera(t, d, D, v["lens"], right, up)
+        fname = args.name if (args.name and len(views) == 1) else f"{args.prefix}_{vname}.png"
+        rig.render(os.path.join(args.out, fname))
         if lift:
-            for o in boat_objs:
+            for o in objs:
                 o.location.z -= lift
-            for nm in ("TM2_Studio_BG", "TM2_Sea"):
-                ob = bpy.data.objects.get(nm)
-                if ob:
-                    ob.hide_render = False
-        print("RENDERED", vname)
+        for ob in hidden_env:
+            ob.hide_render = False
+        if lift:
+            rig.bg_cam.inputs[0].default_value = (0.0026, 0.0034, 0.0042, 1.0)
+        print("RENDERED", vname, "->", fname, "dist %.2f" % D)
 
 
 if __name__ == "__main__":

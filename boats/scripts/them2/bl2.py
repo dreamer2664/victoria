@@ -81,7 +81,7 @@ def join_mb(parts, name="Joined"):
 
 class RenderRig:
     def __init__(self, scene, sea=True, ground=False, res=(1280, 800),
-                 samples=48, engine="CYCLES", studio=False):
+                 samples=48, engine="CYCLES", studio=False, floor_z=-1.0):
         s = scene
         s.render.engine = engine
         s.render.resolution_x = res[0]
@@ -127,6 +127,12 @@ class RenderRig:
         nts.links.new(bgs2.outputs["Background"], mixs.inputs[2])
         nts.links.new(lpath.outputs["Is Camera Ray"], mixs.inputs[0])
         nts.links.new(mixs.outputs[0], outn.inputs[0])
+        self.bg_cam = bgs2
+        if not studio:
+            # afloat: the camera sees the same overcast sky that lights the
+            # boat (it used to see a near-black void above the horizon)
+            bgs2.inputs[0].default_value = (0.20, 0.25, 0.31, 1.0)
+            bgs2.inputs[1].default_value = 1.0
         s.world = w
         # lights: large soft key + cool fill + warm rim
         def area(name, loc, energy, size, color):
@@ -148,8 +154,15 @@ class RenderRig:
         area("TM2_Rim", (-7, -4, 2.5), 900 * 0.30, 3.0, (1.0, 0.85, 0.65))
         if studio:
             from .studio2 import cyclorama, tune_scene
-            cyclorama()
+            cyclorama(drop_z=floor_z)
             tune_scene(scene)
+        else:
+            # GEN-1: afloat views are lit by sky + sun only.  The studio area
+            # lamps reflect in open water as detached white discs.
+            for nm in ("TM2_Key", "TM2_Fill", "TM2_Top", "TM2_Rim"):
+                ob = bpy.data.objects.get(nm)
+                if ob:
+                    ob.hide_render = True
         # sun for crispness
         sun = bpy.data.objects.get("TM2_Sun")
         if sun is None:
@@ -164,7 +177,7 @@ class RenderRig:
         # sea plane at z=0 (LWL)
         self.sea = None
         if sea:
-            bpy.ops.mesh.primitive_plane_add(size=60, location=(0, 0, 0))
+            bpy.ops.mesh.primitive_plane_add(size=3000, location=(0, 0, 0))
             self.sea = bpy.context.object
             self.sea.name = "TM2_Sea"
             if studio:

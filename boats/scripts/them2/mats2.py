@@ -263,7 +263,7 @@ def rope_mat(name, color=(0.52, 0.42, 0.28)):
     return m
 
 
-def topsides(name="TM2_Topsides", z_af=0.0, z_band=0.235):
+def topsides(name="TM2_Topsides", z_af=0.0, z_band=0.095):
     """Service paint scheme keyed to the hull, not the texture space: object-
     space Z (Z=0 = loaded waterline) splits varnished mahogany topsides /
     black boot-top band / red-oxide antifouling, with wear noise feathering
@@ -369,23 +369,37 @@ def chequer_steel(name="TM2_Chequer_Steel"):
 
 
 def water(name="Sea_Water"):
+    """Harbour water: dark, slightly turbid, broken by small wind ripples.
+    GEN-1: was roughness 0.05 + coat 0.6 -- a mirror that doubled the hull
+    and smeared every lamp across the frame."""
     m, nt = _mat(name)
     bs = _out(nt)
-    bs.inputs["Base Color"].default_value = (0.016, 0.055, 0.062, 1)
-    bs.inputs["Roughness"].default_value = 0.05
+    bs.inputs["Base Color"].default_value = (0.012, 0.030, 0.034, 1)
+    bs.inputs["Roughness"].default_value = 0.16
     bs.inputs["Metallic"].default_value = 0.0
-    bs.inputs["Coat Weight"].default_value = 0.6
+    bs.inputs["Specular IOR Level"].default_value = 0.45
+    bs.inputs["Coat Weight"].default_value = 0.0
     tc = nt.nodes.new("ShaderNodeTexCoord")
-    noise = nt.nodes.new("ShaderNodeTexNoise")
-    noise.inputs["Scale"].default_value = 1.7
-    noise.inputs["Detail"].default_value = 5.0
-    noise.inputs["Roughness"].default_value = 0.8
-    noise.inputs["Distortion"].default_value = 0.35
-    nt.links.new(tc.outputs["Generated"], noise.inputs["Vector"])
+    mp = nt.nodes.new("ShaderNodeMapping")
+    mp.inputs["Scale"].default_value = (1.0, 2.2, 1.0)
+    nt.links.new(tc.outputs["Object"], mp.inputs["Vector"])
+    big = nt.nodes.new("ShaderNodeTexNoise")
+    big.inputs["Scale"].default_value = 0.55
+    big.inputs["Detail"].default_value = 3.0
+    nt.links.new(mp.outputs["Vector"], big.inputs["Vector"])
+    small = nt.nodes.new("ShaderNodeTexNoise")
+    small.inputs["Scale"].default_value = 4.5
+    small.inputs["Detail"].default_value = 6.0
+    small.inputs["Roughness"].default_value = 0.6
+    nt.links.new(mp.outputs["Vector"], small.inputs["Vector"])
+    mix = nt.nodes.new("ShaderNodeMath"); mix.operation = 'MULTIPLY_ADD'
+    nt.links.new(small.outputs["Fac"], mix.inputs[0])
+    mix.inputs[1].default_value = 0.35
+    nt.links.new(big.outputs["Fac"], mix.inputs[2])
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.14
-    bump.inputs["Distance"].default_value = 0.20
-    nt.links.new(noise.outputs["Fac"], bump.inputs["Height"])
+    bump.inputs["Strength"].default_value = 0.22
+    bump.inputs["Distance"].default_value = 0.05
+    nt.links.new(mix.outputs[0], bump.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bs.inputs["Normal"])
     return m
 

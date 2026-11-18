@@ -50,8 +50,8 @@ def main(quick=False):
     objects["Keelson"] = st.keelson(hull, depth=0.16, sided=0.080, mat=2)
     gw = st.gunwale_set(hull, 26, 0.016, cap_w=0.082, cap_h=0.030, mat_cap=1,
                         mat_inwale=2, mat_rub=10)
-    gw.append(st.stem_band(hull, mat=3))
     gw.mirror_y()
+    gw.append(st.stem_band(hull, mat=3))   # on the centreline: after the mirror
     objects["Gunwale_Inwale_Rub"] = gw
     objects["Breasthook"] = st.breasthook(hull, length=0.62, thk=0.038, mat=2)
     # machinery bearers (documented heavy fore-and-afters, bolted)
@@ -177,14 +177,13 @@ def main(quick=False):
     objects["Canopy_Tracks"] = sail_tracks
     # stern seat + awning stanchion sockets
     sb, sk = BL.side_bench_pair(hull, z=0.33, width=0.30, xi_range=(0.91, 0.985), mat=21)
-    sk.mirror_y()
     objects["Stern_Sheets"] = sb
-    objects["Stern_Sheets"].mirror_y()
     objects["Stern_Knees"] = sk
     # bow sheets for the crew
     bb, bk = BL.side_bench_pair(hull, z=0.33, width=0.26, xi_range=(0.07, 0.15), mat=21)
-    objects["Bow_Sheets"] = bb.mirror_y()
-    objects["Bow_Knees"] = bk.mirror_y()
+    # side_bench_pair builds both sides: no mirror (GEN-1 duplicate fix)
+    objects["Bow_Sheets"] = bb
+    objects["Bow_Knees"] = bk
 
     # lifting eyes (through keelson, brass/iron)
     objects["Lifting_Eyes"] = BL.lifting_eyes(hull, [2.10, -1.85],

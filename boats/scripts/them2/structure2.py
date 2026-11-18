@@ -25,7 +25,8 @@ def _strake_rows(hull, xi0, xi1, nx):
 
 
 def clinker_strakes(hull, n_strakes, thk, lap_frac=0.13, nx=61, npb=12,
-                    taper_end=0.22, mat=0, mat_top=1, hood_start_ratio=0.020):
+                    taper_end=0.22, mat=0, mat_top=1, hood_start_ratio=0.020,
+                    mat_inner=None):
     """
     n_strakes individual strake solids, lower (garboard) index 0 at the keel.
     Each strake covers the design girth between its land boundaries; the
@@ -44,8 +45,18 @@ def clinker_strakes(hull, n_strakes, thk, lap_frac=0.13, nx=61, npb=12,
             xi0 = xi
             break
     xis = _strake_rows(hull, xi0, 1.0, nx)
+    # GEN-1 correction (THEMISTOCLES-III): strakes are CANTED, not stacked.
+    # The old code stepped every strake a full thickness outward, so the
+    # garboard of an 11-strake boat lay 160 mm inside the design surface:
+    # the visible hull no longer matched the hydrostatic hull, and the frames
+    # (built at one fixed offset) stood up to 160 mm clear of the topsides.
+    # A real clinker strake is canted: its upper edge lies on the moulded
+    # surface and its lower edge stands one thickness proud, lapping over the
+    # strake below.  The outer face therefore runs from +thk (lower edge) to
+    # 0 (upper edge); the inner face is one thickness inside that.
+    if mat_inner is None:
+        mat_inner = mat
     for j in range(n_strakes):
-        o = -(n_strakes - 1 - j) * thk         # outer-face offset of strake j
         f_lo = j / n_strakes - (lap_frac / n_strakes if j > 0 else 0.0)
         f_hi = (j + 1) / n_strakes
         outer = np.zeros((nx, npb, 3))
@@ -59,19 +70,23 @@ def clinker_strakes(hull, n_strakes, thk, lap_frac=0.13, nx=61, npb=12,
             lo = f_lo * pinch; hi = f_hi * pinch
             lo = clamp(lo, 0.0, 1.0); hi = clamp(hi, lo + 1e-3, 1.0)
             for q in range(npb):
-                f = lo + (hi - lo) * q / (npb - 1)
+                s_q = q / (npb - 1)                  # 0 = lower edge, 1 = upper
+                f = lo + (hi - lo) * s_q
                 t = hull.arc_to_t(xi, f)
+                o = thk * (1.0 - s_q)
                 outer[i, q] = hull.section_pt(xi, t, o)
                 inner[i, q] = hull.section_pt(xi, t, o - thk + 0.0015)
         mjs = mat_top if j == n_strakes - 1 else mat
         base_o = mb.add_grid(outer, mjs)
-        base_i = mb.add_grid(inner, mjs)
+        base_i = mb.add_grid(inner, mat_inner)
         # long edges
         for i in range(nx - 1):
             mb.add_face([base_o + i * npb, base_i + i * npb,
                          base_i + (i + 1) * npb, base_o + (i + 1) * npb], mat)
+            # upper edge: seen only from INSIDE the boat (the strake above
+            # laps over it outside), so it takes the interior material
             mb.add_face([base_o + (i + 1) * npb + npb - 1, base_i + (i + 1) * npb + npb - 1,
-                         base_i + i * npb + npb - 1, base_o + i * npb + npb - 1], mat)
+                         base_i + i * npb + npb - 1, base_o + i * npb + npb - 1], mat_inner)
         # end caps
         for q in range(npb - 1):
             mb.add_face([base_o + q, base_o + q + 1, base_i + q + 1, base_i + q], mat)
@@ -146,7 +161,21 @@ def double_skin(hull, n_diag=26, spacing=0.085, nx=64, nt=26,
         for j in range(nt):
             t = j / (nt - 1)
             grid_i[i, j] = hull.section_pt(xi, t, -thk_out)
-    b1 = out.add_grid(grid_i, mat_inner, flip=True) if hasattr(out.add_grid, "__call__") else 0
+    b1 = out.add_grid(grid_i, mat_inner, flip=True)
+    # GEN-1 correction: close the shell into a solid.  The two faces used to
+    # be loose sheets (624 boundary edges after mirroring), so the skin had
+    # no edge at the sheer, the stem, the transom or the keel line.
+    nxx, ntt = grid.shape[0], grid.shape[1]
+    def _o(i, j): return b0 + i * ntt + j
+    def _i(i, j): return b1 + i * ntt + j
+    for i in range(nxx - 1):                    # keel line (j=0) and sheer (j=nt-1)
+        out.add_face([_o(i, 0), _o(i + 1, 0), _i(i + 1, 0), _i(i, 0)], mat_outer)
+        jt = ntt - 1
+        out.add_face([_o(i + 1, jt), _o(i, jt), _i(i, jt), _i(i + 1, jt)], mat_outer)
+    for j in range(ntt - 1):                    # stem (i=0) and transom (i=nx-1)
+        out.add_face([_o(0, j + 1), _o(0, j), _i(0, j), _i(0, j + 1)], mat_outer)
+        ie = nxx - 1
+        out.add_face([_o(ie, j), _o(ie, j + 1), _i(ie, j + 1), _i(ie, j)], mat_outer)
     out2 = diagonal_skin(hull, 0.016, thk_in, slope=0.55, nplanks=n_diag,
                          width=0.085, xi_range=(0.10, 0.90), mat=mat_inner)
     skin = MB("Planking_DoubleDiagonal")
@@ -192,6 +221,23 @@ def diagonal_skin(hull, thk_out, thk, slope=0.55, nplanks=26, width=0.055,
     return mb
 
 
+def _profile_frames(paths, fwd=True):
+    """Sweep frames for a member running UP a stem/stern profile in the XZ
+    plane: u lies in that plane normal to the path, pointing outboard of the
+    end (forward at the stem, aft at a double-ender's stern); v is +-Y so that
+    u x v follows the path (consistent face winding)."""
+    P = np.asarray(paths, float)
+    out = []
+    for i in range(len(P)):
+        d = unit(P[min(i + 1, len(P) - 1)] - P[max(i - 1, 0)])
+        u = unit(np.cross(np.array([0.0, 1.0, 0.0]), d))   # Y x up = +X
+        if not fwd:
+            u = -u
+        v = unit(np.cross(d, u))
+        out.append((u, v))
+    return out
+
+
 # ---------------------------------------------------------------------------
 # backbone: keel, stem, sternpost, transom
 # ---------------------------------------------------------------------------
@@ -214,9 +260,13 @@ def keel_assembly(hull, sided=0.046, depth=0.10, hog_h=0.05, hog_w=0.10,
         lift = (smoothstep(0.965, 1.0, xi) * (0.35 * depth if hull.transom else 0.8 * depth)
                 + smoothstep(0.035, 0.0, xi) * 0.55 * depth)
         paths.append([x, 0, zt - depth + lift])
-        shapes.append(np.array([(-w, 0), (w, 0), (w, depth + 0.004 - lift * 0),
-                                (-w, depth + 0.004)]))
-    mb.add_sweep(paths, shapes)
+        shapes.append(np.array([(-w, 0), (w, 0), (w, depth + 0.004 - lift),
+                                (-w, depth + 0.004 - lift)]))
+    # GEN-1 correction: the implicit transported sweep frame of a -X path
+    # points its second axis DOWN, so the keel used to hang a full keel depth
+    # below the hull with an open gap above it.  State the frame explicitly.
+    KF = [(np.array([0.0, -1.0, 0.0]), np.array([0.0, 0.0, 1.0]))] * len(paths)
+    mb.add_sweep(paths, shapes, frames=KF, mat=mat)
     # hog (inner keel above the keel inside the boat)
     paths = []; shapes = []
     for xi in xis:
@@ -226,7 +276,7 @@ def keel_assembly(hull, sided=0.046, depth=0.10, hog_h=0.05, hog_w=0.10,
         h = hog_h * (1.0 - 0.8 * (smoothstep(0.06, 0.0, xi) + smoothstep(0.94, 1.0, xi)))
         paths.append([x, 0, z])
         shapes.append(np.array([(-w, 0), (w, 0), (w, h), (-w, h)]))
-    mb.add_sweep(paths, shapes)
+    mb.add_sweep(paths, shapes, frames=KF, mat=mat)
     return mb
 
 
@@ -248,7 +298,10 @@ def stem_post(hull, moulded=0.10, sided=0.050, mat=0, name=None):
         paths.append([x, 0, p[2]])
         shapes.append(np.array([(-m * 0.55, -w), (m * 0.45, -w), (m * 0.45, w),
                                 (-m * 0.55, w)]))
-    mb.add_sweep(paths, shapes)
+    # GEN-1 correction: explicit frame (u = forward, normal to the stem line;
+    # v = athwartships).  The implicit frame put the MOULDED dimension
+    # athwartships, giving a stem twice as wide as it is deep.
+    mb.add_sweep(paths, shapes, frames=_profile_frames(paths, fwd=True), mat=mat)
     # apron (backing the stem, inside the hull)
     paths = []; shapes = []
     for t in ts[2:-2]:
@@ -259,7 +312,7 @@ def stem_post(hull, moulded=0.10, sided=0.050, mat=0, name=None):
         paths.append([p[0] - moulded * 0.45, 0, p[2]])
         shapes.append(np.array([(-m * 0.5, -w), (m * 0.5, -w), (m * 0.5, w),
                                 (-m * 0.5, w)]))
-    mb.add_sweep(paths, shapes)
+    mb.add_sweep(paths, shapes, frames=_profile_frames(paths, fwd=True), mat=mat)
     mb.mirror_y() if False else None
     return mb
 
@@ -283,40 +336,46 @@ def stern_post(hull, moulded=0.14, sided=0.055, mat=0):
 
 def transom_plate(hull, thk=0.05, mat=0, mat_edge=1, framing=True):
     """
-    Raked transom: solid plank plate closing the hull boundary at xi=1,
-    plus transom frame (two vertical bars + top rail) on the inside face.
+    Raked transom: plank plate closing the hull at xi=1, lying IN the raked
+    transom plane, plus its inside framing (top rail, side and centre
+    uprights).
+
+    GEN-1 correction: the plate used to be built vertical at the x of the
+    sheer, i.e. at the aftmost point of a RAKED stern, so it stood clear of
+    the plank ends lower down; and its framing was placed aft of it, outside
+    the boat.  Every vertex is now sheared onto the raked plane and the
+    framing sits on the inboard face.
     """
     mb = MB("Transom")
     n = 25
     ts = np.linspace(0, 1, n)
-    edge_s = [hull.section_pt(1.0, t, 0.002) for t in ts]          # starboard (t=1 sheer)
-    edge_p = [hull.section_pt(1.0, t, 0.002) for t in ts[::-1]]    # port, sheer->keel
-    outline = []
-    for p in edge_p:
-        outline.append((-p[1], p[2]))
-    for p in edge_s:
-        outline.append((p[1], p[2]))
-    # stop the transom just above the keel bottom (the stern knee takes below)
-    x_plane = hull.section_pt(1.0, 1.0, 0.0)[0]
-    # plates live in a YZ frame at x_plane
-    from .geom2 import triangulate_polygon
+    edge_s = [hull.section_pt(1.0, t, 0.002) for t in ts]
+    edge_p = [hull.section_pt(1.0, t, 0.002) for t in ts[::-1]]
+    outline = [(-p[1], p[2]) for p in edge_p] + [(p[1], p[2]) for p in edge_s]
     pts = np.array(outline)
-    # trim below a small height above keel_low
     zmin = hull.keel_z(1.0) + 0.012
     keep = pts[pts[:, 1] >= zmin - 0.02]
     outline2 = [(y, z) for (y, z) in keep]
-    mb.add_plate(outline2, thk, plane="YZ", origin=(x_plane - thk * 0, 0, 0), mat=mat)
+    z0 = hull.keel_z(1.0); z1 = hull.sheer_z(1.0)
+
+    def x_end(z):
+        t = clamp((z - z0) / max(1e-6, (z1 - z0)), 0.0, 1.0)
+        return hull.section_pt(1.0, t, 0.0)[0]
+    # plate spans x in [0, thk] (+X = inboard); bedded 12 mm into the plank ends
+    mb.add_plate(outline2, thk, plane="YZ", origin=(-0.012, 0, 0), mat=mat)
     if framing:
         z_top = max(p[2] for p in edge_s)
-        y_top = hull.halfW(1.0)
-        # top rail + two uprights + centre bar, moulded inside the plate
-        zr = z_top - 0.06
-        mb.add_box((x_plane - thk - 0.033, 0, zr), (0.066, 2 * y_top * 0.94, 0.10),
+        zr = z_top - 0.07
+        y_top = abs(hull.section_pt(1.0, (zr - z0) / (z1 - z0), -0.03)[1])
+        mb.add_box((thk - 0.012 + 0.030, 0, zr), (0.060, 2 * y_top * 0.96, 0.09),
                    mat=mat_edge, chamfer=0.008)
-        for yy in (-0.45, 0.0, 0.45):
+        for yy in (-0.40, 0.0, 0.40):
             yv = yy * 2 * y_top
-            mb.add_box((x_plane - thk - 0.030, yv, (zr + zmin) / 2),
-                       (0.060, 0.075, (zr - zmin)), mat=mat_edge, chamfer=0.006)
+            zb = zmin + 0.05 if yy == 0.0 else zmin + 0.25
+            mb.add_box((thk - 0.012 + 0.028, yv, (zr + zb) / 2),
+                       (0.056, 0.070, (zr - zb)), mat=mat_edge, chamfer=0.006)
+    # shear onto the raked transom plane
+    mb.verts = [(x + x_end(z), y, z) for (x, y, z) in mb.verts]
     return mb
 
 
@@ -326,7 +385,7 @@ def transom_plate(hull, thk=0.05, mat=0, mat_edge=1, framing=True):
 
 def frames(hull, n_planks, thk, spacing=0.16, siding=0.022, mould_lo=0.040,
            mould_hi=0.022, mat=0, t_lo=0.045, t_hi=0.985, floors_every=3,
-           floor_extra=0.05, limber=True, stealer_ok=True):
+           floor_extra=0.05, limber=True, stealer_ok=True, inside_off=None):
     """
     Bent timbers, one each side of the centreline per station, following the
     inside face of the planking -- including the clinker steps.  Every
@@ -336,7 +395,11 @@ def frames(hull, n_planks, thk, spacing=0.16, siding=0.022, mould_lo=0.040,
     mb = MB("Frames")
     L = hull.loa
     n_fr = int(L / spacing)
-    inside_off = -(n_planks - 1) * thk - thk + 0.002  # approx inside of garboard
+    if inside_off is None:
+        # GEN-1 correction: timbers land on the inner face of the (canted)
+        # planking, one thickness in.  The old value, -(n-1)*thk - thk, put the
+        # steam cutter's frames 0.43 m inside her shell.
+        inside_off = -thk - 0.0015
     k = 0
     xi_list = np.linspace(0.055, 0.945 if hull.transom else 0.90, n_fr)
     for xi in xi_list:
@@ -363,16 +426,21 @@ def frames(hull, n_planks, thk, spacing=0.16, siding=0.022, mould_lo=0.040,
             s2 = siding / 2
             mould = m_t(t)
             # limber notch: grind the lowest section flat near the keel
-            u3 = n_in
-            v3 = np.array([1.0, 0.0, 0.0])
+            # GEN-1 correction: siding is fore-and-aft (first shape axis),
+            # moulding grows inward from the planking (second shape axis).
+            # The old frame swapped them, so half of every timber stood out
+            # through the planking.
+            u3 = np.array([-1.0, 0.0, 0.0])
+            v3 = n_in
             frames_.append((u3, v3))
             m = mould
             shapes.append(np.array([(-s2, 0), (s2, 0), (s2, m), (-s2, m)]))
-        mb.add_sweep(pts, shapes, frames=frames_)
+        mb.add_sweep(pts, shapes, frames=frames_, mat=mat)
     return mb
 
 
-def keelson(hull, depth=0.14, sided=0.075, mat=0, xi_range=(0.12, 0.88)):
+def keelson(hull, depth=0.14, sided=0.075, mat=0, xi_range=(0.12, 0.88),
+            cap_w=0.0):
     """Keelson: the inner keel, sided over the floors along the centreline."""
     mb = MB("Keelson")
     n = 30
@@ -387,7 +455,17 @@ def keelson(hull, depth=0.14, sided=0.075, mat=0, xi_range=(0.12, 0.88)):
         paths.append([x, 0, z - 0.02])
         shapes.append(np.array([(-sided / 2, 0), (sided / 2, 0), (sided / 2, d),
                                 (-sided / 2, d)]))
-    mb.add_sweep(paths, shapes)
+    # GEN-1 correction (shared root cause with the keel): with the implicit
+    # frame the inner keelson was swept DOWNWARD through the bottom of the
+    # boat.  Athwartships = -Y, depth = +Z (u x v = -X = path direction).
+    KF = [(np.array([0.0, -1.0, 0.0]), np.array([0.0, 0.0, 1.0]))] * len(paths)
+    mb.add_sweep(paths, shapes, frames=KF, mat=mat)
+    if cap_w:
+        # moulded cap on the keelson crown: the bottom boards butt to it
+        cpaths = [[p[0], 0, p[2] + sh[2][1]] for p, sh in zip(paths, shapes)]
+        cshape = [np.array([(-cap_w / 2, 0), (cap_w / 2, 0), (cap_w / 2 - 0.006, 0.016),
+                            (-cap_w / 2 + 0.006, 0.016)])] * len(cpaths)
+        mb.add_sweep(cpaths, cshape, frames=KF, mat=mat)
     return mb
 
 
@@ -417,7 +495,8 @@ def _sweep_along_surface(hull, f_arc, offset, n, shape_fn, xi0=0.02, xi1=0.98,
 
 
 def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
-                rub_r=0.020, mat_cap=0, mat_inwale=1, mat_rub=2, o_top=None):
+                rub_r=0.020, mat_cap=0, mat_inwale=1, mat_rub=2, o_top=None,
+                rub_off=0.0):
     """
     Cap rail (moulded: rounded top), inwale (thick clamp inside) and a
     half-round rubbing strake outside.  Returns one MB (mirrored after).
@@ -443,7 +522,7 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
         v = np.array([0.0, 0, 1.0])
         frames_.append((u, v))
         pts.append([p[0], p[1], p[2] + cap_h * 0.5 - 0.002])
-    mb.add_sweep(pts, shapes, frames=frames_)
+    mb.add_sweep(pts, shapes, frames=frames_, mat=mat_cap)
     # ---- inwale
     xi_in = hull.arc_to_t(xis[0], 1.0)
     def shape_inwale(xi):
@@ -461,13 +540,14 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
         pts2.append([p[0], p[1], p[2] - 0.012])
         shapes2.append(superellipse_section(0.022, 0.024, n=2.4, seg=10))
         frames2.append((-u, v))
-    mb.add_sweep(pts2, shapes2, frames=frames2)
+    mb.add_sweep(pts2, shapes2, frames=frames2, mat=mat_inwale)
     # ---- rubbing strake (half-round beading outside)
     pts3 = []; frames3 = []; shapes3 = []
     for xi in xis:
         t = hull.arc_to_t(xi, rub_arc)
-        o = -(n_planks - 1 - int(rub_arc * n_planks)) * thk
-        p = hull.section_pt(xi, t, o + 0.004)
+        # GEN-1 correction: on the outer face of the shell (the old stacked
+        # offset buried the steam cutter's rubbing strake 80 mm inside it).
+        p = hull.section_pt(xi, t, rub_off)
         nrm = unit(hull.section_normal(xi, t))
         u = unit(nrm - np.array([0, 0, nrm[2]]))
         v = np.array([0.0, 0.0, 1.0])
@@ -475,7 +555,7 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
                                  (rub_r, rub_r * 0.7), (0, rub_r), (-rub_r, rub_r * 0.7)]))
         frames3.append((u, v))
         pts3.append(p + nrm * 0.002 + np.array([0, 0, 0.004]))
-    mb.add_sweep(pts3, shapes3, frames=frames3)
+    mb.add_sweep(pts3, shapes3, frames=frames3, mat=mat_rub)
     return mb
 
 
@@ -722,12 +802,12 @@ def aft_stem(hull, moulded=0.105, sided=0.050, mat=0):
                         (moulded * (1 - 0.35 * t) * 0.48, sided / 2),
                         (-moulded * (1 - 0.35 * t) * 0.52, sided / 2)])
               for t in np.linspace(0.02, 0.99, n)]
-    mb.add_sweep(paths, shapes)
+    mb.add_sweep(paths, shapes, frames=_profile_frames(paths, fwd=False), mat=mat)
     # apron on the inside face
     paths2 = [[p[0] - moulded * 0.45, 0, p[2]]
               for p in [hull.section_pt(1.0, t, -0.02) for t in np.linspace(0.06, 0.95, n)]]
     shapes2 = [np.array([(-moulded * 0.4, -sided * 0.4), (moulded * 0.4, -sided * 0.4),
                          (moulded * 0.4, sided * 0.4), (-moulded * 0.4, sided * 0.4)])
                for _ in range(n)]
-    mb.add_sweep(paths2, shapes2)
+    mb.add_sweep(paths2, shapes2, frames=_profile_frames(paths2, fwd=False), mat=mat)
     return mb

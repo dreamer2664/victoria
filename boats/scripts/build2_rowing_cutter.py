@@ -35,8 +35,9 @@ def main(quick=False):
             "weights": S.ROW_WEIGHTS, "pivots": {}}
 
     # ---- hull skins ----------------------------------------------------------
+    # inside of the planking is bright timber, not the outside paint scheme
     plan = st.clinker_strakes(hull, 11, 0.016, nx=55, npb=12,
-                              mat=25, mat_top=22)
+                              mat=25, mat_top=22, mat_inner=21)
     plan.mirror_y()
     objects["Planking_Clinker"] = plan
 
@@ -51,14 +52,14 @@ def main(quick=False):
     fr.mirror_y()
     objects["Frames"] = fr
 
-    ks = st.keelson(hull, depth=0.14, sided=0.075, mat=2)
+    ks = st.keelson(hull, depth=0.14, sided=0.075, mat=2, cap_w=0.11)
     keelson = ks
     objects["Keelson"] = ks
 
     gw = st.gunwale_set(hull, 11, 0.016, cap_w=0.080, cap_h=0.030, mat_cap=1,
-                        mat_inwale=2, mat_rub=10)
-    gw.append(st.stem_band(hull, mat=3))
+                        mat_inwale=2, mat_rub=10, rub_off=0.008)
     gw.mirror_y()
+    gw.append(st.stem_band(hull, mat=3))   # on the centreline: after the mirror
     objects["Gunwale_Inwale_Rubstrake"] = gw
 
     bh = st.breasthook(hull, length=0.60, thk=0.038, mat=2)
@@ -75,32 +76,33 @@ def main(quick=False):
     # stern sheets: side benches + after thwart (already a thwart at stern), bow sheets
     benches, knees = BL.side_bench_pair(hull, z=0.30, width=0.30,
                                         xi_range=(0.86, 0.985), mat=1)
-    benches.mirror_y(); knees.mirror_y()
+    # (side_bench_pair builds both sides: no mirror -- GEN-1 duplicate fix)
     objects["Stern_Sheets"] = benches
     objects["Stern_Knees"] = knees
     bowls, bknees = BL.side_bench_pair(hull, z=0.30, width=0.26,
                                        xi_range=(0.045, 0.13), mat=1)
-    bowls.mirror_y(); bknees.mirror_y()
+    # (side_bench_pair builds both sides: no mirror -- GEN-1 duplicate fix)
     objects["Bow_Sheets"] = bowls
     objects["Bow_Knees"] = bknees
 
-    # foot gratings (slatted) between thwarts, two panels
-    zgr = hull.keel_z(0.5) + 0.115
-    gr = P.foot_grating(-1.20, -0.10, 0.26, zgr + 0.02, mat=1)
-    gr.append(P.foot_grating(0.16, 1.30, 0.275, zgr + 0.03, mat=1))
-    objects["Floor_Gratings"] = gr
-
-    # loose-laid bottom boards over the floors (service pattern)
-    objects["Bottom_Boards"] = BL.bottom_boards(hull)
+    # loose-laid bottom boards landed ON the floors (service pattern).
+    # GEN-1: the separate foot gratings were removed -- they were laid in
+    # the same space as the bottom boards, two floors interpenetrating.
+    zfn = BL.floor_top_fn(hull, 0.016)
+    objects["Bottom_Boards"] = BL.bottom_boards(hull, z_fn=zfn)
+    z_boards = zfn(0.0, 0.10) + 0.008 + 0.016      # board top near the centreline
     # cambered back board across the stern sheets
     objects["Stern_Backrest"] = BL.stern_backrest(hull)
 
     # stretchers under each thwart zone
     str_mb = MB("Stretchers")
     for xs in stations_oar:
-        str_mb.append(P.stretcher(hull, (hull.loa / 2 - xs) / hull.loa,
-                                  z=hull.keel_z(clamp((hull.loa / 2 - xs) / hull.loa, 0, 1)) + 0.34,
-                                  w=0.42, mat=1))
+        # stretcher board on chocks standing on the bottom boards, aft of
+        # the rowlock (the oarsman sits forward of it, facing aft)
+        xst = xs - 0.30
+        zb = zfn(xst, 0.20) + 0.024
+        str_mb.append(P.stretcher(hull, (hull.loa / 2 - xst) / hull.loa,
+                                  z=zb + 0.085, w=0.42, mat=1))
     objects["Stretchers"] = str_mb
 
     # ---- rowlocks + oars -----------------------------------------------------
@@ -110,7 +112,8 @@ def main(quick=False):
                                    "z": round(float(p["z"]), 4), "side": p["side"]}
                                   for p in pivots]
 
-    oar_set = BL.build_oar_set(hull, pivots, length=3.66, inboard_frac=0.34)
+    oar_set = BL.build_oar_set(hull, pivots, length=3.66, inboard_frac=0.34,
+                               stow_z=0.100 + 0.040)
     oar_objs = []   # [(name, mb, pivot)]
     meta["pivots"]["oars_moving"] = []
     for i, oi in enumerate(oar_set):
@@ -140,7 +143,7 @@ def main(quick=False):
 
     # mast step + clamp on the bow thwart (documented on SLR0719)
     objects["Mast_Fit"] = BL.mast_step_clamp(hull, x_step=0.30,
-                                             z_kelson=hull.keel_z(0.5) + 0.12,
+                                             z_kelson=hull.keel_z(0.5) + 0.19,
                                              thwart_x=stations_thw[0])
     # lifting eyes (documented pair on SLR1818)
     objects["Lifting_Eyes"] = BL.lifting_eyes(hull, [1.95, -1.60],
@@ -162,7 +165,7 @@ def main(quick=False):
     objects["Stem_Fairlead"] = BL.stem_fairlead(hull)
 
     # ---- standard gear ---------------------------------------------------------
-    for name, gmb in BL.standard_gear(hull, kind="rowing"):
+    for name, gmb in BL.standard_gear(hull, kind="rowing", zfloor=z_boards):
         objects[name] = gmb
 
     # compass on the after thwart (coxswain's), small binnacle

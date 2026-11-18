@@ -334,7 +334,7 @@ def locker_box(center, size, mat=0, mat_wood=1, hinged_lid=True):
 # ---------------------------------------------------------------------------
 
 def fender(center_hang, len_=0.34, r_rope=0.024, body_r=0.055, mat_rope=7,
-           lanyard_len=0.42):
+           lanyard_len=0.20):   # GEN-1: was 0.42 (read as stanchions)
     """Rope fender hanging from the gunwale: lanyard + tapered rope body."""
     mb = MB("Fender")
     cx, cy, cz = center_hang
@@ -406,8 +406,11 @@ def stocked_anchor(center, scale=1.0, mat_iron=4, mat_wood=0):
     return mb
 
 
-def grapnel(center, s=1.0, mat_iron=5):
-    """Small four-fluke grapnel (rowing boat kedge)."""
+def grapnel(center, s=1.0, mat_iron=5, lie=False):
+    """Small four-fluke grapnel (rowing boat kedge).
+    lie=True: stowed lying on its side on the bottom boards, shank fore-and-
+    aft, two flukes bearing on the boards (GEN-1: it used to be balanced
+    upright on the point of its crown)."""
     mb = MB("Grapnel")
     cx, cy, cz = center
     shank = 0.5 * s
@@ -426,6 +429,12 @@ def grapnel(center, s=1.0, mat_iron=5):
         dome(mb, tip, 0.014 * s, seg=8, rings=4, mat=mat_iron, squash=1.4, up=unit(np.array([dx, dy, 0.2])))
     torus(mb, (cx, cy, cz + shank + 0.02 * s), 0.022 * s, 0.006 * s, seg=12, rseg=6,
           axis="Y", mat=mat_iron)
+    if lie:
+        R = rot_y(-math.pi / 2)
+        c = np.array([cx, cy, cz])
+        V = (np.array(mb.verts) - c) @ R.T
+        V[:, 2] -= V[:, 2].min()
+        mb.verts = [tuple(v) for v in (V + c)]
     return mb
 
 
