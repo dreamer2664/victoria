@@ -1,0 +1,405 @@
+{
+  "schema": "victoria.leonidas-ii.delivery-checks/1.0",
+  "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+  "archive": {
+    "file": "exports/leonidas_ii/Aurelian_Roblox_Import_Kit.tar.xz",
+    "bytes": 35690308,
+    "sha256": "6f662a149daf6d19f10980b8a41425894e582b3b7f1f82ccd7b5d84578e81fe3"
+  },
+  "counts": {
+    "master": {
+      "mesh_objects": 1422,
+      "triangles": 3300554,
+      "physical_compartments": 203,
+      "actual_first_berths": 228,
+      "actual_second_berths": 132,
+      "actual_third_berths": 268,
+      "actual_crew_berths": 117
+    },
+    "game": {
+      "mesh_nodes": 1438,
+      "unique_meshes": 860,
+      "placed_triangles": 2473152,
+      "unique_triangles": 2166940,
+      "reused_nodes": 578,
+      "max_node_triangles": 18000,
+      "removed_zero_area_triangles": 0,
+      "calibration_nodes": 4,
+      "storage_meshes_including_calibration": 861,
+      "corrected_shading_corners": 13484,
+      "source_precision_vertices": 57
+    },
+    "colliders": 4071,
+    "doors": 196,
+    "movers": 20,
+    "seats": 219,
+    "lights": 346
+  },
+  "checks": [
+    {
+      "check": "Master / GAME / kit source identity",
+      "status": "PASS",
+      "detail": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4"
+    },
+    {
+      "check": "Export uses the current exporter source",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Master inventory / physical-space inventory",
+      "status": "PASS",
+      "detail": 203
+    },
+    {
+      "check": "Placed triangles and visual-node totals agree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Unique/reused GAME counts exclude calibration",
+      "status": "PASS",
+      "detail": {
+        "mesh_nodes": 1438,
+        "unique_meshes": 860,
+        "placed_triangles": 2473152,
+        "unique_triangles": 2166940,
+        "reused_nodes": 578,
+        "max_node_triangles": 18000,
+        "removed_zero_area_triangles": 0,
+        "calibration_nodes": 4,
+        "storage_meshes_including_calibration": 861,
+        "corrected_shading_corners": 13484,
+        "source_precision_vertices": 57
+      }
+    },
+    {
+      "check": "RBXMX has all six exact current Luau sources",
+      "status": "PASS",
+      "detail": {
+        "Aurelian_Install": "e8733a8613b1bccd87a465a45f924f891ebea151469e3fe7f8847e5fde41d661",
+        "Aurelian_Runtime": "0e12b416c65a556192ab897d76fcda6f3bf469cde40d262f48a6cfbd01ac9d44",
+        "Aurelian_Data": "1640bb7031ac26e23aa938b5c7a20689f77514a710ae8f35b079057d2e67273f",
+        "Aurelian_StudioAcceptance": "3021256b0ab48f4d772c2a9afec7fa1ff373c1a1eb39abe8ad276d978dca27bd",
+        "Aurelian_Server": "9d0af7b32df17b00e83670d054642620471e7150777c0390ea310b021d044ab6",
+        "Aurelian_Client": "bd9725ba17828f564e9bb0e3045421ea4ace46dc142198ca3c8cc907472da42f"
+      }
+    },
+    {
+      "check": "Archive GLB hash Deck_Boat_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Bridge_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Lower_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Lower_02.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Main_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Main_02.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Main_03.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Orlop_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Promenade_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Promenade_02.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Promenade_03.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Saloon_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Saloon_02.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Saloon_03.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Engineering_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Hull_And_Topsides_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Hull_And_Topsides_02.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Hull_And_Topsides_03.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive regional GLB set",
+      "status": "PASS",
+      "detail": 18
+    },
+    {
+      "check": "Archive control package is current",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive manifests are current",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive installation document is current",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive source maps and packed map present",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "All six exact current Luau sources compile; runner identity",
+      "status": "PASS",
+      "detail": {
+        "PASS": 6,
+        "FAIL": 0
+      }
+    },
+    {
+      "check": "Runtime logic report uses exact runtime/data/runner/harness; at least 30 passing tests",
+      "status": "PASS",
+      "detail": 30
+    },
+    {
+      "check": "Khronos report covers the actual archived GLBs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Khronos errors/warnings",
+      "status": "PASS",
+      "detail": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 290
+      }
+    },
+    {
+      "check": "Independent component audit covers current export/archive",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Independent exported volume / winding / normal / area gates",
+      "status": "PASS",
+      "detail": {
+        "components": 74050,
+        "negative_components": 0,
+        "near_zero_components": 0,
+        "normal_disagreement_triangles": 0,
+        "opposing_normal_corners": 0,
+        "degenerate_area_triangles": 0,
+        "odd_unpaired_welded_edges": 0,
+        "inconsistent_edge_winding": 0,
+        "coincident_contact_edges": 89847,
+        "collapsed_triangle_edges": 0,
+        "triangles": 2166940,
+        "unique_visual_meshes": 860
+      }
+    },
+    {
+      "check": "Actual structural regression audit matches master and auditor",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Internal structure / stern contacts / screw sweep regression gates",
+      "status": "PASS",
+      "detail": {
+        "PASS": 3,
+        "FAIL": 0
+      }
+    },
+    {
+      "check": "Full static report matches current source/data/export/validator",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Full static geometry and circulation gates",
+      "status": "PASS",
+      "detail": {
+        "PASS": 20,
+        "INFO": 3,
+        "UNVERIFIED": 1
+      }
+    },
+    {
+      "check": "Complete current-source evidence set",
+      "status": "UNVERIFIED",
+      "detail": {
+        "missing": [
+          "Exterior_Bow_Port",
+          "Exterior_Broadside_Port",
+          "Exterior_Overhead",
+          "Exterior_Stern_Starboard",
+          "Interior_Bakery",
+          "Interior_Bar",
+          "Interior_Barber",
+          "Interior_Bath",
+          "Interior_Cabin_First",
+          "Interior_Cabin_Second",
+          "Interior_Captain",
+          "Interior_Cargo",
+          "Interior_Cold_Store",
+          "Interior_Crew",
+          "Interior_Dining_First",
+          "Interior_Dining_Second",
+          "Interior_Grand_Stair",
+          "Interior_Hospital",
+          "Interior_Lavatory",
+          "Interior_Library",
+          "Interior_Mail",
+          "Interior_Music",
+          "Interior_Officer",
+          "Interior_Pantry",
+          "Interior_Purser",
+          "Interior_Second_Lounge",
+          "Interior_Smoking",
+          "Interior_Third_Class",
+          "Interior_Writing"
+        ],
+        "invalid": []
+      }
+    },
+    {
+      "check": "Manual review register source matches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Manual review coverage and exact image hashes",
+      "status": "UNVERIFIED",
+      "detail": {
+        "reviewed_major": 22,
+        "reviewed_surveys": 203,
+        "missing": [
+          "Exterior_Bow_Port",
+          "Exterior_Broadside_Port",
+          "Exterior_Overhead",
+          "Exterior_Stern_Starboard",
+          "Interior_Bakery",
+          "Interior_Bar",
+          "Interior_Barber",
+          "Interior_Bath",
+          "Interior_Cabin_First",
+          "Interior_Cabin_Second",
+          "Interior_Captain",
+          "Interior_Cargo",
+          "Interior_Cold_Store",
+          "Interior_Crew",
+          "Interior_Dining_First",
+          "Interior_Dining_Second",
+          "Interior_Grand_Stair",
+          "Interior_Hospital",
+          "Interior_Lavatory",
+          "Interior_Library",
+          "Interior_Mail",
+          "Interior_Music",
+          "Interior_Officer",
+          "Interior_Pantry",
+          "Interior_Purser",
+          "Interior_Second_Lounge",
+          "Interior_Smoking",
+          "Interior_Third_Class",
+          "Interior_Writing"
+        ],
+        "stale": [],
+        "recorded_status": "IN_PROGRESS"
+      }
+    },
+    {
+      "check": "Opened analytical-sheet register matches current SVGs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Visual acceptance / open exceptions",
+      "status": "UNVERIFIED",
+      "detail": [
+        {
+          "id": "CAMERA_CREW",
+          "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
+          "detail": "Eye-level crew camera was inside a bunk; free-standing-vantage selection added and low-resolution probe opened successfully."
+        },
+        {
+          "id": "COOKING_RANGE",
+          "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
+          "detail": "Galley/bakery range doors faced the close bulkhead. Ranges rotated to face the working aisles; dedicated front views and explicit reachability gate added."
+        },
+        {
+          "id": "CREW_MESS",
+          "status": "BUILT_AND_STATIC_VERIFIED_PENDING_FULL_IMAGE_REVIEW",
+          "detail": "Narrow crew mess/berth rooms lacked a mess table. A two-seat alcove added in each existing berth-free entrance bay, opposite the door and clear of the centre aisle. Berth counts unchanged."
+        }
+      ]
+    },
+    {
+      "check": "Own-change scope; no other agents assets / projects tree",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Roblox Studio / live / FPS acceptance",
+      "status": "UNVERIFIED",
+      "detail": "No Studio, Humanoid physics, multiplayer replication/carry or target-device performance acceptance in this workspace."
+    }
+  ],
+  "summary": {
+    "PASS": 42,
+    "UNVERIFIED": 4
+  }
+}

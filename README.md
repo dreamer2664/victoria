@@ -1,176 +1,72 @@
-# Operation Victoria — Agent 03: The Ocean Liner
+# Operation Victoria — LEONIDAS-II
 
-**SS *Aurelian* (1889)** — an original, historically credible British express liner of the
-late 1880s, modelled at real-world metres in Blender, exported in modules for Roblox, and
-documented with drawings, renders and a reference board.
+## SS *Aurelian* · 1889
 
-![Exterior](renders/exterior/three_quarter_bow.png)
+A **new reconstruction of the project's fictional Atlantic express passenger/mail-and-cargo liner**, preserving its 166 m principal envelope and single-screw identity. This is not a reconstruction of an actual ship called Aurelian, nor a launch enlarged into a liner.
 
----
+**Release status: review candidate, not a Studio-certified playable release.** Geometry, furnishings, machinery, materials, import pipeline and runtime have been rebuilt. Actual-model evidence, measured counts, open issues and the unverified live tests are distinguished in the delivery documentation. A successful generator or exterior render alone is not acceptance.
 
-## What this is
+### Immediate progress report
 
-* **Not** a reconstruction of *Teutonic*, *Majestic*, *City of Paris* or *Umbria*, and no
-  dimension is copied from any of them. Every plate of geometry is original.
-* **Is** a vessel designed on the principles those ships shared: a steel riveted hull of
-  Cb ≈ 0.69 and 19-knot speed, a vertical inverted triple-expansion engine on nine
-  single-ended boilers, two funnels and three pole masts, a superstructure deck carried on
-  brackets with the promenade round it, and panelled first-class public rooms with
-  hurricane lamps.
+**Interim snapshot: 225/254 planned images reviewed — all 203 room surveys plus 22/51 major views.** The remaining 29 major views and Studio/live acceptance are still open. Read the [detailed progress report with renders](docs/leonidas_ii/PROGRESS_REPORT.md), or open its [self-contained illustrated HTML version](docs/leonidas_ii/PROGRESS_REPORT.html). This is a progress publication, not a declaration that the complete brief has passed.
 
-| | |
+### Start here
+
+| Purpose | Deliverable |
 |---|---|
-| Line | Albion & Western Steam Navigation Co., Liverpool |
-| Builder | Birkenhead Iron Works & Shipbuilding Co., yard no. 147 |
-| Laid down / launched / completed | Nov 1887 / 14 Mar 1889 / 20 Jun 1889 |
-| Service | Liverpool – Queenstown – New York, fortnightly |
-| LOA / LBP / beam / draft | 166.0 / 158.0 / 18.4 / 6.50 m |
-| Displacement / gross / lightship | 13,600 t / 8,480 GRT / 9,950 t |
-| Passengers / crew | 228 first, 132 second, 720 third = 1,080 / 196 |
-| Machinery | 1 set vertical inverted triple-expansion, 0.965/1.575/2.565 × 1.295 m, 14,000 IHP at 62 rpm |
-| Boilers | 9 cylindrical single-ended return-tube, 4.20 m × 3.35 m, 11 bar |
-| Speed | 19.3 kn service, 20.2 kn maximum |
-| Propeller | single screw, 5.30 m dia × 6.90 m pitch, 4 blades |
-| Scale | 1 stud = 0.28 m → **592.9 studs** long, **65.7 studs** abeam |
+| Inspection and preservation/rebuild decisions | [Previous-generation inspection](docs/leonidas_ii/PREVIOUS_GENERATION_INSPECTION.md) |
+| Historical evidence, design choices, source limitations | [Design and sources](docs/leonidas_ii/DESIGN_AND_SOURCES.md) · [Attribution](docs/leonidas_ii/ATTRIBUTION.md) |
+| Current delivery, evidence review and limitations | [Delivery report](docs/leonidas_ii/DELIVERY_REPORT.md) |
+| Editable original model | [`models/leonidas_ii/Aurelian_1889.blend`](models/leonidas_ii/Aurelian_1889.blend) — semantic collections, original packed maps |
+| Standard regional Roblox geometry and controls | [`exports/leonidas_ii/Aurelian_Roblox_Import_Kit.tar.xz`](exports/leonidas_ii/Aurelian_Roblox_Import_Kit.tar.xz) — **extract before importing** |
+| Installation, controls, required live test sheet | [Roblox install and test](docs/leonidas_ii/ROBLOX_INSTALL_AND_TEST.md) |
+| Dimension/attachment contract | [`interfaces/leonidas_ii_ship.json`](interfaces/leonidas_ii_ship.json) · [`DIMENSION_MANIFEST.json`](DIMENSION_MANIFEST.json) |
+| Arrangement, datums and machinery flow | [`drawings/leonidas_ii/`](drawings/leonidas_ii/) — editable SVG and vector PDF; analytical, not historical tracings |
+| Actual geometry images | [Embedded evidence index](docs/leonidas_ii/EVIDENCE_INDEX.html) · [`renders/leonidas_ii/`](renders/leonidas_ii/) — full-resolution exterior, interiors, engineering, deck cutaways, room surveys and camera register |
+| Source maps | [`reference/leonidas_ii/materials/`](reference/leonidas_ii/materials/) — six original 2048² maps |
+| All new Roblox source | [`roblox/leonidas_ii/`](roblox/leonidas_ii/) — installer, runtime, generated data, client, server and Studio smoke test |
 
-Full numbers: [`interfaces/ship_spec.json`](interfaces/ship_spec.json),
-[`DIMENSION_MANIFEST.json`](DIMENSION_MANIFEST.json).
+### Dimensions and accommodation
 
----
+* **166.00 m LOA / 158.00 m LBP / 18.40 m moulded beam / 6.50 m design draught.** At 0.28 m/stud: 592.857 × 65.714 × 23.214 studs. Shell plating adds a small amount to outer beam.
+* Source: metres, +X bow / +Y port / +Z up, baseline origin. Game export: **metres**, −Z bow / −X port / +Y up, waterline origin; `(x,y,z) → (−y,z−6.5,−x)`. Scale **once** using the genuine 10 m calibration markers.
+* Seven deck datums, 203 separately inventoried physical spaces, 13 main stair flights and four engine-room ladders. A physical-space count is not a count of unique room designs or a safety certificate.
+* **Built:** 628 passenger sleeping positions (228 first / 132 second / 268 third) plus 117 crew berths. First class includes **114 permanent beds + 114 modeled convertible settee berths**, not 228 permanent beds; settee conversion/live sleeping use is not implemented/accepted. The 900/196 planning targets and inherited 1,080/196 claim are **not achieved**. First-/second-class dining contain **96 / 48 actual chairs**, not the first-class 228-seat planning target. No invisible accommodation or seating is counted.
+* Nine single-ended Scotch boilers and one triple-expansion plant: 1.40 / 2.25 / 3.50 m bores, 1.80 m stroke, signed 72 rpm nominal; 5.30 m pitched bronze screw. Approximately 19.3 kn is a kinematic gameplay target, **not** a resistance, indicated-power or sea-trial result.
 
-## Repository layout
+### Rebuild and check
 
-```
-shipdesign/            the design itself — pure Python, no Blender, no numpy geometry
-  spec.py              principal dimensions, machinery, funnels, masts, boats, palette
-  hull.py              hull form: sections, shell loft, hydrostatics  (bpy-free)
-  layout.py            deck schedule, 42 rooms, 32 doors, 9 stairs, 14 bulkheads
-  drawings.py          lines plan, body plan, general arrangement, 7 deck plans
-  validate.py          13 drawing-office consistency checks (exit 1 on failure)
-  publish_spec.py      writes interfaces/ship_spec.json + DIMENSION_MANIFEST.json
-blender/
-  lib_build.py         shared modelling helpers
-  build_hull.py        shell, strakes, rivets, keel/stem/sternpost, rudder, anchors
-  build_superstructure.py  deckhouses, promenade, boat deck, bridge, funnels, masts,
-                           rigging, boats + davits, deck machinery, nav lights
-  build_interiors.py   all 42 rooms, furniture, stair, dome, panelling, carpets
-  build_machinery.py   boilers, triple-expansion engine, propeller, shafting, steering
-  assemble.py          links modules into models/ship_assembly.blend
-  render.py            exterior renders          render_interiors.py  interior renders
-  render_machinery.py  engine-room cutaway
-  export_roblox.py     7 logical FBX + GLB modules at 1 stud = 0.28 m
-  diag_cam.py          ray-cast camera diagnostic
-models/                module_hull / _superstructure / _interiors / _machinery / assembly
-exports/               fbx/, glb/, roblox_modules.json
-roblox/                5 runtime scripts (see below)
-drawings/              9 sheets, PNG + SVG
-renders/               exterior/, interiors/, machinery/
-reference/             reference_board.png/.pdf, plates/, reference_index.json
-interfaces/            boats_spec.json (in), ship_spec.json (out)
-HISTORICAL_EVIDENCE.md every decision traced to a source or marked as inference
-```
-
----
-
-## Building it
-
-Requires Python 3.11+, numpy, matplotlib, and Blender 4.2 (a portable copy is used here via
-`tools_blender/run.sh`).
+Requires Blender **4.2 LTS** (4.2.3 used) and external Python with NumPy, Pillow, SciPy and Matplotlib; see [`blender/leonidas_ii/requirements.txt`](blender/leonidas_ii/requirements.txt). CairoSVG is optional for PDF conversion. Blender supplies its own Python/NumPy. Set `BLENDER_BIN` to your executable. The portable Linux build may require its `lib/` directory on `LD_LIBRARY_PATH`.
 
 ```bash
-# 1. design + drawings + specs (no Blender needed)
-python3 -W ignore -m shipdesign.drawings
-python3 -W ignore -m shipdesign.publish_spec
-python3 -m shipdesign.validate                     # must report 0 failures
-
-# 2. geometry
-BLENDER=/path/to/blender
-$BLENDER -b -P blender/build_hull.py
-$BLENDER -b -P blender/build_superstructure.py
-$BLENDER -b -P blender/build_interiors.py
-$BLENDER -b -P blender/build_machinery.py
-$BLENDER -b -P blender/assemble.py -- \
-        hull,superstructure,interiors,machinery models/ship_assembly.blend
-
-# 3. renders
-$BLENDER -b models/ship_assembly.blend -P blender/render.py -- renders/exterior
-$BLENDER -b models/ship_assembly.blend -P blender/render_interiors.py -- renders/interiors
-$BLENDER -b models/ship_assembly.blend -P blender/render_machinery.py -- renders/machinery
-
-# 4. Roblox export
-$BLENDER -b models/ship_assembly.blend -P blender/export_roblox.py -- exports
+bash tools/build_leonidas_ii.sh
+# Actual Cycles evidence, one Blender process at a time:
+bash tools/render_leonidas_evidence.sh
+# Editable analytical drawings (PDF additionally requires CairoSVG):
+python3 tools/draw_leonidas_ii.py --pdf
+# Optional checks, with their documented dependencies:
+python3 tools/audit_leonidas_volumes.py
+node --expose-gc tools/validate_leonidas_gltf.cjs
+python3 tools/test_leonidas_runtime.py
+python3 tools/make_leonidas_review.py
+# Open/review every image and record exact hashes before this strict gate:
+python3 tools/check_leonidas_delivery.py --require-evidence --require-reviewed
 ```
 
-Every module builds into its **own** `.blend`, so the hull, superstructure, interiors and
-machinery stay separately editable. `assemble.py` links them into one scene without
-flattening them.
+`tools/build_leonidas_ii.sh` orders the master build, actual-shell/stern structural audit, lower-tessellation GAME build, packed map preparation, closed-component GLB export, regional kit, exact exported component/normal audit and static validation. `build/` directories are regenerable scratch, not delivery dependencies. **Do not run `tools/leonidas_revision_fixes.py`: it records a one-off, non-idempotent migration already applied to the source.**
 
----
+The independent component audit restores missing regional GLB scratch files directly from the hash-verified delivered archive; it does not need to rebuild or change the editable master to re-check a delivery.
 
-## Roblox integration
+The import kit uses solid XZ compression to avoid redundant embedded images. Extract with `tar -xJf Aurelian_Roblox_Import_Kit.tar.xz`, 7-Zip, or a compatible archive utility. Its contents are normal glTF 2.0 GLBs and an `.rbxmx` control package; no Draco decoder, invented Roblox asset IDs or external texture CDN is required. Textures may need your authorised Studio uploads.
 
-`exports/roblox_modules.json` lists seven **logical modules** — Hull, Superstructure,
-DeckEquipment, Interiors_Public, Interiors_Cabins, Interiors_Structure, Machinery — each
-with its own FBX and GLB, a shared origin and the scale factor applied. Import them into
-the same Studio model named `Aurelian`; do **not** merge them into one mesh.
+### Integration and acceptance boundary
 
-| Script | Place in | Does |
-|---|---|---|
-| `AurelianShipController.server.lua` | inside the `Aurelian` model | Master state: telegraph order → shaft RPM → propeller law → speed; rudder → turn rate; pitch/roll/heave; publishes attributes |
-| `Aurelian_Telegraph.server.lua` | inside the wheelhouse | Working 10-position EOT with needles, helm wheel, whistle |
-| `Aurelian_EngineAnim.server.lua` | inside Machinery | Slider-crank piston motion, crankshaft, propeller and shaft rotation, furnace flicker, engine hum |
-| `Aurelian_DoorsAndLighting.server.lua` | ServerScriptService | Proximity doors, watertight doors, boarding plates that release the moorings interlock, interior lamp setup and night watch |
-| `Aurelian_SmokeAndWake.client.lua` | StarterPlayerScripts | Coal smoke intensity from RPM, steam puffs, wake and bow wave, distance culling |
+Implemented contracts include boarding/gangway and mooring interlocks, signed ahead/astern orders, separate firing/regulator controls, helm, articulated crank/rods/shaft/propeller, rudder/quadrant, doors, seating and locally budgeted lighting/effects. **They have not been accepted in Roblox Studio.** There is no measured client FPS, multiplayer passenger-carry validation, continuous Humanoid collision test or hydrodynamic navigation-collision solver. Follow the unchecked live test sheet before using this in a published experience.
 
-All control flows through **attributes on the ship model**, so any script can read the
-state (`SpeedKn`, `ShaftRPM`, `Telegraph`, `Heading`, `RudderAngle`, `MooringsClear`,
-`LightsOut`) without wiring up RemoteEvents.
+Boat/port work was inspected at the recorded branch tips; only ship-owned host interfaces are supplied. Three compatible craft sockets do not establish the inherited eleven-boat lifesaving inventory. No other agent's asset is changed and no joint world-fit approval is claimed.
 
-Interaction is by `ProximityPrompt` throughout, so it works on touch and console as well as
-on a keyboard.
+### Provenance and branch
 
----
+Branch **`agent/leonidas-ii`**, based on `75bf4ac5770b803919b36c8dbdb5374df82d88ac` from `agent/ship`. New work is namespaced in the repository's existing directory structure; there is no `projects/` tree. Root README and the dimension entry point now point to LEONIDAS-II. Original generators, models, renders, interfaces and runtime sources remain in Git as provenance, **not** the intended install path. The [inherited README](docs/leonidas_ii/inspection/INHERITED_README.md) and [inherited dimension manifest](docs/leonidas_ii/inspection/INHERITED_DIMENSION_MANIFEST.json) preserve their original claims verbatim.
 
-## The scale rule
-
-`1 stud = 0.28 m`. The exporter applies `global_scale = 1/0.28` and exports FBX with
-`axis_forward=-Z, axis_up=Y`, and GLB with `export_yup=True`. An object 1 m long in Blender
-arrives at 3.5714 studs. The ship is 592.9 studs overall.
-
----
-
-## Quality gate
-
-`shipdesign/validate.py` runs 13 checks every build and **fails the build** on any of
-them. Current state on the assembled scene:
-
-```
-13 passed, 2 warnings, 0 failures
-```
-
-It caught three real design errors during this project, which is why it exists:
-
-1. A funnel running straight through the library (found by ray-casting a camera).
-2. Walls that stopped 2.75 m above the floor while the real ceiling — the deck above —
-   was at 3.30 m, leaving a black band round the top of every small room.
-3. Room polygons containing numpy arrays instead of floats, which had silently produced a
-   6.57 m room as 0.57 m wide.
-
-See [`HISTORICAL_EVIDENCE.md`](HISTORICAL_EVIDENCE.md) §8 for an honest list of what this
-model does **not** have.
-
----
-
-## Interfaces
-
-* **In** — `interfaces/boats_spec.json` (contract published for Agent 02: two 25-ft
-  cutters, their dimensions and the davit positions reserved for them).
-* **Out** — `interfaces/ship_spec.json` (everything another agent needs to place this
-  vessel in a scene: dimensions, decks, hydrostatics, layout, scale, Roblox attributes).
-
----
-
-## Branch
-
-`agent/ship`. Other agents' work is untouched; nothing outside this agent's scope has been
-modified.
+The sandbox uses a sparse checkout for unchanged inherited binary files and keeps redundant Git history/reference clones in excluded cache to fit its saved-file budget. This does not alter those assets in the branch. A normal clone can use `git sparse-checkout disable`. Only if this sandbox's cache expires, run `python3 tools/restore_leonidas_checkout.py`; its local publication receipt can reconstruct the exact recorded commit from retained files. It never pushes or uses stored credentials.

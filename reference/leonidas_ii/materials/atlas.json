@@ -1,0 +1,522 @@
+{
+  "Hull": {
+    "tile": 0,
+    "column": 0,
+    "row": 0,
+    "srgb": [
+      26,
+      31,
+      32
+    ],
+    "roughness": 0.52,
+    "metallic": 0.55,
+    "pattern": "metal"
+  },
+  "Oxide": {
+    "tile": 1,
+    "column": 1,
+    "row": 0,
+    "srgb": [
+      112,
+      44,
+      35
+    ],
+    "roughness": 0.72,
+    "metallic": 0.12,
+    "pattern": "paint"
+  },
+  "Ivory": {
+    "tile": 2,
+    "column": 2,
+    "row": 0,
+    "srgb": [
+      227,
+      221,
+      200
+    ],
+    "roughness": 0.58,
+    "metallic": 0,
+    "pattern": "paint"
+  },
+  "White": {
+    "tile": 3,
+    "column": 3,
+    "row": 0,
+    "srgb": [
+      235,
+      232,
+      214
+    ],
+    "roughness": 0.66,
+    "metallic": 0,
+    "pattern": "paint"
+  },
+  "Teak": {
+    "tile": 4,
+    "column": 4,
+    "row": 0,
+    "srgb": [
+      145,
+      104,
+      62
+    ],
+    "roughness": 0.55,
+    "metallic": 0,
+    "pattern": "wood"
+  },
+  "Oak": {
+    "tile": 5,
+    "column": 5,
+    "row": 0,
+    "srgb": [
+      158,
+      119,
+      72
+    ],
+    "roughness": 0.43,
+    "metallic": 0,
+    "pattern": "wood"
+  },
+  "Mahogany": {
+    "tile": 6,
+    "column": 6,
+    "row": 0,
+    "srgb": [
+      90,
+      41,
+      27
+    ],
+    "roughness": 0.32,
+    "metallic": 0,
+    "pattern": "wood"
+  },
+  "Walnut": {
+    "tile": 7,
+    "column": 7,
+    "row": 0,
+    "srgb": [
+      81,
+      61,
+      40
+    ],
+    "roughness": 0.42,
+    "metallic": 0,
+    "pattern": "wood"
+  },
+  "Brass": {
+    "tile": 8,
+    "column": 0,
+    "row": 1,
+    "srgb": [
+      183,
+      139,
+      60
+    ],
+    "roughness": 0.25,
+    "metallic": 0.92,
+    "pattern": "metal"
+  },
+  "Steel": {
+    "tile": 9,
+    "column": 1,
+    "row": 1,
+    "srgb": [
+      128,
+      140,
+      140
+    ],
+    "roughness": 0.28,
+    "metallic": 0.95,
+    "pattern": "metal"
+  },
+  "Iron": {
+    "tile": 10,
+    "column": 2,
+    "row": 1,
+    "srgb": [
+      44,
+      54,
+      53
+    ],
+    "roughness": 0.56,
+    "metallic": 0.7,
+    "pattern": "metal"
+  },
+  "Copper": {
+    "tile": 11,
+    "column": 3,
+    "row": 1,
+    "srgb": [
+      160,
+      86,
+      47
+    ],
+    "roughness": 0.33,
+    "metallic": 0.88,
+    "pattern": "metal"
+  },
+  "Funnel": {
+    "tile": 12,
+    "column": 4,
+    "row": 1,
+    "srgb": [
+      203,
+      158,
+      87
+    ],
+    "roughness": 0.58,
+    "metallic": 0.12,
+    "pattern": "paint"
+  },
+  "Soot": {
+    "tile": 13,
+    "column": 5,
+    "row": 1,
+    "srgb": [
+      16,
+      19,
+      19
+    ],
+    "roughness": 0.91,
+    "metallic": 0,
+    "pattern": "grain"
+  },
+  "Engine": {
+    "tile": 14,
+    "column": 6,
+    "row": 1,
+    "srgb": [
+      49,
+      86,
+      76
+    ],
+    "roughness": 0.4,
+    "metallic": 0.5,
+    "pattern": "paint"
+  },
+  "Lagging": {
+    "tile": 15,
+    "column": 7,
+    "row": 1,
+    "srgb": [
+      178,
+      173,
+      151
+    ],
+    "roughness": 0.91,
+    "metallic": 0,
+    "pattern": "fabric"
+  },
+  "Leather": {
+    "tile": 16,
+    "column": 0,
+    "row": 2,
+    "srgb": [
+      76,
+      42,
+      28
+    ],
+    "roughness": 0.43,
+    "metallic": 0,
+    "pattern": "leather"
+  },
+  "LeatherGreen": {
+    "tile": 17,
+    "column": 1,
+    "row": 2,
+    "srgb": [
+      30,
+      64,
+      48
+    ],
+    "roughness": 0.46,
+    "metallic": 0,
+    "pattern": "leather"
+  },
+  "Velvet": {
+    "tile": 18,
+    "column": 2,
+    "row": 2,
+    "srgb": [
+      97,
+      35,
+      34
+    ],
+    "roughness": 0.91,
+    "metallic": 0,
+    "pattern": "fabric"
+  },
+  "GoldCloth": {
+    "tile": 19,
+    "column": 3,
+    "row": 2,
+    "srgb": [
+      170,
+      132,
+      59
+    ],
+    "roughness": 0.86,
+    "metallic": 0,
+    "pattern": "fabric"
+  },
+  "Linen": {
+    "tile": 20,
+    "column": 4,
+    "row": 2,
+    "srgb": [
+      222,
+      215,
+      190
+    ],
+    "roughness": 0.93,
+    "metallic": 0,
+    "pattern": "fabric"
+  },
+  "Mattress": {
+    "tile": 21,
+    "column": 5,
+    "row": 2,
+    "srgb": [
+      163,
+      165,
+      141
+    ],
+    "roughness": 0.91,
+    "metallic": 0,
+    "pattern": "stripe"
+  },
+  "Carpet": {
+    "tile": 22,
+    "column": 6,
+    "row": 2,
+    "srgb": [
+      97,
+      46,
+      38
+    ],
+    "roughness": 0.96,
+    "metallic": 0,
+    "pattern": "carpet"
+  },
+  "Rubber": {
+    "tile": 23,
+    "column": 7,
+    "row": 2,
+    "srgb": [
+      72,
+      76,
+      62
+    ],
+    "roughness": 0.78,
+    "metallic": 0,
+    "pattern": "rubber"
+  },
+  "Tile": {
+    "tile": 24,
+    "column": 0,
+    "row": 3,
+    "srgb": [
+      201,
+      211,
+      204
+    ],
+    "roughness": 0.38,
+    "metallic": 0,
+    "pattern": "tile"
+  },
+  "Porcelain": {
+    "tile": 25,
+    "column": 1,
+    "row": 3,
+    "srgb": [
+      234,
+      232,
+      211
+    ],
+    "roughness": 0.22,
+    "metallic": 0,
+    "pattern": "grain"
+  },
+  "Marble": {
+    "tile": 26,
+    "column": 2,
+    "row": 3,
+    "srgb": [
+      192,
+      190,
+      167
+    ],
+    "roughness": 0.31,
+    "metallic": 0,
+    "pattern": "marble"
+  },
+  "Rope": {
+    "tile": 27,
+    "column": 3,
+    "row": 3,
+    "srgb": [
+      153,
+      134,
+      94
+    ],
+    "roughness": 0.94,
+    "metallic": 0,
+    "pattern": "rope"
+  },
+  "BookRed": {
+    "tile": 28,
+    "column": 4,
+    "row": 3,
+    "srgb": [
+      112,
+      46,
+      38
+    ],
+    "roughness": 0.58,
+    "metallic": 0,
+    "pattern": "book"
+  },
+  "BookBlue": {
+    "tile": 29,
+    "column": 5,
+    "row": 3,
+    "srgb": [
+      37,
+      61,
+      74
+    ],
+    "roughness": 0.58,
+    "metallic": 0,
+    "pattern": "book"
+  },
+  "BookGreen": {
+    "tile": 30,
+    "column": 6,
+    "row": 3,
+    "srgb": [
+      59,
+      77,
+      45
+    ],
+    "roughness": 0.58,
+    "metallic": 0,
+    "pattern": "book"
+  },
+  "Paper": {
+    "tile": 31,
+    "column": 7,
+    "row": 3,
+    "srgb": [
+      218,
+      203,
+      163
+    ],
+    "roughness": 0.88,
+    "metallic": 0,
+    "pattern": "paper"
+  },
+  "Coal": {
+    "tile": 32,
+    "column": 0,
+    "row": 4,
+    "srgb": [
+      28,
+      30,
+      29
+    ],
+    "roughness": 0.98,
+    "metallic": 0,
+    "pattern": "grain"
+  },
+  "Firebrick": {
+    "tile": 33,
+    "column": 1,
+    "row": 4,
+    "srgb": [
+      134,
+      67,
+      44
+    ],
+    "roughness": 0.9,
+    "metallic": 0,
+    "pattern": "brick"
+  },
+  "Canvas": {
+    "tile": 34,
+    "column": 2,
+    "row": 4,
+    "srgb": [
+      185,
+      172,
+      137
+    ],
+    "roughness": 0.9,
+    "metallic": 0,
+    "pattern": "fabric"
+  },
+  "Chart": {
+    "tile": 35,
+    "column": 3,
+    "row": 4,
+    "srgb": [
+      208,
+      198,
+      159
+    ],
+    "roughness": 0.88,
+    "metallic": 0,
+    "pattern": "chart"
+  },
+  "Bulb": {
+    "tile": 36,
+    "column": 4,
+    "row": 4,
+    "srgb": [
+      255,
+      222,
+      150
+    ],
+    "roughness": 0.25,
+    "metallic": 0,
+    "pattern": "grain"
+  },
+  "Red": {
+    "tile": 37,
+    "column": 5,
+    "row": 4,
+    "srgb": [
+      148,
+      43,
+      34
+    ],
+    "roughness": 0.4,
+    "metallic": 0.1,
+    "pattern": "paint"
+  },
+  "Green": {
+    "tile": 38,
+    "column": 6,
+    "row": 4,
+    "srgb": [
+      25,
+      98,
+      68
+    ],
+    "roughness": 0.4,
+    "metallic": 0.1,
+    "pattern": "paint"
+  },
+  "Black": {
+    "tile": 39,
+    "column": 7,
+    "row": 4,
+    "srgb": [
+      22,
+      24,
+      23
+    ],
+    "roughness": 0.7,
+    "metallic": 0,
+    "pattern": "grain"
+  }
+}

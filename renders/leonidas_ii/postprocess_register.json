@@ -1,0 +1,1802 @@
+[
+  {
+    "raw": "build/pending/Engineering_Crossheads_ValveGear.png",
+    "final": "Engineering_Crossheads_ValveGear.jpg",
+    "width": 1800,
+    "height": 1200,
+    "sha256": "9e431dea427b568f64ceae8c2dcdc704858566634c8717835798896ada927a8e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Engineering_Engine_Cutaway.png",
+    "final": "Engineering_Engine_Cutaway.jpg",
+    "width": 2200,
+    "height": 1500,
+    "sha256": "fe2c6b1b954af2ca60d54fad72dee3a9bba19d6d3558b0578fe71ca140dece0f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Engineering_Stern_Aperture.png",
+    "final": "Engineering_Stern_Aperture.jpg",
+    "width": 2000,
+    "height": 1400,
+    "sha256": "df9a307bb14069c483161236eaf5a11c37c0b6e40f4225cfb38a7b9640498a06",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Machinery_Dynamos_And_Switchboard.png",
+    "final": "Machinery_Dynamos_And_Switchboard.jpg",
+    "width": 1800,
+    "height": 1100,
+    "sha256": "5a76f893fd42723dd3b0cfa8f5c235d71ff8560261f0b110335b76000a5feadd",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Machinery_Engine_Aisle.png",
+    "final": "Machinery_Engine_Aisle.jpg",
+    "width": 1800,
+    "height": 1200,
+    "sha256": "0ba756097d924992abde051963c9909ee7b84e56f7766098eff71bd052f8aa00",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Machinery_Feed_Pumps.png",
+    "final": "Machinery_Feed_Pumps.jpg",
+    "width": 1800,
+    "height": 1100,
+    "sha256": "bbb5e192155692a83676151c441c70c6be7f41a082d77d16d7b18f5347b3c175",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Machinery_Shaft_Alley.png",
+    "final": "Machinery_Shaft_Alley.jpg",
+    "width": 1800,
+    "height": 1100,
+    "sha256": "dc6601d17d680e5b6e93eeef8c6a2c8d7cc78d191014e94ea505b54db28b156f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Machinery_Steam_Steering.png",
+    "final": "Machinery_Steam_Steering.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "8af57cf272df7f1438c4046817f75fff12f5d51fc0f5e48e94e67bd21b73d526",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Machinery_Stokehold.png",
+    "final": "Machinery_Stokehold.jpg",
+    "width": 1800,
+    "height": 1200,
+    "sha256": "0b12fb036eadb12814bda83330099daf4543b547e436002d2d029f83f18483a1",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Machinery_Stokehold_After.png",
+    "final": "Machinery_Stokehold_After.jpg",
+    "width": 1800,
+    "height": 1200,
+    "sha256": "d1f3ae2a8b2937d7fae1141ef26864c4e2e4db291ed974be008e630dc4813d37",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Machinery_Stokehold_Forward.png",
+    "final": "Machinery_Stokehold_Forward.jpg",
+    "width": 1800,
+    "height": 1200,
+    "sha256": "8166a8fdbd571f0940d66b467e01a1a679fefe1c66c14af72868fc7245a1171a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Engineering_Structural_Skeleton.png",
+    "final": "Engineering_Structural_Skeleton.jpg",
+    "width": 2400,
+    "height": 1100,
+    "sha256": "203c6d2153c94b5c5a9f63886a5c1301c433353b3ed306b092c485405ff5ed24",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Plan_boat.png",
+    "final": "Plan_boat.jpg",
+    "width": 2600,
+    "height": 800,
+    "sha256": "295a5be9f84fba027fcde5c34badd6a65b49be6dc008c82093f8292478c6b1a9",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Plan_bridge.png",
+    "final": "Plan_bridge.jpg",
+    "width": 1800,
+    "height": 1200,
+    "sha256": "49a58b30a899365cc88f146cf4051ac6113a21ce2e1d8812949283d2f2a57287",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Plan_lower.png",
+    "final": "Plan_lower.jpg",
+    "width": 2600,
+    "height": 800,
+    "sha256": "57235f36f143aa592f4c7c8c1d2a93dcdee407a454768814e77176bbb561f12e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Plan_main.png",
+    "final": "Plan_main.jpg",
+    "width": 2600,
+    "height": 800,
+    "sha256": "f92d570e14c4f3235e107f2a679b9e292897b3f35cffa72e48a04fc7f47c9092",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Plan_orlop.png",
+    "final": "Plan_orlop.jpg",
+    "width": 2600,
+    "height": 800,
+    "sha256": "1da94e142e4eb4052a16540cffa820844ae5c37ec975aeaefc7829a17d755091",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Plan_promenade.png",
+    "final": "Plan_promenade.jpg",
+    "width": 2600,
+    "height": 800,
+    "sha256": "2cbcbc35be5c5fb008b3ff1794fb1adfda432382b5d1bcd09380dc3c7a92d2ab",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Plan_saloon.png",
+    "final": "Plan_saloon.jpg",
+    "width": 2600,
+    "height": 800,
+    "sha256": "93aabcd369987bc485e539e362e7e322c51aad2411cd0ca505ede4fa88c6f9bd",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Chart_Signals.png",
+    "final": "Interior_Chart_Signals.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "d91c2729a51414c0e6c694aabf3dca546c9d796c532ee490068f6a8187f5bf0b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Galley.png",
+    "final": "Interior_Galley.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "6238fbd3742271d59d05a9dfac319487e0604961b41fc8f5c5fb70a7d9eff1f9",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Interior_Wheelhouse.png",
+    "final": "Interior_Wheelhouse.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "7630dfda7b26afb52f9ae25577d8ce8ba41294bc15a8ae6448d815e2fbfedb8e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A001.png",
+    "final": "rooms/Room_A001.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "146a8a3de96aeb4daf3bcf3d5918db96b7f4165e7a470ca833c075ed78602b1a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A002.png",
+    "final": "rooms/Room_A002.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ac21871ed56a615be3753bc859a79370c6a60897482fc1092d2a53198ad82e19",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A003.png",
+    "final": "rooms/Room_A003.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "69e14aa734a834c2c7127eea68ba717520bf98d85d103d45c9be63d512c43ad8",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A004.png",
+    "final": "rooms/Room_A004.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7d804afe1343930160d736ba5cef8e6d3ba713190f3cfe0f6655a29f343aceb6",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A005.png",
+    "final": "rooms/Room_A005.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ecb9b39f2e0877f55bc5c9799ba9249a098b37675b9765ab36783f0d39abc773",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A006.png",
+    "final": "rooms/Room_A006.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "d17a3050c878035f222c41b2b74d2db40b009ebb209794983a2415e184d9e4d4",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A007.png",
+    "final": "rooms/Room_A007.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c0912d955fdd4ca181ac6eb8c8d434ab54300d31194849c5b73baad302775d45",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A008.png",
+    "final": "rooms/Room_A008.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f48def0bf05ff15304a76290930c1dab06bc06c77bfe388faef391f105217dd8",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A009.png",
+    "final": "rooms/Room_A009.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "25cee1b6770575f3317a59f7136ca35a2c9adb95aec0d3e22996eedb229a535b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A010.png",
+    "final": "rooms/Room_A010.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7488e72beb65d310042172314ab91844710b5936cd60c6aa32eb2bddbf57fe0b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A011.png",
+    "final": "rooms/Room_A011.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "082c25fc83e91a157884118b008b6376ef5a6d293967e501b9710aac16a76592",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A012.png",
+    "final": "rooms/Room_A012.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ab75926319933896176f557e81befaaa083f7756fbf56b2f6489336197765e1b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A013.png",
+    "final": "rooms/Room_A013.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "4b046d73e0c73507b3efd59a359586b534f66f85056a003a33eededa64697a8b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A014.png",
+    "final": "rooms/Room_A014.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "5db110f0b7d5e0867d5db88c49b4fb4c1864929f981c1ff456461dd08a5f5320",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A015.png",
+    "final": "rooms/Room_A015.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a050e7a1da3687666c1a2ada4139c0d79f8cb6c86e7df611467d1f70122db99e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A016.png",
+    "final": "rooms/Room_A016.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "abb9e183c624dbbe56400e71b3ea41064c152fa3c2d953edd9f8927b5c926eba",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A017.png",
+    "final": "rooms/Room_A017.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "5f568777c39db8583afb905e1e43628b42fe1f5b074c2ceb8499b3d3ac85a6dc",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A018.png",
+    "final": "rooms/Room_A018.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "2d9a7a2d482b4935a418c7a1374216d6d96264b4a2e7ca4301c9f11dda7883c6",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A019.png",
+    "final": "rooms/Room_A019.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e1ffcc5191e39ec266ca94a8cc5b4c0fdc34d06b965f6b2b0ea0382101efba1a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A020.png",
+    "final": "rooms/Room_A020.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a3a6cd5a6be9448510191482255fd68be719f8b76e890f8586902ea72860421a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A021.png",
+    "final": "rooms/Room_A021.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "978e16b3e1f569c1cb4001b746536b2b385286d6c98e497492271a56f8a1d11c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A022.png",
+    "final": "rooms/Room_A022.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "38bbbac26ae5ccb4174b04993289630995374534af4b147a0d5827ff134cefe4",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A023.png",
+    "final": "rooms/Room_A023.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a315adedbb563379a0700eb7b4101e583c4935a0ae51abc2817557f542309098",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A024.png",
+    "final": "rooms/Room_A024.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "b9b937ae775daef272acd77b39bd4557fe7cccbf724375c235539a1c700dbc65",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A025.png",
+    "final": "rooms/Room_A025.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "4c0b00704d07ccd1ec8830651e40b7d693d4e23a729bb9478b81fa85387cef87",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A026.png",
+    "final": "rooms/Room_A026.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "130ef026bc93bd005486e2012feaff1e3d11069a15e5688be86a851ee4c07f59",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A027.png",
+    "final": "rooms/Room_A027.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e0e5cc160fa33fdb5897ae1e739b43d3c9927bfc474b6c125f7c782d44be3894",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A028.png",
+    "final": "rooms/Room_A028.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "8203bde1b94f155ab456bf87cc0a334c96904936cdc84db390ac61f73badcbd3",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A029.png",
+    "final": "rooms/Room_A029.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "90f6b1108f31e98d3615185941a09c9d3f5675b117dd3acb291253c4f8cccf97",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A030.png",
+    "final": "rooms/Room_A030.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "4b35529b38d83f5e5c22984d275ded9793ddffe54d2de00dd193b4610f4653e5",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A031.png",
+    "final": "rooms/Room_A031.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "68d049921239c1c6580a92702b6a17c68de42021d1111c0e7de3624f843c0aae",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A032.png",
+    "final": "rooms/Room_A032.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "24d26f4ca777e5bfd25e7396995e291cf465d5b8f1e081320a07f644aba5360d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A033.png",
+    "final": "rooms/Room_A033.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "337b1e3d0ddb5259c923839cefb10861d395700a0b44921f95243230a482f0c0",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A034.png",
+    "final": "rooms/Room_A034.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "8df110252af77dd645b55aa5a9d35d8faeb0b0b386803669cbc09f2a15b6750d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A035.png",
+    "final": "rooms/Room_A035.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "4f37fe93255f644c4165518dd9f407325716eeb61950c1a6e63a0f8360e45d90",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A036.png",
+    "final": "rooms/Room_A036.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ccb383499c9661f415155bf6fc8f3d33fcb79ce09ff8cc50fe694aab4770c316",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A037.png",
+    "final": "rooms/Room_A037.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "5b1aa10a8602b8a215d38ecb7a7ce7943c9656a95e783a27d6f8006872d5463a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A038.png",
+    "final": "rooms/Room_A038.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "710e36a97fdba1b69a92d848e0d5198118dd1bfbad327f96b356fb68e92b47a8",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A039.png",
+    "final": "rooms/Room_A039.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a00f1346d687e933956e9ef9762dd6605b67a580397df5d3ec5b89cccaf347c2",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A040.png",
+    "final": "rooms/Room_A040.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c61481172bd4b30cf3a5b52c915b6b89162ed16bb8268d0eeef2292f86d7b027",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A041.png",
+    "final": "rooms/Room_A041.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c0530d37d78b89cb603859140dee35000c56a0594d924b7404b79f3115df641d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A042.png",
+    "final": "rooms/Room_A042.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c3dd0947ed19a30ea2b94bed6b8ff8f5f6f1a4d83833bfc7c993324ac943fb0a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A043.png",
+    "final": "rooms/Room_A043.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "45e5fcc847b405197b4835799f24d520cd09db9ee8b4660f99a2cf69de2dba5f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A044.png",
+    "final": "rooms/Room_A044.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e72e8bafcd996de8475387db515e07143221b3a781228f9a1ffb1f3e730bb90e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A045.png",
+    "final": "rooms/Room_A045.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "504f3de77125b56cc1e70eb96ea87f42d8969490a6b43de7764b95c3bea69145",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A046.png",
+    "final": "rooms/Room_A046.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ac0b908cf93c5d4a884df2675aa205cfc597282bd0eaa2022b8e1d8f1bc50b0b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A047.png",
+    "final": "rooms/Room_A047.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "81161463a3c34a2478a8834a47ce8f9f860f91a273ef3226e4bf7884fdc8f600",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A048.png",
+    "final": "rooms/Room_A048.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "62d71cff0d09e70fde3994296e4ada83bf68cb64844476967dde8202422a726c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A049.png",
+    "final": "rooms/Room_A049.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "4241c3c0188ee0b31a15346336f66a8b7fa05164ae0e3304ea035959084e6a1a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A050.png",
+    "final": "rooms/Room_A050.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a42e4fbffdefd0941e2fc971052a6ff908ebf2be3d7bafba46360f93a6221a92",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A051.png",
+    "final": "rooms/Room_A051.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f49c41f6590c75424ce82ad3de54c8d000bb6a4aa873dc07861384d3710d1c14",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A052.png",
+    "final": "rooms/Room_A052.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "fd6aa338015425d08915bc6e32c10ef02eeddfeef88dc34e43b3b2d7f746c309",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A053.png",
+    "final": "rooms/Room_A053.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "b8f1bc9136379266d2126a627286e78640a6fe51c69de018377ccd137f34fdf6",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A054.png",
+    "final": "rooms/Room_A054.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "787d782baeeb468b0817c646e0f604ae4cbf06e6f4f85bbead8d101bfe15ee43",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A055.png",
+    "final": "rooms/Room_A055.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f69e9995da8b694e5d30f69bb7e6b3a2b4e30bbb46da6274a4c42acba71b39e5",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A056.png",
+    "final": "rooms/Room_A056.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "250c643d763bb87370f0a6c899a0fe46955f64c81d4ed505a073af7fa30c9b52",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A057.png",
+    "final": "rooms/Room_A057.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "680110fc652f4404ac864e538ded34876804c21dc25bf9be87043d4b3e9bc5ff",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A058.png",
+    "final": "rooms/Room_A058.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e2ef56a272b870c96eb19ea44a38ddff476c85db9e63e61398efc8b1fe7dae7b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A059.png",
+    "final": "rooms/Room_A059.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c40d51deaf3e15090a4ef4a3346d8882d655ab8c6f27f33289a29eb01818a309",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A060.png",
+    "final": "rooms/Room_A060.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "dcc9bfd18b8ec2edc695289ecd6700e167824a0b0631b2484e3a80805dc00635",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A061.png",
+    "final": "rooms/Room_A061.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e711bffb84337100fc041dcda19921b2e56852ead8d4457e1967abfea8c4e777",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A062.png",
+    "final": "rooms/Room_A062.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "9b2b0689eb64e0c0d33a6bc7a1a307256506a50f1649c0b0339e07557363b1b3",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A063.png",
+    "final": "rooms/Room_A063.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7061235e78896414ff8b3767cdd150c7e98d5c321b7fdcc573d4ed0f5153106d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A064.png",
+    "final": "rooms/Room_A064.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "14a3c6317e7ce0f8e535abf0cdde56e5ff6cc724fb1918a624dba4a63a94b65c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A065.png",
+    "final": "rooms/Room_A065.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "1471f836893202c89d3f9489eeb76fe27d8ad6aeba749022a55e268216cd15c7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A066.png",
+    "final": "rooms/Room_A066.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c682d67d8560f9021f62af464da12fd1c1646f66c5d69079655fb2c21183210f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A067.png",
+    "final": "rooms/Room_A067.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "0fedba28e2eb6effc9e3ba4c9da1851162330232308582ee42321ac3b819a974",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A068.png",
+    "final": "rooms/Room_A068.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "5aa37c9b33d3fb0885f293ad5d3f76e72ab69cf7e49695db5cfb15ae4e50ba25",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A069.png",
+    "final": "rooms/Room_A069.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "d24df092894a6d892073482f39e477d6786c0f8da0a44df4851d02bf1899db30",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A070.png",
+    "final": "rooms/Room_A070.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "cdd9b647135bf7733196a774d9d6def656ad8b84cf28486fe6933b17295e5a86",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A071.png",
+    "final": "rooms/Room_A071.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ee18133b6506c3ebdff6c4219b43700a02b5e193e48e2479cf2835d6c7e1bd5c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A072.png",
+    "final": "rooms/Room_A072.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "adb15fb1c8b232bfee90b7e728d992263fa0b1151a884c3a5e246ead8479f217",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A073.png",
+    "final": "rooms/Room_A073.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "eaf49b2e495d4cbbde66cbd39834698eb63ffb518d795bc397ca3e0b2afecb28",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A074.png",
+    "final": "rooms/Room_A074.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "dcb51c11605caaecd8e0d39dacf7a11a8f859a059a87fe231c6aeca71a0afeaa",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A075.png",
+    "final": "rooms/Room_A075.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "aaad45147bfe836c997fa69f3a59d277e1f69e64eb2f3fd63eb2dca7a8cef16c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A076.png",
+    "final": "rooms/Room_A076.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "24b68ccdb7b55527b7e37d55664904644ad5955d936746624f596652c8f0af59",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_A077.png",
+    "final": "rooms/Room_A077.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "8b8419629fe72629b89d465da7427e20cf5b8157c75b6d61b89792f3233e430c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_Captain.png",
+    "final": "rooms/Room_B_Captain.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "8a6be3eef3fe5286d7a2250dfb69ebd5ba83ab1da3eed007b23dd306557603dc",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_Chart.png",
+    "final": "rooms/Room_B_Chart.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "56e07650eba17a714cee7d7265ddb9998a8b012444822caf08aad1aab314551f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_Chief.png",
+    "final": "rooms/Room_B_Chief.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ed13d296b20ad65306139cf1dbd0a7a5fec7b2c8a195ced2299be06248d64244",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First098.png",
+    "final": "rooms/Room_B_First098.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "b207b5013864827fc8ace161291744f46b5b6a36152b3d5f308662cc073542b4",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First099.png",
+    "final": "rooms/Room_B_First099.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7c7ba5ecd8e47a4f9668419a96ef95b97e34212453ff727d8755f2ad1a966c37",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First100.png",
+    "final": "rooms/Room_B_First100.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a3c86df8b52d134954805b3cf776472fe40a41bc51c5a8bd5b517f6c4de20e0a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First101.png",
+    "final": "rooms/Room_B_First101.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "3d6bdeeb8dc7d952ef74007871d3406a1768bf2ed4c805619dac1c3bdf62a0ba",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First102.png",
+    "final": "rooms/Room_B_First102.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "cde85092c84d4b36ac085b390ac7feb1e45a41ced6745093ce42c38a210d457f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First103.png",
+    "final": "rooms/Room_B_First103.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "2dab26208e5863467f32ac57697f04ffa439aa092419fbbded099fe1e92b3441",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First104.png",
+    "final": "rooms/Room_B_First104.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "cf6be7f4650d8b380cea184608e7ea91f40f0de098407f8117665c1f58bebb71",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First105.png",
+    "final": "rooms/Room_B_First105.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ffb30ad561d8967fb79ba825ff1a9ca9520cf9d4945854109f195554ae9b27c3",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First106.png",
+    "final": "rooms/Room_B_First106.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f70a6f34d5963c284b0e911797169c05d53e6c4f59bae6f33571a2d12b91fde2",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First107.png",
+    "final": "rooms/Room_B_First107.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "47b1a45416c862e5b6da528612219d29ef2c3eed20097ae4bafb4b8b483b0c94",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First108.png",
+    "final": "rooms/Room_B_First108.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "3d835ae6c0c9d37e6b73feab4621fefb3815eee61be8b3432533e364d9b9d884",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First109.png",
+    "final": "rooms/Room_B_First109.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c9765f9881f9f9da55c3f23fd747e2d5b81c7c16101db1269424503b67c9af67",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First110.png",
+    "final": "rooms/Room_B_First110.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "904416096c17383c97ba8b6f5a38022e36b21efcc1638408152b763b0b013f0a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First111.png",
+    "final": "rooms/Room_B_First111.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c3e4352f8604ca48a881e39af494c4b58b1bd03526c74f87465689991ae36b11",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First112.png",
+    "final": "rooms/Room_B_First112.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "5ae1ae67053d84a29db208b2dcdca2a809b12016212e2a1247d0d707bf4da0c4",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First113.png",
+    "final": "rooms/Room_B_First113.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e3d91afe1eaed04606d729efa1e6aef180acc63f8f5ee08f73f14cbae56f4a28",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_First114.png",
+    "final": "rooms/Room_B_First114.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "0e1552e2462f564fd191d24e2f8205c8351dc27b1bd640878afe103b22d16a95",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_Navigator.png",
+    "final": "rooms/Room_B_Navigator.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "d7e0228410c67b78a3be8108b0a316fbed93f21dc8d23ceb065bac0442b807dc",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_Officer_1.png",
+    "final": "rooms/Room_B_Officer_1.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "56beb89d686e3c8970eccc7828a5e3995222153d2aebc3c65dff84bcb2f76cca",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_Officer_2.png",
+    "final": "rooms/Room_B_Officer_2.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "37a180aa9cbad044a31f48c7faae0af53f2b6383cda4601232a21730c989cc71",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_Officer_3.png",
+    "final": "rooms/Room_B_Officer_3.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "87ca73d05adcb41fbf2dc8a0f53fbf2e96c993abba4e12127b9f8baba27d3c1d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_B_Officer_4.png",
+    "final": "rooms/Room_B_Officer_4.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "23dfce269377e082649bbaae353bf712f89bb6fe760a009b6b78c1a4070962f8",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C001.png",
+    "final": "rooms/Room_C001.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c1710618cf7b6a0fe8c9a430a6175c9c23ec38f6c9f37e924bab6598914261e4",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C002.png",
+    "final": "rooms/Room_C002.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "32ab9d4ef129d0f67799a74df226c6154cd391d60fee6379f2b34896f9429a2b",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C003.png",
+    "final": "rooms/Room_C003.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e8c79de486cf88f8ba4cb249e6f44eca4e656328e97921d3356eaf38ccb43217",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C004.png",
+    "final": "rooms/Room_C004.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "79d75839b204c9557d663fc27cae0ee0e20fc85f10709b986e391e30cd2c38f6",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C005.png",
+    "final": "rooms/Room_C005.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c04d15dac6b0cab69788d138885600450a06e7639bc7a7cbcb79ab43e5b76457",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C006.png",
+    "final": "rooms/Room_C006.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e4db14a05a4a0e827cff3e7b7d907b3c98e50f26378e962727de76272c8a6acf",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C007.png",
+    "final": "rooms/Room_C007.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "599a23cd8bc2d99d446dc37024cec46024d00efdd38d4c2cd446dd37ff46bfd7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C008.png",
+    "final": "rooms/Room_C008.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7b614c560356eac89092ca2436c3212875ef1db6ef76dd06c5a9dd8ed1dc16b2",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C009.png",
+    "final": "rooms/Room_C009.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "c1453da0ee2e0af599fcf26303290710690c4344b398db8caa206650f2b1a515",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C010.png",
+    "final": "rooms/Room_C010.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "21ef6da375b7d0b654cb5c216d0e7df694dd7c4abc593cd8f3869b7bc1409627",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C011.png",
+    "final": "rooms/Room_C011.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "8ba93aa6e420443b7b3cac4783fb37481843bf90166fcdce17b9efe829ec809f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C012.png",
+    "final": "rooms/Room_C012.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "1b9c336b6a808170e48255b172843e90195c1052666b73e9d1fafccef6ac18e7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C013.png",
+    "final": "rooms/Room_C013.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "5615c766c86f176aa805712380f74d110828a81361beac44a48841b4da66539f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C014.png",
+    "final": "rooms/Room_C014.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "2f9abe9a38189cfebb809350bab941dc0b17f85983dc5955c8fd03681b2e386c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C015.png",
+    "final": "rooms/Room_C015.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "ed9a08cd86ab537e3dcc20bb9e960e561980bea1427802f479a290d05411e46e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C016.png",
+    "final": "rooms/Room_C016.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "b49664f99c84a9c9524d9d0a5f8ce16a40428f5983ec36207b4d162fd1001403",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C017.png",
+    "final": "rooms/Room_C017.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "6e6c1b544ee82786675d224b9efe51d3804505e922973efec89dfd1fd3d8aae8",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C018.png",
+    "final": "rooms/Room_C018.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "89bdd3d75d6325188d69afe38537166216a5202c3076e5bc08c720685ac8eb32",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C019.png",
+    "final": "rooms/Room_C019.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "3dcac479154db50ba8691b2049cab72739b417899994aa81db501f365cc967a0",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C020.png",
+    "final": "rooms/Room_C020.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f7544114b5db642dd20a9246a7c5e5aa9c154f3da6750ae28330116b752fcb4d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C021.png",
+    "final": "rooms/Room_C021.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "65cabb72e78fb03c44ae25a8981b7b62f7f9d9264bb6a6952343069baae4c6ee",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C022.png",
+    "final": "rooms/Room_C022.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "63c82b19a8e5e2ae63290f5817f9ea485239939b6cce2ccfc8c1d22430ae8439",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C023.png",
+    "final": "rooms/Room_C023.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a9d108d416cdf76b049de1ac7eff7597e57daf37446400ce78c1402493891fc9",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C024.png",
+    "final": "rooms/Room_C024.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e1f2f6f7bf0425e7083997f895f6cce65b41f9a0d875991d59bd7fbb1de60129",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C025.png",
+    "final": "rooms/Room_C025.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "91b9ee351e427d4df692137f764777701639cab2c7d12d226e264d0fc319aa8c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_C026.png",
+    "final": "rooms/Room_C026.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "6adf95a9ae3b51a0a7c0d7c885ad41bc49ce43f055cdd21b38a80db7b300844f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_D001.png",
+    "final": "rooms/Room_D001.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e7b453e749c753e110fdedbea78bbb2d84c62e327bc1c45adc4166296ce5713d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_D002.png",
+    "final": "rooms/Room_D002.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7187cfe7af5205a7f73a7ec4a13bc3196a2cbd23aaf73070f381ec4c393de196",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_D003.png",
+    "final": "rooms/Room_D003.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7bd4d715165427e4c40a517f49c645ca4cde82395143c237cb525bc220349c0e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_D004.png",
+    "final": "rooms/Room_D004.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "0bbfe413c25c5440d94096491893f6810702f6f1feef3848a017e1006c4e8f86",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_D005.png",
+    "final": "rooms/Room_D005.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e0b18bccc4e76b445871b02e7f16a151cc447be1b57deecee7d3ed220161e75e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_D006.png",
+    "final": "rooms/Room_D006.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "1407076f8783f898b46160b77025dddddb63d8d4e3a3fc397240e83ccf8e94bc",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_D007.png",
+    "final": "rooms/Room_D007.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "800ee57441f1c57d032c1abc8c483a2d41535a66715673015ca74082d11ba4bd",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_E_Alley.png",
+    "final": "rooms/Room_E_Alley.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "863a9f8682360072cc7b760e01d1762af97d3dda8c2580ae7617c7e56fc62dd3",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_E_Boilers_A.png",
+    "final": "rooms/Room_E_Boilers_A.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f078641a2b6f2c3c6200b19d07f0d82520012253f8509ef69261817b3b1f0c7d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_E_Boilers_F.png",
+    "final": "rooms/Room_E_Boilers_F.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "2854cabba0443cdd7938edcb92eba0c62cb1939e15296f4dfc3405d2d1482683",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_E_Boilers_M.png",
+    "final": "rooms/Room_E_Boilers_M.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "35a4f06df2cbee6f4a811c66d44027a1faa2740af54c14e58f317cc230b8f4e9",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_E_Dynamos.png",
+    "final": "rooms/Room_E_Dynamos.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "1ef1debf9aea21b0864780e486ae423e8ab6b73ac874a5061801b4a325e3e7cd",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_E_Engine.png",
+    "final": "rooms/Room_E_Engine.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "12474c3a0b6b0e57586909fab01ed865ad21cef9726946aeed35cbede7a8b197",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_E_Pumps.png",
+    "final": "rooms/Room_E_Pumps.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "fbc5f0a649271be72d9db8999e7ad5241397f59e6cec66fa695774aad3979815",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_L_AfterStore.png",
+    "final": "rooms/Room_L_AfterStore.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "fff2765fa890fc7fa800e750df68b482d68481f3f0783cd272e1b3af7dd61f07",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_L_CrewP.png",
+    "final": "rooms/Room_L_CrewP.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "1be14d8f9767b1c2cf485a78cb2935321ca1c53e74c8b4354721a231ea27c991",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_L_CrewS.png",
+    "final": "rooms/Room_L_CrewS.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "5c72c570e2a5dc8d8c77a190bb6f2793e1e6bd34702d04b0d839b14496d13a15",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_L_ThirdMen.png",
+    "final": "rooms/Room_L_ThirdMen.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "eb8b7be80cf03a7de44e5b3a6dfa8996e41bea2c2724fdb18350e85278ba1033",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_L_ThirdMess.png",
+    "final": "rooms/Room_L_ThirdMess.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "11beb5b04bb387c91258e2bbaed66d9104d4ff576ad44303df1d7622727950f7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_L_ThirdWash.png",
+    "final": "rooms/Room_L_ThirdWash.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "2f4fcd2cf60a32c7400a1e770144ba35b2bac28e3b61c8ae2eb2013a21035d24",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_L_ThirdWomen.png",
+    "final": "rooms/Room_L_ThirdWomen.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "97df21e3c19234ea6844237d94ebd65acf85ad634667c5c35e932d6efefafb19",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_M_AfterThird.png",
+    "final": "rooms/Room_M_AfterThird.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f74ddafafad93d72bca18fafb87402a47b601fad13972eb05cd1c255949345f4",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_M_Entrance.png",
+    "final": "rooms/Room_M_Entrance.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a1e42eeba5efcf3e8194217ebe447043b920d0dce87a5737086fdcbf3f550027",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_M_Forecastle.png",
+    "final": "rooms/Room_M_Forecastle.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "14eb5b8ead6d249712971ddf4d658f4fbdafae2af53e7b6e742b3d0ad6cc8071",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_M_ForwardThird.png",
+    "final": "rooms/Room_M_ForwardThird.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "217dd463c886551451f91b25b72ce87215f25b88f0fbe12cbe705afc62c5c640",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_N_Wheelhouse.png",
+    "final": "rooms/Room_N_Wheelhouse.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "830535487ecbf0c1e8f84d1ff75c5f6fd3cc641ffaea2ab45d32db0a097252f8",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_O_CrewP.png",
+    "final": "rooms/Room_O_CrewP.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "75f0c28b95cb83c7eee175a0db34aef036c0058442fc54518ab3543bfd66b804",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_O_CrewS.png",
+    "final": "rooms/Room_O_CrewS.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "11f1b6661e9fa764ff492d4b4fdc4ad3998a09d7d58292e5c09080e81e6f42ed",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_O_Hold.png",
+    "final": "rooms/Room_O_Hold.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "d0d0eb3177f7e0af0aa901435e2eefadea24d0d5c595590fcb8ee6dfaef90956",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_O_ThirdAP.png",
+    "final": "rooms/Room_O_ThirdAP.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a5f9c3ec84e7d9520f04da7da839cd3ccdeed299e45b3be086430a83d14f5cdf",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_O_ThirdAS.png",
+    "final": "rooms/Room_O_ThirdAS.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f0383ad7a190ed14b9bebcfb9c96c2df83cdce0adc3e158da1a5629b734474a7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_O_ThirdF.png",
+    "final": "rooms/Room_O_ThirdF.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "d3ea3acaab81d3c3874d847426ef237b554ff20480df9f4bb23a3c91372f6f4f",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P001.png",
+    "final": "rooms/Room_P001.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "e41aac925b6b3cb4317bb36eff8dfb79bbb83f84569ec9e8066e54a286d7bc6d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P002.png",
+    "final": "rooms/Room_P002.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "6022d623e60c1ac6efc972f91c14c02c55a321ab5d9dc6150682ceeca09b0940",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P003.png",
+    "final": "rooms/Room_P003.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "bdcee847fcdc25924756f24ae71b422d96455dcc4c6bf963e9f9fe0ac68f9051",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P004.png",
+    "final": "rooms/Room_P004.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "9ba7cf56174615840277172648a00d4305a9de00e70b1f2af226bb2aa6c97f4c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P005.png",
+    "final": "rooms/Room_P005.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "4c436d7281e2b9980eeb9eca3748b5b3d1455bc0f7a0911aa871e7078fe626e9",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P006.png",
+    "final": "rooms/Room_P006.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "04a781ffb134f9c646ea34d3d473a698f9dbfe5e7759be8262865fde71279e1e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P007.png",
+    "final": "rooms/Room_P007.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "51f8e208e2ba32ecb5f2bed0996246ff7fb630c0e00fb46fc1b60a19ac471036",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P008.png",
+    "final": "rooms/Room_P008.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "85a13726a09ea2ac8e786f8dd82c969cdc6e4fb2d313d8ad3ca97de27f2d2457",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Bar.png",
+    "final": "rooms/Room_P_Bar.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "28925dd7a9e4c1a583af901ac24d5b51ca588762b5fe80d38b0086b4750fe7c2",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Barber.png",
+    "final": "rooms/Room_P_Barber.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "123b149810c3d57a089ecf9cc012e6c0197cda02cbf5be51bfe46b1e1828297d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Coats.png",
+    "final": "rooms/Room_P_Coats.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "b295d444ce689e543895d98aebe1062154049206958d10af1a9e1889102194a0",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Hospital.png",
+    "final": "rooms/Room_P_Hospital.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "3173b9cd39d65283871b7a71d4834625920356d1905a2fca50b95f99c33ca1f7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Library.png",
+    "final": "rooms/Room_P_Library.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a8755a2a9db38b81571e58878c17f7ba47b0918c781504be98c1f669c1eabcc5",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_SecondLounge.png",
+    "final": "rooms/Room_P_SecondLounge.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "74a2abdda152ea8d903ae9261bbf7fd356102d11626c602abec6e3fc7783d218",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Smoking.png",
+    "final": "rooms/Room_P_Smoking.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "93cd09852dff74cddda86ce9747df35fdaafc26efcea0d606a78f79f1bd97f8c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Stair.png",
+    "final": "rooms/Room_P_Stair.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "31caef06cdd4d9c7dbdd82a14ece8382560b1625a4f3412d1c537707fdd4ba5e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Wash.png",
+    "final": "rooms/Room_P_Wash.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "2d601536b0c17e7257e9097341023ca2c08ca9a76cd3f0298d78cfe0347724e5",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_P_Writing.png",
+    "final": "rooms/Room_P_Writing.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "4a00257d8862d21038d994b694a15be54795283149d3e503cf17625700d05f5c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Bakery.png",
+    "final": "rooms/Room_S_Bakery.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f548fdf88e9c40ecbe2cabcf4d597f361544c153a1bf91718c9cfb690335cf97",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Bath_P.png",
+    "final": "rooms/Room_S_Bath_P.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f92df902ba04860881fcd1cac021ef13222bc81b5679576ffd7ebcbda1f4531e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Bath_S.png",
+    "final": "rooms/Room_S_Bath_S.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "37e6a362e38fb3d658285e3f3f26b8ed6a6f4082512511cec0ccc8bae35f55ea",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_ColdStore.png",
+    "final": "rooms/Room_S_ColdStore.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a653a47f3e76a72dcab6f5fee2061daa7ade2a9aea67799a4280743cf5dca768",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Dining.png",
+    "final": "rooms/Room_S_Dining.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "a60e176b43c746d97cdf555a58dcd0cb689027033615cb483926c86b37a3217d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Galley.png",
+    "final": "rooms/Room_S_Galley.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "808e1548752e491f0eeb81653b3b7d2450ef2595d70c1e194358a300cbcca6b2",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Mail.png",
+    "final": "rooms/Room_S_Mail.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "96af0818a5ee6e3f03d5598fbd49696644be2267b8a8d7e70e399747921e34eb",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Music.png",
+    "final": "rooms/Room_S_Music.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "8464562c1817a7254de7844c00dc08937df480803f3ec7ac89127b5e96579012",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Pantry.png",
+    "final": "rooms/Room_S_Pantry.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "eef658dd4aec47c6ba462ae59ba0ca549d39706fac8e8a1a66555e2b604f6ae9",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Purser.png",
+    "final": "rooms/Room_S_Purser.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "d3a002f95bf95ee449d5bb7a4547c1ed65139d9a5429cd2960727ef1a1c8c586",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_SecondDining.png",
+    "final": "rooms/Room_S_SecondDining.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "18817c2a257a338981591dcaab97d45f0260d7ce415dfdba81f3ace4977b0324",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Stair.png",
+    "final": "rooms/Room_S_Stair.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "b0ec52483b3e38064462f96127ee6d5a89e4924b6f65d0f9d1c131809cc9a9f7",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_S_Steering.png",
+    "final": "rooms/Room_S_Steering.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "3b59b400ed4bf66f76f2037efb4ce0b748408d2a7e78b4d1a2a2b1f8361e74f6",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U001.png",
+    "final": "rooms/Room_U001.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "b416a7d1aedebc9202feccb3ab37f3ed9c3948734903a59b299362fc6803e600",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U002.png",
+    "final": "rooms/Room_U002.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "b96823b1b352b9d7f65864561cf261e3eb4adf06885c83697a89c7dd7ebfbb06",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U003.png",
+    "final": "rooms/Room_U003.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "f17a1da62df886579e82c8af9bf2b30993d8bb2235637e1233759c9fae81f42d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U004.png",
+    "final": "rooms/Room_U004.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "30aa60598a75bb69eea8b06820302e345d6a1551cee4ddfd3edddb459a5dc4e8",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U005.png",
+    "final": "rooms/Room_U005.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "3291caa65a399e3ecd2a919992c8edd673fa0cb575fffa7e5f73a5aa38e022b9",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U006.png",
+    "final": "rooms/Room_U006.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7bc4ae690caa59400a8965501d9e63cc1438411d66159d65f43878a761863045",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U007.png",
+    "final": "rooms/Room_U007.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "6bf71b7ab211ebf3e4683bfce85fc18647249014823384c59a1a9f1a5a27b0dd",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U008.png",
+    "final": "rooms/Room_U008.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "50d1b77e1fe57c7729399b641e720b88212b43a1ba10317e03893f34f56eef3e",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U009.png",
+    "final": "rooms/Room_U009.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "7151ead037cda09465ad20597f5b88103a445470ece8df43972d562eff344ed8",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U010.png",
+    "final": "rooms/Room_U010.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "aca5bfb1ddc5dd7ef4ec18a1db4140f2f49249bbf5a2a65b19f451ed68cbb28c",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U011.png",
+    "final": "rooms/Room_U011.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "5859a9e71e060d20db353e3db51dbf4052a72cbefac95b0c8c398e4cc8b12d45",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/rooms/Room_U012.png",
+    "final": "rooms/Room_U012.jpg",
+    "width": 640,
+    "height": 480,
+    "sha256": "066e8af0a600f227417e011cc8444f94375daa24a45182a0817412d1ae8f534d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  }
+]

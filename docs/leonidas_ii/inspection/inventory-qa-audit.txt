@@ -1,0 +1,12 @@
+100644 blob 56f5d83e0a796904368fa9afa09c6ebf09ae6175   39943	QUALITY_ASSURANCE_AUDIT.md
+100644 blob 6e8f0ff2b53ba9ca60bd6988ff8e9cb35c4e89bb 1059657	qa-evidence/boats_rowing_oar_pivots.png
+100644 blob 6bf99e4683f05c60f46304ba55907c2fc367be73  916778	qa-evidence/boats_steam_defects.png
+100644 blob b16578e4de60061de3fac7639c1b07c791fcba85  845781	qa-evidence/ports_a_buried_quayside.png
+100644 blob 2a37751490ca04c1d165c0524c9e4f17c3a81e99  717124	qa-evidence/ports_a_misplaced_quay_and_rails.png
+100644 blob 396b130b7d0bf941ccc37b2c47048c64daebd67a  964245	qa-evidence/ports_a_terminal_missing_gable.png
+100644 blob 4f8bc8fcf970e9137b330ad65b5a305e8faa8f4a  708971	qa-evidence/ports_b_slipways_rails_buried.png
+100644 blob a55fb829ad260fbfd246df310e532044b38ea318  918077	qa-evidence/ship_bridge_wheelhouse_mismatch.png
+100644 blob eea9e36d218486e0110743dee8bdec2b1a512c5b  785167	qa-evidence/ship_engine_machinery_flaws.png
+100644 blob bbbe8668a976548fd366481bfe41597be867ed99  791095	qa-evidence/ship_rig_funnel_mismatch.png
+100644 blob c3f067144f9886191bf6b8f637c312ef21483466  913398	qa-evidence/ship_staterooms_protrusion.png
+100644 blob aeb48ab31d0a699979d51c65b66b6551942b45ed  844582	qa-evidence/ship_stern_prop_shaft_collision.png

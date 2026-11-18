@@ -1,0 +1,35 @@
+6bd984e7d9a95459bc9c1032f58bd5210a9c1159 094af8ad97f3c5b21b05f575c18595506b9a04bd Boats: frame the hull, not the rig, in the long views; centre the silhouette
+094af8ad97f3c5b21b05f575c18595506b9a04bd 1e109be9308a8e924ae826e85822b8288de9bb32 Boats docs: record the transom bedding fix and the rejected paint scheme
+1e109be9308a8e924ae826e85822b8288de9bb32 1bb9d23a8e29073182559c631ffc7a59c49a9b22 Boats: transom capped and bedded, both transoms read as part of the hull; full re-render of the three boats
+1bb9d23a8e29073182559c631ffc7a59c49a9b22 ac10a9970e4abefb572bb67ae47641be204a52e8 Boats: drawing sheets -- body plan drawn as a body plan, boiler with legs and firehole, shaft line
+ac10a9970e4abefb572bb67ae47641be204a52e8 42a37fd420e2196ef7bbb1a41d01cbc46a58536c Boats: work through the QA audit -- signal glass, bunker abaft the boiler, construction stacking, export contract
+42a37fd420e2196ef7bbb1a41d01cbc46a58536c c9a45984c82c2eb83884beb9b7785d67a87efa8e boats: containment check -- hold every fitting to the hull, and fix what it found
+f2237f8bea5e25d6153100b98558360b787012db cfb92d3b4c50d3a48a0e0994f1300bb7c78290b3 QA Audit: note upstream agent/boats c9a4598 post-snapshot update
+cfb92d3b4c50d3a48a0e0994f1300bb7c78290b3  QA Audit: comprehensive cross-repository verification and Cycles visual evidence
+c9a45984c82c2eb83884beb9b7785d67a87efa8e ec4c3fa2858f744f6f7a0eba3aa275e4dd11c15e Boats: add Boat C, the 27 ft double-ended whaler
+ec4c3fa2858f744f6f7a0eba3aa275e4dd11c15e b6d7fb0aa66fe7647a9168baed49726b664c94e7 Boats: handrail and maker's plate on the boiler; steam sheet re-rendered
+dbcc091fb20f4a3f53ab29b46a09055ca0e735f4 2e46e50a1beb7d9014f2f47e8cf1a88a14ca1a39 Permanent-way material, standing water, dark-board crane green; final renders
+b6d7fb0aa66fe7647a9168baed49726b664c94e7 1e2842b5886098141aa5adcd27fe3773d6861ce1 Boats: planked decks, seats that are held up, an arched canopy
+2e46e50a1beb7d9014f2f47e8cf1a88a14ca1a39 361fb5bbd2a904f040482e364c99a80a9f5300e7 Fix: prototypes were rendered as well as instances (black graving docks)
+361fb5bbd2a904f040482e364c99a80a9f5300e7 7689918244281d7901d60831739cb8374a236da6 Realism pass: working sky, regioned ground, human-scale layer
+1e2842b5886098141aa5adcd27fe3773d6861ce1 a086cad139b518edea0b40003bfa1344639ca0b3 Boats: final renders for the realism pass
+a086cad139b518edea0b40003bfa1344639ca0b3 c1d15be3578143a34e7db3ad6006d5af4dc55952 Boats: document the realism pass; darken canvas and rope to working-boat values
+c1d15be3578143a34e7db3ad6006d5af4dc55952 c5bdd05c45eec97418b5fe8807485c4ffe80d25d Boats: re-export, re-publish and re-verify after the planking change
+c5bdd05c45eec97418b5fe8807485c4ffe80d25d 6297d1da2a76f26eecd5a26d1c16cd0b3089c320 Boats: make the clinker planking read as planks
+6297d1da2a76f26eecd5a26d1c16cd0b3089c320 afe52cada16641a40223358757ebc5783922d96d Boats: refresh exports, spec, drawings and counts; document the rig
+afe52cada16641a40223358757ebc5783922d96d 8dad8ddb020dd24e6f115c9e370f48d2ea92d35a Boats: rubbing strakes and stem band; sea rig loses its low fill
+8dad8ddb020dd24e6f115c9e370f48d2ea92d35a 8c89c243b94d49be2e65f92c423a97818b632d6f Boats: realism pass - canvas that behaves like cloth, lagged pipes, moulded gunwale
+75bf4ac5770b803919b36c8dbdb5374df82d88ac ff7c3fd2df39141d9596845b2ca6a77e0525d343 Roblox exports verified and corrected
+ff7c3fd2df39141d9596845b2ca6a77e0525d343 4b874b40d53d66c0bbc4c3b834277f93c919422c Waterline corrected; windows grouped; scuppers; hull section + body plan
+7689918244281d7901d60831739cb8374a236da6 3dfc00034eb4249610ea8af5bc6742e9388ef0db Re-aim the waterfront view: pull back so the landing stage reads as a pontoon in the harbour rather than filling the frame
+3dfc00034eb4249610ea8af5bc6742e9388ef0db 73255a5b08ac76810494db4a47e830cdf215bd19 Final look pass, complete render set, modular kit index
+4b874b40d53d66c0bbc4c3b834277f93c919422c ac6d4b63ace53b00f26e455784deaf699dee6035 Superstructure now derives from layout; fix z-fighting floors; restore stair helpers
+ac6d4b63ace53b00f26e455784deaf699dee6035 beb9e8946d126b1aae1e338995c2c2505eeac3ba Docs, reference board, interfaces, hull-section renderer
+73255a5b08ac76810494db4a47e830cdf215bd19 d069992186ce960d2efd04bbb6f7fc1cb3438985 Exports: per-prototype GLB kit and full-port GLB/FBX for both ports
+beb9e8946d126b1aae1e338995c2c2505eeac3ba c359e1c3c6ef70c3a48cda64d6bdb7fb042bb2ba Drop Blender .blend1 backups from version control
+d069992186ce960d2efd04bbb6f7fc1cb3438985  Port Construction: two 1889 British ports, built, audited, documented
+c359e1c3c6ef70c3a48cda64d6bdb7fb042bb2ba da05fa6a5af06535f0ad011ca023782c53139e30 Interior build fixes found by the wall validator; stair well; Roblox scripts
+da05fa6a5af06535f0ad011ca023782c53139e30  MACHINERY MODULE + design validator + 7-module Roblox export
+8c89c243b94d49be2e65f92c423a97818b632d6f 7c7f841489962696e90bbd9057fcbca69a1fc4a5 Boats: correct the rowing cutter's finish description to match the model
+7c7f841489962696e90bbd9057fcbca69a1fc4a5 3993d1c6aee5ded5288aa45177be3b9096861361 Boats: published render set, cutaways, reference board, drawings and docs
+3993d1c6aee5ded5288aa45177be3b9096861361  Boats: steam cutter and clinker rowing cutter, built from first principles

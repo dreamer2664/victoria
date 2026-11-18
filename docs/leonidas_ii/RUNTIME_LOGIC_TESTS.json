@@ -1,0 +1,162 @@
+{
+  "scope": "Exact Luau runtime under fake Roblox API. LOGIC/TRANSFORMS ONLY; no Studio, physics, contacts, multiplayer, streaming or performance acceptance.",
+  "runtime_sha256": "0e12b416c65a556192ab897d76fcda6f3bf469cde40d262f48a6cfbd01ac9d44",
+  "data_sha256": "1640bb7031ac26e23aa938b5c7a20689f77514a710ae8f35b079057d2e67273f",
+  "runner_sha256": "09036fdcde0062656f29629aeacf376c2f1769134daf1d454dad8086886a7bf0",
+  "harness_sha256": "48c81acb42f6d32327671799d5c49c18480e98b2305132709dd5a5788839d0d3",
+  "exit_code": 0,
+  "tests": [
+    {
+      "test": "initial made-fast Stop state",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "ahead rejected before cast-off",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "cast-off rejected with lowered gangways",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "NaN telegraph order rejected",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "unknown telegraph order rejected",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "cast-off waits for actual gangway travel",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "cast-off after shipped gangways",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "ahead order after cast-off",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "separate regulator and firing controls",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "positive ahead RPM and target speed",
+      "status": "PASS",
+      "detail": "71.99999999996068"
+    },
+    {
+      "test": "published signed RPM",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "actual Luau conrod/valve-link endpoint transforms",
+      "status": "PASS",
+      "detail": "3.6489874298927905e-15"
+    },
+    {
+      "test": "cannot make fast underway",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "rudder clamp",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "NaN rudder rejected",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "Stop accepted",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "shaft coasts close to zero",
+      "status": "PASS",
+      "detail": "3.934595276292006e-11"
+    },
+    {
+      "test": "signed astern order",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "actual negative RPM and speed in astern",
+      "status": "PASS",
+      "detail": "-46.79999997025446"
+    },
+    {
+      "test": "make fast after stopped shaft",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "no cumulative made-fast height drift",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "test": "server prompt distance rejection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "dead player prompt rejection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "same-player prompt rate limit",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "door server LOS rejects intervening obstacle",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "door opens to finite commanded hinge transform",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "door leaf and collider receive same transform",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "door close rejects avatar at far edge of hinge sweep",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "door snaps fully shut without perpetual updates",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "duplicate controller rejected",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "stdout": "PASS initial made-fast Stop state \u00b7 \nPASS ahead rejected before cast-off \u00b7 \nPASS cast-off rejected with lowered gangways \u00b7 \nPASS NaN telegraph order rejected \u00b7 \nPASS unknown telegraph order rejected \u00b7 \nPASS cast-off waits for actual gangway travel \u00b7 \nPASS cast-off after shipped gangways \u00b7 \nPASS ahead order after cast-off \u00b7 \nPASS separate regulator and firing controls \u00b7 \nPASS positive ahead RPM and target speed \u00b7 71.99999999996068\nPASS published signed RPM \u00b7 \nPASS actual Luau conrod/valve-link endpoint transforms \u00b7 3.6489874298927905e-15\nPASS cannot make fast underway \u00b7 \nPASS rudder clamp \u00b7 \nPASS NaN rudder rejected \u00b7 \nPASS Stop accepted \u00b7 \nPASS shaft coasts close to zero \u00b7 3.934595276292006e-11\nPASS signed astern order \u00b7 \nPASS actual negative RPM and speed in astern \u00b7 -46.79999997025446\nPASS make fast after stopped shaft \u00b7 \nPASS no cumulative made-fast height drift \u00b7 0\nPASS server prompt distance rejection \u00b7 \nPASS dead player prompt rejection \u00b7 \nPASS same-player prompt rate limit \u00b7 \nPASS door server LOS rejects intervening obstacle \u00b7 \nPASS door opens to finite commanded hinge transform \u00b7 \nPASS door leaf and collider receive same transform \u00b7 \nPASS door close rejects avatar at far edge of hinge sweep \u00b7 \nPASS door snaps fully shut without perpetual updates \u00b7 \nPASS duplicate controller rejected \u00b7 \nMOCK_RUNTIME_TESTS_COMPLETE\t30\n",
+  "stderr": ""
+}

@@ -1,0 +1,7748 @@
+[
+  {
+    "file": "/home/user/victoria/models/module_interiors.blend",
+    "blender": [
+      4,
+      2,
+      67
+    ],
+    "objects": [
+      {
+        "name": "Corridor_Lamps",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          67.86000061035156,
+          16.360000610351562,
+          5.840001106262207
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 1520,
+        "polygons": 912,
+        "triangles": 2736,
+        "uv_layers": 0,
+        "materials": [
+          "Brass",
+          "Lamp_Warm"
+        ],
+        "bbox_min": [
+          -41.72999954223633,
+          -8.180000305175781,
+          10.9399995803833
+        ],
+        "bbox_max": [
+          26.1299991607666,
+          8.180000305175781,
+          16.780000686645508
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Dining_Saloon_1C",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          34.660003662109375,
+          14.339764595031738,
+          2.859999656677246
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 39012,
+        "polygons": 29061,
+        "triangles": 58842,
+        "uv_layers": 0,
+        "materials": [
+          "Table_Cloth",
+          "Mahogany",
+          "Carpet_Red",
+          "Marble",
+          "Brass",
+          "Lamp_Warm",
+          "Oak_Light"
+        ],
+        "bbox_min": [
+          -44.08000183105469,
+          -7.169882297515869,
+          11.789999961853027
+        ],
+        "bbox_max": [
+          -9.420000076293945,
+          7.169882297515869,
+          14.649999618530273
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Galley",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          8.520000457763672,
+          6.900000095367432,
+          2.59999942779541
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 404,
+        "polygons": 288,
+        "triangles": 636,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron",
+          "Steel",
+          "Copper",
+          "Oak_Light"
+        ],
+        "bbox_min": [
+          -56.369998931884766,
+          -3.450000047683716,
+          11.800000190734863
+        ],
+        "bbox_max": [
+          -47.849998474121094,
+          3.450000047683716,
+          14.399999618530273
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Grand_Staircase",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          8.51300048828125,
+          8.913000106811523,
+          6.939999580383301
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 2604,
+        "polygons": 1720,
+        "triangles": 4432,
+        "uv_layers": 0,
+        "materials": [
+          "Deck_Wood_Light",
+          "Mahogany",
+          "Marble",
+          "Brass",
+          "Glass_Ground"
+        ],
+        "bbox_min": [
+          -8.256500244140625,
+          -4.456500053405762,
+          8.800000190734863
+        ],
+        "bbox_max": [
+          0.2565000057220459,
+          4.456500053405762,
+          15.739999771118164
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Interior_Floors",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          161.0,
+          18.280000686645508,
+          17.299999237060547
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 9460,
+        "polygons": 8530,
+        "triangles": 17060,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Floor",
+          "Cabin_Floor",
+          "Deck_Wood"
+        ],
+        "bbox_min": [
+          -81.5,
+          -9.140000343322754,
+          1.3350000381469727
+        ],
+        "bbox_max": [
+          79.5,
+          9.140000343322754,
+          18.635000228881836
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Interior_Rooms",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          156.0800018310547,
+          17.280000686645508,
+          15.849998474121094
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 1608,
+        "polygons": 1122,
+        "triangles": 2244,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Paint",
+          "Ceiling_White",
+          "Paint_Cream",
+          "Cabin_Panel",
+          "Ceiling_Panel"
+        ],
+        "bbox_min": [
+          -78.04000091552734,
+          -8.640000343322754,
+          5.235000133514404
+        ],
+        "bbox_max": [
+          78.04000091552734,
+          8.640000343322754,
+          21.084999084472656
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Interior_Windows",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          98.43000030517578,
+          18.399999618530273,
+          6.880000114440918
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 2832,
+        "polygons": 2124,
+        "triangles": 4248,
+        "uv_layers": 0,
+        "materials": [
+          "Ceiling_White",
+          "Daylight_Glass",
+          "Brass"
+        ],
+        "bbox_min": [
+          -43.2400016784668,
+          -9.199999809265137,
+          9.779999732971191
+        ],
+        "bbox_max": [
+          55.189998626708984,
+          9.199999809265137,
+          16.65999984741211
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Lavatories",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          11.275001525878906,
+          9.119999885559082,
+          2.1000003814697266
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 176,
+        "polygons": 120,
+        "triangles": 288,
+        "uv_layers": 0,
+        "materials": [
+          "Marble",
+          "Ceiling_White",
+          "Mirror",
+          "Cabin_Panel"
+        ],
+        "bbox_min": [
+          -35.82500076293945,
+          -5.199999809265137,
+          14.399999618530273
+        ],
+        "bbox_max": [
+          -24.549999237060547,
+          3.9200000762939453,
+          16.5
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Library",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          18.035999298095703,
+          11.199999809265137,
+          2.7300004959106445
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 5292,
+        "polygons": 3915,
+        "triangles": 7974,
+        "uv_layers": 0,
+        "materials": [
+          "Mahogany",
+          "Glass_Ground",
+          "Fabric_Gold",
+          "Oak_Light",
+          "Book_A",
+          "Book_B",
+          "Book_C",
+          "Book_D",
+          "Carpet_Red",
+          "Brass",
+          "Carpet_Green"
+        ],
+        "bbox_min": [
+          9.199999809265137,
+          -5.199999809265137,
+          14.390000343322754
+        ],
+        "bbox_max": [
+          27.236000061035156,
+          6.0,
+          17.1200008392334
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Music_Room",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          16.15999984741211,
+          10.399999618530273,
+          2.5199995040893555
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 324,
+        "polygons": 225,
+        "triangles": 450,
+        "uv_layers": 0,
+        "materials": [
+          "Carpet_Red",
+          "Mahogany",
+          "Ivory",
+          "Oak_Light"
+        ],
+        "bbox_min": [
+          10.920000076293945,
+          -5.199999809265137,
+          11.800000190734863
+        ],
+        "bbox_max": [
+          27.079999923706055,
+          5.199999809265137,
+          14.319999694824219
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Officers_Captain",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.353000640869141,
+          3.559999942779541,
+          2.049999237060547
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 364,
+        "polygons": 262,
+        "triangles": 568,
+        "uv_layers": 0,
+        "materials": [
+          "Brass",
+          "Bed_Linen",
+          "Carpet_Green",
+          "Mahogany",
+          "Carpet_Red"
+        ],
+        "bbox_min": [
+          12.597000122070312,
+          -1.0800000429153442,
+          17.200000762939453
+        ],
+        "bbox_max": [
+          19.950000762939453,
+          2.4800000190734863,
+          19.25
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Smoking_Saloon_1C",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          14.65999984741211,
+          14.399999618530273,
+          2.720001220703125
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 1964,
+        "polygons": 1455,
+        "triangles": 2910,
+        "uv_layers": 0,
+        "materials": [
+          "Leather",
+          "Mahogany",
+          "Carpet_Red",
+          "Marble",
+          "Fire_Glow",
+          "Painting"
+        ],
+        "bbox_min": [
+          -24.079999923706055,
+          -7.199999809265137,
+          14.399999618530273
+        ],
+        "bbox_max": [
+          -9.420000076293945,
+          7.199999809265137,
+          17.1200008392334
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Staterooms",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          80.79985809326172,
+          17.200000762939453,
+          7.90000057220459
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 5860,
+        "polygons": 3874,
+        "triangles": 9832,
+        "uv_layers": 0,
+        "materials": [
+          "Brass",
+          "Bed_Linen",
+          "Carpet_Green",
+          "Mahogany",
+          "Marble",
+          "Ceiling_White",
+          "Mirror",
+          "Cabin_Panel"
+        ],
+        "bbox_min": [
+          -23.975000381469727,
+          -8.600000381469727,
+          8.800000190734863
+        ],
+        "bbox_max": [
+          56.824859619140625,
+          8.600000381469727,
+          16.700000762939453
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Third_Class",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          151.86000061035156,
+          14.152949333190918,
+          5.40000057220459
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 47456,
+        "polygons": 34568,
+        "triangles": 73232,
+        "uv_layers": 0,
+        "materials": [
+          "Bed_Linen",
+          "Cast_Iron",
+          "Oak_Light",
+          "Table_Cloth",
+          "Carpet_Red"
+        ],
+        "bbox_min": [
+          -77.93000030517578,
+          -7.076474666595459,
+          5.199999809265137
+        ],
+        "bbox_max": [
+          73.93000030517578,
+          7.076474666595459,
+          10.600000381469727
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Wheelhouse_Fittings",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          4.569999694824219,
+          1.9500000476837158,
+          1.6700000762939453
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR"
+        ],
+        "vertices": 176,
+        "polygons": 118,
+        "triangles": 292,
+        "uv_layers": 0,
+        "materials": [
+          "Teak",
+          "Brass",
+          "Mahogany"
+        ],
+        "bbox_min": [
+          13.899999618530273,
+          -0.9750000238418579,
+          18.600000381469727
+        ],
+        "bbox_max": [
+          18.469999313354492,
+          0.9750000238418579,
+          20.270000457763672
+        ],
+        "modifiers": [],
+        "attributes": {}
+      }
+    ],
+    "images": [],
+    "collections": [
+      {
+        "name": "SHIP_INTERIOR",
+        "objects": 15,
+        "children": []
+      }
+    ]
+  },
+  {
+    "file": "/home/user/victoria/models/ship_assembly.blend",
+    "blender": [
+      4,
+      2,
+      67
+    ],
+    "objects": [
+      {
+        "name": "Anchors_Hawse",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          1.25,
+          4.302774906158447,
+          2.3299999237060547
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL",
+          "Scene Collection"
+        ],
+        "vertices": 128,
+        "polygons": 84,
+        "triangles": 216,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron"
+        ],
+        "bbox_min": [
+          78.30000305175781,
+          -2.1513874530792236,
+          8.100000381469727
+        ],
+        "bbox_max": [
+          79.55000305175781,
+          2.1513874530792236,
+          10.430000305175781
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "BoatDeck",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          53.052001953125,
+          16.530000686645508,
+          2.647958755493164
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 3750,
+        "polygons": 3198,
+        "triangles": 6700,
+        "uv_layers": 0,
+        "materials": [
+          "Deck_Wood",
+          "Upper_White",
+          "Glass",
+          "Ceiling_White",
+          "Teak.001"
+        ],
+        "bbox_min": [
+          -13.026000022888184,
+          -8.265000343322754,
+          17.200000762939453
+        ],
+        "bbox_max": [
+          40.0260009765625,
+          8.265000343322754,
+          19.847959518432617
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Boats_Davits",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          59.415000915527344,
+          15.110139846801758,
+          2.952220916748047
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 2264,
+        "polygons": 1467,
+        "triangles": 3198,
+        "uv_layers": 0,
+        "materials": [
+          "Upper_White",
+          "Steel",
+          "Canvas",
+          "Teak.001"
+        ],
+        "bbox_min": [
+          -17.299999237060547,
+          -7.555069923400879,
+          17.219999313354492
+        ],
+        "bbox_max": [
+          42.1150016784668,
+          7.555069923400879,
+          20.17222023010254
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "Boiler_Rooms",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          56.0,
+          17.700000762939453,
+          7.0
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 4640,
+        "polygons": 2666,
+        "triangles": 8668,
+        "uv_layers": 0,
+        "materials": [
+          "Boiler_Shell",
+          "Cast_Iron.003",
+          "Furnace_Door",
+          "Furnace_Fire",
+          "Brass.002",
+          "Gauge_Glass",
+          "Steel.002",
+          "Steel_Floor.001",
+          "Steam_Pipe",
+          "Coal"
+        ],
+        "bbox_min": [
+          -23.0,
+          -8.850000381469727,
+          1.2999999523162842
+        ],
+        "bbox_max": [
+          33.0,
+          8.850000381469727,
+          8.300000190734863
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Boot_Top",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          158.01739501953125,
+          18.408000946044922,
+          0.3600001335144043
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL",
+          "Scene Collection"
+        ],
+        "vertices": 1148,
+        "polygons": 572,
+        "triangles": 1144,
+        "uv_layers": 0,
+        "materials": [
+          "Boot_White"
+        ],
+        "bbox_min": [
+          -77.62742614746094,
+          -9.204000473022461,
+          6.239999771118164
+        ],
+        "bbox_max": [
+          80.38996887207031,
+          9.204000473022461,
+          6.599999904632568
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Bridge",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          13.349998474121094,
+          18.17131233215332,
+          2.6999988555908203
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 562,
+        "polygons": 410,
+        "triangles": 920,
+        "uv_layers": 0,
+        "materials": [
+          "Teak.001",
+          "Glass",
+          "Upper_White",
+          "Canvas",
+          "Brass",
+          "Ceiling_White"
+        ],
+        "bbox_min": [
+          30.0,
+          -9.08565616607666,
+          18.600000381469727
+        ],
+        "bbox_max": [
+          43.349998474121094,
+          9.08565616607666,
+          21.299999237060547
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Bulwarks",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          164.0,
+          14.86812686920166,
+          1.1899995803833008
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL",
+          "Scene Collection"
+        ],
+        "vertices": 1840,
+        "polygons": 1576,
+        "triangles": 3152,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black",
+          "Teak"
+        ],
+        "bbox_min": [
+          -82.0,
+          -7.43406343460083,
+          8.800000190734863
+        ],
+        "bbox_max": [
+          82.0,
+          7.43406343460083,
+          9.989999771118164
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Corridor_Lamps",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          67.86000061035156,
+          16.360000610351562,
+          5.840001106262207
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 1520,
+        "polygons": 912,
+        "triangles": 2736,
+        "uv_layers": 0,
+        "materials": [
+          "Brass.001",
+          "Lamp_Warm.001"
+        ],
+        "bbox_min": [
+          -41.72999954223633,
+          -8.180000305175781,
+          10.9399995803833
+        ],
+        "bbox_max": [
+          26.1299991607666,
+          8.180000305175781,
+          16.780000686645508
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Crankshaft",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          10.40000057220459,
+          0.5199999809265137,
+          0.5199999809265137
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 40,
+        "polygons": 22,
+        "triangles": 76,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -23.200000762939453,
+          -0.25999999046325684,
+          2.0899999141693115
+        ],
+        "bbox_max": [
+          -12.800000190734863,
+          0.25999999046325684,
+          2.609999895095825
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "DeckHouse_Promenade",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          99.46499633789062,
+          14.534000396728516,
+          2.7779598236083984
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 3456,
+        "polygons": 2694,
+        "triangles": 5388,
+        "uv_layers": 0,
+        "materials": [
+          "Mahogany",
+          "Glass",
+          "Ceiling_White",
+          "Oak_Light"
+        ],
+        "bbox_min": [
+          -49.04999923706055,
+          -7.267000198364258,
+          14.420000076293945
+        ],
+        "bbox_max": [
+          50.415000915527344,
+          7.267000198364258,
+          17.197959899902344
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "DeckHouse_SaloonDeck",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          129.1999969482422,
+          16.650001525878906,
+          7.969999313354492
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 3108,
+        "polygons": 2320,
+        "triangles": 4640,
+        "uv_layers": 0,
+        "materials": [
+          "Upper_White",
+          "Glass"
+        ],
+        "bbox_min": [
+          -73.5999984741211,
+          -8.317500114440918,
+          8.5
+        ],
+        "bbox_max": [
+          55.599998474121094,
+          8.332500457763672,
+          16.469999313354492
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "DeckMachinery",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          152.89999389648438,
+          14.680399894714355,
+          9.325000762939453
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 1584,
+        "polygons": 1172,
+        "triangles": 2744,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron.001",
+          "Steel",
+          "Canvas",
+          "Upper_White",
+          "Glass_Ground"
+        ],
+        "bbox_min": [
+          -76.13999938964844,
+          -7.340199947357178,
+          8.819999694824219
+        ],
+        "bbox_max": [
+          76.76000213623047,
+          7.340199947357178,
+          18.145000457763672
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Decks_SaloonProm",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          130.0,
+          17.799999237060547,
+          0.0
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 990,
+        "polygons": 890,
+        "triangles": 1780,
+        "uv_layers": 0,
+        "materials": [
+          "Deck_Wood"
+        ],
+        "bbox_min": [
+          -74.0,
+          -8.899999618530273,
+          11.800000190734863
+        ],
+        "bbox_max": [
+          56.0,
+          8.899999618530273,
+          11.800000190734863
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Dining_Saloon_1C",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          34.660003662109375,
+          14.339764595031738,
+          2.859999656677246
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 39012,
+        "polygons": 29061,
+        "triangles": 58842,
+        "uv_layers": 0,
+        "materials": [
+          "Table_Cloth",
+          "Mahogany.001",
+          "Carpet_Red",
+          "Marble",
+          "Brass.001",
+          "Lamp_Warm.001",
+          "Oak_Light.001"
+        ],
+        "bbox_min": [
+          -44.08000183105469,
+          -7.169882297515869,
+          11.789999961853027
+        ],
+        "bbox_max": [
+          -9.420000076293945,
+          7.169882297515869,
+          14.649999618530273
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_HP_Rod",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.1700000762939453,
+          0.16167961061000824,
+          1.5349998474121094
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 20,
+        "polygons": 12,
+        "triangles": 36,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -21.385000228881836,
+          -0.08083980530500412,
+          3.9000000953674316
+        ],
+        "bbox_max": [
+          -21.21500015258789,
+          0.08083980530500412,
+          5.434999942779541
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_IP_Rod",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.1699981689453125,
+          0.16167961061000824,
+          0.9249997138977051
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 20,
+        "polygons": 12,
+        "triangles": 36,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -18.084999084472656,
+          -0.08083980530500412,
+          3.9000000953674316
+        ],
+        "bbox_max": [
+          -17.915000915527344,
+          0.08083980530500412,
+          4.824999809265137
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_LP_Rod",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.1700000762939453,
+          0.16167961061000824,
+          0.06500005722045898
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 20,
+        "polygons": 12,
+        "triangles": 36,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -14.78499984741211,
+          -0.08083980530500412,
+          3.8350000381469727
+        ],
+        "bbox_max": [
+          -14.614999771118164,
+          0.08083980530500412,
+          3.9000000953674316
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_Main",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          22.924999237060547,
+          13.267866134643555,
+          7.496807098388672
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 1792,
+        "polygons": 1106,
+        "triangles": 3204,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron.003",
+          "Engine_Paint",
+          "Steel_Bright",
+          "Steel.002",
+          "Sea_Pipe",
+          "Copper.001",
+          "Oak_Light.002"
+        ],
+        "bbox_min": [
+          -26.549999237060547,
+          -5.394999980926514,
+          0.2031928151845932
+        ],
+        "bbox_max": [
+          -3.625,
+          7.872866630554199,
+          7.699999809265137
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Funnels",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          30.360000610351562,
+          4.320000171661377,
+          14.350000381469727
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 920,
+        "polygons": 680,
+        "triangles": 1480,
+        "uv_layers": 0,
+        "materials": [
+          "Funnel_Buff",
+          "Funnel_Top",
+          "Funnel_Inner",
+          "Steel",
+          "Brass",
+          "Upper_White"
+        ],
+        "bbox_min": [
+          2.069999933242798,
+          -2.1600000858306885,
+          16.25
+        ],
+        "bbox_max": [
+          32.43000030517578,
+          2.1600000858306885,
+          30.600000381469727
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "Galley",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          8.520000457763672,
+          6.900000095367432,
+          2.59999942779541
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 404,
+        "polygons": 288,
+        "triangles": 636,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron.002",
+          "Steel.001",
+          "Copper",
+          "Oak_Light.001"
+        ],
+        "bbox_min": [
+          -56.369998931884766,
+          -3.450000047683716,
+          11.800000190734863
+        ],
+        "bbox_max": [
+          -47.849998474121094,
+          3.450000047683716,
+          14.399999618530273
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Grand_Staircase",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          8.51300048828125,
+          8.913000106811523,
+          6.939999580383301
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 2604,
+        "polygons": 1720,
+        "triangles": 4432,
+        "uv_layers": 0,
+        "materials": [
+          "Deck_Wood_Light",
+          "Mahogany.001",
+          "Marble",
+          "Brass.001",
+          "Glass_Ground.001"
+        ],
+        "bbox_min": [
+          -8.256500244140625,
+          -4.456500053405762,
+          8.800000190734863
+        ],
+        "bbox_max": [
+          0.2565000057220459,
+          4.456500053405762,
+          15.739999771118164
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Hull_Seams",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          164.52932739257812,
+          18.444000244140625,
+          10.785195350646973
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL",
+          "Scene Collection"
+        ],
+        "vertices": 33572,
+        "polygons": 21582,
+        "triangles": 23980,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black"
+        ],
+        "bbox_min": [
+          -82.2734603881836,
+          -9.218000411987305,
+          1.8223999738693237
+        ],
+        "bbox_max": [
+          82.255859375,
+          9.22599983215332,
+          12.607595443725586
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Hull_Shell",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          165.2058563232422,
+          18.399999618530273,
+          13.050000190734863
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL",
+          "Scene Collection"
+        ],
+        "vertices": 10277,
+        "polygons": 9762,
+        "triangles": 19594,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black",
+          "Boot_White"
+        ],
+        "bbox_min": [
+          -82.255859375,
+          -9.199999809265137,
+          0.0
+        ],
+        "bbox_max": [
+          82.94999694824219,
+          9.199999809265137,
+          13.050000190734863
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "Interior_Floors",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          161.0,
+          18.280000686645508,
+          17.299999237060547
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 9460,
+        "polygons": 8530,
+        "triangles": 17060,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Floor",
+          "Cabin_Floor",
+          "Deck_Wood.001"
+        ],
+        "bbox_min": [
+          -81.5,
+          -9.140000343322754,
+          1.3350000381469727
+        ],
+        "bbox_max": [
+          79.5,
+          9.140000343322754,
+          18.635000228881836
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Interior_Rooms",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          156.0800018310547,
+          17.280000686645508,
+          15.849998474121094
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 1608,
+        "polygons": 1122,
+        "triangles": 2244,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Paint",
+          "Ceiling_White.001",
+          "Paint_Cream",
+          "Cabin_Panel",
+          "Ceiling_Panel"
+        ],
+        "bbox_min": [
+          -78.04000091552734,
+          -8.640000343322754,
+          5.235000133514404
+        ],
+        "bbox_max": [
+          78.04000091552734,
+          8.640000343322754,
+          21.084999084472656
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Interior_Windows",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          98.43000030517578,
+          18.399999618530273,
+          6.880000114440918
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 2832,
+        "polygons": 2124,
+        "triangles": 4248,
+        "uv_layers": 0,
+        "materials": [
+          "Ceiling_White.001",
+          "Daylight_Glass",
+          "Brass.001"
+        ],
+        "bbox_min": [
+          -43.2400016784668,
+          -9.199999809265137,
+          9.779999732971191
+        ],
+        "bbox_max": [
+          55.189998626708984,
+          9.199999809265137,
+          16.65999984741211
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Keel_Stem",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          161.47500610351562,
+          4.411411285400391,
+          7.470000267028809
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL",
+          "Scene Collection"
+        ],
+        "vertices": 648,
+        "polygons": 638,
+        "triangles": 1276,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black"
+        ],
+        "bbox_min": [
+          -78.4749984741211,
+          -2.2057056427001953,
+          -0.41999998688697815
+        ],
+        "bbox_max": [
+          83.0,
+          2.2057056427001953,
+          7.050000190734863
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Lavatories",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          11.275001525878906,
+          9.119999885559082,
+          2.1000003814697266
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 176,
+        "polygons": 120,
+        "triangles": 288,
+        "uv_layers": 0,
+        "materials": [
+          "Marble",
+          "Ceiling_White.001",
+          "Mirror",
+          "Cabin_Panel"
+        ],
+        "bbox_min": [
+          -35.82500076293945,
+          -5.199999809265137,
+          14.399999618530273
+        ],
+        "bbox_max": [
+          -24.549999237060547,
+          3.9200000762939453,
+          16.5
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Library",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          18.035999298095703,
+          11.199999809265137,
+          2.7300004959106445
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 5292,
+        "polygons": 3915,
+        "triangles": 7974,
+        "uv_layers": 0,
+        "materials": [
+          "Mahogany.001",
+          "Glass_Ground.001",
+          "Fabric_Gold",
+          "Oak_Light.001",
+          "Book_A",
+          "Book_B",
+          "Book_C",
+          "Book_D",
+          "Carpet_Red",
+          "Brass.001",
+          "Carpet_Green"
+        ],
+        "bbox_min": [
+          9.199999809265137,
+          -5.199999809265137,
+          14.390000343322754
+        ],
+        "bbox_max": [
+          27.236000061035156,
+          6.0,
+          17.1200008392334
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Masts",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          127.78964233398438,
+          19.0,
+          27.30000114440918
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 630,
+        "polygons": 540,
+        "triangles": 1188,
+        "uv_layers": 0,
+        "materials": [
+          "Oak_Light",
+          "Lamp_Warm"
+        ],
+        "bbox_min": [
+          -55.79999923706055,
+          -9.5,
+          10.600000381469727
+        ],
+        "bbox_max": [
+          71.9896469116211,
+          9.5,
+          37.900001525878906
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "Music_Room",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          16.15999984741211,
+          10.399999618530273,
+          2.5199995040893555
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 324,
+        "polygons": 225,
+        "triangles": 450,
+        "uv_layers": 0,
+        "materials": [
+          "Carpet_Red",
+          "Mahogany.001",
+          "Ivory",
+          "Oak_Light.001"
+        ],
+        "bbox_min": [
+          10.920000076293945,
+          -5.199999809265137,
+          11.800000190734863
+        ],
+        "bbox_max": [
+          27.079999923706055,
+          5.199999809265137,
+          14.319999694824219
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "NavLights",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.5499992370605469,
+          15.199999809265137,
+          0.5
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 16,
+        "polygons": 12,
+        "triangles": 24,
+        "uv_layers": 0,
+        "materials": [
+          "NavLight_1",
+          "NavLight_-1"
+        ],
+        "bbox_min": [
+          12.225000381469727,
+          -7.599999904632568,
+          19.649999618530273
+        ],
+        "bbox_max": [
+          12.774999618530273,
+          7.599999904632568,
+          20.149999618530273
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Officers_Captain",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.353000640869141,
+          3.559999942779541,
+          2.049999237060547
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 364,
+        "polygons": 262,
+        "triangles": 568,
+        "uv_layers": 0,
+        "materials": [
+          "Brass.001",
+          "Bed_Linen",
+          "Carpet_Green",
+          "Mahogany.001",
+          "Carpet_Red"
+        ],
+        "bbox_min": [
+          12.597000122070312,
+          -1.0800000429153442,
+          17.200000762939453
+        ],
+        "bbox_max": [
+          19.950000762939453,
+          2.4800000190734863,
+          19.25
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Promenade_Rails",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          116.052001953125,
+          17.209999084472656,
+          2.8000011444091797
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 4448,
+        "polygons": 3652,
+        "triangles": 8152,
+        "uv_layers": 0,
+        "materials": [
+          "Teak.001",
+          "Upper_White"
+        ],
+        "bbox_min": [
+          -62.0260009765625,
+          -8.604999542236328,
+          14.399999618530273
+        ],
+        "bbox_max": [
+          54.0260009765625,
+          8.604999542236328,
+          17.200000762939453
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Propeller",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.7659988403320312,
+          5.300000190734863,
+          5.299999713897705
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 220,
+        "polygons": 150,
+        "triangles": 332,
+        "uv_layers": 0,
+        "materials": [
+          "Manganese_Bronze"
+        ],
+        "bbox_min": [
+          -80.11299896240234,
+          -2.6500000953674316,
+          -0.6000000238418579
+        ],
+        "bbox_max": [
+          -77.34700012207031,
+          2.6500000953674316,
+          4.699999809265137
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Propeller_Shaft",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          62.0,
+          0.46000000834465027,
+          0.4599999189376831
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 32,
+        "polygons": 18,
+        "triangles": 60,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -83.0,
+          -0.23000000417232513,
+          1.8200000524520874
+        ],
+        "bbox_max": [
+          -21.0,
+          0.23000000417232513,
+          2.2799999713897705
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rigging",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          164.03466796875,
+          0.9437912702560425,
+          22.04707145690918
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 280,
+        "polygons": 196,
+        "triangles": 448,
+        "uv_layers": 0,
+        "materials": [
+          "Rope"
+        ],
+        "bbox_min": [
+          -81.51055145263672,
+          -0.47197508811950684,
+          10.177637100219727
+        ],
+        "bbox_max": [
+          82.52412414550781,
+          0.47181618213653564,
+          32.224708557128906
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rudder",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.5500030517578125,
+          0.4399999976158142,
+          6.0
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL",
+          "Scene Collection"
+        ],
+        "vertices": 36,
+        "polygons": 34,
+        "triangles": 68,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black"
+        ],
+        "bbox_min": [
+          -80.55000305175781,
+          -0.2199999988079071,
+          0.3499999940395355
+        ],
+        "bbox_max": [
+          -78.0,
+          0.2199999988079071,
+          6.349999904632568
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "Scuppers",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          140.43499755859375,
+          18.3799991607666,
+          1.119999885559082
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE",
+          "Scene Collection"
+        ],
+        "vertices": 1888,
+        "polygons": 1416,
+        "triangles": 2832,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black.001",
+          "Steel"
+        ],
+        "bbox_min": [
+          -66.4749984741211,
+          -9.1899995803833,
+          8.170000076293945
+        ],
+        "bbox_max": [
+          73.95999908447266,
+          9.1899995803833,
+          9.289999961853027
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Smoking_Saloon_1C",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          14.65999984741211,
+          14.399999618530273,
+          2.720001220703125
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 1964,
+        "polygons": 1455,
+        "triangles": 2910,
+        "uv_layers": 0,
+        "materials": [
+          "Leather",
+          "Mahogany.001",
+          "Carpet_Red",
+          "Marble",
+          "Fire_Glow",
+          "Painting"
+        ],
+        "bbox_min": [
+          -24.079999923706055,
+          -7.199999809265137,
+          14.399999618530273
+        ],
+        "bbox_max": [
+          -9.420000076293945,
+          7.199999809265137,
+          17.1200008392334
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Staterooms",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          80.79985809326172,
+          17.200000762939453,
+          7.90000057220459
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 5860,
+        "polygons": 3874,
+        "triangles": 9832,
+        "uv_layers": 0,
+        "materials": [
+          "Brass.001",
+          "Bed_Linen",
+          "Carpet_Green",
+          "Mahogany.001",
+          "Marble",
+          "Ceiling_White.001",
+          "Mirror",
+          "Cabin_Panel"
+        ],
+        "bbox_min": [
+          -23.975000381469727,
+          -8.600000381469727,
+          8.800000190734863
+        ],
+        "bbox_max": [
+          56.824859619140625,
+          8.600000381469727,
+          16.700000762939453
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Steering_Gear",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          46.250003814697266,
+          2.4199953079223633,
+          3.8700003623962402
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY",
+          "Scene Collection"
+        ],
+        "vertices": 172,
+        "polygons": 122,
+        "triangles": 292,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron.003",
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -77.80000305175781,
+          -1.2099976539611816,
+          1.4299999475479126
+        ],
+        "bbox_max": [
+          -31.549999237060547,
+          1.2099976539611816,
+          5.300000190734863
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Third_Class",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          151.86000061035156,
+          14.152949333190918,
+          5.40000057220459
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 47456,
+        "polygons": 34568,
+        "triangles": 73232,
+        "uv_layers": 0,
+        "materials": [
+          "Bed_Linen",
+          "Cast_Iron.002",
+          "Oak_Light.001",
+          "Table_Cloth",
+          "Carpet_Red"
+        ],
+        "bbox_min": [
+          -77.93000030517578,
+          -7.076474666595459,
+          5.199999809265137
+        ],
+        "bbox_max": [
+          73.93000030517578,
+          7.076474666595459,
+          10.600000381469727
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Wheelhouse_Fittings",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          4.569999694824219,
+          1.9500000476837158,
+          1.6700000762939453
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_INTERIOR",
+          "Scene Collection"
+        ],
+        "vertices": 176,
+        "polygons": 118,
+        "triangles": 292,
+        "uv_layers": 0,
+        "materials": [
+          "Teak.002",
+          "Brass.001",
+          "Mahogany.001"
+        ],
+        "bbox_min": [
+          13.899999618530273,
+          -0.9750000238418579,
+          18.600000381469727
+        ],
+        "bbox_max": [
+          18.469999313354492,
+          0.9750000238418579,
+          20.270000457763672
+        ],
+        "modifiers": [],
+        "attributes": {}
+      }
+    ],
+    "images": [],
+    "collections": [
+      {
+        "name": "SHIP_HULL",
+        "objects": 7,
+        "children": []
+      },
+      {
+        "name": "SHIP_INTERIOR",
+        "objects": 15,
+        "children": []
+      },
+      {
+        "name": "SHIP_MACHINERY",
+        "objects": 9,
+        "children": []
+      },
+      {
+        "name": "SHIP_SUPERSTRUCTURE",
+        "objects": 13,
+        "children": []
+      }
+    ]
+  },
+  {
+    "file": "/home/user/victoria/models/module_hull.blend",
+    "blender": [
+      4,
+      2,
+      67
+    ],
+    "objects": [
+      {
+        "name": "Anchors_Hawse",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          1.25,
+          4.302774906158447,
+          2.3299999237060547
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL"
+        ],
+        "vertices": 128,
+        "polygons": 84,
+        "triangles": 216,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron"
+        ],
+        "bbox_min": [
+          78.30000305175781,
+          -2.1513874530792236,
+          8.100000381469727
+        ],
+        "bbox_max": [
+          79.55000305175781,
+          2.1513874530792236,
+          10.430000305175781
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Boot_Top",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          158.01739501953125,
+          18.408000946044922,
+          0.3600001335144043
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL"
+        ],
+        "vertices": 1148,
+        "polygons": 572,
+        "triangles": 1144,
+        "uv_layers": 0,
+        "materials": [
+          "Boot_White"
+        ],
+        "bbox_min": [
+          -77.62742614746094,
+          -9.204000473022461,
+          6.239999771118164
+        ],
+        "bbox_max": [
+          80.38996887207031,
+          9.204000473022461,
+          6.599999904632568
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Bulwarks",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          164.0,
+          14.86812686920166,
+          1.1899995803833008
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL"
+        ],
+        "vertices": 1840,
+        "polygons": 1576,
+        "triangles": 3152,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black",
+          "Teak"
+        ],
+        "bbox_min": [
+          -82.0,
+          -7.43406343460083,
+          8.800000190734863
+        ],
+        "bbox_max": [
+          82.0,
+          7.43406343460083,
+          9.989999771118164
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Hull_Seams",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          164.52932739257812,
+          18.444000244140625,
+          10.785195350646973
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL"
+        ],
+        "vertices": 33572,
+        "polygons": 21582,
+        "triangles": 23980,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black"
+        ],
+        "bbox_min": [
+          -82.2734603881836,
+          -9.218000411987305,
+          1.8223999738693237
+        ],
+        "bbox_max": [
+          82.255859375,
+          9.22599983215332,
+          12.607595443725586
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Hull_Shell",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          165.2058563232422,
+          18.399999618530273,
+          13.050000190734863
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL"
+        ],
+        "vertices": 10277,
+        "polygons": 9762,
+        "triangles": 19594,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black",
+          "Boot_White"
+        ],
+        "bbox_min": [
+          -82.255859375,
+          -9.199999809265137,
+          0.0
+        ],
+        "bbox_max": [
+          82.94999694824219,
+          9.199999809265137,
+          13.050000190734863
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "Keel_Stem",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          161.47500610351562,
+          4.411411285400391,
+          7.470000267028809
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL"
+        ],
+        "vertices": 648,
+        "polygons": 638,
+        "triangles": 1276,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black"
+        ],
+        "bbox_min": [
+          -78.4749984741211,
+          -2.2057056427001953,
+          -0.41999998688697815
+        ],
+        "bbox_max": [
+          83.0,
+          2.2057056427001953,
+          7.050000190734863
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rudder",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.5500030517578125,
+          0.4399999976158142,
+          6.0
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_HULL"
+        ],
+        "vertices": 36,
+        "polygons": 34,
+        "triangles": 68,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black"
+        ],
+        "bbox_min": [
+          -80.55000305175781,
+          -0.2199999988079071,
+          0.3499999940395355
+        ],
+        "bbox_max": [
+          -78.0,
+          0.2199999988079071,
+          6.349999904632568
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      }
+    ],
+    "images": [],
+    "collections": [
+      {
+        "name": "SHIP_HULL",
+        "objects": 7,
+        "children": []
+      }
+    ]
+  },
+  {
+    "file": "/home/user/victoria/models/module_superstructure.blend",
+    "blender": [
+      4,
+      2,
+      67
+    ],
+    "objects": [
+      {
+        "name": "BoatDeck",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          53.052001953125,
+          16.530000686645508,
+          2.647958755493164
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 3750,
+        "polygons": 3198,
+        "triangles": 6700,
+        "uv_layers": 0,
+        "materials": [
+          "Deck_Wood",
+          "Upper_White",
+          "Glass",
+          "Ceiling_White",
+          "Teak"
+        ],
+        "bbox_min": [
+          -13.026000022888184,
+          -8.265000343322754,
+          17.200000762939453
+        ],
+        "bbox_max": [
+          40.0260009765625,
+          8.265000343322754,
+          19.847959518432617
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Boats_Davits",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          59.415000915527344,
+          15.110139846801758,
+          2.952220916748047
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 2264,
+        "polygons": 1467,
+        "triangles": 3198,
+        "uv_layers": 0,
+        "materials": [
+          "Upper_White",
+          "Steel",
+          "Canvas",
+          "Teak"
+        ],
+        "bbox_min": [
+          -17.299999237060547,
+          -7.555069923400879,
+          17.219999313354492
+        ],
+        "bbox_max": [
+          42.1150016784668,
+          7.555069923400879,
+          20.17222023010254
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "Bridge",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          13.349998474121094,
+          18.17131233215332,
+          2.6999988555908203
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 562,
+        "polygons": 410,
+        "triangles": 920,
+        "uv_layers": 0,
+        "materials": [
+          "Teak",
+          "Glass",
+          "Upper_White",
+          "Canvas",
+          "Brass",
+          "Ceiling_White"
+        ],
+        "bbox_min": [
+          30.0,
+          -9.08565616607666,
+          18.600000381469727
+        ],
+        "bbox_max": [
+          43.349998474121094,
+          9.08565616607666,
+          21.299999237060547
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "DeckHouse_Promenade",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          99.46499633789062,
+          14.534000396728516,
+          2.7779598236083984
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 3456,
+        "polygons": 2694,
+        "triangles": 5388,
+        "uv_layers": 0,
+        "materials": [
+          "Mahogany",
+          "Glass",
+          "Ceiling_White",
+          "Oak_Light"
+        ],
+        "bbox_min": [
+          -49.04999923706055,
+          -7.267000198364258,
+          14.420000076293945
+        ],
+        "bbox_max": [
+          50.415000915527344,
+          7.267000198364258,
+          17.197959899902344
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "DeckHouse_SaloonDeck",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          129.1999969482422,
+          16.650001525878906,
+          7.969999313354492
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 3108,
+        "polygons": 2320,
+        "triangles": 4640,
+        "uv_layers": 0,
+        "materials": [
+          "Upper_White",
+          "Glass"
+        ],
+        "bbox_min": [
+          -73.5999984741211,
+          -8.317500114440918,
+          8.5
+        ],
+        "bbox_max": [
+          55.599998474121094,
+          8.332500457763672,
+          16.469999313354492
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "DeckMachinery",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          152.89999389648438,
+          14.680399894714355,
+          9.325000762939453
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 1584,
+        "polygons": 1172,
+        "triangles": 2744,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron",
+          "Steel",
+          "Canvas",
+          "Upper_White",
+          "Glass_Ground"
+        ],
+        "bbox_min": [
+          -76.13999938964844,
+          -7.340199947357178,
+          8.819999694824219
+        ],
+        "bbox_max": [
+          76.76000213623047,
+          7.340199947357178,
+          18.145000457763672
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Decks_SaloonProm",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          130.0,
+          17.799999237060547,
+          0.0
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 990,
+        "polygons": 890,
+        "triangles": 1780,
+        "uv_layers": 0,
+        "materials": [
+          "Deck_Wood"
+        ],
+        "bbox_min": [
+          -74.0,
+          -8.899999618530273,
+          11.800000190734863
+        ],
+        "bbox_max": [
+          56.0,
+          8.899999618530273,
+          11.800000190734863
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Funnels",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          30.360000610351562,
+          4.320000171661377,
+          14.350000381469727
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 920,
+        "polygons": 680,
+        "triangles": 1480,
+        "uv_layers": 0,
+        "materials": [
+          "Funnel_Buff",
+          "Funnel_Top",
+          "Funnel_Inner",
+          "Steel",
+          "Brass",
+          "Upper_White"
+        ],
+        "bbox_min": [
+          2.069999933242798,
+          -2.1600000858306885,
+          16.25
+        ],
+        "bbox_max": [
+          32.43000030517578,
+          2.1600000858306885,
+          30.600000381469727
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "Masts",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          127.78964233398438,
+          19.0,
+          27.30000114440918
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 630,
+        "polygons": 540,
+        "triangles": 1188,
+        "uv_layers": 0,
+        "materials": [
+          "Oak_Light",
+          "Lamp_Warm"
+        ],
+        "bbox_min": [
+          -55.79999923706055,
+          -9.5,
+          10.600000381469727
+        ],
+        "bbox_max": [
+          71.9896469116211,
+          9.5,
+          37.900001525878906
+        ],
+        "modifiers": [
+          "NODES"
+        ],
+        "attributes": {}
+      },
+      {
+        "name": "NavLights",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.5499992370605469,
+          15.199999809265137,
+          0.5
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 16,
+        "polygons": 12,
+        "triangles": 24,
+        "uv_layers": 0,
+        "materials": [
+          "NavLight_1",
+          "NavLight_-1"
+        ],
+        "bbox_min": [
+          12.225000381469727,
+          -7.599999904632568,
+          19.649999618530273
+        ],
+        "bbox_max": [
+          12.774999618530273,
+          7.599999904632568,
+          20.149999618530273
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Promenade_Rails",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          116.052001953125,
+          17.209999084472656,
+          2.8000011444091797
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 4448,
+        "polygons": 3652,
+        "triangles": 8152,
+        "uv_layers": 0,
+        "materials": [
+          "Teak",
+          "Upper_White"
+        ],
+        "bbox_min": [
+          -62.0260009765625,
+          -8.604999542236328,
+          14.399999618530273
+        ],
+        "bbox_max": [
+          54.0260009765625,
+          8.604999542236328,
+          17.200000762939453
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rigging",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          164.03466796875,
+          0.9437912702560425,
+          22.04707145690918
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 280,
+        "polygons": 196,
+        "triangles": 448,
+        "uv_layers": 0,
+        "materials": [
+          "Rope"
+        ],
+        "bbox_min": [
+          -81.51055145263672,
+          -0.47197508811950684,
+          10.177637100219727
+        ],
+        "bbox_max": [
+          82.52412414550781,
+          0.47181618213653564,
+          32.224708557128906
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Scuppers",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          140.43499755859375,
+          18.3799991607666,
+          1.119999885559082
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_SUPERSTRUCTURE"
+        ],
+        "vertices": 1888,
+        "polygons": 1416,
+        "triangles": 2832,
+        "uv_layers": 0,
+        "materials": [
+          "Hull_Black",
+          "Steel"
+        ],
+        "bbox_min": [
+          -66.4749984741211,
+          -9.1899995803833,
+          8.170000076293945
+        ],
+        "bbox_max": [
+          73.95999908447266,
+          9.1899995803833,
+          9.289999961853027
+        ],
+        "modifiers": [],
+        "attributes": {}
+      }
+    ],
+    "images": [],
+    "collections": [
+      {
+        "name": "SHIP_SUPERSTRUCTURE",
+        "objects": 13,
+        "children": []
+      }
+    ]
+  },
+  {
+    "file": "/home/user/victoria/models/module_machinery.blend",
+    "blender": [
+      4,
+      2,
+      67
+    ],
+    "objects": [
+      {
+        "name": "Boiler_Rooms",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          56.0,
+          17.700000762939453,
+          7.0
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 4640,
+        "polygons": 2666,
+        "triangles": 8668,
+        "uv_layers": 0,
+        "materials": [
+          "Boiler_Shell",
+          "Cast_Iron",
+          "Furnace_Door",
+          "Furnace_Fire",
+          "Brass",
+          "Gauge_Glass",
+          "Steel",
+          "Steel_Floor",
+          "Steam_Pipe",
+          "Coal"
+        ],
+        "bbox_min": [
+          -23.0,
+          -8.850000381469727,
+          1.2999999523162842
+        ],
+        "bbox_max": [
+          33.0,
+          8.850000381469727,
+          8.300000190734863
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Crankshaft",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          10.40000057220459,
+          0.5199999809265137,
+          0.5199999809265137
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 40,
+        "polygons": 22,
+        "triangles": 76,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -23.200000762939453,
+          -0.25999999046325684,
+          2.0899999141693115
+        ],
+        "bbox_max": [
+          -12.800000190734863,
+          0.25999999046325684,
+          2.609999895095825
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_HP_Rod",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.1700000762939453,
+          0.16167961061000824,
+          1.5349998474121094
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 20,
+        "polygons": 12,
+        "triangles": 36,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -21.385000228881836,
+          -0.08083980530500412,
+          3.9000000953674316
+        ],
+        "bbox_max": [
+          -21.21500015258789,
+          0.08083980530500412,
+          5.434999942779541
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_IP_Rod",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.1699981689453125,
+          0.16167961061000824,
+          0.9249997138977051
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 20,
+        "polygons": 12,
+        "triangles": 36,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -18.084999084472656,
+          -0.08083980530500412,
+          3.9000000953674316
+        ],
+        "bbox_max": [
+          -17.915000915527344,
+          0.08083980530500412,
+          4.824999809265137
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_LP_Rod",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.1700000762939453,
+          0.16167961061000824,
+          0.06500005722045898
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 20,
+        "polygons": 12,
+        "triangles": 36,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -14.78499984741211,
+          -0.08083980530500412,
+          3.8350000381469727
+        ],
+        "bbox_max": [
+          -14.614999771118164,
+          0.08083980530500412,
+          3.9000000953674316
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_Main",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          22.924999237060547,
+          13.267866134643555,
+          7.496807098388672
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 1792,
+        "polygons": 1106,
+        "triangles": 3204,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron",
+          "Engine_Paint",
+          "Steel_Bright",
+          "Steel",
+          "Sea_Pipe",
+          "Copper",
+          "Oak_Light"
+        ],
+        "bbox_min": [
+          -26.549999237060547,
+          -5.394999980926514,
+          0.2031928151845932
+        ],
+        "bbox_max": [
+          -3.625,
+          7.872866630554199,
+          7.699999809265137
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Propeller",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.7659988403320312,
+          5.300000190734863,
+          5.299999713897705
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 220,
+        "polygons": 150,
+        "triangles": 332,
+        "uv_layers": 0,
+        "materials": [
+          "Manganese_Bronze"
+        ],
+        "bbox_min": [
+          -80.11299896240234,
+          -2.6500000953674316,
+          -0.6000000238418579
+        ],
+        "bbox_max": [
+          -77.34700012207031,
+          2.6500000953674316,
+          4.699999809265137
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Propeller_Shaft",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          62.0,
+          0.46000000834465027,
+          0.4599999189376831
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 32,
+        "polygons": 18,
+        "triangles": 60,
+        "uv_layers": 0,
+        "materials": [
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -83.0,
+          -0.23000000417232513,
+          1.8200000524520874
+        ],
+        "bbox_max": [
+          -21.0,
+          0.23000000417232513,
+          2.2799999713897705
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Steering_Gear",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          46.250003814697266,
+          2.4199953079223633,
+          3.8700003623962402
+        ],
+        "parent": null,
+        "collection": [
+          "SHIP_MACHINERY"
+        ],
+        "vertices": 172,
+        "polygons": 122,
+        "triangles": 292,
+        "uv_layers": 0,
+        "materials": [
+          "Cast_Iron",
+          "Steel_Bright"
+        ],
+        "bbox_min": [
+          -77.80000305175781,
+          -1.2099976539611816,
+          1.4299999475479126
+        ],
+        "bbox_max": [
+          -31.549999237060547,
+          1.2099976539611816,
+          5.300000190734863
+        ],
+        "modifiers": [],
+        "attributes": {}
+      }
+    ],
+    "images": [],
+    "collections": [
+      {
+        "name": "SHIP_MACHINERY",
+        "objects": 9,
+        "children": []
+      }
+    ]
+  },
+  {
+    "file": "/home/user/reference_review/boats/boats/blend/boat_c_whaler.blend",
+    "blender": [
+      4,
+      2,
+      66
+    ],
+    "objects": [
+      {
+        "name": "Centreboard",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          1.5844759941101074,
+          0.12399999797344208,
+          0.5160000324249268
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 76,
+        "polygons": 54,
+        "triangles": 132,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -0.22659200429916382,
+          -0.06199999898672104,
+          -0.23541119694709778
+        ],
+        "bbox_max": [
+          1.3578840494155884,
+          0.06199999898672104,
+          0.2805888056755066
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Fenders",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.12399998307228088,
+          1.871077537536621,
+          0.5400000214576721
+        ],
+        "parent": null,
+        "collection": [
+          "Gear"
+        ],
+        "vertices": 564,
+        "polygons": 520,
+        "triangles": 1048,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          0.4880000054836273,
+          -0.9355387687683105,
+          0.07035017013549805
+        ],
+        "bbox_max": [
+          0.6119999885559082,
+          0.9355387687683105,
+          0.6103501915931702
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Fittings",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.811267852783203,
+          0.7639018297195435,
+          0.9206205606460571
+        ],
+        "parent": null,
+        "collection": [
+          "Gear"
+        ],
+        "vertices": 1666,
+        "polygons": 1460,
+        "triangles": 3192,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -3.9155819416046143,
+          -0.378901869058609,
+          -0.35716596245765686
+        ],
+        "bbox_max": [
+          3.8956856727600098,
+          0.38499999046325684,
+          0.5634545683860779
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Floorboards",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          4.977759838104248,
+          0.3598839044570923,
+          0.06338098645210266
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 1568,
+        "polygons": 1526,
+        "triangles": 3052,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -2.488879919052124,
+          -0.17994195222854614,
+          -0.34275585412979126
+        ],
+        "bbox_max": [
+          2.488879919052124,
+          0.17994195222854614,
+          -0.2793748676776886
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Frames",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.7350873947143555,
+          1.6126099824905396,
+          1.0518306493759155
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 5936,
+        "polygons": 5724,
+        "triangles": 11448,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -3.8769237995147705,
+          -0.8063049912452698,
+          -0.40669700503349304
+        ],
+        "bbox_max": [
+          3.858163833618164,
+          0.8063049912452698,
+          0.6451336145401001
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Keel_Stems",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          8.229547500610352,
+          0.14871805906295776,
+          1.2658672332763672
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 1322,
+        "polygons": 1248,
+        "triangles": 2505,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -4.114747047424316,
+          -0.07393838465213776,
+          -0.5077174305915833
+        ],
+        "bbox_max": [
+          4.114799976348877,
+          0.07477967441082001,
+          0.7581498622894287
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Keelson_Gunwale",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          8.130046844482422,
+          1.7601301670074463,
+          1.1200655698776245
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 2120,
+        "polygons": 2100,
+        "triangles": 4224,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -4.065414905548096,
+          -0.8800650835037231,
+          -0.39554575085639954
+        ],
+        "bbox_max": [
+          4.064631462097168,
+          0.8800650835037231,
+          0.7245198488235474
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Masts_Yards_Rigging",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          8.041641235351562,
+          4.648200035095215,
+          5.102908134460449
+        ],
+        "parent": null,
+        "collection": [
+          "Rig"
+        ],
+        "vertices": 2294,
+        "polygons": 2068,
+        "triangles": 4612,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -4.029734134674072,
+          -2.3241000175476074,
+          -0.2801899313926697
+        ],
+        "bbox_max": [
+          4.011906623840332,
+          2.3241000175476074,
+          4.822718143463135
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_P1",
+        "type": "MESH",
+        "location": [
+          1.7693639993667603,
+          0.7058597803115845,
+          0.6433969736099243
+        ],
+        "dimensions": [
+          4.880000114440918,
+          0.085999995470047,
+          0.1499999761581421
+        ],
+        "parent": null,
+        "collection": [
+          "Moving_Parts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -2.7100000381469727,
+          0.25699999928474426,
+          0.419938862323761
+        ],
+        "bbox_max": [
+          2.1700000762939453,
+          0.34299999475479126,
+          0.5699388384819031
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_P2",
+        "type": "MESH",
+        "location": [
+          0.6583679914474487,
+          0.8135308623313904,
+          0.6326698660850525
+        ],
+        "dimensions": [
+          5.180000305175781,
+          0.085999995470047,
+          0.15000000596046448
+        ],
+        "parent": null,
+        "collection": [
+          "Moving_Parts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -2.6500000953674316,
+          0.34200000762939453,
+          0.42814984917640686
+        ],
+        "bbox_max": [
+          2.5299999713897705,
+          0.42800000309944153,
+          0.5781498551368713
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_P3",
+        "type": "MESH",
+        "location": [
+          -0.4526279866695404,
+          0.8396729230880737,
+          0.6326875686645508
+        ],
+        "dimensions": [
+          5.179999828338623,
+          0.085999995470047,
+          0.15000000596046448
+        ],
+        "parent": null,
+        "collection": [
+          "Moving_Parts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -2.5899999141693115,
+          0.34115585684776306,
+          0.4091498553752899
+        ],
+        "bbox_max": [
+          2.5899999141693115,
+          0.42715585231781006,
+          0.5591498613357544
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_S4",
+        "type": "MESH",
+        "location": [
+          0.6583679914474487,
+          -0.8135308623313904,
+          0.6326698660850525
+        ],
+        "dimensions": [
+          5.179999828338623,
+          0.085999995470047,
+          0.15000000596046448
+        ],
+        "parent": null,
+        "collection": [
+          "Moving_Parts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -2.5299997329711914,
+          -0.43341100215911865,
+          0.42814984917640686
+        ],
+        "bbox_max": [
+          2.6500000953674316,
+          -0.34741100668907166,
+          0.5781498551368713
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_S5",
+        "type": "MESH",
+        "location": [
+          -1.5636240243911743,
+          -0.7755608558654785,
+          0.6409924626350403
+        ],
+        "dimensions": [
+          5.179999828338623,
+          0.085999995470047,
+          0.15000000596046448
+        ],
+        "parent": null,
+        "collection": [
+          "Moving_Parts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -2.4700000286102295,
+          -0.4027026295661926,
+          0.41748079657554626
+        ],
+        "bbox_max": [
+          2.7100000381469727,
+          -0.31670263409614563,
+          0.5674808025360107
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Planking_Clinker",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          8.203267097473145,
+          1.672206997871399,
+          1.1550184488296509
+        ],
+        "parent": null,
+        "collection": [
+          "Hull"
+        ],
+        "vertices": 12528,
+        "polygons": 12420,
+        "triangles": 24840,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -4.101632595062256,
+          -0.8361034989356995,
+          -0.4478358030319214
+        ],
+        "bbox_max": [
+          4.101634502410889,
+          0.8361034989356995,
+          0.7071826457977295
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rowlocks",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          3.4189023971557617,
+          1.6892037391662598,
+          0.16572707891464233
+        ],
+        "parent": null,
+        "collection": [
+          "Gear"
+        ],
+        "vertices": 510,
+        "polygons": 330,
+        "triangles": 960,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -1.606581211090088,
+          -0.8315308690071106,
+          0.5946698784828186
+        ],
+        "bbox_max": [
+          1.8123211860656738,
+          0.8576728701591492,
+          0.7603969573974609
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rudder",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.6442911624908447,
+          0.04800000041723251,
+          0.9281461238861084
+        ],
+        "parent": null,
+        "collection": [
+          "Moving_Parts"
+        ],
+        "vertices": 84,
+        "polygons": 49,
+        "triangles": 138,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -4.192360877990723,
+          -0.024000000208616257,
+          -0.14185014367103577
+        ],
+        "bbox_max": [
+          -3.548069715499878,
+          0.024000000208616257,
+          0.786296010017395
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Structure_Details",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.385427474975586,
+          1.5622234344482422,
+          0.9930853247642517
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 564,
+        "polygons": 546,
+        "triangles": 1092,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -3.694274663925171,
+          -0.7811117172241211,
+          -0.3639051914215088
+        ],
+        "bbox_max": [
+          3.691152811050415,
+          0.7811117172241211,
+          0.6291801333427429
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Thwart_Knees",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          3.372987985610962,
+          1.5177723169326782,
+          0.21078899502754211
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 96,
+        "polygons": 88,
+        "triangles": 176,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -1.583624005317688,
+          -0.7588861584663391,
+          0.2611498534679413
+        ],
+        "bbox_max": [
+          1.789363980293274,
+          0.7588861584663391,
+          0.4719388484954834
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Thwarts_Benches",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          4.777631759643555,
+          1.4761667251586914,
+          0.19264227151870728
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 372,
+        "polygons": 354,
+        "triangles": 708,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Elm_Strake_02",
+          "Elm_Strake_03",
+          "Elm_Strake_04",
+          "Elm_Strake_05",
+          "Elm_Strake_06",
+          "Elm_Strake_07",
+          "Elm_Strake_08"
+        ],
+        "bbox_min": [
+          -2.885767936706543,
+          -0.7380833625793457,
+          0.2934936285018921
+        ],
+        "bbox_max": [
+          1.8918639421463013,
+          0.7380833625793457,
+          0.48613590002059937
+        ],
+        "modifiers": [],
+        "attributes": {}
+      }
+    ],
+    "images": [],
+    "collections": [
+      {
+        "name": "Furniture",
+        "objects": 3,
+        "children": []
+      },
+      {
+        "name": "Gear",
+        "objects": 3,
+        "children": []
+      },
+      {
+        "name": "Hull",
+        "objects": 1,
+        "children": []
+      },
+      {
+        "name": "Moving_Parts",
+        "objects": 6,
+        "children": []
+      },
+      {
+        "name": "Rig",
+        "objects": 1,
+        "children": []
+      },
+      {
+        "name": "Structure",
+        "objects": 5,
+        "children": []
+      }
+    ]
+  },
+  {
+    "file": "/home/user/reference_review/boats/boats/blend/boat_a_steam_cutter.blend",
+    "blender": [
+      4,
+      2,
+      66
+    ],
+    "objects": [
+      {
+        "name": "Boiler",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.88919997215271,
+          0.811874270439148,
+          1.1977941989898682
+        ],
+        "parent": null,
+        "collection": [
+          "Machinery"
+        ],
+        "vertices": 4069,
+        "polygons": 4628,
+        "triangles": 7016,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          0.057999998331069946,
+          -0.405937135219574,
+          -0.3445386290550232
+        ],
+        "bbox_max": [
+          0.9472000002861023,
+          0.405937135219574,
+          0.8532556295394897
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Boiler_Internals",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.6799999475479126,
+          0.6800000071525574,
+          0.8199999928474426
+        ],
+        "parent": null,
+        "collection": [
+          "Machinery"
+        ],
+        "vertices": 380,
+        "polygons": 442,
+        "triangles": 632,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          0.1599999964237213,
+          -0.3400000035762787,
+          -0.2245386242866516
+        ],
+        "bbox_max": [
+          0.8399999737739563,
+          0.3400000035762787,
+          0.595461368560791
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Canopy_Cover",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.983308792114258,
+          1.9485752582550049,
+          0.45817023515701294
+        ],
+        "parent": null,
+        "collection": [
+          "Deck_Canopy"
+        ],
+        "vertices": 3416,
+        "polygons": 3612,
+        "triangles": 6496,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -1.590000033378601,
+          -0.9734910726547241,
+          0.5825636982917786
+        ],
+        "bbox_max": [
+          1.3933087587356567,
+          0.975084125995636,
+          1.0407339334487915
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Canopy_Frame",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.869999885559082,
+          1.9702260494232178,
+          0.38166582584381104
+        ],
+        "parent": null,
+        "collection": [
+          "Deck_Canopy"
+        ],
+        "vertices": 1128,
+        "polygons": 1208,
+        "triangles": 2168,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -1.534999966621399,
+          -0.9851130247116089,
+          0.6351890563964844
+        ],
+        "bbox_max": [
+          1.3350000381469727,
+          0.9851130247116089,
+          1.0168548822402954
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Coamings",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.9749999046325684,
+          2.0927929878234863,
+          0.2071441411972046
+        ],
+        "parent": null,
+        "collection": [
+          "Deck_Canopy"
+        ],
+        "vertices": 112,
+        "polygons": 100,
+        "triangles": 200,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -1.587499976158142,
+          -1.0463964939117432,
+          0.5480620861053467
+        ],
+        "bbox_max": [
+          1.3875000476837158,
+          1.0463964939117432,
+          0.7552062273025513
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Decks",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.420000076293945,
+          2.0614709854125977,
+          0.2756824493408203
+        ],
+        "parent": null,
+        "collection": [
+          "Deck_Canopy"
+        ],
+        "vertices": 1692,
+        "polygons": 1668,
+        "triangles": 3328,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -3.619999885559082,
+          -1.0322355031967163,
+          0.5160790681838989
+        ],
+        "bbox_max": [
+          3.799999952316284,
+          1.0292354822158813,
+          0.7917615175247192
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.6800000071525574,
+          0.5797274708747864,
+          0.8532136678695679
+        ],
+        "parent": null,
+        "collection": [
+          "Machinery"
+        ],
+        "vertices": 1010,
+        "polygons": 1170,
+        "triangles": 1784,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -1.1200000047683716,
+          -0.24500000476837158,
+          -0.2682056427001953
+        ],
+        "bbox_max": [
+          -0.4399999976158142,
+          0.3347274661064148,
+          0.5850080251693726
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Engine_Bearers_Floors",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.565000057220459,
+          0.9399999976158142,
+          0.2002691626548767
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 296,
+        "polygons": 296,
+        "triangles": 540,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green"
+        ],
+        "bbox_min": [
+          -1.6050000190734863,
+          -0.4699999988079071,
+          -0.45839089155197144
+        ],
+        "bbox_max": [
+          0.9599999785423279,
+          0.4699999988079071,
+          -0.2581217288970947
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Floorboards",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          4.07859992980957,
+          0.887182354927063,
+          0.08822748064994812
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 1792,
+        "polygons": 1744,
+        "triangles": 3488,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -2.115499973297119,
+          -0.4435911774635315,
+          -0.41928830742836
+        ],
+        "bbox_max": [
+          1.9630999565124512,
+          0.4435911774635315,
+          -0.33106082677841187
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Frames",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.203494071960449,
+          2.0329318046569824,
+          1.3064974546432495
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 8448,
+        "polygons": 8256,
+        "triangles": 16512,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green"
+        ],
+        "bbox_min": [
+          -3.6037261486053467,
+          -1.0164659023284912,
+          -0.4723994731903076
+        ],
+        "bbox_max": [
+          3.5997681617736816,
+          1.0164659023284912,
+          0.8340979814529419
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Funnel",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.25690001249313354,
+          0.3762499988079071,
+          1.0185928344726562
+        ],
+        "parent": null,
+        "collection": [
+          "Deck_Canopy"
+        ],
+        "vertices": 360,
+        "polygons": 392,
+        "triangles": 712,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          0.41200000047683716,
+          -0.18812499940395355,
+          0.6154614090919495
+        ],
+        "bbox_max": [
+          0.6689000129699707,
+          0.18812499940395355,
+          1.634054183959961
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Gear_Nav_Safety",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.204113006591797,
+          2.250412702560425,
+          1.6011998653411865
+        ],
+        "parent": null,
+        "collection": [
+          "Gear"
+        ],
+        "vertices": 4818,
+        "polygons": 5214,
+        "triangles": 9068,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -3.61063551902771,
+          -1.1252063512802124,
+          -0.4408544600009918
+        ],
+        "bbox_max": [
+          3.593477249145508,
+          1.1252063512802124,
+          1.160345435142517
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Inner_Diagonal_Skin",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          6.2383131980896,
+          2.083573579788208,
+          1.3436254262924194
+        ],
+        "parent": null,
+        "collection": [
+          "Hull"
+        ],
+        "vertices": 10877,
+        "polygons": 10620,
+        "triangles": 21240,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green"
+        ],
+        "bbox_min": [
+          -2.594580888748169,
+          -1.041786789894104,
+          -0.4762957692146301
+        ],
+        "bbox_max": [
+          3.6437323093414307,
+          1.041786789894104,
+          0.8673296570777893
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Keel_Stem_Frames_Gunwale",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.619683265686035,
+          2.2235844135284424,
+          1.580196738243103
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 5238,
+        "polygons": 5251,
+        "triangles": 10320,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green"
+        ],
+        "bbox_min": [
+          -3.809683084487915,
+          -1.1117922067642212,
+          -0.6171756386756897
+        ],
+        "bbox_max": [
+          3.809999942779541,
+          1.1117922067642212,
+          0.9630210995674133
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Pipework_Fittings",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          3.1595358848571777,
+          0.7931791543960571,
+          1.4108009338378906
+        ],
+        "parent": null,
+        "collection": [
+          "Machinery"
+        ],
+        "vertices": 1222,
+        "polygons": 1458,
+        "triangles": 2272,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -2.2249999046325684,
+          -0.3688415288925171,
+          -0.4743640422821045
+        ],
+        "bbox_max": [
+          0.9345359802246094,
+          0.42433762550354004,
+          0.9364369511604309
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Planking_Carvel",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.5841569900512695,
+          2.133518695831299,
+          1.4314048290252686
+        ],
+        "parent": null,
+        "collection": [
+          "Hull"
+        ],
+        "vertices": 11856,
+        "polygons": 11804,
+        "triangles": 23608,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green"
+        ],
+        "bbox_min": [
+          -3.806151866912842,
+          -1.0667593479156494,
+          -0.5293275117874146
+        ],
+        "bbox_max": [
+          3.778005361557007,
+          1.0667593479156494,
+          0.9020772576332092
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Propeller",
+        "type": "MESH",
+        "location": [
+          -3.4200000762939453,
+          0.0,
+          -0.44999998807907104
+        ],
+        "dimensions": [
+          0.10829445719718933,
+          0.20821654796600342,
+          0.3528347611427307
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 126,
+        "polygons": 124,
+        "triangles": 200,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -3.466294527053833,
+          -0.10410827398300171,
+          -0.6264173984527588
+        ],
+        "bbox_max": [
+          -3.3580000400543213,
+          0.10410827398300171,
+          -0.2735826075077057
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rudder",
+        "type": "MESH",
+        "location": [
+          -3.619999885559082,
+          0.0,
+          0.6546016335487366
+        ],
+        "dimensions": [
+          1.2123644351959229,
+          0.10997121781110764,
+          0.7727372050285339
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 152,
+        "polygons": 102,
+        "triangles": 272,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -3.809999942779541,
+          -0.0739712193608284,
+          0.05460166931152344
+        ],
+        "bbox_max": [
+          -2.597635507583618,
+          0.035999998450279236,
+          0.8273388743400574
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Seats",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          5.130000114440918,
+          1.9427762031555176,
+          1.1054761409759521
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 376,
+        "polygons": 342,
+        "triangles": 684,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -2.700000047683716,
+          -0.9713881015777588,
+          -0.42340922355651855
+        ],
+        "bbox_max": [
+          2.430000066757202,
+          0.9713881015777588,
+          0.6820669174194336
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Shafting",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.504251480102539,
+          0.10080000013113022,
+          0.48690807819366455
+        ],
+        "parent": null,
+        "collection": [
+          "Machinery"
+        ],
+        "vertices": 212,
+        "polygons": 286,
+        "triangles": 392,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Pine_Deck_0",
+          "Pine_Deck_1",
+          "Pine_Deck_2"
+        ],
+        "bbox_min": [
+          -3.619999885559082,
+          -0.05040000006556511,
+          -0.4888913035392761
+        ],
+        "bbox_max": [
+          -1.1157482862472534,
+          0.05040000006556511,
+          -0.0019832258112728596
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Transom",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.2682790756225586,
+          1.2429620027542114,
+          0.8644000291824341
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 841,
+        "polygons": 768,
+        "triangles": 1536,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green"
+        ],
+        "bbox_min": [
+          -3.8398566246032715,
+          -0.6214810013771057,
+          -0.08937889337539673
+        ],
+        "bbox_max": [
+          -3.571577548980713,
+          0.6214810013771057,
+          0.7750211358070374
+        ],
+        "modifiers": [],
+        "attributes": {}
+      }
+    ],
+    "images": [],
+    "collections": [
+      {
+        "name": "Deck_Canopy",
+        "objects": 5,
+        "children": []
+      },
+      {
+        "name": "Furniture",
+        "objects": 2,
+        "children": []
+      },
+      {
+        "name": "Gear",
+        "objects": 1,
+        "children": []
+      },
+      {
+        "name": "Hull",
+        "objects": 2,
+        "children": []
+      },
+      {
+        "name": "Machinery",
+        "objects": 5,
+        "children": []
+      },
+      {
+        "name": "MovingParts",
+        "objects": 2,
+        "children": []
+      },
+      {
+        "name": "Structure",
+        "objects": 4,
+        "children": []
+      }
+    ]
+  },
+  {
+    "file": "/home/user/reference_review/boats/boats/blend/boat_b_rowing_cutter.blend",
+    "blender": [
+      4,
+      2,
+      66
+    ],
+    "objects": [
+      {
+        "name": "Fenders",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          1.75,
+          0.21258550882339478,
+          0.6708180904388428
+        ],
+        "parent": null,
+        "collection": [
+          "Gear"
+        ],
+        "vertices": 564,
+        "polygons": 520,
+        "triangles": 1048,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -0.7749999761581421,
+          0.8793972134590149,
+          0.06567778438329697
+        ],
+        "bbox_max": [
+          0.9750000238418579,
+          1.0919827222824097,
+          0.736495852470398
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Fittings",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.2949323654174805,
+          0.7799893021583557,
+          1.0851863622665405
+        ],
+        "parent": null,
+        "collection": [
+          "Gear"
+        ],
+        "vertices": 1432,
+        "polygons": 1288,
+        "triangles": 2756,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.675076484680176,
+          -0.38998931646347046,
+          -0.297046035528183
+        ],
+        "bbox_max": [
+          3.6198558807373047,
+          0.38999998569488525,
+          0.7881403565406799
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Floorboards",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          3.5452001094818115,
+          0.7316408157348633,
+          0.0682658851146698
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 1568,
+        "polygons": 1526,
+        "triangles": 3052,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -1.7726000547409058,
+          -0.36582040786743164,
+          -0.28804129362106323
+        ],
+        "bbox_max": [
+          1.7726000547409058,
+          0.36582040786743164,
+          -0.21977540850639343
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Frames",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.193624496459961,
+          1.862679123878479,
+          1.1700236797332764
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 5712,
+        "polygons": 5508,
+        "triangles": 11016,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.598642349243164,
+          -0.9313395619392395,
+          -0.3623946011066437
+        ],
+        "bbox_max": [
+          3.594982385635376,
+          0.9313395619392395,
+          0.8076290488243103
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Keel_Stem_Sternpost",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.619746208190918,
+          0.9116669297218323,
+          1.4027290344238281
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 1434,
+        "polygons": 1351,
+        "triangles": 2738,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.809746503829956,
+          -0.45583346486091614,
+          -0.4727287292480469
+        ],
+        "bbox_max": [
+          3.809999942779541,
+          0.45583346486091614,
+          0.9300003051757812
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Keelson_Gunwale",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.527838230133057,
+          1.9809967279434204,
+          1.2433162927627563
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 2120,
+        "polygons": 2100,
+        "triangles": 4224,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.764270067214966,
+          -0.9904983639717102,
+          -0.35462766885757446
+        ],
+        "bbox_max": [
+          3.763568162918091,
+          0.9904983639717102,
+          0.8886886239051819
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Mast_Clamp",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.15999984741210938,
+          0.9717221856117249,
+          0.06999999284744263
+        ],
+        "parent": null,
+        "collection": [
+          "Gear"
+        ],
+        "vertices": 24,
+        "polygons": 24,
+        "triangles": 48,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          2.4727001190185547,
+          -0.4858610928058624,
+          0.56613689661026
+        ],
+        "bbox_max": [
+          2.632699966430664,
+          0.4858610928058624,
+          0.6361368894577026
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_P1",
+        "type": "MESH",
+        "location": [
+          2.0192999839782715,
+          0.7323389649391174,
+          0.7574962377548218
+        ],
+        "dimensions": [
+          3.6600003242492676,
+          0.085999995470047,
+          0.1549999713897705
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.450000286102295,
+          0.25699999928474426,
+          0.5391151905059814
+        ],
+        "bbox_max": [
+          1.2100000381469727,
+          0.34299999475479126,
+          0.694115161895752
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_P2",
+        "type": "MESH",
+        "location": [
+          1.1811000108718872,
+          0.8653554916381836,
+          0.7266266345977783
+        ],
+        "dimensions": [
+          3.6600003242492676,
+          0.085999995470047,
+          0.15500003099441528
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.450000286102295,
+          0.3320000171661377,
+          0.5262535810470581
+        ],
+        "bbox_max": [
+          1.2100000381469727,
+          0.4180000126361847,
+          0.6812536120414734
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_P3",
+        "type": "MESH",
+        "location": [
+          0.34290000796318054,
+          0.9366667866706848,
+          0.7085055708885193
+        ],
+        "dimensions": [
+          3.6599998474121094,
+          0.085999995470047,
+          0.1549999713897705
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.3499999046325684,
+          0.40700000524520874,
+          0.49001646041870117
+        ],
+        "bbox_max": [
+          1.309999942779541,
+          0.49300000071525574,
+          0.6450164318084717
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_P4",
+        "type": "MESH",
+        "location": [
+          -0.4952999949455261,
+          0.9636988639831543,
+          0.6994136571884155
+        ],
+        "dimensions": [
+          3.6599998474121094,
+          0.08600002527236938,
+          0.1550000011920929
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.3499999046325684,
+          0.4819999933242798,
+          0.4987920820713043
+        ],
+        "bbox_max": [
+          1.309999942779541,
+          0.5680000185966492,
+          0.6537920832633972
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_P5",
+        "type": "MESH",
+        "location": [
+          -1.3335000276565552,
+          0.9358218908309937,
+          0.6966466307640076
+        ],
+        "dimensions": [
+          3.6599998474121094,
+          0.08600002527236938,
+          0.15500003099441528
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.25,
+          0.5569999814033508,
+          0.477763295173645
+        ],
+        "bbox_max": [
+          1.409999966621399,
+          0.6430000066757202,
+          0.6327633261680603
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_S1",
+        "type": "MESH",
+        "location": [
+          2.0192999839782715,
+          -0.7323389649391174,
+          0.7574962377548218
+        ],
+        "dimensions": [
+          3.6600003242492676,
+          0.08600002527236938,
+          0.1549999713897705
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.450000286102295,
+          -0.4180000126361847,
+          0.5571151971817017
+        ],
+        "bbox_max": [
+          1.2100000381469727,
+          -0.3319999873638153,
+          0.7121151685714722
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_S2",
+        "type": "MESH",
+        "location": [
+          1.1811000108718872,
+          -0.8653554916381836,
+          0.7266266345977783
+        ],
+        "dimensions": [
+          3.6599998474121094,
+          0.085999995470047,
+          0.15500003099441528
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.3499999046325684,
+          -0.49300000071525574,
+          0.5082535743713379
+        ],
+        "bbox_max": [
+          1.309999942779541,
+          -0.40700000524520874,
+          0.6632536053657532
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_S3",
+        "type": "MESH",
+        "location": [
+          0.34290000796318054,
+          -0.9366667866706848,
+          0.7085055708885193
+        ],
+        "dimensions": [
+          3.6599998474121094,
+          0.08600002527236938,
+          0.1549999713897705
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.3499999046325684,
+          -0.5680000185966492,
+          0.5080164670944214
+        ],
+        "bbox_max": [
+          1.309999942779541,
+          -0.4819999933242798,
+          0.6630164384841919
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_S4",
+        "type": "MESH",
+        "location": [
+          -0.4952999949455261,
+          -0.9636988639831543,
+          0.6994136571884155
+        ],
+        "dimensions": [
+          3.6599998474121094,
+          0.08600002527236938,
+          0.1550000011920929
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.25,
+          -0.6430000066757202,
+          0.4807920753955841
+        ],
+        "bbox_max": [
+          1.4099998474121094,
+          -0.5569999814033508,
+          0.635792076587677
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Oar_S5",
+        "type": "MESH",
+        "location": [
+          -1.3335000276565552,
+          -0.9358218908309937,
+          0.6966466307640076
+        ],
+        "dimensions": [
+          3.6599998474121094,
+          0.08599996566772461,
+          0.15500003099441528
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 320,
+        "polygons": 220,
+        "triangles": 590,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -2.25,
+          -0.7179999947547913,
+          0.49576330184936523
+        ],
+        "bbox_max": [
+          1.409999966621399,
+          -0.6320000290870667,
+          0.6507633328437805
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Planking_Clinker",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          7.598664283752441,
+          1.9125117063522339,
+          1.2833349704742432
+        ],
+        "parent": null,
+        "collection": [
+          "Hull"
+        ],
+        "vertices": 14079,
+        "polygons": 13948,
+        "triangles": 27896,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.8031420707702637,
+          -0.9562558531761169,
+          -0.4099854826927185
+        ],
+        "bbox_max": [
+          3.7955219745635986,
+          0.9562558531761169,
+          0.8733494877815247
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Quarter_Knees",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.1851043701171875,
+          0.8576235175132751,
+          0.3324735462665558
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 96,
+        "polygons": 88,
+        "triangles": 176,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.7658374309539795,
+          -0.4288117587566376,
+          0.40432408452033997
+        ],
+        "bbox_max": [
+          -3.580733060836792,
+          0.4288117587566376,
+          0.7367976307868958
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rowlocks",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          3.438714027404785,
+          1.9633976221084595,
+          0.21584957838058472
+        ],
+        "parent": null,
+        "collection": [
+          "Gear"
+        ],
+        "vertices": 1020,
+        "polygons": 660,
+        "triangles": 1920,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -1.3764570951461792,
+          -0.9816988110542297,
+          0.6606466770172119
+        ],
+        "bbox_max": [
+          2.0622570514678955,
+          0.9816988110542297,
+          0.8764962553977966
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Rudder",
+        "type": "MESH",
+        "location": [
+          -3.8195526599884033,
+          0.0,
+          0.6916503310203552
+        ],
+        "dimensions": [
+          1.3367481231689453,
+          0.07800000160932541,
+          1.1535165309906006
+        ],
+        "parent": null,
+        "collection": [
+          "MovingParts"
+        ],
+        "vertices": 208,
+        "polygons": 145,
+        "triangles": 354,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -4.105380058288574,
+          -0.04500000178813934,
+          -0.35834962129592896
+        ],
+        "bbox_max": [
+          -2.768631935119629,
+          0.032999999821186066,
+          0.7951668500900269
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Structure_Details",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          6.837404727935791,
+          1.8107045888900757,
+          1.006764531135559
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 548,
+        "polygons": 534,
+        "triangles": 1068,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.4213356971740723,
+          -0.9053522944450378,
+          -0.22495819628238678
+        ],
+        "bbox_max": [
+          3.4160690307617188,
+          0.9053522944450378,
+          0.7818063497543335
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Thwart_Knees",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          3.3927998542785645,
+          1.8459899425506592,
+          0.26135191321372986
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 120,
+        "polygons": 110,
+        "triangles": 220,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -1.3535000085830688,
+          -0.9229949712753296,
+          0.32526329159736633
+        ],
+        "bbox_max": [
+          2.039299964904785,
+          0.9229949712753296,
+          0.5866152048110962
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Thwarts_Benches",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          5.380399703979492,
+          1.8078522682189941,
+          0.3159453868865967
+        ],
+        "parent": null,
+        "collection": [
+          "Furniture"
+        ],
+        "vertices": 464,
+        "polygons": 438,
+        "triangles": 876,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.2360999584198,
+          -0.9039261341094971,
+          0.2706698179244995
+        ],
+        "bbox_max": [
+          2.1442999839782715,
+          0.9039261341094971,
+          0.5866152048110962
+        ],
+        "modifiers": [],
+        "attributes": {}
+      },
+      {
+        "name": "Transom",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          0.2272486686706543,
+          0.8224941492080688,
+          0.8623799681663513
+        ],
+        "parent": null,
+        "collection": [
+          "Structure"
+        ],
+        "vertices": 841,
+        "polygons": 768,
+        "triangles": 1536,
+        "uv_layers": 0,
+        "materials": [
+          "Teak_Exterior",
+          "Paint_Interior",
+          "Oak_Timber",
+          "Pine_Deck",
+          "Hull_Black",
+          "Boot_White",
+          "Brass",
+          "CastIron",
+          "Steel",
+          "Rope",
+          "Canvas",
+          "Gauge_Glass",
+          "Copper",
+          "Leather",
+          "Coal",
+          "BoilerWater",
+          "RedLead",
+          "Signal_Glass_Red",
+          "Signal_Glass_Green",
+          "Wood_Strake_02",
+          "Wood_Strake_03",
+          "Wood_Strake_04",
+          "Wood_Strake_05",
+          "Wood_Strake_06",
+          "Wood_Strake_07",
+          "Wood_Strake_08",
+          "Wood_Strake_09",
+          "Wood_Strake_10"
+        ],
+        "bbox_min": [
+          -3.839928150177002,
+          -0.4112470746040344,
+          -0.10829968005418777
+        ],
+        "bbox_max": [
+          -3.6126794815063477,
+          0.4112470746040344,
+          0.7540802955627441
+        ],
+        "modifiers": [],
+        "attributes": {}
+      }
+    ],
+    "images": [],
+    "collections": [
+      {
+        "name": "Furniture",
+        "objects": 4,
+        "children": []
+      },
+      {
+        "name": "Gear",
+        "objects": 4,
+        "children": []
+      },
+      {
+        "name": "Hull",
+        "objects": 1,
+        "children": []
+      },
+      {
+        "name": "MovingParts",
+        "objects": 11,
+        "children": []
+      },
+      {
+        "name": "Structure",
+        "objects": 5,
+        "children": []
+      }
+    ]
+  }
+]

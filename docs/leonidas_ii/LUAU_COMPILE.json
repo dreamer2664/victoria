@@ -1,0 +1,53 @@
+{
+  "scope": "Luau compile/bytecode only; NOT Roblox API/type/engine certification.",
+  "compiler_sha256": "e5d0cf85a846f3dd1b726ba82b9a7005fc3e344d348a62b47a4d2e7c9cff24e0",
+  "runner_sha256": "09036fdcde0062656f29629aeacf376c2f1769134daf1d454dad8086886a7bf0",
+  "files": [
+    {
+      "file": "roblox/leonidas_ii/Aurelian_Install.luau",
+      "sha256": "e8733a8613b1bccd87a465a45f924f891ebea151469e3fe7f8847e5fde41d661",
+      "exit_code": 0,
+      "status": "PASS",
+      "diagnostics": ""
+    },
+    {
+      "file": "roblox/leonidas_ii/Aurelian_Runtime.luau",
+      "sha256": "0e12b416c65a556192ab897d76fcda6f3bf469cde40d262f48a6cfbd01ac9d44",
+      "exit_code": 0,
+      "status": "PASS",
+      "diagnostics": ""
+    },
+    {
+      "file": "roblox/leonidas_ii/Aurelian_Data.luau",
+      "sha256": "1640bb7031ac26e23aa938b5c7a20689f77514a710ae8f35b079057d2e67273f",
+      "exit_code": 0,
+      "status": "PASS",
+      "diagnostics": ""
+    },
+    {
+      "file": "roblox/leonidas_ii/Aurelian_StudioAcceptance.luau",
+      "sha256": "3021256b0ab48f4d772c2a9afec7fa1ff373c1a1eb39abe8ad276d978dca27bd",
+      "exit_code": 0,
+      "status": "PASS",
+      "diagnostics": ""
+    },
+    {
+      "file": "roblox/leonidas_ii/Aurelian_Server.server.luau",
+      "sha256": "9d0af7b32df17b00e83670d054642620471e7150777c0390ea310b021d044ab6",
+      "exit_code": 0,
+      "status": "PASS",
+      "diagnostics": ""
+    },
+    {
+      "file": "roblox/leonidas_ii/Aurelian_Client.client.luau",
+      "sha256": "bd9725ba17828f564e9bb0e3045421ea4ace46dc142198ca3c8cc907472da42f",
+      "exit_code": 0,
+      "status": "PASS",
+      "diagnostics": ""
+    }
+  ],
+  "summary": {
+    "PASS": 6,
+    "FAIL": 0
+  }
+}

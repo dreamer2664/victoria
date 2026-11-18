@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1270" viewBox="0 0 1800 1270"><title>Aurelian simplified machinery flow schematic</title><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0,8 L8,0" stroke="#9b7d4c" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="#f4f0e7"/>
+<text x="65.00" y="65.00" fill="#223841" font-family="Arial,sans-serif" font-size="36" text-anchor="start" font-weight="bold">AURELIAN · CONNECTED PLANT</text>
+<text x="65.00" y="105.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="start" font-weight="normal">Flow schematic of the named modeled routes. NOT physical pipe routing, thermodynamic proof or pressure-vessel certification.</text>
+<rect x="65.00" y="190.00" width="350.00" height="110.00" rx="8" fill="#e5e0d4" stroke="#43565b" stroke-width="1.5"/>
+<text x="240.00" y="222.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">AFTER BOILER ROW</text>
+<text x="240.00" y="252.00" fill="#223841" font-family="Arial,sans-serif" font-size="14.818181818181818" text-anchor="middle" font-weight="normal">3 × single-ended Scotch · source x=3.0 m</text>
+<text x="240.00" y="281.00" fill="#223841" font-family="Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="normal">Ø 4.2 m · barrel 3.35 m · 11 bar target</text>
+<path d="M415.00,235.00 L485.00,235.00 L485.00,205.00" stroke="#ad5a3c" stroke-width="4" fill="none"/>
+<rect x="65.00" y="350.00" width="350.00" height="110.00" rx="8" fill="#e5e0d4" stroke="#43565b" stroke-width="1.5"/>
+<text x="240.00" y="382.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">MIDDLE BOILER ROW</text>
+<text x="240.00" y="412.00" fill="#223841" font-family="Arial,sans-serif" font-size="14.456762749445677" text-anchor="middle" font-weight="normal">3 × single-ended Scotch · source x=15.5 m</text>
+<text x="240.00" y="441.00" fill="#223841" font-family="Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="normal">Ø 4.2 m · barrel 3.35 m · 11 bar target</text>
+<path d="M415.00,395.00 L485.00,395.00 L485.00,205.00" stroke="#ad5a3c" stroke-width="4" fill="none"/>
+<rect x="65.00" y="510.00" width="350.00" height="110.00" rx="8" fill="#e5e0d4" stroke="#43565b" stroke-width="1.5"/>
+<text x="240.00" y="542.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">FORWARD BOILER ROW</text>
+<text x="240.00" y="572.00" fill="#223841" font-family="Arial,sans-serif" font-size="14.456762749445677" text-anchor="middle" font-weight="normal">3 × single-ended Scotch · source x=28.0 m</text>
+<text x="240.00" y="601.00" fill="#223841" font-family="Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="normal">Ø 4.2 m · barrel 3.35 m · 11 bar target</text>
+<path d="M415.00,555.00 L485.00,555.00 L485.00,205.00" stroke="#ad5a3c" stroke-width="4" fill="none"/>
+<path d="M485.00,205.00 L620.00,205.00" stroke="#ad5a3c" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+<text x="492.00" y="185.00" fill="#ad5a3c" font-family="Arial,sans-serif" font-size="18" text-anchor="start" font-weight="normal">MainSteam</text>
+<rect x="620.00" y="160.00" width="255.00" height="115.00" rx="8" fill="#d9d9cb" stroke="#43565b" stroke-width="1.5"/>
+<text x="747.50" y="192.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">HP</text>
+<text x="747.50" y="222.00" fill="#223841" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" font-weight="normal">bore 1.40 m</text>
+<rect x="955.00" y="160.00" width="255.00" height="115.00" rx="8" fill="#d9d9cb" stroke="#43565b" stroke-width="1.5"/>
+<text x="1082.50" y="192.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">IP</text>
+<text x="1082.50" y="222.00" fill="#223841" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" font-weight="normal">bore 2.25 m</text>
+<rect x="1290.00" y="160.00" width="255.00" height="115.00" rx="8" fill="#d9d9cb" stroke="#43565b" stroke-width="1.5"/>
+<text x="1417.50" y="192.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">LP</text>
+<text x="1417.50" y="222.00" fill="#223841" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" font-weight="normal">bore 3.50 m</text>
+<path d="M875.00,218.00 L955.00,218.00" stroke="#ad5a3c" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<text x="912.00" y="147.00" fill="#ad5a3c" font-family="Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="normal">HP→IP receiver</text>
+<path d="M1210.00,218.00 L1290.00,218.00" stroke="#ad5a3c" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<text x="1248.00" y="147.00" fill="#ad5a3c" font-family="Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="normal">IP→LP receiver</text>
+<rect x="665.00" y="345.00" width="830.00" height="90.00" rx="8" fill="#e1d5bd" stroke="#43565b" stroke-width="1.5"/>
+<text x="1080.00" y="377.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">COMMON THREE-THROW CRANKSHAFT</text>
+<text x="1080.00" y="407.00" fill="#223841" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" font-weight="normal">1.8 m stroke · 0.9 m crank · 3.0 m rods · signed 72 rpm nominal</text>
+<path d="M747.00,275.00 L747.00,345.00" stroke="#54656a" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<path d="M1082.00,275.00 L1082.00,345.00" stroke="#54656a" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<path d="M1417.00,275.00 L1417.00,345.00" stroke="#54656a" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="970.00" y="550.00" width="340.00" height="100.00" rx="8" fill="#d6e1df" stroke="#43565b" stroke-width="1.5"/>
+<text x="1140.00" y="582.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">SURFACE CONDENSER</text>
+<text x="1140.00" y="612.00" fill="#223841" font-family="Arial,sans-serif" font-size="15.959595959595958" text-anchor="middle" font-weight="normal">source centre (−24.8, −1.85, 2.75) m</text>
+<path d="M1545.00,218.00 L1620.00,218.00 L1620.00,505.00 L1140.00,505.00 L1140.00,550.00" stroke="#6d6684" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+<text x="1280.00" y="489.00" fill="#6d6684" font-family="Arial,sans-serif" font-size="18" text-anchor="start" font-weight="normal">LP_Exhaust_to_Condenser</text>
+<rect x="1410.00" y="760.00" width="310.00" height="90.00" rx="8" fill="#d2e1e4" stroke="#43565b" stroke-width="1.5"/>
+<text x="1565.00" y="792.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">CIRCULATING PUMP</text>
+<text x="1565.00" y="822.00" fill="#223841" font-family="Arial,sans-serif" font-size="15.757575757575756" text-anchor="middle" font-weight="normal">seawater / dedicated steam driver</text>
+<text x="1560.00" y="925.00" fill="#367d94" font-family="Arial,sans-serif" font-size="23" text-anchor="middle" font-weight="bold">SEA INTAKE</text>
+<path d="M1560.00,900.00 L1560.00,850.00" stroke="#367d94" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+<path d="M1410.00,800.00 L1370.00,800.00 L1370.00,600.00 L1310.00,600.00" stroke="#367d94" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+<path d="M970.00,600.00 L900.00,600.00 L900.00,965.00 L1175.00,965.00" stroke="#367d94" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+<text x="1190.00" y="972.00" fill="#367d94" font-family="Arial,sans-serif" font-size="23" text-anchor="start" font-weight="bold">OVERBOARD</text>
+<rect x="565.00" y="760.00" width="300.00" height="90.00" rx="8" fill="#d8e4d5" stroke="#43565b" stroke-width="1.5"/>
+<text x="715.00" y="792.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">HOTWELL</text>
+<text x="715.00" y="822.00" fill="#223841" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" font-weight="normal">condenser condensate return</text>
+<path d="M1080.00,650.00 L1080.00,700.00 L715.00,700.00 L715.00,760.00" stroke="#518169" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<rect x="65.00" y="760.00" width="355.00" height="90.00" rx="8" fill="#d8e4d5" stroke="#43565b" stroke-width="1.5"/>
+<text x="242.50" y="792.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">RECIPROCATING FEED PUMPS</text>
+<text x="242.50" y="822.00" fill="#223841" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" font-weight="normal">Row1/2/3 feed headers → 9 boilers</text>
+<path d="M565.00,805.00 L420.00,805.00" stroke="#518169" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<path d="M65.00,805.00 L35.00,805.00 L35.00,235.00 L65.00,235.00" stroke="#518169" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<rect x="555.00" y="1010.00" width="510.00" height="90.00" rx="8" fill="#e5d8c8" stroke="#43565b" stroke-width="1.5"/>
+<text x="810.00" y="1042.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="bold">AUXILIARY REDUCING STEAM MAIN</text>
+<text x="810.00" y="1072.00" fill="#223841" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" font-weight="normal">feed/circulation · dynamos · steam steering</text>
+<path d="M485.00,310.00 L520.00,310.00 L520.00,1054.00 L555.00,1054.00" stroke="#ad5a3c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<text x="65.00" y="1160.00" fill="#223841" font-family="Arial,sans-serif" font-size="21" text-anchor="start" font-weight="normal">Mechanical output: aligned tailshaft / bearings / stern tube → pitched four-blade Ø 5.30 m screw; rudder and quadrant are separate movers.</text>
+<text x="65.00" y="1210.00" fill="#223841" font-family="Arial,sans-serif" font-size="19" text-anchor="start" font-weight="normal">Actual polyline endpoints and media: exports/leonidas_ii/build_data.json → pipe_network. Internal machinery details and performance remain simplified.</text><metadata>Generated from interfaces/leonidas_ii_ship.json by tools/draw_leonidas_ii.py. Fictional 1889 Aurelian design; not a museum or certified naval drawing.</metadata></svg>

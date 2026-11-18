@@ -1,0 +1,8 @@
+# External Python tools only. Blender 4.2 LTS supplies bpy/bmesh/mathutils
+# and its own NumPy. Do not pip-install bpy from an unrelated Blender release.
+numpy>=1.26,<3
+Pillow>=10,<14
+scipy>=1.11,<2
+matplotlib>=3.8,<4
+# Optional for SVG -> PDF; editable SVG generation does not need CairoSVG.
+CairoSVG>=2.7,<3

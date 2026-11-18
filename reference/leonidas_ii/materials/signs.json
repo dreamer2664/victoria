@@ -1,0 +1,814 @@
+{
+  "M_Entrance": {
+    "cell": 0,
+    "title": "First-class entrance and grand stair"
+  },
+  "M_ForwardThird": {
+    "cell": 1,
+    "title": "Forward third-class dormitory"
+  },
+  "M_AfterThird": {
+    "cell": 2,
+    "title": "After family steerage"
+  },
+  "M_Forecastle": {
+    "cell": 3,
+    "title": "Forecastle seamen and boatswain"
+  },
+  "S_Steering": {
+    "cell": 4,
+    "title": "Steam steering and emergency tiller"
+  },
+  "S_Dining": {
+    "cell": 5,
+    "title": "First-class dining saloon"
+  },
+  "S_Music": {
+    "cell": 6,
+    "title": "Music and drawing room"
+  },
+  "S_Stair": {
+    "cell": 7,
+    "title": "Grand staircase upper hall"
+  },
+  "S_Purser": {
+    "cell": 8,
+    "title": "Purser and secure office"
+  },
+  "S_Mail": {
+    "cell": 9,
+    "title": "Mail and specie room"
+  },
+  "S_Galley": {
+    "cell": 10,
+    "title": "Galley and coal range"
+  },
+  "S_Pantry": {
+    "cell": 11,
+    "title": "Pantry and plate room"
+  },
+  "S_Bakery": {
+    "cell": 12,
+    "title": "Bakery and bread room"
+  },
+  "S_Bath_P": {
+    "cell": 13,
+    "title": "Port baths and lavatory"
+  },
+  "S_Bath_S": {
+    "cell": 14,
+    "title": "Starboard lavatory"
+  },
+  "S_SecondDining": {
+    "cell": 15,
+    "title": "Second-class dining saloon"
+  },
+  "P_Library": {
+    "cell": 16,
+    "title": "Library and writing tables"
+  },
+  "P_Smoking": {
+    "cell": 17,
+    "title": "First-class smoking saloon"
+  },
+  "P_Writing": {
+    "cell": 18,
+    "title": "Ladies reading and writing lounge"
+  },
+  "P_SecondLounge": {
+    "cell": 19,
+    "title": "Second-class lounge and book room"
+  },
+  "P_Barber": {
+    "cell": 20,
+    "title": "Barber and hairdressing room"
+  },
+  "P_Wash": {
+    "cell": 21,
+    "title": "Second-class washroom"
+  },
+  "P_Stair": {
+    "cell": 22,
+    "title": "Stair landing under skylight"
+  },
+  "P_Bar": {
+    "cell": 23,
+    "title": "Steward bar and drinks store"
+  },
+  "P_Coats": {
+    "cell": 24,
+    "title": "Cloak and deck-chair store"
+  },
+  "P_Hospital": {
+    "cell": 25,
+    "title": "Hospital and surgeon"
+  },
+  "B_Captain": {
+    "cell": 26,
+    "title": "Captain private cabin"
+  },
+  "B_Chief": {
+    "cell": 27,
+    "title": "Chief officer cabin"
+  },
+  "B_Navigator": {
+    "cell": 28,
+    "title": "Navigating officer cabin"
+  },
+  "B_Chart": {
+    "cell": 29,
+    "title": "Chart and signal room \u2014 no wireless"
+  },
+  "B_Officer_1": {
+    "cell": 30,
+    "title": "Engineer / deck officer cabin 1"
+  },
+  "B_Officer_2": {
+    "cell": 31,
+    "title": "Engineer / deck officer cabin 2"
+  },
+  "B_Officer_3": {
+    "cell": 32,
+    "title": "Engineer / deck officer cabin 3"
+  },
+  "B_Officer_4": {
+    "cell": 33,
+    "title": "Engineer / deck officer cabin 4"
+  },
+  "N_Wheelhouse": {
+    "cell": 34,
+    "title": "Wheelhouse and navigating instruments"
+  },
+  "E_Engine": {
+    "cell": 35,
+    "title": "Triple-expansion engine room"
+  },
+  "E_Boilers_A": {
+    "cell": 36,
+    "title": "After stokehold"
+  },
+  "E_Boilers_M": {
+    "cell": 37,
+    "title": "Middle stokehold"
+  },
+  "E_Boilers_F": {
+    "cell": 38,
+    "title": "Forward stokehold"
+  },
+  "E_Dynamos": {
+    "cell": 39,
+    "title": "Dynamos and electrical workshop"
+  },
+  "E_Pumps": {
+    "cell": 40,
+    "title": "Feed and circulating pump flat"
+  },
+  "E_Alley": {
+    "cell": 41,
+    "title": "Watertight shaft alley"
+  },
+  "L_ThirdWomen": {
+    "cell": 42,
+    "title": "Forward women and children steerage"
+  },
+  "L_ThirdMen": {
+    "cell": 43,
+    "title": "Forward men steerage"
+  },
+  "L_ThirdWash": {
+    "cell": 44,
+    "title": "Third-class washroom and pantry"
+  },
+  "L_CrewP": {
+    "cell": 45,
+    "title": "Stokers and trimmers port quarters"
+  },
+  "L_CrewS": {
+    "cell": 46,
+    "title": "Stewards starboard quarters"
+  },
+  "L_AfterStore": {
+    "cell": 47,
+    "title": "After linen and provision store"
+  },
+  "O_ThirdF": {
+    "cell": 48,
+    "title": "Lower forward steerage"
+  },
+  "O_ThirdAP": {
+    "cell": 49,
+    "title": "After baggage and sail store port"
+  },
+  "O_ThirdAS": {
+    "cell": 50,
+    "title": "After baggage and sail store starboard"
+  },
+  "O_CrewP": {
+    "cell": 51,
+    "title": "Lower crew mess and berths port"
+  },
+  "O_CrewS": {
+    "cell": 52,
+    "title": "Lower crew mess and berths starboard"
+  },
+  "O_Hold": {
+    "cell": 53,
+    "title": "Forward parcels hold and chain store"
+  },
+  "L_ThirdMess": {
+    "cell": 54,
+    "title": "Third-class mess and baggage"
+  },
+  "S_ColdStore": {
+    "cell": 55,
+    "title": "Ice room and refrigerated provision store"
+  },
+  "A001": {
+    "cell": 56,
+    "title": "First class cabin A001"
+  },
+  "A002": {
+    "cell": 57,
+    "title": "First class cabin A002"
+  },
+  "A003": {
+    "cell": 58,
+    "title": "First class cabin A003"
+  },
+  "A004": {
+    "cell": 59,
+    "title": "First class cabin A004"
+  },
+  "A005": {
+    "cell": 60,
+    "title": "First class cabin A005"
+  },
+  "A006": {
+    "cell": 61,
+    "title": "First class cabin A006"
+  },
+  "A007": {
+    "cell": 62,
+    "title": "First class cabin A007"
+  },
+  "A008": {
+    "cell": 63,
+    "title": "First class cabin A008"
+  },
+  "A009": {
+    "cell": 64,
+    "title": "First class cabin A009"
+  },
+  "A010": {
+    "cell": 65,
+    "title": "First class cabin A010"
+  },
+  "A011": {
+    "cell": 66,
+    "title": "First class cabin A011"
+  },
+  "A012": {
+    "cell": 67,
+    "title": "First class cabin A012"
+  },
+  "A013": {
+    "cell": 68,
+    "title": "First class cabin A013"
+  },
+  "A014": {
+    "cell": 69,
+    "title": "First class cabin A014"
+  },
+  "A015": {
+    "cell": 70,
+    "title": "First class cabin A015"
+  },
+  "A016": {
+    "cell": 71,
+    "title": "First class cabin A016"
+  },
+  "A017": {
+    "cell": 72,
+    "title": "First class cabin A017"
+  },
+  "A018": {
+    "cell": 73,
+    "title": "First class cabin A018"
+  },
+  "A019": {
+    "cell": 74,
+    "title": "First class cabin A019"
+  },
+  "A020": {
+    "cell": 75,
+    "title": "First class cabin A020"
+  },
+  "A021": {
+    "cell": 76,
+    "title": "First class cabin A021"
+  },
+  "A022": {
+    "cell": 77,
+    "title": "First class cabin A022"
+  },
+  "A023": {
+    "cell": 78,
+    "title": "First class cabin A023"
+  },
+  "A024": {
+    "cell": 79,
+    "title": "First class cabin A024"
+  },
+  "A025": {
+    "cell": 80,
+    "title": "First class cabin A025"
+  },
+  "A026": {
+    "cell": 81,
+    "title": "First class cabin A026"
+  },
+  "A027": {
+    "cell": 82,
+    "title": "First class cabin A027"
+  },
+  "A028": {
+    "cell": 83,
+    "title": "First class cabin A028"
+  },
+  "A029": {
+    "cell": 84,
+    "title": "First class cabin A029"
+  },
+  "A030": {
+    "cell": 85,
+    "title": "First class cabin A030"
+  },
+  "A031": {
+    "cell": 86,
+    "title": "First class cabin A031"
+  },
+  "A032": {
+    "cell": 87,
+    "title": "First class cabin A032"
+  },
+  "A033": {
+    "cell": 88,
+    "title": "First class cabin A033"
+  },
+  "A034": {
+    "cell": 89,
+    "title": "First class cabin A034"
+  },
+  "A035": {
+    "cell": 90,
+    "title": "First class cabin A035"
+  },
+  "A036": {
+    "cell": 91,
+    "title": "First class cabin A036"
+  },
+  "A037": {
+    "cell": 92,
+    "title": "First class cabin A037"
+  },
+  "A038": {
+    "cell": 93,
+    "title": "First class cabin A038"
+  },
+  "A039": {
+    "cell": 94,
+    "title": "First class cabin A039"
+  },
+  "A040": {
+    "cell": 95,
+    "title": "First class cabin A040"
+  },
+  "A041": {
+    "cell": 96,
+    "title": "First class cabin A041"
+  },
+  "A042": {
+    "cell": 97,
+    "title": "First class cabin A042"
+  },
+  "A043": {
+    "cell": 98,
+    "title": "First class cabin A043"
+  },
+  "A044": {
+    "cell": 99,
+    "title": "First class cabin A044"
+  },
+  "A045": {
+    "cell": 100,
+    "title": "First class cabin A045"
+  },
+  "A046": {
+    "cell": 101,
+    "title": "First class cabin A046"
+  },
+  "A047": {
+    "cell": 102,
+    "title": "First class cabin A047"
+  },
+  "A048": {
+    "cell": 103,
+    "title": "First class cabin A048"
+  },
+  "A049": {
+    "cell": 104,
+    "title": "First class cabin A049"
+  },
+  "A050": {
+    "cell": 105,
+    "title": "First class cabin A050"
+  },
+  "A051": {
+    "cell": 106,
+    "title": "First class cabin A051"
+  },
+  "A052": {
+    "cell": 107,
+    "title": "First class cabin A052"
+  },
+  "A053": {
+    "cell": 108,
+    "title": "First class cabin A053"
+  },
+  "A054": {
+    "cell": 109,
+    "title": "First class cabin A054"
+  },
+  "A055": {
+    "cell": 110,
+    "title": "First class cabin A055"
+  },
+  "A056": {
+    "cell": 111,
+    "title": "First class cabin A056"
+  },
+  "A057": {
+    "cell": 112,
+    "title": "First class cabin A057"
+  },
+  "A058": {
+    "cell": 113,
+    "title": "First class cabin A058"
+  },
+  "A059": {
+    "cell": 114,
+    "title": "First class cabin A059"
+  },
+  "A060": {
+    "cell": 115,
+    "title": "First class cabin A060"
+  },
+  "A061": {
+    "cell": 116,
+    "title": "First class cabin A061"
+  },
+  "A062": {
+    "cell": 117,
+    "title": "First class cabin A062"
+  },
+  "A063": {
+    "cell": 118,
+    "title": "First class cabin A063"
+  },
+  "A064": {
+    "cell": 119,
+    "title": "First class cabin A064"
+  },
+  "A065": {
+    "cell": 120,
+    "title": "First class cabin A065"
+  },
+  "A066": {
+    "cell": 121,
+    "title": "First class cabin A066"
+  },
+  "A067": {
+    "cell": 122,
+    "title": "First class cabin A067"
+  },
+  "A068": {
+    "cell": 123,
+    "title": "First class cabin A068"
+  },
+  "A069": {
+    "cell": 124,
+    "title": "First class cabin A069"
+  },
+  "A070": {
+    "cell": 125,
+    "title": "First class cabin A070"
+  },
+  "A071": {
+    "cell": 126,
+    "title": "First class cabin A071"
+  },
+  "A072": {
+    "cell": 127,
+    "title": "First class cabin A072"
+  },
+  "A073": {
+    "cell": 128,
+    "title": "First class cabin A073"
+  },
+  "A074": {
+    "cell": 129,
+    "title": "First class cabin A074"
+  },
+  "A075": {
+    "cell": 130,
+    "title": "First class cabin A075"
+  },
+  "A076": {
+    "cell": 131,
+    "title": "First class cabin A076"
+  },
+  "A077": {
+    "cell": 132,
+    "title": "First class cabin A077"
+  },
+  "U001": {
+    "cell": 133,
+    "title": "First class cabin U001"
+  },
+  "U002": {
+    "cell": 134,
+    "title": "First class cabin U002"
+  },
+  "U003": {
+    "cell": 135,
+    "title": "First class cabin U003"
+  },
+  "U004": {
+    "cell": 136,
+    "title": "First class cabin U004"
+  },
+  "U005": {
+    "cell": 137,
+    "title": "First class cabin U005"
+  },
+  "U006": {
+    "cell": 138,
+    "title": "First class cabin U006"
+  },
+  "U007": {
+    "cell": 139,
+    "title": "First class cabin U007"
+  },
+  "U008": {
+    "cell": 140,
+    "title": "First class cabin U008"
+  },
+  "U009": {
+    "cell": 141,
+    "title": "First class cabin U009"
+  },
+  "U010": {
+    "cell": 142,
+    "title": "First class cabin U010"
+  },
+  "U011": {
+    "cell": 143,
+    "title": "First class cabin U011"
+  },
+  "U012": {
+    "cell": 144,
+    "title": "First class cabin U012"
+  },
+  "P001": {
+    "cell": 145,
+    "title": "First class cabin P001"
+  },
+  "P002": {
+    "cell": 146,
+    "title": "First class cabin P002"
+  },
+  "P003": {
+    "cell": 147,
+    "title": "First class cabin P003"
+  },
+  "P004": {
+    "cell": 148,
+    "title": "First class cabin P004"
+  },
+  "P005": {
+    "cell": 149,
+    "title": "First class cabin P005"
+  },
+  "P006": {
+    "cell": 150,
+    "title": "First class cabin P006"
+  },
+  "P007": {
+    "cell": 151,
+    "title": "First class cabin P007"
+  },
+  "P008": {
+    "cell": 152,
+    "title": "First class cabin P008"
+  },
+  "B_First098": {
+    "cell": 153,
+    "title": "First-class deck cabin 98"
+  },
+  "B_First099": {
+    "cell": 154,
+    "title": "First-class deck cabin 99"
+  },
+  "B_First100": {
+    "cell": 155,
+    "title": "First-class deck cabin 100"
+  },
+  "B_First101": {
+    "cell": 156,
+    "title": "First-class deck cabin 101"
+  },
+  "B_First102": {
+    "cell": 157,
+    "title": "First-class deck cabin 102"
+  },
+  "B_First103": {
+    "cell": 158,
+    "title": "First-class deck cabin 103"
+  },
+  "B_First104": {
+    "cell": 159,
+    "title": "First-class deck cabin 104"
+  },
+  "B_First105": {
+    "cell": 160,
+    "title": "First-class deck cabin 105"
+  },
+  "B_First106": {
+    "cell": 161,
+    "title": "First-class deck cabin 106"
+  },
+  "B_First107": {
+    "cell": 162,
+    "title": "First-class deck cabin 107"
+  },
+  "B_First108": {
+    "cell": 163,
+    "title": "First-class deck cabin 108"
+  },
+  "B_First109": {
+    "cell": 164,
+    "title": "First-class deck cabin 109"
+  },
+  "B_First110": {
+    "cell": 165,
+    "title": "First-class deck cabin 110"
+  },
+  "B_First111": {
+    "cell": 166,
+    "title": "First-class deck cabin 111"
+  },
+  "B_First112": {
+    "cell": 167,
+    "title": "First-class deck cabin 112"
+  },
+  "B_First113": {
+    "cell": 168,
+    "title": "First-class deck cabin 113"
+  },
+  "B_First114": {
+    "cell": 169,
+    "title": "First-class deck cabin 114"
+  },
+  "C001": {
+    "cell": 170,
+    "title": "Second class cabin C001"
+  },
+  "C002": {
+    "cell": 171,
+    "title": "Second class cabin C002"
+  },
+  "C003": {
+    "cell": 172,
+    "title": "Second class cabin C003"
+  },
+  "C004": {
+    "cell": 173,
+    "title": "Second class cabin C004"
+  },
+  "C005": {
+    "cell": 174,
+    "title": "Second class cabin C005"
+  },
+  "C006": {
+    "cell": 175,
+    "title": "Second class cabin C006"
+  },
+  "C007": {
+    "cell": 176,
+    "title": "Second class cabin C007"
+  },
+  "C008": {
+    "cell": 177,
+    "title": "Second class cabin C008"
+  },
+  "C009": {
+    "cell": 178,
+    "title": "Second class cabin C009"
+  },
+  "C010": {
+    "cell": 179,
+    "title": "Second class cabin C010"
+  },
+  "C011": {
+    "cell": 180,
+    "title": "Second class cabin C011"
+  },
+  "C012": {
+    "cell": 181,
+    "title": "Second class cabin C012"
+  },
+  "C013": {
+    "cell": 182,
+    "title": "Second class cabin C013"
+  },
+  "C014": {
+    "cell": 183,
+    "title": "Second class cabin C014"
+  },
+  "C015": {
+    "cell": 184,
+    "title": "Second class cabin C015"
+  },
+  "C016": {
+    "cell": 185,
+    "title": "Second class cabin C016"
+  },
+  "C017": {
+    "cell": 186,
+    "title": "Second class cabin C017"
+  },
+  "C018": {
+    "cell": 187,
+    "title": "Second class cabin C018"
+  },
+  "C019": {
+    "cell": 188,
+    "title": "Second class cabin C019"
+  },
+  "C020": {
+    "cell": 189,
+    "title": "Second class cabin C020"
+  },
+  "C021": {
+    "cell": 190,
+    "title": "Second class cabin C021"
+  },
+  "C022": {
+    "cell": 191,
+    "title": "Second class cabin C022"
+  },
+  "C023": {
+    "cell": 192,
+    "title": "Second class cabin C023"
+  },
+  "C024": {
+    "cell": 193,
+    "title": "Second class cabin C024"
+  },
+  "C025": {
+    "cell": 194,
+    "title": "Second class cabin C025"
+  },
+  "C026": {
+    "cell": 195,
+    "title": "Second class cabin C026"
+  },
+  "D001": {
+    "cell": 196,
+    "title": "Second class cabin D001"
+  },
+  "D002": {
+    "cell": 197,
+    "title": "Second class cabin D002"
+  },
+  "D003": {
+    "cell": 198,
+    "title": "Second class cabin D003"
+  },
+  "D004": {
+    "cell": 199,
+    "title": "Second class cabin D004"
+  },
+  "D005": {
+    "cell": 200,
+    "title": "Second class cabin D005"
+  },
+  "D006": {
+    "cell": 201,
+    "title": "Second class cabin D006"
+  },
+  "D007": {
+    "cell": 202,
+    "title": "Second class cabin D007"
+  }
+}

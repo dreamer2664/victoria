@@ -1,0 +1,19 @@
+==========================================================================
+SS AURELIAN — DESIGN VALIDATION
+==========================================================================
+  PASS  deck schedule stacks correctly: bottom 1.30, lower 5.20, main 8.80, saloon 11.80, prom 14.40, boat 17.20, bridge 18.60
+  PASS  all 42 room polygons are plain scalar coordinates
+  PASS  all 42 rooms clip to a valid footprint inside the ship
+  PASS  every enclosed room has at least 2.0 m headroom under the deck above
+  PASS  no two rooms on the same deck overlap
+  PASS  both funnel uptakes run through their own casings, clear of rooms
+  PASS  no mast passes through a furnished room
+  PASS  staircases connect every deck from the lower deck to the bridge
+  PASS  3 Agent-02 craft allocated on outboard davits (of 11 boats in the outfit)
+  PASS  hull displacement 13482 t matches the specification 13600 t (0.9%)
+  PASS  block coefficient 0.694 sits inside the 1884-89 express-liner band
+  PASS  LCB 1.53% forward of midships (period practice 0.5-2.5%)
+  WARN  26 rooms rely on an open side (no door recorded): Third Class — forward berths (men) (lower); Third Class — forward berths (women) (lower); Third Class mess / washroom (lower); Crew — petty officers (lower); Stokers' & trimmers' quarters (lower); Third Class — after berths (lower)
+  WARN  14 transverse bulkheads - a touch more subdivided than the 10-12 typical of the class, though not implausible
+--------------------------------------------------------------------------
+12 passed, 2 warnings, 0 failures

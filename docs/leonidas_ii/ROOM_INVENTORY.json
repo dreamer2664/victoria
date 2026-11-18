@@ -1,0 +1,5773 @@
+[
+  {
+    "id": "M_Entrance",
+    "name": "First-class entrance and grand stair",
+    "deck": "main",
+    "kind": "stairhall",
+    "bounds": [
+      -5.8,
+      1.8,
+      -7.8,
+      7.8
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 118.56,
+    "source_objects": [
+      "Furniture_M_Entrance"
+    ],
+    "components": {
+      "RolledArmSettee": 2
+    },
+    "triangles": 4296,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Turned columns, upholstered waiting seats where space permits; actual cut-through stairs and handrails in separate stair module."
+  },
+  {
+    "id": "M_ForwardThird",
+    "name": "Forward third-class dormitory",
+    "deck": "main",
+    "kind": "dorm_third",
+    "bounds": [
+      44.0,
+      66.0,
+      -4.6,
+      4.6
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 202.4,
+    "source_objects": [
+      "Furniture_M_ForwardThird_01",
+      "Furniture_M_ForwardThird_02"
+    ],
+    "components": {
+      "TwoBerthBunk": 36,
+      "TurnedDiningTable": 1,
+      "SteerageMessTable": 1
+    },
+    "triangles": 35854,
+    "nominal_berths": 144,
+    "actual_berths": 72,
+    "actual_mess_seats": 0,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank."
+  },
+  {
+    "id": "M_AfterThird",
+    "name": "After family steerage",
+    "deck": "main",
+    "kind": "dorm_third",
+    "bounds": [
+      -69.5,
+      -57.0,
+      -2.85,
+      2.85
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 71.25,
+    "source_objects": [
+      "Furniture_M_AfterThird_01",
+      "Furniture_M_AfterThird_02"
+    ],
+    "components": {
+      "TwoBerthBunk": 24
+    },
+    "triangles": 22870,
+    "nominal_berths": 72,
+    "actual_berths": 48,
+    "actual_mess_seats": 0,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank."
+  },
+  {
+    "id": "M_Forecastle",
+    "name": "Forecastle seamen and boatswain",
+    "deck": "main",
+    "kind": "dorm_crew",
+    "bounds": [
+      68.0,
+      75.0,
+      -2.1,
+      2.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 29.4,
+    "source_objects": [
+      "Furniture_M_Forecastle"
+    ],
+    "components": {
+      "TwoBerthBunk": 6
+    },
+    "triangles": 6330,
+    "nominal_berths": 24,
+    "actual_berths": 12,
+    "actual_mess_seats": 0,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank."
+  },
+  {
+    "id": "S_Dining",
+    "name": "First-class dining saloon",
+    "deck": "saloon",
+    "kind": "dining",
+    "bounds": [
+      9.4,
+      27.5,
+      -6.5,
+      6.5
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 235.3,
+    "source_objects": [
+      "Furniture_S_Dining_01",
+      "Furniture_S_Dining_02",
+      "Furniture_S_Dining_03",
+      "Furniture_S_Dining_04",
+      "Furniture_S_Dining_05",
+      "Furniture_S_Dining_06",
+      "Furniture_S_Dining_07",
+      "Furniture_S_Dining_08",
+      "Furniture_S_Dining_09",
+      "Furniture_S_Dining_10"
+    ],
+    "components": {
+      "TurnedDiningTable": 16,
+      "RevolvingChair": 96,
+      "PlaceSetting": 96,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 168004,
+    "nominal_berths": 0,
+    "actual_seats": 96,
+    "inventory": "Period upholstered seating, turned/revolving chairs, fitted tables/desks, meaningful tableware or writing implements; open bookcases / pianoforte / fireplace as appropriate."
+  },
+  {
+    "id": "S_Music",
+    "name": "Music and drawing room",
+    "deck": "saloon",
+    "kind": "music",
+    "bounds": [
+      -23.4,
+      -10.4,
+      -5.7,
+      5.7
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 148.2,
+    "source_objects": [
+      "Furniture_S_Music_01",
+      "Furniture_S_Music_02"
+    ],
+    "components": {
+      "RolledArmSettee": 6,
+      "TurnedDiningTable": 6,
+      "UpholsteredArmchair": 12,
+      "Pianoforte": 1,
+      "RevolvingChair": 1
+    },
+    "triangles": 30592,
+    "nominal_berths": 0,
+    "actual_seats": 30,
+    "inventory": "Period upholstered seating, turned/revolving chairs, fitted tables/desks, meaningful tableware or writing implements; open bookcases / pianoforte / fireplace as appropriate."
+  },
+  {
+    "id": "S_Stair",
+    "name": "Grand staircase upper hall",
+    "deck": "saloon",
+    "kind": "stairhall",
+    "bounds": [
+      -5.8,
+      1.8,
+      -3.2,
+      3.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 48.64,
+    "source_objects": [
+      "Furniture_S_Stair"
+    ],
+    "components": {},
+    "triangles": 1384,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Turned columns, upholstered waiting seats where space permits; actual cut-through stairs and handrails in separate stair module."
+  },
+  {
+    "id": "S_Purser",
+    "name": "Purser and secure office",
+    "deck": "saloon",
+    "kind": "office",
+    "bounds": [
+      -5.8,
+      1.8,
+      3.55,
+      6.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 19.38,
+    "source_objects": [
+      "Furniture_S_Purser"
+    ],
+    "components": {
+      "WritingDesk": 2,
+      "RevolvingChair": 2,
+      "OpenBookcase": 1,
+      "PurserIronSafe": 1
+    },
+    "triangles": 7372,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Door-clear writing desks/chairs, publications, ledgers and hinged-wheel iron safe."
+  },
+  {
+    "id": "S_Mail",
+    "name": "Mail and specie room",
+    "deck": "saloon",
+    "kind": "mail",
+    "bounds": [
+      -5.8,
+      1.8,
+      -6.1,
+      -3.55
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 19.38,
+    "source_objects": [
+      "Furniture_S_Mail"
+    ],
+    "components": {
+      "MailSortingCubby": 4,
+      "WritingDesk": 1
+    },
+    "triangles": 7116,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Open letter-sorting cubbies with individually tied paper/parcels and a bundle-covered sorting table."
+  },
+  {
+    "id": "S_Galley",
+    "name": "Galley and coal range",
+    "deck": "saloon",
+    "kind": "galley",
+    "bounds": [
+      -39.0,
+      -26.0,
+      -5.25,
+      -0.7
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 59.15,
+    "source_objects": [
+      "Furniture_S_Galley"
+    ],
+    "components": {
+      "CoalRangeThreeOvens": 1,
+      "TurnedDiningTable": 3
+    },
+    "triangles": 6048,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Three-oven coal range, firebrick base, burners, hollow copper pots and handles, hood/connected flue, work tables, cutting boards."
+  },
+  {
+    "id": "S_Pantry",
+    "name": "Pantry and plate room",
+    "deck": "saloon",
+    "kind": "pantry",
+    "bounds": [
+      -32.5,
+      -26.0,
+      0.7,
+      5.25
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 29.57,
+    "source_objects": [
+      "Furniture_S_Pantry"
+    ],
+    "components": {
+      "ProvisionShelving": 4,
+      "WritingDesk": 1
+    },
+    "triangles": 16424,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Fitted purpose-specific shelving/storage, office/chart/wash/medical equipment and incandescent lighting."
+  },
+  {
+    "id": "S_Bakery",
+    "name": "Bakery and bread room",
+    "deck": "saloon",
+    "kind": "bakery",
+    "bounds": [
+      -39.0,
+      -32.8,
+      0.7,
+      5.25
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 28.21,
+    "source_objects": [
+      "Furniture_S_Bakery"
+    ],
+    "components": {
+      "CoalRangeThreeOvens": 1,
+      "TurnedDiningTable": 1
+    },
+    "triangles": 3908,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Range/ovens, work benches and baking vessels."
+  },
+  {
+    "id": "S_Bath_P",
+    "name": "Port baths and lavatory",
+    "deck": "saloon",
+    "kind": "bath",
+    "bounds": [
+      -25.5,
+      -23.8,
+      0.7,
+      5.25
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.73,
+    "source_objects": [
+      "Furniture_S_Bath_P"
+    ],
+    "components": {
+      "ClawfootTub": 1,
+      "BowlJugWashstand": 1
+    },
+    "triangles": 2806,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Clawfoot ceramic tub and connected brass taps."
+  },
+  {
+    "id": "S_Bath_S",
+    "name": "Starboard lavatory",
+    "deck": "saloon",
+    "kind": "wc",
+    "bounds": [
+      -25.5,
+      -23.8,
+      -5.25,
+      -0.7
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.73,
+    "source_objects": [
+      "Furniture_S_Bath_S"
+    ],
+    "components": {
+      "HighCisternWC": 1,
+      "BowlJugWashstand": 1
+    },
+    "triangles": 2290,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "High-cistern ceramic WCs, bowl interiors, seats, flush chain and pipes; partitioned cubicles; bowl/jug washstands and mirrors."
+  },
+  {
+    "id": "S_SecondDining",
+    "name": "Second-class dining saloon",
+    "deck": "saloon",
+    "kind": "dining_second",
+    "bounds": [
+      -59.2,
+      -43.0,
+      -4.15,
+      4.15
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 134.46,
+    "source_objects": [
+      "Furniture_S_SecondDining_01",
+      "Furniture_S_SecondDining_02",
+      "Furniture_S_SecondDining_03",
+      "Furniture_S_SecondDining_04",
+      "Furniture_S_SecondDining_05"
+    ],
+    "components": {
+      "TurnedDiningTable": 8,
+      "RevolvingChair": 48,
+      "PlaceSetting": 48,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 84772,
+    "nominal_berths": 0,
+    "actual_seats": 48,
+    "inventory": "Period upholstered seating, turned/revolving chairs, fitted tables/desks, meaningful tableware or writing implements; open bookcases / pianoforte / fireplace as appropriate."
+  },
+  {
+    "id": "P_Library",
+    "name": "Library and writing tables",
+    "deck": "promenade",
+    "kind": "library",
+    "bounds": [
+      9.4,
+      27.5,
+      -5.5,
+      5.5
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 199.1,
+    "source_objects": [
+      "Furniture_P_Library_01",
+      "Furniture_P_Library_02",
+      "Furniture_P_Library_03",
+      "Furniture_P_Library_04",
+      "Furniture_P_Library_05",
+      "Furniture_P_Library_06"
+    ],
+    "components": {
+      "OpenBookcase": 18,
+      "WritingDesk": 10,
+      "RevolvingChair": 10,
+      "RolledArmSettee": 2
+    },
+    "triangles": 95040,
+    "nominal_berths": 0,
+    "actual_seats": 16,
+    "inventory": "Period upholstered seating, turned/revolving chairs, fitted tables/desks, meaningful tableware or writing implements; open bookcases / pianoforte / fireplace as appropriate."
+  },
+  {
+    "id": "P_Smoking",
+    "name": "First-class smoking saloon",
+    "deck": "promenade",
+    "kind": "smoking",
+    "bounds": [
+      -23.4,
+      -10.4,
+      -5.7,
+      5.7
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 148.2,
+    "source_objects": [
+      "Furniture_P_Smoking_01",
+      "Furniture_P_Smoking_02"
+    ],
+    "components": {
+      "RolledArmSettee": 6,
+      "TurnedDiningTable": 6,
+      "UpholsteredArmchair": 12
+    },
+    "triangles": 28916,
+    "nominal_berths": 0,
+    "actual_seats": 30,
+    "inventory": "Period upholstered seating, turned/revolving chairs, fitted tables/desks, meaningful tableware or writing implements; open bookcases / pianoforte / fireplace as appropriate."
+  },
+  {
+    "id": "P_Writing",
+    "name": "Ladies reading and writing lounge",
+    "deck": "promenade",
+    "kind": "writing",
+    "bounds": [
+      -39.0,
+      -25.0,
+      -5.25,
+      5.25
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 147.0,
+    "source_objects": [
+      "Furniture_P_Writing_01",
+      "Furniture_P_Writing_02",
+      "Furniture_P_Writing_03",
+      "Furniture_P_Writing_04",
+      "Furniture_P_Writing_05"
+    ],
+    "components": {
+      "OpenBookcase": 14,
+      "WritingDesk": 8,
+      "RevolvingChair": 8,
+      "RolledArmSettee": 2
+    },
+    "triangles": 75056,
+    "nominal_berths": 0,
+    "actual_seats": 14,
+    "inventory": "Period upholstered seating, turned/revolving chairs, fitted tables/desks, meaningful tableware or writing implements; open bookcases / pianoforte / fireplace as appropriate."
+  },
+  {
+    "id": "P_SecondLounge",
+    "name": "Second-class lounge and book room",
+    "deck": "promenade",
+    "kind": "lounge_second",
+    "bounds": [
+      -60.0,
+      -47.0,
+      -3.95,
+      3.95
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 102.7,
+    "source_objects": [
+      "Furniture_P_SecondLounge_01",
+      "Furniture_P_SecondLounge_02"
+    ],
+    "components": {
+      "RolledArmSettee": 6,
+      "TurnedDiningTable": 6,
+      "UpholsteredArmchair": 12
+    },
+    "triangles": 28916,
+    "nominal_berths": 0,
+    "actual_seats": 30,
+    "inventory": "Period upholstered seating, turned/revolving chairs, fitted tables/desks, meaningful tableware or writing implements; open bookcases / pianoforte / fireplace as appropriate."
+  },
+  {
+    "id": "P_Barber",
+    "name": "Barber and hairdressing room",
+    "deck": "promenade",
+    "kind": "barber",
+    "bounds": [
+      -45.7,
+      -40.0,
+      0.7,
+      3.8
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 17.67,
+    "source_objects": [
+      "Furniture_P_Barber"
+    ],
+    "components": {
+      "BarberRecliningChair": 3,
+      "UpholsteredArmchair": 3,
+      "BowlJugWashstand": 3
+    },
+    "triangles": 9110,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Pedestal reclining barber chairs with headrests, footboards and adjuster wheels; individual bowl/jug basins and mirrors, brushes, razors and leather strops."
+  },
+  {
+    "id": "P_Wash",
+    "name": "Second-class washroom",
+    "deck": "promenade",
+    "kind": "wc",
+    "bounds": [
+      -45.7,
+      -40.0,
+      -3.8,
+      -0.7
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 17.67,
+    "source_objects": [
+      "Furniture_P_Wash"
+    ],
+    "components": {
+      "HighCisternWC": 4,
+      "BowlJugWashstand": 4
+    },
+    "triangles": 8372,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "High-cistern ceramic WCs, bowl interiors, seats, flush chain and pipes; partitioned cubicles; bowl/jug washstands and mirrors."
+  },
+  {
+    "id": "P_Stair",
+    "name": "Stair landing under skylight",
+    "deck": "promenade",
+    "kind": "stairhall",
+    "bounds": [
+      -5.8,
+      1.8,
+      -3.2,
+      3.2
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 48.64,
+    "source_objects": [
+      "Furniture_P_Stair"
+    ],
+    "components": {},
+    "triangles": 1384,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Turned columns, upholstered waiting seats where space permits; actual cut-through stairs and handrails in separate stair module."
+  },
+  {
+    "id": "P_Bar",
+    "name": "Steward bar and drinks store",
+    "deck": "promenade",
+    "kind": "bar",
+    "bounds": [
+      -5.8,
+      1.8,
+      3.55,
+      5.6
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 15.58,
+    "source_objects": [
+      "Furniture_P_Bar"
+    ],
+    "components": {
+      "StewardDrinksCabinet": 4
+    },
+    "triangles": 15160,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Steward service cabinets with paneled cupboards, marble counters, individual stoppered bottles and pewter measuring/drinking vessels."
+  },
+  {
+    "id": "P_Coats",
+    "name": "Cloak and deck-chair store",
+    "deck": "promenade",
+    "kind": "store",
+    "bounds": [
+      -5.8,
+      1.8,
+      -5.6,
+      -3.55
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 15.58,
+    "source_objects": [
+      "Furniture_P_Coats"
+    ],
+    "components": {
+      "FoldedDeckChair": 4,
+      "ProvisionShelving": 1
+    },
+    "triangles": 3300,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Fitted purpose-specific shelving/storage, office/chart/wash/medical equipment and incandescent lighting."
+  },
+  {
+    "id": "P_Hospital",
+    "name": "Hospital and surgeon",
+    "deck": "promenade",
+    "kind": "hospital",
+    "bounds": [
+      49.8,
+      56.0,
+      -3.6,
+      3.6
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 44.64,
+    "source_objects": [
+      "Furniture_P_Hospital"
+    ],
+    "components": {
+      "Mattress": 2,
+      "Pillow": 2,
+      "SingleBerth": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1,
+      "WritingDesk": 1,
+      "RevolvingChair": 1,
+      "ApothecaryCabinet": 1,
+      "MedicalInstrumentTrolley": 1
+    },
+    "triangles": 10846,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Two bedsteads, washstand, examination/writing table and chair, apothecary bottle/bandage cabinet, wheeled instrument trolley and cleanable tiled floor."
+  },
+  {
+    "id": "B_Captain",
+    "name": "Captain private cabin",
+    "deck": "boat",
+    "kind": "cabin_captain",
+    "bounds": [
+      33.0,
+      40.4,
+      0.8,
+      4.4
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 26.64,
+    "source_objects": [
+      "Furniture_B_Captain"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1,
+      "WritingDesk": 1,
+      "RevolvingChair": 1,
+      "OpenBookcase": 1,
+      "RolledArmSettee": 1
+    },
+    "triangles": 9966,
+    "nominal_berths": 1,
+    "actual_berths": 1,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_Chief",
+    "name": "Chief officer cabin",
+    "deck": "boat",
+    "kind": "cabin_officer",
+    "bounds": [
+      33.0,
+      36.5,
+      -4.4,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 12.6,
+    "source_objects": [
+      "Furniture_B_Chief"
+    ],
+    "components": {
+      "TwoBerthBunk": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 2870,
+    "nominal_berths": 1,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_Navigator",
+    "name": "Navigating officer cabin",
+    "deck": "boat",
+    "kind": "cabin_officer",
+    "bounds": [
+      36.7,
+      40.4,
+      -4.4,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 13.32,
+    "source_objects": [
+      "Furniture_B_Navigator"
+    ],
+    "components": {
+      "TwoBerthBunk": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 2870,
+    "nominal_berths": 1,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_Chart",
+    "name": "Chart and signal room \u2014 no wireless",
+    "deck": "boat",
+    "kind": "chart",
+    "bounds": [
+      20.0,
+      26.6,
+      -4.4,
+      4.4
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 58.08,
+    "source_objects": [
+      "Furniture_B_Chart"
+    ],
+    "components": {
+      "WritingDesk": 2,
+      "RevolvingChair": 2,
+      "OpenBookcase": 1,
+      "ChartTableWithDrawers": 1
+    },
+    "triangles": 17804,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Central standing chart table with paired drawer pedestals, chart rollers, parallel rules and dividers; writing desks/seats, publications, open signal-flag and rolled-chart rack. No wireless."
+  },
+  {
+    "id": "B_Officer_1",
+    "name": "Engineer / deck officer cabin 1",
+    "deck": "boat",
+    "kind": "cabin_officer",
+    "bounds": [
+      11.0,
+      14.9,
+      0.8,
+      4.4
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 14.04,
+    "source_objects": [
+      "Furniture_B_Officer_1"
+    ],
+    "components": {
+      "TwoBerthBunk": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 2870,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_Officer_2",
+    "name": "Engineer / deck officer cabin 2",
+    "deck": "boat",
+    "kind": "cabin_officer",
+    "bounds": [
+      15.1,
+      19.0,
+      0.8,
+      4.4
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 14.04,
+    "source_objects": [
+      "Furniture_B_Officer_2"
+    ],
+    "components": {
+      "TwoBerthBunk": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 2870,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_Officer_3",
+    "name": "Engineer / deck officer cabin 3",
+    "deck": "boat",
+    "kind": "cabin_officer",
+    "bounds": [
+      11.0,
+      14.9,
+      -4.4,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 14.04,
+    "source_objects": [
+      "Furniture_B_Officer_3"
+    ],
+    "components": {
+      "TwoBerthBunk": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 2870,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_Officer_4",
+    "name": "Engineer / deck officer cabin 4",
+    "deck": "boat",
+    "kind": "cabin_officer",
+    "bounds": [
+      15.1,
+      19.0,
+      -4.4,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 14.04,
+    "source_objects": [
+      "Furniture_B_Officer_4"
+    ],
+    "components": {
+      "TwoBerthBunk": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 2870,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "N_Wheelhouse",
+    "name": "Wheelhouse and navigating instruments",
+    "deck": "bridge",
+    "kind": "wheelhouse",
+    "bounds": [
+      33.0,
+      41.0,
+      -4.7,
+      4.7
+    ],
+    "z": 20.0,
+    "top": 22.5,
+    "floor_area_m2": 75.2,
+    "source_objects": [
+      "Furniture_N_Wheelhouse"
+    ],
+    "components": {
+      "WritingDesk": 3,
+      "RevolvingChair": 3,
+      "OpenBookcase": 1
+    },
+    "triangles": 9736,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Chart desks, writing seats and publications; helm, binnacle, telegraphs and navigation fixtures are separate functional meshes."
+  },
+  {
+    "id": "L_ThirdWomen",
+    "name": "Forward women and children steerage",
+    "deck": "lower",
+    "kind": "dorm_third",
+    "bounds": [
+      37.5,
+      49.0,
+      -5.3,
+      5.3
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 121.9,
+    "source_objects": [
+      "Furniture_L_ThirdWomen"
+    ],
+    "components": {
+      "TwoBerthBunk": 14,
+      "TurnedDiningTable": 1,
+      "SteerageMessTable": 1
+    },
+    "triangles": 14906,
+    "nominal_berths": 90,
+    "actual_berths": 28,
+    "actual_mess_seats": 0,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank."
+  },
+  {
+    "id": "L_ThirdMen",
+    "name": "Forward men steerage",
+    "deck": "lower",
+    "kind": "dorm_third",
+    "bounds": [
+      49.4,
+      63.0,
+      -4.0,
+      4.0
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 108.8,
+    "source_objects": [
+      "Furniture_L_ThirdMen_01",
+      "Furniture_L_ThirdMen_02"
+    ],
+    "components": {
+      "TwoBerthBunk": 20,
+      "TurnedDiningTable": 1,
+      "SteerageMessTable": 1
+    },
+    "triangles": 20694,
+    "nominal_berths": 90,
+    "actual_berths": 40,
+    "actual_mess_seats": 0,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank."
+  },
+  {
+    "id": "L_ThirdWash",
+    "name": "Third-class washroom and pantry",
+    "deck": "lower",
+    "kind": "third_wash",
+    "bounds": [
+      63.4,
+      70.0,
+      -2.4,
+      2.4
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 31.68,
+    "source_objects": [
+      "Furniture_L_ThirdWash"
+    ],
+    "components": {
+      "HighCisternWC": 5,
+      "BowlJugWashstand": 5
+    },
+    "triangles": 10262,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Fitted purpose-specific shelving/storage, office/chart/wash/medical equipment and incandescent lighting."
+  },
+  {
+    "id": "L_CrewP",
+    "name": "Stokers and trimmers port quarters",
+    "deck": "lower",
+    "kind": "dorm_crew",
+    "bounds": [
+      -27.7,
+      -10.0,
+      5.6,
+      7.8
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 38.94,
+    "source_objects": [
+      "Furniture_L_CrewP"
+    ],
+    "components": {
+      "TwoBerthBunk": 7
+    },
+    "triangles": 8462,
+    "nominal_berths": 40,
+    "actual_berths": 14,
+    "actual_mess_seats": 0,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank."
+  },
+  {
+    "id": "L_CrewS",
+    "name": "Stewards starboard quarters",
+    "deck": "lower",
+    "kind": "dorm_crew",
+    "bounds": [
+      -27.7,
+      -10.0,
+      -7.8,
+      -5.6
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 38.94,
+    "source_objects": [
+      "Furniture_L_CrewS"
+    ],
+    "components": {
+      "TwoBerthBunk": 7
+    },
+    "triangles": 8462,
+    "nominal_berths": 40,
+    "actual_berths": 14,
+    "actual_mess_seats": 0,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank."
+  },
+  {
+    "id": "L_AfterStore",
+    "name": "After linen and provision store",
+    "deck": "lower",
+    "kind": "store",
+    "bounds": [
+      -70.0,
+      -60.0,
+      -2.1,
+      2.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 42.0,
+    "source_objects": [
+      "Furniture_L_AfterStore"
+    ],
+    "components": {
+      "ProvisionShelving": 10
+    },
+    "triangles": 11156,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Fitted purpose-specific shelving/storage, office/chart/wash/medical equipment and incandescent lighting."
+  },
+  {
+    "id": "O_ThirdF",
+    "name": "Lower forward steerage",
+    "deck": "orlop",
+    "kind": "dorm_third",
+    "bounds": [
+      38.0,
+      62.0,
+      -4.1,
+      4.1
+    ],
+    "z": 2.35,
+    "top": 5.1,
+    "floor_area_m2": 196.8,
+    "source_objects": [
+      "Furniture_O_ThirdF_01",
+      "Furniture_O_ThirdF_02",
+      "Furniture_O_ThirdF_03"
+    ],
+    "components": {
+      "TwoBerthBunk": 40,
+      "TurnedDiningTable": 1,
+      "SteerageMessTable": 1
+    },
+    "triangles": 39438,
+    "nominal_berths": 144,
+    "actual_berths": 80,
+    "actual_mess_seats": 0,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank."
+  },
+  {
+    "id": "O_ThirdAP",
+    "name": "After baggage and sail store port",
+    "deck": "orlop",
+    "kind": "store",
+    "bounds": [
+      -66.0,
+      -55.0,
+      1.6,
+      3.0
+    ],
+    "z": 2.35,
+    "top": 5.1,
+    "floor_area_m2": 15.4,
+    "source_objects": [
+      "Furniture_O_ThirdAP"
+    ],
+    "components": {
+      "ProvisionShelving": 6
+    },
+    "triangles": 7188,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Fitted purpose-specific shelving/storage, office/chart/wash/medical equipment and incandescent lighting."
+  },
+  {
+    "id": "O_ThirdAS",
+    "name": "After baggage and sail store starboard",
+    "deck": "orlop",
+    "kind": "store",
+    "bounds": [
+      -66.0,
+      -55.0,
+      -3.0,
+      -1.6
+    ],
+    "z": 2.35,
+    "top": 5.1,
+    "floor_area_m2": 15.4,
+    "source_objects": [
+      "Furniture_O_ThirdAS"
+    ],
+    "components": {
+      "ProvisionShelving": 6
+    },
+    "triangles": 7188,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Fitted purpose-specific shelving/storage, office/chart/wash/medical equipment and incandescent lighting."
+  },
+  {
+    "id": "O_CrewP",
+    "name": "Lower crew mess and berths port",
+    "deck": "orlop",
+    "kind": "dorm_crew",
+    "bounds": [
+      -52.0,
+      -31.0,
+      1.6,
+      5.1
+    ],
+    "z": 2.35,
+    "top": 5.1,
+    "floor_area_m2": 73.5,
+    "source_objects": [
+      "Furniture_O_CrewP"
+    ],
+    "components": {
+      "TwoBerthBunk": 16,
+      "TurnedDiningTable": 1,
+      "CrewMessAlcove": 1
+    },
+    "triangles": 17382,
+    "nominal_berths": 40,
+    "actual_berths": 32,
+    "actual_mess_seats": 2,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank. Two-seat table/bench mess alcove in the berth-free entrance bay."
+  },
+  {
+    "id": "O_CrewS",
+    "name": "Lower crew mess and berths starboard",
+    "deck": "orlop",
+    "kind": "dorm_crew",
+    "bounds": [
+      -52.0,
+      -31.0,
+      -5.1,
+      -1.6
+    ],
+    "z": 2.35,
+    "top": 5.1,
+    "floor_area_m2": 73.5,
+    "source_objects": [
+      "Furniture_O_CrewS"
+    ],
+    "components": {
+      "TwoBerthBunk": 16,
+      "TurnedDiningTable": 1,
+      "CrewMessAlcove": 1
+    },
+    "triangles": 17382,
+    "nominal_berths": 41,
+    "actual_berths": 32,
+    "actual_mess_seats": 2,
+    "inventory": "Individually framed two-tier berths with mattress, pillow, blanket, retaining rails and ladders; continuous central aisle/cross aisles and drinking-water tank. Two-seat table/bench mess alcove in the berth-free entrance bay."
+  },
+  {
+    "id": "O_Hold",
+    "name": "Forward parcels hold and chain store",
+    "deck": "orlop",
+    "kind": "cargo",
+    "bounds": [
+      63.0,
+      70.0,
+      -2.2,
+      2.2
+    ],
+    "z": 2.35,
+    "top": 5.1,
+    "floor_area_m2": 30.8,
+    "source_objects": [
+      "Furniture_O_Hold"
+    ],
+    "components": {
+      "SlattedCargoCrate": 6,
+      "HoopedCargoBarrel": 4
+    },
+    "triangles": 17068,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Hollow slatted wooden crates with battens, iron straps, nail heads, rope handles and labels; hooped staved barrels and open stored-chain bin."
+  },
+  {
+    "id": "L_ThirdMess",
+    "name": "Third-class mess and baggage",
+    "deck": "lower",
+    "kind": "mess",
+    "bounds": [
+      70.3,
+      74.5,
+      -1.6,
+      1.6
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 13.44,
+    "source_objects": [
+      "Furniture_L_ThirdMess"
+    ],
+    "components": {
+      "TurnedDiningTable": 1,
+      "RevolvingChair": 4,
+      "PlaceSetting": 4,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 8024,
+    "nominal_berths": 0,
+    "actual_seats": 4,
+    "inventory": "Period upholstered seating, turned/revolving chairs, fitted tables/desks, meaningful tableware or writing implements; open bookcases / pianoforte / fireplace as appropriate."
+  },
+  {
+    "id": "S_ColdStore",
+    "name": "Ice room and refrigerated provision store",
+    "deck": "main",
+    "kind": "cold_store",
+    "bounds": [
+      40.5,
+      43.5,
+      -3.0,
+      3.0
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 18.0,
+    "source_objects": [
+      "Furniture_S_ColdStore"
+    ],
+    "components": {
+      "FoodProvisionRack": 1,
+      "InsulatedIceChest": 1
+    },
+    "triangles": 4338,
+    "nominal_berths": 0,
+    "actual_berths": 0,
+    "inventory": "Latched insulated ice chest with drain/catch pan, and separate racks of provision sacks and sealed ceramic jars; no powered refrigeration asserted."
+  },
+  {
+    "id": "A001",
+    "name": "First class cabin A001",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -51.78,
+      -49.22,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A001"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A002",
+    "name": "First class cabin A002",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -51.78,
+      -49.22,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A002"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A003",
+    "name": "First class cabin A003",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -49.06,
+      -46.5,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A003"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A004",
+    "name": "First class cabin A004",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -49.06,
+      -46.5,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A004"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A005",
+    "name": "First class cabin A005",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -46.34,
+      -43.78,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A005"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A006",
+    "name": "First class cabin A006",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -46.34,
+      -43.78,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A006"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A007",
+    "name": "First class cabin A007",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -43.620000000000005,
+      -41.06,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A007"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A008",
+    "name": "First class cabin A008",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -43.620000000000005,
+      -41.06,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A008"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A009",
+    "name": "First class cabin A009",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -40.900000000000006,
+      -38.34,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A009"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A010",
+    "name": "First class cabin A010",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -40.900000000000006,
+      -38.34,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A010"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A011",
+    "name": "First class cabin A011",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -38.18000000000001,
+      -35.620000000000005,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A011"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A012",
+    "name": "First class cabin A012",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -38.18000000000001,
+      -35.620000000000005,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A012"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A013",
+    "name": "First class cabin A013",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -38.18000000000001,
+      -35.620000000000005,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A013"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A014",
+    "name": "First class cabin A014",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -38.18000000000001,
+      -35.620000000000005,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A014"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A015",
+    "name": "First class cabin A015",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -35.46000000000001,
+      -32.900000000000006,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A015"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A016",
+    "name": "First class cabin A016",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -35.46000000000001,
+      -32.900000000000006,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A016"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A017",
+    "name": "First class cabin A017",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -35.46000000000001,
+      -32.900000000000006,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A017"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A018",
+    "name": "First class cabin A018",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -35.46000000000001,
+      -32.900000000000006,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A018"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A019",
+    "name": "First class cabin A019",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -32.74000000000001,
+      -30.18000000000001,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A019"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A020",
+    "name": "First class cabin A020",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -32.74000000000001,
+      -30.18000000000001,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A020"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A021",
+    "name": "First class cabin A021",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -32.74000000000001,
+      -30.18000000000001,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A021"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A022",
+    "name": "First class cabin A022",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -32.74000000000001,
+      -30.18000000000001,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A022"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A023",
+    "name": "First class cabin A023",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -30.02000000000001,
+      -27.46000000000001,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A023"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A024",
+    "name": "First class cabin A024",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -30.02000000000001,
+      -27.46000000000001,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A024"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A025",
+    "name": "First class cabin A025",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -27.30000000000001,
+      -24.740000000000013,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A025"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A026",
+    "name": "First class cabin A026",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -27.30000000000001,
+      -24.740000000000013,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A026"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A027",
+    "name": "First class cabin A027",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -24.580000000000013,
+      -22.020000000000014,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A027"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A028",
+    "name": "First class cabin A028",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -24.580000000000013,
+      -22.020000000000014,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A028"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A029",
+    "name": "First class cabin A029",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -21.860000000000014,
+      -19.300000000000015,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A029"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A030",
+    "name": "First class cabin A030",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -21.860000000000014,
+      -19.300000000000015,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A030"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A031",
+    "name": "First class cabin A031",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -19.140000000000015,
+      -16.580000000000016,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A031"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A032",
+    "name": "First class cabin A032",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -19.140000000000015,
+      -16.580000000000016,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A032"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A033",
+    "name": "First class cabin A033",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -16.420000000000016,
+      -13.860000000000015,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A033"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A034",
+    "name": "First class cabin A034",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -16.420000000000016,
+      -13.860000000000015,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A034"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A035",
+    "name": "First class cabin A035",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -13.700000000000017,
+      -11.140000000000017,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A035"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A036",
+    "name": "First class cabin A036",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -13.700000000000017,
+      -11.140000000000017,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A036"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A037",
+    "name": "First class cabin A037",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -10.980000000000018,
+      -8.420000000000018,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A037"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A038",
+    "name": "First class cabin A038",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      -10.980000000000018,
+      -8.420000000000018,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A038"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A039",
+    "name": "First class cabin A039",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      2.619999999999976,
+      5.179999999999977,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A039"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A040",
+    "name": "First class cabin A040",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      2.619999999999976,
+      5.179999999999977,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A040"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A041",
+    "name": "First class cabin A041",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      5.339999999999975,
+      7.8999999999999755,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A041"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A042",
+    "name": "First class cabin A042",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      5.339999999999975,
+      7.8999999999999755,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A042"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A043",
+    "name": "First class cabin A043",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      8.059999999999974,
+      10.619999999999974,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A043"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A044",
+    "name": "First class cabin A044",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      8.059999999999974,
+      10.619999999999974,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A044"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A045",
+    "name": "First class cabin A045",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      8.059999999999974,
+      10.619999999999974,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A045"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A046",
+    "name": "First class cabin A046",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      8.059999999999974,
+      10.619999999999974,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A046"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A047",
+    "name": "First class cabin A047",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      10.779999999999973,
+      13.339999999999973,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A047"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A048",
+    "name": "First class cabin A048",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      10.779999999999973,
+      13.339999999999973,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A048"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A049",
+    "name": "First class cabin A049",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      10.779999999999973,
+      13.339999999999973,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A049"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A050",
+    "name": "First class cabin A050",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      10.779999999999973,
+      13.339999999999973,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A050"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A051",
+    "name": "First class cabin A051",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      13.499999999999972,
+      16.05999999999997,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A051"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A052",
+    "name": "First class cabin A052",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      13.499999999999972,
+      16.05999999999997,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A052"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A053",
+    "name": "First class cabin A053",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      13.499999999999972,
+      16.05999999999997,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A053"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A054",
+    "name": "First class cabin A054",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      13.499999999999972,
+      16.05999999999997,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A054"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A055",
+    "name": "First class cabin A055",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      16.21999999999997,
+      18.77999999999997,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A055"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A056",
+    "name": "First class cabin A056",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      16.21999999999997,
+      18.77999999999997,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A056"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A057",
+    "name": "First class cabin A057",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      16.21999999999997,
+      18.77999999999997,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A057"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A058",
+    "name": "First class cabin A058",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      16.21999999999997,
+      18.77999999999997,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A058"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A059",
+    "name": "First class cabin A059",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      18.93999999999997,
+      21.499999999999968,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A059"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A060",
+    "name": "First class cabin A060",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      18.93999999999997,
+      21.499999999999968,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A060"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A061",
+    "name": "First class cabin A061",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      18.93999999999997,
+      21.499999999999968,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A061"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A062",
+    "name": "First class cabin A062",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      18.93999999999997,
+      21.499999999999968,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A062"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A063",
+    "name": "First class cabin A063",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      21.659999999999968,
+      24.219999999999967,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A063"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A064",
+    "name": "First class cabin A064",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      21.659999999999968,
+      24.219999999999967,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A064"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A065",
+    "name": "First class cabin A065",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      21.659999999999968,
+      24.219999999999967,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A065"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A066",
+    "name": "First class cabin A066",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      21.659999999999968,
+      24.219999999999967,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A066"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A067",
+    "name": "First class cabin A067",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      24.379999999999967,
+      26.939999999999966,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A067"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A068",
+    "name": "First class cabin A068",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      24.379999999999967,
+      26.939999999999966,
+      -3.1,
+      -0.2
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A068"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A069",
+    "name": "First class cabin A069",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      24.379999999999967,
+      26.939999999999966,
+      0.2,
+      3.1
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A069"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A070",
+    "name": "First class cabin A070",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      24.379999999999967,
+      26.939999999999966,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A070"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A071",
+    "name": "First class cabin A071",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      27.099999999999966,
+      29.659999999999965,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A071"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A072",
+    "name": "First class cabin A072",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      27.099999999999966,
+      29.659999999999965,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A072"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A073",
+    "name": "First class cabin A073",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      29.819999999999965,
+      32.37999999999997,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A073"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A074",
+    "name": "First class cabin A074",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      29.819999999999965,
+      32.37999999999997,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A074"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A075",
+    "name": "First class cabin A075",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      32.539999999999964,
+      35.099999999999966,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A075"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A076",
+    "name": "First class cabin A076",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      32.539999999999964,
+      35.099999999999966,
+      4.55,
+      7.45
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A076"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "A077",
+    "name": "First class cabin A077",
+    "deck": "main",
+    "kind": "cabin_first",
+    "bounds": [
+      35.25999999999996,
+      37.819999999999965,
+      -7.45,
+      -4.55
+    ],
+    "z": 8.8,
+    "top": 11.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_A077"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U001",
+    "name": "First class cabin U001",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      37.0,
+      39.56,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U001"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U002",
+    "name": "First class cabin U002",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      37.0,
+      39.56,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U002"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U003",
+    "name": "First class cabin U003",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      39.72,
+      42.28,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U003"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U004",
+    "name": "First class cabin U004",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      39.72,
+      42.28,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U004"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U005",
+    "name": "First class cabin U005",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      42.44,
+      45.0,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U005"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U006",
+    "name": "First class cabin U006",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      42.44,
+      45.0,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U006"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U007",
+    "name": "First class cabin U007",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      45.16,
+      47.72,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U007"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U008",
+    "name": "First class cabin U008",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      45.16,
+      47.72,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U008"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U009",
+    "name": "First class cabin U009",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      47.879999999999995,
+      50.44,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U009"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U010",
+    "name": "First class cabin U010",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      47.879999999999995,
+      50.44,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U010"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U011",
+    "name": "First class cabin U011",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      50.599999999999994,
+      53.16,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U011"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "U012",
+    "name": "First class cabin U012",
+    "deck": "saloon",
+    "kind": "cabin_first",
+    "bounds": [
+      50.599999999999994,
+      53.16,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_U012"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "P001",
+    "name": "First class cabin P001",
+    "deck": "promenade",
+    "kind": "cabin_first",
+    "bounds": [
+      37.0,
+      39.56,
+      -3.1,
+      -0.2
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_P001"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "P002",
+    "name": "First class cabin P002",
+    "deck": "promenade",
+    "kind": "cabin_first",
+    "bounds": [
+      37.0,
+      39.56,
+      0.2,
+      3.1
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_P002"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "P003",
+    "name": "First class cabin P003",
+    "deck": "promenade",
+    "kind": "cabin_first",
+    "bounds": [
+      39.72,
+      42.28,
+      -3.1,
+      -0.2
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_P003"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "P004",
+    "name": "First class cabin P004",
+    "deck": "promenade",
+    "kind": "cabin_first",
+    "bounds": [
+      39.72,
+      42.28,
+      0.2,
+      3.1
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_P004"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "P005",
+    "name": "First class cabin P005",
+    "deck": "promenade",
+    "kind": "cabin_first",
+    "bounds": [
+      42.44,
+      45.0,
+      -3.1,
+      -0.2
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_P005"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "P006",
+    "name": "First class cabin P006",
+    "deck": "promenade",
+    "kind": "cabin_first",
+    "bounds": [
+      42.44,
+      45.0,
+      0.2,
+      3.1
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_P006"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "P007",
+    "name": "First class cabin P007",
+    "deck": "promenade",
+    "kind": "cabin_first",
+    "bounds": [
+      45.16,
+      47.72,
+      -3.1,
+      -0.2
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_P007"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "P008",
+    "name": "First class cabin P008",
+    "deck": "promenade",
+    "kind": "cabin_first",
+    "bounds": [
+      45.16,
+      47.72,
+      0.2,
+      3.1
+    ],
+    "z": 14.4,
+    "top": 17.08,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_P008"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First098",
+    "name": "First-class deck cabin 98",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -54.2,
+      -51.480000000000004,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First098"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First099",
+    "name": "First-class deck cabin 99",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -54.2,
+      -51.480000000000004,
+      -3.5,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First099"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First100",
+    "name": "First-class deck cabin 100",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -51.300000000000004,
+      -48.580000000000005,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First100"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First101",
+    "name": "First-class deck cabin 101",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -51.300000000000004,
+      -48.580000000000005,
+      -3.5,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First101"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First102",
+    "name": "First-class deck cabin 102",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -48.400000000000006,
+      -45.68000000000001,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First102"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First103",
+    "name": "First-class deck cabin 103",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -48.400000000000006,
+      -45.68000000000001,
+      -3.5,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First103"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First104",
+    "name": "First-class deck cabin 104",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -45.50000000000001,
+      -42.78000000000001,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First104"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First105",
+    "name": "First-class deck cabin 105",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -45.50000000000001,
+      -42.78000000000001,
+      -3.5,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First105"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First106",
+    "name": "First-class deck cabin 106",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -42.60000000000001,
+      -39.88000000000001,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First106"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First107",
+    "name": "First-class deck cabin 107",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -42.60000000000001,
+      -39.88000000000001,
+      -3.5,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First107"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First108",
+    "name": "First-class deck cabin 108",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -39.70000000000001,
+      -36.98000000000001,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First108"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First109",
+    "name": "First-class deck cabin 109",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -39.70000000000001,
+      -36.98000000000001,
+      -3.5,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First109"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First110",
+    "name": "First-class deck cabin 110",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -36.80000000000001,
+      -34.08000000000001,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First110"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First111",
+    "name": "First-class deck cabin 111",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -36.80000000000001,
+      -34.08000000000001,
+      -3.5,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First111"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First112",
+    "name": "First-class deck cabin 112",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -33.90000000000001,
+      -31.180000000000014,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First112"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First113",
+    "name": "First-class deck cabin 113",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -33.90000000000001,
+      -31.180000000000014,
+      -3.5,
+      -0.8
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First113"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "B_First114",
+    "name": "First-class deck cabin 114",
+    "deck": "boat",
+    "kind": "cabin_first",
+    "bounds": [
+      -31.000000000000014,
+      -28.280000000000015,
+      0.8,
+      3.5
+    ],
+    "z": 17.2,
+    "top": 19.88,
+    "floor_area_m2": 7.34,
+    "source_objects": [
+      "Furniture_B_First114"
+    ],
+    "components": {
+      "Mattress": 1,
+      "Pillow": 1,
+      "SingleBerth": 1,
+      "RolledArmSettee": 1,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 4858,
+    "nominal_berths": 2,
+    "actual_berths": 2,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C001",
+    "name": "Second class cabin C001",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -58.0,
+      -55.44,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C001"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C002",
+    "name": "Second class cabin C002",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -58.0,
+      -55.44,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C002"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C003",
+    "name": "Second class cabin C003",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -55.28,
+      -52.72,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C003"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C004",
+    "name": "Second class cabin C004",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -55.28,
+      -52.72,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C004"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C005",
+    "name": "Second class cabin C005",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -52.56,
+      -50.0,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C005"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C006",
+    "name": "Second class cabin C006",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -52.56,
+      -50.0,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C006"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C007",
+    "name": "Second class cabin C007",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -49.84,
+      -47.28,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C007"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C008",
+    "name": "Second class cabin C008",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -49.84,
+      -47.28,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C008"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C009",
+    "name": "Second class cabin C009",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -47.120000000000005,
+      -44.56,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C009"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C010",
+    "name": "Second class cabin C010",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -47.120000000000005,
+      -44.56,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C010"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C011",
+    "name": "Second class cabin C011",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -44.400000000000006,
+      -41.84,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C011"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C012",
+    "name": "Second class cabin C012",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -44.400000000000006,
+      -41.84,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C012"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C013",
+    "name": "Second class cabin C013",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -41.68000000000001,
+      -39.120000000000005,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C013"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C014",
+    "name": "Second class cabin C014",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -41.68000000000001,
+      -39.120000000000005,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C014"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C015",
+    "name": "Second class cabin C015",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -38.96000000000001,
+      -36.400000000000006,
+      -7.45,
+      -4.55
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C015"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C016",
+    "name": "Second class cabin C016",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -38.96000000000001,
+      -36.400000000000006,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C016"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C017",
+    "name": "Second class cabin C017",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -38.96000000000001,
+      -36.400000000000006,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C017"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C018",
+    "name": "Second class cabin C018",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -38.96000000000001,
+      -36.400000000000006,
+      4.55,
+      7.45
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C018"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C019",
+    "name": "Second class cabin C019",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -36.24000000000001,
+      -33.68000000000001,
+      -7.45,
+      -4.55
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C019"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C020",
+    "name": "Second class cabin C020",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -36.24000000000001,
+      -33.68000000000001,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C020"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C021",
+    "name": "Second class cabin C021",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -36.24000000000001,
+      -33.68000000000001,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C021"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C022",
+    "name": "Second class cabin C022",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -36.24000000000001,
+      -33.68000000000001,
+      4.55,
+      7.45
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C022"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C023",
+    "name": "Second class cabin C023",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -33.52000000000001,
+      -30.96000000000001,
+      -7.45,
+      -4.55
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C023"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C024",
+    "name": "Second class cabin C024",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -33.52000000000001,
+      -30.96000000000001,
+      -3.1,
+      -0.2
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C024"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C025",
+    "name": "Second class cabin C025",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -33.52000000000001,
+      -30.96000000000001,
+      0.2,
+      3.1
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C025"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "C026",
+    "name": "Second class cabin C026",
+    "deck": "lower",
+    "kind": "cabin_second",
+    "bounds": [
+      -33.52000000000001,
+      -30.96000000000001,
+      4.55,
+      7.45
+    ],
+    "z": 5.2,
+    "top": 8.68,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_C026"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "D001",
+    "name": "Second class cabin D001",
+    "deck": "saloon",
+    "kind": "cabin_second",
+    "bounds": [
+      -70.3,
+      -67.74,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_D001"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "D002",
+    "name": "Second class cabin D002",
+    "deck": "saloon",
+    "kind": "cabin_second",
+    "bounds": [
+      -70.3,
+      -67.74,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_D002"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "D003",
+    "name": "Second class cabin D003",
+    "deck": "saloon",
+    "kind": "cabin_second",
+    "bounds": [
+      -67.58,
+      -65.02,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_D003"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "D004",
+    "name": "Second class cabin D004",
+    "deck": "saloon",
+    "kind": "cabin_second",
+    "bounds": [
+      -67.58,
+      -65.02,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_D004"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "D005",
+    "name": "Second class cabin D005",
+    "deck": "saloon",
+    "kind": "cabin_second",
+    "bounds": [
+      -64.86,
+      -62.3,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_D005"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "D006",
+    "name": "Second class cabin D006",
+    "deck": "saloon",
+    "kind": "cabin_second",
+    "bounds": [
+      -64.86,
+      -62.3,
+      0.2,
+      3.1
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_D006"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "D007",
+    "name": "Second class cabin D007",
+    "deck": "saloon",
+    "kind": "cabin_second",
+    "bounds": [
+      -62.14,
+      -59.58,
+      -3.1,
+      -0.2
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 7.42,
+    "source_objects": [
+      "Furniture_D007"
+    ],
+    "components": {
+      "TwoBerthBunk": 2,
+      "BowlJugWashstand": 1,
+      "PanelledWardrobe": 1
+    },
+    "triangles": 3766,
+    "nominal_berths": 4,
+    "actual_berths": 4,
+    "inventory": "Iron/brass bedstead or two-tier berths; upholstered convertible berth where scheduled; panelled wardrobe, bowl/jug washstand, mirror, bell push and incandescent pendant."
+  },
+  {
+    "id": "S_Steering",
+    "name": "Steam steering and emergency tiller",
+    "deck": "saloon",
+    "kind": "steering",
+    "bounds": [
+      -80.0,
+      -74.4,
+      -1.5,
+      1.5
+    ],
+    "z": 11.8,
+    "top": 14.28,
+    "floor_area_m2": 16.8,
+    "triangles": 2312,
+    "inventory": "Steam steering engines, connected worm shaft/quadrant, rudder stock/pintles and emergency hand tiller.",
+    "components": {
+      "Steering_SteamSupply": 1,
+      "Steering_Exhaust_Return": 1
+    }
+  },
+  {
+    "id": "E_Engine",
+    "name": "Triple-expansion engine room",
+    "kind": "machinery",
+    "deck": "machinery",
+    "bounds": [
+      -28.0,
+      -9.7,
+      -5.1,
+      5.1
+    ],
+    "z": 1.6,
+    "top": 8.6,
+    "floor_area_m2": 186.66,
+    "inventory": "Cast bedplate, bearing blocks, three graduated cylinders, A-frame standards, crosshead guides, three-throw crankshaft, piston/conrods, separate eccentric/valve links, control gauges, connected receivers and working platforms.",
+    "triangles": 29924
+  },
+  {
+    "id": "E_Boilers_A",
+    "name": "After stokehold",
+    "kind": "machinery",
+    "deck": "machinery",
+    "bounds": [
+      -2.8,
+      9.0,
+      -6.9,
+      6.9
+    ],
+    "z": 1.6,
+    "top": 8.6,
+    "floor_area_m2": 162.84,
+    "inventory": "Three single-ended Scotch boilers, four dished furnace doors each, ashdoors, gauges, water columns, stay bolts, saddles, safety valves, connected steam/feed/flue branches, coal shutters and fire tools.",
+    "triangles": 22170
+  },
+  {
+    "id": "E_Boilers_M",
+    "name": "Middle stokehold",
+    "kind": "machinery",
+    "deck": "machinery",
+    "bounds": [
+      9.4,
+      21.8,
+      -6.9,
+      6.9
+    ],
+    "z": 1.6,
+    "top": 8.6,
+    "floor_area_m2": 171.12,
+    "inventory": "Three single-ended Scotch boilers with full furnace fittings, connected steam/feed/flue branches and a clear stoke aisle.",
+    "triangles": 22170
+  },
+  {
+    "id": "E_Boilers_F",
+    "name": "Forward stokehold",
+    "kind": "machinery",
+    "deck": "machinery",
+    "bounds": [
+      22.2,
+      35.5,
+      -6.9,
+      6.9
+    ],
+    "z": 1.6,
+    "top": 8.6,
+    "floor_area_m2": 183.54,
+    "inventory": "Three single-ended Scotch boilers, connected forward-funnel uptake, feed/steam headers and furnace fittings.",
+    "triangles": 22170
+  },
+  {
+    "id": "E_Dynamos",
+    "name": "Dynamos and electrical workshop",
+    "kind": "machinery",
+    "deck": "machinery",
+    "bounds": [
+      -9.4,
+      -3.4,
+      -5.5,
+      -2.65
+    ],
+    "z": 1.6,
+    "top": 8.6,
+    "floor_area_m2": 17.1,
+    "inventory": "Two period dynamo housings, copper windings/commutators, slate switchboards, analog instruments, knife switches and workshop bench/vice.",
+    "triangles": 0
+  },
+  {
+    "id": "E_Pumps",
+    "name": "Feed and circulating pump flat",
+    "kind": "machinery",
+    "deck": "machinery",
+    "bounds": [
+      -9.4,
+      -3.4,
+      2.65,
+      5.5
+    ],
+    "z": 1.6,
+    "top": 8.6,
+    "floor_area_m2": 17.1,
+    "inventory": "Reciprocating feed pumps, hotwell and sea circulation/feed/condensate connections.",
+    "triangles": 0
+  },
+  {
+    "id": "E_Alley",
+    "name": "Watertight shaft alley",
+    "kind": "machinery",
+    "deck": "machinery",
+    "bounds": [
+      -70.0,
+      -28.2,
+      -1.5,
+      1.5
+    ],
+    "z": 1.6,
+    "top": 4.7,
+    "floor_area_m2": 125.4,
+    "inventory": "Aligned shaft segments/couplings, thrust collars/bearings, stern tube, guard rails, lamps, service-steam main and elevated accommodation-side access.",
+    "triangles": 7244
+  }
+]

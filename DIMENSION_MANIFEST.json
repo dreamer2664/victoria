@@ -1,344 +1,375 @@
 {
   "schema": "victoria.dimension_manifest",
-  "version": "1.0",
-  "generated": "2026-11-15",
-  "ship": "Aurelian",
-  "note": "Every dimension the model uses, with the file it comes from and the basis for it.  'computed' means derived from the hull form by hull.hydrostatics(); 'design choice' means an engineering decision inside the historical band, justified in HISTORICAL_EVIDENCE.md.",
+  "version": "2.0",
+  "generation": "LEONIDAS-II",
+  "generated": "2026-11-16",
+  "ship": "SS Aurelian",
+  "fictional": true,
+  "canonical_interface": "interfaces/leonidas_ii_ship.json",
+  "legacy_manifest": "docs/leonidas_ii/inspection/INHERITED_DIMENSION_MANIFEST.json",
+  "note": "Supersedes the root legacy entry point only. Original interfaces/ship_spec.json and generators are retained unchanged as provenance; do not mix their machinery/deck values with this generation.",
   "dimensions": [
     {
-      "dimension": "length overall",
+      "dimension": "loa",
       "value": 166.0,
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice, within the 1884-89 express-liner band"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "preserved principal envelope; not a measured historical vessel"
     },
     {
-      "dimension": "length between perpendiculars",
+      "dimension": "lbp",
       "value": 158.0,
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "preserved principal envelope; not a measured historical vessel"
     },
     {
-      "dimension": "length on waterline",
-      "value": 159.5,
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice"
-    },
-    {
-      "dimension": "beam moulded",
+      "dimension": "beam",
       "value": 18.4,
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice; Teutonic 17.43 m, Umbria 17.43 m"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "preserved principal envelope; not a measured historical vessel"
     },
     {
-      "dimension": "depth moulded",
-      "value": 11.8,
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice"
-    },
-    {
-      "dimension": "draft design",
+      "dimension": "draft",
       "value": 6.5,
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "preserved principal envelope; not a measured historical vessel"
     },
     {
-      "dimension": "block coefficient",
-      "value": 0.6937,
-      "unit": "-",
-      "source": "shipdesign/hull.py (computed hydrostatics)",
-      "basis": "computed from the midship sections and the ends"
+      "dimension": "metres per Roblox stud",
+      "value": 0.28,
+      "unit": "m/stud",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "shared project scale; apply once after metric GLB import"
     },
     {
-      "dimension": "midship area coefficient",
-      "value": 0.9183,
-      "unit": "-",
-      "source": "shipdesign/hull.py (computed hydrostatics)",
-      "basis": "computed"
-    },
-    {
-      "dimension": "prismatic coefficient",
-      "value": 0.7554,
-      "unit": "-",
-      "source": "shipdesign/hull.py (computed hydrostatics)",
-      "basis": "computed"
-    },
-    {
-      "dimension": "waterplane coefficient",
-      "value": 0.7497,
-      "unit": "-",
-      "source": "shipdesign/hull.py (computed hydrostatics)",
-      "basis": "computed"
-    },
-    {
-      "dimension": "displacement",
-      "value": 13481.9768,
-      "unit": "t",
-      "source": "shipdesign/hull.py (computed hydrostatics)",
-      "basis": "computed; target 13,600 t from Umbria's 13,300 t"
-    },
-    {
-      "dimension": "lightship",
-      "value": 9950,
-      "unit": "t",
-      "source": "shipdesign/spec.py",
-      "basis": "displacement less deadweight"
-    },
-    {
-      "dimension": "gross tonnage",
-      "value": 8480,
-      "unit": "GRT",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice; Teutonic 9,984, Umbria 7,718"
-    },
-    {
-      "dimension": "coal capacity",
-      "value": 1450,
-      "unit": "t",
-      "source": "shipdesign/spec.py",
-      "basis": "36 h at full power + 25% reserve"
-    },
-    {
-      "dimension": "coal per day at service",
-      "value": 108,
-      "unit": "t",
-      "source": "shipdesign/spec.py",
-      "basis": "9 boilers x 4 furnaces, period specific consumption"
-    },
-    {
-      "dimension": "service speed",
-      "value": 19.3,
-      "unit": "kn",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice; Teutonic 19.5, Umbria 19"
-    },
-    {
-      "dimension": "indicated horsepower",
-      "value": 14000,
-      "unit": "IHP",
-      "source": "shipdesign/spec.py",
-      "basis": "design choice; Umbria 14,500"
-    },
-    {
-      "dimension": "revolutions",
-      "value": 62,
-      "unit": "rpm",
-      "source": "shipdesign/spec.py",
-      "basis": "period practice for a 5.3 m propeller at 19.3 kn"
-    },
-    {
-      "dimension": "cylinder diameters (HP/IP/LP)",
-      "value": [
-        0.965,
-        1.575,
-        2.565
-      ],
+      "dimension": "orlop deck above baseline",
+      "value": 2.35,
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "triple-expansion ratio 1 : 1.63 : 2.66"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
     },
     {
-      "dimension": "stroke",
-      "value": 1.295,
+      "dimension": "lower deck above baseline",
+      "value": 5.2,
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "period practice, stroke ~= 0.5 x LP bore"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
     },
     {
-      "dimension": "boiler pressure",
-      "value": 11.0,
-      "unit": "bar",
-      "source": "shipdesign/spec.py",
-      "basis": "1889 practice, 150-165 lb/in2"
+      "dimension": "main deck above baseline",
+      "value": 8.8,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "saloon deck above baseline",
+      "value": 11.8,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "promenade deck above baseline",
+      "value": 14.4,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "boat deck above baseline",
+      "value": 17.2,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "bridge deck above baseline",
+      "value": 20.0,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "shaft centre above baseline",
+      "value": 3.0,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "propeller plane X",
+      "value": -78.0,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "rudder stock X",
+      "value": -79.5,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
     },
     {
       "dimension": "propeller diameter",
       "value": 5.3,
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "limited by 6.5 m draft and the aperture"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
     },
     {
       "dimension": "propeller pitch",
-      "value": 6.9,
+      "value": 9.4,
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "1.30 x diameter, giving 12% slip at 62 rpm"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
     },
     {
-      "dimension": "shaft diameter",
-      "value": 0.46,
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "period rule for 14,000 IHP"
+      "dimension": "nominal signed ahead shaft speed",
+      "value": 72.0,
+      "unit": "rpm",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "kinematic gameplay target, not a power or sea-trial result"
     },
     {
-      "dimension": "rudder area",
-      "value": 17.0,
-      "unit": "m2",
-      "source": "shipdesign/spec.py",
-      "basis": "1/60 to 1/70 of the immersed lateral area"
-    },
-    {
-      "dimension": "frame spacing",
-      "value": 0.9144,
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "3 ft, the standard British practice"
-    },
-    {
-      "dimension": "number of frames",
-      "value": 173,
+      "dimension": "nominal advance ratio",
+      "value": 0.88,
       "unit": "-",
-      "source": "shipdesign/spec.py",
-      "basis": "LBP / frame spacing"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "gameplay approximation, not measured slip"
     },
     {
-      "dimension": "shell plate thickness",
-      "value": 19.0,
-      "unit": "mm",
-      "source": "shipdesign/spec.py",
-      "basis": "Lloyd's 1887 rules for a vessel of this size"
+      "dimension": "kinematic target speed",
+      "value": 19.295,
+      "unit": "kn",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "rpm \u00d7 pitch \u00d7 advance ratio, not a resistance result"
     },
     {
-      "dimension": "strake width",
-      "value": 1.83,
+      "dimension": "HP/IP/LP bores",
+      "value": [
+        1.4,
+        2.25,
+        3.5
+      ],
       "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "6 ft plates"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
     },
     {
-      "dimension": "watertight bulkheads",
-      "value": 14,
+      "dimension": "stroke",
+      "value": 1.8,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "connecting rod pin distance",
+      "value": 3.0,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "engine cylinder X stations",
+      "value": [
+        -11.5,
+        -16.0,
+        -21.0
+      ],
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "boiler X rows",
+      "value": [
+        3.0,
+        15.5,
+        28.0
+      ],
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "boiler Y stations",
+      "value": [
+        -4.4,
+        0.0,
+        4.4
+      ],
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "funnel base X stations",
+      "value": [
+        4.5,
+        30.0
+      ],
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "boiler diameter",
+      "value": 4.2,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "boiler barrel length",
+      "value": 3.35,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional reconstruction design choice"
+    },
+    {
+      "dimension": "target boiler working pressure",
+      "value": 11,
+      "unit": "bar",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "fictional design target; pressure-vessel/steam balance unverified"
+    },
+    {
+      "dimension": "numerical hull volume_m3",
+      "value": 13160.49,
+      "unit": "m3",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "numerical section integration, no stability/strength/resistance certification"
+    },
+    {
+      "dimension": "numerical hull saltwater_displacement_t",
+      "value": 13489.5,
+      "unit": "t",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "numerical section integration, no stability/strength/resistance certification"
+    },
+    {
+      "dimension": "numerical hull lcb_m_forward",
+      "value": 2.396,
+      "unit": "m",
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "numerical section integration, no stability/strength/resistance certification"
+    },
+    {
+      "dimension": "numerical hull cb_lbp",
+      "value": 0.6964,
       "unit": "-",
-      "source": "shipdesign/layout.py",
-      "basis": "10-12 period practice; 14 including the collision bulkheads"
-    },
-    {
-      "dimension": "deck height: Inner Bottom / Tank Top",
-      "value": 1.3,
-      "unit": "m",
-      "source": "shipdesign/layout.py",
-      "basis": "design choice, sheer and storey heights"
-    },
-    {
-      "dimension": "deck height: Lower (Orlop) Deck",
-      "value": 5.2,
-      "unit": "m",
-      "source": "shipdesign/layout.py",
-      "basis": "design choice, sheer and storey heights"
-    },
-    {
-      "dimension": "deck height: Main Deck",
-      "value": 8.8,
-      "unit": "m",
-      "source": "shipdesign/layout.py",
-      "basis": "design choice, sheer and storey heights"
-    },
-    {
-      "dimension": "deck height: Saloon Deck",
-      "value": 11.8,
-      "unit": "m",
-      "source": "shipdesign/layout.py",
-      "basis": "design choice, sheer and storey heights"
-    },
-    {
-      "dimension": "deck height: Promenade Deck",
-      "value": 14.4,
-      "unit": "m",
-      "source": "shipdesign/layout.py",
-      "basis": "design choice, sheer and storey heights"
-    },
-    {
-      "dimension": "deck height: Boat Deck",
-      "value": 17.2,
-      "unit": "m",
-      "source": "shipdesign/layout.py",
-      "basis": "design choice, sheer and storey heights"
-    },
-    {
-      "dimension": "deck height: Bridge Deck",
-      "value": 18.6,
-      "unit": "m",
-      "source": "shipdesign/layout.py",
-      "basis": "design choice, sheer and storey heights"
-    },
-    {
-      "dimension": "funnel position/diameter",
-      "value": {
-        "x_m": 30.0,
-        "diameter_m": 3.6,
-        "top_m": 30.6
-      },
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "rakes clear of the bridge; each rises through its own casing"
-    },
-    {
-      "dimension": "funnel position/diameter",
-      "value": {
-        "x_m": 4.5,
-        "diameter_m": 3.6,
-        "top_m": 30.6
-      },
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "rakes clear of the bridge; each rises through its own casing"
-    },
-    {
-      "dimension": "mast foremast",
-      "value": {
-        "x_m": 70.0,
-        "height_m": 24.0,
-        "diameter_m": 0.55
-      },
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "stepped on a bulkhead or in a trunked vestibule"
-    },
-    {
-      "dimension": "mast mainmast",
-      "value": {
-        "x_m": 8.5,
-        "height_m": 27.0,
-        "diameter_m": 0.62
-      },
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "stepped on a bulkhead or in a trunked vestibule"
-    },
-    {
-      "dimension": "mast mizzenmast",
-      "value": {
-        "x_m": -45.6,
-        "height_m": 21.0,
-        "diameter_m": 0.48
-      },
-      "unit": "m",
-      "source": "shipdesign/spec.py",
-      "basis": "stepped on a bulkhead or in a trunked vestibule"
-    },
-    {
-      "dimension": "Roblox scale",
-      "value": 0.28,
-      "unit": "m/stud",
-      "source": "shipdesign/spec.py",
-      "basis": "documented Roblox conversion, 1 stud = 0.28 m"
-    },
-    {
-      "dimension": "stair riser / tread",
-      "value": {
-        "riser_m": 0.178,
-        "tread_m": 0.285
-      },
-      "unit": "m",
-      "source": "shipdesign/layout.py",
-      "basis": "period practice, 7 in riser / 11 in tread"
+      "source": "shipdesign/leonidas_ii.py",
+      "basis": "numerical section integration, no stability/strength/resistance certification"
     }
-  ]
+  ],
+  "coordinates": {
+    "authoring": {
+      "units": "metres",
+      "forward": "+X",
+      "port": "+Y",
+      "up": "+Z",
+      "origin": "midships / baseline"
+    },
+    "export": {
+      "units": "metres",
+      "forward": "-Z",
+      "up": "+Y",
+      "origin": "midships / load waterline",
+      "formula": "(-y,z-6.5,-x)",
+      "studs_per_m": 3.571428571428571,
+      "scale_in_studio_once": true
+    },
+    "roblox_dimensions_studs": {
+      "loa": 592.8571428571428,
+      "moulded_beam": 65.71428571428571,
+      "draft": 23.21428571428571
+    }
+  },
+  "actual_built_counts": {
+    "mesh_objects": 1422,
+    "triangles": 3300554,
+    "physical_compartments": 203,
+    "actual_first_berths": 228,
+    "actual_second_berths": 132,
+    "actual_third_berths": 268,
+    "actual_crew_berths": 117
+  },
+  "planning_targets_not_achieved": {
+    "passengers": 900,
+    "crew": 196
+  },
+  "boat_mounts": [
+    {
+      "id": "Steam_Cutter_Stbd",
+      "craft": "steam_cutter_1888",
+      "position": [
+        37.2,
+        -6.0,
+        17.8
+      ],
+      "required_swl_kg": 3900,
+      "fore_sling": 2.05,
+      "aft_sling": -1.55,
+      "cradles": [
+        [
+          1.6,
+          -0.506
+        ],
+        [
+          -1.6,
+          -0.509
+        ]
+      ]
+    },
+    {
+      "id": "Rowing_Cutter_Port",
+      "craft": "rowing_cutter_25ft",
+      "position": [
+        -34,
+        6.0,
+        17.66
+      ],
+      "required_swl_kg": 2100,
+      "fore_sling": 1.95,
+      "aft_sling": -1.6,
+      "cradles": [
+        [
+          1.55,
+          -0.375
+        ],
+        [
+          -1.55,
+          -0.376
+        ]
+      ]
+    },
+    {
+      "id": "Whaler_Port",
+      "craft": "whaler_27ft",
+      "position": [
+        -20,
+        6.0,
+        17.73
+      ],
+      "required_swl_kg": 1700,
+      "fore_sling": 1.85,
+      "aft_sling": -1.85,
+      "cradles": [
+        [
+          1.6,
+          -0.43
+        ],
+        [
+          -1.6,
+          -0.43
+        ]
+      ]
+    }
+  ],
+  "acceptance": "Roblox Studio import, avatar/multiplayer/performance, stability, safety and bilateral boat/port approval remain unverified. Three sockets are not the full eleven-boat inventory."
 }

@@ -1,0 +1,4171 @@
+{
+  "scope": "SOURCE_AND_CURRENT_EXPORT",
+  "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+  "validator_sha256": "2765d8bd4cf6d3d616214ad989e2246563d0db3dad1794092e1fd9336f1e0336",
+  "build_data_sha256": "dd7ae042f6833d11be117e43a68e8112dd3312cab5b828a62f52a549827b9189",
+  "game_manifest_sha256": "997f76bf8f16ec193c7c27f05aa80ee4b8feee4949c99da2cf5cdd9dfacf23c1",
+  "results": [
+    {
+      "test": "All planned compartments have an explicit inventory",
+      "status": "PASS",
+      "detail": 203
+    },
+    {
+      "test": "Unique object names",
+      "status": "PASS",
+      "detail": 1422
+    },
+    {
+      "test": "UV0 on every source mesh",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "Finite source bounds with positive extent on each axis",
+      "status": "PASS",
+      "detail": "Post-build object bounding boxes; not a positive signed-volume proof"
+    },
+    {
+      "test": "Compartment rectangles do not overlap",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "Stair escape footprints clear of cabin walls",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "Fixture geometry fits compartment envelope (100mm tolerance)",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "No substantial furniture-pair AABB overlap suspects",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "Built passenger and crew berths counted separately",
+      "status": "INFO",
+      "detail": {
+        "mesh_objects": 1422,
+        "triangles": 3300554,
+        "physical_compartments": 203,
+        "actual_first_berths": 228,
+        "actual_second_berths": 132,
+        "actual_third_berths": 268,
+        "actual_crew_berths": 117
+      }
+    },
+    {
+      "test": "Main conrod pin-to-crosshead distance over 2163 poses",
+      "status": "PASS",
+      "detail": 8.881784197001252e-16
+    },
+    {
+      "test": "Roblox axis transform / scale",
+      "status": "PASS",
+      "detail": {
+        "loa_studs": 592.8571428571428,
+        "beam_studs": 65.71428571428571,
+        "forward": "-Z",
+        "port": "-X",
+        "up": "+Y",
+        "load_waterline_y": 0
+      }
+    },
+    {
+      "test": "Propeller tip vs counter vertical clearance",
+      "status": "PASS",
+      "detail": 0.628
+    },
+    {
+      "test": "Kinematic target knots at nominal RPM",
+      "status": "INFO",
+      "detail": 19.295
+    },
+    {
+      "test": "Actual-collider local doorway passability, all doors open",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "Doorway joins deck largest walk component",
+      "status": "INFO",
+      "detail": [
+        {
+          "id": "O_ThirdAP",
+          "deck": "orlop",
+          "inside_clear": true,
+          "outside_clear": true,
+          "same_component": true,
+          "on_largest_component": false,
+          "inside": [
+            -60.5,
+            2.52
+          ],
+          "outside": [
+            -60.5,
+            3.48
+          ],
+          "component": 4
+        },
+        {
+          "id": "O_ThirdAS",
+          "deck": "orlop",
+          "inside_clear": true,
+          "outside_clear": true,
+          "same_component": true,
+          "on_largest_component": false,
+          "inside": [
+            -60.5,
+            -2.52
+          ],
+          "outside": [
+            -60.5,
+            -3.48
+          ],
+          "component": 3
+        },
+        {
+          "id": "O_CrewP",
+          "deck": "orlop",
+          "inside_clear": true,
+          "outside_clear": true,
+          "same_component": true,
+          "on_largest_component": false,
+          "inside": [
+            -41.5,
+            4.619999999999999
+          ],
+          "outside": [
+            -41.5,
+            5.58
+          ],
+          "component": 4
+        },
+        {
+          "id": "O_CrewS",
+          "deck": "orlop",
+          "inside_clear": true,
+          "outside_clear": true,
+          "same_component": true,
+          "on_largest_component": false,
+          "inside": [
+            -41.5,
+            -4.619999999999999
+          ],
+          "outside": [
+            -41.5,
+            -5.58
+          ],
+          "component": 3
+        },
+        {
+          "id": "L_ThirdWomen",
+          "deck": "lower",
+          "inside_clear": true,
+          "outside_clear": true,
+          "same_component": true,
+          "on_largest_component": false,
+          "inside": [
+            48.52,
+            0.0
+          ],
+          "outside": [
+            49.48,
+            0.0
+          ],
+          "component": 10
+        },
+        {
+          "id": "L_ThirdMen",
+          "deck": "lower",
+          "inside_clear": true,
+          "outside_clear": true,
+          "same_component": true,
+          "on_largest_component": false,
+          "inside": [
+            49.879999999999995,
+            0.0
+          ],
+          "outside": [
+            48.92,
+            0.0
+          ],
+          "component": 10
+        },
+        {
+          "id": "L_ThirdWash",
+          "deck": "lower",
+          "inside_clear": true,
+          "outside_clear": true,
+          "same_component": true,
+          "on_largest_component": false,
+          "inside": [
+            63.879999999999995,
+            0.0
+          ],
+          "outside": [
+            62.92,
+            0.0
+          ],
+          "component": 10
+        },
+        {
+          "id": "L_ThirdMess",
+          "deck": "lower",
+          "inside_clear": true,
+          "outside_clear": true,
+          "same_component": true,
+          "on_largest_component": false,
+          "inside": [
+            70.78,
+            0.0
+          ],
+          "outside": [
+            69.82,
+            0.0
+          ],
+          "component": 10
+        }
+      ]
+    },
+    {
+      "test": "Multideck component reachability from boarding landing",
+      "status": "PASS",
+      "detail": {
+        "unreachable": [],
+        "stair_endpoints": [
+          {
+            "id": "Grand_Main",
+            "from_component": [
+              "main",
+              1
+            ],
+            "to_component": [
+              "saloon",
+              2
+            ]
+          },
+          {
+            "id": "Grand_Upper",
+            "from_component": [
+              "saloon",
+              2
+            ],
+            "to_component": [
+              "promenade",
+              1
+            ]
+          },
+          {
+            "id": "Prom_To_Boat",
+            "from_component": [
+              "promenade",
+              1
+            ],
+            "to_component": [
+              "boat",
+              1
+            ]
+          },
+          {
+            "id": "Forward_Lower",
+            "from_component": [
+              "lower",
+              10
+            ],
+            "to_component": [
+              "main",
+              1
+            ]
+          },
+          {
+            "id": "Forward_Orlop",
+            "from_component": [
+              "orlop",
+              8
+            ],
+            "to_component": [
+              "lower",
+              10
+            ]
+          },
+          {
+            "id": "After_Lower",
+            "from_component": [
+              "lower",
+              3
+            ],
+            "to_component": [
+              "main",
+              1
+            ]
+          },
+          {
+            "id": "After_Orlop",
+            "from_component": [
+              "orlop",
+              4
+            ],
+            "to_component": [
+              "lower",
+              3
+            ]
+          },
+          {
+            "id": "After_Orlop_Starboard",
+            "from_component": [
+              "orlop",
+              3
+            ],
+            "to_component": [
+              "lower",
+              3
+            ]
+          },
+          {
+            "id": "After_Upper",
+            "from_component": [
+              "main",
+              1
+            ],
+            "to_component": [
+              "saloon",
+              2
+            ]
+          },
+          {
+            "id": "After_Promenade",
+            "from_component": [
+              "saloon",
+              2
+            ],
+            "to_component": [
+              "promenade",
+              1
+            ]
+          },
+          {
+            "id": "Engine_Access",
+            "from_component": [
+              "machinery",
+              1
+            ],
+            "to_component": [
+              "lower",
+              3
+            ]
+          },
+          {
+            "id": "Engine_Main",
+            "from_component": [
+              "lower",
+              3
+            ],
+            "to_component": [
+              "main",
+              1
+            ]
+          },
+          {
+            "id": "Bridge_Access",
+            "from_component": [
+              "boat",
+              1
+            ],
+            "to_component": [
+              "bridge",
+              1
+            ]
+          }
+        ],
+        "assumption": "nearest .4m endpoint; separate stair headroom test below"
+      }
+    },
+    {
+      "test": "Machinery service-aisle anchors reachable from boarding",
+      "status": "PASS",
+      "detail": [
+        {
+          "aisle": "Engine_Port",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        },
+        {
+          "aisle": "Engine_Starboard",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        },
+        {
+          "aisle": "After_Stokehold",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        },
+        {
+          "aisle": "Middle_Stokehold",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        },
+        {
+          "aisle": "Forward_Stokehold",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        },
+        {
+          "aisle": "Dynamo_Aisle",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        },
+        {
+          "aisle": "Pump_Aisle",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        },
+        {
+          "aisle": "Shaft_Alley_Port",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        },
+        {
+          "aisle": "Shaft_Alley_Starboard",
+          "component": [
+            "machinery",
+            1
+          ],
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "test": "Cooking furnace fronts face reachable working aisles",
+      "status": "PASS",
+      "detail": [
+        {
+          "room": "S_Galley",
+          "range_faces_working_aisle": true,
+          "firing_position": [
+            -37.0,
+            -2.9
+          ],
+          "reachable": true
+        },
+        {
+          "room": "S_Bakery",
+          "range_faces_working_aisle": true,
+          "firing_position": [
+            -37.0,
+            3.05
+          ],
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "test": "Stair sampled avatar head/body envelope",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": "Grand_Main",
+          "blocked_by": []
+        },
+        {
+          "id": "Grand_Upper",
+          "blocked_by": []
+        },
+        {
+          "id": "Prom_To_Boat",
+          "blocked_by": []
+        },
+        {
+          "id": "Forward_Lower",
+          "blocked_by": []
+        },
+        {
+          "id": "Forward_Orlop",
+          "blocked_by": []
+        },
+        {
+          "id": "After_Lower",
+          "blocked_by": []
+        },
+        {
+          "id": "After_Orlop",
+          "blocked_by": []
+        },
+        {
+          "id": "After_Orlop_Starboard",
+          "blocked_by": []
+        },
+        {
+          "id": "After_Upper",
+          "blocked_by": []
+        },
+        {
+          "id": "After_Promenade",
+          "blocked_by": []
+        },
+        {
+          "id": "Engine_Access",
+          "blocked_by": []
+        },
+        {
+          "id": "Engine_Main",
+          "blocked_by": []
+        },
+        {
+          "id": "Bridge_Access",
+          "blocked_by": []
+        },
+        {
+          "id": "EngineLadder_590",
+          "blocked_by": []
+        },
+        {
+          "id": "EngineLadder_591",
+          "blocked_by": []
+        },
+        {
+          "id": "EngineLadder_592",
+          "blocked_by": []
+        },
+        {
+          "id": "EngineLadder_593",
+          "blocked_by": []
+        }
+      ]
+    },
+    {
+      "test": "Game export regenerated from current master",
+      "status": "PASS",
+      "detail": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4"
+    },
+    {
+      "test": "Game mesh node <=18000 triangles / finite UV0 / closed components",
+      "status": "PASS",
+      "detail": {
+        "mesh_nodes": 1438,
+        "unique_meshes": 860,
+        "placed_triangles": 2473152,
+        "unique_triangles": 2166940,
+        "reused_nodes": 578,
+        "max_node_triangles": 18000,
+        "removed_zero_area_triangles": 0,
+        "calibration_nodes": 4,
+        "storage_meshes_including_calibration": 861,
+        "corrected_shading_corners": 13484,
+        "source_precision_vertices": 57
+      }
+    },
+    {
+      "test": "All actual mover / door names exist in the game export",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "Master/GAME interfaces and collider-envelope tolerance",
+      "status": "PASS",
+      "detail": {
+        "interface_arrays_equal": true,
+        "colliders_master": 4071,
+        "colliders_game": 4071,
+        "max_fixture_delta_m": 0.0219,
+        "nonconforming": [],
+        "runtime_uses": "master proxies, not lower-detail bounding boxes"
+      }
+    },
+    {
+      "test": "Roblox Studio live acceptance",
+      "status": "UNVERIFIED",
+      "detail": "No Roblox Studio in this workspace. Static collider graph does not certify avatar headroom on slopes, moving passengers, imported collisions, multiplayer security or frame time."
+    }
+  ],
+  "summary": {
+    "PASS": 20,
+    "INFO": 3,
+    "UNVERIFIED": 1
+  },
+  "fixture_envelope_violations": [],
+  "door_checks": [
+    {
+      "id": "O_ThirdF",
+      "deck": "orlop",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        61.52,
+        0.0
+      ],
+      "outside": [
+        62.48,
+        0.0
+      ],
+      "component": 8
+    },
+    {
+      "id": "O_ThirdAP",
+      "deck": "orlop",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": false,
+      "inside": [
+        -60.5,
+        2.52
+      ],
+      "outside": [
+        -60.5,
+        3.48
+      ],
+      "component": 4
+    },
+    {
+      "id": "O_ThirdAS",
+      "deck": "orlop",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": false,
+      "inside": [
+        -60.5,
+        -2.52
+      ],
+      "outside": [
+        -60.5,
+        -3.48
+      ],
+      "component": 3
+    },
+    {
+      "id": "O_CrewP",
+      "deck": "orlop",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": false,
+      "inside": [
+        -41.5,
+        4.619999999999999
+      ],
+      "outside": [
+        -41.5,
+        5.58
+      ],
+      "component": 4
+    },
+    {
+      "id": "O_CrewS",
+      "deck": "orlop",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": false,
+      "inside": [
+        -41.5,
+        -4.619999999999999
+      ],
+      "outside": [
+        -41.5,
+        -5.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "O_Hold",
+      "deck": "orlop",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        63.48,
+        0.0
+      ],
+      "outside": [
+        62.52,
+        0.0
+      ],
+      "component": 8
+    },
+    {
+      "id": "L_ThirdWomen",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": false,
+      "inside": [
+        48.52,
+        0.0
+      ],
+      "outside": [
+        49.48,
+        0.0
+      ],
+      "component": 10
+    },
+    {
+      "id": "L_ThirdMen",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": false,
+      "inside": [
+        49.879999999999995,
+        0.0
+      ],
+      "outside": [
+        48.92,
+        0.0
+      ],
+      "component": 10
+    },
+    {
+      "id": "L_ThirdWash",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": false,
+      "inside": [
+        63.879999999999995,
+        0.0
+      ],
+      "outside": [
+        62.92,
+        0.0
+      ],
+      "component": 10
+    },
+    {
+      "id": "L_CrewP",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -18.85,
+        7.32
+      ],
+      "outside": [
+        -18.85,
+        8.28
+      ],
+      "component": 3
+    },
+    {
+      "id": "L_CrewS",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -18.85,
+        -7.32
+      ],
+      "outside": [
+        -18.85,
+        -8.28
+      ],
+      "component": 3
+    },
+    {
+      "id": "L_AfterStore",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -60.48,
+        0.0
+      ],
+      "outside": [
+        -59.52,
+        0.0
+      ],
+      "component": 3
+    },
+    {
+      "id": "L_ThirdMess",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": false,
+      "inside": [
+        70.78,
+        0.0
+      ],
+      "outside": [
+        69.82,
+        0.0
+      ],
+      "component": 10
+    },
+    {
+      "id": "C001",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -56.72,
+        -2.62
+      ],
+      "outside": [
+        -56.72,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C002",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -56.72,
+        2.62
+      ],
+      "outside": [
+        -56.72,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C003",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -54.0,
+        -2.62
+      ],
+      "outside": [
+        -54.0,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C004",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -54.0,
+        2.62
+      ],
+      "outside": [
+        -54.0,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C005",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -51.28,
+        -2.62
+      ],
+      "outside": [
+        -51.28,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C006",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -51.28,
+        2.62
+      ],
+      "outside": [
+        -51.28,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C007",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -48.56,
+        -2.62
+      ],
+      "outside": [
+        -48.56,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C008",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -48.56,
+        2.62
+      ],
+      "outside": [
+        -48.56,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C009",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -45.84,
+        -2.62
+      ],
+      "outside": [
+        -45.84,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C010",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -45.84,
+        2.62
+      ],
+      "outside": [
+        -45.84,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C011",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -43.120000000000005,
+        -2.62
+      ],
+      "outside": [
+        -43.120000000000005,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C012",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -43.120000000000005,
+        2.62
+      ],
+      "outside": [
+        -43.120000000000005,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C013",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -40.400000000000006,
+        -2.62
+      ],
+      "outside": [
+        -40.400000000000006,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C014",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -40.400000000000006,
+        2.62
+      ],
+      "outside": [
+        -40.400000000000006,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C015",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -37.68000000000001,
+        -5.029999999999999
+      ],
+      "outside": [
+        -37.68000000000001,
+        -4.07
+      ],
+      "component": 3
+    },
+    {
+      "id": "C016",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -37.68000000000001,
+        -2.62
+      ],
+      "outside": [
+        -37.68000000000001,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C017",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -37.68000000000001,
+        2.62
+      ],
+      "outside": [
+        -37.68000000000001,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C018",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -37.68000000000001,
+        5.029999999999999
+      ],
+      "outside": [
+        -37.68000000000001,
+        4.07
+      ],
+      "component": 3
+    },
+    {
+      "id": "C019",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -34.96000000000001,
+        -5.029999999999999
+      ],
+      "outside": [
+        -34.96000000000001,
+        -4.07
+      ],
+      "component": 3
+    },
+    {
+      "id": "C020",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -34.96000000000001,
+        -2.62
+      ],
+      "outside": [
+        -34.96000000000001,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C021",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -34.96000000000001,
+        2.62
+      ],
+      "outside": [
+        -34.96000000000001,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C022",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -34.96000000000001,
+        5.029999999999999
+      ],
+      "outside": [
+        -34.96000000000001,
+        4.07
+      ],
+      "component": 3
+    },
+    {
+      "id": "C023",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -32.24000000000001,
+        -5.029999999999999
+      ],
+      "outside": [
+        -32.24000000000001,
+        -4.07
+      ],
+      "component": 3
+    },
+    {
+      "id": "C024",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -32.24000000000001,
+        -2.62
+      ],
+      "outside": [
+        -32.24000000000001,
+        -3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C025",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -32.24000000000001,
+        2.62
+      ],
+      "outside": [
+        -32.24000000000001,
+        3.58
+      ],
+      "component": 3
+    },
+    {
+      "id": "C026",
+      "deck": "lower",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -32.24000000000001,
+        5.029999999999999
+      ],
+      "outside": [
+        -32.24000000000001,
+        4.07
+      ],
+      "component": 3
+    },
+    {
+      "id": "M_Entrance",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -2.0,
+        -7.32
+      ],
+      "outside": [
+        -2.0,
+        -8.28
+      ],
+      "component": 1
+    },
+    {
+      "id": "M_ForwardThird",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        44.48,
+        0.0
+      ],
+      "outside": [
+        43.52,
+        0.0
+      ],
+      "component": 1
+    },
+    {
+      "id": "M_AfterThird",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -57.48,
+        0.0
+      ],
+      "outside": [
+        -56.52,
+        0.0
+      ],
+      "component": 1
+    },
+    {
+      "id": "M_Forecastle",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        68.48,
+        0.0
+      ],
+      "outside": [
+        67.52,
+        0.0
+      ],
+      "component": 1
+    },
+    {
+      "id": "S_ColdStore",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        40.98,
+        0.0
+      ],
+      "outside": [
+        40.02,
+        0.0
+      ],
+      "component": 1
+    },
+    {
+      "id": "A001",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -50.35,
+        -2.62
+      ],
+      "outside": [
+        -50.35,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A002",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -50.35,
+        2.62
+      ],
+      "outside": [
+        -50.35,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A003",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -47.63,
+        -2.62
+      ],
+      "outside": [
+        -47.63,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A004",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -47.63,
+        2.62
+      ],
+      "outside": [
+        -47.63,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A005",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -44.910000000000004,
+        -2.62
+      ],
+      "outside": [
+        -44.910000000000004,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A006",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -44.910000000000004,
+        2.62
+      ],
+      "outside": [
+        -44.910000000000004,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A007",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -42.190000000000005,
+        -2.62
+      ],
+      "outside": [
+        -42.190000000000005,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A008",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -42.190000000000005,
+        2.62
+      ],
+      "outside": [
+        -42.190000000000005,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A009",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -39.470000000000006,
+        -2.62
+      ],
+      "outside": [
+        -39.470000000000006,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A010",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -39.470000000000006,
+        2.62
+      ],
+      "outside": [
+        -39.470000000000006,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A011",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -36.75000000000001,
+        -5.029999999999999
+      ],
+      "outside": [
+        -36.75000000000001,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A012",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -36.75000000000001,
+        -2.62
+      ],
+      "outside": [
+        -36.75000000000001,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A013",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -36.75000000000001,
+        2.62
+      ],
+      "outside": [
+        -36.75000000000001,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A014",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -36.75000000000001,
+        5.029999999999999
+      ],
+      "outside": [
+        -36.75000000000001,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A015",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -34.03000000000001,
+        -5.029999999999999
+      ],
+      "outside": [
+        -34.03000000000001,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A016",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -34.03000000000001,
+        -2.62
+      ],
+      "outside": [
+        -34.03000000000001,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A017",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -34.03000000000001,
+        2.62
+      ],
+      "outside": [
+        -34.03000000000001,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A018",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -34.03000000000001,
+        5.029999999999999
+      ],
+      "outside": [
+        -34.03000000000001,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A019",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -31.31000000000001,
+        -5.029999999999999
+      ],
+      "outside": [
+        -31.31000000000001,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A020",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -31.31000000000001,
+        -2.62
+      ],
+      "outside": [
+        -31.31000000000001,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A021",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -31.31000000000001,
+        2.62
+      ],
+      "outside": [
+        -31.31000000000001,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A022",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -31.31000000000001,
+        5.029999999999999
+      ],
+      "outside": [
+        -31.31000000000001,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A023",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -28.59000000000001,
+        -5.029999999999999
+      ],
+      "outside": [
+        -28.59000000000001,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A024",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -28.59000000000001,
+        5.029999999999999
+      ],
+      "outside": [
+        -28.59000000000001,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A025",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -25.87000000000001,
+        -5.029999999999999
+      ],
+      "outside": [
+        -25.87000000000001,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A026",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -25.87000000000001,
+        5.029999999999999
+      ],
+      "outside": [
+        -25.87000000000001,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A027",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -23.150000000000013,
+        -5.029999999999999
+      ],
+      "outside": [
+        -23.150000000000013,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A028",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -23.150000000000013,
+        5.029999999999999
+      ],
+      "outside": [
+        -23.150000000000013,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A029",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -20.430000000000014,
+        -5.029999999999999
+      ],
+      "outside": [
+        -20.430000000000014,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A030",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -20.430000000000014,
+        5.029999999999999
+      ],
+      "outside": [
+        -20.430000000000014,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A031",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -17.710000000000015,
+        -5.029999999999999
+      ],
+      "outside": [
+        -17.710000000000015,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A032",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -17.710000000000015,
+        5.029999999999999
+      ],
+      "outside": [
+        -17.710000000000015,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A033",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -14.990000000000016,
+        -5.029999999999999
+      ],
+      "outside": [
+        -14.990000000000016,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A034",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -14.990000000000016,
+        5.029999999999999
+      ],
+      "outside": [
+        -14.990000000000016,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A035",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -12.270000000000017,
+        -5.029999999999999
+      ],
+      "outside": [
+        -12.270000000000017,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A036",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -12.270000000000017,
+        5.029999999999999
+      ],
+      "outside": [
+        -12.270000000000017,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A037",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -9.550000000000018,
+        -5.029999999999999
+      ],
+      "outside": [
+        -9.550000000000018,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A038",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -9.550000000000018,
+        5.029999999999999
+      ],
+      "outside": [
+        -9.550000000000018,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A039",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        4.049999999999976,
+        -5.029999999999999
+      ],
+      "outside": [
+        4.049999999999976,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A040",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        4.049999999999976,
+        5.029999999999999
+      ],
+      "outside": [
+        4.049999999999976,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A041",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        6.769999999999975,
+        -5.029999999999999
+      ],
+      "outside": [
+        6.769999999999975,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A042",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        6.769999999999975,
+        5.029999999999999
+      ],
+      "outside": [
+        6.769999999999975,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A043",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        9.489999999999974,
+        -5.029999999999999
+      ],
+      "outside": [
+        9.489999999999974,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A044",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        9.489999999999974,
+        -2.62
+      ],
+      "outside": [
+        9.489999999999974,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A045",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        9.489999999999974,
+        2.62
+      ],
+      "outside": [
+        9.489999999999974,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A046",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        9.489999999999974,
+        5.029999999999999
+      ],
+      "outside": [
+        9.489999999999974,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A047",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        12.209999999999972,
+        -5.029999999999999
+      ],
+      "outside": [
+        12.209999999999972,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A048",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        12.209999999999972,
+        -2.62
+      ],
+      "outside": [
+        12.209999999999972,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A049",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        12.209999999999972,
+        2.62
+      ],
+      "outside": [
+        12.209999999999972,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A050",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        12.209999999999972,
+        5.029999999999999
+      ],
+      "outside": [
+        12.209999999999972,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A051",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        14.929999999999971,
+        -5.029999999999999
+      ],
+      "outside": [
+        14.929999999999971,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A052",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        14.929999999999971,
+        -2.62
+      ],
+      "outside": [
+        14.929999999999971,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A053",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        14.929999999999971,
+        2.62
+      ],
+      "outside": [
+        14.929999999999971,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A054",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        14.929999999999971,
+        5.029999999999999
+      ],
+      "outside": [
+        14.929999999999971,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A055",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        17.64999999999997,
+        -5.029999999999999
+      ],
+      "outside": [
+        17.64999999999997,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A056",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        17.64999999999997,
+        -2.62
+      ],
+      "outside": [
+        17.64999999999997,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A057",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        17.64999999999997,
+        2.62
+      ],
+      "outside": [
+        17.64999999999997,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A058",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        17.64999999999997,
+        5.029999999999999
+      ],
+      "outside": [
+        17.64999999999997,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A059",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        20.36999999999997,
+        -5.029999999999999
+      ],
+      "outside": [
+        20.36999999999997,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A060",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        20.36999999999997,
+        -2.62
+      ],
+      "outside": [
+        20.36999999999997,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A061",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        20.36999999999997,
+        2.62
+      ],
+      "outside": [
+        20.36999999999997,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A062",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        20.36999999999997,
+        5.029999999999999
+      ],
+      "outside": [
+        20.36999999999997,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A063",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        23.089999999999968,
+        -5.029999999999999
+      ],
+      "outside": [
+        23.089999999999968,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A064",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        23.089999999999968,
+        -2.62
+      ],
+      "outside": [
+        23.089999999999968,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A065",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        23.089999999999968,
+        2.62
+      ],
+      "outside": [
+        23.089999999999968,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A066",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        23.089999999999968,
+        5.029999999999999
+      ],
+      "outside": [
+        23.089999999999968,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A067",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        25.809999999999967,
+        -5.029999999999999
+      ],
+      "outside": [
+        25.809999999999967,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A068",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        25.809999999999967,
+        -2.62
+      ],
+      "outside": [
+        25.809999999999967,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A069",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        25.809999999999967,
+        2.62
+      ],
+      "outside": [
+        25.809999999999967,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "A070",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        25.809999999999967,
+        5.029999999999999
+      ],
+      "outside": [
+        25.809999999999967,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A071",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        28.529999999999966,
+        -5.029999999999999
+      ],
+      "outside": [
+        28.529999999999966,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A072",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        28.529999999999966,
+        5.029999999999999
+      ],
+      "outside": [
+        28.529999999999966,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A073",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        31.249999999999964,
+        -5.029999999999999
+      ],
+      "outside": [
+        31.249999999999964,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A074",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        31.249999999999964,
+        5.029999999999999
+      ],
+      "outside": [
+        31.249999999999964,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A075",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        33.96999999999996,
+        -5.029999999999999
+      ],
+      "outside": [
+        33.96999999999996,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A076",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        33.96999999999996,
+        5.029999999999999
+      ],
+      "outside": [
+        33.96999999999996,
+        4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "A077",
+      "deck": "main",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        36.68999999999996,
+        -5.029999999999999
+      ],
+      "outside": [
+        36.68999999999996,
+        -4.07
+      ],
+      "component": 1
+    },
+    {
+      "id": "S_Steering",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -74.88000000000001,
+        0.0
+      ],
+      "outside": [
+        -73.92,
+        0.0
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Dining",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        9.88,
+        -3.4
+      ],
+      "outside": [
+        8.92,
+        -3.4
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Music",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -10.88,
+        -3.5
+      ],
+      "outside": [
+        -9.92,
+        -3.5
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Stair",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -5.32,
+        -2.3
+      ],
+      "outside": [
+        -6.279999999999999,
+        -2.3
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Purser",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -2.0,
+        5.619999999999999
+      ],
+      "outside": [
+        -2.0,
+        6.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Mail",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -2.0,
+        -5.619999999999999
+      ],
+      "outside": [
+        -2.0,
+        -6.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Galley",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -32.5,
+        -1.18
+      ],
+      "outside": [
+        -32.5,
+        -0.21999999999999997
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Pantry",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -29.25,
+        1.18
+      ],
+      "outside": [
+        -29.25,
+        0.21999999999999997
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Bakery",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -33.7,
+        1.18
+      ],
+      "outside": [
+        -33.7,
+        0.21999999999999997
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Bath_P",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -24.65,
+        1.18
+      ],
+      "outside": [
+        -24.65,
+        0.21999999999999997
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_Bath_S",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -24.65,
+        -1.18
+      ],
+      "outside": [
+        -24.65,
+        -0.21999999999999997
+      ],
+      "component": 2
+    },
+    {
+      "id": "S_SecondDining",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -43.48,
+        0.0
+      ],
+      "outside": [
+        -42.52,
+        0.0
+      ],
+      "component": 2
+    },
+    {
+      "id": "U001",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        38.43,
+        -2.62
+      ],
+      "outside": [
+        38.43,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U002",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        38.43,
+        2.62
+      ],
+      "outside": [
+        38.43,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U003",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        41.15,
+        -2.62
+      ],
+      "outside": [
+        41.15,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U004",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        41.15,
+        2.62
+      ],
+      "outside": [
+        41.15,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U005",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        43.87,
+        -2.62
+      ],
+      "outside": [
+        43.87,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U006",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        43.87,
+        2.62
+      ],
+      "outside": [
+        43.87,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U007",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        46.589999999999996,
+        -2.62
+      ],
+      "outside": [
+        46.589999999999996,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U008",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        46.589999999999996,
+        2.62
+      ],
+      "outside": [
+        46.589999999999996,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U009",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        49.309999999999995,
+        -2.62
+      ],
+      "outside": [
+        49.309999999999995,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U010",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        49.309999999999995,
+        2.62
+      ],
+      "outside": [
+        49.309999999999995,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U011",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        52.029999999999994,
+        -2.62
+      ],
+      "outside": [
+        52.029999999999994,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "U012",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        52.029999999999994,
+        2.62
+      ],
+      "outside": [
+        52.029999999999994,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "D001",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -69.02,
+        -2.62
+      ],
+      "outside": [
+        -69.02,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "D002",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -69.02,
+        2.62
+      ],
+      "outside": [
+        -69.02,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "D003",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -66.3,
+        -2.62
+      ],
+      "outside": [
+        -66.3,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "D004",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -66.3,
+        2.62
+      ],
+      "outside": [
+        -66.3,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "D005",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -63.58,
+        -2.62
+      ],
+      "outside": [
+        -63.58,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "D006",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -63.58,
+        2.62
+      ],
+      "outside": [
+        -63.58,
+        3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "D007",
+      "deck": "saloon",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -60.86,
+        -2.62
+      ],
+      "outside": [
+        -60.86,
+        -3.58
+      ],
+      "component": 2
+    },
+    {
+      "id": "P_Library",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        9.88,
+        3.5
+      ],
+      "outside": [
+        8.92,
+        3.5
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_Smoking",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -10.88,
+        3.3
+      ],
+      "outside": [
+        -9.92,
+        3.3
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_Writing",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -25.48,
+        -3.2
+      ],
+      "outside": [
+        -24.52,
+        -3.2
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_SecondLounge",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -47.48,
+        0.0
+      ],
+      "outside": [
+        -46.52,
+        0.0
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_Barber",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -42.85,
+        1.18
+      ],
+      "outside": [
+        -42.85,
+        0.21999999999999997
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_Wash",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -42.85,
+        -1.18
+      ],
+      "outside": [
+        -42.85,
+        -0.21999999999999997
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_Stair",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -5.32,
+        2.3
+      ],
+      "outside": [
+        -6.279999999999999,
+        2.3
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_Bar",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -2.0,
+        5.119999999999999
+      ],
+      "outside": [
+        -2.0,
+        6.08
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_Coats",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -2.0,
+        -5.119999999999999
+      ],
+      "outside": [
+        -2.0,
+        -6.08
+      ],
+      "component": 1
+    },
+    {
+      "id": "P_Hospital",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        50.279999999999994,
+        0.0
+      ],
+      "outside": [
+        49.32,
+        0.0
+      ],
+      "component": 1
+    },
+    {
+      "id": "P001",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        38.43,
+        -2.62
+      ],
+      "outside": [
+        38.43,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "P002",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        38.43,
+        2.62
+      ],
+      "outside": [
+        38.43,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "P003",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        41.15,
+        -2.62
+      ],
+      "outside": [
+        41.15,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "P004",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        41.15,
+        2.62
+      ],
+      "outside": [
+        41.15,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "P005",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        43.87,
+        -2.62
+      ],
+      "outside": [
+        43.87,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "P006",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        43.87,
+        2.62
+      ],
+      "outside": [
+        43.87,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "P007",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        46.589999999999996,
+        -2.62
+      ],
+      "outside": [
+        46.589999999999996,
+        -3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "P008",
+      "deck": "promenade",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        46.589999999999996,
+        2.62
+      ],
+      "outside": [
+        46.589999999999996,
+        3.58
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_Captain",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        36.85,
+        1.28
+      ],
+      "outside": [
+        36.85,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_Chief",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        34.9,
+        -1.28
+      ],
+      "outside": [
+        34.9,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_Navigator",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        38.699999999999996,
+        -1.28
+      ],
+      "outside": [
+        38.699999999999996,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_Chart",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        20.48,
+        0.0
+      ],
+      "outside": [
+        19.52,
+        0.0
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_Officer_1",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        13.1,
+        1.28
+      ],
+      "outside": [
+        13.1,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_Officer_2",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        17.2,
+        1.28
+      ],
+      "outside": [
+        17.2,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_Officer_3",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        13.1,
+        -1.28
+      ],
+      "outside": [
+        13.1,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_Officer_4",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        17.2,
+        -1.28
+      ],
+      "outside": [
+        17.2,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First098",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -52.690000000000005,
+        1.28
+      ],
+      "outside": [
+        -52.690000000000005,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First099",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -52.690000000000005,
+        -1.28
+      ],
+      "outside": [
+        -52.690000000000005,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First100",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -49.790000000000006,
+        1.28
+      ],
+      "outside": [
+        -49.790000000000006,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First101",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -49.790000000000006,
+        -1.28
+      ],
+      "outside": [
+        -49.790000000000006,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First102",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -46.89000000000001,
+        1.28
+      ],
+      "outside": [
+        -46.89000000000001,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First103",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -46.89000000000001,
+        -1.28
+      ],
+      "outside": [
+        -46.89000000000001,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First104",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -43.99000000000001,
+        1.28
+      ],
+      "outside": [
+        -43.99000000000001,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First105",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -43.99000000000001,
+        -1.28
+      ],
+      "outside": [
+        -43.99000000000001,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First106",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -41.09000000000001,
+        1.28
+      ],
+      "outside": [
+        -41.09000000000001,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First107",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -41.09000000000001,
+        -1.28
+      ],
+      "outside": [
+        -41.09000000000001,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First108",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -38.19000000000001,
+        1.28
+      ],
+      "outside": [
+        -38.19000000000001,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First109",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -38.19000000000001,
+        -1.28
+      ],
+      "outside": [
+        -38.19000000000001,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First110",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -35.29000000000001,
+        1.28
+      ],
+      "outside": [
+        -35.29000000000001,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First111",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -35.29000000000001,
+        -1.28
+      ],
+      "outside": [
+        -35.29000000000001,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First112",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -32.390000000000015,
+        1.28
+      ],
+      "outside": [
+        -32.390000000000015,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First113",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -32.390000000000015,
+        -1.28
+      ],
+      "outside": [
+        -32.390000000000015,
+        -0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "B_First114",
+      "deck": "boat",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        -29.490000000000016,
+        1.28
+      ],
+      "outside": [
+        -29.490000000000016,
+        0.32000000000000006
+      ],
+      "component": 1
+    },
+    {
+      "id": "N_Wheelhouse",
+      "deck": "bridge",
+      "inside_clear": true,
+      "outside_clear": true,
+      "same_component": true,
+      "on_largest_component": true,
+      "inside": [
+        33.48,
+        3.0
+      ],
+      "outside": [
+        32.52,
+        3.0
+      ],
+      "component": 1
+    }
+  ],
+  "stair_links": [
+    {
+      "id": "Grand_Main",
+      "from_component": [
+        "main",
+        1
+      ],
+      "to_component": [
+        "saloon",
+        2
+      ]
+    },
+    {
+      "id": "Grand_Upper",
+      "from_component": [
+        "saloon",
+        2
+      ],
+      "to_component": [
+        "promenade",
+        1
+      ]
+    },
+    {
+      "id": "Prom_To_Boat",
+      "from_component": [
+        "promenade",
+        1
+      ],
+      "to_component": [
+        "boat",
+        1
+      ]
+    },
+    {
+      "id": "Forward_Lower",
+      "from_component": [
+        "lower",
+        10
+      ],
+      "to_component": [
+        "main",
+        1
+      ]
+    },
+    {
+      "id": "Forward_Orlop",
+      "from_component": [
+        "orlop",
+        8
+      ],
+      "to_component": [
+        "lower",
+        10
+      ]
+    },
+    {
+      "id": "After_Lower",
+      "from_component": [
+        "lower",
+        3
+      ],
+      "to_component": [
+        "main",
+        1
+      ]
+    },
+    {
+      "id": "After_Orlop",
+      "from_component": [
+        "orlop",
+        4
+      ],
+      "to_component": [
+        "lower",
+        3
+      ]
+    },
+    {
+      "id": "After_Orlop_Starboard",
+      "from_component": [
+        "orlop",
+        3
+      ],
+      "to_component": [
+        "lower",
+        3
+      ]
+    },
+    {
+      "id": "After_Upper",
+      "from_component": [
+        "main",
+        1
+      ],
+      "to_component": [
+        "saloon",
+        2
+      ]
+    },
+    {
+      "id": "After_Promenade",
+      "from_component": [
+        "saloon",
+        2
+      ],
+      "to_component": [
+        "promenade",
+        1
+      ]
+    },
+    {
+      "id": "Engine_Access",
+      "from_component": [
+        "machinery",
+        1
+      ],
+      "to_component": [
+        "lower",
+        3
+      ]
+    },
+    {
+      "id": "Engine_Main",
+      "from_component": [
+        "lower",
+        3
+      ],
+      "to_component": [
+        "main",
+        1
+      ]
+    },
+    {
+      "id": "Bridge_Access",
+      "from_component": [
+        "boat",
+        1
+      ],
+      "to_component": [
+        "bridge",
+        1
+      ]
+    }
+  ],
+  "stair_headspace": [
+    {
+      "id": "Grand_Main",
+      "blocked_by": []
+    },
+    {
+      "id": "Grand_Upper",
+      "blocked_by": []
+    },
+    {
+      "id": "Prom_To_Boat",
+      "blocked_by": []
+    },
+    {
+      "id": "Forward_Lower",
+      "blocked_by": []
+    },
+    {
+      "id": "Forward_Orlop",
+      "blocked_by": []
+    },
+    {
+      "id": "After_Lower",
+      "blocked_by": []
+    },
+    {
+      "id": "After_Orlop",
+      "blocked_by": []
+    },
+    {
+      "id": "After_Orlop_Starboard",
+      "blocked_by": []
+    },
+    {
+      "id": "After_Upper",
+      "blocked_by": []
+    },
+    {
+      "id": "After_Promenade",
+      "blocked_by": []
+    },
+    {
+      "id": "Engine_Access",
+      "blocked_by": []
+    },
+    {
+      "id": "Engine_Main",
+      "blocked_by": []
+    },
+    {
+      "id": "Bridge_Access",
+      "blocked_by": []
+    },
+    {
+      "id": "EngineLadder_590",
+      "blocked_by": []
+    },
+    {
+      "id": "EngineLadder_591",
+      "blocked_by": []
+    },
+    {
+      "id": "EngineLadder_592",
+      "blocked_by": []
+    },
+    {
+      "id": "EngineLadder_593",
+      "blocked_by": []
+    }
+  ],
+  "grid": {
+    "cell_m": 0.2,
+    "avatar_radius_m": 0.28,
+    "standing_height_m": 1.68,
+    "assumptions": "doors open; horizontal slices at named decks; ramps require separate test; nearest valid sample within .4m"
+  },
+  "source": "exports/leonidas_ii/build_data.json"
+}

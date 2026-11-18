@@ -1,0 +1,62 @@
+{
+  "schema": "victoria.leonidas-ii.export-normal-revision/1.0",
+  "status": "CORRECTION_EXECUTED_AND_INDEPENDENTLY_VERIFIED_BUILD10",
+  "master_source_sha256": "d3a47ddd78fc4c82cda3a7783ded1b45cd83262356ac83708a386f5edcff3710",
+  "before_archive_sha256": "61bc1d4abf8b6919d4cbb0a3ae0fc279ba58eb0f61e0360c38839f94485bb08e",
+  "before_game_manifest_sha256": "f8b8409f29e3eec883724d211c968b587db0093aa44b99de69ef3c3bf6644cd5",
+  "before_summary": {
+    "components": 72713,
+    "negative_components": 0,
+    "near_zero_components": 0,
+    "normal_disagreement_triangles": 2788,
+    "opposing_normal_corners": 12647,
+    "degenerate_area_triangles": 9,
+    "odd_unpaired_welded_edges": 0,
+    "inconsistent_edge_winding": 0,
+    "coincident_contact_edges": 89781,
+    "collapsed_triangle_edges": 0,
+    "triangles": 2086658,
+    "unique_visual_meshes": 852
+  },
+  "finding": "Directed welded edge uses balance with no odd unpaired uses. 2,788 opposing averaged smooth-normal triangles / 12,647 opposing corners were shading errors, not detected reversed winding. Nine cross-section cap triangles also became collinear on the 0.1mm compression grid.",
+  "fix": "Split only opposing shading corners and replace their normals with geometric face normals before tangent reconstruction. Where the compression grid would create a zero-area triangle, restore exact source-point float precision for every coincident copy, rather than inventing offsets or deleting the cap. No authored shape, UV, winding or triangle-count change.",
+  "limitations": "Welded contacts may have >2 balanced edge uses; no self-intersection or two-manifold Boolean-union acceptance. Full export, exact archive repackage, Khronos and independent normal re-audit required.",
+  "first_refreshed_export_validation": {
+    "master_source_sha256": "d3a47ddd78fc4c82cda3a7783ded1b45cd83262356ac83708a386f5edcff3710",
+    "game_manifest_sha256": "5861edd85e721a3c7b2043a751993cfb2a51afefa415a87597ba5f9b8cc7d590",
+    "summary": {
+      "components": 72713,
+      "negative_components": 0,
+      "near_zero_components": 0,
+      "normal_disagreement_triangles": 0,
+      "opposing_normal_corners": 0,
+      "degenerate_area_triangles": 0,
+      "odd_unpaired_welded_edges": 0,
+      "inconsistent_edge_winding": 0,
+      "coincident_contact_edges": 89781,
+      "collapsed_triangle_edges": 0,
+      "triangles": 2086658,
+      "unique_visual_meshes": 852
+    },
+    "result": "Executed export-only correction; independent audit zero findings in every gated category, Khronos 18 files / 0 errors / 0 warnings. Superseded by subsequent functional galley/crew interior rebuild, which must repeat these checks."
+  },
+  "final_validation": {
+    "master_source_sha256": "82219356d3ceb32218a56d1c4f8bec7decea4445cc1b759a400561bd17ef552f",
+    "game_manifest_sha256": "3d5b3e94bfa3fbdbeee816eaabb1ae1c32020d060652df45814f682b1c936049",
+    "summary": {
+      "components": 72758,
+      "negative_components": 0,
+      "near_zero_components": 0,
+      "normal_disagreement_triangles": 0,
+      "opposing_normal_corners": 0,
+      "degenerate_area_triangles": 0,
+      "odd_unpaired_welded_edges": 0,
+      "inconsistent_edge_winding": 0,
+      "coincident_contact_edges": 89781,
+      "collapsed_triangle_edges": 0,
+      "triangles": 2088346,
+      "unique_visual_meshes": 852
+    },
+    "format_result": "18 regional GLBs, zero Khronos errors/warnings"
+  }
+}

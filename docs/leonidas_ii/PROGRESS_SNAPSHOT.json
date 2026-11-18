@@ -1,0 +1,38 @@
+{
+  "schema": "victoria.leonidas-ii.progress-snapshot/1.0",
+  "status": "IN_PROGRESS_NOT_A_PLAYABLE_RELEASE",
+  "snapshot_utc": "2026-11-18T10:34:41.734803+00:00",
+  "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+  "major_images": {
+    "reviewed": 22,
+    "expected": 51,
+    "remaining": 29
+  },
+  "room_surveys": {
+    "reviewed": 203,
+    "expected": 203,
+    "remaining": 0
+  },
+  "analytical_svgs": {
+    "reviewed": 3,
+    "expected": 3
+  },
+  "final_jpgs_in_snapshot": 225,
+  "planned_final_jpgs": 254,
+  "raw_major_frames_not_published": 6,
+  "open_revision_image_checks": [
+    "CAMERA_CREW",
+    "COOKING_RANGE",
+    "CREW_MESS"
+  ],
+  "headless_results": {
+    "static": "20 PASS / 3 INFO / 1 UNVERIFIED",
+    "structure": "3 PASS / 0 FAIL",
+    "luau_compile": "6 PASS / 0 FAIL",
+    "runtime_mock_tests": "30 PASS",
+    "regional_gltf": "18 files, 0 errors / 0 warnings"
+  },
+  "render_manifest": "renders/leonidas_ii/all_cameras.json",
+  "review_register": "docs/leonidas_ii/VISUAL_REVIEW.json",
+  "publication": "Interim progress snapshot only. Strict final evidence/review gate is intentionally not claimed; another fast-forward update is planned after remaining review."
+}

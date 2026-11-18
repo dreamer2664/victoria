@@ -1,0 +1,1130 @@
+[
+  {
+    "path": "/home/user/reference_review/boats/refs/rmg/e9006_222.jpg",
+    "size": [
+      1280,
+      870
+    ],
+    "group": "rmg"
+  },
+  {
+    "path": "/home/user/reference_review/boats/refs/rmg/f8825_002.jpg",
+    "size": [
+      1280,
+      740
+    ],
+    "group": "rmg"
+  },
+  {
+    "path": "/home/user/reference_review/boats/refs/rmg/e9006_221.jpg",
+    "size": [
+      1280,
+      892
+    ],
+    "group": "rmg"
+  },
+  {
+    "path": "/home/user/reference_review/boats/refs/rmg/f8825_001.jpg",
+    "size": [
+      1280,
+      458
+    ],
+    "group": "rmg"
+  },
+  {
+    "path": "/home/user/reference_review/boats/refs/rmg/f8933_001.jpg",
+    "size": [
+      1280,
+      450
+    ],
+    "group": "rmg"
+  },
+  {
+    "path": "/home/user/reference_review/boats/refs/rmg/f8933_002.jpg",
+    "size": [
+      1280,
+      731
+    ],
+    "group": "rmg"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/RMS_Germanic_at_Liverpool.jpg",
+    "size": [
+      1400,
+      1143
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/Photo05-MainSaloon-Teutonic-WhiteStarLine-500.jpg",
+    "size": [
+      500,
+      344
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/SS_Teutonic__1889__-_Staircase.jpg",
+    "size": [
+      1066,
+      1300
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/City_of_Paris__by_Antonio_Nicolo_Gasparo_Jacobsen.jpg",
+    "size": [
+      1400,
+      724
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/Photo04-Stateroom-Teutonic-WhiteStarLine-500.jpg",
+    "size": [
+      500,
+      349
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/SS_Majestic__1890_.jpg",
+    "size": [
+      1400,
+      1122
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/SS_Teutonic__1889__-_Library.jpg",
+    "size": [
+      1300,
+      1037
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/The_Paris_in_Dry-Dock_Soton_1895_or_1896.jpg",
+    "size": [
+      1400,
+      912
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/Photo01-GrandStaircase-Teutonic-WhiteStarLine-500.jpg",
+    "size": [
+      500,
+      379
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/Photo02-SmokingSaloon-Teutonic-WhiteStarLine-500.jpg",
+    "size": [
+      500,
+      366
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/Teutonic.png",
+    "size": [
+      1400,
+      1104
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/reference/plates/SS_Paris_ex_City_of_Paris__1888_.jpg",
+    "size": [
+      1400,
+      933
+    ],
+    "group": "ship_references"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/three_quarter_stern_port.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/three_quarter_bow_port.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/below_waterline.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/beam_starboard.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/beam_port.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/three_quarter_stern_stbd.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/bow_on.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/three_quarter_bow_stbd.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/stern_on.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/exterior/high_above.png",
+    "size": [
+      1400,
+      800
+    ],
+    "group": "ship_exterior"
+  },
+  {
+    "path": "/home/user/victoria/renders/interiors/galley.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/interiors/smoking_saloon.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/interiors/grand_staircase.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/interiors/library.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/interiors/dining_saloon.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/interiors/music_room.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/chart_house.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/wheelhouse.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/officers_cabin.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/galley.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/third_class.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/smoking_saloon.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/stateroom.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/grand_staircase.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/library.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/dining_saloon.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/check/music_room.png",
+    "size": [
+      1280,
+      800
+    ],
+    "group": "ship_interiors"
+  },
+  {
+    "path": "/home/user/victoria/renders/machinery/shaft_alley.png",
+    "size": [
+      1600,
+      760
+    ],
+    "group": "ship_machinery"
+  },
+  {
+    "path": "/home/user/victoria/renders/machinery/machinery_detail.png",
+    "size": [
+      1400,
+      1000
+    ],
+    "group": "ship_machinery"
+  },
+  {
+    "path": "/home/user/victoria/renders/machinery/engine_room_cutaway.png",
+    "size": [
+      1800,
+      640
+    ],
+    "group": "ship_machinery"
+  },
+  {
+    "path": "/home/user/victoria/renders/structure/body_plan_3d.png",
+    "size": [
+      1500,
+      1100
+    ],
+    "group": "ship_machinery"
+  },
+  {
+    "path": "/home/user/victoria/renders/structure/hull_cross_section.png",
+    "size": [
+      1500,
+      1100
+    ],
+    "group": "ship_machinery"
+  },
+  {
+    "path": "/home/user/victoria/drawings/deck_bottom.png",
+    "size": [
+      3740,
+      1530
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/general_arrangement.png",
+    "size": [
+      4000,
+      1700
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/deck_lower.png",
+    "size": [
+      3740,
+      1530
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/deck_prom.png",
+    "size": [
+      3740,
+      1530
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/deck_main.png",
+    "size": [
+      3740,
+      1530
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/body_plan.png",
+    "size": [
+      1800,
+      2400
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/deck_upper.png",
+    "size": [
+      3600,
+      1320
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/deck_bridge.png",
+    "size": [
+      3740,
+      1530
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/deck_boat.png",
+    "size": [
+      3740,
+      1530
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/lines_plan.png",
+    "size": [
+      3300,
+      2400
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/victoria/drawings/deck_saloon.png",
+    "size": [
+      3740,
+      1530
+    ],
+    "group": "ship_drawings"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_bow_on.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_from_above.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_bow_on.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_cutaway_c.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_broadside.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_cutaway_a.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_machinery.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_hero.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_from_above.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_bow_quarter.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_cutaway_c.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_cutaway_b.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_bow_on.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_cutaway_a.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_bow_quarter.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_cutaway_a.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_hero.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_broadside.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_cutaway_c.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_stern_quarter.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_bow_quarter.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_hero.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_broadside.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_cutaway_b.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/steam_stern_quarter.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_from_above.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/rowing_cutaway_b.png",
+    "size": [
+      1100,
+      690
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/renders/whaler_stern_quarter.png",
+    "size": [
+      1240,
+      800
+    ],
+    "group": "boat_renders"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/drawings/d-004_c.png",
+    "size": [
+      2295,
+      1615
+    ],
+    "group": "boat_drawings"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/drawings/d-001_a.png",
+    "size": [
+      2295,
+      1615
+    ],
+    "group": "boat_drawings"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/drawings/d-002_a.png",
+    "size": [
+      2295,
+      1224
+    ],
+    "group": "boat_drawings"
+  },
+  {
+    "path": "/home/user/reference_review/boats/boats/drawings/d-003_b.png",
+    "size": [
+      2295,
+      1615
+    ],
+    "group": "boat_drawings"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_084.jpg",
+    "size": [
+      482,
+      600
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_103.jpg",
+    "size": [
+      600,
+      477
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_139.jpg",
+    "size": [
+      600,
+      394
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_279.jpg",
+    "size": [
+      600,
+      517
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_115.jpg",
+    "size": [
+      600,
+      386
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_087.jpg",
+    "size": [
+      600,
+      437
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_142.jpg",
+    "size": [
+      400,
+      439
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_109.jpg",
+    "size": [
+      600,
+      594
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_106.jpg",
+    "size": [
+      350,
+      335
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_249.jpg",
+    "size": [
+      600,
+      371
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_102.jpg",
+    "size": [
+      520,
+      600
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_145.jpg",
+    "size": [
+      600,
+      370
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_132.jpg",
+    "size": [
+      400,
+      499
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_094.jpg",
+    "size": [
+      600,
+      466
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_191.jpg",
+    "size": [
+      600,
+      408
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_099.jpg",
+    "size": [
+      435,
+      600
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_227.jpg",
+    "size": [
+      600,
+      404
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/reference/plates/i_221.jpg",
+    "size": [
+      468,
+      600
+    ],
+    "group": "port_references"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_b/07_roofscape.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_b/05_slipways.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_b/02_waterfront.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_b/01_aerial.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_b/03_street.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_b/06_shops.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_b/04_graving_dock.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_a/07_roofscape.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_a/06_dock_basin.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_a/08_terminal_court.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_a/02_waterfront.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_a/01_aerial.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_a/03_street.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_a/05_landing_stage.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/port_a/04_dockside.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/_tests/lib_overview.png",
+    "size": [
+      1280,
+      720
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/_tests/lib_industry.png",
+    "size": [
+      1280,
+      720
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/_tests/lib_warehouse.png",
+    "size": [
+      1280,
+      720
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/ports/renders/_tests/lib_civic.png",
+    "size": [
+      1280,
+      720
+    ],
+    "group": "port_renders"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ports_a_buried_quayside.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ship_rig_funnel_mismatch.png",
+    "size": [
+      1120,
+      630
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/boats_steam_defects.png",
+    "size": [
+      1000,
+      625
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ship_staterooms_protrusion.png",
+    "size": [
+      1120,
+      700
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ports_a_terminal_missing_gable.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ship_engine_machinery_flaws.png",
+    "size": [
+      1120,
+      700
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ports_a_misplaced_quay_and_rails.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ship_stern_prop_shaft_collision.png",
+    "size": [
+      1120,
+      700
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ports_b_slipways_rails_buried.png",
+    "size": [
+      960,
+      540
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/boats_rowing_oar_pivots.png",
+    "size": [
+      1120,
+      700
+    ],
+    "group": "qa_evidence"
+  },
+  {
+    "path": "/home/user/reference_review/qa/qa-evidence/ship_bridge_wheelhouse_mismatch.png",
+    "size": [
+      1120,
+      700
+    ],
+    "group": "qa_evidence"
+  }
+]

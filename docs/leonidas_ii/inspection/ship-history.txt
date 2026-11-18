@@ -1,0 +1,391 @@
+commit 75bf4ac5770b803919b36c8dbdb5374df82d88ac
+Author:     Agent 03 - Naval Architect <agent03@victoria.local>
+AuthorDate: Sun Nov 15 19:22:57 2026 +0000
+Commit:     Agent 03 - Naval Architect <agent03@victoria.local>
+CommitDate: Sun Nov 15 19:22:57 2026 +0000
+
+    Roblox exports verified and corrected
+    
+    - export_roblox: the GLB had no scale applied (165.2 studs instead of 592.9).
+      The glTF exporter takes no global_scale, so meshes are baked to studs on a
+      temporary copy and restored afterwards. Verified: Hull.glb now measures 590
+      studs along X.
+    - Both formats verified as real files: GLB magic/version/JSON chunk parsed,
+      FBX Kaydara header checked. 7 logical modules, 287k triangles, 197k verts.
+    - Scuppers and Corridor_Lamps assigned to their proper modules (they had
+      fallen into a stray 'Misc').
+    - Manifest records the scale rule, the origin convention and the verification.
+    - New roblox/Aurelian_Assemble.server.lua: builds the Model, verifies and
+      corrects scale against 592.9 studs, sets the origin, tags parts, sets
+      attributes.
+    - Machinery re-rendered brighter; shaft alley now clearly shows the line of
+      shafting through its bearings to the stern tube and propeller.
+
+ blender/export_roblox.py                  |  35 +-
+ blender/render_machinery.py               |  14 +-
+ exports/fbx/DeckEquipment.fbx             | Bin 95244 -> 124124 bytes
+ exports/fbx/Hull.fbx                      | Bin 753244 -> 754012 bytes
+ exports/fbx/Interiors_Cabins.fbx          | Bin 632444 -> 632444 bytes
+ exports/fbx/Interiors_Public.fbx          | Bin 593340 -> 645164 bytes
+ exports/fbx/Interiors_Structure.fbx       | Bin 180412 -> 181116 bytes
+ exports/fbx/Machinery.fbx                 | Bin 155516 -> 155516 bytes
+ exports/fbx/Superstructure.fbx            | Bin 349868 -> 322492 bytes
+ exports/glb/DeckEquipment.glb             | Bin 239516 -> 385272 bytes
+ exports/glb/Hull.glb                      | Bin 2542156 -> 2542228 bytes
+ exports/glb/Interiors_Cabins.glb          | Bin 4651196 -> 4651044 bytes
+ exports/glb/Interiors_Public.glb          | Bin 4314248 -> 4661180 bytes
+ exports/glb/Interiors_Structure.glb       | Bin 457180 -> 457308 bytes
+ exports/glb/Machinery.glb                 | Bin 588468 -> 588452 bytes
+ exports/glb/Superstructure.glb            | Bin 1533876 -> 1342844 bytes
+ exports/roblox_modules.json               |  20 +-
+ renders/interiors_render.log              | 522 +++++-------------------------
+ renders/machinery/engine_room_cutaway.png | Bin 1151890 -> 1128197 bytes
+ renders/machinery/machinery_detail.png    | Bin 1575526 -> 1596534 bytes
+ renders/machinery/shaft_alley.png         | Bin 1247848 -> 1236696 bytes
+ 21 files changed, 135 insertions(+), 456 deletions(-)
+
+commit ff7c3fd2df39141d9596845b2ca6a77e0525d343
+Author:     Agent 03 - Naval Architect <agent03@victoria.local>
+AuthorDate: Sun Nov 15 19:07:12 2026 +0000
+Commit:     Agent 03 - Naval Architect <agent03@victoria.local>
+CommitDate: Sun Nov 15 19:07:12 2026 +0000
+
+    Waterline corrected; windows grouped; scuppers; hull section + body plan
+    
+    - render.py: the sea plane was at z=0 (the KEEL) while the ship floats at
+      draft 6.50 m, so the whole hull was submerged and the boot-top read as a
+      decorative stripe. Sea now sits on the design waterline; all ten exterior
+      views reframed relative to the waterline.
+    - build_hull: boot-top moved to straddle the waterline (0.10 m above,
+      0.26 m below).
+    - build_superstructure: deckhouse windows grouped at 2.65 m centres instead
+      of a continuous 1.55 m ribbon; scuppers and freeing ports added along the
+      main deck edge; boats and davits placed on the real boat deck, clear of the
+      houses, via _boat_stations()/_boat_offset().
+    - render_sections: rewritten as orthographic technical plates - a single
+      midship transverse section and a 19-station body plan viewed down the axis.
+      The earlier version photographed the camera's own interior.
+    - validate.py: check_houses_are_enclosed() - every enclosed public room must
+      lie inside the deckhouse (catches the drift the beam render exposed).
+
+ blender/build_hull.py                         |    5 +-
+ blender/build_superstructure.py               |   70 +-
+ blender/render.py                             |   38 +-
+ blender/render_sections.py                    |  199 ++--
+ models/module_hull.blend                      |  Bin 2969824 -> 2969824 bytes
+ models/module_superstructure.blend            |  Bin 2362872 -> 2373368 bytes
+ models/ship_assembly.blend                    |  Bin 13672028 -> 13684812 bytes
+ renders/exterior/beam_port.png                |  Bin 1156380 -> 1172583 bytes
+ renders/exterior/beam_starboard.png           |  Bin 1160671 -> 1181013 bytes
+ renders/exterior/below_waterline.png          |  Bin 0 -> 1224708 bytes
+ renders/exterior/bow_on.png                   |  Bin 0 -> 1134863 bytes
+ renders/exterior/high_above.png               |  Bin 0 -> 1244585 bytes
+ renders/exterior/stern_on.png                 |  Bin 0 -> 1178517 bytes
+ renders/exterior/three_quarter_bow_port.png   |  Bin 1222500 -> 1214362 bytes
+ renders/exterior/three_quarter_bow_stbd.png   |  Bin 1251800 -> 1232556 bytes
+ renders/exterior/three_quarter_stern_port.png |  Bin 0 -> 1273124 bytes
+ renders/exterior/three_quarter_stern_stbd.png |  Bin 0 -> 1277326 bytes
+ renders/exterior_render.log                   | 1333 +++++++++++++++++--------
+ renders/structure/body_plan_3d.png            |  Bin 0 -> 427927 bytes
+ renders/structure/hull_cross_section.png      |  Bin 0 -> 144877 bytes
+ roblox/Aurelian_Assemble.server.lua           |  168 ++++
+ shipdesign/validate.py                        |   42 +-
+ 22 files changed, 1292 insertions(+), 563 deletions(-)
+
+commit 4b874b40d53d66c0bbc4c3b834277f93c919422c
+Author:     Agent 03 - Naval Architect <agent03@victoria.local>
+AuthorDate: Sun Nov 15 18:35:01 2026 +0000
+Commit:     Agent 03 - Naval Architect <agent03@victoria.local>
+CommitDate: Sun Nov 15 18:35:01 2026 +0000
+
+    Superstructure now derives from layout; fix z-fighting floors; restore stair helpers
+    
+    CRITICAL FIXES found by rendering and ray-casting, not by reading code:
+    - build_superstructure: saloon deckhouse span, promenade houses, boat-deck
+      houses and the bridge/wheelhouse are now DERIVED from layout.ROOMS,
+      DECK_EXT and hull_side_halfbeam instead of hard-coded x ranges. The beam
+      render exposed deckhouses that no longer met the hull: the bridge was at
+      x 8..32 while the plan put the wheelhouse at 30..41.
+    - build_interiors: flooring lifted 35 mm above the deck plate. Coplanar with
+      the plate, the two surfaces z-fight and every floor rendered BLACK.
+    - build_interiors: music room panelled, carpeted and beamed; corridor lamps
+      added so doorways do not open onto a black void.
+    - render_interiors: grand staircase vantage found by ray-cast search
+      (tools/find_stair_cam.py) - 9.5 m of clear sight into the well.
+    - Restored _flight and _dome, which a bad patch deleted (build silently
+      failed and the stale .blend was rendered for two hours).
+    - tools/: diag_floor, diag_mat, diag_views, qa_extents, find_stair_cam.
+
+ blender/build_interiors.py                  |  93 ++-
+ blender/build_superstructure.py             | 123 ++--
+ blender/render_interiors.py                 |  28 +-
+ models/module_interiors.blend               | Bin 8154616 -> 8207900 bytes
+ models/module_superstructure.blend          | Bin 2363804 -> 2362872 bytes
+ models/ship_assembly.blend                  | Bin 13618504 -> 13672028 bytes
+ renders/check.log                           | 941 ++++++++++++++++++++++++++++
+ renders/check/chart_house.png               | Bin 0 -> 947734 bytes
+ renders/check/dining_saloon.png             | Bin 0 -> 1298267 bytes
+ renders/check/galley.png                    | Bin 0 -> 1118132 bytes
+ renders/check/grand_staircase.png           | Bin 0 -> 1303117 bytes
+ renders/check/library.png                   | Bin 0 -> 1093292 bytes
+ renders/check/music_room.png                | Bin 0 -> 1099171 bytes
+ renders/check/officers_cabin.png            | Bin 0 -> 840481 bytes
+ renders/check/smoking_saloon.png            | Bin 0 -> 1139254 bytes
+ renders/check/stateroom.png                 | Bin 0 -> 1079438 bytes
+ renders/check/third_class.png               | Bin 0 -> 1128454 bytes
+ renders/check/wheelhouse.png                | Bin 0 -> 1029089 bytes
+ renders/exterior/beam_port.png              | Bin 0 -> 1156380 bytes
+ renders/exterior/beam_starboard.png         | Bin 0 -> 1160671 bytes
+ renders/exterior/three_quarter_bow_port.png | Bin 0 -> 1222500 bytes
+ renders/exterior/three_quarter_bow_stbd.png | Bin 0 -> 1251800 bytes
+ renders/exterior_render.log                 | 531 +++++++++++++---
+ renders/interiors_render.log                |   1 +
+ tools/diag_floor.py                         |  25 +
+ tools/diag_mat.py                           |  10 +
+ tools/find_stair_cam.py                     |  41 ++
+ tools/qa_extents.py                         |  10 +
+ 28 files changed, 1659 insertions(+), 144 deletions(-)
+
+commit ac6d4b63ace53b00f26e455784deaf699dee6035
+Author:     Agent 03 - Naval Architect <agent03@victoria.local>
+AuthorDate: Sun Nov 15 17:53:01 2026 +0000
+Commit:     Agent 03 - Naval Architect <agent03@victoria.local>
+CommitDate: Sun Nov 15 17:53:01 2026 +0000
+
+    Docs, reference board, interfaces, hull-section renderer
+    
+    - HISTORICAL_EVIDENCE.md: every dimension traced to a source or explicitly
+      marked as inference; honest limitations section (no stability calc, no
+      traced lines plan, no rivet geometry).
+    - README.md: build instructions, Roblox integration table, scale rule,
+      quality gate.
+    - reference/reference_board.png/.pdf: 12 annotated historical plates, each
+      paired with the modelling decision it justifies; plates/ + index.
+    - interfaces/boats_spec.json (Agent 02 contract) and
+      interfaces/ship_spec.json published from the design modules.
+    - DIMENSION_MANIFEST.json: 44 dimensions with source file and basis.
+    - shipdesign/publish_spec.py: generates both JSONs so they cannot drift.
+    - shipdesign/drawings.py: deck plans rebuilt - full-page, scaled outline,
+      fitted labels, scale bar, forward arrow. Fixed numpy-array coordinates
+      leaking out of layout.hull_half_beam (a 6.57 m room was silently 0.57 m).
+    - blender/render_sections.py: midship transverse section + 3-D body plan,
+      generated from the same HullForm.section() as the model.
+    - blender/render.py: 10 exterior views covering bow, stern, both sides,
+      above and below the waterline.
+
+ DIMENSION_MANIFEST.json                            |  344 ++
+ HISTORICAL_EVIDENCE.md                             |  220 ++
+ README.md                                          |  176 +
+ blender/render.py                                  |   27 +-
+ blender/render_interiors.py                        |   20 +-
+ blender/render_sections.py                         |  201 +
+ drawings/body_plan.svg                             |  150 +-
+ drawings/deck_boat.png                             |  Bin 39370 -> 75426 bytes
+ drawings/deck_boat.svg                             | 3617 ++++++++++++++----
+ drawings/deck_bottom.png                           |  Bin 67846 -> 91121 bytes
+ drawings/deck_bottom.svg                           | 3052 +++++++++++----
+ drawings/deck_bridge.png                           |  Bin 39372 -> 62536 bytes
+ drawings/deck_bridge.svg                           | 2984 +++++++++++----
+ drawings/deck_lower.png                            |  Bin 118265 -> 143644 bytes
+ drawings/deck_lower.svg                            | 3853 ++++++++++++-------
+ drawings/deck_main.png                             |  Bin 115299 -> 134928 bytes
+ drawings/deck_main.svg                             | 3715 +++++++++++++------
+ drawings/deck_prom.png                             |  Bin 39102 -> 121262 bytes
+ drawings/deck_prom.svg                             | 3921 ++++++++++++++++----
+ drawings/deck_saloon.png                           |  Bin 106651 -> 115230 bytes
+ drawings/deck_saloon.svg                           | 3802 +++++++++++++------
+ drawings/general_arrangement.svg                   |  102 +-
+ drawings/lines_plan.svg                            |   90 +-
+ interfaces/boats_spec.json                         |  103 +
+ interfaces/ship_spec.json                          | 1034 ++++++
+ ...f_Paris__by_Antonio_Nicolo_Gasparo_Jacobsen.jpg |  Bin 0 -> 307143 bytes
+ ...1-GrandStaircase-Teutonic-WhiteStarLine-500.jpg |  Bin 0 -> 93749 bytes
+ ...02-SmokingSaloon-Teutonic-WhiteStarLine-500.jpg |  Bin 0 -> 91858 bytes
+ ...hoto04-Stateroom-Teutonic-WhiteStarLine-500.jpg |  Bin 0 -> 105243 bytes
+ ...oto05-MainSaloon-Teutonic-WhiteStarLine-500.jpg |  Bin 0 -> 88540 bytes
+ reference/plates/RMS_Germanic_at_Liverpool.jpg     |  Bin 0 -> 469259 bytes
+ reference/plates/SS_Majestic__1890_.jpg            |  Bin 0 -> 348254 bytes
+ .../plates/SS_Paris_ex_City_of_Paris__1888_.jpg    |  Bin 0 -> 331302 bytes
+ reference/plates/SS_Teutonic__1889__-_Library.jpg  |  Bin 0 -> 444529 bytes
+ .../plates/SS_Teutonic__1889__-_Staircase.jpg      |  Bin 0 -> 366254 bytes
+ reference/plates/Teutonic.png                      |  Bin 0 -> 1378963 bytes
+ .../The_Paris_in_Dry-Dock_Soton_1895_or_1896.jpg   |  Bin 0 -> 479549 bytes
+ reference/reference_board.pdf                      |  Bin 0 -> 8109377 bytes
+ reference/reference_board.png                      |  Bin 0 -> 10110968 bytes
+ reference/reference_index.json                     |   74 +
+ renders/exterior_render.log                        |   94 +
+ renders/interiors/dining_saloon.png                |  Bin 1259144 -> 1282989 bytes
+ renders/interiors/galley.png                       |  Bin 0 -> 1080870 bytes
+ renders/interiors/grand_staircase.png              |  Bin 1052192 -> 1030990 bytes
+ renders/interiors/library.png                      |  Bin 1128817 -> 1083737 bytes
+ renders/interiors/smoking_saloon.png               |  Bin 1138319 -> 1129030 bytes
+ renders/interiors_render.log                       |  440 +++
+ shipdesign/drawings.py                             |  120 +-
+ shipdesign/layout.py                               |   25 +-
+ shipdesign/publish_spec.py                         |  230 ++
+ shipdesign/validate.py                             |   28 +-
+ tools/diag_views.py                                |   27 +
+ tools/make_reference_board.py                      |  170 +
+ 53 files changed, 22027 insertions(+), 6592 deletions(-)
+
+commit beb9e8946d126b1aae1e338995c2c2505eeac3ba
+Author:     Agent 03 - Naval Architect <agent03@victoria.local>
+AuthorDate: Sun Nov 15 17:26:11 2026 +0000
+Commit:     Agent 03 - Naval Architect <agent03@victoria.local>
+CommitDate: Sun Nov 15 17:26:11 2026 +0000
+
+    Drop Blender .blend1 backups from version control
+
+ .gitignore                          |   2 ++
+ models/module_hull.blend1           | Bin 2579420 -> 0 bytes
+ models/module_interiors.blend1      | Bin 8154616 -> 0 bytes
+ models/module_machinery.blend1      | Bin 1170164 -> 0 bytes
+ models/module_superstructure.blend1 | Bin 2363804 -> 0 bytes
+ models/ship_assembly.blend1         | Bin 13618504 -> 0 bytes
+ 6 files changed, 2 insertions(+)
+
+commit c359e1c3c6ef70c3a48cda64d6bdb7fb042bb2ba
+Author:     Agent 03 - Naval Architect <agent03@victoria.local>
+AuthorDate: Sun Nov 15 17:25:48 2026 +0000
+Commit:     Agent 03 - Naval Architect <agent03@victoria.local>
+CommitDate: Sun Nov 15 17:25:48 2026 +0000
+
+    Interior build fixes found by the wall validator; stair well; Roblox scripts
+    
+    - validate.py: check_walls() tests every polygon edge of every room against
+      the actual merged Interior_Rooms mesh (148 walls).
+    - room_shell: walls now run to the REAL deck-above ceiling. Capping them at a
+      nominal 2.75 m storey left a black band round the top of every small room.
+    - dado_and_panels: offsets are oriented toward the room centroid. A fixed
+      normal put half the panelling outside the room.
+    - grand_staircase: rebuilt as a proper well (open floor at both ends, gallery
+      down the sides, single flight per storey, gallery soffit, dome).
+    - mainmast re-stepped to x=+8.5, clear of the entrance hall.
+    - render_interiors: cameras derived from room_polygon() with an auto-nudge
+      that measures first-hit distance and slides clear.
+    - Roblox: telegraph+helm, engine animation (slider-crank, 120 deg phasing),
+      doors/boarding/interior lighting, smoke/wake client effects.
+
+ blender/build_interiors.py                  | 131 ++++++++-----------
+ blender/render_interiors.py                 | 164 ++++++++++++++++++++----
+ drawings/body_plan.svg                      | 150 +++++++++++-----------
+ drawings/deck_bottom.svg                    |  12 +-
+ drawings/deck_lower.svg                     |  56 ++++----
+ drawings/general_arrangement.png            | Bin 131432 -> 131908 bytes
+ drawings/general_arrangement.svg            | 190 ++++++++++++++--------------
+ drawings/lines_plan.png                     | Bin 166243 -> 166289 bytes
+ drawings/lines_plan.svg                     | 138 ++++++++++----------
+ models/module_interiors.blend               | Bin 8154616 -> 8154616 bytes
+ models/module_interiors.blend1              | Bin 7969016 -> 8154616 bytes
+ models/module_superstructure.blend          | Bin 2363804 -> 2363804 bytes
+ models/module_superstructure.blend1         | Bin 2220796 -> 2363804 bytes
+ models/ship_assembly.blend                  | Bin 13618504 -> 13618504 bytes
+ models/ship_assembly.blend1                 | Bin 13432904 -> 13618504 bytes
+ renders/interiors/dining_saloon.png         | Bin 0 -> 1259144 bytes
+ renders/interiors/grand_staircase.png       | Bin 0 -> 1052192 bytes
+ renders/interiors/library.png               | Bin 0 -> 1128817 bytes
+ renders/interiors/music_room.png            | Bin 0 -> 976332 bytes
+ renders/interiors/smoking_saloon.png        | Bin 0 -> 1138319 bytes
+ roblox/Aurelian_DoorsAndLighting.server.lua | 147 +++++++++++++++++++++
+ roblox/Aurelian_EngineAnim.server.lua       | 124 ++++++++++++++++++
+ roblox/Aurelian_SmokeAndWake.client.lua     | 109 ++++++++++++++++
+ roblox/Aurelian_Telegraph.server.lua        | 155 +++++++++++++++++++++++
+ shipdesign/spec.py                          |   2 +-
+ shipdesign/validate.py                      |  78 +++++++++++-
+ 26 files changed, 1081 insertions(+), 375 deletions(-)
+
+commit da05fa6a5af06535f0ad011ca023782c53139e30
+Author:     Agent 03 - Naval Architect <agent03@victoria.local>
+AuthorDate: Sun Nov 15 15:43:43 2026 +0000
+Commit:     Agent 03 - Naval Architect <agent03@victoria.local>
+CommitDate: Sun Nov 15 15:43:43 2026 +0000
+
+    MACHINERY MODULE + design validator + 7-module Roblox export
+    
+    - shipdesign/validate.py: 14 drawing-office checks (funnel/mast clashes,
+      headroom, doors, stairs, boats, displacement, bulkheads). 0 failures.
+    - Re-planned midship house so both funnel uptakes rise through dedicated
+      casings between rooms, masts stepped on bulkheads - the ray-cast diag
+      found a funnel running through the library.
+    - blender/build_machinery.py: 9 single-ended boilers, triple-expansion
+      engine with separately-animated piston rods, crankshaft, propeller,
+      shafting, steering gear.
+    - blender/render_machinery.py: bisected cutaway showing engine->propeller.
+    - blender/diag_cam.py: ray-cast camera diagnostic (found the occlusion bug).
+    - blender/export_roblox.py: 7 logical FBX+GLB modules at 1 stud = 0.28 m.
+    - Roblox: AurelianShipController.server.lua (telegraph/propulsion/helm).
+    - Interiors: period dado+panels, ceiling beams, carpets, corrected chairs,
+      book-stocked library.
+    - lib_build: NaN/short-vertex guards that were crashing from_pydata.
+    - build_superstructure: deck fittings no longer sample absent hull geometry.
+
+ .gitignore                                |    5 +
+ blender/assemble.py                       |   33 +
+ blender/build_hull.py                     |  352 ++
+ blender/build_interiors.py                | 1016 ++++++
+ blender/build_machinery.py                |  403 +++
+ blender/build_superstructure.py           |  774 +++++
+ blender/diag_cam.py                       |   40 +
+ blender/export_roblox.py                  |  133 +
+ blender/lib_build.py                      |  342 ++
+ blender/render.py                         |  156 +
+ blender/render_interiors.py               |  104 +
+ blender/render_machinery.py               |  174 +
+ drawings/body_plan.png                    |  Bin 0 -> 252544 bytes
+ drawings/body_plan.svg                    | 2559 ++++++++++++++
+ drawings/deck_boat.png                    |  Bin 0 -> 39370 bytes
+ drawings/deck_boat.svg                    | 1058 ++++++
+ drawings/deck_bottom.png                  |  Bin 0 -> 67846 bytes
+ drawings/deck_bottom.svg                  | 1173 +++++++
+ drawings/deck_bridge.png                  |  Bin 0 -> 39372 bytes
+ drawings/deck_bridge.svg                  | 1093 ++++++
+ drawings/deck_lower.png                   |  Bin 0 -> 118265 bytes
+ drawings/deck_lower.svg                   | 2449 ++++++++++++++
+ drawings/deck_main.png                    |  Bin 0 -> 115299 bytes
+ drawings/deck_main.svg                    | 2258 +++++++++++++
+ drawings/deck_prom.png                    |  Bin 0 -> 39102 bytes
+ drawings/deck_prom.svg                    | 1062 ++++++
+ drawings/deck_saloon.png                  |  Bin 0 -> 106651 bytes
+ drawings/deck_saloon.svg                  | 2123 ++++++++++++
+ drawings/deck_upper.png                   |  Bin 0 -> 60281 bytes
+ drawings/deck_upper.svg                   | 1725 ++++++++++
+ drawings/general_arrangement.png          |  Bin 0 -> 131432 bytes
+ drawings/general_arrangement.svg          | 5239 +++++++++++++++++++++++++++++
+ drawings/lines_plan.png                   |  Bin 0 -> 166243 bytes
+ drawings/lines_plan.svg                   | 4274 +++++++++++++++++++++++
+ exports/fbx/DeckEquipment.fbx             |  Bin 0 -> 95244 bytes
+ exports/fbx/Hull.fbx                      |  Bin 0 -> 753244 bytes
+ exports/fbx/Interiors_Cabins.fbx          |  Bin 0 -> 632444 bytes
+ exports/fbx/Interiors_Public.fbx          |  Bin 0 -> 593340 bytes
+ exports/fbx/Interiors_Structure.fbx       |  Bin 0 -> 180412 bytes
+ exports/fbx/Machinery.fbx                 |  Bin 0 -> 155516 bytes
+ exports/fbx/Superstructure.fbx            |  Bin 0 -> 349868 bytes
+ exports/glb/DeckEquipment.glb             |  Bin 0 -> 239516 bytes
+ exports/glb/Hull.glb                      |  Bin 0 -> 2542156 bytes
+ exports/glb/Interiors_Cabins.glb          |  Bin 0 -> 4651196 bytes
+ exports/glb/Interiors_Public.glb          |  Bin 0 -> 4314248 bytes
+ exports/glb/Interiors_Structure.glb       |  Bin 0 -> 457180 bytes
+ exports/glb/Machinery.glb                 |  Bin 0 -> 588468 bytes
+ exports/glb/Superstructure.glb            |  Bin 0 -> 1533876 bytes
+ exports/roblox_modules.json               |  122 +
+ models/module_hull.blend                  |  Bin 0 -> 2969824 bytes
+ models/module_hull.blend1                 |  Bin 0 -> 2579420 bytes
+ models/module_interiors.blend             |  Bin 0 -> 8154616 bytes
+ models/module_interiors.blend1            |  Bin 0 -> 7969016 bytes
+ models/module_machinery.blend             |  Bin 0 -> 1196340 bytes
+ models/module_machinery.blend1            |  Bin 0 -> 1170164 bytes
+ models/module_superstructure.blend        |  Bin 0 -> 2363804 bytes
+ models/module_superstructure.blend1       |  Bin 0 -> 2220796 bytes
+ models/ship_assembly.blend                |  Bin 0 -> 13618504 bytes
+ models/ship_assembly.blend1               |  Bin 0 -> 13432904 bytes
+ renders/machinery/engine_room_cutaway.png |  Bin 0 -> 1151890 bytes
+ renders/machinery/machinery_detail.png    |  Bin 0 -> 1575526 bytes
+ renders/machinery/shaft_alley.png         |  Bin 0 -> 1247848 bytes
+ roblox/AurelianShipController.server.lua  |  209 ++
+ shipdesign/__init__.py                    |    7 +
+ shipdesign/drawings.py                    |  334 ++
+ shipdesign/hull.py                        |  360 ++
+ shipdesign/layout.py                      |  290 ++
+ shipdesign/spec.py                        |  263 ++
+ shipdesign/validate.py                    |  226 ++
+ 69 files changed, 30356 insertions(+)
