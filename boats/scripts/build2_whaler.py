@@ -62,12 +62,17 @@ def main(quick=False):
     # modelled in its stowed / at-the-davits state, and a lowered plate
     # stood through the keel blocks.  It pivots (meta) to lower in-game.
     z_k = hull.keel_z(0.48)
-    cb = P.centreboard((hull.X(0.48), 0, z_k + 0.02), lowered=False, mat=4)
+    # Housed davit-state board: flattening the blade alone left its lower edge
+    # proud of the keel in broadside view.  Raise the complete plate into the
+    # centreboard case; the metadata records the stored pivot rather than
+    # implying a presently implemented runtime lowering mechanism.
+    cb_pivot_z = z_k + 0.18
+    cb = P.centreboard((hull.X(0.48), 0, cb_pivot_z), lowered=False, mat=4)
     objects["Centreboard"] = cb
     case = P.centreboard_case(hull, xi=0.48, length=1.55, mat=1)
     objects["Centreboard_Case"] = case
     meta["pivots"]["centreboard"] = {"axis_x": round(float(hull.X(0.48)), 3),
-                                     "axis_z": round(float(z_k + 0.02), 3)}
+                                     "axis_z": round(float(cb_pivot_z), 3)}
 
     # five thwarts slung BELOW the case via cleats, bow thwart lowered for the sail
     stations_oar = [1.90, 1.10, 0.30, -0.50, -1.30]
