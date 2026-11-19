@@ -34,7 +34,7 @@ THEMISTOCLES-III and THEMISTOCLES-IV, 18 November 2026. Each accepted exact outp
 - `rowing_stern_on.png` — SHA-256 `868938147f5bfae621f6bd6db2a78c12da5e37ef7267b1ee387773817d4e4bc7`
 - `rowing_stern_quarter.png` — SHA-256 `4cc15622538c184cff6bae83ca1b227b7cf96f9e50bbef837c5eb1775a51d7b2`
 - `rowing_top.png` — SHA-256 `f03eb6fb1eea2d66af1c6d448a63a494f2432d27ec189e2284549cabaaa75ddb`
-- `rowing_underside.png` — SHA-256 `e48d6148681770e2811b9c0779051a6618685e2b1d53e09c9a8f5ccd1ff1670f`
+- `rowing_underside.png` — SHA-256 `4ee998efb7c21f24a8d3450d24e2b7964967ddebc4dc261148a07d9bc22e37c3`
 - `rowing_hero.png` — SHA-256 `4e201664a839ae1de4e3ba456eaaf3b306438b9d675ea987d90a0c7576f2b905`
 - `rowing_profile_high.png` — SHA-256 `417ce23e5b6a5a0bb35c978dfc557eb559a37453e587ce6f7e593902da7bebb1`
 - `rowing_water_hero.png` — SHA-256 `b66df979804f707f985f81acffe892f35eed0c7c1af044218a4b34b2fbb2dfdf`
@@ -42,4 +42,4 @@ THEMISTOCLES-III and THEMISTOCLES-IV, 18 November 2026. Each accepted exact outp
 - `rowing_water_stern_quarter.png` — SHA-256 `81e585bae437c96f6e26264333b9ab8658bb274d8d21945beb936c1e7cbc48ab`
 - `rowing_water_profile_high.png` — SHA-256 `c261db830199fd9c941a507e47eb2fc5486257b33efd4acdb170d3687fe39ece`
 - `rowing_interior.png` — SHA-256 `8e1c510e98f5734ce724b456662cb18dd25003c31c177fe09524a9e101f70c67`
-- `rowing_construction_construction.png` — SHA-256 `15c50eed8c8bf5bfc169dfff6b4c5979b980c895be9402a236c8e46cc60d27f7`
+- `rowing_construction_construction.png` — SHA-256 `6eeabeb49dbe212986f9f85768fdf6a7262abd0cdb64497f827567f3b8073008`

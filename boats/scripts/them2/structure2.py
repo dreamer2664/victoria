@@ -485,7 +485,7 @@ def frames(hull, n_planks, thk, spacing=0.16, siding=0.022, mould_lo=0.040,
 
 
 def keelson(hull, depth=0.14, sided=0.075, mat=0, xi_range=(0.12, 0.88),
-            cap_w=0.0):
+            cap_w=0.0, heel_clearance=0.002):
     """Keelson: the inner keel, sided over the floors along the centreline."""
     mb = MB("Keelson")
     n = 30
@@ -509,7 +509,7 @@ def keelson(hull, depth=0.14, sided=0.075, mat=0, xi_range=(0.12, 0.88),
             else:
                 hi = tm
         yin = hull.section_pt(xi, (lo + hi) * 0.5, -0.018)[1]
-        foot = min(sided / 2, max(0.004, yin - 0.002))
+        foot = min(sided / 2, max(0.004, yin - heel_clearance))
         paths.append([x, 0, zbase])
         shapes.append(np.array([(-foot, 0), (foot, 0), (sided / 2, d),
                                 (-sided / 2, d)]))
@@ -519,10 +519,17 @@ def keelson(hull, depth=0.14, sided=0.075, mat=0, xi_range=(0.12, 0.88),
     KF = [(np.array([0.0, -1.0, 0.0]), np.array([0.0, 0.0, 1.0]))] * len(paths)
     mb.add_sweep(paths, shapes, frames=KF, mat=mat)
     if cap_w:
-        # moulded cap on the keelson crown: the bottom boards butt to it
+        # Moulded cap on the keelson crown: the bottom boards butt to it.  Its
+        # width must also follow the fine-end V; a constant 100 mm cap can
+        # protrude even after the lower heel has been correctly bevelled.
         cpaths = [[p[0], 0, p[2] + sh[2][1]] for p, sh in zip(paths, shapes)]
-        cshape = [np.array([(-cap_w / 2, 0), (cap_w / 2, 0), (cap_w / 2 - 0.006, 0.016),
-                            (-cap_w / 2 + 0.006, 0.016)])] * len(cpaths)
+        cshape = []
+        for sh in shapes:
+            cap_half = min(cap_w / 2, max(0.004, abs(sh[0][0]) - heel_clearance))
+            shoulder = min(0.006, cap_half * 0.45)
+            cshape.append(np.array([(-cap_half, 0), (cap_half, 0),
+                                    (cap_half - shoulder, 0.016),
+                                    (-cap_half + shoulder, 0.016)]))
         mb.add_sweep(cpaths, cshape, frames=KF, mat=mat)
     return mb
 

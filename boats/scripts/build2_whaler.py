@@ -47,7 +47,11 @@ def main(quick=False):
                    mould_hi=0.024, mat=2)
     fr.mirror_y()
     objects["Frames"] = fr
-    objects["Keelson"] = st.keelson(hull, depth=0.13, sided=0.070, mat=2, cap_w=0.10)
+    # The double-ended whaler has a particularly fine forward V.  Keep a
+    # slightly larger local heel clearance so the keelson's lower corners do
+    # not emerge through the garboards at its first structural station.
+    objects["Keelson"] = st.keelson(hull, depth=0.13, sided=0.070, mat=2,
+                                    cap_w=0.10, heel_clearance=0.004)
     gw = st.gunwale_set(hull, 9, 0.016, cap_w=0.078, cap_h=0.028, mat_cap=1,
                         mat_inwale=2, mat_rub=10, rub_off=0.008)
     gw.mirror_y()
