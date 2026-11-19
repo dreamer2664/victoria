@@ -576,13 +576,20 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
     # omitted for the construction view.  A short, tapered scarf keeps the
     # realistic full rail section clear of the centreline at the very fine end.
     xi_fwd = 0.002
-    xis = np.linspace(xi_fwd, 0.97 if hull.transom else 0.94, n)
+    # A double-ended hull needs the same tapered run into its sternpost.  The
+    # former non-transom stop at xi=0.94 left the aft cap/inwale/rubbing rail
+    # visually suspended well short of the post in the whaler construction
+    # view.
+    xi_aft = 0.97 if hull.transom else 0.998
+    xis = np.linspace(xi_fwd, xi_aft, n)
     pts = []; frames_ = []; shapes = []
     for xi in xis:
         t = hull.arc_to_t(xi, 0.995)
         p = hull.section_pt(xi, t, o_top + 0.002)
         nrm = hull.section_normal(xi, t)
         taper = clamp(xi / 0.035, 0.12, 1.0)
+        if not hull.transom:
+            taper = min(taper, clamp((1.0 - xi) / 0.035, 0.12, 1.0))
         # rail sits on the top edge: raise to sheer top + half height
         seg = superellipse_section(cap_w * taper / 2, cap_h * taper / 2, n=3.2, seg=12)
         shapes.append(seg)
@@ -609,6 +616,8 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
         u = unit(nrm - np.array([0, 0, nrm[2]]))
         v = np.array([0.0, 0.0, 1.0])
         taper = clamp(xi / 0.035, 0.12, 1.0)
+        if not hull.transom:
+            taper = min(taper, clamp((1.0 - xi) / 0.035, 0.12, 1.0))
         pts2.append([p[0], p[1], p[2] - 0.012])
         shapes2.append(superellipse_section(0.022 * taper, 0.024 * taper, n=2.4, seg=10))
         frames2.append((-u, v))
@@ -624,6 +633,8 @@ def gunwale_set(hull, n_planks, thk, cap_w=0.075, cap_h=0.028, rub_arc=0.78,
         u = unit(nrm - np.array([0, 0, nrm[2]]))
         v = np.array([0.0, 0.0, 1.0])
         taper = clamp(xi / 0.035, 0.12, 1.0)
+        if not hull.transom:
+            taper = min(taper, clamp((1.0 - xi) / 0.035, 0.12, 1.0))
         rr = rub_r * taper
         shapes3.append(np.array([(-rr, -rr * 0.4), (rr, -rr * 0.4),
                                  (rr, rr * 0.7), (0, rr), (-rr, rr * 0.7)]))

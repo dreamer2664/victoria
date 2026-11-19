@@ -56,7 +56,12 @@ def main(quick=False):
                         mat_inwale=2, mat_rub=10, rub_off=0.008)
     gw.mirror_y()
     objects["Gunwale_Set"] = gw
-    objects["Breasthooks"] = st.breasthook(hull, length=0.55, thk=0.036)  # fwd hook
+    # Closing knees at both ends of the double-ended hull: without the aft
+    # counterpart the stern rail/frame assembly had no explicit internal
+    # transverse tie in the disclosed construction view.
+    bhooks = st.breasthook(hull, length=0.55, thk=0.036)
+    bhooks.append(st.breasthook(hull, length=0.55, thk=0.036, xi_end=0.988))
+    objects["Breasthooks"] = bhooks
 
     # centreboard + case.  GEN-1: shown HOUSED (raised) -- the boat is
     # modelled in its stowed / at-the-davits state, and a lowered plate
