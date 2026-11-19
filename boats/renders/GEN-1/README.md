@@ -1,6 +1,6 @@
 # GEN-1 — sequential boat render audit
 
-**WORK IN PROGRESS: 15 of 45 images accepted. This is a pushed engineering checkpoint, not the completed release.**
+**WORK IN PROGRESS: 20 of 45 images accepted. This is a pushed engineering checkpoint, not the completed release.**
 
 This generation is being rebuilt and inspected one render at a time by THEMISTOCLES-III and THEMISTOCLES-IV. The historic `../them2/` batch was rejected and is not reused. Diagnostic renders are kept outside the release directory. See [AUDIT_LEDGER.md](AUDIT_LEDGER.md) for concrete per-image findings and fixes.
 

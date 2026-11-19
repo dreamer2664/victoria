@@ -83,7 +83,10 @@ def main(quick=False):
     objects["Risers"] = tinfo["risers"]
 
     # stern sheets (double-ended: small stern bench + platform)
-    sb, sk = BL.side_bench_pair(hull, z=0.28, width=0.26, xi_range=(0.90, 0.985), mat=1)
+    # Keep the aft sheets clear of the double-ended fine V; the prior final
+    # station entered the stern rabbet and put the outer bench corners beyond
+    # the inner planking face.
+    sb, sk = BL.side_bench_pair(hull, z=0.28, width=0.20, xi_range=(0.90, 0.965), mat=1)
     # (side_bench_pair builds both sides: no mirror -- GEN-1 duplicate fix)
     objects["Stern_Sheets"] = sb
     objects["Stern_Bench_Knees"] = sk
@@ -153,13 +156,18 @@ def main(quick=False):
     meta["pivots"]["rudder_axis"] = [round(float(v), 4) for v in axis_pt]
 
     # harpoons + line tub (whaler fittings)
+    # Loose whaling gear must land on the locally sloped boards/inner shell;
+    # a single centreline floor height sent tubs and harpoon ends through the
+    # deadrise near the sides and fine ends.
+    rest = BL.rest_fn(hull, zfn)
     harpoons = P.harpoon_sheathed((0.9, -0.35, zfloor + 0.10))
     harp2 = P.harpoon_sheathed((0.95, -0.42, zfloor + 0.13))
+    harpoons.append(harp2)
+    BL.settle(harpoons, rest)
     objects["Harpoons"] = harpoons
-    objects["Harpoons"].append(harp2)
-    objects["Line_Tub"] = P.line_tub((-0.9, -0.20, zfloor + 0.02))
+    objects["Line_Tub"] = BL.settle(P.line_tub((-0.9, -0.20, zfloor + 0.02)), rest)
     # second whale-line tub forward (whalers carried line at both ends)
-    objects["Line_Tub_Fwd"] = P.line_tub((hull.loa / 2 - 1.35, 0.22, zfloor + 0.02))
+    objects["Line_Tub_Fwd"] = BL.settle(P.line_tub((hull.loa / 2 - 1.35, 0.22, zfloor + 0.02)), rest)
     # brass fairlead sheaves on both stemheads (double-ended boat)
     fl = MB("Stem_Fairleads")
     fl.append(BL.stem_fairlead(hull))
@@ -182,23 +190,25 @@ def main(quick=False):
         cyl(eyemb, (xw, 0, zr - 0.10), (xw, 0, zr + 0.02), 0.012, seg=10, mat=5)
         torus(eyemb, (xw, 0, zr + 0.05), 0.032, 0.010, seg=12, rseg=6, axis="Y", mat=5)
     objects["Ring_Bolts"] = eyemb
-    objects["Painter_Fwd"] = P.painter_coil((hull.loa / 2 - 0.7, 0.18, zfloor + 0.10))
-    objects["Painter_Aft"] = P.painter_coil((-hull.loa / 2 + 0.75, 0.18, zfloor + 0.10))
+    objects["Painter_Fwd"] = BL.settle(P.painter_coil((hull.loa / 2 - 0.7, 0.18, zfloor + 0.10)), rest)
+    objects["Painter_Aft"] = BL.settle(P.painter_coil((-hull.loa / 2 + 0.75, 0.18, zfloor + 0.10)), rest)
 
     gear = []
     gear.append(("Grapnel", P.grapnel((-1.75, -0.16, zfloor + 0.004), lie=True, s=0.95)))
     bh = MB("BoatHooks")
-    for i, sgn in enumerate((-1, 1)):
-        # GEN-1: 10 ft hooks ON the thwarts (the 4.9 m ones on the boards
-        # ran out through the fine ends)
-        bh.append(P.boat_hook((0.70, sgn * 0.50, 0.135 + 0.0145),
-                              length=3.05, along=(1, 0, 0)))
+    for sgn in (-1, 1):
+        # Long hooks lie fore-and-aft over the centre thwarts.  The former
+        # 0.50 m side offset carried their ends outside the narrowing forward
+        # body, despite an otherwise plausible broadside.
+        bh.append(P.boat_hook((0.0, sgn * 0.18, 0.185), length=3.05, along=(1, 0, 0)))
     gear.append(("BoatHooks", bh))
     gear.append(("Baler", P.baler((-1.4, 0.26, zfloor + 0.09))))
     gear.append(("Bucket", P.bucket((-1.15, -0.20, zfloor))))
     gear.append(("Breaker", P.breaker((0.15, 0.0, zfloor + 0.14), r=0.115, l=0.38)))
     gear.append(("Compass", P.compass_binnacle((2.30, 0.0, 0.135 + 0.003), mat_brass=3)))
     for name, gmb in gear:
+        if name in ("Grapnel", "Baler", "Bucket", "Breaker"):
+            BL.settle(gmb, rest)
         objects[name] = gmb
 
     # ---- to Blender -----------------------------------------------------------

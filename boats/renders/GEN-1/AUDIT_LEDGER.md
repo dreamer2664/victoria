@@ -1,6 +1,6 @@
 # GEN-1 — individual image audit
 
-**Checkpoint:** fifteen of 45 required final PNGs accepted. The release is incomplete.
+**Checkpoint:** twenty of 45 required final PNGs accepted. The release is incomplete.
 
 THEMISTOCLES-III and THEMISTOCLES-IV, 18 November 2026. Each accepted exact output was opened and visually examined before advancing; re-renders were re-opened. Earlier rows were re-rendered and re-reviewed after the lighting and hard-edge shading changes at row 06. Diagnostic images are outside this directory. No rejected `them2` image was copied here.
 
@@ -26,6 +26,16 @@ THEMISTOCLES-III and THEMISTOCLES-IV, 18 November 2026. Each accepted exact outp
 
 | 15 | `rowing_water_profile_high.png` | afloat high side profile at solved loaded waterline | A full 64-sample afloat profile was opened. Both fine ends, continuous lap run, rail/stem scarf, contained stowage, fenders and loaded draft remain credible; the water reflection is restrained and free of studio artifacts. | No defect found after visual review. | It is an oblique presentation view, not a dimensioned drawing; the separate studio/profile and construction views preserve structural legibility. | Yes |
 
+| 16 | `whaler_broadside.png` | double-ended whaler exterior silhouette and housed centreboard state | The first current broadside exposed a narrow pale centreboard tip below the hull. Source bounds identified the nominally housed board at z −0.504 m; it was only flattened, not fully raised. The final replacement 64-sample image was opened after rebuilding: continuous clinker, keel, boot-top, fenders and both fine ends read without the protruding board. A full interior containment parity audit then found exposed hooks, grapnel, harpoons, tubs and an aft-sheet corner; all were settled on local supports or repositioned inside the hull, rebuilt, and re-rendered. | Raised the complete housed centreboard pivot into its case (`build2_whaler.py`) rather than hiding it in the render; rechecked low-z bounds after rebuild. Also tapered fine-end keelson cap widths so no cap corners penetrate the garboards. Settled loose whaling gear against local bottom-board/inner-shell support, moved long hooks to the central thwarts, and shortened/repositioned the aft sheets within the fine V; post-rebuild interior parity now reports zero offending vertices. | The restrained studio light keeps the whaler’s long double-ended shear and lap rhythm inspectable. | Yes |
+
+| 17 | `whaler_bow_quarter.png` | double-ended bow, clinker rhythm and whaling-stowage inspection | A new 64-sample candidate was opened after full interior containment repair. The bow stem and rail, fine planking, housed centreboard condition and carried tubs/gear remain distinct and inside the boat; no former hook, harpoon, tub or board protrudes through the shell. | The diagnosis/rebuild fixed all non-exterior parity offenders before this render rather than masking them by camera or object omission. | The large tubs and water breaker reflect practical whaling outfit volume; the elevated angle shows their placement without concealing the bow structure. | Yes |
+
+| 18 | `whaler_stern_quarter.png` | double-ended stern, rudder and whaling-stowage inspection | The 64-sample candidate was opened after the containment rebuild. Stern sheets now terminate within the fine V; transomless end, rudder/tiller, fenders, contained stowage and clinker run are readable with no exterior gear spike. | Local-support settling and shortened aft sheets correct the previously measured shell breaches. | The end-on gear volume is retained as a practical outfitting condition rather than removed for a clean but false empty-boat image. | Yes |
+
+| 19 | `whaler_bow_on.png` | true-centreline double-ended bow symmetry check | A full 64-sample centreline candidate was opened after the containment repair. Stem, band, rail termini, keel and outboard fenders remain symmetric; service gear is deliberately visible but wholly inboard, and no fine-end penetration or studio horizon appears. | No new geometry fault found. | Practical line tubs and water breaker intentionally make the service outfit asymmetric; removing them would make a false empty boat. | Yes |
+
+| 20 | `whaler_stern_on.png` | true-centreline stern symmetry, rudder and tiller check | A full 64-sample centreline stern candidate was opened. Double-ended closure, centreline keel/rudder/tiller, rail ends and fenders are intact; harpoons and tubs remain contained despite deliberate service-state asymmetry. | No new defect found after the audited local-support repair. | This view preserves real loose outfit rather than moving gear to manufacture visual symmetry. | Yes |
+
 ## Checkpoint image hashes
 
 - `rowing_bow_on.png` — SHA-256 `619ba240c56843f9119fb3edea82bb04329a12f06b48ecc6a7428acd3a1de004`
@@ -43,3 +53,10 @@ THEMISTOCLES-III and THEMISTOCLES-IV, 18 November 2026. Each accepted exact outp
 - `rowing_water_profile_high.png` — SHA-256 `c261db830199fd9c941a507e47eb2fc5486257b33efd4acdb170d3687fe39ece`
 - `rowing_interior.png` — SHA-256 `8e1c510e98f5734ce724b456662cb18dd25003c31c177fe09524a9e101f70c67`
 - `rowing_construction_construction.png` — SHA-256 `6eeabeb49dbe212986f9f85768fdf6a7262abd0cdb64497f827567f3b8073008`
+
+- `whaler_broadside.png` — SHA-256 `051aa8360edb240804169c44bbd80a2e86668a075131332e9445d1c8c75fe8e1`
+
+- `whaler_bow_quarter.png` — SHA-256 `f04d5cd8b9bdeb288563f5fc3899ef52fb78424c4ec56dbd8b35edd193621cba`
+- `whaler_stern_quarter.png` — SHA-256 `5c3b35edd06138b6c461ced67961756cf3e62b9bac10dfdfe37a6aafefbd7682`
+- `whaler_bow_on.png` — SHA-256 `2cfe0e661adb200dc38d8fc6ed9e06d17c13c99a1d33ba97902ce392f67aaed4`
+- `whaler_stern_on.png` — SHA-256 `6619cdeb09d4903d9ef55a4220e4717f8436b8c411704c9515029b7b35a05baa`
