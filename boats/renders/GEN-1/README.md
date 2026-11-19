@@ -1,8 +1,8 @@
 # GEN-1 — sequential boat render audit
 
-**WORK IN PROGRESS: 6 of 45 images accepted. This is a pushed recovery checkpoint, not the completed release.**
+**WORK IN PROGRESS: 9 of 45 images accepted. This is a pushed engineering checkpoint, not the completed release.**
 
-This generation is being rebuilt and inspected one render at a time by THEMISTOCLES-III. The historic `../them2/` batch was rejected and is not reused. Diagnostic renders are kept outside the release directory. See [AUDIT_LEDGER.md](AUDIT_LEDGER.md) for concrete per-image findings and fixes.
+This generation is being rebuilt and inspected one render at a time by THEMISTOCLES-III and THEMISTOCLES-IV. The historic `../them2/` batch was rejected and is not reused. Diagnostic renders are kept outside the release directory. See [AUDIT_LEDGER.md](AUDIT_LEDGER.md) for concrete per-image findings and fixes.
 
 ## Output contract
 
@@ -15,4 +15,4 @@ This generation is being rebuilt and inspected one render at a time by THEMISTOC
 
 ## Current source corrections
 
-Canted clinker laps; transom fitted to its rake and bevelled to the planking; keelson and frame sweep bases; correctly athwartship thwarts, knees and risers; sole boards supported on the floors; in-hull oar/spar stowage; 10 ft hooks on the thwarts; loose gear landed on the boards; painter on the starboard bow sheet; hard timber edges preserved in shading; aimed off-axis studio lamps and true centreline end-on cameras.
+Canted clinker laps; transom fitted to its rake and bevelled to the planking; keelson and frame sweep bases; correctly athwartship thwarts, knees and risers; sole boards supported on the floors; in-hull oar/spar stowage; 10 ft hooks on the thwarts; loose gear landed on the boards; painter on the starboard bow sheet; stem-rabbet breasthook and tapered cap-rail/inwale/rubbing-strake scarfs that meet the stem; hard timber edges preserved in shading; aimed off-axis studio lamps and true centreline end-on cameras.
