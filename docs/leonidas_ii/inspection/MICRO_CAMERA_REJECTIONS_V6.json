@@ -1,0 +1,28 @@
+{
+  "schema": "victoria.leonidas-ii.camera-rejection-history/1.0",
+  "archive": "docs/leonidas_ii/inspection/MICRO_CAMERA_REJECTIONS_V6.tar.xz",
+  "sha256": "efc21752b4c7a9ebdb74fdd1d6cdca0fe86504ccac5391f828d7ad46fa75a863",
+  "files": [
+    {
+      "file": "docs/leonidas_ii/FINAL_RENDER_REVIEW.json",
+      "bytes": 23219,
+      "sha256": "356dfc35ce1d0ee3ed2fb0d853c67d288dd3e93aba5333ea5ef9c8cb07a43cb6"
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Door_Hinge_Open.jpg",
+      "bytes": 71313,
+      "sha256": "1beb4b13bbc111d5dc32f40d9e2040fb516c9e4db01ccd15657a494c36090c46"
+    },
+    {
+      "file": "renders/leonidas_ii/micro/all_cameras.json",
+      "bytes": 13899,
+      "sha256": "e796a43b1744169eb70cdafc0b58b081a9c66a357d524a07b414f2b05ab78ddb"
+    },
+    {
+      "file": "tools/render_leonidas_contact_rechecks.py",
+      "bytes": 4762,
+      "sha256": "17b307f2ad6e662bcc8629975cae830111a6d03f3b0f685b24b6325a597bd5c6"
+    }
+  ],
+  "reason": "Opened final open-pose hinge view is blocked by swung leaf. Original native rejected pixels/driver/register/review retained; not approval. Earlier aisle bunk framing was also rejected as overly cropped before the current front-wall cutaway."
+}

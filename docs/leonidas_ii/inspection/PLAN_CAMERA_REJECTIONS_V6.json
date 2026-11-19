@@ -1,0 +1,39 @@
+{
+  "schema": "victoria.leonidas-ii.rejected-plan-camera-history/1.0",
+  "file": "docs/leonidas_ii/inspection/PLAN_CAMERA_REJECTIONS_V6.tar.xz",
+  "bytes": 336268,
+  "sha256": "5eec066d649103ee30e097836233f82376c86bc473e79b51fd178ee8ca23ad83",
+  "reason": "Actual final-image inspection rejected three supposed cutaways still hidden by weather roofs. Archived originals, common renderer, camera entries and exact observations before fresh visibility-only replacement.",
+  "members": [
+    {
+      "file": "blender/leonidas_ii/render.py",
+      "bytes": 23656,
+      "sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781"
+    },
+    {
+      "file": "inspection/REJECTED_PLAN_CAMERAS_V6.json",
+      "bytes": 2924,
+      "sha256": "2752170146f1fb059b6a13c7dabdae5e645643690ba31bd7244bb6025499cc45"
+    },
+    {
+      "file": "inspection/REJECTED_PLAN_OBSERVATIONS_V6.json",
+      "bytes": 4798,
+      "sha256": "001d98d9b2435e21c997e864c3e29e557e54d1a4cb97f72b3c04ebeedb332fc2"
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_boat.jpg",
+      "bytes": 83850,
+      "sha256": "dfec602a522b26dfb6b48db898f0d8266a3776eaddb2903a9d7d72cb9ff211a7"
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_bridge.jpg",
+      "bytes": 158610,
+      "sha256": "ca058db06d6d3a8d011fac393bdeaeebc3b35aa27eca72573b75605c1c5a7d2b"
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_promenade.jpg",
+      "bytes": 136173,
+      "sha256": "efc9a0c522bd86c50589819484e6cb22322eb9c9435d56e29a560b333be35980"
+    }
+  ]
+}

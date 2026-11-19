@@ -1,0 +1,205 @@
+[
+  {
+    "file": "renders/leonidas_ii/refinement/Detail_Wheelhouse_Framing.jpg",
+    "title": "Wheelhouse and navigating instruments",
+    "camera": [
+      34.6,
+      -2.6,
+      21.62
+    ],
+    "target": [
+      39.0,
+      -0.7,
+      21.4
+    ],
+    "lens": 24,
+    "orthographic_scale": null,
+    "cutaway": false,
+    "room_id": "N_Wheelhouse",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1120,
+      700
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "bf3038f84a46526b4f46b19296c4c2e416c075ddc881b1fa0cb9e993b105cda9"
+  },
+  {
+    "file": "renders/leonidas_ii/refinement/Detail_Exterior_Bridge.jpg",
+    "title": "Revised wheelhouse roof, eaves, wing fittings and officer deckhouses",
+    "camera": [
+      56,
+      -27,
+      32
+    ],
+    "target": [
+      30,
+      0,
+      20
+    ],
+    "lens": 45,
+    "orthographic_scale": null,
+    "cutaway": false,
+    "room_id": null,
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1120,
+      700
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "a4dad9c21e3763538f80ca3b26575f0dff40fe1d3dc8f11bb8aa74af279a58ff"
+  },
+  {
+    "file": "renders/leonidas_ii/refinement/Detail_Exterior_Promenade.jpg",
+    "title": "Revised after deckhouse roof, mast collar and outboard stay landings",
+    "camera": [
+      -57,
+      -23,
+      26
+    ],
+    "target": [
+      -35,
+      0,
+      17.6
+    ],
+    "lens": 48,
+    "orthographic_scale": null,
+    "cutaway": false,
+    "room_id": null,
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1120,
+      700
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "b4c420df60aa62ca1cab149dad47cee039f387b5ad9e722af977271d7e27cd85"
+  },
+  {
+    "file": "renders/leonidas_ii/refinement/Detail_Promenade_Bench.jpg",
+    "title": "Promenade slat bench and sheltered weather planking \u2014 actual eye-level view",
+    "camera": [
+      -34,
+      -6.6,
+      16.0
+    ],
+    "target": [
+      -31,
+      -8.0,
+      14.9
+    ],
+    "lens": 40,
+    "orthographic_scale": null,
+    "cutaway": false,
+    "room_id": null,
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1120,
+      700
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "274718941ed437fafb953584b53f06c00a6335c0255a49f33dc44bf3e96c5668"
+  },
+  {
+    "file": "renders/leonidas_ii/refinement/Detail_Mast_Ladder.jpg",
+    "title": "Foremast climbing ladder \u2014 continuous rails, rungs and pole-clamp stand-offs",
+    "camera": [
+      62.0,
+      -3.5,
+      17.0
+    ],
+    "target": [
+      66.9,
+      0,
+      16.3
+    ],
+    "lens": 43,
+    "orthographic_scale": null,
+    "cutaway": false,
+    "room_id": null,
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1120,
+      700
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "44a632b787d8190747203cc449635df6468fa7ad6ee56b4a379e8df3b331448d"
+  },
+  {
+    "file": "renders/leonidas_ii/refinement/Detail_Funnel_Ladder.jpg",
+    "title": "After funnel ladder \u2014 actual side rails and shell stand-off brackets",
+    "camera": [
+      8.8,
+      -4.2,
+      21.7
+    ],
+    "target": [
+      6.228,
+      -0.15,
+      21.0
+    ],
+    "lens": 65,
+    "orthographic_scale": null,
+    "cutaway": false,
+    "room_id": null,
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1120,
+      700
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "fa7a7b1913ba9dfb14dc88897a410891d8d5347c732bfb6ae5330958fd23e89a"
+  },
+  {
+    "file": "renders/leonidas_ii/refinement/Detail_Lifebuoy_Hook.jpg",
+    "title": "Boat-deck lifebuoy \u2014 actual bracket hooks over the top rail",
+    "camera": [
+      -35.0,
+      -9.7,
+      18.6
+    ],
+    "target": [
+      -37.0,
+      -7.416,
+      17.9
+    ],
+    "lens": 55,
+    "orthographic_scale": null,
+    "cutaway": false,
+    "room_id": null,
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1120,
+      700
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "2fa4d174342905805ad888f166416ee64367a519d91d4218e0fdfcf4831b7f68"
+  }
+]

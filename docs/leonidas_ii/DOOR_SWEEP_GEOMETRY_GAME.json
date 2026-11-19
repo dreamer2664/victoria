@@ -1,0 +1,1618 @@
+{
+  "schema": "victoria.leonidas-ii.door-finite-sweep/1.3",
+  "status": "SAVED_SOURCE_BOUND_SCREEN",
+  "quality": "GAME",
+  "source_file": "exports/leonidas_ii/build/Aurelian_Game_Source.blend",
+  "source_sha256": "f4964d56c5afd431a6062418735b55a8761788a721d60db7049dadf67cc2145a",
+  "build_data_file": "exports/leonidas_ii/build/build_data.json",
+  "build_data_sha256": "8bed04c9aa42818f19bc1438576bbab67aa0e20be5cc90012af600caf272eff8",
+  "auditor_sha256": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf",
+  "generator_sha256": {
+    "blender/leonidas_ii/access_detail.py": "78d2f226da449f846b085a1846255dededb13a61b895562ad20730a681d2df6f",
+    "blender/leonidas_ii/audit_common.py": "a4cfc973b6b7f2264a999c39bf1f232f5cb46d0e866e564b1061f20a8d791aec",
+    "blender/leonidas_ii/audit_details.py": "e674bdf38e1aed172b4091e00a23e25efee7f6b5c81e7fac833fe5edd3d83843",
+    "blender/leonidas_ii/audit_door_sweeps.py": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf",
+    "blender/leonidas_ii/audit_exterior_parts.py": "c54ec45c5b4164488e9b0cb6933644c5efc8c3acd6860237ea8ef3f20dabcb05",
+    "blender/leonidas_ii/audit_fittings.py": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+    "blender/leonidas_ii/audit_ladders.py": "1555331c82df15419e4463b0c10e5f57629dddfe0359146ba3384a9ba855b714",
+    "blender/leonidas_ii/audit_plant_parts.py": "432e1926548bf12b35b52d1c339aefbc0a64a47a42cf2919e97864733b6923dd",
+    "blender/leonidas_ii/audit_room_parts.py": "84d5dd30f9842393c93e885b827eccfce002b6d5aa920fbaad33f7b296ce5325",
+    "blender/leonidas_ii/audit_shaft_clearances.py": "fa397be2f0f768a981da6c7cc07fde953757e1f2f10caaf59d5ab41e56906135",
+    "blender/leonidas_ii/build.py": "dc74813522d40521755fd64c7da73aaa7ab7bf1d80b6149f4b849540dc11ee4e",
+    "blender/leonidas_ii/export_game.py": "56835f2ebf1bd4c2c86fd0b01a1773e1d51b29f976944dac92a1363cf2628341",
+    "blender/leonidas_ii/furnishings.py": "26aabb26897dd89757fc5786b2707977524c0ea53f5a19eb94a0f764b4ac2b3d",
+    "blender/leonidas_ii/interiors.py": "77af7f48ef529697c240b25e41d0af09fb553978126566cd8e4d6f2b9cc43c9a",
+    "blender/leonidas_ii/machinery.py": "4d0b1bff4cc6e974b428d61b8d1e1f9eafb4a336b435bf281f9395a1219d79fd",
+    "blender/leonidas_ii/meshkit.py": "81af1392dcdff1b859120541867d957e5a78bd18768febeb57b6dde78ce7bc71",
+    "blender/leonidas_ii/optimize.py": "f469949f8af57eb3a43b3d9e7a6a3bba3f128a14e6e6559078c3e1fcb80e28d7",
+    "blender/leonidas_ii/period_detail.py": "9df8a3191908025a85dc91d2f7604051be5e65392a51b798e927ef38e4a1ee27",
+    "blender/leonidas_ii/plant_detail.py": "592d783cb09a1b30148e2fbc03ac48134080fe92cfafe5e34c806387d7e4cc5a",
+    "blender/leonidas_ii/public_rooms.py": "c7354ac2720781ca5319ebb6a818af3735535ccfe3300db8ef61011b10f24b5c",
+    "blender/leonidas_ii/service_fittings.py": "0fa023b4d8f6b32d08f4b7219248336b753f4dee4c1271cf091af3c192101c06",
+    "blender/leonidas_ii/structure.py": "0d719cbedf8d7073ca4c38cb85e9bfbc369f248c09225f5660104525d5e90a9b",
+    "blender/leonidas_ii/test_micro_contacts.py": "2f1c78cdfc9808b29bc82d8c14c089d85375d4fb002a72e265b04058ff644de6",
+    "blender/leonidas_ii/topsides.py": "e4bbd6090e92e20a03ae5c9294d94f7264060cd8095bceec0f841779a9aa242d",
+    "blender/leonidas_ii/visual_design.py": "f3e426ac7bf2deea15ae809d9a8d932900c841300be3c8f4841dd76a55ed2640",
+    "blender/leonidas_ii/weather_detail.py": "4fc9b0adf7f1506aa002f41b60e13dd6b25a7d383f74048bc31fe5859705f906",
+    "blender/leonidas_ii/working_detail.py": "8978972fa454ce3007030b9c683b9841b6825f62c561db047424573cc9ba6d66"
+  },
+  "generator_binding_mismatches": [],
+  "sample_interval_degrees": 2,
+  "summary": {
+    "doors": 196,
+    "poses": 9212,
+    "doors_with_intersections": 0
+  },
+  "doors": [
+    {
+      "room": "M_Entrance",
+      "name": "Door_M_Entrance",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "M_ForwardThird",
+      "name": "Door_M_ForwardThird",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "M_AfterThird",
+      "name": "Door_M_AfterThird",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "M_Forecastle",
+      "name": "Door_M_Forecastle",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Dining",
+      "name": "Door_S_Dining",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Music",
+      "name": "Door_S_Music",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Stair",
+      "name": "Door_S_Stair",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Purser",
+      "name": "Door_S_Purser",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Mail",
+      "name": "Door_S_Mail",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Galley",
+      "name": "Door_S_Galley",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Pantry",
+      "name": "Door_S_Pantry",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Bakery",
+      "name": "Door_S_Bakery",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Bath_P",
+      "name": "Door_S_Bath_P",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Bath_S",
+      "name": "Door_S_Bath_S",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_SecondDining",
+      "name": "Door_S_SecondDining",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Library",
+      "name": "Door_P_Library",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Smoking",
+      "name": "Door_P_Smoking",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Writing",
+      "name": "Door_P_Writing",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_SecondLounge",
+      "name": "Door_P_SecondLounge",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Barber",
+      "name": "Door_P_Barber",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Wash",
+      "name": "Door_P_Wash",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Stair",
+      "name": "Door_P_Stair",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Bar",
+      "name": "Door_P_Bar",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Coats",
+      "name": "Door_P_Coats",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P_Hospital",
+      "name": "Door_P_Hospital",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_Captain",
+      "name": "Door_B_Captain",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_Chief",
+      "name": "Door_B_Chief",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_Navigator",
+      "name": "Door_B_Navigator",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_Chart",
+      "name": "Door_B_Chart",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_Officer_1",
+      "name": "Door_B_Officer_1",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_Officer_2",
+      "name": "Door_B_Officer_2",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_Officer_3",
+      "name": "Door_B_Officer_3",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_Officer_4",
+      "name": "Door_B_Officer_4",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "N_Wheelhouse",
+      "name": "Door_N_Wheelhouse",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "L_ThirdWomen",
+      "name": "Door_L_ThirdWomen",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "L_ThirdMen",
+      "name": "Door_L_ThirdMen",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "L_ThirdWash",
+      "name": "Door_L_ThirdWash",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "L_CrewP",
+      "name": "Door_L_CrewP",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "L_CrewS",
+      "name": "Door_L_CrewS",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "L_AfterStore",
+      "name": "Door_L_AfterStore",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "O_ThirdF",
+      "name": "Door_O_ThirdF",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "O_ThirdAP",
+      "name": "Door_O_ThirdAP",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "O_ThirdAS",
+      "name": "Door_O_ThirdAS",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "O_CrewP",
+      "name": "Door_O_CrewP",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "O_CrewS",
+      "name": "Door_O_CrewS",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "O_Hold",
+      "name": "Door_O_Hold",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "L_ThirdMess",
+      "name": "Door_L_ThirdMess",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_ColdStore",
+      "name": "Door_S_ColdStore",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A001",
+      "name": "Door_A001",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A002",
+      "name": "Door_A002",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A003",
+      "name": "Door_A003",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A004",
+      "name": "Door_A004",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A005",
+      "name": "Door_A005",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A006",
+      "name": "Door_A006",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A007",
+      "name": "Door_A007",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A008",
+      "name": "Door_A008",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A009",
+      "name": "Door_A009",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A010",
+      "name": "Door_A010",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A011",
+      "name": "Door_A011",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A012",
+      "name": "Door_A012",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A013",
+      "name": "Door_A013",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A014",
+      "name": "Door_A014",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A015",
+      "name": "Door_A015",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A016",
+      "name": "Door_A016",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A017",
+      "name": "Door_A017",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A018",
+      "name": "Door_A018",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A019",
+      "name": "Door_A019",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A020",
+      "name": "Door_A020",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A021",
+      "name": "Door_A021",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A022",
+      "name": "Door_A022",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A023",
+      "name": "Door_A023",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A024",
+      "name": "Door_A024",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A025",
+      "name": "Door_A025",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A026",
+      "name": "Door_A026",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A027",
+      "name": "Door_A027",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A028",
+      "name": "Door_A028",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A029",
+      "name": "Door_A029",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A030",
+      "name": "Door_A030",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A031",
+      "name": "Door_A031",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A032",
+      "name": "Door_A032",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A033",
+      "name": "Door_A033",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A034",
+      "name": "Door_A034",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A035",
+      "name": "Door_A035",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A036",
+      "name": "Door_A036",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A037",
+      "name": "Door_A037",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A038",
+      "name": "Door_A038",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A039",
+      "name": "Door_A039",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A040",
+      "name": "Door_A040",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A041",
+      "name": "Door_A041",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A042",
+      "name": "Door_A042",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A043",
+      "name": "Door_A043",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A044",
+      "name": "Door_A044",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A045",
+      "name": "Door_A045",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A046",
+      "name": "Door_A046",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A047",
+      "name": "Door_A047",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A048",
+      "name": "Door_A048",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A049",
+      "name": "Door_A049",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A050",
+      "name": "Door_A050",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A051",
+      "name": "Door_A051",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A052",
+      "name": "Door_A052",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A053",
+      "name": "Door_A053",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A054",
+      "name": "Door_A054",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A055",
+      "name": "Door_A055",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A056",
+      "name": "Door_A056",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A057",
+      "name": "Door_A057",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A058",
+      "name": "Door_A058",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A059",
+      "name": "Door_A059",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A060",
+      "name": "Door_A060",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A061",
+      "name": "Door_A061",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A062",
+      "name": "Door_A062",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A063",
+      "name": "Door_A063",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A064",
+      "name": "Door_A064",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A065",
+      "name": "Door_A065",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A066",
+      "name": "Door_A066",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A067",
+      "name": "Door_A067",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A068",
+      "name": "Door_A068",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A069",
+      "name": "Door_A069",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A070",
+      "name": "Door_A070",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A071",
+      "name": "Door_A071",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A072",
+      "name": "Door_A072",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A073",
+      "name": "Door_A073",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A074",
+      "name": "Door_A074",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A075",
+      "name": "Door_A075",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A076",
+      "name": "Door_A076",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "A077",
+      "name": "Door_A077",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U001",
+      "name": "Door_U001",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U002",
+      "name": "Door_U002",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U003",
+      "name": "Door_U003",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U004",
+      "name": "Door_U004",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U005",
+      "name": "Door_U005",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U006",
+      "name": "Door_U006",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U007",
+      "name": "Door_U007",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U008",
+      "name": "Door_U008",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U009",
+      "name": "Door_U009",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U010",
+      "name": "Door_U010",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U011",
+      "name": "Door_U011",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "U012",
+      "name": "Door_U012",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P001",
+      "name": "Door_P001",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P002",
+      "name": "Door_P002",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P003",
+      "name": "Door_P003",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P004",
+      "name": "Door_P004",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P005",
+      "name": "Door_P005",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P006",
+      "name": "Door_P006",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P007",
+      "name": "Door_P007",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "P008",
+      "name": "Door_P008",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First098",
+      "name": "Door_B_First098",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First099",
+      "name": "Door_B_First099",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First100",
+      "name": "Door_B_First100",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First101",
+      "name": "Door_B_First101",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First102",
+      "name": "Door_B_First102",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First103",
+      "name": "Door_B_First103",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First104",
+      "name": "Door_B_First104",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First105",
+      "name": "Door_B_First105",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First106",
+      "name": "Door_B_First106",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First107",
+      "name": "Door_B_First107",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First108",
+      "name": "Door_B_First108",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First109",
+      "name": "Door_B_First109",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First110",
+      "name": "Door_B_First110",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First111",
+      "name": "Door_B_First111",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First112",
+      "name": "Door_B_First112",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First113",
+      "name": "Door_B_First113",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "B_First114",
+      "name": "Door_B_First114",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C001",
+      "name": "Door_C001",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C002",
+      "name": "Door_C002",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C003",
+      "name": "Door_C003",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C004",
+      "name": "Door_C004",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C005",
+      "name": "Door_C005",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C006",
+      "name": "Door_C006",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C007",
+      "name": "Door_C007",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C008",
+      "name": "Door_C008",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C009",
+      "name": "Door_C009",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C010",
+      "name": "Door_C010",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C011",
+      "name": "Door_C011",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C012",
+      "name": "Door_C012",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C013",
+      "name": "Door_C013",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C014",
+      "name": "Door_C014",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C015",
+      "name": "Door_C015",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C016",
+      "name": "Door_C016",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C017",
+      "name": "Door_C017",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C018",
+      "name": "Door_C018",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C019",
+      "name": "Door_C019",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C020",
+      "name": "Door_C020",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C021",
+      "name": "Door_C021",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C022",
+      "name": "Door_C022",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C023",
+      "name": "Door_C023",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C024",
+      "name": "Door_C024",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C025",
+      "name": "Door_C025",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "C026",
+      "name": "Door_C026",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "D001",
+      "name": "Door_D001",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "D002",
+      "name": "Door_D002",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "D003",
+      "name": "Door_D003",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "D004",
+      "name": "Door_D004",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "D005",
+      "name": "Door_D005",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "D006",
+      "name": "Door_D006",
+      "angle_deg": -92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "D007",
+      "name": "Door_D007",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    },
+    {
+      "room": "S_Steering",
+      "name": "Door_S_Steering",
+      "angle_deg": 92,
+      "poses": 47,
+      "intersecting_poses": [],
+      "status": "CLEAR_AT_SAMPLED_POSES"
+    }
+  ],
+  "seconds": 7.18,
+  "limits": "Actual triangulated door/in-room furniture/navigation/steering/default-pose movers AND own wall/jamb/floor/ceiling/glazing/sign surface intersections at 2-degree poses, including real handles/hinges. No own-jamb or hinge exemption. Adjacent rooms remain outside this scoped screen. Not containment, continuous swept-volume proof, penetration-depth/clear-route certification or Roblox Studio acceptance. Representative triangle centres are NOT measured penetration points. Every intersection requires inspection."
+}

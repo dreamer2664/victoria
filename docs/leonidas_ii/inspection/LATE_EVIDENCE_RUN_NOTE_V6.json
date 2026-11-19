@@ -1,0 +1,8 @@
+{
+  "schema": "victoria.leonidas-ii.late-evidence-run-note/1.0",
+  "serial_process": "finish-fully-framed-contact-view-27379391",
+  "result": "All scheduled image groups through refinement completed and denoised. Wrapper then exited 127 after an on-disk batch-script edit shifted its trailing read position; no claim of successful wrapper exit.",
+  "last_completed_group": "refinement",
+  "follow_up": "New targeted serial replacement run after verifying no Blender/denoiser remains. Only three rejected roof-off plans and four stale-driver micro details are rendered again. Current script separately passes bash -n.",
+  "source_changed": false
+}

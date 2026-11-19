@@ -1,7 +1,7 @@
 {
   "scope": "Exact Luau runtime under fake Roblox API. LOGIC/TRANSFORMS ONLY; no Studio, physics, contacts, multiplayer, streaming or performance acceptance.",
   "runtime_sha256": "0e12b416c65a556192ab897d76fcda6f3bf469cde40d262f48a6cfbd01ac9d44",
-  "data_sha256": "1640bb7031ac26e23aa938b5c7a20689f77514a710ae8f35b079057d2e67273f",
+  "data_sha256": "367be1eaebb14b6af080acc1ce9f8441a4b56c00c1238a113635dfd13672b7d6",
   "runner_sha256": "09036fdcde0062656f29629aeacf376c2f1769134daf1d454dad8086886a7bf0",
   "harness_sha256": "48c81acb42f6d32327671799d5c49c18480e98b2305132709dd5a5788839d0d3",
   "exit_code": 0,

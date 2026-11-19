@@ -12,7 +12,7 @@ MATDIR=ROOT/'reference'/'leonidas_ii'/'materials'
 ATLAS=json.loads((MATDIR/'atlas.json').read_text())
 SIGNINDEX=json.loads((MATDIR/'signs.json').read_text())
 GAME_QUALITY=os.getenv('LII_GAME_DETAIL')=='1'
-MATERIALS={};OBJECT_RECORDS=[];PROXIES=[];MOVERS=[];LIGHTS=[];SEATS=[];FIXTURES=[]
+MATERIALS={};OBJECT_RECORDS=[];PROXIES=[];MOVERS=[];LIGHTS=[];SEATS=[];FIXTURES=[];FIXTURE_MOUNTS=[];RIGGING_LINES=[];RIGGING_FEET=[];ACCESS_LADDERS=[]
 
 def collection(name,parent=None):
  c=bpy.data.collections.get(name)
@@ -105,18 +105,30 @@ class Mesh:
  def tube(self,points,r,t='Copper',n=8,tag=None):
   # Continuous swept elbow centreline. Closed ends, shared ring vertices.
   n=max(6,round(n*.65)) if GAME_QUALITY else n
-  pts=[Vector(p) for p in points];vv=[];ff=[]
+  pts=[Vector(p) for p in points];vv=[];ff=[];previous_tangent=None;previous_u=None
+  assert len(pts)>=2 and all((B-A).length>1e-8 for A,B in zip(pts,pts[1:])),('Degenerate tube path',points)
   for i,p in enumerate(pts):
-   tangent=(pts[min(i+1,len(pts)-1)]-pts[max(0,i-1)]).normalized();u=tangent.cross(Vector((0,0,1)))
-   if u.length<.01:u=tangent.cross(Vector((0,1,0)))
-   u.normalize();v=tangent.cross(u).normalized()
+   tangent=(pts[min(i+1,len(pts)-1)]-pts[max(0,i-1)]).normalized()
+   assert tangent.length>.9,('Reversing tube cusp',points,i)
+   if previous_u is None:
+    u=tangent.cross(Vector((0,0,1)))
+    if u.length<.01:u=tangent.cross(Vector((0,1,0)))
+   else:
+    # Parallel-transport the finite section. Choosing an unrelated world
+    # axis at EVERY station flipped vertical/elbow frames by 180 degrees,
+    # shrinking straight intervening sections into a twisted hourglass.
+    u=previous_tangent.rotation_difference(tangent)@previous_u
+    u-=tangent*u.dot(tangent)
+   u.normalize();v=tangent.cross(u).normalized();previous_tangent=tangent.copy();previous_u=u.copy()
    for j in range(n):a=j*math.tau/n;vv.append(tuple(p+r*(math.cos(a)*u+math.sin(a)*v)))
   for i in range(len(pts)-1):
    for j in range(n):a=i*n+j;b=i*n+(j+1)%n;ff.append((a,b,b+n,a+n))
   ff+=[tuple(range(n-1,-1,-1)),tuple((len(pts)-1)*n+j for j in range(n))]
   return self.add(vv,ff,t,True,tag)
  def ring(self,c,r,minor=.014,t='Brass',n=20,m=5,axis=(0,0,1),tag=None):
-  if GAME_QUALITY:n=max(8,round(n*.60));m=3
+  # Four cross-section corners retain BOTH inner radius and vertical
+  # extrema. Three enlarged every hole and shortened bearing contacts.
+  if GAME_QUALITY:n=max(8,round(n*.60));m=4
   q=Vector((0,0,1)).rotation_difference(Vector(axis).normalized());cc=Vector(c);vv=[];ff=[]
   for i in range(n):
    a=i*math.tau/n
@@ -133,6 +145,15 @@ class Mesh:
    for j in range(N):a=k*N+j;b=k*N+(j+1)%N;ff.append((a,b,b+N,a+N))
   ff += [tuple(range(N-1,-1,-1)),tuple(3*N+j for j in range(N))]
   return self.add(vv,ff,t,True,tag)
+ def rest(self,first_vertex,surface_z,inset=.0002):
+  """Seat this explicitly selected new assembly by its ACTUAL finite bottom.
+  Call only for a known horizontal bearing (e.g. a lying rod or a stack),
+  never as a substitute for checking its internal joints or every foot.
+  """
+  assert 0<=first_vertex<len(self.v)
+  dz=surface_z-inset-min(p[2] for p in self.v[first_vertex:])
+  self.v[first_vertex:]=[(x,y,z+dz) for x,y,z in self.v[first_vertex:]]
+  return self
  def emit(self,name,col,kind='furniture',deck='',room='',origin=None,mover=None,material='atlas',maxtris=18500):
   if not self.f:return []
   # Never split a chair leg / closed primitive in the middle of its faces.
@@ -164,10 +185,18 @@ class Mesh:
      coords=[((cx*256+4)/2048,1-(cy*64+60)/2048),((cx*256+252)/2048,1-(cy*64+60)/2048),((cx*256+252)/2048,1-(cy*64+4)/2048),((cx*256+4)/2048,1-(cy*64+4)/2048)]
     else:
      tile=ATLAS.get(ti,ATLAS['Ivory']);cx,cy=tile['column'],tile['row'];n=poly.normal;axis=max(range(3),key=lambda k:abs(n[k]));ax=[k for k in range(3) if k!=axis];ps=[me.vertices[k].co for k in poly.vertices];lo=[min(p[k] for p in ps) for k in ax];hi=[max(p[k] for p in ps) for k in ax]
-     if hi[0]-lo[0]<hi[1]-lo[1]:ax=ax[::-1];lo=lo[::-1];hi=hi[::-1]
+     directional=tile.get('pattern') in ('seascape','notice','dial','telegraph','chart')
+     # Grain may follow a face's long axis. Pictures/lettering/instruments
+     # must instead remain upright, with world +Z at the TOP of a wall.
+     # Raster atlases count rows downwards; UV V counts upwards.
+     if not directional and hi[0]-lo[0]<hi[1]-lo[1]:ax=ax[::-1];lo=lo[::-1];hi=hi[::-1]
      coords=[]
      for p in ps:
-      u=(p[ax[0]]-lo[0])/max(hi[0]-lo[0],1e-8);v=(p[ax[1]]-lo[1])/max(hi[1]-lo[1],1e-8);coords.append(((cx+(4+248*u)/256)/8,1-(cy+(4+248*v)/256)/8))
+      u=(p[ax[0]]-lo[0])/max(hi[0]-lo[0],1e-8);v=(p[ax[1]]-lo[1])/max(hi[1]-lo[1],1e-8)
+      if directional:
+       v=1-v
+       if (axis==1 and n.y>0) or (axis==0 and n.x<0):u=1-u
+      coords.append(((cx+(4+248*u)/256)/8,1-(cy+(4+248*v)/256)/8))
     for li,co in zip(poly.loop_indices,coords):uv.data[li].uv=co
    ob=bpy.data.objects.new(nm,me);col.objects.link(ob);ob.location=origin or (0,0,0);me.materials.append(MATERIALS[material]);ob['LII_kind']=kind;ob['LII_deck']=deck;ob['LII_room']=room;ob['LII_tags']=json.dumps(self.tags);ob['LII_export']=True
    if mover:ob['LII_mover']=mover
@@ -189,8 +218,13 @@ def bolts(m,c,r,count=8,axis=(0,0,1),size=.018,t='Steel'):
  a=Vector(axis).normalized();q=Vector((0,0,1)).rotation_difference(a);p=Vector(c)
  for j in range(count):ang=j*math.tau/count;co=p+q@Vector((r*math.cos(ang),r*math.sin(ang),0));m.cylinder(tuple(co),size,size*.7,t,6,axis)
 
-def flange(m,c,r,axis=(0,0,1),t='Iron',count=8):
- m.cylinder(c,r,.06,t,16,axis);bolts(m,tuple(Vector(c)+Vector(axis).normalized()*.037),r*.78,count,axis,min(.018,r*.10))
+def flange(m,c,r,axis=(0,0,1),t='Iron',count=8,bore=None):
+ size=min(.018,r*.10)
+ if bore is None:m.cylinder(c,r,.06,t,16,axis)
+ else:
+  assert 0<bore<r
+  m.lathe(c,[(-.030,r),(.030,r),(.030,bore),(-.030,bore)],t,16,axis,caps=False,closed=True)
+ bolts(m,tuple(Vector(c)+Vector(axis).normalized()*(.030+size*.35-.0002)),r*.78,count,axis,size)
 
 def guarded_lamp(m,x,y,z):
  # Compact caged incandescent for working flats, fixed UNDER a supporting
@@ -198,6 +232,10 @@ def guarded_lamp(m,x,y,z):
  m.cylinder((x,y,z-.018),.075,.036,'Iron',10)
  m.cylinder((x,y,z-.09),.035,.13,'Brass',10)
  m.lathe((x,y,z-.13),[(0,.035),(-.05,.058),(-.13,.060),(-.18,.035)],'Bulb',12)
+ # Four radial cage hangers actually enter the socket; the old basket
+ # was a closed but completely detached ring/rod component.
+ for a in (0,math.pi/2,math.pi,3*math.pi/2):
+  m.rod((x+.030*math.cos(a),y+.030*math.sin(a),z-.105),(x+.080*math.cos(a),y+.080*math.sin(a),z-.13),.008,'Iron',8)
  for zz in (z-.13,z-.32):m.ring((x,y,zz),.080,.008,'Iron',12,5)
  for a in (0,math.pi/2,math.pi,3*math.pi/2):
   m.rod((x+.08*math.cos(a),y+.08*math.sin(a),z-.13),(x+.08*math.cos(a),y+.08*math.sin(a),z-.32),.006,'Iron',5)
@@ -214,3 +252,11 @@ def lamp(m,x,y,z,kind='pendant'):
   m.lathe((x,y,z),[(0,.14),(.035,.15),(.07,.07),(.27,.035),(.30,.10)],'Brass',12)
   m.lathe((x,y,z+.3),[(0,.20),(.09,.14),(.16,.07)],'GoldCloth',16)
  LIGHTS.append(dict(position=(x,y,z-.45 if kind=='pendant' else z+.3),range_m=4.2,brightness=.8))
+
+
+def drop_pull(m,c,r=.025,t='Brass'):
+ # Local cabinet front faces -Y. Ring lies IN the front plane; a finite
+ # top eye enters the door instead of relying on an edge-on torus to touch.
+ x,y,z=c
+ m.cylinder((x,y+.013,z+r),.012,.040,t,10,(0,1,0))
+ m.ring((x,y,z),r,.006,t,12,6,(0,1,0))

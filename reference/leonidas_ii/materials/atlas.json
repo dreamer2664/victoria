@@ -518,5 +518,317 @@
     "roughness": 0.7,
     "metallic": 0,
     "pattern": "grain"
+  },
+  "CabinBlue": {
+    "tile": 40,
+    "column": 0,
+    "row": 5,
+    "srgb": [
+      184,
+      196,
+      193
+    ],
+    "roughness": 0.79,
+    "metallic": 0,
+    "pattern": "wallpaper"
+  },
+  "CabinSage": {
+    "tile": 41,
+    "column": 1,
+    "row": 5,
+    "srgb": [
+      193,
+      201,
+      174
+    ],
+    "roughness": 0.79,
+    "metallic": 0,
+    "pattern": "wallpaper"
+  },
+  "ClothBlue": {
+    "tile": 42,
+    "column": 2,
+    "row": 5,
+    "srgb": [
+      45,
+      70,
+      89
+    ],
+    "roughness": 0.92,
+    "metallic": 0,
+    "pattern": "brocade"
+  },
+  "ClothSage": {
+    "tile": 43,
+    "column": 3,
+    "row": 5,
+    "srgb": [
+      87,
+      107,
+      77
+    ],
+    "roughness": 0.93,
+    "metallic": 0,
+    "pattern": "brocade"
+  },
+  "ClothPlum": {
+    "tile": 44,
+    "column": 4,
+    "row": 5,
+    "srgb": [
+      102,
+      62,
+      78
+    ],
+    "roughness": 0.93,
+    "metallic": 0,
+    "pattern": "brocade"
+  },
+  "SagePaint": {
+    "tile": 45,
+    "column": 5,
+    "row": 5,
+    "srgb": [
+      137,
+      158,
+      143
+    ],
+    "roughness": 0.68,
+    "metallic": 0,
+    "pattern": "paint"
+  },
+  "LibraryWall": {
+    "tile": 46,
+    "column": 6,
+    "row": 5,
+    "srgb": [
+      109,
+      133,
+      112
+    ],
+    "roughness": 0.88,
+    "metallic": 0,
+    "pattern": "wallpaper"
+  },
+  "WritingWall": {
+    "tile": 47,
+    "column": 7,
+    "row": 5,
+    "srgb": [
+      212,
+      196,
+      190
+    ],
+    "roughness": 0.9,
+    "metallic": 0,
+    "pattern": "wallpaper"
+  },
+  "MusicWall": {
+    "tile": 48,
+    "column": 0,
+    "row": 6,
+    "srgb": [
+      227,
+      222,
+      205
+    ],
+    "roughness": 0.87,
+    "metallic": 0,
+    "pattern": "wallpaper"
+  },
+  "SmokingWall": {
+    "tile": 49,
+    "column": 1,
+    "row": 6,
+    "srgb": [
+      142,
+      127,
+      92
+    ],
+    "roughness": 0.89,
+    "metallic": 0,
+    "pattern": "wallpaper"
+  },
+  "CarpetNavy": {
+    "tile": 50,
+    "column": 2,
+    "row": 6,
+    "srgb": [
+      40,
+      60,
+      71
+    ],
+    "roughness": 0.97,
+    "metallic": 0,
+    "pattern": "carpet"
+  },
+  "CarpetSage": {
+    "tile": 51,
+    "column": 3,
+    "row": 6,
+    "srgb": [
+      88,
+      106,
+      81
+    ],
+    "roughness": 0.97,
+    "metallic": 0,
+    "pattern": "carpet"
+  },
+  "CarpetWine": {
+    "tile": 52,
+    "column": 4,
+    "row": 6,
+    "srgb": [
+      104,
+      52,
+      55
+    ],
+    "roughness": 0.97,
+    "metallic": 0,
+    "pattern": "carpet"
+  },
+  "Parquet": {
+    "tile": 53,
+    "column": 5,
+    "row": 6,
+    "srgb": [
+      126,
+      91,
+      57
+    ],
+    "roughness": 0.52,
+    "metallic": 0,
+    "pattern": "parquet"
+  },
+  "Grating": {
+    "tile": 54,
+    "column": 6,
+    "row": 6,
+    "srgb": [
+      56,
+      62,
+      59
+    ],
+    "roughness": 0.73,
+    "metallic": 0.5,
+    "pattern": "grating"
+  },
+  "Bread": {
+    "tile": 55,
+    "column": 7,
+    "row": 6,
+    "srgb": [
+      169,
+      119,
+      59
+    ],
+    "roughness": 0.92,
+    "metallic": 0,
+    "pattern": "grain"
+  },
+  "Enamel": {
+    "tile": 56,
+    "column": 0,
+    "row": 7,
+    "srgb": [
+      221,
+      228,
+      218
+    ],
+    "roughness": 0.34,
+    "metallic": 0.05,
+    "pattern": "paint"
+  },
+  "Dial": {
+    "tile": 57,
+    "column": 1,
+    "row": 7,
+    "srgb": [
+      228,
+      221,
+      196
+    ],
+    "roughness": 0.42,
+    "metallic": 0.05,
+    "pattern": "dial"
+  },
+  "TelegraphDial": {
+    "tile": 58,
+    "column": 2,
+    "row": 7,
+    "srgb": [
+      224,
+      217,
+      192
+    ],
+    "roughness": 0.44,
+    "metallic": 0.05,
+    "pattern": "telegraph"
+  },
+  "Notice": {
+    "tile": 59,
+    "column": 3,
+    "row": 7,
+    "srgb": [
+      218,
+      209,
+      179
+    ],
+    "roughness": 0.89,
+    "metallic": 0,
+    "pattern": "notice"
+  },
+  "Seascape": {
+    "tile": 60,
+    "column": 4,
+    "row": 7,
+    "srgb": [
+      152,
+      168,
+      166
+    ],
+    "roughness": 0.9,
+    "metallic": 0,
+    "pattern": "seascape"
+  },
+  "WeatheredTeak": {
+    "tile": 61,
+    "column": 5,
+    "row": 7,
+    "srgb": [
+      129,
+      108,
+      76
+    ],
+    "roughness": 0.7,
+    "metallic": 0,
+    "pattern": "wood"
+  },
+  "BilliardBaize": {
+    "tile": 62,
+    "column": 6,
+    "row": 7,
+    "srgb": [
+      41,
+      89,
+      65
+    ],
+    "roughness": 0.96,
+    "metallic": 0,
+    "pattern": "fabric"
+  },
+  "DeckCanvas": {
+    "tile": 63,
+    "column": 7,
+    "row": 7,
+    "srgb": [
+      207,
+      196,
+      166
+    ],
+    "roughness": 0.93,
+    "metallic": 0,
+    "pattern": "fabric"
   }
 }

@@ -1,0 +1,114 @@
+{
+  "schema": "victoria.leonidas-ii.frozen-export-inputs/1.0",
+  "status": "VERIFIED_FROZEN_INPUTS_OVER_ACTUAL_EXPORT_RUN",
+  "inputs": {
+    "master": {
+      "file": "models/leonidas_ii/Aurelian_1889.blend",
+      "sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "bytes": 23514427
+    },
+    "master_data": {
+      "file": "exports/leonidas_ii/build_data.json",
+      "sha256": "adf9206f7eec378855a281cda21295d10b02725d1c583e2c6b1f45093832bf01",
+      "bytes": 2856485
+    },
+    "game": {
+      "file": "exports/leonidas_ii/build/Aurelian_Game_Source.blend",
+      "sha256": "f4964d56c5afd431a6062418735b55a8761788a721d60db7049dadf67cc2145a",
+      "bytes": 32748965
+    },
+    "game_data": {
+      "file": "exports/leonidas_ii/build/build_data.json",
+      "sha256": "8bed04c9aa42818f19bc1438576bbab67aa0e20be5cc90012af600caf272eff8",
+      "bytes": 2840223
+    },
+    "exporter": {
+      "file": "blender/leonidas_ii/export_game.py",
+      "sha256": "56835f2ebf1bd4c2c86fd0b01a1773e1d51b29f976944dac92a1363cf2628341",
+      "bytes": 15700
+    }
+  },
+  "audit_reports": [
+    {
+      "file": "docs/leonidas_ii/MICRO_GEOMETRY_MASTER.json",
+      "sha256": "999da77f82178b26dab11e91c3a866e213e695fecf4299b34f00e58eb58404df"
+    },
+    {
+      "file": "docs/leonidas_ii/ROOM_PART_GEOMETRY_MASTER.json",
+      "sha256": "988d9e1d7200b44bdc29869ca1a6501ff28a38e5016d8a3551a535081f9a7b9e"
+    },
+    {
+      "file": "docs/leonidas_ii/PLANT_PART_GEOMETRY_MASTER.json",
+      "sha256": "f2848fc057b2fcc013f3476ef54cd6c6e3c87a0dd68593a01402bd7b95cf1b76"
+    },
+    {
+      "file": "docs/leonidas_ii/EXTERIOR_PART_GEOMETRY_MASTER.json",
+      "sha256": "e48b4544069c85efc75d1a8c7e401d9e5c5e9b3d3fb0e5f015519bda18ca4663"
+    },
+    {
+      "file": "docs/leonidas_ii/DOOR_SWEEP_GEOMETRY_MASTER.json",
+      "sha256": "c3574cb756381f5f5c17e2f09faed67cad692a25e0a08a750a0837af65fa8a4d"
+    },
+    {
+      "file": "docs/leonidas_ii/SHAFT_CLEARANCE_MASTER.json",
+      "sha256": "085c8430e34a025619ab08f0ce975e21a42fab9ad423160a4c6e3781beb0bfa0"
+    },
+    {
+      "file": "docs/leonidas_ii/MICRO_GEOMETRY_GAME.json",
+      "sha256": "a73fff52bd08947d8c8b150b0bfb2684810d0ce5ed7098c46b6396b7be9271ef"
+    },
+    {
+      "file": "docs/leonidas_ii/ROOM_PART_GEOMETRY_GAME.json",
+      "sha256": "b3b73f12fde354c47d5eae2967ad47a509272733211c28ffad73de12edf22eb5"
+    },
+    {
+      "file": "docs/leonidas_ii/PLANT_PART_GEOMETRY_GAME.json",
+      "sha256": "2e12c47e568838db1c19d1a5493fb7a321ec1d7df0915be5e32d657e600c2f31"
+    },
+    {
+      "file": "docs/leonidas_ii/EXTERIOR_PART_GEOMETRY_GAME.json",
+      "sha256": "89386d02b512cebd9c26ccde9e7abfa9973516898292abdad2d8c76a595cb9e3"
+    },
+    {
+      "file": "docs/leonidas_ii/DOOR_SWEEP_GEOMETRY_GAME.json",
+      "sha256": "8387b0643c91007bca1f81a3d589e13636bf5631eebd26ebe4a81b4ae699bcbc"
+    },
+    {
+      "file": "docs/leonidas_ii/SHAFT_CLEARANCE_GAME.json",
+      "sha256": "ea13a2efed1998fc89f33034cd6e72f0ad756fe75e592d3ba81ce3c048125fb9"
+    }
+  ],
+  "generator_sha256": {
+    "blender/leonidas_ii/access_detail.py": "78d2f226da449f846b085a1846255dededb13a61b895562ad20730a681d2df6f",
+    "blender/leonidas_ii/audit_common.py": "a4cfc973b6b7f2264a999c39bf1f232f5cb46d0e866e564b1061f20a8d791aec",
+    "blender/leonidas_ii/audit_details.py": "e674bdf38e1aed172b4091e00a23e25efee7f6b5c81e7fac833fe5edd3d83843",
+    "blender/leonidas_ii/audit_door_sweeps.py": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf",
+    "blender/leonidas_ii/audit_exterior_parts.py": "c54ec45c5b4164488e9b0cb6933644c5efc8c3acd6860237ea8ef3f20dabcb05",
+    "blender/leonidas_ii/audit_fittings.py": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+    "blender/leonidas_ii/audit_ladders.py": "1555331c82df15419e4463b0c10e5f57629dddfe0359146ba3384a9ba855b714",
+    "blender/leonidas_ii/audit_plant_parts.py": "432e1926548bf12b35b52d1c339aefbc0a64a47a42cf2919e97864733b6923dd",
+    "blender/leonidas_ii/audit_room_parts.py": "84d5dd30f9842393c93e885b827eccfce002b6d5aa920fbaad33f7b296ce5325",
+    "blender/leonidas_ii/audit_shaft_clearances.py": "fa397be2f0f768a981da6c7cc07fde953757e1f2f10caaf59d5ab41e56906135",
+    "blender/leonidas_ii/build.py": "dc74813522d40521755fd64c7da73aaa7ab7bf1d80b6149f4b849540dc11ee4e",
+    "blender/leonidas_ii/export_game.py": "56835f2ebf1bd4c2c86fd0b01a1773e1d51b29f976944dac92a1363cf2628341",
+    "blender/leonidas_ii/furnishings.py": "26aabb26897dd89757fc5786b2707977524c0ea53f5a19eb94a0f764b4ac2b3d",
+    "blender/leonidas_ii/interiors.py": "77af7f48ef529697c240b25e41d0af09fb553978126566cd8e4d6f2b9cc43c9a",
+    "blender/leonidas_ii/machinery.py": "4d0b1bff4cc6e974b428d61b8d1e1f9eafb4a336b435bf281f9395a1219d79fd",
+    "blender/leonidas_ii/meshkit.py": "81af1392dcdff1b859120541867d957e5a78bd18768febeb57b6dde78ce7bc71",
+    "blender/leonidas_ii/optimize.py": "f469949f8af57eb3a43b3d9e7a6a3bba3f128a14e6e6559078c3e1fcb80e28d7",
+    "blender/leonidas_ii/period_detail.py": "9df8a3191908025a85dc91d2f7604051be5e65392a51b798e927ef38e4a1ee27",
+    "blender/leonidas_ii/plant_detail.py": "592d783cb09a1b30148e2fbc03ac48134080fe92cfafe5e34c806387d7e4cc5a",
+    "blender/leonidas_ii/public_rooms.py": "c7354ac2720781ca5319ebb6a818af3735535ccfe3300db8ef61011b10f24b5c",
+    "blender/leonidas_ii/service_fittings.py": "0fa023b4d8f6b32d08f4b7219248336b753f4dee4c1271cf091af3c192101c06",
+    "blender/leonidas_ii/structure.py": "0d719cbedf8d7073ca4c38cb85e9bfbc369f248c09225f5660104525d5e90a9b",
+    "blender/leonidas_ii/test_micro_contacts.py": "2f1c78cdfc9808b29bc82d8c14c089d85375d4fb002a72e265b04058ff644de6",
+    "blender/leonidas_ii/topsides.py": "e4bbd6090e92e20a03ae5c9294d94f7264060cd8095bceec0f841779a9aa242d",
+    "blender/leonidas_ii/visual_design.py": "f3e426ac7bf2deea15ae809d9a8d932900c841300be3c8f4841dd76a55ed2640",
+    "blender/leonidas_ii/weather_detail.py": "4fc9b0adf7f1506aa002f41b60e13dd6b25a7d383f74048bc31fe5859705f906",
+    "blender/leonidas_ii/working_detail.py": "8978972fa454ce3007030b9c683b9841b6825f62c561db047424573cc9ba6d66"
+  },
+  "recorder_sha256": "3cfe2e46367aeab46190a935428ca42c69d2a9793406172abef443d5bc5aea86",
+  "game_manifest_sha256": "60282b6262dec4aeb9c691f5c805ebf2d9e38e6108f72d0b95a1fb1f217eea18",
+  "glb_sha256": "c4f760244e4e2705e164fd8f9a59e87c3b429920ef74676ea798daf20bd88cee",
+  "limits": "Record unchanged, canonically audited inputs across the ACTUAL exporter run.\nRun --begin immediately before Blender export_game.py and --complete after it.\nThis is byte provenance only, never geometry, visual or Studio approval.\n"
+}

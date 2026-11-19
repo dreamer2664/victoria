@@ -1,15 +1,22 @@
 {
-  "schema": "victoria.leonidas-ii.delivery-checks/1.0",
-  "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+  "schema": "victoria.leonidas-ii.delivery-checks/1.1",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "micro_input_verification_mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+  "receipt_only_absent_GAME_rebuild_inputs": [
+    "game",
+    "game_data"
+  ],
+  "require_actual_saved_sources": false,
+  "geometry_audits_rerun": false,
   "archive": {
     "file": "exports/leonidas_ii/Aurelian_Roblox_Import_Kit.tar.xz",
-    "bytes": 35690308,
-    "sha256": "6f662a149daf6d19f10980b8a41425894e582b3b7f1f82ccd7b5d84578e81fe3"
+    "bytes": 26721984,
+    "sha256": "0e43cb09d8d4bcbc3f400765f3c1ecc3c33bd7ec60e710b63483bc0ef31aa29f"
   },
   "counts": {
     "master": {
-      "mesh_objects": 1422,
-      "triangles": 3300554,
+      "mesh_objects": 1437,
+      "triangles": 4341224,
       "physical_compartments": 203,
       "actual_first_berths": 228,
       "actual_second_berths": 132,
@@ -17,29 +24,29 @@
       "actual_crew_berths": 117
     },
     "game": {
-      "mesh_nodes": 1438,
-      "unique_meshes": 860,
-      "placed_triangles": 2473152,
-      "unique_triangles": 2166940,
-      "reused_nodes": 578,
+      "mesh_nodes": 1461,
+      "unique_meshes": 1160,
+      "placed_triangles": 3199238,
+      "unique_triangles": 3101586,
+      "reused_nodes": 301,
       "max_node_triangles": 18000,
       "removed_zero_area_triangles": 0,
       "calibration_nodes": 4,
-      "storage_meshes_including_calibration": 861,
-      "corrected_shading_corners": 13484,
+      "storage_meshes_including_calibration": 1161,
+      "corrected_shading_corners": 11169,
       "source_precision_vertices": 57
     },
-    "colliders": 4071,
+    "colliders": 4040,
     "doors": 196,
     "movers": 20,
-    "seats": 219,
-    "lights": 346
+    "seats": 201,
+    "lights": 485
   },
   "checks": [
     {
       "check": "Master / GAME / kit source identity",
       "status": "PASS",
-      "detail": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4"
+      "detail": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526"
     },
     {
       "check": "Export uses the current exporter source",
@@ -60,16 +67,16 @@
       "check": "Unique/reused GAME counts exclude calibration",
       "status": "PASS",
       "detail": {
-        "mesh_nodes": 1438,
-        "unique_meshes": 860,
-        "placed_triangles": 2473152,
-        "unique_triangles": 2166940,
-        "reused_nodes": 578,
+        "mesh_nodes": 1461,
+        "unique_meshes": 1160,
+        "placed_triangles": 3199238,
+        "unique_triangles": 3101586,
+        "reused_nodes": 301,
         "max_node_triangles": 18000,
         "removed_zero_area_triangles": 0,
         "calibration_nodes": 4,
-        "storage_meshes_including_calibration": 861,
-        "corrected_shading_corners": 13484,
+        "storage_meshes_including_calibration": 1161,
+        "corrected_shading_corners": 11169,
         "source_precision_vertices": 57
       }
     },
@@ -79,7 +86,7 @@
       "detail": {
         "Aurelian_Install": "e8733a8613b1bccd87a465a45f924f891ebea151469e3fe7f8847e5fde41d661",
         "Aurelian_Runtime": "0e12b416c65a556192ab897d76fcda6f3bf469cde40d262f48a6cfbd01ac9d44",
-        "Aurelian_Data": "1640bb7031ac26e23aa938b5c7a20689f77514a710ae8f35b079057d2e67273f",
+        "Aurelian_Data": "367be1eaebb14b6af080acc1ce9f8441a4b56c00c1238a113635dfd13672b7d6",
         "Aurelian_StudioAcceptance": "3021256b0ab48f4d772c2a9afec7fa1ff373c1a1eb39abe8ad276d978dca27bd",
         "Aurelian_Server": "9d0af7b32df17b00e83670d054642620471e7150777c0390ea310b021d044ab6",
         "Aurelian_Client": "bd9725ba17828f564e9bb0e3045421ea4ace46dc142198ca3c8cc907472da42f"
@@ -87,6 +94,16 @@
     },
     {
       "check": "Archive GLB hash Deck_Boat_01.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Boat_02.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Boat_03.glb",
       "status": "PASS",
       "detail": ""
     },
@@ -117,6 +134,16 @@
     },
     {
       "check": "Archive GLB hash Deck_Main_03.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Main_04.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Archive GLB hash Deck_Main_05.glb",
       "status": "PASS",
       "detail": ""
     },
@@ -156,6 +183,11 @@
       "detail": ""
     },
     {
+      "check": "Archive GLB hash Deck_Saloon_04.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
       "check": "Archive GLB hash Engineering_01.glb",
       "status": "PASS",
       "detail": ""
@@ -176,9 +208,14 @@
       "detail": ""
     },
     {
+      "check": "Archive GLB hash Hull_And_Topsides_04.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
       "check": "Archive regional GLB set",
       "status": "PASS",
-      "detail": 18
+      "detail": 24
     },
     {
       "check": "Archive control package is current",
@@ -194,6 +231,36 @@
       "check": "Archive installation document is current",
       "status": "PASS",
       "detail": ""
+    },
+    {
+      "check": "Archive frozen-export input receipt is current",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "All six both-quality canonical audit bindings and original frozen export identity",
+      "status": "PASS",
+      "detail": {
+        "summary": {
+          "PASS": 42
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "receipt_only_absent_inputs": [
+          "game",
+          "game_data"
+        ],
+        "diagnostics": ""
+      }
+    },
+    {
+      "check": "Delivery/fresh-source mode distinction and isolated tamper regressions",
+      "status": "PASS",
+      "detail": {
+        "summary": {
+          "PASS": 52
+        },
+        "diagnostics": ""
+      }
     },
     {
       "check": "Archive source maps and packed map present",
@@ -224,7 +291,7 @@
       "detail": {
         "errors": 0,
         "warnings": 0,
-        "infos": 290
+        "infos": 294
       }
     },
     {
@@ -236,7 +303,7 @@
       "check": "Independent exported volume / winding / normal / area gates",
       "status": "PASS",
       "detail": {
-        "components": 74050,
+        "components": 110629,
         "negative_components": 0,
         "near_zero_components": 0,
         "normal_disagreement_triangles": 0,
@@ -244,10 +311,10 @@
         "degenerate_area_triangles": 0,
         "odd_unpaired_welded_edges": 0,
         "inconsistent_edge_winding": 0,
-        "coincident_contact_edges": 89847,
+        "coincident_contact_edges": 110169,
         "collapsed_triangle_edges": 0,
-        "triangles": 2166940,
-        "unique_visual_meshes": 860
+        "triangles": 3101586,
+        "unique_visual_meshes": 1160
       }
     },
     {
@@ -262,6 +329,82 @@
         "PASS": 3,
         "FAIL": 0
       }
+    },
+    {
+      "check": "Both saved stair meshes match authored faces and have no exposed side overlap",
+      "status": "PASS",
+      "detail": [
+        {
+          "quality": "MASTER",
+          "okay": true,
+          "summary": {
+            "stairs": 13,
+            "sides": 26,
+            "saved_geometry_mismatches": 0,
+            "exposed_overlap_pairs": 0,
+            "flags": 0,
+            "restored_old_full_width_riser_negative_detected": true
+          }
+        },
+        {
+          "quality": "GAME",
+          "okay": true,
+          "summary": {
+            "stairs": 13,
+            "sides": 26,
+            "saved_geometry_mismatches": 0,
+            "exposed_overlap_pairs": 0,
+            "flags": 0,
+            "restored_old_full_width_riser_negative_detected": true
+          }
+        }
+      ]
+    },
+    {
+      "check": "Actual detail/contact audit matches source/data/auditor",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Fixture/rigging/exterior-ladder support and placement gates",
+      "status": "PASS",
+      "detail": [
+        {
+          "check": "Actual ceiling/backplate contact at every revised room fixture",
+          "status": "PASS",
+          "count": 286
+        },
+        {
+          "check": "Fixed prefab bounds remain within room envelope (100mm tolerance)",
+          "status": "PASS"
+        },
+        {
+          "check": "No substantial inter-prefab AABB overlap suspects",
+          "status": "PASS"
+        },
+        {
+          "check": "Revised non-table fixture bounding bottoms >= 2.0m above deck",
+          "status": "PASS"
+        },
+        {
+          "check": "All standing-rigging chainplate soles contact actual deck meshes",
+          "status": "PASS",
+          "count": 38
+        },
+        {
+          "check": "Standing cable centrelines do not pierce emitted deckhouse/deck/casing architecture",
+          "status": "PASS",
+          "count": 38
+        },
+        {
+          "check": "All five exterior ladders: actual rung/frame joints and carrier supports",
+          "status": "PASS",
+          "ladders": 5,
+          "rung_ends": 334,
+          "frame_mounts": 48,
+          "failures": 0
+        }
+      ]
     },
     {
       "check": "Full static report matches current source/data/export/validator",
@@ -285,6 +428,14 @@
         "major": 51,
         "rooms": 203,
         "missing": [],
+        "invalid": []
+      }
+    },
+    {
+      "check": "Upper-deck plans use explicit roof-off driver and retain every furnished room",
+      "status": "PASS",
+      "detail": {
+        "plans": 3,
         "invalid": []
       }
     },
@@ -334,6 +485,32 @@
       "detail": "VIEWS_REVIEWED_WITH_LIMITATIONS"
     },
     {
+      "check": "Title-only offline gallery contains every final render",
+      "status": "PASS",
+      "detail": {
+        "renders": 272,
+        "captions": false
+      }
+    },
+    {
+      "check": "Every final render individually reviewed with exact current hashes",
+      "status": "PASS",
+      "detail": {
+        "reviewed": 272,
+        "expected": 272,
+        "blockers": []
+      }
+    },
+    {
+      "check": "Exact embedded native images and offline desktop/mobile UI tests",
+      "status": "PASS",
+      "detail": {
+        "images": 272,
+        "status": "STRUCTURE_EMBEDDING_AND_OFFLINE_UI_PASS",
+        "sandboxed_preview": "PASS"
+      }
+    },
+    {
       "check": "Own-change scope; no other agents assets / projects tree",
       "status": "PASS",
       "detail": []
@@ -345,7 +522,8 @@
     }
   ],
   "summary": {
-    "PASS": 47,
+    "PASS": 63,
     "UNVERIFIED": 1
-  }
+  },
+  "limits": "Delivered-package byte/provenance checks, never fresh geometry/Studio approval.\nRun after packaging; --require-evidence/--require-reviewed require current exact\nimages and their independently recorded individual observations. The default\nchecks retained MASTER, actual kit bytes, original frozen exporter receipt and\nall canonical audit identities even when excluded GAME rebuild scratch is gone.\n--require-saved-sources additionally requires the actual saved GAME .blend/data;\nwithout them it MUST fail. No geometry audit or visual review is rerun here.\n"
 }

@@ -1,0 +1,769 @@
+{
+  "schema": "victoria.leonidas-ii.plant-finite-part-screen/1.0",
+  "status": "SAVED_SOURCE_BOUND_SCREEN",
+  "quality": "MASTER",
+  "source_file": "models/leonidas_ii/Aurelian_1889.blend",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "build_data_file": "exports/leonidas_ii/build_data.json",
+  "build_data_sha256": "adf9206f7eec378855a281cda21295d10b02725d1c583e2c6b1f45093832bf01",
+  "auditor_sha256": "432e1926548bf12b35b52d1c339aefbc0a64a47a42cf2919e97864733b6923dd",
+  "generator_sha256": {
+    "blender/leonidas_ii/access_detail.py": "78d2f226da449f846b085a1846255dededb13a61b895562ad20730a681d2df6f",
+    "blender/leonidas_ii/audit_common.py": "a4cfc973b6b7f2264a999c39bf1f232f5cb46d0e866e564b1061f20a8d791aec",
+    "blender/leonidas_ii/audit_details.py": "e674bdf38e1aed172b4091e00a23e25efee7f6b5c81e7fac833fe5edd3d83843",
+    "blender/leonidas_ii/audit_door_sweeps.py": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf",
+    "blender/leonidas_ii/audit_exterior_parts.py": "c54ec45c5b4164488e9b0cb6933644c5efc8c3acd6860237ea8ef3f20dabcb05",
+    "blender/leonidas_ii/audit_fittings.py": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+    "blender/leonidas_ii/audit_ladders.py": "1555331c82df15419e4463b0c10e5f57629dddfe0359146ba3384a9ba855b714",
+    "blender/leonidas_ii/audit_plant_parts.py": "432e1926548bf12b35b52d1c339aefbc0a64a47a42cf2919e97864733b6923dd",
+    "blender/leonidas_ii/audit_room_parts.py": "84d5dd30f9842393c93e885b827eccfce002b6d5aa920fbaad33f7b296ce5325",
+    "blender/leonidas_ii/audit_shaft_clearances.py": "fa397be2f0f768a981da6c7cc07fde953757e1f2f10caaf59d5ab41e56906135",
+    "blender/leonidas_ii/build.py": "dc74813522d40521755fd64c7da73aaa7ab7bf1d80b6149f4b849540dc11ee4e",
+    "blender/leonidas_ii/export_game.py": "56835f2ebf1bd4c2c86fd0b01a1773e1d51b29f976944dac92a1363cf2628341",
+    "blender/leonidas_ii/furnishings.py": "26aabb26897dd89757fc5786b2707977524c0ea53f5a19eb94a0f764b4ac2b3d",
+    "blender/leonidas_ii/interiors.py": "77af7f48ef529697c240b25e41d0af09fb553978126566cd8e4d6f2b9cc43c9a",
+    "blender/leonidas_ii/machinery.py": "4d0b1bff4cc6e974b428d61b8d1e1f9eafb4a336b435bf281f9395a1219d79fd",
+    "blender/leonidas_ii/meshkit.py": "81af1392dcdff1b859120541867d957e5a78bd18768febeb57b6dde78ce7bc71",
+    "blender/leonidas_ii/optimize.py": "f469949f8af57eb3a43b3d9e7a6a3bba3f128a14e6e6559078c3e1fcb80e28d7",
+    "blender/leonidas_ii/period_detail.py": "9df8a3191908025a85dc91d2f7604051be5e65392a51b798e927ef38e4a1ee27",
+    "blender/leonidas_ii/plant_detail.py": "592d783cb09a1b30148e2fbc03ac48134080fe92cfafe5e34c806387d7e4cc5a",
+    "blender/leonidas_ii/public_rooms.py": "c7354ac2720781ca5319ebb6a818af3735535ccfe3300db8ef61011b10f24b5c",
+    "blender/leonidas_ii/service_fittings.py": "0fa023b4d8f6b32d08f4b7219248336b753f4dee4c1271cf091af3c192101c06",
+    "blender/leonidas_ii/structure.py": "0d719cbedf8d7073ca4c38cb85e9bfbc369f248c09225f5660104525d5e90a9b",
+    "blender/leonidas_ii/test_micro_contacts.py": "2f1c78cdfc9808b29bc82d8c14c089d85375d4fb002a72e265b04058ff644de6",
+    "blender/leonidas_ii/topsides.py": "e4bbd6090e92e20a03ae5c9294d94f7264060cd8095bceec0f841779a9aa242d",
+    "blender/leonidas_ii/visual_design.py": "f3e426ac7bf2deea15ae809d9a8d932900c841300be3c8f4841dd76a55ed2640",
+    "blender/leonidas_ii/weather_detail.py": "4fc9b0adf7f1506aa002f41b60e13dd6b25a7d383f74048bc31fe5859705f906",
+    "blender/leonidas_ii/working_detail.py": "8978972fa454ce3007030b9c683b9841b6825f62c561db047424573cc9ba6d66"
+  },
+  "generator_binding_mismatches": [],
+  "summary": {
+    "captured_assemblies": 45,
+    "rigid_static_parts": 5295,
+    "static_detached_clusters": 0,
+    "mover_assemblies": 18,
+    "mover_internal_detached_clusters": 0,
+    "saved_geometry_mismatches": 0
+  },
+  "rigid_static": {
+    "room": "ALL_STATIC_PLANT",
+    "primitive_parts": 5295,
+    "clusters": 47,
+    "rooted_clusters": 47,
+    "detached_clusters": [],
+    "contact_unions": 5248,
+    "broadphase_candidates_tested": 19250
+  },
+  "movers": [
+    {
+      "recipe": "Piston_HP",
+      "primitive_parts": 3,
+      "actual_contact_pairs": 3,
+      "clusters": 1,
+      "lowest_z": 6.75,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Conrod_HP",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 18,
+      "clusters": 1,
+      "lowest_z": 3.567499876022339,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "ValveLink_HP",
+      "primitive_parts": 3,
+      "actual_contact_pairs": 2,
+      "clusters": 1,
+      "lowest_z": 2.832671642303467,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "ValveSpindle_HP",
+      "primitive_parts": 2,
+      "actual_contact_pairs": 1,
+      "clusters": 1,
+      "lowest_z": 5.758237361907959,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Piston_IP",
+      "primitive_parts": 3,
+      "actual_contact_pairs": 3,
+      "clusters": 1,
+      "lowest_z": 5.296980857849121,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Conrod_IP",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 18,
+      "clusters": 1,
+      "lowest_z": 2.2174999713897705,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "ValveLink_IP",
+      "primitive_parts": 3,
+      "actual_contact_pairs": 2,
+      "clusters": 1,
+      "lowest_z": 2.525740623474121,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "ValveSpindle_IP",
+      "primitive_parts": 2,
+      "actual_contact_pairs": 1,
+      "clusters": 1,
+      "lowest_z": 5.441369533538818,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Piston_LP",
+      "primitive_parts": 3,
+      "actual_contact_pairs": 3,
+      "clusters": 1,
+      "lowest_z": 5.296980857849121,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Conrod_LP",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 18,
+      "clusters": 1,
+      "lowest_z": 2.2174999713897705,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "ValveLink_LP",
+      "primitive_parts": 3,
+      "actual_contact_pairs": 2,
+      "clusters": 1,
+      "lowest_z": 2.7265877723693848,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "ValveSpindle_LP",
+      "primitive_parts": 2,
+      "actual_contact_pairs": 1,
+      "clusters": 1,
+      "lowest_z": 5.585285663604736,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Crankshaft_3Throws",
+      "primitive_parts": 16,
+      "actual_contact_pairs": 15,
+      "clusters": 1,
+      "lowest_z": 2.342154026031494,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Tailshaft_And_Couplings",
+      "primitive_parts": 99,
+      "actual_contact_pairs": 100,
+      "clusters": 1,
+      "lowest_z": 2.569999933242798,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Propeller_4Blade",
+      "primitive_parts": 17,
+      "actual_contact_pairs": 16,
+      "clusters": 1,
+      "lowest_z": 0.4680904448032379,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Rudder_Stock_Blade",
+      "primitive_parts": 10,
+      "actual_contact_pairs": 9,
+      "clusters": 1,
+      "lowest_z": 0.5500001907348633,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Door_S_Steering",
+      "primitive_parts": 13,
+      "actual_contact_pairs": 12,
+      "clusters": 1,
+      "lowest_z": 11.864999771118164,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Steering_Quadrant_Tiller",
+      "primitive_parts": 8,
+      "actual_contact_pairs": 21,
+      "clusters": 1,
+      "lowest_z": 12.380000114440918,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    }
+  ],
+  "geometry_binding": [
+    {
+      "name": "Scotch_Row_1",
+      "kind": "boiler",
+      "mover": null,
+      "generated_faces_sha256": "e222a6f8d265103e1020053bfa892f03f9979640394ddf88259f02b8907d6005",
+      "saved_faces_sha256": "e222a6f8d265103e1020053bfa892f03f9979640394ddf88259f02b8907d6005",
+      "match": true,
+      "saved_objects": [
+        "Scotch_Row_1_01",
+        "Scotch_Row_1_02"
+      ]
+    },
+    {
+      "name": "Boiler_Pipework_1",
+      "kind": "pipe",
+      "mover": null,
+      "generated_faces_sha256": "48d794bd931931049ecd1beedd1126af72f4162d41cf1a7d43313b647a6eb314",
+      "saved_faces_sha256": "48d794bd931931049ecd1beedd1126af72f4162d41cf1a7d43313b647a6eb314",
+      "match": true,
+      "saved_objects": [
+        "Boiler_Pipework_1"
+      ]
+    },
+    {
+      "name": "Scotch_Row_2",
+      "kind": "boiler",
+      "mover": null,
+      "generated_faces_sha256": "a76ec8c179e06544073cb19a538aaa88509b83cd8e9893a3a7f9749290ea8c99",
+      "saved_faces_sha256": "a76ec8c179e06544073cb19a538aaa88509b83cd8e9893a3a7f9749290ea8c99",
+      "match": true,
+      "saved_objects": [
+        "Scotch_Row_2_01",
+        "Scotch_Row_2_02"
+      ]
+    },
+    {
+      "name": "Boiler_Pipework_2",
+      "kind": "pipe",
+      "mover": null,
+      "generated_faces_sha256": "f4d1fbf867a29f8fc300354006c44a5a6ca8868d4e900d57dc09b707230a5e64",
+      "saved_faces_sha256": "f4d1fbf867a29f8fc300354006c44a5a6ca8868d4e900d57dc09b707230a5e64",
+      "match": true,
+      "saved_objects": [
+        "Boiler_Pipework_2"
+      ]
+    },
+    {
+      "name": "Scotch_Row_3",
+      "kind": "boiler",
+      "mover": null,
+      "generated_faces_sha256": "b446dfedaf7192f588407fad0b86e5b91499d69b16bdf65398d69ecdd88bc1ed",
+      "saved_faces_sha256": "b446dfedaf7192f588407fad0b86e5b91499d69b16bdf65398d69ecdd88bc1ed",
+      "match": true,
+      "saved_objects": [
+        "Scotch_Row_3_01",
+        "Scotch_Row_3_02"
+      ]
+    },
+    {
+      "name": "Boiler_Pipework_3",
+      "kind": "pipe",
+      "mover": null,
+      "generated_faces_sha256": "e633563366837cb3d9711665da7ddad2c0db6bf908337441b86449f34176e8df",
+      "saved_faces_sha256": "e633563366837cb3d9711665da7ddad2c0db6bf908337441b86449f34176e8df",
+      "match": true,
+      "saved_objects": [
+        "Boiler_Pipework_3"
+      ]
+    },
+    {
+      "name": "CoalBunkers_FireTools",
+      "kind": "equipment",
+      "mover": null,
+      "generated_faces_sha256": "42947c15e2e9a4689a63640098c04c863076346f2043f91e3f9c852148ef2d56",
+      "saved_faces_sha256": "42947c15e2e9a4689a63640098c04c863076346f2043f91e3f9c852148ef2d56",
+      "match": true,
+      "saved_objects": [
+        "CoalBunkers_FireTools"
+      ]
+    },
+    {
+      "name": "Piston_HP",
+      "kind": "mover",
+      "mover": "piston",
+      "generated_faces_sha256": "2d6f6ae0361947a82aa5afd9ecce7d5d3f6ccfe94ca0954a27eae096f423c888",
+      "saved_faces_sha256": "2d6f6ae0361947a82aa5afd9ecce7d5d3f6ccfe94ca0954a27eae096f423c888",
+      "match": true,
+      "saved_objects": [
+        "Piston_HP"
+      ]
+    },
+    {
+      "name": "Conrod_HP",
+      "kind": "mover",
+      "mover": "conrod",
+      "generated_faces_sha256": "20e4e81fdc0afe1038996675c7ec1d961c9416a4bb6bf7576bd599c60a723f50",
+      "saved_faces_sha256": "20e4e81fdc0afe1038996675c7ec1d961c9416a4bb6bf7576bd599c60a723f50",
+      "match": true,
+      "saved_objects": [
+        "Conrod_HP"
+      ]
+    },
+    {
+      "name": "ValveLink_HP",
+      "kind": "mover",
+      "mover": "conrod",
+      "generated_faces_sha256": "396fb75b428c5d05b4522d94dc7568f38e0cc1dfa1a02d753e16cefa37f6280b",
+      "saved_faces_sha256": "396fb75b428c5d05b4522d94dc7568f38e0cc1dfa1a02d753e16cefa37f6280b",
+      "match": true,
+      "saved_objects": [
+        "ValveLink_HP"
+      ]
+    },
+    {
+      "name": "ValveSpindle_HP",
+      "kind": "mover",
+      "mover": "piston",
+      "generated_faces_sha256": "84475325dd919d9f89466995a7b02377a11f8eee834c54e54ed865d91722b899",
+      "saved_faces_sha256": "84475325dd919d9f89466995a7b02377a11f8eee834c54e54ed865d91722b899",
+      "match": true,
+      "saved_objects": [
+        "ValveSpindle_HP"
+      ]
+    },
+    {
+      "name": "Piston_IP",
+      "kind": "mover",
+      "mover": "piston",
+      "generated_faces_sha256": "a72fd4f5b783757564e2941cb6a8031665d89ce0d68be3e858036f0f4fefc648",
+      "saved_faces_sha256": "a72fd4f5b783757564e2941cb6a8031665d89ce0d68be3e858036f0f4fefc648",
+      "match": true,
+      "saved_objects": [
+        "Piston_IP"
+      ]
+    },
+    {
+      "name": "Conrod_IP",
+      "kind": "mover",
+      "mover": "conrod",
+      "generated_faces_sha256": "2910dfc6f0f0118a94122ad8cbeaae4c623b77bc9ea31fa1c019701920d0d18e",
+      "saved_faces_sha256": "2910dfc6f0f0118a94122ad8cbeaae4c623b77bc9ea31fa1c019701920d0d18e",
+      "match": true,
+      "saved_objects": [
+        "Conrod_IP"
+      ]
+    },
+    {
+      "name": "ValveLink_IP",
+      "kind": "mover",
+      "mover": "conrod",
+      "generated_faces_sha256": "b4691e8a87fd63b41a2bf21ed6d436eb7f6012c5a7446edd5714eb0bbc1f7d97",
+      "saved_faces_sha256": "b4691e8a87fd63b41a2bf21ed6d436eb7f6012c5a7446edd5714eb0bbc1f7d97",
+      "match": true,
+      "saved_objects": [
+        "ValveLink_IP"
+      ]
+    },
+    {
+      "name": "ValveSpindle_IP",
+      "kind": "mover",
+      "mover": "piston",
+      "generated_faces_sha256": "d22a8f34bc1f4bd4929e9c1be8b9b8cbf89e24e4ffdb26ac70292fa0cdbf25d2",
+      "saved_faces_sha256": "d22a8f34bc1f4bd4929e9c1be8b9b8cbf89e24e4ffdb26ac70292fa0cdbf25d2",
+      "match": true,
+      "saved_objects": [
+        "ValveSpindle_IP"
+      ]
+    },
+    {
+      "name": "Piston_LP",
+      "kind": "mover",
+      "mover": "piston",
+      "generated_faces_sha256": "9c42613a0c052f08c6b2e155fed1c54f4dd53b08849e1f35b790a6a2939b040a",
+      "saved_faces_sha256": "9c42613a0c052f08c6b2e155fed1c54f4dd53b08849e1f35b790a6a2939b040a",
+      "match": true,
+      "saved_objects": [
+        "Piston_LP"
+      ]
+    },
+    {
+      "name": "Conrod_LP",
+      "kind": "mover",
+      "mover": "conrod",
+      "generated_faces_sha256": "1bf29f3b1a4170c952f2f3b92b43ed8f31631c2776503cd0378d4ab19606dab3",
+      "saved_faces_sha256": "1bf29f3b1a4170c952f2f3b92b43ed8f31631c2776503cd0378d4ab19606dab3",
+      "match": true,
+      "saved_objects": [
+        "Conrod_LP"
+      ]
+    },
+    {
+      "name": "ValveLink_LP",
+      "kind": "mover",
+      "mover": "conrod",
+      "generated_faces_sha256": "61135859dc9ef7be88c0f21444b82eb4c2eb310c69416af9a53f9753ed5884a0",
+      "saved_faces_sha256": "61135859dc9ef7be88c0f21444b82eb4c2eb310c69416af9a53f9753ed5884a0",
+      "match": true,
+      "saved_objects": [
+        "ValveLink_LP"
+      ]
+    },
+    {
+      "name": "ValveSpindle_LP",
+      "kind": "mover",
+      "mover": "piston",
+      "generated_faces_sha256": "328e91d3046144c13f2e72ec8e80f7e19af8fb9c09990f3170ef2e58459c3d2f",
+      "saved_faces_sha256": "328e91d3046144c13f2e72ec8e80f7e19af8fb9c09990f3170ef2e58459c3d2f",
+      "match": true,
+      "saved_objects": [
+        "ValveSpindle_LP"
+      ]
+    },
+    {
+      "name": "Engine_Bed_Standards_Cylinders",
+      "kind": "engine",
+      "mover": null,
+      "generated_faces_sha256": "77f9da9e49d51f528809452c4d72d0b8a39d011a9b58f1090bdf35bcd6cbf720",
+      "saved_faces_sha256": "77f9da9e49d51f528809452c4d72d0b8a39d011a9b58f1090bdf35bcd6cbf720",
+      "match": true,
+      "saved_objects": [
+        "Engine_Bed_Standards_Cylinders"
+      ]
+    },
+    {
+      "name": "Engine_Working_Levels",
+      "kind": "platform",
+      "mover": null,
+      "generated_faces_sha256": "a1c1e33ad0b4b9855e53fd159224d7a2dda390aeddb414bae2c32806495e56b2",
+      "saved_faces_sha256": "a1c1e33ad0b4b9855e53fd159224d7a2dda390aeddb414bae2c32806495e56b2",
+      "match": true,
+      "saved_objects": [
+        "Engine_Working_Levels"
+      ]
+    },
+    {
+      "name": "Crankshaft_3Throws",
+      "kind": "mover",
+      "mover": "shaft",
+      "generated_faces_sha256": "9cfec4264ab7868140823bbbe28b58dc783be70964810bfd0ca1d7a873546452",
+      "saved_faces_sha256": "9cfec4264ab7868140823bbbe28b58dc783be70964810bfd0ca1d7a873546452",
+      "match": true,
+      "saved_objects": [
+        "Crankshaft_3Throws"
+      ]
+    },
+    {
+      "name": "Engine_Steam_Receivers",
+      "kind": "pipe",
+      "mover": null,
+      "generated_faces_sha256": "6062f1595654b57196c1e9135bbca80fe6e4f15a9d12440c35c61d19a106496f",
+      "saved_faces_sha256": "6062f1595654b57196c1e9135bbca80fe6e4f15a9d12440c35c61d19a106496f",
+      "match": true,
+      "saved_objects": [
+        "Engine_Steam_Receivers"
+      ]
+    },
+    {
+      "name": "Condenser_Pumps_Dynamos_Workshop",
+      "kind": "auxiliary",
+      "mover": null,
+      "generated_faces_sha256": "bd96f10159532cd1241bb3824fbbb236e589c2188311ec9bdda0c44aeea4596c",
+      "saved_faces_sha256": "bd96f10159532cd1241bb3824fbbb236e589c2188311ec9bdda0c44aeea4596c",
+      "match": true,
+      "saved_objects": [
+        "Condenser_Pumps_Dynamos_Workshop_01",
+        "Condenser_Pumps_Dynamos_Workshop_02"
+      ]
+    },
+    {
+      "name": "Feed_Sea_Condensate_Mains",
+      "kind": "pipe",
+      "mover": null,
+      "generated_faces_sha256": "b467b1a5aabe733fe3df35a25ff39cdb38504fd73915ddb55a1d73eac4966564",
+      "saved_faces_sha256": "b467b1a5aabe733fe3df35a25ff39cdb38504fd73915ddb55a1d73eac4966564",
+      "match": true,
+      "saved_objects": [
+        "Feed_Sea_Condensate_Mains"
+      ]
+    },
+    {
+      "name": "Watertight_ShaftAlley_Enclosure",
+      "kind": "wall",
+      "mover": null,
+      "generated_faces_sha256": "97826999666a5181d1b9a95f40ab9963c279bcfccd2546658be96ee92e7e5772",
+      "saved_faces_sha256": "97826999666a5181d1b9a95f40ab9963c279bcfccd2546658be96ee92e7e5772",
+      "match": true,
+      "saved_objects": [
+        "Watertight_ShaftAlley_Enclosure"
+      ]
+    },
+    {
+      "name": "Tailshaft_And_Couplings",
+      "kind": "mover",
+      "mover": "shaft",
+      "generated_faces_sha256": "9568d9a9b99a182409afc966d42e6290bf2f91735b147b703414751ac2e3bf90",
+      "saved_faces_sha256": "9568d9a9b99a182409afc966d42e6290bf2f91735b147b703414751ac2e3bf90",
+      "match": true,
+      "saved_objects": [
+        "Tailshaft_And_Couplings"
+      ]
+    },
+    {
+      "name": "Propeller_4Blade",
+      "kind": "mover",
+      "mover": "shaft",
+      "generated_faces_sha256": "ba284670fcfb2a31b95bab086b65c48a2cb9d2d01ae33e6755bd076483e9e071",
+      "saved_faces_sha256": "ba284670fcfb2a31b95bab086b65c48a2cb9d2d01ae33e6755bd076483e9e071",
+      "match": true,
+      "saved_objects": [
+        "Propeller_4Blade"
+      ]
+    },
+    {
+      "name": "Rudder_Stock_Blade",
+      "kind": "mover",
+      "mover": "rudder",
+      "generated_faces_sha256": "ebf00f104a0f71a2f1e33e34ff22b4c63e0716914dffbfd7bc08fb194d0762cd",
+      "saved_faces_sha256": "ebf00f104a0f71a2f1e33e34ff22b4c63e0716914dffbfd7bc08fb194d0762cd",
+      "match": true,
+      "saved_objects": [
+        "Rudder_Stock_Blade"
+      ]
+    },
+    {
+      "name": "Shaft_Bearings_SternTube_Pintles",
+      "kind": "shaft_support",
+      "mover": null,
+      "generated_faces_sha256": "9f2134650a1299ab2ba94e67e536b1567ab03f41d8b3f3fac459ffccd4544194",
+      "saved_faces_sha256": "9f2134650a1299ab2ba94e67e536b1567ab03f41d8b3f3fac459ffccd4544194",
+      "match": true,
+      "saved_objects": [
+        "Shaft_Bearings_SternTube_Pintles"
+      ]
+    },
+    {
+      "name": "Glazing_S_Steering_y0",
+      "kind": "glazing",
+      "mover": null,
+      "generated_faces_sha256": "c4e47514f8ccf684e82f3e9da6d7a6b06560d77677187cc278b4d33b66387c8d",
+      "saved_faces_sha256": "c4e47514f8ccf684e82f3e9da6d7a6b06560d77677187cc278b4d33b66387c8d",
+      "match": true,
+      "saved_objects": [
+        "Glazing_S_Steering_y0"
+      ]
+    },
+    {
+      "name": "Glazing_S_Steering_y1",
+      "kind": "glazing",
+      "mover": null,
+      "generated_faces_sha256": "41db9b944ff065e40eb5fc721afed0a2236f7a14f8e73e3ce3c57b5288a71e97",
+      "saved_faces_sha256": "41db9b944ff065e40eb5fc721afed0a2236f7a14f8e73e3ce3c57b5288a71e97",
+      "match": true,
+      "saved_objects": [
+        "Glazing_S_Steering_y1"
+      ]
+    },
+    {
+      "name": "Door_S_Steering",
+      "kind": "door",
+      "mover": "door",
+      "generated_faces_sha256": "597523095235958890fe073bc00c6c3f90a9809137df79e46f406b6822810ac4",
+      "saved_faces_sha256": "597523095235958890fe073bc00c6c3f90a9809137df79e46f406b6822810ac4",
+      "match": true,
+      "saved_objects": [
+        "Door_S_Steering"
+      ]
+    },
+    {
+      "name": "Plaque_S_Steering",
+      "kind": "sign",
+      "mover": null,
+      "generated_faces_sha256": "abad306e1b6f7d07b0fd1c8c3c66578de2638e03673097f4f4c0cd3dc6dffe34",
+      "saved_faces_sha256": "abad306e1b6f7d07b0fd1c8c3c66578de2638e03673097f4f4c0cd3dc6dffe34",
+      "match": true,
+      "saved_objects": [
+        "Plaque_S_Steering"
+      ]
+    },
+    {
+      "name": "Joinery_S_Steering",
+      "kind": "wall",
+      "mover": null,
+      "generated_faces_sha256": "f13a24b9c62763b220c1fa2bfef950515e246e1e57457068e238c78aa948bab4",
+      "saved_faces_sha256": "f13a24b9c62763b220c1fa2bfef950515e246e1e57457068e238c78aa948bab4",
+      "match": true,
+      "saved_objects": [
+        "Joinery_S_Steering"
+      ]
+    },
+    {
+      "name": "Finish_S_Steering",
+      "kind": "finish",
+      "mover": null,
+      "generated_faces_sha256": "af21384e6c2d6851efc39ab5fa224c63ff0c7d9349c584e570cac952308333d2",
+      "saved_faces_sha256": "af21384e6c2d6851efc39ab5fa224c63ff0c7d9349c584e570cac952308333d2",
+      "match": true,
+      "saved_objects": [
+        "Finish_S_Steering"
+      ]
+    },
+    {
+      "name": "Ceiling_S_Steering",
+      "kind": "ceiling",
+      "mover": null,
+      "generated_faces_sha256": "7ad7172d8196607d3395ae273d7b07e5badf07d5e48a5a56fa65f43c6476b545",
+      "saved_faces_sha256": "7ad7172d8196607d3395ae273d7b07e5badf07d5e48a5a56fa65f43c6476b545",
+      "match": true,
+      "saved_objects": [
+        "Ceiling_S_Steering"
+      ]
+    },
+    {
+      "name": "Steering_Quadrant_Tiller",
+      "kind": "mover",
+      "mover": "rudder",
+      "generated_faces_sha256": "fe88bbd83d02fbeddfab105ddd88235526eb569f8b973fd9ae6ba19917dde6a0",
+      "saved_faces_sha256": "fe88bbd83d02fbeddfab105ddd88235526eb569f8b973fd9ae6ba19917dde6a0",
+      "match": true,
+      "saved_objects": [
+        "Steering_Quadrant_Tiller"
+      ]
+    },
+    {
+      "name": "Steam_Steering_And_HandTiller",
+      "kind": "steering",
+      "mover": null,
+      "generated_faces_sha256": "26f8021adb7c58b467e1ae128bcaf3b2a1c303a2cd2a1bf66be221bc849c7b75",
+      "saved_faces_sha256": "26f8021adb7c58b467e1ae128bcaf3b2a1c303a2cd2a1bf66be221bc849c7b75",
+      "match": true,
+      "saved_objects": [
+        "Steam_Steering_And_HandTiller"
+      ]
+    },
+    {
+      "name": "ShaftAlley_Lamps_ServiceSteam",
+      "kind": "equipment",
+      "mover": null,
+      "generated_faces_sha256": "acaa37cd765f9b00b1abf425ffae664e128ca53c63af7b993f75461c1da6308c",
+      "saved_faces_sha256": "acaa37cd765f9b00b1abf425ffae664e128ca53c63af7b993f75461c1da6308c",
+      "match": true,
+      "saved_objects": [
+        "ShaftAlley_Lamps_ServiceSteam"
+      ]
+    },
+    {
+      "name": "Boiler_Row_1_Fastened_Plates",
+      "kind": "boiler",
+      "mover": null,
+      "generated_faces_sha256": "1b330aa0cb7725488ddcf190a12cd3340b36eb6ebedd4453147fcb3b6e87642a",
+      "saved_faces_sha256": "1b330aa0cb7725488ddcf190a12cd3340b36eb6ebedd4453147fcb3b6e87642a",
+      "match": true,
+      "saved_objects": [
+        "Boiler_Row_1_Fastened_Plates"
+      ]
+    },
+    {
+      "name": "Boiler_Row_2_Fastened_Plates",
+      "kind": "boiler",
+      "mover": null,
+      "generated_faces_sha256": "72b32098f3c3e6dd1121a743ee8787be01a6d2bda0991645956303c28b8b99b4",
+      "saved_faces_sha256": "72b32098f3c3e6dd1121a743ee8787be01a6d2bda0991645956303c28b8b99b4",
+      "match": true,
+      "saved_objects": [
+        "Boiler_Row_2_Fastened_Plates"
+      ]
+    },
+    {
+      "name": "Boiler_Row_3_Fastened_Plates",
+      "kind": "boiler",
+      "mover": null,
+      "generated_faces_sha256": "3ddb4b16b3f64220762352e5e42a624b007f1fdef086304fa03c4d990497c733",
+      "saved_faces_sha256": "3ddb4b16b3f64220762352e5e42a624b007f1fdef086304fa03c4d990497c733",
+      "match": true,
+      "saved_objects": [
+        "Boiler_Row_3_Fastened_Plates"
+      ]
+    },
+    {
+      "name": "Engine_CastBed_Fastened_Identification",
+      "kind": "engine",
+      "mover": null,
+      "generated_faces_sha256": "ad7afcb923b7d58b671509aabc5326c24a9c20c0f1549861617506bc9c6097fc",
+      "saved_faces_sha256": "ad7afcb923b7d58b671509aabc5326c24a9c20c0f1549861617506bc9c6097fc",
+      "match": true,
+      "saved_objects": [
+        "Engine_CastBed_Fastened_Identification"
+      ]
+    },
+    {
+      "name": "ShaftAlley_Lubricators_And_RealPipeHangers",
+      "kind": "equipment",
+      "mover": null,
+      "generated_faces_sha256": "c504debceb9b133daadf52ee7e812d8eb123389844f72d358590d45c27eed1a7",
+      "saved_faces_sha256": "c504debceb9b133daadf52ee7e812d8eb123389844f72d358590d45c27eed1a7",
+      "match": true,
+      "saved_objects": [
+        "ShaftAlley_Lubricators_And_RealPipeHangers"
+      ]
+    }
+  ],
+  "structural_context": [
+    "Hull_Shell_New",
+    "Keel_Stem_SternFrame",
+    "Rolled_Frames_ReverseAngles_01",
+    "Rolled_Frames_ReverseAngles_02",
+    "Rolled_Frames_ReverseAngles_03",
+    "Rolled_Frames_ReverseAngles_04",
+    "Rolled_Frames_ReverseAngles_05",
+    "Rolled_Frames_ReverseAngles_06",
+    "Rolled_Frames_ReverseAngles_07",
+    "Rolled_Frames_ReverseAngles_08",
+    "Floors_And_DeckBeams",
+    "Keelsons",
+    "Watertight_Bulkheads",
+    "Promenade_Pillars_Knees_01",
+    "Promenade_Pillars_Knees_02",
+    "Deck_orlop",
+    "Deck_lower",
+    "Deck_main_01",
+    "Deck_main_02",
+    "Deck_saloon",
+    "Deck_promenade_01",
+    "Deck_promenade_02",
+    "Deck_boat",
+    "Deck_bridge",
+    "TankTop",
+    "Joinery_S_Steering",
+    "Finish_S_Steering",
+    "Ceiling_S_Steering",
+    "Watertight_ShaftAlley_Enclosure",
+    "Navigating_Bridge_Wings",
+    "Weather_Planks_saloon_01",
+    "Weather_Planks_saloon_02",
+    "Weather_Planks_saloon_03",
+    "Weather_Planks_saloon_04",
+    "Weather_Planks_promenade_01",
+    "Weather_Planks_promenade_02",
+    "Weather_Planks_promenade_03",
+    "Weather_Planks_promenade_04",
+    "Weather_Planks_boat_01",
+    "Weather_Planks_boat_02",
+    "Weather_Planks_boat_03",
+    "Weather_Planks_boat_04",
+    "Weather_Planks_bridge"
+  ],
+  "seconds": 4.94,
+  "limits": "Primitive surface/nearest vertex/containment graph anchored to actual hull/decks/frames and local enclosures, plus separate rigid mover-internal graphs. Running bearing gaps between different movers/static plant are deliberately not rigid-joint tests. Not every collision, shaft bore, sweep, mechanical functioning, pressure/load/strength, visual inspection or Studio acceptance. Surface connectivity via a pipe does not by itself establish a credible equipment foundation; source and eye-level examination remain necessary."
+}

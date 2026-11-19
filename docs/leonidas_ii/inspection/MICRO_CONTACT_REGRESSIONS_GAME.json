@@ -1,0 +1,2673 @@
+{
+  "schema": "victoria.leonidas-ii.micro-contact-regressions/1.0",
+  "quality": "GAME",
+  "tests": [
+    {
+      "test": "finish cells clip a true four-square-metre well without capping it",
+      "status": "PASS",
+      "detail": 12
+    },
+    {
+      "test": "no retained finish cell crosses the actual well",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "flush inlay replaces four square metres, with no overlap layers",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "revolving chair has four ACTUAL floor-seated outer tip pads",
+      "status": "PASS",
+      "detail": 4
+    },
+    {
+      "test": "piano stool has exactly three floor-seated outer wooden foot ends",
+      "status": "PASS",
+      "detail": 3
+    },
+    {
+      "test": "piano stool central hub is clear of the floor",
+      "status": "PASS",
+      "detail": 0.10999999940395355
+    },
+    {
+      "test": "transported elbow frames have no hourglass pinch",
+      "status": "PASS",
+      "detail": {
+        "minimum_midsection_radius": 0.09238798351816474
+      }
+    },
+    {
+      "test": "transported tube remains one closed primitive",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "reversed elbow section negative detects hourglass pinch",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "flat bearing positive",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "2mm floating flat negative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "contained closed solid positive",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "empty torus bore is NOT solid contact",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "torus finite skin contact",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual bored flange has no hidden central cap",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual bored flange retains finite annular face",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "pocketless carom rails have disjoint exposed top faces",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "restored crossed square rail corners trigger coplanar-face control",
+      "status": "PASS",
+      "detail": [
+        {
+          "faces": [
+            57,
+            5
+          ],
+          "area_m2": 0.01000000000000012
+        },
+        {
+          "faces": [
+            57,
+            31
+          ],
+          "area_m2": 0.01000000000000012
+        },
+        {
+          "faces": [
+            83,
+            5
+          ],
+          "area_m2": 0.01000000000000012
+        },
+        {
+          "faces": [
+            83,
+            31
+          ],
+          "area_m2": 0.01000000000000012
+        }
+      ]
+    },
+    {
+      "test": "actual carom rail is a single closed annular primitive",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Grand_Main -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Grand_Main 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Grand_Upper -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Grand_Upper 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Prom_To_Boat -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Prom_To_Boat 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Forward_Lower -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Forward_Lower 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Forward_Orlop -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Forward_Orlop 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Lower -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Lower 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Orlop -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Orlop 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Orlop_Starboard -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Orlop_Starboard 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Upper -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Upper 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Promenade -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap After_Promenade 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Engine_Access -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Engine_Access 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Engine_Main -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Engine_Main 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Bridge_Access -1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "actual stair exposed side has no riser/tread coplanar overlap Bridge_Access 1",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "test": "restored full-width riser triggers exposed-side overlap control",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "recipe positive chair_dining",
+      "status": "PASS",
+      "detail": {
+        "parts": 16
+      }
+    },
+    {
+      "test": "non-anchor available chair_dining",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative chair_dining",
+      "status": "PASS",
+      "detail": {
+        "part": 10
+      }
+    },
+    {
+      "test": "recipe positive chair_writing",
+      "status": "PASS",
+      "detail": {
+        "parts": 18
+      }
+    },
+    {
+      "test": "non-anchor available chair_writing",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative chair_writing",
+      "status": "PASS",
+      "detail": {
+        "part": 11
+      }
+    },
+    {
+      "test": "recipe positive chair_armchair",
+      "status": "PASS",
+      "detail": {
+        "parts": 17
+      }
+    },
+    {
+      "test": "non-anchor available chair_armchair",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative chair_armchair",
+      "status": "PASS",
+      "detail": {
+        "part": 10
+      }
+    },
+    {
+      "test": "recipe positive sofa_1.82",
+      "status": "PASS",
+      "detail": {
+        "parts": 18
+      }
+    },
+    {
+      "test": "non-anchor available sofa_1.82",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative sofa_1.82",
+      "status": "PASS",
+      "detail": {
+        "part": 11
+      }
+    },
+    {
+      "test": "recipe positive sofa_2.1",
+      "status": "PASS",
+      "detail": {
+        "parts": 18
+      }
+    },
+    {
+      "test": "non-anchor available sofa_2.1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative sofa_2.1",
+      "status": "PASS",
+      "detail": {
+        "part": 11
+      }
+    },
+    {
+      "test": "recipe positive sofa_2.65",
+      "status": "PASS",
+      "detail": {
+        "parts": 21
+      }
+    },
+    {
+      "test": "non-anchor available sofa_2.65",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative sofa_2.65",
+      "status": "PASS",
+      "detail": {
+        "part": 12
+      }
+    },
+    {
+      "test": "recipe positive table_(2.7, 1.02, True)",
+      "status": "PASS",
+      "detail": {
+        "parts": 12
+      }
+    },
+    {
+      "test": "non-anchor available table_(2.7, 1.02, True)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative table_(2.7, 1.02, True)",
+      "status": "PASS",
+      "detail": {
+        "part": 6
+      }
+    },
+    {
+      "test": "recipe positive table_(2.25, 0.86, False)",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available table_(2.25, 0.86, False)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative table_(2.25, 0.86, False)",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive table_(6.0, 1.4, False)",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available table_(6.0, 1.4, False)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative table_(6.0, 1.4, False)",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive service_setting",
+      "status": "PASS",
+      "detail": {
+        "parts": 11
+      }
+    },
+    {
+      "test": "non-anchor available service_setting",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative service_setting",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive washstand",
+      "status": "PASS",
+      "detail": {
+        "parts": 14
+      }
+    },
+    {
+      "test": "non-anchor available washstand",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative washstand",
+      "status": "PASS",
+      "detail": {
+        "part": 9
+      }
+    },
+    {
+      "test": "recipe positive wc",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available wc",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative wc",
+      "status": "PASS",
+      "detail": {
+        "part": 5
+      }
+    },
+    {
+      "test": "recipe positive bathtub",
+      "status": "PASS",
+      "detail": {
+        "parts": 23
+      }
+    },
+    {
+      "test": "non-anchor available bathtub",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bathtub",
+      "status": "PASS",
+      "detail": {
+        "part": 11
+      }
+    },
+    {
+      "test": "recipe positive range_unit",
+      "status": "PASS",
+      "detail": {
+        "parts": 30
+      }
+    },
+    {
+      "test": "non-anchor available range_unit",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative range_unit",
+      "status": "PASS",
+      "detail": {
+        "part": 15
+      }
+    },
+    {
+      "test": "recipe positive bed_first",
+      "status": "PASS",
+      "detail": {
+        "parts": 34
+      }
+    },
+    {
+      "test": "non-anchor available bed_first",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bed_first",
+      "status": "PASS",
+      "detail": {
+        "part": 19
+      }
+    },
+    {
+      "test": "recipe positive bed_hospital",
+      "status": "PASS",
+      "detail": {
+        "parts": 34
+      }
+    },
+    {
+      "test": "non-anchor available bed_hospital",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bed_hospital",
+      "status": "PASS",
+      "detail": {
+        "part": 19
+      }
+    },
+    {
+      "test": "recipe positive bunk_0",
+      "status": "PASS",
+      "detail": {
+        "parts": 41
+      }
+    },
+    {
+      "test": "non-anchor available bunk_0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bunk_0",
+      "status": "PASS",
+      "detail": {
+        "part": 21
+      }
+    },
+    {
+      "test": "recipe positive bunk_1",
+      "status": "PASS",
+      "detail": {
+        "parts": 41
+      }
+    },
+    {
+      "test": "non-anchor available bunk_1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bunk_1",
+      "status": "PASS",
+      "detail": {
+        "part": 21
+      }
+    },
+    {
+      "test": "recipe positive bunk_2",
+      "status": "PASS",
+      "detail": {
+        "parts": 41
+      }
+    },
+    {
+      "test": "non-anchor available bunk_2",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bunk_2",
+      "status": "PASS",
+      "detail": {
+        "part": 21
+      }
+    },
+    {
+      "test": "recipe positive bunk_aisle_ladder_-1",
+      "status": "PASS",
+      "detail": {
+        "parts": 41
+      }
+    },
+    {
+      "test": "non-anchor available bunk_aisle_ladder_-1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bunk_aisle_ladder_-1",
+      "status": "PASS",
+      "detail": {
+        "part": 21
+      }
+    },
+    {
+      "test": "recipe positive bunk_aisle_ladder_1",
+      "status": "PASS",
+      "detail": {
+        "parts": 41
+      }
+    },
+    {
+      "test": "non-anchor available bunk_aisle_ladder_1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bunk_aisle_ladder_1",
+      "status": "PASS",
+      "detail": {
+        "part": 21
+      }
+    },
+    {
+      "test": "recipe positive wardrobe_0.62",
+      "status": "PASS",
+      "detail": {
+        "parts": 13
+      }
+    },
+    {
+      "test": "non-anchor available wardrobe_0.62",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative wardrobe_0.62",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive wardrobe_1.5",
+      "status": "PASS",
+      "detail": {
+        "parts": 13
+      }
+    },
+    {
+      "test": "non-anchor available wardrobe_1.5",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative wardrobe_1.5",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive desk_1.2",
+      "status": "PASS",
+      "detail": {
+        "parts": 16
+      }
+    },
+    {
+      "test": "non-anchor available desk_1.2",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative desk_1.2",
+      "status": "PASS",
+      "detail": {
+        "part": 10
+      }
+    },
+    {
+      "test": "recipe positive desk_1.6",
+      "status": "PASS",
+      "detail": {
+        "parts": 16
+      }
+    },
+    {
+      "test": "non-anchor available desk_1.6",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative desk_1.6",
+      "status": "PASS",
+      "detail": {
+        "part": 10
+      }
+    },
+    {
+      "test": "recipe positive bookcase",
+      "status": "PASS",
+      "detail": {
+        "parts": 314
+      }
+    },
+    {
+      "test": "non-anchor available bookcase",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bookcase",
+      "status": "PASS",
+      "detail": {
+        "part": 159
+      }
+    },
+    {
+      "test": "recipe positive shelving_pantry_0",
+      "status": "PASS",
+      "detail": {
+        "parts": 71
+      }
+    },
+    {
+      "test": "non-anchor available shelving_pantry_0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative shelving_pantry_0",
+      "status": "PASS",
+      "detail": {
+        "part": 37
+      }
+    },
+    {
+      "test": "recipe positive shelving_pantry_1",
+      "status": "PASS",
+      "detail": {
+        "parts": 70
+      }
+    },
+    {
+      "test": "non-anchor available shelving_pantry_1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative shelving_pantry_1",
+      "status": "PASS",
+      "detail": {
+        "part": 37
+      }
+    },
+    {
+      "test": "recipe positive shelving_pantry_2",
+      "status": "PASS",
+      "detail": {
+        "parts": 66
+      }
+    },
+    {
+      "test": "non-anchor available shelving_pantry_2",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative shelving_pantry_2",
+      "status": "PASS",
+      "detail": {
+        "part": 35
+      }
+    },
+    {
+      "test": "recipe positive shelving_linen_0",
+      "status": "PASS",
+      "detail": {
+        "parts": 38
+      }
+    },
+    {
+      "test": "non-anchor available shelving_linen_0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative shelving_linen_0",
+      "status": "PASS",
+      "detail": {
+        "part": 21
+      }
+    },
+    {
+      "test": "recipe positive shelving_linen_1",
+      "status": "PASS",
+      "detail": {
+        "parts": 38
+      }
+    },
+    {
+      "test": "non-anchor available shelving_linen_1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative shelving_linen_1",
+      "status": "PASS",
+      "detail": {
+        "part": 21
+      }
+    },
+    {
+      "test": "recipe positive shelving_linen_2",
+      "status": "PASS",
+      "detail": {
+        "parts": 38
+      }
+    },
+    {
+      "test": "non-anchor available shelving_linen_2",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative shelving_linen_2",
+      "status": "PASS",
+      "detail": {
+        "part": 21
+      }
+    },
+    {
+      "test": "recipe positive round_table",
+      "status": "PASS",
+      "detail": {
+        "parts": 8
+      }
+    },
+    {
+      "test": "non-anchor available round_table",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative round_table",
+      "status": "PASS",
+      "detail": {
+        "part": 2
+      }
+    },
+    {
+      "test": "recipe positive plain_chair",
+      "status": "PASS",
+      "detail": {
+        "parts": 17
+      }
+    },
+    {
+      "test": "non-anchor available plain_chair",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative plain_chair",
+      "status": "PASS",
+      "detail": {
+        "part": 10
+      }
+    },
+    {
+      "test": "recipe positive utility_table",
+      "status": "PASS",
+      "detail": {
+        "parts": 10
+      }
+    },
+    {
+      "test": "non-anchor available utility_table",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative utility_table",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive plain_bench",
+      "status": "PASS",
+      "detail": {
+        "parts": 17
+      }
+    },
+    {
+      "test": "non-anchor available plain_bench",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative plain_bench",
+      "status": "PASS",
+      "detail": {
+        "part": 10
+      }
+    },
+    {
+      "test": "recipe positive low_bookcase",
+      "status": "PASS",
+      "detail": {
+        "parts": 122
+      }
+    },
+    {
+      "test": "non-anchor available low_bookcase",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative low_bookcase",
+      "status": "PASS",
+      "detail": {
+        "part": 62
+      }
+    },
+    {
+      "test": "recipe positive book_stack",
+      "status": "PASS",
+      "detail": {
+        "parts": 6
+      }
+    },
+    {
+      "test": "non-anchor available book_stack",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative book_stack",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive billiard_table",
+      "status": "PASS",
+      "detail": {
+        "parts": 11
+      }
+    },
+    {
+      "test": "non-anchor available billiard_table",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative billiard_table",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive grand_piano",
+      "status": "PASS",
+      "detail": {
+        "parts": 145
+      }
+    },
+    {
+      "test": "non-anchor available grand_piano",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative grand_piano",
+      "status": "PASS",
+      "detail": {
+        "part": 71
+      }
+    },
+    {
+      "test": "recipe positive piano_stool",
+      "status": "PASS",
+      "detail": {
+        "parts": 8
+      }
+    },
+    {
+      "test": "non-anchor available piano_stool",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative piano_stool",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive plain_bench_backless",
+      "status": "PASS",
+      "detail": {
+        "parts": 13
+      }
+    },
+    {
+      "test": "non-anchor available plain_bench_backless",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative plain_bench_backless",
+      "status": "PASS",
+      "detail": {
+        "part": 8
+      }
+    },
+    {
+      "test": "recipe positive chart_table",
+      "status": "PASS",
+      "detail": {
+        "parts": 55
+      }
+    },
+    {
+      "test": "non-anchor available chart_table",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative chart_table",
+      "status": "PASS",
+      "detail": {
+        "part": 28
+      }
+    },
+    {
+      "test": "recipe positive mail_cubby",
+      "status": "PASS",
+      "detail": {
+        "parts": 83
+      }
+    },
+    {
+      "test": "non-anchor available mail_cubby",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative mail_cubby",
+      "status": "PASS",
+      "detail": {
+        "part": 44
+      }
+    },
+    {
+      "test": "recipe positive drinks_rack",
+      "status": "PASS",
+      "detail": {
+        "parts": 53
+      }
+    },
+    {
+      "test": "non-anchor available drinks_rack",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative drinks_rack",
+      "status": "PASS",
+      "detail": {
+        "part": 27
+      }
+    },
+    {
+      "test": "recipe positive ice_chest",
+      "status": "PASS",
+      "detail": {
+        "parts": 36
+      }
+    },
+    {
+      "test": "non-anchor available ice_chest",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative ice_chest",
+      "status": "PASS",
+      "detail": {
+        "part": 19
+      }
+    },
+    {
+      "test": "recipe positive cargo_crate",
+      "status": "PASS",
+      "detail": {
+        "parts": 53
+      }
+    },
+    {
+      "test": "non-anchor available cargo_crate",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative cargo_crate",
+      "status": "PASS",
+      "detail": {
+        "part": 25
+      }
+    },
+    {
+      "test": "recipe positive staved_barrel",
+      "status": "PASS",
+      "detail": {
+        "parts": 27
+      }
+    },
+    {
+      "test": "non-anchor available staved_barrel",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative staved_barrel",
+      "status": "PASS",
+      "detail": {
+        "part": 14
+      }
+    },
+    {
+      "test": "recipe positive medicine_cabinet",
+      "status": "PASS",
+      "detail": {
+        "parts": 55
+      }
+    },
+    {
+      "test": "non-anchor available medicine_cabinet",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative medicine_cabinet",
+      "status": "PASS",
+      "detail": {
+        "part": 29
+      }
+    },
+    {
+      "test": "recipe positive barber_chair",
+      "status": "PASS",
+      "detail": {
+        "parts": 24
+      }
+    },
+    {
+      "test": "non-anchor available barber_chair",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative barber_chair",
+      "status": "PASS",
+      "detail": {
+        "part": 12
+      }
+    },
+    {
+      "test": "recipe positive iron_safe",
+      "status": "PASS",
+      "detail": {
+        "parts": 17
+      }
+    },
+    {
+      "test": "non-anchor available iron_safe",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative iron_safe",
+      "status": "PASS",
+      "detail": {
+        "part": 9
+      }
+    },
+    {
+      "test": "recipe positive medical_trolley",
+      "status": "PASS",
+      "detail": {
+        "parts": 24
+      }
+    },
+    {
+      "test": "non-anchor available medical_trolley",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative medical_trolley",
+      "status": "PASS",
+      "detail": {
+        "part": 14
+      }
+    },
+    {
+      "test": "recipe positive provision_rack",
+      "status": "PASS",
+      "detail": {
+        "parts": 32
+      }
+    },
+    {
+      "test": "non-anchor available provision_rack",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative provision_rack",
+      "status": "PASS",
+      "detail": {
+        "part": 18
+      }
+    },
+    {
+      "test": "recipe positive folded_deckchair",
+      "status": "PASS",
+      "detail": {
+        "parts": 14
+      }
+    },
+    {
+      "test": "non-anchor available folded_deckchair",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative folded_deckchair",
+      "status": "PASS",
+      "detail": {
+        "part": 9
+      }
+    },
+    {
+      "test": "recipe positive bake_oven",
+      "status": "PASS",
+      "detail": {
+        "parts": 30
+      }
+    },
+    {
+      "test": "non-anchor available bake_oven",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bake_oven",
+      "status": "PASS",
+      "detail": {
+        "part": 15
+      }
+    },
+    {
+      "test": "recipe positive tea_tray",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available tea_tray",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative tea_tray",
+      "status": "PASS",
+      "detail": {
+        "part": 5
+      }
+    },
+    {
+      "test": "recipe positive game_board",
+      "status": "PASS",
+      "detail": {
+        "parts": 81
+      }
+    },
+    {
+      "test": "non-anchor available game_board",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative game_board",
+      "status": "PASS",
+      "detail": {
+        "part": 41
+      }
+    },
+    {
+      "test": "recipe positive paper_and_ink",
+      "status": "PASS",
+      "detail": {
+        "parts": 8
+      }
+    },
+    {
+      "test": "non-anchor available paper_and_ink",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative paper_and_ink",
+      "status": "PASS",
+      "detail": {
+        "part": 4
+      }
+    },
+    {
+      "test": "recipe positive ceiling_guarded_lamp",
+      "status": "PASS",
+      "detail": {
+        "parts": 13
+      }
+    },
+    {
+      "test": "non-anchor available ceiling_guarded_lamp",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative ceiling_guarded_lamp",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive framed_panel_(0.38, 0.41)",
+      "status": "PASS",
+      "detail": {
+        "parts": 6
+      }
+    },
+    {
+      "test": "non-anchor available framed_panel_(0.38, 0.41)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative framed_panel_(0.38, 0.41)",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive framed_panel_(0.48, 0.34)",
+      "status": "PASS",
+      "detail": {
+        "parts": 6
+      }
+    },
+    {
+      "test": "non-anchor available framed_panel_(0.48, 0.34)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative framed_panel_(0.48, 0.34)",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive framed_panel_(1.35, 0.62)",
+      "status": "PASS",
+      "detail": {
+        "parts": 6
+      }
+    },
+    {
+      "test": "non-anchor available framed_panel_(1.35, 0.62)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative framed_panel_(1.35, 0.62)",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive framed_panel_(1.7, 0.66)",
+      "status": "PASS",
+      "detail": {
+        "parts": 6
+      }
+    },
+    {
+      "test": "non-anchor available framed_panel_(1.7, 0.66)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative framed_panel_(1.7, 0.66)",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive wall_clock",
+      "status": "PASS",
+      "detail": {
+        "parts": 3
+      }
+    },
+    {
+      "test": "non-anchor available wall_clock",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative wall_clock",
+      "status": "PASS",
+      "detail": {
+        "part": 2
+      }
+    },
+    {
+      "test": "recipe positive reading_sconce",
+      "status": "PASS",
+      "detail": {
+        "parts": 5
+      }
+    },
+    {
+      "test": "non-anchor available reading_sconce",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative reading_sconce",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive ceiling_fixture_cabin",
+      "status": "PASS",
+      "detail": {
+        "parts": 5
+      }
+    },
+    {
+      "test": "non-anchor available ceiling_fixture_cabin",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative ceiling_fixture_cabin",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive ceiling_fixture_opal",
+      "status": "PASS",
+      "detail": {
+        "parts": 5
+      }
+    },
+    {
+      "test": "non-anchor available ceiling_fixture_opal",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative ceiling_fixture_opal",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive ceiling_fixture_chandelier",
+      "status": "PASS",
+      "detail": {
+        "parts": 12
+      }
+    },
+    {
+      "test": "non-anchor available ceiling_fixture_chandelier",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative ceiling_fixture_chandelier",
+      "status": "PASS",
+      "detail": {
+        "part": 6
+      }
+    },
+    {
+      "test": "recipe positive ceiling_fixture_club",
+      "status": "PASS",
+      "detail": {
+        "parts": 12
+      }
+    },
+    {
+      "test": "non-anchor available ceiling_fixture_club",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative ceiling_fixture_club",
+      "status": "PASS",
+      "detail": {
+        "part": 6
+      }
+    },
+    {
+      "test": "recipe positive ceiling_fixture_reading",
+      "status": "PASS",
+      "detail": {
+        "parts": 12
+      }
+    },
+    {
+      "test": "non-anchor available ceiling_fixture_reading",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative ceiling_fixture_reading",
+      "status": "PASS",
+      "detail": {
+        "part": 6
+      }
+    },
+    {
+      "test": "recipe positive ceiling_fixture_marine",
+      "status": "PASS",
+      "detail": {
+        "parts": 14
+      }
+    },
+    {
+      "test": "non-anchor available ceiling_fixture_marine",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative ceiling_fixture_marine",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive flange_longitudinal",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available flange_longitudinal",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative flange_longitudinal",
+      "status": "PASS",
+      "detail": {
+        "part": 5
+      }
+    },
+    {
+      "test": "recipe positive bored_flange_longitudinal",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available bored_flange_longitudinal",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bored_flange_longitudinal",
+      "status": "PASS",
+      "detail": {
+        "part": 5
+      }
+    },
+    {
+      "test": "recipe positive handwheel_longitudinal",
+      "status": "PASS",
+      "detail": {
+        "parts": 6
+      }
+    },
+    {
+      "test": "non-anchor available handwheel_longitudinal",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative handwheel_longitudinal",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive gauge_longitudinal",
+      "status": "PASS",
+      "detail": {
+        "parts": 14
+      }
+    },
+    {
+      "test": "non-anchor available gauge_longitudinal",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative gauge_longitudinal",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive flange_transverse",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available flange_transverse",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative flange_transverse",
+      "status": "PASS",
+      "detail": {
+        "part": 5
+      }
+    },
+    {
+      "test": "recipe positive bored_flange_transverse",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available bored_flange_transverse",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bored_flange_transverse",
+      "status": "PASS",
+      "detail": {
+        "part": 5
+      }
+    },
+    {
+      "test": "recipe positive handwheel_transverse",
+      "status": "PASS",
+      "detail": {
+        "parts": 6
+      }
+    },
+    {
+      "test": "non-anchor available handwheel_transverse",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative handwheel_transverse",
+      "status": "PASS",
+      "detail": {
+        "part": 3
+      }
+    },
+    {
+      "test": "recipe positive gauge_transverse",
+      "status": "PASS",
+      "detail": {
+        "parts": 14
+      }
+    },
+    {
+      "test": "non-anchor available gauge_transverse",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative gauge_transverse",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "recipe positive flange_vertical",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available flange_vertical",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative flange_vertical",
+      "status": "PASS",
+      "detail": {
+        "part": 5
+      }
+    },
+    {
+      "test": "recipe positive bored_flange_vertical",
+      "status": "PASS",
+      "detail": {
+        "parts": 9
+      }
+    },
+    {
+      "test": "non-anchor available bored_flange_vertical",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative bored_flange_vertical",
+      "status": "PASS",
+      "detail": {
+        "part": 5
+      }
+    },
+    {
+      "test": "recipe positive handwheel_vertical",
+      "status": "PASS",
+      "detail": {
+        "parts": 6
+      }
+    },
+    {
+      "test": "non-anchor available handwheel_vertical",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative handwheel_vertical",
+      "status": "PASS",
+      "detail": {
+        "part": 2
+      }
+    },
+    {
+      "test": "recipe positive gauge_vertical",
+      "status": "PASS",
+      "detail": {
+        "parts": 14
+      }
+    },
+    {
+      "test": "non-anchor available gauge_vertical",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "displaced actual primitive negative gauge_vertical",
+      "status": "PASS",
+      "detail": {
+        "part": 7
+      }
+    },
+    {
+      "test": "seven real bed slats identified",
+      "status": "PASS",
+      "detail": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "test": "missing mattress slats negative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual crockery and flatware surface positive",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual crockery 2mm floating negative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "saved actual floor rays positive",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 5,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 0,
+        "penetration_count": 0,
+        "support_flags": 0,
+        "by_label": {},
+        "issues": []
+      }
+    },
+    {
+      "test": "saved actual floor rays 15mm negative",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 5,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 1,
+        "missing_support_count": 0,
+        "penetration_count": 0,
+        "support_flags": 1,
+        "by_label": {
+          "RegressionChair": 1
+        },
+        "issues": [
+          {
+            "room": "REGRESSION",
+            "label": "RegressionChair",
+            "position": [
+              0.0,
+              0.0,
+              0.014999999664723873
+            ],
+            "reason": "ACTUAL_LOW_SOLE_PATCH_SUPPORT_FLAG",
+            "actual_sole_patches": 5,
+            "flagged_patches": [
+              {
+                "reason": "ACTUAL_SOLE_PATCH_ABOVE_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 49,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  0.015000000596046448,
+                  0.015000000596046448,
+                  0.015000000596046448
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_ABOVE_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 72,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  0.015000000596046448,
+                  0.015000000596046448,
+                  0.015000000596046448
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_ABOVE_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 95,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  0.015000000596046448,
+                  0.015000000596046448,
+                  0.015000000596046448
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_ABOVE_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 118,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  0.015000000596046448,
+                  0.015000000596046448,
+                  0.015000000596046448
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_ABOVE_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 141,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  0.015000000596046448,
+                  0.015000000596046448,
+                  0.015000000596046448
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "feet over actual floor void negative is NOT skipped",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 5,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 1,
+        "penetration_count": 0,
+        "support_flags": 1,
+        "by_label": {
+          "RegressionChair": 1
+        },
+        "issues": [
+          {
+            "room": "REGRESSION",
+            "label": "RegressionChair",
+            "position": [
+              5.0,
+              0.0,
+              0.0
+            ],
+            "reason": "ACTUAL_LOW_SOLE_PATCH_SUPPORT_FLAG",
+            "actual_sole_patches": 5,
+            "flagged_patches": [
+              {
+                "reason": "ACTUAL_SOLE_PATCH_OVER_FLOOR_VOID",
+                "object": "Furniture_REGRESSION",
+                "polygon": 49,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 0,
+                "gaps_m": []
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_OVER_FLOOR_VOID",
+                "object": "Furniture_REGRESSION",
+                "polygon": 72,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 0,
+                "gaps_m": []
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_OVER_FLOOR_VOID",
+                "object": "Furniture_REGRESSION",
+                "polygon": 95,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 0,
+                "gaps_m": []
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_OVER_FLOOR_VOID",
+                "object": "Furniture_REGRESSION",
+                "polygon": 118,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 0,
+                "gaps_m": []
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_OVER_FLOOR_VOID",
+                "object": "Furniture_REGRESSION",
+                "polygon": 141,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 0,
+                "gaps_m": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "actual floor 5mm excessive penetration negative",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 5,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 0,
+        "penetration_count": 1,
+        "support_flags": 1,
+        "by_label": {
+          "RegressionChair": 1
+        },
+        "issues": [
+          {
+            "room": "REGRESSION",
+            "label": "RegressionChair",
+            "position": [
+              0.0,
+              0.0,
+              -0.004999999888241291
+            ],
+            "reason": "ACTUAL_LOW_SOLE_PATCH_SUPPORT_FLAG",
+            "actual_sole_patches": 5,
+            "flagged_patches": [
+              {
+                "reason": "ACTUAL_SOLE_PATCH_PENETRATES_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 49,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  -0.005000000819563866,
+                  -0.005000000819563866,
+                  -0.005000000819563866
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_PENETRATES_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 72,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  -0.005000000819563866,
+                  -0.004999998956918716,
+                  -0.005000000819563866
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_PENETRATES_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 95,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  -0.005000000819563866,
+                  -0.005000000819563866,
+                  -0.005000000819563866
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_PENETRATES_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 118,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  -0.005000000819563866,
+                  -0.005000000819563866,
+                  -0.004999998956918716
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_PENETRATES_FLOOR",
+                "object": "Furniture_REGRESSION",
+                "polygon": 141,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 3,
+                "gaps_m": [
+                  -0.005000000819563866,
+                  -0.005000000819563866,
+                  -0.005000000819563866
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "saved actual floor restored positive",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 5,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 0,
+        "penetration_count": 0,
+        "support_flags": 0,
+        "by_label": {},
+        "issues": []
+      }
+    },
+    {
+      "test": "one outer foot over a real floor edge negative",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 5,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 1,
+        "penetration_count": 0,
+        "support_flags": 1,
+        "by_label": {
+          "RegressionChair": 1
+        },
+        "issues": [
+          {
+            "room": "REGRESSION",
+            "label": "RegressionChair",
+            "position": [
+              1.5,
+              0.0,
+              0.0
+            ],
+            "reason": "ACTUAL_LOW_SOLE_PATCH_SUPPORT_FLAG",
+            "actual_sole_patches": 5,
+            "flagged_patches": [
+              {
+                "reason": "ACTUAL_SOLE_PATCH_OVER_FLOOR_VOID",
+                "object": "Furniture_REGRESSION",
+                "polygon": 72,
+                "actual_vertex": null,
+                "probes": 3,
+                "rays_with_floor": 0,
+                "gaps_m": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "finite actual sole correctly bridges a narrow 2mm joint",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 1,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 0,
+        "penetration_count": 0,
+        "support_flags": 0,
+        "by_label": {},
+        "issues": []
+      }
+    },
+    {
+      "test": "three actual rounded caster extremes bear on actual floor",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 3,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [
+          {
+            "room": "CASTER_REGRESSION",
+            "label": "Pianoforte",
+            "actual_extreme_contact_points": [
+              [
+                -0.5,
+                0.0,
+                0.0
+              ],
+              [
+                0.5,
+                0.0,
+                0.0
+              ],
+              [
+                1.862645149230957e-09,
+                0.5,
+                0.0
+              ]
+            ]
+          }
+        ],
+        "floating_count": 0,
+        "missing_support_count": 0,
+        "penetration_count": 0,
+        "support_flags": 0,
+        "by_label": {},
+        "issues": []
+      }
+    },
+    {
+      "test": "one lifted rounded caster is not hidden by two seated ones",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 0,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 1,
+        "penetration_count": 0,
+        "support_flags": 1,
+        "by_label": {
+          "Pianoforte": 1
+        },
+        "issues": [
+          {
+            "room": "CASTER_REGRESSION",
+            "label": "Pianoforte",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "reason": "MISSING_EXPECTED_ACTUAL_CASTER_CONTACTS",
+            "expected": 3,
+            "actual": 2
+          }
+        ]
+      }
+    },
+    {
+      "test": "all rounded casters lifted 15mm negative",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 3,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [
+          {
+            "room": "CASTER_REGRESSION",
+            "label": "Pianoforte",
+            "actual_extreme_contact_points": [
+              [
+                -0.5,
+                0.0,
+                0.014999999664723873
+              ],
+              [
+                0.5,
+                0.0,
+                0.014999999664723873
+              ],
+              [
+                1.862645149230957e-09,
+                0.5,
+                0.014999999664723873
+              ]
+            ]
+          }
+        ],
+        "floating_count": 1,
+        "missing_support_count": 0,
+        "penetration_count": 0,
+        "support_flags": 1,
+        "by_label": {
+          "Pianoforte": 1
+        },
+        "issues": [
+          {
+            "room": "CASTER_REGRESSION",
+            "label": "Pianoforte",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "reason": "ACTUAL_LOW_SOLE_PATCH_SUPPORT_FLAG",
+            "actual_sole_patches": 3,
+            "flagged_patches": [
+              {
+                "reason": "ACTUAL_SOLE_PATCH_ABOVE_FLOOR",
+                "object": "Furniture_CASTER_REGRESSION_0",
+                "polygon": null,
+                "actual_vertex": 0,
+                "probes": 1,
+                "rays_with_floor": 1,
+                "gaps_m": [
+                  0.014999999664723873
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_ABOVE_FLOOR",
+                "object": "Furniture_CASTER_REGRESSION_1",
+                "polygon": null,
+                "actual_vertex": 0,
+                "probes": 1,
+                "rays_with_floor": 1,
+                "gaps_m": [
+                  0.014999999664723873
+                ]
+              },
+              {
+                "reason": "ACTUAL_SOLE_PATCH_ABOVE_FLOOR",
+                "object": "Furniture_CASTER_REGRESSION_2",
+                "polygon": null,
+                "actual_vertex": 0,
+                "probes": 1,
+                "rays_with_floor": 1,
+                "gaps_m": [
+                  0.014999999664723873
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "test": "all three actual piano stool soles on floor positive",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 3,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 0,
+        "penetration_count": 0,
+        "support_flags": 0,
+        "by_label": {},
+        "issues": []
+      }
+    },
+    {
+      "test": "one lifted actual piano stool foot negative",
+      "status": "PASS",
+      "detail": {
+        "fixtures_tested": 1,
+        "sole_patches_tested": 0,
+        "interior_probes_per_planar_patch": 3,
+        "curved_bearing_fixtures": [],
+        "floating_count": 0,
+        "missing_support_count": 1,
+        "penetration_count": 0,
+        "support_flags": 1,
+        "by_label": {
+          "ThreeFootPianoStool": 1
+        },
+        "issues": [
+          {
+            "room": "STOOL_REGRESSION",
+            "label": "ThreeFootPianoStool",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "reason": "MISSING_ACTUAL_PIANO_STOOL_FOOT_SOLES",
+            "expected": 3,
+            "actual": 2
+          }
+        ]
+      }
+    },
+    {
+      "test": "saved/generated polygon identity positive",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "polygon identity reproduces actual float32 storage at 0.1mm bin boundaries",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "polygon identity reproduces local-origin mover serialization",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "local-origin polygon identity still rejects real 2mm displacement",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "polygon identity displacement negative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "sampled door clear positive",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "signed sampled door obstruction negative -1",
+      "status": "PASS",
+      "detail": {
+        "intersecting_poses": 8
+      }
+    },
+    {
+      "test": "opposite door swing does not false-hit -1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "signed sampled door obstruction negative 1",
+      "status": "PASS",
+      "detail": {
+        "intersecting_poses": 8
+      }
+    },
+    {
+      "test": "opposite door swing does not false-hit 1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual leaf/own jamb sampled clearance x0",
+      "status": "PASS",
+      "detail": {
+        "room": "M_ForwardThird",
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "actual cranked leaf hinge straps are physically connected x0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual door 10mm header penetration negative x0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual oversized hinge pin interference negative x0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual leaf/own jamb sampled clearance x1",
+      "status": "PASS",
+      "detail": {
+        "room": "M_AfterThird",
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "actual cranked leaf hinge straps are physically connected x1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual door 10mm header penetration negative x1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual oversized hinge pin interference negative x1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual leaf/own jamb sampled clearance y0",
+      "status": "PASS",
+      "detail": {
+        "room": "M_Entrance",
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "actual cranked leaf hinge straps are physically connected y0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual door 10mm header penetration negative y0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual oversized hinge pin interference negative y0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual leaf/own jamb sampled clearance y1",
+      "status": "PASS",
+      "detail": {
+        "room": "S_Purser",
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "actual cranked leaf hinge straps are physically connected y1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual door 10mm header penetration negative y1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual oversized hinge pin interference negative y1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "test": "actual cabin door clears actual furniture/cabinet crown A001",
+      "status": "PASS",
+      "detail": {
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "restored old wide actual cabinet crown interference negative",
+      "status": "PASS",
+      "detail": {
+        "poses_with_intersections": 5
+      }
+    },
+    {
+      "test": "actual cabin door clears actual furniture/cabinet crown A002",
+      "status": "PASS",
+      "detail": {
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "actual cabin door clears actual furniture/cabinet crown U001",
+      "status": "PASS",
+      "detail": {
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "actual cabin door clears actual furniture/cabinet crown U002",
+      "status": "PASS",
+      "detail": {
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "actual cabin door clears actual furniture/cabinet crown B_First098",
+      "status": "PASS",
+      "detail": {
+        "poses_with_intersections": 0
+      }
+    },
+    {
+      "test": "actual cabin door clears actual furniture/cabinet crown B_First099",
+      "status": "PASS",
+      "detail": {
+        "poses_with_intersections": 0
+      }
+    }
+  ],
+  "summary": {
+    "pass_count": 344,
+    "fail_count": 0
+  },
+  "test_sha256": "2f1c78cdfc9808b29bc82d8c14c089d85375d4fb002a72e265b04058ff644de6",
+  "auditors_sha256": {
+    "audit_fittings.py": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+    "audit_room_parts.py": "84d5dd30f9842393c93e885b827eccfce002b6d5aa920fbaad33f7b296ce5325",
+    "audit_door_sweeps.py": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf"
+  },
+  "generator_sha256": {
+    "access_detail.py": "78d2f226da449f846b085a1846255dededb13a61b895562ad20730a681d2df6f",
+    "audit_common.py": "a4cfc973b6b7f2264a999c39bf1f232f5cb46d0e866e564b1061f20a8d791aec",
+    "audit_details.py": "e674bdf38e1aed172b4091e00a23e25efee7f6b5c81e7fac833fe5edd3d83843",
+    "audit_door_sweeps.py": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf",
+    "audit_exterior_parts.py": "c54ec45c5b4164488e9b0cb6933644c5efc8c3acd6860237ea8ef3f20dabcb05",
+    "audit_fittings.py": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+    "audit_ladders.py": "1555331c82df15419e4463b0c10e5f57629dddfe0359146ba3384a9ba855b714",
+    "audit_plant_parts.py": "432e1926548bf12b35b52d1c339aefbc0a64a47a42cf2919e97864733b6923dd",
+    "audit_room_parts.py": "84d5dd30f9842393c93e885b827eccfce002b6d5aa920fbaad33f7b296ce5325",
+    "audit_shaft_clearances.py": "fa397be2f0f768a981da6c7cc07fde953757e1f2f10caaf59d5ab41e56906135",
+    "audit_structure.py": "b671e3636b676296db945591004e49e1c3c33f76c28f6840f4424aa3b5fc41dc",
+    "build.py": "dc74813522d40521755fd64c7da73aaa7ab7bf1d80b6149f4b849540dc11ee4e",
+    "export_game.py": "56835f2ebf1bd4c2c86fd0b01a1773e1d51b29f976944dac92a1363cf2628341",
+    "furnishings.py": "26aabb26897dd89757fc5786b2707977524c0ea53f5a19eb94a0f764b4ac2b3d",
+    "interiors.py": "77af7f48ef529697c240b25e41d0af09fb553978126566cd8e4d6f2b9cc43c9a",
+    "machinery.py": "4d0b1bff4cc6e974b428d61b8d1e1f9eafb4a336b435bf281f9395a1219d79fd",
+    "meshkit.py": "81af1392dcdff1b859120541867d957e5a78bd18768febeb57b6dde78ce7bc71",
+    "optimize.py": "f469949f8af57eb3a43b3d9e7a6a3bba3f128a14e6e6559078c3e1fcb80e28d7",
+    "period_detail.py": "9df8a3191908025a85dc91d2f7604051be5e65392a51b798e927ef38e4a1ee27",
+    "plant_detail.py": "592d783cb09a1b30148e2fbc03ac48134080fe92cfafe5e34c806387d7e4cc5a",
+    "public_rooms.py": "c7354ac2720781ca5319ebb6a818af3735535ccfe3300db8ef61011b10f24b5c",
+    "render.py": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "render_crew_details.py": "940dacafeb5163d02a99eaca8d32244110329eda5301e309f5962382e4c6de1c",
+    "service_fittings.py": "0fa023b4d8f6b32d08f4b7219248336b753f4dee4c1271cf091af3c192101c06",
+    "structure.py": "0d719cbedf8d7073ca4c38cb85e9bfbc369f248c09225f5660104525d5e90a9b",
+    "test_micro_contacts.py": "2f1c78cdfc9808b29bc82d8c14c089d85375d4fb002a72e265b04058ff644de6",
+    "topsides.py": "e4bbd6090e92e20a03ae5c9294d94f7264060cd8095bceec0f841779a9aa242d",
+    "visual_design.py": "f3e426ac7bf2deea15ae809d9a8d932900c841300be3c8f4841dd76a55ed2640",
+    "weather_detail.py": "4fc9b0adf7f1506aa002f41b60e13dd6b25a7d383f74048bc31fe5859705f906",
+    "working_detail.py": "8978972fa454ce3007030b9c683b9841b6825f62c561db047424573cc9ba6d66"
+  },
+  "limits": "Screen regressions only, including synthetic/altered actual templates. Not assembled-ship visual, universal connectivity or continuous-sweep certification."
+}

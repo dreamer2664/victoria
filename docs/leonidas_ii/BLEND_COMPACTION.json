@@ -1,0 +1,10 @@
+{
+  "method": "Lossless native Zstandard recompression, level 16 / 8MiB window; no mesh/material/data edits",
+  "before_bytes": 44176721,
+  "after_bytes": 23514427,
+  "uncompressed_bytes": 231304620,
+  "before_sha256": "3922705a9b7abca252c20432d2f3ec4b49f1f8d5de0c2abfc18542efcae1a1f5",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "decompressed_sha256": "0cd746ba8c15c6a9aa12481167921fd58324fd571730a30503ff1f5018c53f1c",
+  "decompressed_bytes_equal": true
+}

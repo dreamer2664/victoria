@@ -10,9 +10,10 @@ from mathutils import Vector
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[1];sys.path[:0]=[str(HERE),str(ROOT)]
 from shipdesign.leonidas_ii import ROOMS,DECKS
 DATA=json.loads((ROOT/'exports'/'leonidas_ii'/'build_data.json').read_text())
-OUT=ROOT/'renders'/'leonidas_ii';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'renders'/'leonidas_ii'/os.getenv('LII_RENDER_SUBDIR','');OUT.mkdir(parents=True,exist_ok=True)
 args=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else ['preview'];mode=args[0];quality=int(args[1]) if len(args)>1 else 100
 sc=bpy.context.scene
+assert Path(bpy.data.filepath).resolve()==(ROOT/'models/leonidas_ii/Aurelian_1889.blend').resolve(),'Evidence must open the actual delivered MASTER, not an arbitrary scene'
 # Render only contains authentic source meshes; cameras/lights are a stage.
 for ob in list(sc.objects):
  if ob.type in ('CAMERA','LIGHT'):bpy.data.objects.remove(ob,do_unlink=True)
@@ -87,10 +88,13 @@ def visibility(keep=None):
   ob.hide_render=not keep(ob) if keep else False
 
 def render(name,title,pos,target,lens=30,ortho=None,interior=None,res=(1600,1000),cutaway=False,room_id=None):
+ if os.getenv('LII_ONLY') and Path(name).name not in os.getenv('LII_ONLY').split(','):return
+ if mode=='refinement':res=(1120,700)
  pixels=[int(res[0]*quality/100),int(res[1]*quality/100)]
  if os.getenv('LII_RESUME')=='1':
   for previous in PERSISTED:
-   if Path(previous['file']).stem==Path(name).name and previous.get('renderer_sha256')==RENDERER_HASH and previous.get('camera')==list(pos) and previous.get('target')==list(target) and previous.get('pixels')==pixels and previous.get('cycles_samples',0)>=sc.cycles.samples and (ROOT/previous['file']).exists():
+   final=ROOT/previous['file']
+   if Path(previous['file']).stem==Path(name).name and previous.get('source_sha256')==SOURCE_HASH and previous.get('renderer_sha256')==RENDERER_HASH and previous.get('camera')==list(pos) and previous.get('target')==list(target) and previous.get('lens')==lens and previous.get('orthographic_scale')==ortho and previous.get('cutaway')==cutaway and previous.get('room_id')==room_id and previous.get('pixels')==pixels and previous.get('cycles_samples',0)>=sc.cycles.samples and final.is_file() and final.suffix=='.jpg' and previous.get('sha256')==hashlib.sha256(final.read_bytes()).hexdigest():
     print('RESUMED VERIFIED PIXELS',name,flush=True);return
  # Raw images stay in excluded scratch even between batch stages. Only
  # the registered full-resolution processed JPGs consume saved-file budget.
@@ -140,6 +144,10 @@ def room_camera(r):
  elif r['kind']=='bakery':desired=(x1-.50,y1-1.0,z+1.62)
  elif r['kind']=='music':desired=(x0+5.0,cy-2.9,z+1.62)
  elif r['kind']=='chart':desired=(x0+1.15,y0+.80,z+1.62)
+ elif r['kind']=='wheelhouse':
+  # Aft of the telegraphs, with a clear oblique line past (not through)
+  # the wheel to the forward-port clock/bell corner.
+  desired=(34.6,-2.6,z+1.62)
  elif r['kind']=='bath':desired=(cx,y0+.50,z+1.62)
  wall=r['door_wall'];u=r['door_u'];door=(u,y0+.55,z+1.62) if wall=='y0' else (u,y1-.55,z+1.62) if wall=='y1' else (x0+.55,u,z+1.62) if wall=='x0' else (x1-.55,u,z+1.62)
  candidates=[desired,(x0+.55,y1-.60,z+1.62),(x1-.55,y0+.60,z+1.62),(x1-.55,y1-.60,z+1.62),door,(x0+.55,cy,z+1.62),(x1-.55,cy,z+1.62)]
@@ -151,6 +159,7 @@ def room_camera(r):
  if r['kind'] in ('galley','bakery'):target=(x0+2.0,y0+1.0,z+.95)
  elif r['kind']=='music':target=(x0+2.1,cy,z+.95)
  elif r['kind']=='chart':target=(cx+.20,cy,z+1.10)
+ elif r['kind']=='wheelhouse':target=(39.0,-.7,z+1.40)
  elif r['kind']=='bath':target=(cx,cy-.20,z+.55)
  return pos,target
 
@@ -170,7 +179,11 @@ def roomshot(id,name=None):
   visibility(lambda o:o.get('LII_kind') in ('stair','rail','skylight','deck','glazing') or o.get('LII_room') in ('M_Entrance','S_Stair','P_Stair'))
   pos=(-5.25,-4.80,10.42);target=(-.5,.0,12.0);lens=23
  else:pos,target=room_camera(r);lens=21 if r['kind']=='bath' else 24
- render(name or id,r['name'],pos,target,lens,interior=(x0,x1,y0,y1,z,top),res=(1600,1000),room_id=id)
+ # The stair-hall visibility above deliberately omits its enclosure walls.
+ # Keep that diagnostic distinction in the renderer/registry, not just prose.
+ stair_diagnostic=r['kind']=='stairhall'
+ title=r['name']+' — wall-removed stair diagnostic' if stair_diagnostic else r['name']
+ render(name or id,title,pos,target,lens,interior=(x0,x1,y0,y1,z,top),res=(1600,1000),cutaway=stair_diagnostic,room_id=id)
 
 
 def exterior():
@@ -243,6 +256,20 @@ if mode=='preview':
  exterior_view=lambda o:o.get('LII_kind')!='furniture' and not(o.get('LII_deck') in ('orlop','lower','main','machinery') and o.get('LII_kind') in ('finish','wall','door','ceiling','sign'))
  visibility(exterior_view);render('Preview_Exterior','New reconstruction — work-in-progress actual geometry',(186,-147,79),(0,0,12),53,res=(1500,900))
  roomshot('S_Dining','Preview_Dining');roomshot('P_Library','Preview_Library');roomshot('A030','Preview_Cabin')
+elif mode=='refinement':
+ # Replace the old unregistered wheelhouse-framing precheck with a real,
+ # current-source supplementary view; preserve the original in history.
+ roomshot('N_Wheelhouse','Detail_Wheelhouse_Framing')
+ interiors('public')
+ for rid,nm in [('A030','Interior_Cabin_First'),('C006','Interior_Cabin_Second'),('B_Captain','Interior_Captain'),('B_Officer_1','Interior_Officer'),('S_Galley','Interior_Galley'),('S_Bakery','Interior_Bakery'),('S_Pantry','Interior_Pantry'),('P_Hospital','Interior_Hospital'),('P_Barber','Interior_Barber'),('O_CrewP','Interior_Crew'),('N_Wheelhouse','Interior_Wheelhouse')]:roomshot(rid,nm)
+ exterior()
+ visibility(lambda o:o.get('LII_kind')!='furniture' and not(o.get('LII_deck') in ('orlop','lower','main','machinery') and o.get('LII_kind') in ('finish','wall','door','ceiling','sign')))
+ render('Detail_Exterior_Bridge','Revised wheelhouse roof, eaves, wing fittings and officer deckhouses',(56,-27,32),(30,0,20),45,res=(1120,700))
+ render('Detail_Exterior_Promenade','Revised after deckhouse roof, mast collar and outboard stay landings',(-57,-23,26),(-35,0,17.6),48,res=(1120,700))
+ render('Detail_Promenade_Bench','Promenade slat bench and sheltered weather planking — actual eye-level view',(-34,-6.6,16.0),(-31,-8.0,14.9),40,res=(1120,700))
+ render('Detail_Mast_Ladder','Foremast climbing ladder — continuous rails, rungs and pole-clamp stand-offs',(62.0,-3.5,17.0),(66.9,0,16.3),43,res=(1120,700))
+ render('Detail_Funnel_Ladder','After funnel ladder — actual side rails and shell stand-off brackets',(8.8,-4.2,21.7),(6.228,-.15,21.0),65,res=(1120,700))
+ render('Detail_Lifebuoy_Hook','Boat-deck lifebuoy — actual bracket hooks over the top rail',(-35.0,-9.7,18.6),(-37.0,-7.416,17.9),55,res=(1120,700))
 elif mode=='exterior':exterior()
 elif mode=='interiors':interiors()
 elif mode in ('public','accommodation','service'):interiors(mode)

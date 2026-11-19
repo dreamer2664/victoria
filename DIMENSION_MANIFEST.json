@@ -291,8 +291,8 @@
     }
   },
   "actual_built_counts": {
-    "mesh_objects": 1422,
-    "triangles": 3300554,
+    "mesh_objects": 1437,
+    "triangles": 4341224,
     "physical_compartments": 203,
     "actual_first_berths": 228,
     "actual_second_berths": 132,

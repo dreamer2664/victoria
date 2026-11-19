@@ -1,0 +1,777 @@
+{
+  "schema": "victoria.leonidas-ii.finite-fitting-screen/1.2",
+  "scope": "ISOLATED_ACTUAL_PRIMITIVE_CONTACT_SCREEN + SAVED_MODEL_ACTUAL_FLOOR_RAYS",
+  "quality": "MASTER",
+  "auditor_sha256": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+  "source_file": "models/leonidas_ii/Aurelian_1889.blend",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "build_data_sha256": "adf9206f7eec378855a281cda21295d10b02725d1c583e2c6b1f45093832bf01",
+  "generator_sha256": {
+    "blender/leonidas_ii/access_detail.py": "78d2f226da449f846b085a1846255dededb13a61b895562ad20730a681d2df6f",
+    "blender/leonidas_ii/audit_common.py": "a4cfc973b6b7f2264a999c39bf1f232f5cb46d0e866e564b1061f20a8d791aec",
+    "blender/leonidas_ii/audit_details.py": "e674bdf38e1aed172b4091e00a23e25efee7f6b5c81e7fac833fe5edd3d83843",
+    "blender/leonidas_ii/audit_door_sweeps.py": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf",
+    "blender/leonidas_ii/audit_exterior_parts.py": "c54ec45c5b4164488e9b0cb6933644c5efc8c3acd6860237ea8ef3f20dabcb05",
+    "blender/leonidas_ii/audit_fittings.py": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+    "blender/leonidas_ii/audit_ladders.py": "1555331c82df15419e4463b0c10e5f57629dddfe0359146ba3384a9ba855b714",
+    "blender/leonidas_ii/audit_plant_parts.py": "432e1926548bf12b35b52d1c339aefbc0a64a47a42cf2919e97864733b6923dd",
+    "blender/leonidas_ii/audit_room_parts.py": "84d5dd30f9842393c93e885b827eccfce002b6d5aa920fbaad33f7b296ce5325",
+    "blender/leonidas_ii/audit_shaft_clearances.py": "fa397be2f0f768a981da6c7cc07fde953757e1f2f10caaf59d5ab41e56906135",
+    "blender/leonidas_ii/audit_structure.py": "b671e3636b676296db945591004e49e1c3c33f76c28f6840f4424aa3b5fc41dc",
+    "blender/leonidas_ii/build.py": "dc74813522d40521755fd64c7da73aaa7ab7bf1d80b6149f4b849540dc11ee4e",
+    "blender/leonidas_ii/export_game.py": "56835f2ebf1bd4c2c86fd0b01a1773e1d51b29f976944dac92a1363cf2628341",
+    "blender/leonidas_ii/furnishings.py": "26aabb26897dd89757fc5786b2707977524c0ea53f5a19eb94a0f764b4ac2b3d",
+    "blender/leonidas_ii/interiors.py": "77af7f48ef529697c240b25e41d0af09fb553978126566cd8e4d6f2b9cc43c9a",
+    "blender/leonidas_ii/machinery.py": "4d0b1bff4cc6e974b428d61b8d1e1f9eafb4a336b435bf281f9395a1219d79fd",
+    "blender/leonidas_ii/meshkit.py": "81af1392dcdff1b859120541867d957e5a78bd18768febeb57b6dde78ce7bc71",
+    "blender/leonidas_ii/optimize.py": "f469949f8af57eb3a43b3d9e7a6a3bba3f128a14e6e6559078c3e1fcb80e28d7",
+    "blender/leonidas_ii/period_detail.py": "9df8a3191908025a85dc91d2f7604051be5e65392a51b798e927ef38e4a1ee27",
+    "blender/leonidas_ii/plant_detail.py": "592d783cb09a1b30148e2fbc03ac48134080fe92cfafe5e34c806387d7e4cc5a",
+    "blender/leonidas_ii/public_rooms.py": "c7354ac2720781ca5319ebb6a818af3735535ccfe3300db8ef61011b10f24b5c",
+    "blender/leonidas_ii/render.py": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "blender/leonidas_ii/render_crew_details.py": "940dacafeb5163d02a99eaca8d32244110329eda5301e309f5962382e4c6de1c",
+    "blender/leonidas_ii/service_fittings.py": "0fa023b4d8f6b32d08f4b7219248336b753f4dee4c1271cf091af3c192101c06",
+    "blender/leonidas_ii/structure.py": "0d719cbedf8d7073ca4c38cb85e9bfbc369f248c09225f5660104525d5e90a9b",
+    "blender/leonidas_ii/test_micro_contacts.py": "2f1c78cdfc9808b29bc82d8c14c089d85375d4fb002a72e265b04058ff644de6",
+    "blender/leonidas_ii/topsides.py": "e4bbd6090e92e20a03ae5c9294d94f7264060cd8095bceec0f841779a9aa242d",
+    "blender/leonidas_ii/visual_design.py": "f3e426ac7bf2deea15ae809d9a8d932900c841300be3c8f4841dd76a55ed2640",
+    "blender/leonidas_ii/weather_detail.py": "4fc9b0adf7f1506aa002f41b60e13dd6b25a7d383f74048bc31fe5859705f906",
+    "blender/leonidas_ii/working_detail.py": "8978972fa454ce3007030b9c683b9841b6825f62c561db047424573cc9ba6d66"
+  },
+  "tolerance_m": 0.0006,
+  "recipes": [
+    {
+      "recipe": "chair_dining",
+      "primitive_parts": 16,
+      "actual_contact_pairs": 29,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "chair_writing",
+      "primitive_parts": 18,
+      "actual_contact_pairs": 35,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "chair_armchair",
+      "primitive_parts": 17,
+      "actual_contact_pairs": 20,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "sofa_1.82",
+      "primitive_parts": 18,
+      "actual_contact_pairs": 21,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "sofa_2.1",
+      "primitive_parts": 18,
+      "actual_contact_pairs": 21,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "sofa_2.65",
+      "primitive_parts": 21,
+      "actual_contact_pairs": 24,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "table_(2.7, 1.02, True)",
+      "primitive_parts": 12,
+      "actual_contact_pairs": 14,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "table_(2.25, 0.86, False)",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 11,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "table_(6.0, 1.4, False)",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 11,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "service_setting",
+      "primitive_parts": 11,
+      "actual_contact_pairs": 6,
+      "clusters": 5,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "washstand",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 16,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "wc",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 8,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bathtub",
+      "primitive_parts": 23,
+      "actual_contact_pairs": 46,
+      "clusters": 1,
+      "lowest_z": -0.054999999701976776,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "range_unit",
+      "primitive_parts": 30,
+      "actual_contact_pairs": 30,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bed_first",
+      "primitive_parts": 34,
+      "actual_contact_pairs": 63,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bed_hospital",
+      "primitive_parts": 34,
+      "actual_contact_pairs": 63,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bunk_0",
+      "primitive_parts": 41,
+      "actual_contact_pairs": 62,
+      "clusters": 2,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bunk_1",
+      "primitive_parts": 41,
+      "actual_contact_pairs": 62,
+      "clusters": 2,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bunk_2",
+      "primitive_parts": 41,
+      "actual_contact_pairs": 62,
+      "clusters": 2,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bunk_aisle_ladder_-1",
+      "primitive_parts": 41,
+      "actual_contact_pairs": 58,
+      "clusters": 2,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bunk_aisle_ladder_1",
+      "primitive_parts": 41,
+      "actual_contact_pairs": 60,
+      "clusters": 2,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "wardrobe_0.62",
+      "primitive_parts": 13,
+      "actual_contact_pairs": 23,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "wardrobe_1.5",
+      "primitive_parts": 13,
+      "actual_contact_pairs": 23,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "desk_1.2",
+      "primitive_parts": 16,
+      "actual_contact_pairs": 16,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "desk_1.6",
+      "primitive_parts": 16,
+      "actual_contact_pairs": 16,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bookcase",
+      "primitive_parts": 314,
+      "actual_contact_pairs": 327,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "shelving_pantry_0",
+      "primitive_parts": 71,
+      "actual_contact_pairs": 79,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "shelving_pantry_1",
+      "primitive_parts": 70,
+      "actual_contact_pairs": 78,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "shelving_pantry_2",
+      "primitive_parts": 66,
+      "actual_contact_pairs": 74,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "shelving_linen_0",
+      "primitive_parts": 38,
+      "actual_contact_pairs": 46,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "shelving_linen_1",
+      "primitive_parts": 38,
+      "actual_contact_pairs": 46,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "shelving_linen_2",
+      "primitive_parts": 38,
+      "actual_contact_pairs": 46,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "round_table",
+      "primitive_parts": 8,
+      "actual_contact_pairs": 10,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "plain_chair",
+      "primitive_parts": 17,
+      "actual_contact_pairs": 23,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "utility_table",
+      "primitive_parts": 10,
+      "actual_contact_pairs": 20,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "plain_bench",
+      "primitive_parts": 17,
+      "actual_contact_pairs": 24,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "low_bookcase",
+      "primitive_parts": 122,
+      "actual_contact_pairs": 127,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "book_stack",
+      "primitive_parts": 6,
+      "actual_contact_pairs": 5,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "billiard_table",
+      "primitive_parts": 11,
+      "actual_contact_pairs": 11,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "grand_piano",
+      "primitive_parts": 145,
+      "actual_contact_pairs": 257,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "piano_stool",
+      "primitive_parts": 8,
+      "actual_contact_pairs": 10,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "plain_bench_backless",
+      "primitive_parts": 13,
+      "actual_contact_pairs": 14,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "chart_table",
+      "primitive_parts": 55,
+      "actual_contact_pairs": 79,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "mail_cubby",
+      "primitive_parts": 83,
+      "actual_contact_pairs": 185,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "drinks_rack",
+      "primitive_parts": 53,
+      "actual_contact_pairs": 60,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "ice_chest",
+      "primitive_parts": 36,
+      "actual_contact_pairs": 56,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "cargo_crate",
+      "primitive_parts": 53,
+      "actual_contact_pairs": 95,
+      "clusters": 1,
+      "lowest_z": -0.012500000186264515,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "staved_barrel",
+      "primitive_parts": 27,
+      "actual_contact_pairs": 106,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "medicine_cabinet",
+      "primitive_parts": 55,
+      "actual_contact_pairs": 64,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "barber_chair",
+      "primitive_parts": 24,
+      "actual_contact_pairs": 41,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "iron_safe",
+      "primitive_parts": 17,
+      "actual_contact_pairs": 27,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "medical_trolley",
+      "primitive_parts": 24,
+      "actual_contact_pairs": 32,
+      "clusters": 1,
+      "lowest_z": -3.725290298461914e-09,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "provision_rack",
+      "primitive_parts": 32,
+      "actual_contact_pairs": 40,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "folded_deckchair",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 20,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bake_oven",
+      "primitive_parts": 30,
+      "actual_contact_pairs": 45,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "tea_tray",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 8,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "game_board",
+      "primitive_parts": 81,
+      "actual_contact_pairs": 80,
+      "clusters": 1,
+      "lowest_z": 0.0,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "paper_and_ink",
+      "primitive_parts": 8,
+      "actual_contact_pairs": 6,
+      "clusters": 2,
+      "lowest_z": -0.00019999999494757503,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "ceiling_guarded_lamp",
+      "primitive_parts": 13,
+      "actual_contact_pairs": 22,
+      "clusters": 1,
+      "lowest_z": -0.3276084363460541,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "framed_panel_(0.38, 0.41)",
+      "primitive_parts": 6,
+      "actual_contact_pairs": 9,
+      "clusters": 1,
+      "lowest_z": -0.2549999952316284,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "framed_panel_(0.48, 0.34)",
+      "primitive_parts": 6,
+      "actual_contact_pairs": 9,
+      "clusters": 1,
+      "lowest_z": -0.2199999988079071,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "framed_panel_(1.35, 0.62)",
+      "primitive_parts": 6,
+      "actual_contact_pairs": 9,
+      "clusters": 1,
+      "lowest_z": -0.36000001430511475,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "framed_panel_(1.7, 0.66)",
+      "primitive_parts": 6,
+      "actual_contact_pairs": 9,
+      "clusters": 1,
+      "lowest_z": -0.3799999952316284,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "wall_clock",
+      "primitive_parts": 3,
+      "actual_contact_pairs": 3,
+      "clusters": 1,
+      "lowest_z": -0.20500001311302185,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "reading_sconce",
+      "primitive_parts": 5,
+      "actual_contact_pairs": 5,
+      "clusters": 1,
+      "lowest_z": -0.09000000357627869,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "ceiling_fixture_cabin",
+      "primitive_parts": 5,
+      "actual_contact_pairs": 4,
+      "clusters": 1,
+      "lowest_z": 13.915499687194824,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "ceiling_fixture_opal",
+      "primitive_parts": 5,
+      "actual_contact_pairs": 4,
+      "clusters": 1,
+      "lowest_z": 13.915499687194824,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "ceiling_fixture_chandelier",
+      "primitive_parts": 12,
+      "actual_contact_pairs": 14,
+      "clusters": 1,
+      "lowest_z": 13.851499557495117,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "ceiling_fixture_club",
+      "primitive_parts": 12,
+      "actual_contact_pairs": 14,
+      "clusters": 1,
+      "lowest_z": 13.851499557495117,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "ceiling_fixture_reading",
+      "primitive_parts": 12,
+      "actual_contact_pairs": 14,
+      "clusters": 1,
+      "lowest_z": 13.851499557495117,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "ceiling_fixture_marine",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 23,
+      "clusters": 1,
+      "lowest_z": 13.888891220092773,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "flange_longitudinal",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 8,
+      "clusters": 1,
+      "lowest_z": -0.1600000113248825,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bored_flange_longitudinal",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 8,
+      "clusters": 1,
+      "lowest_z": -0.1600000113248825,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "handwheel_longitudinal",
+      "primitive_parts": 6,
+      "actual_contact_pairs": 14,
+      "clusters": 1,
+      "lowest_z": -0.15200001001358032,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "gauge_longitudinal",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 13,
+      "clusters": 1,
+      "lowest_z": -0.1300000101327896,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "flange_transverse",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 8,
+      "clusters": 1,
+      "lowest_z": -0.1600000113248825,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bored_flange_transverse",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 8,
+      "clusters": 1,
+      "lowest_z": -0.1600000113248825,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "handwheel_transverse",
+      "primitive_parts": 6,
+      "actual_contact_pairs": 14,
+      "clusters": 1,
+      "lowest_z": -0.15200001001358032,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "gauge_transverse",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 13,
+      "clusters": 1,
+      "lowest_z": -0.1300000101327896,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "flange_vertical",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 8,
+      "clusters": 1,
+      "lowest_z": -0.029999999329447746,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "bored_flange_vertical",
+      "primitive_parts": 9,
+      "actual_contact_pairs": 8,
+      "clusters": 1,
+      "lowest_z": -0.029999999329447746,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "handwheel_vertical",
+      "primitive_parts": 6,
+      "actual_contact_pairs": 14,
+      "clusters": 1,
+      "lowest_z": -0.027499999850988388,
+      "detached_clusters": []
+    },
+    {
+      "recipe": "gauge_vertical",
+      "primitive_parts": 14,
+      "actual_contact_pairs": 13,
+      "clusters": 1,
+      "lowest_z": -0.054999999701976776,
+      "detached_clusters": []
+    }
+  ],
+  "saved_model_floor": {
+    "fixtures_tested": 1172,
+    "sole_patches_tested": 5328,
+    "interior_probes_per_planar_patch": 3,
+    "curved_bearing_fixtures": [
+      {
+        "room": "S_Music",
+        "label": "Pianoforte",
+        "actual_extreme_contact_points": [
+          [
+            -20.530000686645508,
+            -0.7200000286102295,
+            11.84749984741211
+          ],
+          [
+            -20.530000686645508,
+            0.7200000286102295,
+            11.84749984741211
+          ],
+          [
+            -22.25,
+            -0.10000000149011612,
+            11.84749984741211
+          ]
+        ]
+      },
+      {
+        "room": "P_Hospital",
+        "label": "MedicalInstrumentTrolley",
+        "actual_extreme_contact_points": [
+          [
+            53.689998626708984,
+            2.75,
+            14.447500228881836
+          ],
+          [
+            53.689998626708984,
+            3.1500000953674316,
+            14.447500228881836
+          ],
+          [
+            54.310001373291016,
+            2.75,
+            14.447500228881836
+          ],
+          [
+            54.310001373291016,
+            3.1500000953674316,
+            14.447500228881836
+          ]
+        ]
+      }
+    ],
+    "floating_count": 0,
+    "missing_support_count": 0,
+    "penetration_count": 0,
+    "support_flags": 0,
+    "by_label": {},
+    "issues": []
+  },
+  "summary": {
+    "recipes": 83,
+    "recipes_with_detached_clusters": 0,
+    "detached_clusters": 0,
+    "floor_floating_count": 0,
+    "floor_support_flags": 0
+  },
+  "seconds": 2.31,
+  "limits": "Conservative actual-surface graph and scoped actual-lowest-sole interior-patch floor rays (three per saved planar sole, exact extreme-point rays for rounded casters with three/four-contact count guards; finite flat feet may bridge 2mm joints); not all-triangle minimum-distance, universal Boolean connectivity, every assembled accessory placement, structural strength, visual or Studio acceptance. A pass never substitutes for individual image/source review."
+}

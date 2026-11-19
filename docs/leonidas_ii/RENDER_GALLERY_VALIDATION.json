@@ -1,0 +1,47 @@
+{
+  "schema": "victoria.leonidas-ii.offline-gallery-tests/1.0",
+  "status": "STRUCTURE_EMBEDDING_AND_OFFLINE_UI_PASS",
+  "gallery_sha256": "94d45d57356e22c779271fe5b16594e9c5d009dbd06058ef04cf366f7a3d87ba",
+  "manifest_sha256": "f26c15479fdccab6c9422261871528659bc9d9ca76b5a0197f13662e44cdae0a",
+  "final_review_sha256": "21712480550abec4d4b5e80a4e5fa0d8633c906a807f751dc531ce7baaf46203",
+  "tester_sha256": "790aaafdec5890dc51afc36c97208a53abca6d56ebedcc130af20d57de4b32c5",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "images_verified": 272,
+  "native_encoding_reproduced": true,
+  "captions": false,
+  "external_requests": [],
+  "javascript_errors": [],
+  "ui": [
+    {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "status": "PASS",
+      "checks": "Offline load, title-only cards, no horizontal overflow, native image decode, modal, next/previous keys, wraparound, Escape and focus return."
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "PASS",
+      "checks": "Offline mobile single-column layout, no horizontal overflow, modal image and touch-sized next/previous/close controls."
+    }
+  ],
+  "sandboxed_preview": {
+    "status": "PASS",
+    "sandbox": "allow-scripts",
+    "viewport": [
+      390,
+      844
+    ],
+    "checks": "Opaque-origin sandboxed iframe, complete offline gallery, no horizontal overflow, image decode, native dialog, next/close and focus return; no allow-same-origin or allow-modals added."
+  },
+  "screenshots": [
+    "renders/leonidas_ii/build/review/gallery/Gallery_Desktop.png",
+    "renders/leonidas_ii/build/review/gallery/Gallery_Mobile_Modal.png",
+    "renders/leonidas_ii/build/review/gallery/Gallery_Sandboxed_Preview.png"
+  ],
+  "limits": "Verify every embedded image and offline responsive gallery interaction.\nRun AFTER real individual-image review and make_leonidas_render_gallery.py.\nRequires Pillow, Playwright and its Chromium headless shell/system libraries.\nThese are byte/UI tests, never automatic visual, model or Studio acceptance.\n"
+}

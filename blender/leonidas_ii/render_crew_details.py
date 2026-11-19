@@ -32,7 +32,7 @@ names={'Supplement_Crew_Mess_Port','Supplement_Crew_Mess_Starboard'}
 e.PERSISTED=[r for r in e.PERSISTED if Path(r['file']).stem not in names or r.get('detail_driver_sha256')==driver]
 for rid,side in [('O_CrewP','Port'),('O_CrewS','Starboard')]:
  r=next(r for r in e.ROOMS if r['id']==rid)
- table=[f for f in e.DATA['fixtures'] if f['room']==rid and f['label']=='TurnedDiningTable'];assert len(table)==1
+ table=[f for f in e.DATA['fixtures'] if f['room']==rid and f['label'] in ('TurnedDiningTable','UtilityWorkbench')];assert len(table)==1
  xx,yy,_=table[0]['position'];z=r['z'];sign=1 if r['door_wall']=='y1' else -1
  edge=r['y0'] if sign>0 else r['y1']
  # The first overhead attempt exposed only a thin bench sliver. Omit the

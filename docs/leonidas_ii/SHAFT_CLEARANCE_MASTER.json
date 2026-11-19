@@ -1,0 +1,298 @@
+{
+  "schema": "victoria.leonidas-ii.shaft-carrier-screen/1.0",
+  "status": "SAVED_SOURCE_BOUND_SCREEN",
+  "quality": "MASTER",
+  "source_file": "models/leonidas_ii/Aurelian_1889.blend",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "build_data_file": "exports/leonidas_ii/build_data.json",
+  "build_data_sha256": "adf9206f7eec378855a281cda21295d10b02725d1c583e2c6b1f45093832bf01",
+  "auditor_sha256": "fa397be2f0f768a981da6c7cc07fde953757e1f2f10caaf59d5ab41e56906135",
+  "generator_sha256": {
+    "blender/leonidas_ii/access_detail.py": "78d2f226da449f846b085a1846255dededb13a61b895562ad20730a681d2df6f",
+    "blender/leonidas_ii/audit_common.py": "a4cfc973b6b7f2264a999c39bf1f232f5cb46d0e866e564b1061f20a8d791aec",
+    "blender/leonidas_ii/audit_details.py": "e674bdf38e1aed172b4091e00a23e25efee7f6b5c81e7fac833fe5edd3d83843",
+    "blender/leonidas_ii/audit_door_sweeps.py": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf",
+    "blender/leonidas_ii/audit_exterior_parts.py": "c54ec45c5b4164488e9b0cb6933644c5efc8c3acd6860237ea8ef3f20dabcb05",
+    "blender/leonidas_ii/audit_fittings.py": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+    "blender/leonidas_ii/audit_ladders.py": "1555331c82df15419e4463b0c10e5f57629dddfe0359146ba3384a9ba855b714",
+    "blender/leonidas_ii/audit_plant_parts.py": "432e1926548bf12b35b52d1c339aefbc0a64a47a42cf2919e97864733b6923dd",
+    "blender/leonidas_ii/audit_room_parts.py": "84d5dd30f9842393c93e885b827eccfce002b6d5aa920fbaad33f7b296ce5325",
+    "blender/leonidas_ii/audit_shaft_clearances.py": "fa397be2f0f768a981da6c7cc07fde953757e1f2f10caaf59d5ab41e56906135",
+    "blender/leonidas_ii/build.py": "dc74813522d40521755fd64c7da73aaa7ab7bf1d80b6149f4b849540dc11ee4e",
+    "blender/leonidas_ii/export_game.py": "56835f2ebf1bd4c2c86fd0b01a1773e1d51b29f976944dac92a1363cf2628341",
+    "blender/leonidas_ii/furnishings.py": "26aabb26897dd89757fc5786b2707977524c0ea53f5a19eb94a0f764b4ac2b3d",
+    "blender/leonidas_ii/interiors.py": "77af7f48ef529697c240b25e41d0af09fb553978126566cd8e4d6f2b9cc43c9a",
+    "blender/leonidas_ii/machinery.py": "4d0b1bff4cc6e974b428d61b8d1e1f9eafb4a336b435bf281f9395a1219d79fd",
+    "blender/leonidas_ii/meshkit.py": "81af1392dcdff1b859120541867d957e5a78bd18768febeb57b6dde78ce7bc71",
+    "blender/leonidas_ii/optimize.py": "f469949f8af57eb3a43b3d9e7a6a3bba3f128a14e6e6559078c3e1fcb80e28d7",
+    "blender/leonidas_ii/period_detail.py": "9df8a3191908025a85dc91d2f7604051be5e65392a51b798e927ef38e4a1ee27",
+    "blender/leonidas_ii/plant_detail.py": "592d783cb09a1b30148e2fbc03ac48134080fe92cfafe5e34c806387d7e4cc5a",
+    "blender/leonidas_ii/public_rooms.py": "c7354ac2720781ca5319ebb6a818af3735535ccfe3300db8ef61011b10f24b5c",
+    "blender/leonidas_ii/service_fittings.py": "0fa023b4d8f6b32d08f4b7219248336b753f4dee4c1271cf091af3c192101c06",
+    "blender/leonidas_ii/structure.py": "0d719cbedf8d7073ca4c38cb85e9bfbc369f248c09225f5660104525d5e90a9b",
+    "blender/leonidas_ii/test_micro_contacts.py": "2f1c78cdfc9808b29bc82d8c14c089d85375d4fb002a72e265b04058ff644de6",
+    "blender/leonidas_ii/topsides.py": "e4bbd6090e92e20a03ae5c9294d94f7264060cd8095bceec0f841779a9aa242d",
+    "blender/leonidas_ii/visual_design.py": "f3e426ac7bf2deea15ae809d9a8d932900c841300be3c8f4841dd76a55ed2640",
+    "blender/leonidas_ii/weather_detail.py": "4fc9b0adf7f1506aa002f41b60e13dd6b25a7d383f74048bc31fe5859705f906",
+    "blender/leonidas_ii/working_detail.py": "8978972fa454ce3007030b9c683b9841b6825f62c561db047424573cc9ba6d66"
+  },
+  "generator_binding_mismatches": [],
+  "summary": {
+    "pairs": 2,
+    "poses": 48,
+    "intersecting_poses": 0,
+    "negative_controls_passed": 4,
+    "negative_controls_expected": 4,
+    "saved_geometry_mismatches": 0
+  },
+  "pairs": [
+    {
+      "moving": "Crankshaft_3Throws",
+      "fixed": "Engine_Bed_Standards_Cylinders",
+      "pivot": [
+        -18,
+        0,
+        3.0
+      ],
+      "poses": [
+        {
+          "degrees": 0,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 15,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 30,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 45,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 60,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 75,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 90,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 105,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 120,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 135,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 150,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 165,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 180,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 195,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 210,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 225,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 240,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 255,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 270,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 285,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 300,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 315,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 330,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 345,
+          "surface_pairs": 0
+        }
+      ],
+      "intersecting_poses": 0,
+      "negative_solid_journal_cap_detected": true,
+      "negative_25mm_radial_displacement_detected": true
+    },
+    {
+      "moving": "Tailshaft_And_Couplings",
+      "fixed": "Shaft_Bearings_SternTube_Pintles",
+      "pivot": [
+        -50,
+        0,
+        3.0
+      ],
+      "poses": [
+        {
+          "degrees": 0,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 15,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 30,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 45,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 60,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 75,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 90,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 105,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 120,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 135,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 150,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 165,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 180,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 195,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 210,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 225,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 240,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 255,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 270,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 285,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 300,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 315,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 330,
+          "surface_pairs": 0
+        },
+        {
+          "degrees": 345,
+          "surface_pairs": 0
+        }
+      ],
+      "intersecting_poses": 0,
+      "negative_solid_journal_cap_detected": true,
+      "negative_25mm_radial_displacement_detected": true
+    }
+  ],
+  "geometry_binding": [
+    {
+      "name": "Crankshaft_3Throws",
+      "generated_faces_sha256": "9cfec4264ab7868140823bbbe28b58dc783be70964810bfd0ca1d7a873546452",
+      "saved_faces_sha256": "9cfec4264ab7868140823bbbe28b58dc783be70964810bfd0ca1d7a873546452",
+      "match": true
+    },
+    {
+      "name": "Engine_Bed_Standards_Cylinders",
+      "generated_faces_sha256": "77f9da9e49d51f528809452c4d72d0b8a39d011a9b58f1090bdf35bcd6cbf720",
+      "saved_faces_sha256": "77f9da9e49d51f528809452c4d72d0b8a39d011a9b58f1090bdf35bcd6cbf720",
+      "match": true
+    },
+    {
+      "name": "Tailshaft_And_Couplings",
+      "generated_faces_sha256": "9568d9a9b99a182409afc966d42e6290bf2f91735b147b703414751ac2e3bf90",
+      "saved_faces_sha256": "9568d9a9b99a182409afc966d42e6290bf2f91735b147b703414751ac2e3bf90",
+      "match": true
+    },
+    {
+      "name": "Shaft_Bearings_SternTube_Pintles",
+      "generated_faces_sha256": "9f2134650a1299ab2ba94e67e536b1567ab03f41d8b3f3fac459ffccd4544194",
+      "saved_faces_sha256": "9f2134650a1299ab2ba94e67e536b1567ab03f41d8b3f3fac459ffccd4544194",
+      "match": true
+    }
+  ],
+  "seconds": 1.05,
+  "limits": "Focused actual-surface shaft/carrier interference regression.\n\nOnly crankshaft vs its stationary engine casting, and tailshaft/couplings/\nthrust collars vs their stationary shaft carriers. 15-degree poses and two\ninjected failures per pair. NOT every engine mover, connecting rod, bearing\nload/strength, fluid passage, all running clearances or continuous motion QA.\n"
+}

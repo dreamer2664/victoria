@@ -1,0 +1,38 @@
+{
+  "schema": "victoria.leonidas-ii.handoff-history/1.0",
+  "archive": "docs/leonidas_ii/inspection/MICRO_PRE_FINAL_HANDOFF_HISTORY.tar.xz",
+  "sha256": "7a10861a74b6494699cb46092a86ce125dd4c9c91178c715495094ea05fc142e",
+  "reason": "Superseded refinement/critical inventory/partial review records. Exact original bytes retained; these are not acceptance of V6.",
+  "files": [
+    {
+      "file": "docs/leonidas_ii/DELIVERY_REPORT.md",
+      "bytes": 16949,
+      "sha256": "34ff261adb2c935d7f6534a2d58cac9e4d882e48609c89401854d32b7c850334"
+    },
+    {
+      "file": "docs/leonidas_ii/VISUAL_REVIEW.json",
+      "bytes": 37668,
+      "sha256": "b447038fbbadddab28ee87e2712f169156b409a53b763d3716c6065f747ebdff"
+    },
+    {
+      "file": "docs/leonidas_ii/DETAIL_VISUAL_REVIEW.json",
+      "bytes": 23980,
+      "sha256": "684a734ee2aff103472b179ed134c02acb39647356b61d911eface0cdb20df53"
+    },
+    {
+      "file": "docs/leonidas_ii/MICRO_DETAIL_REVIEW.json",
+      "bytes": 185593,
+      "sha256": "be6470f2924b7ab74893e14e4fcc89ec6fad508bc562bce817193144ac12f6f9"
+    },
+    {
+      "file": "docs/leonidas_ii/DETAIL_REFINEMENT.md",
+      "bytes": 14404,
+      "sha256": "b593216ff8ccec387728928ec11f5307134ebae97387a03b9f14c388c13091fc"
+    },
+    {
+      "file": "docs/leonidas_ii/DETAIL_REVIEW.json",
+      "bytes": 216805,
+      "sha256": "c4e1930679b213b93307af5be19bc3414766942879d49f95cef02974ac64b322"
+    }
+  ]
+}

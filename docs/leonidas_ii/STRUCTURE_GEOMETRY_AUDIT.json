@@ -1,7 +1,7 @@
 {
   "schema": "victoria.leonidas-ii.structural-geometry-audit/1.2",
-  "created_utc": "2026-11-17T11:05:59.361574+00:00",
-  "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
+  "created_utc": "2026-11-18T21:50:53.256064+00:00",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
   "auditor_sha256": "b671e3636b676296db945591004e49e1c3c33f76c28f6840f4424aa3b5fc41dc",
   "hull_spec_sha256": "af80b9f9e751c2a25f085b7ebc716388213c53d03ad0fa0e19440d6cb77461c7",
   "checks": [
@@ -1070,7 +1070,7 @@
         "actual_propeller_radius_m": 2.6505151100668156,
         "axial_slab_with_20mm_guard_m": [
           -78.60000183105468,
-          -77.45160339355469
+          -77.4633984375
         ],
         "clipped_frame_triangles": 16,
         "minimum_frame_radial_distance_m": 2.729999989271164,
@@ -1079,16 +1079,16 @@
         "shell_envelope": {
           "method": "Continuous conservative radial bound: clipped actual triangles in <=10mm axial intervals, propeller interval expanded by 20mm each end; not sampled stopped poses or minimum Euclidean surface distance.",
           "clipped_shell_triangles": 290,
-          "axial_intervals": 115,
-          "minimum_radial_gap_bound_m": 0.5740390725263476,
+          "axial_intervals": 114,
+          "minimum_radial_gap_bound_m": 0.5752157155868898,
           "tightest_interval": {
             "axial_interval_m": [
-              -77.95090706203295,
-              -77.94092098866338
+              -77.95193849262438,
+              -77.94196828741777
             ],
-            "minimum_shell_radius_m": 3.224554182593163,
+            "minimum_shell_radius_m": 3.2257308256537054,
             "maximum_guarded_propeller_radius_m": 2.6505151100668156,
-            "conservative_radial_gap_m": 0.5740390725263476
+            "conservative_radial_gap_m": 0.5752157155868898
           }
         }
       }

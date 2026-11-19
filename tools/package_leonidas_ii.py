@@ -11,6 +11,9 @@ ROOT=Path(__file__).resolve().parents[1];EX=ROOT/'exports'/'leonidas_ii';WORK=EX
 if KIT.exists():shutil.rmtree(KIT)
 KIT.mkdir(parents=True,exist_ok=True)
 D=json.loads((EX/'build_data.json').read_text());MAN=json.loads((EX/'game_manifest.json').read_text())
+INPUT_RECEIPT=ROOT/'docs/leonidas_ii/EXPORT_INPUT_IDENTITY.json';INPUTS=json.loads(INPUT_RECEIPT.read_text())
+assert INPUTS['status']=='VERIFIED_FROZEN_INPUTS_OVER_ACTUAL_EXPORT_RUN' and INPUTS['game_manifest_sha256']==hashlib.sha256((EX/'game_manifest.json').read_bytes()).hexdigest(),'Record frozen audited inputs across the actual export before packaging.'
+assert INPUTS['inputs']['master']['sha256']==MAN['source_sha256']
 # JSON to conservative Luau literals. IDs here are author-owned room/node
 # names, never invented external Roblox content IDs.
 def lua(v):
@@ -83,19 +86,22 @@ for region,inds in reg.items():
 mm.close();f.close()
 import shutil
 shutil.copy2(package,KIT/package.name)
-for file in [ROOT/'docs'/'leonidas_ii'/'ROBLOX_INSTALL_AND_TEST.md',EX/'game_manifest.json']:
+for file in [ROOT/'docs'/'leonidas_ii'/'ROBLOX_INSTALL_AND_TEST.md',INPUT_RECEIPT,EX/'game_manifest.json']:
  if file.exists():shutil.copy2(file,KIT/file.name)
 texture_dir=KIT/'Textures';texture_dir.mkdir(exist_ok=True)
 for file in (ROOT/'reference'/'leonidas_ii'/'materials').glob('Aurelian_*.png'):shutil.copy2(file,texture_dir/file.name)
 shutil.copy2(WORK/'Aurelian_metalrough.png',texture_dir/'Aurelian_metalrough.png')
-report=dict(schema='victoria.leonidas-ii.import-kit/2.0',source_sha256=MAN['source_sha256'],full_glb_sha256=MAN['glb_sha256'],batches=batches,visual_nodes=sum(b['visual_nodes'] for b in batches),placed_triangles=sum(b['triangles'] for b in batches),native_colliders=len(D['proxies']),doors=len(D['doors']),moving_assemblies=len(D['movers']),lights=len(D['lights']),seats=len(D['seats']),source_counts=D['counts'],kit_texture_resolution=1024,source_texture_resolution=2048,notes=['Import each regional model at any convenient position, group ONLY those imported models into one Model, then run the installer. Each regional model is independently calibrated to a shared metric datum.','GLB checks and Luau parsing are not a Studio import or live performance certification.'])
+report=dict(schema='victoria.leonidas-ii.import-kit/2.1',source_sha256=MAN['source_sha256'],export_input_receipt_sha256=hashlib.sha256(INPUT_RECEIPT.read_bytes()).hexdigest(),game_source_sha256=INPUTS['inputs']['game']['sha256'],game_build_data_sha256=INPUTS['inputs']['game_data']['sha256'],full_glb_sha256=MAN['glb_sha256'],batches=batches,visual_nodes=sum(b['visual_nodes'] for b in batches),placed_triangles=sum(b['triangles'] for b in batches),native_colliders=len(D['proxies']),doors=len(D['doors']),moving_assemblies=len(D['movers']),lights=len(D['lights']),seats=len(D['seats']),source_counts=D['counts'],kit_texture_resolution=1024,source_texture_resolution=2048,notes=['Import each regional model at any convenient position, group ONLY those imported models into one Model, then run the installer. Each regional model is independently calibrated to a shared metric datum.','GLB checks and Luau parsing are not a Studio import or live performance certification.'])
 (EX/'IMPORT_KIT_MANIFEST.json').write_text(json.dumps(report,indent=2));(KIT/'IMPORT_KIT_MANIFEST.json').write_text(json.dumps(report,indent=2))
 # Solid XZ avoids storing the same embedded material images eighteen times
 # in a ZIP's independent compression streams. Contents are the SAME GLBs,
 # not Draco/quantized substitutes. GNU tar, 7-Zip and current archive tools
 # can extract it; no runtime decoder or plugin is required in Roblox.
 archive=EX/'Aurelian_Roblox_Import_Kit.tar.xz'
-with tarfile.open(archive,'w:xz',preset=6) as t:
+# A 64MiB XZ dictionary reaches across neighbouring regional GLBs and can
+# reuse their identical embedded maps. Level 6's 8MiB window often could not;
+# this is lossless archive storage, never geometry/texture downsampling.
+with tarfile.open(archive,'w:xz',preset=9) as t:
  t.add(KIT,arcname='Aurelian_Import_Kit')
 # Optional convenience ZIP lives in excluded scratch, not a second 63MB
 # persisted copy of the delivery. Never remove a previously delivered file.

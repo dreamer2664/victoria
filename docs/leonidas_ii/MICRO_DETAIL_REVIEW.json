@@ -1,0 +1,15 @@
+{
+  "schema": "victoria.leonidas-ii.micro-detail-review/2.0",
+  "status": "BOTH_QUALITY_SAVED_SCREENS_EXPORT_AND_FINAL_IMAGE_REVIEW_PASS_WITH_LIMITATIONS",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+  "final_review": "docs/leonidas_ii/FINAL_RENDER_REVIEW.json",
+  "current_final_images_reviewed": 272,
+  "regressions": "344 PASS / 0 FAIL in MASTER and GAME canonical runs.",
+  "history_archive": "docs/leonidas_ii/inspection/MICRO_PRE_FINAL_HANDOFF_HISTORY.tar.xz",
+  "visual_repair_history": "docs/leonidas_ii/inspection/MICRO_VISUAL_REPAIR_V5_HISTORY.tar.xz",
+  "limits": "Scoped geometry/result screens do not approve hidden joints, continuous sweeps, live Studio/physics/networking/FPS, or user aesthetic acceptance.",
+  "micro_delivery": "42 PASS / 0 FAIL; actual export receipt verified. Not visual approval.",
+  "current_final_images_rejected": 0,
+  "current_native_pixel_associations": 272
+}

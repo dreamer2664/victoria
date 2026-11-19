@@ -1,0 +1,346 @@
+{
+  "schema": "victoria.leonidas-ii.micro-delivery-checks/1.1",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "validator_sha256": "b3954681c0112d3ec3bbd29dc13e8e306bbbe443e960d4d66446c7f3b43a77d9",
+  "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+  "input_verification": {
+    "MASTER": {
+      "mode": "ACTUAL_RETAINED_SAVED_SOURCE_AND_DATA_BYTES",
+      "fresh_saved_source_and_data_bytes_checked": true,
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "build_data_sha256": "adf9206f7eec378855a281cda21295d10b02725d1c583e2c6b1f45093832bf01"
+    },
+    "GAME": {
+      "mode": "FROZEN_ACTUAL_EXPORT_IDENTITIES_GAME_SCRATCH_NOT_RETAINED",
+      "fresh_saved_source_and_data_bytes_checked": false,
+      "source_sha256": "f4964d56c5afd431a6062418735b55a8761788a721d60db7049dadf67cc2145a",
+      "build_data_sha256": "8bed04c9aa42818f19bc1438576bbab67aa0e20be5cc90012af600caf272eff8"
+    }
+  },
+  "receipt_only_absent_inputs": [
+    "game",
+    "game_data"
+  ],
+  "checks": [
+    {
+      "check": "MASTER all current generator keys and saved/frozen identities bound",
+      "status": "PASS",
+      "detail": {
+        "mode": "ACTUAL_RETAINED_SAVED_SOURCE_AND_DATA_BYTES",
+        "fresh_saved_source_and_data_bytes_checked": true,
+        "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+        "build_data_sha256": "adf9206f7eec378855a281cda21295d10b02725d1c583e2c6b1f45093832bf01"
+      }
+    },
+    {
+      "check": "MASTER MICRO_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER MICRO_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER MICRO_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "recipes": 83,
+        "recipes_with_detached_clusters": 0,
+        "detached_clusters": 0,
+        "floor_floating_count": 0,
+        "floor_support_flags": 0
+      }
+    },
+    {
+      "check": "MASTER ROOM_PART_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER ROOM_PART_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER ROOM_PART_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "rooms": 195,
+        "parts": 41425,
+        "rooms_with_detached": 0,
+        "detached_clusters": 0,
+        "saved_geometry_mismatches": 0,
+        "stair_columns": 12,
+        "stair_column_bearing_flags": 0
+      }
+    },
+    {
+      "check": "MASTER PLANT_PART_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER PLANT_PART_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER PLANT_PART_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "captured_assemblies": 45,
+        "rigid_static_parts": 5295,
+        "static_detached_clusters": 0,
+        "mover_assemblies": 18,
+        "mover_internal_detached_clusters": 0,
+        "saved_geometry_mismatches": 0
+      }
+    },
+    {
+      "check": "MASTER EXTERIOR_PART_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER EXTERIOR_PART_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER EXTERIOR_PART_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "captured_assemblies": 80,
+        "rigid_static_parts": 33247,
+        "static_detached_clusters": 0,
+        "mover_assemblies": 3,
+        "mover_internal_detached_clusters": 0,
+        "saved_geometry_mismatches": 0
+      }
+    },
+    {
+      "check": "MASTER DOOR_SWEEP_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER DOOR_SWEEP_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER DOOR_SWEEP_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "doors": 196,
+        "poses": 9212,
+        "doors_with_intersections": 0
+      }
+    },
+    {
+      "check": "MASTER SHAFT_CLEARANCE exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER SHAFT_CLEARANCE generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "MASTER SHAFT_CLEARANCE scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "pairs": 2,
+        "poses": 48,
+        "intersecting_poses": 0,
+        "negative_controls_passed": 4,
+        "negative_controls_expected": 4,
+        "saved_geometry_mismatches": 0
+      }
+    },
+    {
+      "check": "MASTER all exact-source positive/negative regressions",
+      "status": "PASS",
+      "detail": {
+        "pass_count": 344,
+        "fail_count": 0
+      }
+    },
+    {
+      "check": "GAME all current generator keys and saved/frozen identities bound",
+      "status": "PASS",
+      "detail": {
+        "mode": "FROZEN_ACTUAL_EXPORT_IDENTITIES_GAME_SCRATCH_NOT_RETAINED",
+        "fresh_saved_source_and_data_bytes_checked": false,
+        "source_sha256": "f4964d56c5afd431a6062418735b55a8761788a721d60db7049dadf67cc2145a",
+        "build_data_sha256": "8bed04c9aa42818f19bc1438576bbab67aa0e20be5cc90012af600caf272eff8"
+      }
+    },
+    {
+      "check": "GAME MICRO_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME MICRO_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME MICRO_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "recipes": 83,
+        "recipes_with_detached_clusters": 0,
+        "detached_clusters": 0,
+        "floor_floating_count": 0,
+        "floor_support_flags": 0
+      }
+    },
+    {
+      "check": "GAME ROOM_PART_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME ROOM_PART_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME ROOM_PART_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "rooms": 195,
+        "parts": 41425,
+        "rooms_with_detached": 0,
+        "detached_clusters": 0,
+        "saved_geometry_mismatches": 0,
+        "stair_columns": 12,
+        "stair_column_bearing_flags": 0
+      }
+    },
+    {
+      "check": "GAME PLANT_PART_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME PLANT_PART_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME PLANT_PART_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "captured_assemblies": 45,
+        "rigid_static_parts": 5295,
+        "static_detached_clusters": 0,
+        "mover_assemblies": 18,
+        "mover_internal_detached_clusters": 0,
+        "saved_geometry_mismatches": 0
+      }
+    },
+    {
+      "check": "GAME EXTERIOR_PART_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME EXTERIOR_PART_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME EXTERIOR_PART_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "captured_assemblies": 80,
+        "rigid_static_parts": 33247,
+        "static_detached_clusters": 0,
+        "mover_assemblies": 3,
+        "mover_internal_detached_clusters": 0,
+        "saved_geometry_mismatches": 0
+      }
+    },
+    {
+      "check": "GAME DOOR_SWEEP_GEOMETRY exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME DOOR_SWEEP_GEOMETRY generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME DOOR_SWEEP_GEOMETRY scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "doors": 196,
+        "poses": 9212,
+        "doors_with_intersections": 0
+      }
+    },
+    {
+      "check": "GAME SHAFT_CLEARANCE exact canonical source/data/auditor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME SHAFT_CLEARANCE generator coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "GAME SHAFT_CLEARANCE scoped result gates",
+      "status": "PASS",
+      "detail": {
+        "pairs": 2,
+        "poses": 48,
+        "intersecting_poses": 0,
+        "negative_controls_passed": 4,
+        "negative_controls_expected": 4,
+        "saved_geometry_mismatches": 0
+      }
+    },
+    {
+      "check": "GAME all exact-source positive/negative regressions",
+      "status": "PASS",
+      "detail": {
+        "pass_count": 344,
+        "fail_count": 0
+      }
+    },
+    {
+      "check": "Frozen actual-export receipt, retained input bytes and all original audit identities",
+      "status": "PASS",
+      "detail": {
+        "retained_input_bytes_checked": [
+          "master",
+          "master_data",
+          "exporter"
+        ],
+        "receipt_only_absent_GAME_scratch": [
+          "game",
+          "game_data"
+        ],
+        "invalid_inputs": [],
+        "require_saved_sources": false
+      }
+    },
+    {
+      "check": "Import kit bound to exact frozen export receipt/GAME source",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "summary": {
+    "PASS": 42
+  },
+  "limits": "Byte/provenance/result gates over the ACTUALLY EXECUTED canonical audits.\n\nDefault fresh-build mode (--require-saved-sources): requires the ACTUAL saved\nMASTER and GAME .blend/build-data bytes and checks them against their original\ncanonical audits and frozen exporter receipt. The ordered build uses this mode.\n\nExplicit --delivered-package mode: revalidate retained MASTER/data/exporter\nbytes, the unchanged frozen ACTUAL-export receipt, all 12 exact canonical audit\nfiles/generator identities, regressions and GAME/kit bindings. Excluded GAME\nrebuild scratch may be absent; its original identities then come ONLY from that\nverified export receipt. This is explicitly recorded, NEVER described as\nreading fresh saved GAME bytes. Any retained input must still match exactly;\nchanged files cannot fall back to the receipt. No geometry/result tolerance or\ncanonical audit is waived/skipped. This mode does NOT rerun geometry audits.\n\nNeither mode runs Blender or approves pixels, continuous physics or Studio.\nUse check_leonidas_delivery.py for ACTUAL kit archive/receipt contents,\nexported GLB reports and exhaustive visual/gallery gates.\n"
+}

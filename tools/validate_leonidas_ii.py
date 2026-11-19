@@ -127,7 +127,7 @@ record('Machinery service-aisle anchors reachable from boarding','PASS' if all(r
 cooking=[]
 for r in ROOMS:
  if r['kind'] not in ('galley','bakery'):continue
- fitted=[f for f in DATA['fixtures'] if f['room']==r['id'] and f['label']=='CoalRangeThreeOvens'];point=(r['x0']+2,r['y0']+2.35)
+ fitted=[f for f in DATA['fixtures'] if f['room']==r['id'] and f['label'] in ('CoalRangeThreeOvens','CoalBreadOven')];point=(r['x0']+2,r['y0']+2.35)
  cooking.append(dict(room=r['id'],range_faces_working_aisle=bool(len(fitted)==1 and abs(fitted[0]['yaw']-math.pi)<1e-6),firing_position=point,reachable=component_at(r['deck'],*point) in seen))
 record('Cooking furnace fronts face reachable working aisles','PASS' if all(r['range_faces_working_aisle'] and r['reachable'] for r in cooking) else 'FAIL',cooking)
 # 3D head-space samples test current actual colliders. Do not omit plates

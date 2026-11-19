@@ -221,6 +221,9 @@ def deck_holes(deck):
  # Boilers extend to |y|=6.5m. Their continuous outboard service passages
  # must NOT lie under a 2.35m orlop plate only 0.62m above the tank top.
  if deck=='orlop':holes += [(-28.5,36.05,-7.9,7.9),(-70,-28.5,-1.5,1.5)]
+ # The exterior galley flue has a real sleeve opening, not a solid deck
+ # intersecting the pipe/lagging. Its fastened coamings are in interiors.py.
+ if deck in ('promenade','boat'):holes.append((-39.63,-39.07,-5.08,-4.52))
  for c in CASINGS:
   if c['z0']<z+.03<c['z1']:holes.append(c['rect'])
  for s in STAIRS:
@@ -236,9 +239,28 @@ def build_decks():
    for c,d in zip(ys,ys[1:]):
     if any(h[0]<(a+b)/2<h[1] and h[2]<(c+d)/2<h[3] for h in holes):continue
     lo0=max(c,-ba);hi0=min(d,ba);lo1=max(c,-bb);hi1=min(d,bb)
-    if hi0-lo0<.02 or hi1-lo1<.02:continue
-    vv=[(a,lo0,z-.13),(b,lo1,z-.13),(b,hi1,z-.13),(a,hi0,z-.13),(a,lo0,z),(b,lo1,z),(b,hi1,z),(a,hi0,z)]
-    m.add(vv,[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)],'Teak' if z>=8.8 else 'Iron')
+    # Clip a full tapered strip to this transverse cell. Discarding a
+    # cell whenever only ONE end narrowed away left triangular holes
+    # under the stern weather finish. Keep those real triangular panels.
+    poly=[(a,-ba),(b,-bb),(b,bb),(a,ba)]
+    for bound,positive in ((c,True),(d,False)):
+     clipped=[]
+     for A,B in zip(poly,poly[1:]+poly[:1]):
+      ia=A[1]>=bound if positive else A[1]<=bound;ib=B[1]>=bound if positive else B[1]<=bound
+      if ia:clipped.append(A)
+      if ia!=ib:
+       t=(bound-A[1])/(B[1]-A[1]);clipped.append((A[0]+t*(B[0]-A[0]),bound))
+     poly=clipped
+     if not poly:break
+    unique=[]
+    for p in poly:
+     if not unique or math.dist(p,unique[-1])>1e-8:unique.append(p)
+    if len(unique)>1 and math.dist(unique[0],unique[-1])<1e-8:unique.pop()
+    poly=unique;nn=len(poly)
+    if nn<3 or abs(sum(A[0]*B[1]-A[1]*B[0] for A,B in zip(poly,poly[1:]+poly[:1])))<1e-7:continue
+    vv=[(px,py,z+dz) for dz in (-.13,0) for px,py in poly]
+    ff=[tuple(range(nn-1,-1,-1)),tuple(range(nn,2*nn))]+[(j,(j+1)%nn,(j+1)%nn+nn,j+nn) for j in range(nn)]
+    m.add(vv,ff,'Teak' if z>=8.8 else 'Iron')
     # Native rectangular proxy is safely inscribed in the curved strip.
     lo=max(lo0,lo1);hi=min(hi0,hi1)
     if hi-lo>.02:proxy(((a+b)/2,(lo+hi)/2,z-.09),(b-a,hi-lo,.18),tag='Deck_'+dk)
@@ -294,11 +316,46 @@ def build_stairs():
   for i in range(n):
    xa=x0+i*run;xb=xa+run;zz=z0+(i+1)*rise
    m.box(((xa+xb)/2,y,zz-.035),(abs(run)+.015,w,.07),tile,.006)
-   m.box((xb if run<0 else xa,y,zz-rise/2),(.028,w,rise),tile)
-   m.box(((xa+xb)/2,y-w/2+.06,zz+.004),(abs(run)*.9,.055,.009),'Brass' if s['style']=='oak' else 'Steel')
+   # House risers under the nosing and inside the side skirts. Their old
+   # full-width ends overlapped the exposed tread end planes, producing
+   # repeated black z-fighting slits in the actual grand-stair render.
+   m.box((xa+(.010 if run>0 else -.010),y,zz-rise/2-.0275),(.025,w-.08,rise-.025),tile)
+   m.box((xa-(.010 if run>0 else -.010),y,zz+.004),(.043,w-.12,.009),'Brass' if s['style']=='oak' else 'Steel')
   # Sloping structural stringers, no horizontal floating bars.
   for sy in (-1,1):
-   yy=y+sy*(w/2-.04);m.rod((x0,yy,z0-.10),(x1,yy,z1-.10),.095,tile,4)
+   yy=y+sy*(w/2-.04)
+   if s['style']=='oak':
+    # Closed stepped skirt meets the tread undersides and conceals neither
+    # a route nor a riser gap. It replaces the coarse diagonal square rod.
+    # Explicit conforming side caps. A single concave n-gon lets Blender
+    # choose collinear diagonals through non-adjacent step corners; removing
+    # their zero-area export triangles left 12 unpaired Grand_Main edges.
+    # Every next trapezoid includes the preceding step height in its left
+    # edge, so these real cap triangles have neither T-junctions nor fans
+    # of collinear points. The whole skirt remains one closed extrusion.
+    vv=[];ff=[];indices={}
+    def sv(xx,dy,zz):
+     key=(round(xx,8),round(yy+dy,8),round(zz,8))
+     if key not in indices:indices[key]=len(vv);vv.append(key)
+     return indices[key]
+    for j in range(n):
+     xa=x0+j*run;xb=x0+(j+1)*run;za=z0+(j+1)*rise-.065
+     lowa=z0+j*rise-.30;lowb=z0+(j+1)*rise-.30;caps=[]
+     for dy in (-.035,.035):
+      A=sv(xa,dy,lowa);B=sv(xb,dy,lowb);C=sv(xb,dy,za);D=sv(xa,dy,za)
+      if j:
+       P=sv(xa,dy,z0+j*rise-.065);ff.extend([(A,B,P),(P,B,C),(P,C,D)])
+      else:ff.extend([(A,B,C),(A,C,D)])
+      caps.append((A,B,C,D))
+     A,B,C,D=caps[0];E,F,G,H=caps[1]
+     ff.extend([(A,E,F,B),(D,C,G,H)])  # lower slope and tread underside
+     if j:
+      P=sv(xa,-.035,z0+j*rise-.065);Q=sv(xa,.035,z0+j*rise-.065)
+      ff.append((P,D,H,Q))  # exposed vertical riser of the stepped skirt
+     else:ff.append((A,D,H,E))
+     if j==n-1:ff.append((B,F,G,C))
+    m.add(vv,ff,tile)
+   else:m.rod((x0,yy,z0-.10),(x1,yy,z1-.10),.095,tile,4)
    m.tube([(x0-.20*(1 if run>0 else -1),yy,z0+.95),(x0,yy,z0+.95),(x1,yy,z1+.95),(x1+.15*(1 if run>0 else -1),yy,z1+.95)],.040,tile,10)
    for i in range(0,n+1,2):
     t=i/n;xx=x0+(x1-x0)*t;zz=z0+(z1-z0)*t
@@ -316,5 +373,7 @@ def build_stairs():
   for yy in (y-w/2-.045,y+w/2+.045):
    proxy(((x0+x1)/2,yy,z+.52),(x1-x0,.065,1.0),tag='LandingGuard_'+s['id'])
    rr.rod((x0,yy,z+.96),(x1,yy,z+.96),.035,'Oak' if s['style']=='oak' else 'White',8)
-   for x in np.arange(x0,x1+.01,.5):rr.rod((float(x),yy,z+.02),(float(x),yy,z+.94),.021,'Oak' if s['style']=='oak' else 'White',7)
+   for x in np.arange(x0,x1+.01,.5):
+    rr.cylinder((float(x),yy,z+.01),.045,.04,'Oak' if s['style']=='oak' else 'White',10)
+    rr.rod((float(x),yy,z+.02),(float(x),yy,z+.94),.021,'Oak' if s['style']=='oak' else 'White',7)
   rr.emit('LandingGuard_'+s['id'],collection('Stairs'),kind='rail',deck=str(s['to']))

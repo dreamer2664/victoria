@@ -1,0 +1,3559 @@
+{
+  "schema": "victoria.leonidas-ii.title-only-render-gallery/1.0",
+  "file": "docs/leonidas_ii/EVIDENCE_INDEX.html",
+  "sha256": "94d45d57356e22c779271fe5b16594e9c5d009dbd06058ef04cf366f7a3d87ba",
+  "bytes": 8624198,
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+  "builder_sha256": "c508da9da20f2827af13499a46af2a51e639ab6911904e9fd9b351514e9b3335",
+  "final_review_sha256": "21712480550abec4d4b5e80a4e5fa0d8633c906a807f751dc531ce7baaf46203",
+  "images": [
+    {
+      "file": "renders/leonidas_ii/Exterior_Bow_Port.jpg",
+      "title": "Port Bow",
+      "sha256": "37c48b7efcd35c05c04d29d75667da9d6ae8ebcb3a9526a605ecbc9db64b8a79",
+      "pixels": [
+        2400,
+        1400
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "0eb5bdf78d96e0a3ca00faab9bbd89537706de476b7581066a7677c0b3c82cc1",
+      "display_bytes": 57454
+    },
+    {
+      "file": "renders/leonidas_ii/Exterior_Broadside_Port.jpg",
+      "title": "Port Broadside",
+      "sha256": "c4c7ecd85375d737d3bfdcf958b63035b94a7b69b3824ab43002c3095ef6e0c6",
+      "pixels": [
+        2600,
+        1050
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e6a605b7c0b7660c5e386db95d3fd174cc84de78e8e44697f8adc4d32e3aa20e",
+      "display_bytes": 53086
+    },
+    {
+      "file": "renders/leonidas_ii/Exterior_Overhead.jpg",
+      "title": "Upper Decks",
+      "sha256": "dc10fccab0acb84a2bbe1910d3228f3bd27d043f141485c988a5993f3cc186ce",
+      "pixels": [
+        2400,
+        1600
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "500344de4a71428517d8d7940b4f8be878097de2351f94811b0e786eb45daa1f",
+      "display_bytes": 53786
+    },
+    {
+      "file": "renders/leonidas_ii/Exterior_Stern_Starboard.jpg",
+      "title": "Starboard Stern",
+      "sha256": "f2115b943be73dcbb9ba5178c237298f1cb3f270d24b7f09d453a6ba7f86168b",
+      "pixels": [
+        2400,
+        1400
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7fce08cc71ca12ef0f6b968faa75a53f3b64a303b8965cb208bb6b508a630994",
+      "display_bytes": 66734
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Bakery.jpg",
+      "title": "Bakery",
+      "sha256": "1e0a38d70c1fc76cfd35451d94caafe775a2510392a153ce480df197090d6aac",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "fb49f6c19b689339ee8f6c9d208e2764ac69743af70e1bae6aa5464e42fa5519",
+      "display_bytes": 41334
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Bar.jpg",
+      "title": "Bar",
+      "sha256": "a619069149ff577a7850cc24a442603cba84b1e4a1c4221f0f0299e325f290f1",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1291832caa89b87f7e74c7b51d3c6a90d15cce93a6c4284d27210216441e6607",
+      "display_bytes": 65788
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Barber.jpg",
+      "title": "Barber Shop",
+      "sha256": "2a9a5d90d308d110ada3e58871254d27f6bce9501c638613436db69818dc781b",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "8c46d10330906b45aac66d39975ca185e71da81741ac986e65929e585ada9892",
+      "display_bytes": 65596
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Bath.jpg",
+      "title": "Bathroom",
+      "sha256": "45ce52085721a9f3f20cdc97ed39b25808b145bacb475b8713fb6efa2ae3195f",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7476cc2c68d60e004d2959558b1e5405b10dcf0fe2c40e4339346f23bed555f6",
+      "display_bytes": 25718
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Cabin_First.jpg",
+      "title": "First-Class Cabin",
+      "sha256": "a0fbba3985f45c3617e769d78c74499dc5e0a7ecb8d8029016d9220af8446014",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "68d6fc1bc9eac66fd2b296d4a0f793cfbe008989d02568c66c2aa853f5a140f1",
+      "display_bytes": 58924
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Cabin_Second.jpg",
+      "title": "Second-Class Cabin",
+      "sha256": "6cd18151a43efb96a406ff122a5d9763859155c8da44b2382c5e2d0215180340",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f85f9e514b95b1221569ff61de3f1dab122df70567db78249e7775b0738c0cd9",
+      "display_bytes": 76812
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Captain.jpg",
+      "title": "Captain\u2019s Cabin",
+      "sha256": "732eb6d8ac1ef4ef23b7aa33062976d700d846ab7894c911de888ebf3394c0c1",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "73355f353a0c117af2033eb5fca2744e0f76020a663d31efdb5be9edda1a7e69",
+      "display_bytes": 85740
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Cargo.jpg",
+      "title": "Cargo Hold",
+      "sha256": "931df9bd49c16d6e8106be666dd3d257a8779f5fef9a80d4d50aed07f0723d30",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "2fe296c16a212f4bbf9c57a91bb3be1da74cbf5005337bc7b3483fdb6ced184c",
+      "display_bytes": 55378
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Chart_Signals.jpg",
+      "title": "Chart and Signals Room",
+      "sha256": "e043009789640cb49f0538f62d746843671bcad48a7d84cb5e329fa6d6150155",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "14dac78169fc17727d283145b1c46dbaac4c9e2a2db06300280b818ecc55da0f",
+      "display_bytes": 80062
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Cold_Store.jpg",
+      "title": "Cold Store",
+      "sha256": "17629c1b8c979ec04e9ff0dfaf1b53e427bf7dd95c8fbd76171236e4e7461867",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "62a55c46dd186fe9c209af4f4fbdb091cac2924ef8c61d266ed9ca4c40ff814f",
+      "display_bytes": 53680
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Crew.jpg",
+      "title": "Crew Accommodation",
+      "sha256": "96fac775c58421e86db68e57f8423464d24bb009c7217dcc1f2c5660876e9b83",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4e75ac50dbcadea927ff59134c42adfbb5d4903797844db999dad64089cf4edd",
+      "display_bytes": 83656
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Dining_First.jpg",
+      "title": "First-Class Dining Saloon",
+      "sha256": "5391eba2e1f50fa50bf311843e5c25947bd9790928d1e1bfb8a15d3eaecd4417",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a36002c82a9ed5322ac2ae6d74c06d60309037e126255512504e2ca4d9682434",
+      "display_bytes": 109588
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Dining_Second.jpg",
+      "title": "Second-Class Dining Saloon",
+      "sha256": "d04a17d052ba23901973f32826372bb6aca99e770eb1300c4034d041341fc19b",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ad2f064c4473703e4242975d7c705b9af4e42cd9948e92b453592feed7b19d7f",
+      "display_bytes": 86112
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Galley.jpg",
+      "title": "Galley",
+      "sha256": "6f6e2a5d92c0dcafa26ba4951a9ec688eb251587ce82846e813d32af329ef76e",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "8a936d91a7ba11a3544d578fb4a254121956dbfbdb9e77e4aa3b05707d87e536",
+      "display_bytes": 49340
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Grand_Stair.jpg",
+      "title": "Grand Stair \u2014 Cutaway",
+      "sha256": "4346362808f94e435c581f2214eceec521a330d1176b1c8f5dcfa931f51ded3f",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "18b7d351920701aad9b1729f5243d4de42d3c3f199a1ec167c7ffdeedf358f6b",
+      "display_bytes": 67130
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Hospital.jpg",
+      "title": "Hospital",
+      "sha256": "e735fc18c960cc8b63b6cf94c8c063e336fac64c17fdb1088f1723e1dd82240f",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "790dd96b0ff546167e288cc56d64fe1d9f060752c1095907f38bfd80d9017bf0",
+      "display_bytes": 50206
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Lavatory.jpg",
+      "title": "Lavatory",
+      "sha256": "4e2bf93fc8be8dce02c4cd38e0feb4402de21957c617a4f04eae7214fdb812a2",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bfdf86ba0ff86f9e56f607114289e6baa6d0fbaa84d21282725aa6e01e7c2f68",
+      "display_bytes": 25894
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Library.jpg",
+      "title": "Library",
+      "sha256": "fceb3d80a0037d3d5bc0583850c993942b368bc66922d266bea6ce54d17ccb9d",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9dac025057f20ab22f2fd8e57168db99d850b379cf76c0c47b384ca893d71636",
+      "display_bytes": 66938
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Mail.jpg",
+      "title": "Mail Room",
+      "sha256": "081b0ff810287fddf697121444760920f00ae745d48d62dca9ee9afb080b9784",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ee378bf7f95d5908e8d07ffe89317739b9e8759c870eab48d0cbe3fe49e5068c",
+      "display_bytes": 46690
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Music.jpg",
+      "title": "Music Room",
+      "sha256": "5d5164627072f43cca0daf203e2af5d39974312de7ef2cd4a94183a770182fbe",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "db0f194280a210fb0271cdb32abd7394227ab15898f06452dc9878bf2f66288a",
+      "display_bytes": 74178
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Officer.jpg",
+      "title": "Officer\u2019s Cabin",
+      "sha256": "e0e09be819cef570895ce89539e88abedfce1064a3ba5cfb54264c3780c67545",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9effc068a4d5c12da33a906a10f2b6aacb9f8a480e46bc040c040e58df8e328a",
+      "display_bytes": 78560
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Pantry.jpg",
+      "title": "Pantry",
+      "sha256": "062559b04e9cd5767669c5c16a5784b254feeef65b582e083619dfa5c1a739b0",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b1badfdfc23caa90228b891eae3f01b79fb94fb7f24cddf78a8b885cf8d28890",
+      "display_bytes": 59018
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Purser.jpg",
+      "title": "Purser\u2019s Office",
+      "sha256": "fe875a978caef33e8a5875fccb3f6d7c37182ed8a9fab578d833907be298b2ea",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "cdb0d6c6a8e25abef80acdff94fdfd396d2f26d812966c00cc827559c9b6b1e7",
+      "display_bytes": 60432
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Second_Lounge.jpg",
+      "title": "Second-Class Lounge",
+      "sha256": "866d6d21c49ad13fca347fd050e9507653e4bfc7c6805f9506e3b7ff2b241adf",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "d23868d2141c39f0a39f9484ff0e76daf9d8abf9190a66f5d55a8942eefb5a36",
+      "display_bytes": 77764
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Smoking.jpg",
+      "title": "Smoking Room",
+      "sha256": "d3ece7a1eff00d7871da78eda2a79d61e986f1b6aa503b744f5b564c3670bca3",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3c484d377a3482cde432e5c2d9d9d5dfd0233be9d588d04cbad5f7d213fef991",
+      "display_bytes": 64644
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Third_Class.jpg",
+      "title": "Third-Class Accommodation",
+      "sha256": "ded9373fdbf89f7869bd0d22ba560970c1141e61fc725bdab193fc1133ec3626",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4289f5a5b481d6080c7d756c6c6a01e678d6f8473474c958b18db2b2965ecfbe",
+      "display_bytes": 78960
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Wheelhouse.jpg",
+      "title": "Wheelhouse",
+      "sha256": "407c8eabdb5e36b42a458769ed78ef6c8467b1f21728cfe862f6bbc7a492ab7c",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e88f73aac68962afc67c464e0723609dfbf1b7e876852bc1c97ec6f997b6b5ad",
+      "display_bytes": 71404
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Writing.jpg",
+      "title": "Writing Room",
+      "sha256": "b14c7c03fe1b6b80703cd3f279c5b299d442ed3ee54a5762fe09616984226862",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "863cca4f653c78688c99fcadb7915e56753ae0b322a9d11f0594479e0391f142",
+      "display_bytes": 76326
+    },
+    {
+      "file": "renders/leonidas_ii/Engineering_Crossheads_ValveGear.jpg",
+      "title": "Crossheads and Valve Gear \u2014 Cutaway",
+      "sha256": "64eca031c0d6e69557e7ee4fd602d9532aa73ddbcdff5e35990ce2aaf966ced5",
+      "pixels": [
+        1800,
+        1200
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "67ba66ee897eb2c05fa0c995a1abf83143f7dc2b5465eef611a475fc8af80047",
+      "display_bytes": 100164
+    },
+    {
+      "file": "renders/leonidas_ii/Engineering_Engine_Cutaway.jpg",
+      "title": "Triple-Expansion Engine \u2014 Cutaway",
+      "sha256": "2a12854b6088c9c4d4a76db85242a32528a0ccd6cc45c55e93822ce627f8d108",
+      "pixels": [
+        2200,
+        1500
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6bc13323f635a3598720a6f49ad2b354f7c28c37766352d50170b9bb3d4cef39",
+      "display_bytes": 142270
+    },
+    {
+      "file": "renders/leonidas_ii/Engineering_Stern_Aperture.jpg",
+      "title": "Propeller and Rudder \u2014 Dry Inspection",
+      "sha256": "a15729e41a167892f0e5560a2831befb17ab5eb5b22de842d29b7c37ce8cf33f",
+      "pixels": [
+        2000,
+        1400
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b3977a0c9191b8c58f85808718c9735deaed9340f15031bba92d5ee1060ba85b",
+      "display_bytes": 31244
+    },
+    {
+      "file": "renders/leonidas_ii/Engineering_Structural_Skeleton.jpg",
+      "title": "Keel and Framing \u2014 Cutaway",
+      "sha256": "4b527e6473016aace1f11bf6e4627594d02602b844b51931c30015205f40b1f9",
+      "pixels": [
+        2400,
+        1100
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "c25cab00e8ff10156c86232f73b06b64cb26972064e06227e8e26ff2e031986d",
+      "display_bytes": 70152
+    },
+    {
+      "file": "renders/leonidas_ii/Machinery_Dynamos_And_Switchboard.jpg",
+      "title": "Dynamos and Switchboards",
+      "sha256": "dfa9b1c1efeaffedeabe98fd223ab8ffe7de1e9961acce17724407274abce603",
+      "pixels": [
+        1800,
+        1100
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "cba003a04fd89fc008c2ef4d9263bcce64009049c26b75e74958e0ab17142ac6",
+      "display_bytes": 71008
+    },
+    {
+      "file": "renders/leonidas_ii/Machinery_Engine_Aisle.jpg",
+      "title": "Engine Room",
+      "sha256": "cb8b80bedcd869832b84b25ea5df424a6c66fa6ec9cfe9253a9cc8f00439a5a0",
+      "pixels": [
+        1800,
+        1200
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "45a96446a000b9ec71d3aa73dbe75f43d90d3e8752ba4de37ec6a63db43c8fdf",
+      "display_bytes": 71912
+    },
+    {
+      "file": "renders/leonidas_ii/Machinery_Feed_Pumps.jpg",
+      "title": "Feed Pumps",
+      "sha256": "1cf301f282af3e29dd4310fd81d9e8262aff7e6e70e9680e815f34eca3873b07",
+      "pixels": [
+        1800,
+        1100
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "eb7de7bacaed30f88b59970556b3c61f7833f419c077efbee7e9bd2663e45e95",
+      "display_bytes": 63944
+    },
+    {
+      "file": "renders/leonidas_ii/Machinery_Shaft_Alley.jpg",
+      "title": "Shaft Alley",
+      "sha256": "d037d13614aa31f50863ddd01750e0bd77f83899e7c176bd59a8b1b4ecb95726",
+      "pixels": [
+        1800,
+        1100
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "284d6e280889216211b04da73bd8397a25a701985a40b8e482cf3a0218797304",
+      "display_bytes": 38734
+    },
+    {
+      "file": "renders/leonidas_ii/Machinery_Steam_Steering.jpg",
+      "title": "Steam Steering Room",
+      "sha256": "a4fe274b7344ca7b3fe6583606f7d95330d7b3883861043f74c4bb93a0438318",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "189f07af2c3eb185895e5666297bf1bb6dee479f9c42e16053d5aed3ee4f82a1",
+      "display_bytes": 69470
+    },
+    {
+      "file": "renders/leonidas_ii/Machinery_Stokehold.jpg",
+      "title": "Middle Stokehold",
+      "sha256": "9b72d7254e731808076878e9124b1042b2450bb09353802ac3a0055bfc48ab93",
+      "pixels": [
+        1800,
+        1200
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "836e404e0cf3f5b064c1abf5fd6281a0628d847464fa8523062ed09e8b9ebf93",
+      "display_bytes": 66048
+    },
+    {
+      "file": "renders/leonidas_ii/Machinery_Stokehold_After.jpg",
+      "title": "After Stokehold",
+      "sha256": "1688b9259d5f62953cbb77f61e7070b47dd5e1979a890f091b49027834f07b42",
+      "pixels": [
+        1800,
+        1200
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "5627200dbcfe3856b836b04ec52685b8eba212cfded9a2427ac31987b4ccba9c",
+      "display_bytes": 69806
+    },
+    {
+      "file": "renders/leonidas_ii/Machinery_Stokehold_Forward.jpg",
+      "title": "Forward Stokehold",
+      "sha256": "d59904933653c22144d4398e6f40a84ea53babc8784f9e12d1a6f40c8b6b1de6",
+      "pixels": [
+        1800,
+        1200
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "789e96c0bf7640fb9ec691ee2e1d7a83c6e08139ba50272730544385bcc09077",
+      "display_bytes": 69698
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_boat.jpg",
+      "title": "Boat Deck \u2014 Roof Off",
+      "sha256": "6d5c496c217eee521890d59b148ff17d7ae2b84e871738c40673ce146ef80a86",
+      "pixels": [
+        2600,
+        800
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1e4535c233884740e06c261031936230a5898341019554167c767dfd9d42e9f8",
+      "display_bytes": 21012
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_bridge.jpg",
+      "title": "Bridge Deck \u2014 Roof Off",
+      "sha256": "7c3c8002b114146378252dc5f39b4147587ba6ddb07103e4ba88ccf61351f4c8",
+      "pixels": [
+        1800,
+        1200
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6ed49af74bab7fe09b817204a1e8473a7f789ac7d3f4c06da040467603e42010",
+      "display_bytes": 36478
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_lower.jpg",
+      "title": "Lower Deck \u2014 Cutaway",
+      "sha256": "16c260b1cf451a51e54d856ab3ad358b2171cbe7cf70278518015430bcb13e3c",
+      "pixels": [
+        2600,
+        800
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "eeffb9955165e84a42bd14bc739646deb31d81eae6fd4b75524eb1ce5d3aca26",
+      "display_bytes": 26054
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_main.jpg",
+      "title": "Main Deck \u2014 Cutaway",
+      "sha256": "6ce4a21bfbc1740055e913c87f7b16f5aa4b0f32e333ff173aa73d16ab5ea6f4",
+      "pixels": [
+        2600,
+        800
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "16a07705445b7b4d53fa4bbb70daec24c2e5c86d865ca808b19e5c2021ded694",
+      "display_bytes": 46890
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_orlop.jpg",
+      "title": "Orlop Deck \u2014 Cutaway",
+      "sha256": "f46d23568e455fbeb59837c00a64f217f60747c261d420fed810bd836cc3f8ba",
+      "pixels": [
+        2600,
+        800
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "d8824e363a7ad9412f7b761e13e83d418d1a69e125a64864638206677dc57a41",
+      "display_bytes": 25892
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_promenade.jpg",
+      "title": "Promenade Deck \u2014 Roof Off",
+      "sha256": "9c202dfee9a8b43b882cb1529d9b744f9c112f87c65fbe03a3380047876e5317",
+      "pixels": [
+        2600,
+        800
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e0371459334432bb4953371f805597120314b9297b95263a7d95dd1efafb7f5e",
+      "display_bytes": 25354
+    },
+    {
+      "file": "renders/leonidas_ii/Plan_saloon.jpg",
+      "title": "Saloon Deck \u2014 Cutaway",
+      "sha256": "b52cebf6d4a93ed749c8fe8a66ce42b22cbfd9e27e5ffe8a1aab6606c1e8892b",
+      "pixels": [
+        2600,
+        800
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "427b298bc6d8f773683019585d2ef8557d5d02c8e13e76e0f3dee9905ac3d244",
+      "display_bytes": 34716
+    },
+    {
+      "file": "renders/leonidas_ii/Supplement_Crew_Mess_Port.jpg",
+      "title": "Port Crew Mess \u2014 Cutaway",
+      "sha256": "47c61b4c3497e46a3bc5e4f4f415a9c210b2280a17063343be8b73d4b6263205",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9e5776c2554abe5a35a79e335499d567bef399225cecf5b12e7d92595864fc04",
+      "display_bytes": 70006
+    },
+    {
+      "file": "renders/leonidas_ii/Supplement_Crew_Mess_Starboard.jpg",
+      "title": "Starboard Crew Mess \u2014 Cutaway",
+      "sha256": "155a4f0683d714840ce293f5d4d40d2145c51fb86c2b5aab1c288e01cfe30bbc",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f70524019511458b029c6845f5c80f41e9eb98ff5960032f756bbf577df7537b",
+      "display_bytes": 69422
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Bunk_Ladder.jpg",
+      "title": "Bunk Ladder and Berth Frames \u2014 Cutaway",
+      "sha256": "287fa7f94623cade9dc6ba0807887e9683524695a5c54bf6d1f23587f8f5fc54",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1ee62789aa9f7f1313fc392ba54a112d7ec9e7183c7b7dcc372b544a3f82c25c",
+      "display_bytes": 33158
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Dining_Tableware.jpg",
+      "title": "Dining Tableware \u2014 Side Cutaway",
+      "sha256": "8c3b57dd42fb5b06688a4a1b561f9409082930078311a5634da2a08bf049fb52",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6b9c40570c6cf09387473c1861f527ae16ad6735922ba3aab0dc5eb6eb2f6b7e",
+      "display_bytes": 25074
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Dining_Underside.jpg",
+      "title": "Dining Table and Chair Supports \u2014 Cutaway",
+      "sha256": "8fa0ef0501df2aa1ad8b5d455ad9c1a1a6d1d373ef47537cc12609080f48915a",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "c0535086b85a17f8dcd60918cc78f40b49f05677a7fc719f9ca8af5bad71e787",
+      "display_bytes": 35506
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Door_Hinge_Closed.jpg",
+      "title": "Cabin Door Hinge \u2014 Closed, Roof Off",
+      "sha256": "8f33c5fb5a12ebca589a02a3a6aca9208f71deb05f74b0f629f46c8db24a1d31",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "5764c336b42fdd0da119248bd37c6157a0dbc778b7b007b825023c5859d76470",
+      "display_bytes": 14000
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Door_Hinge_Open.jpg",
+      "title": "Cabin Door Hinge \u2014 Open, Roof Off",
+      "sha256": "5b9b751c8bf08b419cdaec6d8fe5163e7c3eb6c70d2733e45b748e41c5eb5a81",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a785280978ab5ec3e2c0ecfd2af3dbab358469a1493b27dd7db9c0f785503fc0",
+      "display_bytes": 14122
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Hospital_Trolley.jpg",
+      "title": "Hospital Trolley Casters \u2014 Cutaway",
+      "sha256": "bcde67a972b8cc6de06ac2c6969f5bf74fff6117ec399535ac99cc090eedd5d5",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "72ecf5e50a6fe4121f7325f89a705a04d9801c204c30e88548ce79a0988eff01",
+      "display_bytes": 21646
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Pantry_Crockery.jpg",
+      "title": "Pantry Crockery \u2014 Side Cutaway",
+      "sha256": "a1776c2a852d5c7990ec4f6e4a5bc37b8d9e8bbc9e0749a3cd6fceb0e811a475",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e6bae910e7eb9a36c7d6db3929c4ddbfae9aa01ba7c5400a0b1d413c51098cc1",
+      "display_bytes": 17546
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Piano_Stool_Feet.jpg",
+      "title": "Piano Casters and Stool Feet \u2014 Cutaway",
+      "sha256": "773226ca447f731da947f7f0d11cb76bdd07be7b82bf16d545f1e6f6e78d2793",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b4050d8f20eda056286cca0ac212b8c00aae8dba4518c1ebd583000f5bda212e",
+      "display_bytes": 45450
+    },
+    {
+      "file": "renders/leonidas_ii/micro/Micro_Thrust_Bearings.jpg",
+      "title": "Thrust Collars and Bearings \u2014 Cutaway",
+      "sha256": "75b8572758bc1fc43179b48c89f6fbab0ebd366cf880d69f58bc267c49a931a2",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "c100f4ac38f5e73cbe6400986c9ab0b00225261693f60bc5f339630927df14c7",
+      "display_bytes": 28064
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/Detail_Exterior_Bridge.jpg",
+      "title": "Bridge and Officer Deckhouses",
+      "sha256": "a4dad9c21e3763538f80ca3b26575f0dff40fe1d3dc8f11bb8aa74af279a58ff",
+      "pixels": [
+        1120,
+        700
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "59d8846c2a131b96a670aec2134aa79f75a6adcc2f0e907f629030ae4778b93f",
+      "display_bytes": 50886
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/Detail_Exterior_Promenade.jpg",
+      "title": "After Deckhouse and Rigging",
+      "sha256": "b4c420df60aa62ca1cab149dad47cee039f387b5ad9e722af977271d7e27cd85",
+      "pixels": [
+        1120,
+        700
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "563558093555b207fe94dd0f903700ac0e18015c6c4a9daa666089c644645607",
+      "display_bytes": 52910
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/Detail_Funnel_Ladder.jpg",
+      "title": "Funnel Ladder",
+      "sha256": "fa7a7b1913ba9dfb14dc88897a410891d8d5347c732bfb6ae5330958fd23e89a",
+      "pixels": [
+        1120,
+        700
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "0c4e0f8d397c25a1df0f49c4647c819b574952fa9c898785273d9c67ab207345",
+      "display_bytes": 15274
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/Detail_Lifebuoy_Hook.jpg",
+      "title": "Lifebuoy Bracket",
+      "sha256": "2fa4d174342905805ad888f166416ee64367a519d91d4218e0fdfcf4831b7f68",
+      "pixels": [
+        1120,
+        700
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "d9ec7be1374adb1b56f2d5543e889b26b2c9dde2a5011ae0a500a1d6ca1fd20c",
+      "display_bytes": 32856
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/Detail_Mast_Ladder.jpg",
+      "title": "Foremast Ladder",
+      "sha256": "44a632b787d8190747203cc449635df6468fa7ad6ee56b4a379e8df3b331448d",
+      "pixels": [
+        1120,
+        700
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e92f286e99002f6ea787377d687e135504adc9741e4a4b8c6cdaf93b7ec4bc6c",
+      "display_bytes": 15794
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/Detail_Promenade_Bench.jpg",
+      "title": "Promenade Bench",
+      "sha256": "274718941ed437fafb953584b53f06c00a6335c0255a49f33dc44bf3e96c5668",
+      "pixels": [
+        1120,
+        700
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7175058bf0576d238cbc909ea656b1265fe5468c70fd3fe0892f4af8a5b4f21b",
+      "display_bytes": 34418
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/Detail_Wheelhouse_Framing.jpg",
+      "title": "Wheelhouse Ceiling and Controls",
+      "sha256": "bf3038f84a46526b4f46b19296c4c2e416c075ddc881b1fa0cb9e993b105cda9",
+      "pixels": [
+        1120,
+        700
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b7e1902449e1d25a929806d3cb260a6aa443b13514598f034909cf8f71f99b33",
+      "display_bytes": 47560
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A001.jpg",
+      "title": "A001 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "8be93183902731c2dd1da4a3ec3a8036b9dfed164520ca546d1376eb2239e046",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "85071d66685c7741c0f61677b43a72bee4f2327271f75e555195e8d804db9304",
+      "display_bytes": 13452
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A002.jpg",
+      "title": "A002 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "c6d5b5d18c7a477d1703a9c52d37d787295021c6dd0655f58a6ee1be208ce9ee",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "cb1c6be62e83b59c7d06253c66ac50fde2d4978aa6609997741c1c6a057e1f42",
+      "display_bytes": 13284
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A003.jpg",
+      "title": "A003 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "15ede102b78cb5d109baaadd1fe1c343ef909e863116f833f7a11f2a25f34e93",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "719544d77e38d550824bd52211901d9b145be0a60e2d3081d91d1df56fb9b87e",
+      "display_bytes": 13176
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A004.jpg",
+      "title": "A004 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "e7e857ee8f33de8e6d88c54ac6e7090c498d1f444b8d91aa5b592d69638ada86",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "5eb118532a60dbeac45a0b1171cdd34e9538ea061b72d57dce8fec626952d978",
+      "display_bytes": 12624
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A005.jpg",
+      "title": "A005 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "d686d7c426550073420a62e7e0675ebd2a6f4e8b8c69c65a24b992e0d82d89c7",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3e82eb951fc7531066fd7c215a61c16a87a916c5289928900ad1dc5356c688a0",
+      "display_bytes": 14272
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A006.jpg",
+      "title": "A006 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "4e2e5c118261c938e5e51dbbf5745af351a4d80afa3d8dbda8c4c999a24b6517",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "c7fa0820f4dbc0da3735569dd11c04d165e4f3b633ece8a6dbf63c711b1949b8",
+      "display_bytes": 12954
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A007.jpg",
+      "title": "A007 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "f65caf4477158408d3d657e7a983abb532259e2037ea930fde36d1becbc3edfa",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "cf243d30a39c82c049006776d692222b50bec1a897d4129c4dd054b9e1118589",
+      "display_bytes": 14694
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A008.jpg",
+      "title": "A008 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "07ef8b905f37f808dfdbcfb4cb078a376397aed49d08df3f211c8af868a609e0",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "2eccb0b5a18bf24edab8702aa921d2b9876185b8abcfbb40453f9301a0c7ad10",
+      "display_bytes": 13128
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A009.jpg",
+      "title": "A009 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "7f7c3001ddb06eb16049797ff40cf95ffb29703286dc3006a6bc12381ec5eacb",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "dc578156b3cf6d69e1ff52c262fc4ea8043ec559f9bc5297d74c732677b43e47",
+      "display_bytes": 13688
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A010.jpg",
+      "title": "A010 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "461d997c45307fd115f1f4608139d172552cc73e6241d0284edb18a7c0a9e4a5",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e4d91a8efe86ad4a671867d2c22d8d614a2b38ac8bad45a6affb0bf9db7bb476",
+      "display_bytes": 14062
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A011.jpg",
+      "title": "A011 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "7eceffad62abdb38b85156c470136cbddf2322e8765d4d94879ba20597047cc2",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "0ed7cf063f07311fc95e95582063d6bcbc09c5b192be816ca68faa656840d31a",
+      "display_bytes": 12984
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A012.jpg",
+      "title": "A012 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "818c25d31181dc96554223c7c1841c17ff2071aec1e2535b671608c0efade675",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7f4d8d313b5811cfdae29aa53dd3fa271b06f573db5e03efe65d3a68ca444f6a",
+      "display_bytes": 14768
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A013.jpg",
+      "title": "A013 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "68832413da4a4f293e1ac71e28fa520a43221d3916d32d64621e4c8bc946207e",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9a5bcebe5e37becec9f9b89d4bbb67b497847b8bbb6e35c7fdee24075969e93d",
+      "display_bytes": 13226
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A014.jpg",
+      "title": "A014 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "59d445cf1e983d3ccfdc6dadfbc75d49ccf6e35bbedd915f9bb7f6d6dced405d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6513e2b2290484d8c12f73cb004dd97f879ffd96b884766242cf826995e09a98",
+      "display_bytes": 13720
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A015.jpg",
+      "title": "A015 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "4a33a22c13ae209ac30225af51ffb852c6cdecf5d072de9a9f865052ac84f51c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "061e23e24d8c7c3c007272d77eea5dd1ee7be979ae1ad7eaa3df6d96805d5840",
+      "display_bytes": 14052
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A016.jpg",
+      "title": "A016 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "e00a0656ad257057a4b948edb8fb4442160b452494cb5e19377142479a590f19",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6216d0fe9df809edbe9daf9b117dd4c9747339f9f3b13ecdaa33249be5c274d4",
+      "display_bytes": 13468
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A017.jpg",
+      "title": "A017 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "c84b24e7fa843c0d3e8ba422a0cb517ca3c3770eeec3d3ea2554e7a6bdf0c159",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "44665d1b90f9332ce8ded18ff1441d46331835a404524c339817cdf6779cd348",
+      "display_bytes": 13370
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A018.jpg",
+      "title": "A018 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "0e16e9aa23c32a534c857ec0d90240a6668066e31a5c2cf3889feb25138a255e",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "85b02a97b8a2561aa3ae6392de8883818866f80d08638b6aa10620cac0dc70ba",
+      "display_bytes": 13218
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A019.jpg",
+      "title": "A019 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "d122509de94a776cff1aebd931c705bc6492493fe5d188121507b7c8b5a00307",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "2903d635369a6c4480dcf43cc81dee11cbfd10ff2529b5a7a11c1422c2d016b0",
+      "display_bytes": 12634
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A020.jpg",
+      "title": "A020 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "16337d641a042075e486616db27496ae6319caaca44c674843d074d61c8b745a",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "5f7584303c4c775d6fb9d53415726db2399e5ef74fcb527a3fb218a509434a7e",
+      "display_bytes": 14284
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A021.jpg",
+      "title": "A021 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "058f07d3cbbc2d8e531baf2a8b4f55d087883401f481151b30d54c3ec3005347",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "0ec8e240981eaf42e03387d3da5f7a39cf0f6a9a59da2ae68405771bca7ee689",
+      "display_bytes": 13126
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A022.jpg",
+      "title": "A022 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "1ef179ebfd826a44f7f98260ee9bcb8f741335aec81aec7a220137243437e010",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "131503f8337c4ee478b08ecc28b124e70aaa6c8cc15bf8c77a212015bc0e4c9b",
+      "display_bytes": 14286
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A023.jpg",
+      "title": "A023 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "230f613a549e33be5d967301fab7fd1b4303244ba374a0ba3bc1bf0311b6182c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "090c109ad9d2148f5771f799b13a0cdae714143baabd53e38dcec2864b3ea03e",
+      "display_bytes": 13110
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A024.jpg",
+      "title": "A024 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "54455be461a218fbc38280262694a3fd83d289cbdb9e0c86a3a675f47990b677",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "d53c8a0f1b95dc58174fce8e6bfd9f5f4f90ba0e90662c52e4530f42be075d8d",
+      "display_bytes": 13714
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A025.jpg",
+      "title": "A025 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "566ac68a641164a64821441478b3901588ca9004a98e6a307e66e6d9f1a44c83",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "aafa3b30e1d9672884de967aa118ba52393fe4641419a28bf6f7ef1a88a5c011",
+      "display_bytes": 14036
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A026.jpg",
+      "title": "A026 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "888c85afd42d8d8fcc401b9675f8a90ab19bb2b54dd3cd20effd277e3f86051c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "464f2c0a7e6a571e6fb304ed201e97bc25ae456d86d28cc72dd5908a909338ba",
+      "display_bytes": 13530
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A027.jpg",
+      "title": "A027 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "8fc73e14fe34781da8a5f54021f5b7e7ad52bf1cb7f8fee275ab16908c25f192",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "88924a7aa4c7da6b0ddca840082ba0c7a17cfe684bb3f41d4949d2417bbe8b2c",
+      "display_bytes": 13224
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A028.jpg",
+      "title": "A028 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "cf0c40e5c552adfa791af296697043433a0de95dd0a771538c889abb233fe9ad",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "d1155a5fab1200507b41d609ef20e3b1e247713196032beb95de7f847f711e0c",
+      "display_bytes": 13120
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A029.jpg",
+      "title": "A029 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "26df89b8da00bf8306b5e3d2c1bc32ac6ab75394bb25fb3aefb82a6eb30d4a6d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "fc527ad9517c55c5fa649729305b294a40fa9873fcfc0311a3effa798170eac7",
+      "display_bytes": 12568
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A030.jpg",
+      "title": "A030 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "3925761388f5d0101a0f64d4468500bc237da014e5eba9db2ee5cef29471b77d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "458165d51a9c032f07bc89eb833494659287bca82f50200fc2a2d7cfe4618908",
+      "display_bytes": 14344
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A031.jpg",
+      "title": "A031 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "51cf87f4f36ccb7604f20528ce858bbcf9917c46571668e3031d938c5824c392",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a40fac011f80a8eb558612fe82d1ba341940e9ae027139a46ae46e6ec65f2fd2",
+      "display_bytes": 13110
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A032.jpg",
+      "title": "A032 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "4e766f88f0fcc99f3eb326a051506b8eda07a465513521b79c5a1ab2403f1d99",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bcf7d1ee29494978522a8b42cbf119ee6ff75e33ceb656800cbde9e6f356254e",
+      "display_bytes": 14606
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A033.jpg",
+      "title": "A033 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "6ac52d69c93f66b84f4491422887e8a9450ad0df2c47440cc42f832a798dde69",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "72efbd679074c81504ceacf20b2bb800abbc546ad335e79531280c8b350ec433",
+      "display_bytes": 13100
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A034.jpg",
+      "title": "A034 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "6aca1cf7c96458202b398234d7ec325dea0047b4ae1c06a31503ed64e3afb714",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "93a21c70931b4ca1cf7f82c23f78032275b9b1926811ced7854582430c7f2911",
+      "display_bytes": 13708
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A035.jpg",
+      "title": "A035 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "5a09cd735f974792d46ddf7fd0cccd989ab7dab30e98b5fb543c0fa7c84387a7",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f39b4afb34b44294cb76fad3ba1fbc1e91e2915b0e3fa08f89847c1daba4f76f",
+      "display_bytes": 14062
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A036.jpg",
+      "title": "A036 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "e400140892e5a72f508ffafd280447554ded089fbacd764f3c7e1d90d661a001",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3f436b1db730e67b94fc65c00b75b7681406fb5538622f39cc6db195b59640d4",
+      "display_bytes": 13450
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A037.jpg",
+      "title": "A037 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "ef70b3ffe898949a98ca3d91935edb9ecd81fe07fdcd1583743983d189f6002d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bc6dcb2ac4508be28f1778a77a381efee619875af10ab743b884482a9411e0b0",
+      "display_bytes": 13336
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A038.jpg",
+      "title": "A038 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "5895bde8b2fae6390615dd981b0c93249f62d52e44535a59b7d277fb81048f2c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7aed48a93f17fa68fb3bdac3015f58a6d18f525ac29afcf55cce082552072f64",
+      "display_bytes": 13082
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A039.jpg",
+      "title": "A039 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "33bc240254cb55edfd2a93ed823a5c2b6b123680c78bf6bd451b7e0e0abc7cfa",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "09831b68468a854e77540f93c37ec753d4a31a2b7b14d8cc55927e470487cf11",
+      "display_bytes": 12644
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A040.jpg",
+      "title": "A040 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "44346857d2cb41aac4ff376c77203fa8242566880515e8b677574de0a419f07d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3fddf49453a8b64582ae0086033a3789a2b7326fce26559469350a879f763869",
+      "display_bytes": 14426
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A041.jpg",
+      "title": "A041 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "bb6c65e3ac1a7e2ae28413f32cb4ee1eb486297eeef2bc8c0bf7de8b72099ae7",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "43ab3a629952fbca6ef5c1cd28de9fbafc64239ef6bb40509370a711396a6934",
+      "display_bytes": 12942
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A042.jpg",
+      "title": "A042 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "cf9f19ea6835d1aacdeb9ca90c18d4ca901e0ca6b8aac7dfbd2ac59fed5ea4a9",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bda857ec50558653f02f2890b8a1b00aaa05fb61444373a68c9a0fe031fa82aa",
+      "display_bytes": 14456
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A043.jpg",
+      "title": "A043 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "9ea9f1af104ff97db4aca51ac2d29a540ef2ddb0928cb4859b4c5f25269bbe66",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "d4dcb2bb845eb8de0b62c9b08f7ed0fb13df5a3d00f344ad1aa7c5b361046ff5",
+      "display_bytes": 13108
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A044.jpg",
+      "title": "A044 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "e112cb0fa65bb1c38023a8da1e444cf20bdde87cc32c7e47e5b6fc9be9be85f0",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "712a51f51c072a603e0998fc195fc6bbbb6de76c2ef2ad0d201d6950ff151c19",
+      "display_bytes": 13728
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A045.jpg",
+      "title": "A045 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "00e26fd63a1bba9ae718262a7f67da285a1ddd743efc74a33ede123565c6f85c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "699914868f2ed83f49323d27fb932169d1e5d78578144dd1e1d2f205aabca6ee",
+      "display_bytes": 13998
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A046.jpg",
+      "title": "A046 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "e7c5a14e7a779126627049b073522b075a0f4fbde1ea73ecbd8e4c9a1453eb43",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3565d7445318a93914533538d4b2909de72393eb6a703ddeea666e86599e8750",
+      "display_bytes": 13410
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A047.jpg",
+      "title": "A047 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "9cac72d5c489e029c2002c1a3d9f472b69b0723787c952b30e9815d4516e7da9",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "faac9c31cd173b040ee22f3708218bbfb2c5b72672d78cf52b4cd7f1690774fc",
+      "display_bytes": 13198
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A048.jpg",
+      "title": "A048 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "1d2630dadb2bd30efd44cca8d9e417c0fbb6aacd87c6a426f20aa196c545446e",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b1d5c7df69411d4d387657b4f7aab5f15002ceaac680d34404653808b073ce89",
+      "display_bytes": 13122
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A049.jpg",
+      "title": "A049 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "7ca9ba7c2a0f00564b4be6e96180c1dced9055e76b5d99f4b7a4fc64dc68d541",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b2120c93c9643c4ee8cb8981e1bdeb0123b4f7dbf6d831063bebeb75d98acd07",
+      "display_bytes": 12566
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A050.jpg",
+      "title": "A050 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "ae6e2650dba7e45991fcf8d22c89b6b2ba444f86d9be13394e99ae86e7c279fb",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "851d98df5ac3153ac62eddea3ab71ccad87768e1f065b8c37c05a33f69823e80",
+      "display_bytes": 14386
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A051.jpg",
+      "title": "A051 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "b97aab3a54694b0b203b3bfcabeff9f2dbb4eded0102874e2a820ac071b278d8",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ee57b1bbcafae2a6538052f51f6d36cadd902f1af68c3f34808befeaf3c30a23",
+      "display_bytes": 13136
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A052.jpg",
+      "title": "A052 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "63ab19dbf9975242a96020a926f79af51fc776b21bba7635492c494931644001",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a5d21686b30ba2b5d2e7284d7cf1c7bcc2483b2b04c1c3e026a9f06aedf5ca19",
+      "display_bytes": 14412
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A053.jpg",
+      "title": "A053 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "5f4e4f617bd9d1f05231a6a8a257e8330d9d5af54f2aa0585b653a5ccb1bb06d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "00c1da00481d60bc4e4b36e9f1e7bacd21a48bca6b5989a3bde9ab77f455ecfc",
+      "display_bytes": 13120
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A054.jpg",
+      "title": "A054 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "55e41129cf9e62b4ddfc4a851b6cb3537171d16e6033571e6a41986749433b2d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4da02ee05067454bf0bbbfb1bf5af76f6aa36a5de9018136e8fa953d7996ef44",
+      "display_bytes": 13796
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A055.jpg",
+      "title": "A055 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "7910b5c783af5119ca09ce4ccb84d310929063cb17cc39fd3df33934becd5df5",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bd26c4952d40c02bc21390bb61964c115fac82941e7c7aa5fc438d7b605f4ba4",
+      "display_bytes": 14024
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A056.jpg",
+      "title": "A056 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "edc190d9d539b1378c0f782c1be524b59dbc7ad33be5d10c851dffa5f075efd2",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "fc2b7e01644a37e88ee9636110270b848229f41c67018c5ca7354fedeaed9dd0",
+      "display_bytes": 13626
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A057.jpg",
+      "title": "A057 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "b26394d99d55eb3cfde4751400a08f645855a3fef227b9d99983847fb6d8e136",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9b210e2405fa0e9b8a7a8d6c2ed28b9565fd7ba79892012f6a8b7e920ae3e7d3",
+      "display_bytes": 13330
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A058.jpg",
+      "title": "A058 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "cac1c15d843c186d6f7cbdc2ad87ec7da3b7f07cbbd80784f3ce764ba151790d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3060fd7f85356089d6ab5aa43bd1be309f4dd21df2c0b66f665c1a9425150551",
+      "display_bytes": 13096
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A059.jpg",
+      "title": "A059 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "f0fe0480122a480fb395351b1d440cd12d73306eb5de90cada87eb231e1f11ca",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6ec378d7d0e88ae7285a097132e52b6f3cb512c92ea40cd3e03c823987dad92f",
+      "display_bytes": 12578
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A060.jpg",
+      "title": "A060 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "07f47a69cc446ba1f73ad3bed62e3e1cb74bc15c4d2952472f123c8ad12e5a28",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "039ec7db45b09409f21649955905a3e8023e6103ad8504851eef1d40d6b3071a",
+      "display_bytes": 14354
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A061.jpg",
+      "title": "A061 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "bbe61126c37552a1bf58f0042a7557fe14a50cd8052c272d44ad234b7e311572",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "0b0e76e3a3065b35c6b5a742bf3d888735d0154d791f1f4a9f3bca66c4d8ec0f",
+      "display_bytes": 12958
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A062.jpg",
+      "title": "A062 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "b3268a4f194746fc31886151775bb36b467a5434549ec190b98b04f2ed61dab2",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "965613a011f07f02aefb1a8c2672dc933147cd593a0962ece255342e7f7c3595",
+      "display_bytes": 14626
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A063.jpg",
+      "title": "A063 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "b58cb81c3b9d4b142b3a5d34d1af4c964caf8906ac5508d92cc6d0c443394b78",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "73104f55ef992098573b02942b79fc4a6c750c3c419443baf7de4d898130afc9",
+      "display_bytes": 13240
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A064.jpg",
+      "title": "A064 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "f9971ba17010c0304c7ad6069b3c2618305dbd32ed63110f164d81885ec0fb25",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3b289365b50265510672686a779d05977c06d15cc7ac610ba052e17fdcb0a49f",
+      "display_bytes": 13720
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A065.jpg",
+      "title": "A065 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "3de8192cd9d52f5c5b7865f8dd275ae82e5e3fc0c38b3aa6026bed0091b1ed01",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e45df7861926005ec7f533355479bd8ad6aaf76fc2cc70eb47cb7110c06329f1",
+      "display_bytes": 14042
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A066.jpg",
+      "title": "A066 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "5bb6f115ed9a45c12ab27378138dfa99be194a5ff6990829c643dfbf30d4d5b0",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "139988aaf947a03d34c85be0fce8fb614a14f2d472a532ac3b0bdfc4524a1a86",
+      "display_bytes": 13422
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A067.jpg",
+      "title": "A067 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "fc8a8c9f4ada57d18c9cd8727715c122ea7365b3f86b585d5835b7b8849b6d52",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "720f06b11263679a42b9eba4e1178a970451228546d146499482e10478982a28",
+      "display_bytes": 13388
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A068.jpg",
+      "title": "A068 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "191ec8ccf1b8fd82ae0dfd5a6790586c280606643ae9fe092dd82e460d8b0d51",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "46951ea8cdd3d0477743d7301fb118df0de7420ca2f25cf304fb4f84b6b00f5f",
+      "display_bytes": 13120
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A069.jpg",
+      "title": "A069 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "a029c8888185eda93831af09aefaea87c213ebf0ac01b4eef501df5417778686",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9c7988b3a4ba9120c6bc9fc7b0cd612e9a42fc9cc87cf75294c62989180ce2bd",
+      "display_bytes": 12516
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A070.jpg",
+      "title": "A070 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "cabd3e25927f90e11e8722148671ba6a40e43d7a6b5d801f7b0e6cabc8acdd17",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b2a994bd99b2099f7962f5e20c14d22bdc46899ffc7cd7352fe0b04600ba6bff",
+      "display_bytes": 14324
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A071.jpg",
+      "title": "A071 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "fa19d094d69b7b6de5c89185cd27bed16f47c8d7faf55a04c727eeb1b5d7473d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ffd67a3d444c012472a5f8bf8ec00660557b6c90ef30a95dffcc85bb69d09951",
+      "display_bytes": 13058
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A072.jpg",
+      "title": "A072 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "44e777bc5d90e0baa3f5b2254e4cad14847bb9f393cd0992256be884c4e06877",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b686afa5a4210ed8fe5a68162e6b8649cc3523fe6bc49529b52aeb8210db3f6b",
+      "display_bytes": 14398
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A073.jpg",
+      "title": "A073 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "7d8a4e6587bff6045c5758d5f56bdb552c33e44080a9ed6af0d9eec3dadc5b07",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "89357e91c6c27bdebf20b0b4f95faf13361ff21e5889a0ba67b60fc7780a2465",
+      "display_bytes": 13064
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A074.jpg",
+      "title": "A074 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "b9446e3a4f1e569f22d9040a8dca97565c2ccb7d7f8808e757ebbd5d6d97cf05",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7f0c698cc29d8f1abc2bcd78d387cb0a0115c881e8aaba9dbe7c89ee313c63c2",
+      "display_bytes": 13656
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A075.jpg",
+      "title": "A075 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "7a19e139e8184d339be78ce3a44593acd262321f815459339ea41ed4d47e6b90",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "539624c28fdfec6e9349c86b9bc608f62c4c6d62c1be212a546bdd5ea5db5e8b",
+      "display_bytes": 13986
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A076.jpg",
+      "title": "A076 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "743f72989cb99cd977d7065ad63dd97b3d9d1d8d1731f752dc06b78d4ff85c26",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ff883d7c4d54f0487bb8bb981d918e6acc48f70927314017fc0f82fbdbf8568e",
+      "display_bytes": 13486
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_A077.jpg",
+      "title": "A077 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "30052e2dae3e21fe1bdf7426bbde3de6404af74620c3c850ee694067edcc5889",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b4850851504c1a5e9a2e5db3bd50b5b6e649605e316a673b2e88a1f8b6cf7984",
+      "display_bytes": 13224
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_Captain.jpg",
+      "title": "B_Captain \u00b7 Captain private cabin \u2014 Roof Off",
+      "sha256": "5e52d648b5500fe782ddfa6a9b4b96c7fbf9a7692b2e7cabac10f3a32e216078",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "8decca499615429eb8023c830ecad0bbb3a6082b7554d96ad82ab970d8b1e736",
+      "display_bytes": 13532
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_Chart.jpg",
+      "title": "B_Chart \u00b7 Chart and signal room \u2014 no wireless \u2014 Roof Off",
+      "sha256": "e9b1d9e21fb9c6094501b7666be9aff738b6b5a8714368e78d0c282984b6f90e",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "15df70429365b502ab3ccb2cefe99ebf13dc1a5fb6e68e4bfd900518527a3b65",
+      "display_bytes": 8762
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_Chief.jpg",
+      "title": "B_Chief \u00b7 Chief officer cabin \u2014 Roof Off",
+      "sha256": "5383f80dcc7022cce34b93aeae4b57aabc67f8381455adc3bfd7ad7e68c9c42c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3a670e41062346efb12a05eb2725bcfe98734cc68d4a54372fbec7d9596e64ea",
+      "display_bytes": 10516
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First098.jpg",
+      "title": "B_First098 \u00b7 First-class deck cabin 98 \u2014 Roof Off",
+      "sha256": "d6e0e1caa553f650fcdd9cc59b7c59213c184555b59fc8d6affd1836281ec4b1",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1c61a57b430cd483c0d165a8c59d85705bb1955a213fc52500ee01377cd28f6f",
+      "display_bytes": 15658
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First099.jpg",
+      "title": "B_First099 \u00b7 First-class deck cabin 99 \u2014 Roof Off",
+      "sha256": "58401f78d4b8a0e03017890441b7f08545f57d5f16e27429a5d13447a3f24185",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9217f01520c15f1e55567d818c32017b7d26a3dc5de20f71a7a53ae179f9c52e",
+      "display_bytes": 15344
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First100.jpg",
+      "title": "B_First100 \u00b7 First-class deck cabin 100 \u2014 Roof Off",
+      "sha256": "cccbe02ebce4e12e34701ba5b5ce2424810030d2a4969742e519365581faaa87",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1552606acacbb9e2e0fbc98d53078196cee1e6e2ad881071d376cec70f90da90",
+      "display_bytes": 15962
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First101.jpg",
+      "title": "B_First101 \u00b7 First-class deck cabin 101 \u2014 Roof Off",
+      "sha256": "783852393e99871dca293ed481f6fc54e3ce4d0d6d71a575f809e55e1d1c972d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9247b4d0d8de9f093ce8605caffd4a6ae91f4f9ef37d5d3b35f4d538ecfa11be",
+      "display_bytes": 14608
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First102.jpg",
+      "title": "B_First102 \u00b7 First-class deck cabin 102 \u2014 Roof Off",
+      "sha256": "e7e03442441e8ae66531997eb377686b41c7ae293f37369005adf561c30a1d07",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "047760881f985339d60269656bc2a88a9cddf30bde5dea3502a66d11c9b2f8ee",
+      "display_bytes": 15516
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First103.jpg",
+      "title": "B_First103 \u00b7 First-class deck cabin 103 \u2014 Roof Off",
+      "sha256": "ebf06aa930111fe0f84f370d2d59e9a1f92653c3b6b07973367b6adbb30fb1a9",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "dc2578a3d0f7e832a3c88beb7acc4b0c21b5112fd7a59b79e8932085f49669e0",
+      "display_bytes": 14866
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First104.jpg",
+      "title": "B_First104 \u00b7 First-class deck cabin 104 \u2014 Roof Off",
+      "sha256": "c43982dca5c25b12890b28e253e572a20a26c2379b8eaac8338ed1607b1bdb5a",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f4ac31d731d0685e6ca1783930d87ed84b5194ddd6c486fa201b29c434faac15",
+      "display_bytes": 15320
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First105.jpg",
+      "title": "B_First105 \u00b7 First-class deck cabin 105 \u2014 Roof Off",
+      "sha256": "959d93e2ae70b87c19015f0a17cdd08a4c88aa64ce0d616a39e01bda8093e573",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "c9fd7ea87f133de76ee65f35f12390fe64ff9790cd146572943c32041468179e",
+      "display_bytes": 16988
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First106.jpg",
+      "title": "B_First106 \u00b7 First-class deck cabin 106 \u2014 Roof Off",
+      "sha256": "173eda57feb8b5cb8fd348c9fcf431dd1c7b2085fb363bc5bab50643772b8c0d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b2a0e3c8be60d64836654ea3225c82d69fd2f5404540edaaf74748b1c8baa629",
+      "display_bytes": 14724
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First107.jpg",
+      "title": "B_First107 \u00b7 First-class deck cabin 107 \u2014 Roof Off",
+      "sha256": "d1dd684b53e567441e0c494748030c4d3cdb5196879ce8719d6843993008d17a",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "63835dad6aeb147edb669474a338e33a3ad3a250063e7974a19ab88a3ce4273a",
+      "display_bytes": 15242
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First108.jpg",
+      "title": "B_First108 \u00b7 First-class deck cabin 108 \u2014 Roof Off",
+      "sha256": "385430751b8d33c87265ed9e34acaef75ded94c736b491bb892b4ee65a52c02b",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f7c84eb17f3821cda1f8b2aaffeeaa33ec9355844ec2f75b975df39cf90fbbe0",
+      "display_bytes": 15810
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First109.jpg",
+      "title": "B_First109 \u00b7 First-class deck cabin 109 \u2014 Roof Off",
+      "sha256": "248d2453bac4423387894e1f3155024dd8f332521ddd6f4828eac47c3e054ff9",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4b54b51e3cb876db7c9f88803a0f2833608b423d6d031acd3858ee35a6a54767",
+      "display_bytes": 15330
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First110.jpg",
+      "title": "B_First110 \u00b7 First-class deck cabin 110 \u2014 Roof Off",
+      "sha256": "1fbbb3131346b46287d24d88f7a65a275695f9819767ea00bff525b226f42e77",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a6e5d86dfaf8007033bc2a2013540cb4c0c367dee77f8575ee9bd70fb0bb8903",
+      "display_bytes": 15910
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First111.jpg",
+      "title": "B_First111 \u00b7 First-class deck cabin 111 \u2014 Roof Off",
+      "sha256": "a3fc26d7002d54f03930e10505f029bcd8fb9f7b176d595bd26821a266794b09",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "079ce37a28ca603ad0e988583ee0981b2ff1a18f3725855df3523476b87d3d45",
+      "display_bytes": 14422
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First112.jpg",
+      "title": "B_First112 \u00b7 First-class deck cabin 112 \u2014 Roof Off",
+      "sha256": "0d847bfb156cabe2c0d4ee1bded60bfa05fd7cccd0c4b99f8a4354868477404b",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "849e320fd1d564cc8d2075f73987f157e76ecc7251229b4c00dcac326e33e114",
+      "display_bytes": 15616
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First113.jpg",
+      "title": "B_First113 \u00b7 First-class deck cabin 113 \u2014 Roof Off",
+      "sha256": "4ab41e6b821634a58bafed05834678fff1ec1a4d2baf0cea5975ad2f1f31d732",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bd1e515bebb64dc3c33087fd258c3d8456f754ffb08a8aa2f0cc5480732b9bb9",
+      "display_bytes": 14826
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_First114.jpg",
+      "title": "B_First114 \u00b7 First-class deck cabin 114 \u2014 Roof Off",
+      "sha256": "98eea8d5cb0ca54de3cf354a1f48b5418c1a3e12cfc13cbdaaace0384aace1dd",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "5605463e725c5cd9fa84faf64acfad03abf61315edaee76a5c8c49b470d42e73",
+      "display_bytes": 15392
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_Navigator.jpg",
+      "title": "B_Navigator \u00b7 Navigating officer cabin \u2014 Roof Off",
+      "sha256": "915b94f42ca07775e2065f18faa1fa71698d3e15de8f9d84849e64e05eaf5750",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f2f43e7d5956746e7a451c21de77393246128b6810b50ce7b7e6f795101620ce",
+      "display_bytes": 11784
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_Officer_1.jpg",
+      "title": "B_Officer_1 \u00b7 Engineer / deck officer cabin 1 \u2014 Roof Off",
+      "sha256": "b6bd6a3430bc711944685f177fd82c56e8125800f97ff7265ab983fd42bd8b8e",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "842c42e4f17f1012253e4d6c672ca7d37ebc9505be18fc01131238b143f9ef82",
+      "display_bytes": 12042
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_Officer_2.jpg",
+      "title": "B_Officer_2 \u00b7 Engineer / deck officer cabin 2 \u2014 Roof Off",
+      "sha256": "6be69f8be36fcaeccaa1bead611b3e2023c7a2279a89857967c8b439e048c3cc",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "97253a06e6926a8724fd955c65edd8ff649e0fd1490c3c42980572f6f33772af",
+      "display_bytes": 12504
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_Officer_3.jpg",
+      "title": "B_Officer_3 \u00b7 Engineer / deck officer cabin 3 \u2014 Roof Off",
+      "sha256": "027a2b8bee680619820c26734c514abfcf7b95a08442e177224691e3ecf0231f",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "22f199c0620695a32fc5c7ac507a3a92d7e6c9fb2935ef4a644e533adbaa278e",
+      "display_bytes": 11692
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_B_Officer_4.jpg",
+      "title": "B_Officer_4 \u00b7 Engineer / deck officer cabin 4 \u2014 Roof Off",
+      "sha256": "0e378e79b9c5a607ff9e51e246dfd570e9af4cbc70738729f75b1d24f5570cb2",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3339db766b74ffd443f11d461401417d0ddf3ea06516377aea143f89203a3730",
+      "display_bytes": 11816
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C001.jpg",
+      "title": "C001 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "a0e2cd40d3cd83783330fac0fae4ef765651c01b4d2f0a88c1d347a48714c5aa",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "2ed8fdfa77f1b02d78557d5a8da78540e4f088c0a72185af9c7133ca067dfe50",
+      "display_bytes": 13810
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C002.jpg",
+      "title": "C002 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "5661a06b456f9a54a6c9ee3c173df2f29a985f8e600a8f6052a0055e6825e7c3",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a1528a53f50e6e52e918a38756576b20f6ea1790cc41b2fcefe19c5b295c731b",
+      "display_bytes": 11446
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C003.jpg",
+      "title": "C003 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "1db22d76d072ace45f7b63c5047a6072d8584d7d7852824e869be72d00c86bed",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9b31a17a5e4f57842f4d76c4956d7aeca4cf80e126dd445622555fe10059f4c5",
+      "display_bytes": 13498
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C004.jpg",
+      "title": "C004 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "0c8322822e2f550cdbda842638a466e151415fbc4525a4b9edc2a90fc5020045",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "c69d2b88c1060382cbfd624f0d8285943d0f854a763bb682bf53c5aba3ba8f23",
+      "display_bytes": 11832
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C005.jpg",
+      "title": "C005 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "b0d53cfbcc65f56d637a4167cb7b05ef6368121b814a92270c1824357eb97f3e",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "cfe5f7e23e4b9101bd5f1e6ddaacb6725ba4a70b286391ecc7ca1d79de578b65",
+      "display_bytes": 13632
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C006.jpg",
+      "title": "C006 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "745f235775696d3d35e94adad45af60eba5e2ae26953233dcbfabf82cb93203d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "fa4fec6679a76a3c852569818cfa701802111e4b1731e2e24cab0cd9fa6b4c2e",
+      "display_bytes": 11836
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C007.jpg",
+      "title": "C007 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "fbb3e75b53a147fce6d1a3c8fb6d206bf6c469361b2cfe72270ea107545b32e6",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "807f46d1ae11319698b182eef6679629fe82ed16272079bd4bd44ed19f4d5c3b",
+      "display_bytes": 13866
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C008.jpg",
+      "title": "C008 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "24c13eeb63265c362d6235fef62dc7378f8f998cf66a7b66730b4aaf2c40d6e6",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "79bd942807d6ae15320831fcb7e19be60170e026619ec143cbc55a674cb4fc91",
+      "display_bytes": 11480
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C009.jpg",
+      "title": "C009 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "ee6e4b2eea1955a0c42686aadcd34a8f556e37c948aefb0d66745263a928a322",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3c7fb5c4afc70253847a6f847561d5087b36a049bcddf1aa50bc5e3292bb51fb",
+      "display_bytes": 13768
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C010.jpg",
+      "title": "C010 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "c582b2250636aa0e07a58796ac46c8f946dbc5ff43786fdfa1a9cbdb73cae92a",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e6eaa9545732f99ac19574bf373c7af8d09322c64662922e77f1c78c6eef22ad",
+      "display_bytes": 11404
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C011.jpg",
+      "title": "C011 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "b59c92ab2aa00f62704e1fb45553fca9dd9261edf9c3cb359b3222c0412b68d2",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "410bb6ca3fb083e2d2b25a6083eb2a2c994310baa4faca6166d07efa64fc50f1",
+      "display_bytes": 13878
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C012.jpg",
+      "title": "C012 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "f345aa05c7f6a57462bd8209a53f01218b84fb61caf7b8c8dba7f4353b43beec",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "67e54248911ee62f25d0a2afec6b5112e4f31f98d61b4304d76c1b4f5bac154e",
+      "display_bytes": 11452
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C013.jpg",
+      "title": "C013 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "d82415ae6cf76f83a7f55b5232f98f07a0110636329edc3f4e83027c9b5bf437",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "58edf46ad41dd3c8e74305face26cec6f469a166e11d6360ac9b8a4fb450726c",
+      "display_bytes": 13812
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C014.jpg",
+      "title": "C014 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "ea25a926222bb7d2a89ddd50b0ed601ee96171b206eb527f12497448c5d49689",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "059608bd3d86490410cb710f8bd439c8a774ccefb2109ffeb44f11667bfebf3f",
+      "display_bytes": 11760
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C015.jpg",
+      "title": "C015 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "086b829a0fe8c57aac9a904c6a2e9801ce1821bc9d785644e65031d1087dd842",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1104d6bfc256183e98b6590310f156086e39ff132ce7aaa54fbcf2bf3bf93df7",
+      "display_bytes": 11518
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C016.jpg",
+      "title": "C016 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "2830e34188b657fff089097b651e75d4945c43f735f6463837ac8fb257e173e1",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "e4b22bbfb210718b0f23ab7763225fc9cbc1e67e4c515160f733c1e232075953",
+      "display_bytes": 13942
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C017.jpg",
+      "title": "C017 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "b38390cd014a8b5f16874fea497f4038d1791dbc3130bdddcbe1c244941215f3",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "29259719c0b962ffe7b91ca5b9798b5bc19cd732fff097cbbc82e358db11bb8b",
+      "display_bytes": 11430
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C018.jpg",
+      "title": "C018 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "23d2399fbd33c55bfa62e83f22447942be1297650619267e51997458cd3de686",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "dd765589b608545923797d2eb753fb947ed66f6b224d685e7f8c4e8815b5e41a",
+      "display_bytes": 13616
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C019.jpg",
+      "title": "C019 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "0be8257fede5029130f0df2fa904ae6d40913664b7ccf9ee13bb6f480602fe4f",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3da1f1004b193badbd0f6da23b81b66c97a5eeaa8cce86909b42e97c9086c053",
+      "display_bytes": 11788
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C020.jpg",
+      "title": "C020 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "351d36019e9dd4093bc29019e434f6d94d43fc2db51f398bb6cc336d7e7b7284",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "af465e9a65b9e550711a4a3011b2ec443f833d3d4b289a7f65ef90c525c558a4",
+      "display_bytes": 13710
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C021.jpg",
+      "title": "C021 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "595e23b74cc8570a083d8426887657d501a358a1c337e44e9f24b1110e1a76c0",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a8c5067080714d7862606d91601dec91d5113f4939f1d242a3fdaf3fb611223c",
+      "display_bytes": 11814
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C022.jpg",
+      "title": "C022 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "aa5fa4ac5ae6c7a6cc9ef81cd8b4ce1a10ab528286ae00ba9e0f490e53d704b8",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6af259af5ee63fc922789aaa7a70c9b51624966914578fe8e1eb341b1ff1a09b",
+      "display_bytes": 13766
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C023.jpg",
+      "title": "C023 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "6a948f4ad3cf55281e86c963cb544f862dcca5078e19950ef9d18983b8f703d9",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "08080c643502391e6f593ce8167125076310bf66fb996e0a3b6c50ec6af9886d",
+      "display_bytes": 11468
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C024.jpg",
+      "title": "C024 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "4857037f7b98d52aae34fb233db6f4f08c5faa2a3b4f62b29bf0b4287ed40f55",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9ef1ff8c249d1ea960682c5aeb6b6df8339f0661c2bde59c8b72706bf7c757cc",
+      "display_bytes": 13952
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C025.jpg",
+      "title": "C025 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "fa11d361a6e74ce09f12dce8336b56d6b883a4a93c5643a289f7e806d84a62a9",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "2cb832112408e253259230bf34f86f59fe840290d3cf46af77301a9eb36f699d",
+      "display_bytes": 11498
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_C026.jpg",
+      "title": "C026 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "275c9c63d1da959363221f81f1eea3a1be04037008776cf44b69c4997b7e807b",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "16d8126d4f89dd29d090fbc18c84b450bde00ed0ec501c5013bacfe2e5dd1abd",
+      "display_bytes": 13972
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_D001.jpg",
+      "title": "D001 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "f82db9383fe6790a7889d1128a8076808c3fa423f2392d81dcb07e78f21ffbfb",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "801530a442c7e5035c9ef1f459e664430085ab3608409e48fa9341705961eb48",
+      "display_bytes": 13442
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_D002.jpg",
+      "title": "D002 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "43e96452ccc8aebed3a5988ca72d9cc9bc06d60ef7ae59f71b07c5c727350243",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "8d405f0b0291e839d69828e4953486a7460626e293a0e540c99eda2c7668c255",
+      "display_bytes": 10728
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_D003.jpg",
+      "title": "D003 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "344cb79844145ae069fcd9c3a5538e548d999340230ac868e8a43042dd7786de",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "67dee97721f4946e6c78ae70337f9d11408a7520a64d7485a97b4bdd5575ebeb",
+      "display_bytes": 13236
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_D004.jpg",
+      "title": "D004 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "5ac9cfd2df53b1a32a2ef1480e8ed02ff945ac3a21ec8bd7c62e6d0a5053dc9a",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "c096a644956149c9fa8ea3bd4c5f940cd0f20c550631b19cd4f13953403d8085",
+      "display_bytes": 10998
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_D005.jpg",
+      "title": "D005 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "ea071d1143ecbd6bfeefb89650d66d77223f4feb6414c1bb93267343555c3fd5",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ae35df76714082a3fbfc670f22817650fb2815cba2523f71b3bf0cbf699335b2",
+      "display_bytes": 13252
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_D006.jpg",
+      "title": "D006 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "ac42bab3cf24faff3838d7fa49628795cfa7580f10ab79781983e5c10c5207fa",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a9dbf5ecda8df6548b64031e2647d1cf9d440a23c7cd723d35989c890f5e7c45",
+      "display_bytes": 11048
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_D007.jpg",
+      "title": "D007 \u00b7 Second-Class cabin \u2014 Roof Off",
+      "sha256": "b8ca55bb6bd2baaad7523a52a4636a4ed790b3c90b0be6a8db47d96b0c85f84f",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "fac41d6632ea6ff0759bce17a835e6749527497706859012ff01e24afd2429df",
+      "display_bytes": 13140
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_E_Alley.jpg",
+      "title": "E_Alley \u00b7 Watertight shaft alley \u2014 Roof Off",
+      "sha256": "d21839516220d72ba2f9b56d18a15acb6627b80dfb5c62b84b7e2aa305bafc37",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6424799051aaa34123868a727f5652fafdf3738e37b2f8cd841d28f350109366",
+      "display_bytes": 4380
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_E_Boilers_A.jpg",
+      "title": "E_Boilers_A \u00b7 After stokehold \u2014 Roof Off",
+      "sha256": "fd0e5566bf3ddfcd316a50ebbec87833ef054c550a69522407d914c5c04c7e96",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "70c32f46608dad965eb57bbc845d3b9ca1a798bb7c901476bcf3e965e1dc0140",
+      "display_bytes": 13628
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_E_Boilers_F.jpg",
+      "title": "E_Boilers_F \u00b7 Forward stokehold \u2014 Roof Off",
+      "sha256": "d1549501c9b878f63360f1db3c8e2ec0c49227549797907375aa9dedbfb96c31",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4bedfaaa286cf7065dd912babbc7c8af4018fd338cab2d4d148c370907ceb4f2",
+      "display_bytes": 12544
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_E_Boilers_M.jpg",
+      "title": "E_Boilers_M \u00b7 Middle stokehold \u2014 Roof Off",
+      "sha256": "8d58daaa8d4eb0df3cdc99fe15eea7aca8fb36fa959583aa33896ace18abcdb6",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6c135332e6157537891a184a8e5419c45f0ce934ced2f431025f2a7aa77663d3",
+      "display_bytes": 12878
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_E_Dynamos.jpg",
+      "title": "E_Dynamos \u00b7 Dynamos and electrical workshop \u2014 Roof Off",
+      "sha256": "89480989c382d0c9fc96bdf359080fe971a1ca56effa942a38b302d6eb2260aa",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "0e31c7c1d720c8d476b8d6eacbcd75fb3ce6da4413895f25e45fd80c93adc7bb",
+      "display_bytes": 21380
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_E_Engine.jpg",
+      "title": "E_Engine \u00b7 Triple-expansion engine room \u2014 Roof Off",
+      "sha256": "27846e8339c51ccc1eeaf28021d4e1e9be31a1c23a0821978bbb09b2e9cc6450",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ba1fa5cdd5813e044d53ff9c9dd447f1948e877e273d891a9ba8ab9513bee635",
+      "display_bytes": 15886
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_E_Pumps.jpg",
+      "title": "E_Pumps \u00b7 Feed and circulating pump flat \u2014 Roof Off",
+      "sha256": "6b729f50ddfed84f5bc1cfbb0ab49065e1cf453d7dfdc7f532f12ea2e4e7cee2",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b925ee895b94467a7e09f7524bdb0de60960e1bf3338377f220a601639ab1b50",
+      "display_bytes": 18918
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_L_AfterStore.jpg",
+      "title": "L_AfterStore \u00b7 After linen and provision store \u2014 Roof Off",
+      "sha256": "b98a7dcbe630320b903cd43f5636a91394d2270021c081a1b72dd85af36a06a5",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4378bd25eade69b0a1659f4693f4b7d611720e6ef29750c5a1a7c2e799c19c1f",
+      "display_bytes": 10448
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_L_CrewP.jpg",
+      "title": "L_CrewP \u00b7 Stokers and trimmers port quarters \u2014 Roof Off",
+      "sha256": "30566137dff0036edee62f12921651e8459b4d4e37ef0bea9c90e57a7d160766",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "55d18b11cbdea8f29265e99f5a8654d75aa30861471f2dd74fd47036b8868314",
+      "display_bytes": 5112
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_L_CrewS.jpg",
+      "title": "L_CrewS \u00b7 Stewards starboard quarters \u2014 Roof Off",
+      "sha256": "d2df9f724a426a025bb6e4e204d0247ece78cc677c2bd5b660a1dd9aee87e12b",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "d7b58d428a16be838fbe6b828e7cd215e6c09a3c0095125904d93df24d08ce55",
+      "display_bytes": 4644
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_L_ThirdMen.jpg",
+      "title": "L_ThirdMen \u00b7 Forward men steerage \u2014 Roof Off",
+      "sha256": "ac4f45118e95280fdf4d4d798265571be3055aca5a418af3c5e199e2c1d4624a",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "0427e279e4fcbfee59a53b6c899e194cad8e4b6d9f9575787ee6111658092092",
+      "display_bytes": 12982
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_L_ThirdMess.jpg",
+      "title": "L_ThirdMess \u00b7 Third-class mess and baggage \u2014 Roof Off",
+      "sha256": "fb31a3ff0fa0b9957c097e80a65f117fcd067e75d5a0547b29186f8e3c879a6c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "995cbc821df338f92e13c422cef0b23ad7071e213dc34052b1bd9c8ec271dfb4",
+      "display_bytes": 14448
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_L_ThirdWash.jpg",
+      "title": "L_ThirdWash \u00b7 Third-class washroom and pantry \u2014 Roof Off",
+      "sha256": "4dcd8174a866fdb0817960ce1d5fd1cdc4d9beb897cced77921285a3b5b6704f",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f009bcbb83da0fac8c264f46413b004dda7c5f8a2a79ab62b9c87f36badcc57f",
+      "display_bytes": 12238
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_L_ThirdWomen.jpg",
+      "title": "L_ThirdWomen \u00b7 Forward women and children steerage \u2014 Roof Off",
+      "sha256": "70d8a0d9d2f0862bafef109af2c29c332e58b6ccae835bc2a6da18edad542fbb",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4403f28017c13e0a47f9b2355e59971cd226101046fb0232d4e640d3f30ff152",
+      "display_bytes": 13406
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_M_AfterThird.jpg",
+      "title": "M_AfterThird \u00b7 After family steerage \u2014 Roof Off",
+      "sha256": "91825dc354ada96524c4b04f5b95e95a7795583bfbaca75e5115d3cfed6c25fe",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9c424195e4133f28a1a0bdd75f56fe33e02f93702aa6694e1ecc02de485fb1ae",
+      "display_bytes": 12768
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_M_Entrance.jpg",
+      "title": "M_Entrance \u00b7 First-class entrance and grand stair \u2014 Roof Off",
+      "sha256": "080ea0533e5b53d55444c65c767471be9bd2fa53886be0d7d116e63154a5e451",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7704754fdda3f3dd7f6524dce4522b0b8a348c75df78212b293e9cf3f1677930",
+      "display_bytes": 7742
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_M_Forecastle.jpg",
+      "title": "M_Forecastle \u00b7 Forecastle seamen and boatswain \u2014 Roof Off",
+      "sha256": "c4b3f69af98b94b599fcd5baad7f8f31866570e818a16cd6ebe226f29ff18ab9",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4162e006187bcd41c10d14d4469c09d8dca0f95a42b60565df4d445794a0ef8d",
+      "display_bytes": 13568
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_M_ForwardThird.jpg",
+      "title": "M_ForwardThird \u00b7 Forward third-class dormitory \u2014 Roof Off",
+      "sha256": "15dabfde0c64f34a2cf4970c429bf14102e9c31f1278f5744f233bc492232bb5",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "9938217412179fef1723ea0b45c6b6049c4504467a7154390b924d5df42e6f22",
+      "display_bytes": 11026
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_N_Wheelhouse.jpg",
+      "title": "N_Wheelhouse \u00b7 Wheelhouse and navigating instruments \u2014 Roof Off",
+      "sha256": "06a0d6a09c5f8b2971779b690f82d25628d08b6738371ffa59293c796cd4c858",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7561ef88bb11213b1d167068bac113fbc8d25adae2f3677028c8d4a1309d4987",
+      "display_bytes": 8994
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_O_CrewP.jpg",
+      "title": "O_CrewP \u00b7 Lower crew mess and berths port \u2014 Roof Off",
+      "sha256": "3231cb0f53d8b840648abc9c85ea2ac71b8d59a46885408c757ee9236ea27829",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "8cc1788df462e2c8fd0fa102dcc7bf5bd9cdd69a0a870a6570a39bae923c9375",
+      "display_bytes": 5580
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_O_CrewS.jpg",
+      "title": "O_CrewS \u00b7 Lower crew mess and berths starboard \u2014 Roof Off",
+      "sha256": "2504989099f7a09ae258c5e02cbc72f89a7f8cf836047a31f6663d136f0b2c93",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3ca5a20f3e0de0615c94023c72f0bf76dd1df3b215b1f38ad6fc343bef96008b",
+      "display_bytes": 5680
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_O_Hold.jpg",
+      "title": "O_Hold \u00b7 Forward parcels hold and chain store \u2014 Roof Off",
+      "sha256": "72b6dd2e64f1614388e568ef4c3449c65f0d4796a628e892687376b9ddab6a13",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "059fe38476a7456bfd8de037b6db69d3e57c159a306e4fdc0245c2601b5afc7d",
+      "display_bytes": 16324
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_O_ThirdAP.jpg",
+      "title": "O_ThirdAP \u00b7 After baggage and sail store port \u2014 Roof Off",
+      "sha256": "1ef8c241a2cde407caf7b9865015c6e3c31af3d4415ffd6c6b2cac3c20e71498",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "86a6907f95bee961555e1b389286a508ceb4e565c451740d3ba6621175c9c675",
+      "display_bytes": 5674
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_O_ThirdAS.jpg",
+      "title": "O_ThirdAS \u00b7 After baggage and sail store starboard \u2014 Roof Off",
+      "sha256": "871ff5a4609f87f5f9e659cd0500794ce6a98cee888771de59644b46e91d311b",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ca26fa88458478e8f06427d776657be0422358906bbfe722af83afdc121ceb93",
+      "display_bytes": 5748
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_O_ThirdF.jpg",
+      "title": "O_ThirdF \u00b7 Lower forward steerage \u2014 Roof Off",
+      "sha256": "7665796b6ad953b51ff6c9dbbffc78e17dce3a72dc6e124ec2a9cbda094bb458",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b6f6bfc28b2ff8f79f4f31f967cd40164e5a308770b301a432196bd8673b4cd6",
+      "display_bytes": 10032
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P001.jpg",
+      "title": "P001 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "f7f82d578b76d23b7e590914fdda96bee8c4e4b607d66718f3a12a86b796a12c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7d5f1579e1b5966b94e003e591a111294295b07e1fc3435a15f5a35a37a93392",
+      "display_bytes": 13900
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P002.jpg",
+      "title": "P002 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "b4c34618ec2e08c2adc0f065099d2836a03c8b176ff56854e6be009940a70bed",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "d6e83083a98614ca1e1b3b0554fa8d5217f0e2c1cb733093c187ae26c8651194",
+      "display_bytes": 13764
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P003.jpg",
+      "title": "P003 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "1914b95cd07559fba35213ca3eeab026ca4ddef43167b2fea43cec9f584d2550",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "afef3b8e74fca649e7afdaa0e2578b441505fd77e956e94868b399f0fcec4141",
+      "display_bytes": 13864
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P004.jpg",
+      "title": "P004 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "a6f250eb5831531a78ab05877b1d7ceb8a6594e294d68cf5fcf5fbfc7eae804d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3bb7f57ce2dc1be140ba37a101be2022a95643cd15cd4f5e1464681b97d42499",
+      "display_bytes": 12934
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P005.jpg",
+      "title": "P005 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "e726bf39976ec266959bb28d35e6b3a1b119729b54f8aa8bf128e1a35593256d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3a580769b38ae074d65007d3b46971c3b18705b284cece6cc750ce56d16c5d27",
+      "display_bytes": 15212
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P006.jpg",
+      "title": "P006 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "3e9b356420e314f37e6349c787a28491a5113df3ff6d21190d97e77d9c88bff8",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "7fe57e17db730bab79c39099950aed1892dac40c5875ec01f7246f0fdfbed245",
+      "display_bytes": 12710
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P007.jpg",
+      "title": "P007 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "f530559c4abf610645f46986a4d0c9894909fa93142b334d2a360f4e73b43e94",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "040c922926593623439eec0f7062e14fbb41fa62939ffe1d5e5f7898d3eee971",
+      "display_bytes": 14170
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P008.jpg",
+      "title": "P008 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "3dedc1064221be5c8677190cb367fc634afb24c2da7dd3b00a406312d3124db5",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3b698599097cb0a17b3c11c8bca72177cf530f3fbcd825407c84cf7248ea0f54",
+      "display_bytes": 13056
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Bar.jpg",
+      "title": "P_Bar \u00b7 Steward bar and drinks store \u2014 Roof Off",
+      "sha256": "e24ca727dbe57df5107747c47e298021ada825b0af898279fedf2c527a28d56b",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "26ecbc2eebad35a3fd3733272e73e905fa0e7c07300027c520e5a2180de8ccc4",
+      "display_bytes": 8876
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Barber.jpg",
+      "title": "P_Barber \u00b7 Barber and hairdressing room \u2014 Roof Off",
+      "sha256": "8000becb463b1e027efda8a60fb56f310fc7aa9ea86a7d1bc21e9363a4b3aa6f",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6ba318e544fd869699ab0bf988e2c9e72f58beef5d9cbd6a1d10b24ccc53bfbb",
+      "display_bytes": 13966
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Coats.jpg",
+      "title": "P_Coats \u00b7 Cloak and deck-chair store \u2014 Roof Off",
+      "sha256": "cae4502c4233dae2f86a39a2cf62eb536322fad73897182c6da81f32ad437d50",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3d4e8b88001fc8339376f02b2dad5aa15f8de90775f3df78abe7c4674d17d255",
+      "display_bytes": 7966
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Hospital.jpg",
+      "title": "P_Hospital \u00b7 Hospital and surgeon \u2014 Roof Off",
+      "sha256": "5a74437baccb1ed83dd97ead81ce1a073afa39de61ff326b545a8ac153b82a31",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "2b49256193dc43845b48f34610bfcb947a219bbe682b29cfd7e03847d4e0c592",
+      "display_bytes": 12654
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Library.jpg",
+      "title": "P_Library \u00b7 Library and writing tables \u2014 Roof Off",
+      "sha256": "a28521bb1a71a91cb7ce98897da6289ccfe8e55ad125687e808e566b61bb9ff3",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "3e36b980d4a0098329e2d7fb5e65bb88ce58883faa6e549f80bd7613aeb1e604",
+      "display_bytes": 9770
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_SecondLounge.jpg",
+      "title": "P_SecondLounge \u00b7 Second-class lounge and book room \u2014 Roof Off",
+      "sha256": "9945379cde3b29bba0161a71bcc6b847c4d636c5130dfa9014910b9719caee1e",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "80a511a2959e17058cde8b7ac23ffa2587d8dc95076cd2e8b1eb9254b76a5a05",
+      "display_bytes": 9136
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Smoking.jpg",
+      "title": "P_Smoking \u00b7 First-class smoking saloon \u2014 Roof Off",
+      "sha256": "540a157c596e8d204ce507962f4991f0bea241abc9f0aeb9f9615edbd482d0ec",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ef342f560fca5c3e3409681c00d3af55d31ba0b419a499c0a7fd9cc725355f32",
+      "display_bytes": 11078
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Stair.jpg",
+      "title": "P_Stair \u00b7 Stair landing under skylight \u2014 Roof Off",
+      "sha256": "5d83fe42053779f79dcd2c9c2f39ca8e04db189979834f7a1fed3aa1705607ba",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1dd8b9d10a9a0783381e78aab04678ddb4be04cca97252679f826bf816fda139",
+      "display_bytes": 21316
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Wash.jpg",
+      "title": "P_Wash \u00b7 Second-class washroom \u2014 Roof Off",
+      "sha256": "a5f9f3fa653372f2314b3bd5e214ce7f9f889382cd88a4d0d762955dc3c06370",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "fce7c05acb5f9462bfeaebfdd778f3513a6602c2595e9a424bee8af49e29be04",
+      "display_bytes": 11964
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_P_Writing.jpg",
+      "title": "P_Writing \u00b7 Ladies reading and writing lounge \u2014 Roof Off",
+      "sha256": "4c35a21edf4fd3026464ec5d2a8cf4d759dd7d914d0f631b4657e62f31cf4da2",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bb6fd569401b6868748964fc7014049a7996ef7ae472cdc6cf5713eeb7f4631c",
+      "display_bytes": 11586
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Bakery.jpg",
+      "title": "S_Bakery \u00b7 Bakery and bread room \u2014 Roof Off",
+      "sha256": "31ee57320b6852fbe0bd0611a300728a4e2ac549d061a5a39364f4c88cc54218",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f55ddbcfc6a4a3b7508e36bc340bbed22df56fb8d1dad8df3ac60fb419e81d8e",
+      "display_bytes": 14454
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Bath_P.jpg",
+      "title": "S_Bath_P \u00b7 Port baths and lavatory \u2014 Roof Off",
+      "sha256": "0df566793e87c6ae695a5dfba2a10476b580f51fae9130b947a46b35fbe2c991",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "281bb807e73c9a5f9fe2e2f203f059b078f0d1f7923f0d3a49b009d276059481",
+      "display_bytes": 5434
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Bath_S.jpg",
+      "title": "S_Bath_S \u00b7 Starboard lavatory \u2014 Roof Off",
+      "sha256": "05fd3cb197b6fdab6855339a4b4ad8a79a6e4e8187920a7f2f456af3903875a6",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bb159a7d49eb1698dd5cc5728e251b03e27e6543e41166b7c598824c7670422a",
+      "display_bytes": 4902
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_ColdStore.jpg",
+      "title": "S_ColdStore \u00b7 Ice room and refrigerated provision store \u2014 Roof Off",
+      "sha256": "d2841671dcacca965df6882ff8a7c6acc72df75e32742d9517fcad2a6636f388",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1e27cc16e87d74974b4d4f0e1f7552c8d17877e5f405eaa962d76961466a3b46",
+      "display_bytes": 5886
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Dining.jpg",
+      "title": "S_Dining \u00b7 First-class dining saloon \u2014 Roof Off",
+      "sha256": "178745be5356a307ce8f9808868994dc86a1e594f54e59e86af1037b2c8cb9c9",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "ede12937231a29ce4ada3c0d94b963c3075b3552c4d52218c74b90b4ba7e8ce2",
+      "display_bytes": 18090
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Galley.jpg",
+      "title": "S_Galley \u00b7 Galley and coal range \u2014 Roof Off",
+      "sha256": "bce19528c2e9487815cabddec33b26eb72ea2862f811346cc9098e708513e582",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "bc4042fe347eb9c62130e4265c73981ac28bd435c80d13f26d5bd2c856b1bc89",
+      "display_bytes": 7782
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Mail.jpg",
+      "title": "S_Mail \u00b7 Mail and specie room \u2014 Roof Off",
+      "sha256": "47696d91f347a9b354c16291b842df20517443f33ab879b2a0197050dbc69009",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "8d053db9d56e7c6657002181e689b52aef91705f9d9ea1de0e2c64b4bcbe4f92",
+      "display_bytes": 9000
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Music.jpg",
+      "title": "S_Music \u00b7 Music and drawing room \u2014 Roof Off",
+      "sha256": "c5fada96dc31cf80567e8b139c31920ff4b8f1a32ba50f9a7cda4228a527dd23",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1d18428427ded4bdbf92547584aa74fd2c6f003ab98a9840dd70001e0d69669c",
+      "display_bytes": 11658
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Pantry.jpg",
+      "title": "S_Pantry \u00b7 Pantry and plate room \u2014 Roof Off",
+      "sha256": "947a4fbb4b8bf081cac4774a1cfc30f5e5ef704a84cda7bfa17794a47a845826",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1d5e2a0e955249a128fb89e8ff109663ccb99292e4e196ba76ab0a25118c65cc",
+      "display_bytes": 11126
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Purser.jpg",
+      "title": "S_Purser \u00b7 Purser and secure office \u2014 Roof Off",
+      "sha256": "9491b0fd6740aa883b105d10e84aa0b59e5e279225c4ddd6239a21a85293a82c",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f1a5e0e3096988d6fe119be64084d080a364dba5ad9fcfb6b5eef7d7d365b6c0",
+      "display_bytes": 10288
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_SecondDining.jpg",
+      "title": "S_SecondDining \u00b7 Second-class dining saloon \u2014 Roof Off",
+      "sha256": "37f50779991f281b81b68a893d6e38025ce88281a26b843d60266337c4a6ea98",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "03059c23984c34a50f3db384f054d3d6718b8bbecb36095e742b0eb834fa8787",
+      "display_bytes": 12624
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Stair.jpg",
+      "title": "S_Stair \u00b7 Grand staircase upper hall \u2014 Roof Off",
+      "sha256": "9d9a344b3b29fcbd563eb27c30df71754ad03b248435fea23959e6da805f3207",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "a4bbba4265f1588d415014e942531c160a4dbd704566bd5ccdaec86a8f50aa36",
+      "display_bytes": 22182
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_S_Steering.jpg",
+      "title": "S_Steering \u00b7 Steam steering and emergency tiller \u2014 Roof Off",
+      "sha256": "055f22670e5976bd0e0ae0940041349ba3ee4ea02bd668a246ff4fbd741d2030",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "8487d32e78312cdd7cad6bc9d0e2f026b3f67638f673ab186fdfa32a23403047",
+      "display_bytes": 16866
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U001.jpg",
+      "title": "U001 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "9be9ca0c1d089fd2c7a6788c1b267206e20a7f774453347003d0e8e29a10f2b4",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "1bb3229ecc3884a631a1617103ab20fa1fa3c091b2fd4b133a4705d36bf0313f",
+      "display_bytes": 13672
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U002.jpg",
+      "title": "U002 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "065000391c29b37c282082a95a282208ed2af366d02cad68401ba56d00e23d37",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b64fcebd4dbf512426e90ccedbc89a2f7ce7994dc86089219d9931bf5c81f1ae",
+      "display_bytes": 13210
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U003.jpg",
+      "title": "U003 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "30b0e8f7cb57b5abd456ac98f79d5a9783ae2bd8d8754b915098ca1d6aa358fe",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4fb398ddc937f17a1ed62f6116e80747111fd5bdb3edfbc4fce87c6a0412da17",
+      "display_bytes": 13666
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U004.jpg",
+      "title": "U004 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "afb1cf16ba71b8a341690d2b0397bbcc50f8b004224b171d962843774d117eb0",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "6abf223721d8270e70c7fa49ad0becc839e8c0019cd59ee82448e96b4e7be699",
+      "display_bytes": 12326
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U005.jpg",
+      "title": "U005 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "060977312330e69a10da7c97410d5784589addac18cfa875aaa9efbd01894567",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "b1504782ea92d2f41cddf6675b398014e53d429d37e4cc7aeaf221d82fa3b437",
+      "display_bytes": 14784
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U006.jpg",
+      "title": "U006 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "51a0dc0e856e5c556e920d64a32b6fd1eb84dcd5f4df5a9066a9a8cd546b81cf",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "0b612d78f68f20707571d8cf524f333909b4505b8ef3727df59d7258a82f21e7",
+      "display_bytes": 13054
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U007.jpg",
+      "title": "U007 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "54e8127ade815021778abf14d80e97dfbf9168102c55f13bbb4432d364e93e7d",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f622ebbd84aa782d80945949de2aed20d34ae9fca26e42ce8181feddbc8b34c2",
+      "display_bytes": 14674
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U008.jpg",
+      "title": "U008 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "02d4ffeab78ce35dd8d4b82502694d7550a6ff0f048d8da1fea8b6e31b53b358",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "4fcb3c94746593719c1a46bf11d02bdb8d04ce7d139cb079033bd761b4ffd74b",
+      "display_bytes": 12900
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U009.jpg",
+      "title": "U009 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "ceee1c04d4f9cb3b1e161c1a0db8d8e0086a4d4d4bca5e982d67c52d193ea491",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "59275bc715a269c3f4b9872e51a0db37161eccc356fe0574fb4f77436af40d7f",
+      "display_bytes": 13794
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U010.jpg",
+      "title": "U010 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "bae152f800be56c80cb6e0d97831b39a954653ff80794f716ec34b33998149f1",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "17756567ce47ffd7bd9572669532cc83edbc6a7c07862043a53f017b941d4673",
+      "display_bytes": 13790
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U011.jpg",
+      "title": "U011 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "7e4dea955a961470fc894aeb7a5788b6cf7e667b1a5e8996385fb807134d7d65",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "599de7c9235ab15d0686c88eb641c526e279f08e8135fc06ef5a433ac77aa523",
+      "display_bytes": 13588
+    },
+    {
+      "file": "renders/leonidas_ii/rooms/Room_U012.jpg",
+      "title": "U012 \u00b7 First-Class cabin \u2014 Roof Off",
+      "sha256": "b7889c7a6a25fdad81c8b6ced71e7755bfc34edfc0739d08795ec63a01a21af0",
+      "pixels": [
+        640,
+        480
+      ],
+      "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+      "display_format": "WebP80, original pixel dimensions; conventional display compression only",
+      "display_sha256": "f6cd1f03ecd9f93713f815e8f3160db4193afa1011e34f1728effaa20364e514",
+      "display_bytes": 13162
+    }
+  ],
+  "counts": {
+    "total": 272,
+    "major": 51,
+    "room_surveys": 203,
+    "crew_details": 2,
+    "micro_details": 9,
+    "refinement_details": 7
+  },
+  "captions": false,
+  "external_resources": false,
+  "display_resizing": false
+}

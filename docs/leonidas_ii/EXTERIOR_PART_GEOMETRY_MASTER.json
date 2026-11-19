@@ -1,0 +1,1605 @@
+{
+  "schema": "victoria.leonidas-ii.exterior-finite-part-screen/1.0",
+  "status": "SAVED_SOURCE_BOUND_SCREEN",
+  "quality": "MASTER",
+  "source_file": "models/leonidas_ii/Aurelian_1889.blend",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "build_data_file": "exports/leonidas_ii/build_data.json",
+  "build_data_sha256": "adf9206f7eec378855a281cda21295d10b02725d1c583e2c6b1f45093832bf01",
+  "auditor_sha256": "c54ec45c5b4164488e9b0cb6933644c5efc8c3acd6860237ea8ef3f20dabcb05",
+  "generator_sha256": {
+    "blender/leonidas_ii/access_detail.py": "78d2f226da449f846b085a1846255dededb13a61b895562ad20730a681d2df6f",
+    "blender/leonidas_ii/audit_common.py": "a4cfc973b6b7f2264a999c39bf1f232f5cb46d0e866e564b1061f20a8d791aec",
+    "blender/leonidas_ii/audit_details.py": "e674bdf38e1aed172b4091e00a23e25efee7f6b5c81e7fac833fe5edd3d83843",
+    "blender/leonidas_ii/audit_door_sweeps.py": "e423669ad9e9d6ed12424418af4c51339bc80895529b8c67d69ab75b42061adf",
+    "blender/leonidas_ii/audit_exterior_parts.py": "c54ec45c5b4164488e9b0cb6933644c5efc8c3acd6860237ea8ef3f20dabcb05",
+    "blender/leonidas_ii/audit_fittings.py": "4cc39885711b9e2205ed5c6a1adfcbf015a20280944b76ded160b66264cc967c",
+    "blender/leonidas_ii/audit_ladders.py": "1555331c82df15419e4463b0c10e5f57629dddfe0359146ba3384a9ba855b714",
+    "blender/leonidas_ii/audit_plant_parts.py": "432e1926548bf12b35b52d1c339aefbc0a64a47a42cf2919e97864733b6923dd",
+    "blender/leonidas_ii/audit_room_parts.py": "84d5dd30f9842393c93e885b827eccfce002b6d5aa920fbaad33f7b296ce5325",
+    "blender/leonidas_ii/audit_shaft_clearances.py": "fa397be2f0f768a981da6c7cc07fde953757e1f2f10caaf59d5ab41e56906135",
+    "blender/leonidas_ii/build.py": "dc74813522d40521755fd64c7da73aaa7ab7bf1d80b6149f4b849540dc11ee4e",
+    "blender/leonidas_ii/export_game.py": "56835f2ebf1bd4c2c86fd0b01a1773e1d51b29f976944dac92a1363cf2628341",
+    "blender/leonidas_ii/furnishings.py": "26aabb26897dd89757fc5786b2707977524c0ea53f5a19eb94a0f764b4ac2b3d",
+    "blender/leonidas_ii/interiors.py": "77af7f48ef529697c240b25e41d0af09fb553978126566cd8e4d6f2b9cc43c9a",
+    "blender/leonidas_ii/machinery.py": "4d0b1bff4cc6e974b428d61b8d1e1f9eafb4a336b435bf281f9395a1219d79fd",
+    "blender/leonidas_ii/meshkit.py": "81af1392dcdff1b859120541867d957e5a78bd18768febeb57b6dde78ce7bc71",
+    "blender/leonidas_ii/optimize.py": "f469949f8af57eb3a43b3d9e7a6a3bba3f128a14e6e6559078c3e1fcb80e28d7",
+    "blender/leonidas_ii/period_detail.py": "9df8a3191908025a85dc91d2f7604051be5e65392a51b798e927ef38e4a1ee27",
+    "blender/leonidas_ii/plant_detail.py": "592d783cb09a1b30148e2fbc03ac48134080fe92cfafe5e34c806387d7e4cc5a",
+    "blender/leonidas_ii/public_rooms.py": "c7354ac2720781ca5319ebb6a818af3735535ccfe3300db8ef61011b10f24b5c",
+    "blender/leonidas_ii/service_fittings.py": "0fa023b4d8f6b32d08f4b7219248336b753f4dee4c1271cf091af3c192101c06",
+    "blender/leonidas_ii/structure.py": "0d719cbedf8d7073ca4c38cb85e9bfbc369f248c09225f5660104525d5e90a9b",
+    "blender/leonidas_ii/test_micro_contacts.py": "2f1c78cdfc9808b29bc82d8c14c089d85375d4fb002a72e265b04058ff644de6",
+    "blender/leonidas_ii/topsides.py": "e4bbd6090e92e20a03ae5c9294d94f7264060cd8095bceec0f841779a9aa242d",
+    "blender/leonidas_ii/visual_design.py": "f3e426ac7bf2deea15ae809d9a8d932900c841300be3c8f4841dd76a55ed2640",
+    "blender/leonidas_ii/weather_detail.py": "4fc9b0adf7f1506aa002f41b60e13dd6b25a7d383f74048bc31fe5859705f906",
+    "blender/leonidas_ii/working_detail.py": "8978972fa454ce3007030b9c683b9841b6825f62c561db047424573cc9ba6d66"
+  },
+  "generator_binding_mismatches": [],
+  "tolerance_m": 0.0006,
+  "summary": {
+    "captured_assemblies": 80,
+    "rigid_static_parts": 33247,
+    "static_detached_clusters": 0,
+    "mover_assemblies": 3,
+    "mover_internal_detached_clusters": 0,
+    "saved_geometry_mismatches": 0
+  },
+  "rigid_static": {
+    "room": "ALL_STATIC_EXTERIOR",
+    "primitive_parts": 33247,
+    "clusters": 14,
+    "rooted_clusters": 14,
+    "detached_clusters": [],
+    "contact_unions": 33233,
+    "broadphase_candidates_tested": 108116
+  },
+  "movers": [
+    {
+      "recipe": "HelmWheel",
+      "primitive_parts": 19,
+      "actual_contact_pairs": 60,
+      "clusters": 1,
+      "lowest_z": 20.329999923706055,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Gangway_Starboard",
+      "primitive_parts": 39,
+      "actual_contact_pairs": 58,
+      "clusters": 1,
+      "lowest_z": 8.78499984741211,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    },
+    {
+      "recipe": "Gangway_Port",
+      "primitive_parts": 39,
+      "actual_contact_pairs": 58,
+      "clusters": 1,
+      "lowest_z": 8.78499984741211,
+      "detached_clusters": [],
+      "role": "RIGID_INTERNAL_JOINTS_ONLY_NOT_RUNNING_INTERFACES"
+    }
+  ],
+  "geometry_binding": [
+    {
+      "name": "Deck_orlop",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "a528003d8961f5712b4347bb3d617b72021c144e8edddc056e5f74261cd91044",
+      "saved_faces_sha256": "a528003d8961f5712b4347bb3d617b72021c144e8edddc056e5f74261cd91044",
+      "match": true,
+      "saved_objects": [
+        "Deck_orlop"
+      ]
+    },
+    {
+      "name": "Deck_lower",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "b957430e6b13d8127d4338c367d071d628947725c075d55a00549a9b590d5a68",
+      "saved_faces_sha256": "b957430e6b13d8127d4338c367d071d628947725c075d55a00549a9b590d5a68",
+      "match": true,
+      "saved_objects": [
+        "Deck_lower"
+      ]
+    },
+    {
+      "name": "Deck_main",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "2e727fdd756458cc9bfd177be6a6262c780cf0e93195ec2e4eb71dbc81646d19",
+      "saved_faces_sha256": "2e727fdd756458cc9bfd177be6a6262c780cf0e93195ec2e4eb71dbc81646d19",
+      "match": true,
+      "saved_objects": [
+        "Deck_main_01",
+        "Deck_main_02"
+      ]
+    },
+    {
+      "name": "Deck_saloon",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "255d9f245fd77f1af2f07a49c187fda0c1a5a1116c2eedd1f7135d7ac9e0d3d5",
+      "saved_faces_sha256": "255d9f245fd77f1af2f07a49c187fda0c1a5a1116c2eedd1f7135d7ac9e0d3d5",
+      "match": true,
+      "saved_objects": [
+        "Deck_saloon"
+      ]
+    },
+    {
+      "name": "Deck_promenade",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "71d291c27f252083b08c2973d848059f319fd78660200cf6b32c9d3ebb186fa5",
+      "saved_faces_sha256": "71d291c27f252083b08c2973d848059f319fd78660200cf6b32c9d3ebb186fa5",
+      "match": true,
+      "saved_objects": [
+        "Deck_promenade_01",
+        "Deck_promenade_02"
+      ]
+    },
+    {
+      "name": "Deck_boat",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "cbbf61d0eaed93ede9ab48e0dbec0f0146b670e2b7e880500cc90cb1f443ab39",
+      "saved_faces_sha256": "cbbf61d0eaed93ede9ab48e0dbec0f0146b670e2b7e880500cc90cb1f443ab39",
+      "match": true,
+      "saved_objects": [
+        "Deck_boat"
+      ]
+    },
+    {
+      "name": "Deck_bridge",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "eca068d50d7602ce6037c711c913a36bf099702d2bf2423bd51fbd0d408a46c9",
+      "saved_faces_sha256": "eca068d50d7602ce6037c711c913a36bf099702d2bf2423bd51fbd0d408a46c9",
+      "match": true,
+      "saved_objects": [
+        "Deck_bridge"
+      ]
+    },
+    {
+      "name": "TankTop",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "540308a64703a9d71fa15e6bcd193c49c0ba35db45fa3b7311bce1585adc0672",
+      "saved_faces_sha256": "540308a64703a9d71fa15e6bcd193c49c0ba35db45fa3b7311bce1585adc0672",
+      "match": true,
+      "saved_objects": [
+        "TankTop"
+      ]
+    },
+    {
+      "name": "Watertight_Bulkheads",
+      "kind": "bulkhead",
+      "mover": null,
+      "generated_faces_sha256": "dde7603f5a539fc0950e47ee150a738e5c7f76e4eb18a11701af09e9ea779e1c",
+      "saved_faces_sha256": "dde7603f5a539fc0950e47ee150a738e5c7f76e4eb18a11701af09e9ea779e1c",
+      "match": true,
+      "saved_objects": [
+        "Watertight_Bulkheads"
+      ]
+    },
+    {
+      "name": "Stair_Grand_Main",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "ba867105ba35f515ea90d7472a4c51d147715b04c7e1f46cc881caea59820955",
+      "saved_faces_sha256": "ba867105ba35f515ea90d7472a4c51d147715b04c7e1f46cc881caea59820955",
+      "match": true,
+      "saved_objects": [
+        "Stair_Grand_Main"
+      ]
+    },
+    {
+      "name": "Stair_Grand_Upper",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "548d88d5bbd186b568c682bd9d6ae3d67eefae319330593be211a8ac2987489f",
+      "saved_faces_sha256": "548d88d5bbd186b568c682bd9d6ae3d67eefae319330593be211a8ac2987489f",
+      "match": true,
+      "saved_objects": [
+        "Stair_Grand_Upper"
+      ]
+    },
+    {
+      "name": "Stair_Prom_To_Boat",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "c1836ae9afcaa5bde7d46de44468236bc92a906c6c620cf9d5a197cc1462b347",
+      "saved_faces_sha256": "c1836ae9afcaa5bde7d46de44468236bc92a906c6c620cf9d5a197cc1462b347",
+      "match": true,
+      "saved_objects": [
+        "Stair_Prom_To_Boat"
+      ]
+    },
+    {
+      "name": "Stair_Forward_Lower",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "78c4701655327546a24cc4cd0c26c8397bc1e9b6850b5e3f9b244686b6868600",
+      "saved_faces_sha256": "78c4701655327546a24cc4cd0c26c8397bc1e9b6850b5e3f9b244686b6868600",
+      "match": true,
+      "saved_objects": [
+        "Stair_Forward_Lower"
+      ]
+    },
+    {
+      "name": "Stair_Forward_Orlop",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "14cb690505323aca0c3a6e0aaf917b82afb088ed96d79fab487ccab3c655787a",
+      "saved_faces_sha256": "14cb690505323aca0c3a6e0aaf917b82afb088ed96d79fab487ccab3c655787a",
+      "match": true,
+      "saved_objects": [
+        "Stair_Forward_Orlop"
+      ]
+    },
+    {
+      "name": "Stair_After_Lower",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "3834e1ad3d5d21dd076e1f21fb2a1654e8287cd6010a62282790d0780c8f05a0",
+      "saved_faces_sha256": "3834e1ad3d5d21dd076e1f21fb2a1654e8287cd6010a62282790d0780c8f05a0",
+      "match": true,
+      "saved_objects": [
+        "Stair_After_Lower"
+      ]
+    },
+    {
+      "name": "Stair_After_Orlop",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "2703969b0dc0d15475257cf9b66ad06013edf012ed6490b9fd445c7e7f0b0ad6",
+      "saved_faces_sha256": "2703969b0dc0d15475257cf9b66ad06013edf012ed6490b9fd445c7e7f0b0ad6",
+      "match": true,
+      "saved_objects": [
+        "Stair_After_Orlop"
+      ]
+    },
+    {
+      "name": "Stair_After_Orlop_Starboard",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "29e6eb0ca3829c252d38ffd8290767964c21cdb3b95ca8a0f9ab544234a361c6",
+      "saved_faces_sha256": "29e6eb0ca3829c252d38ffd8290767964c21cdb3b95ca8a0f9ab544234a361c6",
+      "match": true,
+      "saved_objects": [
+        "Stair_After_Orlop_Starboard"
+      ]
+    },
+    {
+      "name": "Stair_After_Upper",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "ae489fee70cad436eaf1acc34d5bfe82fe080dab1b290ce85038d3ab5bd544c4",
+      "saved_faces_sha256": "ae489fee70cad436eaf1acc34d5bfe82fe080dab1b290ce85038d3ab5bd544c4",
+      "match": true,
+      "saved_objects": [
+        "Stair_After_Upper"
+      ]
+    },
+    {
+      "name": "Stair_After_Promenade",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "e7fadfcae8a59f5048537e91bfadf24c98cdc28bdeee76102ab7d8344ba7a3e2",
+      "saved_faces_sha256": "e7fadfcae8a59f5048537e91bfadf24c98cdc28bdeee76102ab7d8344ba7a3e2",
+      "match": true,
+      "saved_objects": [
+        "Stair_After_Promenade"
+      ]
+    },
+    {
+      "name": "Stair_Engine_Access",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "a62a32e405e4ead98d5a21c42ccbaebb50d519c12b124263ff4df23e89967c8a",
+      "saved_faces_sha256": "a62a32e405e4ead98d5a21c42ccbaebb50d519c12b124263ff4df23e89967c8a",
+      "match": true,
+      "saved_objects": [
+        "Stair_Engine_Access"
+      ]
+    },
+    {
+      "name": "Stair_Engine_Main",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "4b90a5a353733b4b45556f6572ea9c4b16325979e2ab5767a5fde72790ce2bdd",
+      "saved_faces_sha256": "4b90a5a353733b4b45556f6572ea9c4b16325979e2ab5767a5fde72790ce2bdd",
+      "match": true,
+      "saved_objects": [
+        "Stair_Engine_Main"
+      ]
+    },
+    {
+      "name": "Stair_Bridge_Access",
+      "kind": "stair",
+      "mover": null,
+      "generated_faces_sha256": "0038bec56946d80215a3e87c9d3f4c38b8d113255adef0b1debcda52caa87ab2",
+      "saved_faces_sha256": "0038bec56946d80215a3e87c9d3f4c38b8d113255adef0b1debcda52caa87ab2",
+      "match": true,
+      "saved_objects": [
+        "Stair_Bridge_Access"
+      ]
+    },
+    {
+      "name": "LandingGuard_Grand_Main",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "e85bbd511be92f942b11e9bf9c86ade8b0c35b7998ddbc66d25054a982ff4cb4",
+      "saved_faces_sha256": "e85bbd511be92f942b11e9bf9c86ade8b0c35b7998ddbc66d25054a982ff4cb4",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_Grand_Main"
+      ]
+    },
+    {
+      "name": "LandingGuard_Grand_Upper",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "e33249e135fcf7aa84f1101681459cb680715edf5dcd8f356a2819a7be9fb9f0",
+      "saved_faces_sha256": "e33249e135fcf7aa84f1101681459cb680715edf5dcd8f356a2819a7be9fb9f0",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_Grand_Upper"
+      ]
+    },
+    {
+      "name": "LandingGuard_Prom_To_Boat",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "50664c97f73ada8b7e9314c841e09da0f89fb787d893597d3804b7b7f3a89519",
+      "saved_faces_sha256": "50664c97f73ada8b7e9314c841e09da0f89fb787d893597d3804b7b7f3a89519",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_Prom_To_Boat"
+      ]
+    },
+    {
+      "name": "LandingGuard_Forward_Lower",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "17f0964bbfb943704d1fb71bbe3da8a563a7e9a03717736a7ca115fc1e78678f",
+      "saved_faces_sha256": "17f0964bbfb943704d1fb71bbe3da8a563a7e9a03717736a7ca115fc1e78678f",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_Forward_Lower"
+      ]
+    },
+    {
+      "name": "LandingGuard_Forward_Orlop",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "c6fbf2f517921a7d3667c3d720a10fea7dcb2c2a745197a33729f4482269d076",
+      "saved_faces_sha256": "c6fbf2f517921a7d3667c3d720a10fea7dcb2c2a745197a33729f4482269d076",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_Forward_Orlop"
+      ]
+    },
+    {
+      "name": "LandingGuard_After_Lower",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "1c099177e7bc6b47042fad0377d38fa067ae08a30b44eb84dad06b74f322e9b5",
+      "saved_faces_sha256": "1c099177e7bc6b47042fad0377d38fa067ae08a30b44eb84dad06b74f322e9b5",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_After_Lower"
+      ]
+    },
+    {
+      "name": "LandingGuard_After_Orlop",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "f616633be174bac2442fcde29b097161531724c841fee75e73cdf42517369b3d",
+      "saved_faces_sha256": "f616633be174bac2442fcde29b097161531724c841fee75e73cdf42517369b3d",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_After_Orlop"
+      ]
+    },
+    {
+      "name": "LandingGuard_After_Orlop_Starboard",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "0087f302dccc1f8e00e63f20c91eb50c7c40cf019f874e7729c79396355e88ca",
+      "saved_faces_sha256": "0087f302dccc1f8e00e63f20c91eb50c7c40cf019f874e7729c79396355e88ca",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_After_Orlop_Starboard"
+      ]
+    },
+    {
+      "name": "LandingGuard_After_Upper",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "bf963a06f823e799f20722a8a544ca67fb04aa3d30b8ee9a93908a7b127cc70f",
+      "saved_faces_sha256": "bf963a06f823e799f20722a8a544ca67fb04aa3d30b8ee9a93908a7b127cc70f",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_After_Upper"
+      ]
+    },
+    {
+      "name": "LandingGuard_After_Promenade",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "a751b528f5edaf80caf552b8cd600fca9a2c66323e41585180c40ce6e534d2af",
+      "saved_faces_sha256": "a751b528f5edaf80caf552b8cd600fca9a2c66323e41585180c40ce6e534d2af",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_After_Promenade"
+      ]
+    },
+    {
+      "name": "LandingGuard_Engine_Access",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "bcf8e366ad5ebd1c97eb0cd84987edc305064519c2d4368072991e0d9f284aa0",
+      "saved_faces_sha256": "bcf8e366ad5ebd1c97eb0cd84987edc305064519c2d4368072991e0d9f284aa0",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_Engine_Access"
+      ]
+    },
+    {
+      "name": "LandingGuard_Engine_Main",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "b9e5d3c973a25c61aead05bf24d1a6bcd4b855c91f3b6ed31575d4ce5024b0e4",
+      "saved_faces_sha256": "b9e5d3c973a25c61aead05bf24d1a6bcd4b855c91f3b6ed31575d4ce5024b0e4",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_Engine_Main"
+      ]
+    },
+    {
+      "name": "LandingGuard_Bridge_Access",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "3799e47cbc46adf01560c27bd7da554a539c0efb095ae20b843b913857452b46",
+      "saved_faces_sha256": "3799e47cbc46adf01560c27bd7da554a539c0efb095ae20b843b913857452b46",
+      "match": true,
+      "saved_objects": [
+        "LandingGuard_Bridge_Access"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Funnel_4.5_Frame",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "cd05515d858272ecb370e46f14cef705704a5266ba32485aac0131cfbeb0f4e3",
+      "saved_faces_sha256": "cd05515d858272ecb370e46f14cef705704a5266ba32485aac0131cfbeb0f4e3",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Funnel_4.5_Frame"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Funnel_4.5_Rungs",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "6e25143f2f0cf9b61b8badb9017562eb89e8c051ebd804699a0ac88d36835e78",
+      "saved_faces_sha256": "6e25143f2f0cf9b61b8badb9017562eb89e8c051ebd804699a0ac88d36835e78",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Funnel_4.5_Rungs"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Funnel_30_Frame",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "db5192b015e1db87cb000c3340125ada16b82ef0653bde2a98305a7aa17c0d2d",
+      "saved_faces_sha256": "db5192b015e1db87cb000c3340125ada16b82ef0653bde2a98305a7aa17c0d2d",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Funnel_30_Frame"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Funnel_30_Rungs",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "f4929e77f700bf90a1569a1b2dcb77d8e74fdbe4854f21422af0420add33abde",
+      "saved_faces_sha256": "f4929e77f700bf90a1569a1b2dcb77d8e74fdbe4854f21422af0420add33abde",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Funnel_30_Rungs"
+      ]
+    },
+    {
+      "name": "Funnels_And_CasingWalls",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "216424ff1a1aa55f903a24ba9b8ca4b77e3d207a1186184b48442552e6cf9da0",
+      "saved_faces_sha256": "216424ff1a1aa55f903a24ba9b8ca4b77e3d207a1186184b48442552e6cf9da0",
+      "match": true,
+      "saved_objects": [
+        "Funnels_And_CasingWalls"
+      ]
+    },
+    {
+      "name": "Connected_Uptake_Liners",
+      "kind": "uptake",
+      "mover": null,
+      "generated_faces_sha256": "e4e450292b04eb37b374f3a5de64e18cd8725793c3a75b6af56d390e42fa9164",
+      "saved_faces_sha256": "e4e450292b04eb37b374f3a5de64e18cd8725793c3a75b6af56d390e42fa9164",
+      "match": true,
+      "saved_objects": [
+        "Connected_Uptake_Liners"
+      ]
+    },
+    {
+      "name": "Funnel_Stays_And_Turnbuckles",
+      "kind": "rigging",
+      "mover": null,
+      "generated_faces_sha256": "0945193f7a229432ecb3775288c3645b92f02c09c7a59b9519c2bff3231a8b69",
+      "saved_faces_sha256": "0945193f7a229432ecb3775288c3645b92f02c09c7a59b9519c2bff3231a8b69",
+      "match": true,
+      "saved_objects": [
+        "Funnel_Stays_And_Turnbuckles"
+      ]
+    },
+    {
+      "name": "Funnel_Stay_Deck_Anchors",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "746894f428a6404d6e7711540fa8df54d299ea66e368575457c1230ca7d79416",
+      "saved_faces_sha256": "746894f428a6404d6e7711540fa8df54d299ea66e368575457c1230ca7d79416",
+      "match": true,
+      "saved_objects": [
+        "Funnel_Stay_Deck_Anchors"
+      ]
+    },
+    {
+      "name": "WeatherDeck_Rails",
+      "kind": "rail",
+      "mover": null,
+      "generated_faces_sha256": "860c71e17d38b22b76eefc0330a30454bb7f084279d1e79ddb12cfac4bf60ffd",
+      "saved_faces_sha256": "860c71e17d38b22b76eefc0330a30454bb7f084279d1e79ddb12cfac4bf60ffd",
+      "match": true,
+      "saved_objects": [
+        "WeatherDeck_Rails_01",
+        "WeatherDeck_Rails_02",
+        "WeatherDeck_Rails_03",
+        "WeatherDeck_Rails_04",
+        "WeatherDeck_Rails_05",
+        "WeatherDeck_Rails_06",
+        "WeatherDeck_Rails_07",
+        "WeatherDeck_Rails_08",
+        "WeatherDeck_Rails_09",
+        "WeatherDeck_Rails_10",
+        "WeatherDeck_Rails_11"
+      ]
+    },
+    {
+      "name": "Promenade_Pillars_Knees",
+      "kind": "structure",
+      "mover": null,
+      "generated_faces_sha256": "11ba3176d0285af3287774f42bf2939767b962d50001f7d462b4d4c5b089ef23",
+      "saved_faces_sha256": "11ba3176d0285af3287774f42bf2939767b962d50001f7d462b4d4c5b089ef23",
+      "match": true,
+      "saved_objects": [
+        "Promenade_Pillars_Knees_01",
+        "Promenade_Pillars_Knees_02"
+      ]
+    },
+    {
+      "name": "Engine_Access_Landing",
+      "kind": "platform",
+      "mover": null,
+      "generated_faces_sha256": "38e1782a5a9b1a95890d273c2cde027e162dc1271b33687de48d726bdce0fc7c",
+      "saved_faces_sha256": "38e1782a5a9b1a95890d273c2cde027e162dc1271b33687de48d726bdce0fc7c",
+      "match": true,
+      "saved_objects": [
+        "Engine_Access_Landing"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Mast_Fore_Frame",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "41bf474686eb19554bfc83b98a3d8ff4cb6536b44c2956c0143e0474fee3970b",
+      "saved_faces_sha256": "41bf474686eb19554bfc83b98a3d8ff4cb6536b44c2956c0143e0474fee3970b",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Mast_Fore_Frame"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Mast_Fore_Rungs",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "e5b67ea9aba4917897d9a1440ac86e1162ddf507b5973be9fc66abf5e0f36b89",
+      "saved_faces_sha256": "e5b67ea9aba4917897d9a1440ac86e1162ddf507b5973be9fc66abf5e0f36b89",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Mast_Fore_Rungs"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Mast_Main_Frame",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "838934d394f57c3f09499f2ab7faa88889a754643358b8a1e73ee677f26655f0",
+      "saved_faces_sha256": "838934d394f57c3f09499f2ab7faa88889a754643358b8a1e73ee677f26655f0",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Mast_Main_Frame"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Mast_Main_Rungs",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "4cf1096f926f8f9617bb3b42381cb97fecc5c50a08d7747720dcae69c1196128",
+      "saved_faces_sha256": "4cf1096f926f8f9617bb3b42381cb97fecc5c50a08d7747720dcae69c1196128",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Mast_Main_Rungs"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Mast_Mizzen_Frame",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "a47c445501f95b4c45ded0a9db4ed4a2b3f1c7ef8f72aa5a36ef5f77061f76d2",
+      "saved_faces_sha256": "a47c445501f95b4c45ded0a9db4ed4a2b3f1c7ef8f72aa5a36ef5f77061f76d2",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Mast_Mizzen_Frame"
+      ]
+    },
+    {
+      "name": "Climbing_Ladder_Mast_Mizzen_Rungs",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "88904b20c24d578bfa3e565de02283f5cff7ca2a35308a9e56996c5c594cd53d",
+      "saved_faces_sha256": "88904b20c24d578bfa3e565de02283f5cff7ca2a35308a9e56996c5c594cd53d",
+      "match": true,
+      "saved_objects": [
+        "Climbing_Ladder_Mast_Mizzen_Rungs"
+      ]
+    },
+    {
+      "name": "Masts_Derricks_Crowsnests",
+      "kind": "mast",
+      "mover": null,
+      "generated_faces_sha256": "5b1522fca2b409d50e0845c6cbff99c8ba1cc8efb74e26ef179032317e328a28",
+      "saved_faces_sha256": "5b1522fca2b409d50e0845c6cbff99c8ba1cc8efb74e26ef179032317e328a28",
+      "match": true,
+      "saved_objects": [
+        "Masts_Derricks_Crowsnests"
+      ]
+    },
+    {
+      "name": "Shrouds_Stays_Deadeyes",
+      "kind": "rigging",
+      "mover": null,
+      "generated_faces_sha256": "b8b975becb32dcef832e9e84049e950680628f6e5686ea47e3a67fbe85de0a25",
+      "saved_faces_sha256": "b8b975becb32dcef832e9e84049e950680628f6e5686ea47e3a67fbe85de0a25",
+      "match": true,
+      "saved_objects": [
+        "Shrouds_Stays_Deadeyes"
+      ]
+    },
+    {
+      "name": "Running_Rig_Halyards",
+      "kind": "rigging",
+      "mover": null,
+      "generated_faces_sha256": "4635b2cfcbd16ff8b313d04411313d34a571850979e2ee4309ef3cfbc2e2663c",
+      "saved_faces_sha256": "4635b2cfcbd16ff8b313d04411313d34a571850979e2ee4309ef3cfbc2e2663c",
+      "match": true,
+      "saved_objects": [
+        "Running_Rig_Halyards"
+      ]
+    },
+    {
+      "name": "Mast_Chainplate_Anchors",
+      "kind": "fitting",
+      "mover": null,
+      "generated_faces_sha256": "be4cda4ef4f235c12859aeadbbb8e3ae3f0263de7c6aa97567daff15360df1a4",
+      "saved_faces_sha256": "be4cda4ef4f235c12859aeadbbb8e3ae3f0263de7c6aa97567daff15360df1a4",
+      "match": true,
+      "saved_objects": [
+        "Mast_Chainplate_Anchors"
+      ]
+    },
+    {
+      "name": "Windlass_Capstans_Bitts_Hatches_Vents",
+      "kind": "equipment",
+      "mover": null,
+      "generated_faces_sha256": "4d79529080ebbdee79fbff2728cce4e6adf7bb79ce82d6e36928a696c2d28105",
+      "saved_faces_sha256": "4d79529080ebbdee79fbff2728cce4e6adf7bb79ce82d6e36928a696c2d28105",
+      "match": true,
+      "saved_objects": [
+        "Windlass_Capstans_Bitts_Hatches_Vents"
+      ]
+    },
+    {
+      "name": "Bower_Anchor_Chains",
+      "kind": "chain",
+      "mover": null,
+      "generated_faces_sha256": "10cdd15e99f4d103b1d6ce524986d60f2386a9d46fbf455abd5bc1a6c693dbc2",
+      "saved_faces_sha256": "10cdd15e99f4d103b1d6ce524986d60f2386a9d46fbf455abd5bc1a6c693dbc2",
+      "match": true,
+      "saved_objects": [
+        "Bower_Anchor_Chains"
+      ]
+    },
+    {
+      "name": "Davits_And_Contract_Cradles",
+      "kind": "mount",
+      "mover": null,
+      "generated_faces_sha256": "2f03c6afcdacfbd58314b87e070f296acfda293cfa82672c9c738a44e2537568",
+      "saved_faces_sha256": "2f03c6afcdacfbd58314b87e070f296acfda293cfa82672c9c738a44e2537568",
+      "match": true,
+      "saved_objects": [
+        "Davits_And_Contract_Cradles"
+      ]
+    },
+    {
+      "name": "HelmWheel",
+      "kind": "mover",
+      "mover": "helm",
+      "generated_faces_sha256": "552572a189fba2ac319769d08a7896134c617688c23b8035cc705f14bf2c668f",
+      "saved_faces_sha256": "552572a189fba2ac319769d08a7896134c617688c23b8035cc705f14bf2c668f",
+      "match": true,
+      "saved_objects": [
+        "HelmWheel"
+      ]
+    },
+    {
+      "name": "Binnacle_Telegraphs_VoiceTubes_Navlights",
+      "kind": "navigation",
+      "mover": null,
+      "generated_faces_sha256": "e0cdcb41aba831b2135af502c5f4f72b8aaf5b1721ba76bbec87dd2c48431bb5",
+      "saved_faces_sha256": "e0cdcb41aba831b2135af502c5f4f72b8aaf5b1721ba76bbec87dd2c48431bb5",
+      "match": true,
+      "saved_objects": [
+        "Binnacle_Telegraphs_VoiceTubes_Navlights"
+      ]
+    },
+    {
+      "name": "Navigating_Bridge_Wings",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "19d6d733f829d3310de0e9e33b205eb69c5ae1ebd739061b24ff933609db6829",
+      "saved_faces_sha256": "19d6d733f829d3310de0e9e33b205eb69c5ae1ebd739061b24ff933609db6829",
+      "match": true,
+      "saved_objects": [
+        "Navigating_Bridge_Wings"
+      ]
+    },
+    {
+      "name": "Gangway_Starboard",
+      "kind": "mover",
+      "mover": "gangway",
+      "generated_faces_sha256": "1ca52b99490a5b3bd500526391b67d8608011e32908d88473a2b0c331777e666",
+      "saved_faces_sha256": "1ca52b99490a5b3bd500526391b67d8608011e32908d88473a2b0c331777e666",
+      "match": true,
+      "saved_objects": [
+        "Gangway_Starboard"
+      ]
+    },
+    {
+      "name": "Gangway_Port",
+      "kind": "mover",
+      "mover": "gangway",
+      "generated_faces_sha256": "70727f4529f6987f9d1d37818cd014131ce461e1c926cd5c01807cf4ea8a0533",
+      "saved_faces_sha256": "70727f4529f6987f9d1d37818cd014131ce461e1c926cd5c01807cf4ea8a0533",
+      "match": true,
+      "saved_objects": [
+        "Gangway_Port"
+      ]
+    },
+    {
+      "name": "Grand_Stair_Skylight_Joinery",
+      "kind": "skylight",
+      "mover": null,
+      "generated_faces_sha256": "d5eeb8a5411a0453c84c5985f39b99cd922c304663d043b935246c3e7accf3d4",
+      "saved_faces_sha256": "d5eeb8a5411a0453c84c5985f39b99cd922c304663d043b935246c3e7accf3d4",
+      "match": true,
+      "saved_objects": [
+        "Grand_Stair_Skylight_Joinery"
+      ]
+    },
+    {
+      "name": "Grand_Stair_Skylight_Glass",
+      "kind": "glazing",
+      "mover": null,
+      "generated_faces_sha256": "c2522920e63c1533f4459f4b0ccac91179d99cb40ca95e53b46307eed7c593bb",
+      "saved_faces_sha256": "c2522920e63c1533f4459f4b0ccac91179d99cb40ca95e53b46307eed7c593bb",
+      "match": true,
+      "saved_objects": [
+        "Grand_Stair_Skylight_Glass"
+      ]
+    },
+    {
+      "name": "After_DeckCabin_Continuous_CrownedRoof",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "7544e930d53bec9829f24cc2dc931e0ed69145af196812c4deda4cc39f5fcfce",
+      "saved_faces_sha256": "7544e930d53bec9829f24cc2dc931e0ed69145af196812c4deda4cc39f5fcfce",
+      "match": true,
+      "saved_objects": [
+        "After_DeckCabin_Continuous_CrownedRoof"
+      ]
+    },
+    {
+      "name": "Officers_Continuous_CrownedRoof",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "2e68f9c7c14d29134249bd1ff44a3ddc15a10ce35f9ef0b585a4601c317b072e",
+      "saved_faces_sha256": "2e68f9c7c14d29134249bd1ff44a3ddc15a10ce35f9ef0b585a4601c317b072e",
+      "match": true,
+      "saved_objects": [
+        "Officers_Continuous_CrownedRoof"
+      ]
+    },
+    {
+      "name": "Chart_Room_CrownedRoof",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "62ee07c492d3bd2f67d9b71195cb87aecd0eb96e082064d39ac5a43779a372f7",
+      "saved_faces_sha256": "62ee07c492d3bd2f67d9b71195cb87aecd0eb96e082064d39ac5a43779a372f7",
+      "match": true,
+      "saved_objects": [
+        "Chart_Room_CrownedRoof"
+      ]
+    },
+    {
+      "name": "Wheelhouse_CrownedRoof",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "597c466e97de027c93fe01d9f426e83ff4d6d52d5f7941040d02d8f045a13be3",
+      "saved_faces_sha256": "597c466e97de027c93fe01d9f426e83ff4d6d52d5f7941040d02d8f045a13be3",
+      "match": true,
+      "saved_objects": [
+        "Wheelhouse_CrownedRoof"
+      ]
+    },
+    {
+      "name": "Hospital_WeatherRoof",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "8b395495b6de4cffc89ad6d66d5d9ccbf98f8886b34e0a12931f14a028ca028a",
+      "saved_faces_sha256": "8b395495b6de4cffc89ad6d66d5d9ccbf98f8886b34e0a12931f14a028ca028a",
+      "match": true,
+      "saved_objects": [
+        "Hospital_WeatherRoof"
+      ]
+    },
+    {
+      "name": "Weather_Planks_saloon",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "bae0cb6545d5914e189632dee89b79016c5043d7246c305914e203318797d335",
+      "saved_faces_sha256": "bae0cb6545d5914e189632dee89b79016c5043d7246c305914e203318797d335",
+      "match": true,
+      "saved_objects": [
+        "Weather_Planks_saloon_01",
+        "Weather_Planks_saloon_02",
+        "Weather_Planks_saloon_03",
+        "Weather_Planks_saloon_04"
+      ]
+    },
+    {
+      "name": "Weather_Planks_promenade",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "00ec44a82c9e845922fec829f298ccfbf796d4f5adadf470d644af0a98e7d430",
+      "saved_faces_sha256": "00ec44a82c9e845922fec829f298ccfbf796d4f5adadf470d644af0a98e7d430",
+      "match": true,
+      "saved_objects": [
+        "Weather_Planks_promenade_01",
+        "Weather_Planks_promenade_02",
+        "Weather_Planks_promenade_03",
+        "Weather_Planks_promenade_04"
+      ]
+    },
+    {
+      "name": "Weather_Planks_boat",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "c168a54b1054737210b204a34af4de5b58155e5e1a04e0cbe0a0264bab061d1f",
+      "saved_faces_sha256": "c168a54b1054737210b204a34af4de5b58155e5e1a04e0cbe0a0264bab061d1f",
+      "match": true,
+      "saved_objects": [
+        "Weather_Planks_boat_01",
+        "Weather_Planks_boat_02",
+        "Weather_Planks_boat_03",
+        "Weather_Planks_boat_04"
+      ]
+    },
+    {
+      "name": "Weather_Planks_bridge",
+      "kind": "deck",
+      "mover": null,
+      "generated_faces_sha256": "49ae5ee388b04193995debc5f7b5333112db82392bf8e1056530aa6055b63d65",
+      "saved_faces_sha256": "49ae5ee388b04193995debc5f7b5333112db82392bf8e1056530aa6055b63d65",
+      "match": true,
+      "saved_objects": [
+        "Weather_Planks_bridge"
+      ]
+    },
+    {
+      "name": "Sheer_Fascia_saloon",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "85fe9a128a85f942d29150986a5d5acf2c6b7a575dd1b93c4faaab24e9536cf3",
+      "saved_faces_sha256": "85fe9a128a85f942d29150986a5d5acf2c6b7a575dd1b93c4faaab24e9536cf3",
+      "match": true,
+      "saved_objects": [
+        "Sheer_Fascia_saloon_01",
+        "Sheer_Fascia_saloon_02"
+      ]
+    },
+    {
+      "name": "Sheer_Fascia_promenade",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "752985dab6b5bff256fd891d23a25348755a03f59328c776dca02b8eff672a5a",
+      "saved_faces_sha256": "752985dab6b5bff256fd891d23a25348755a03f59328c776dca02b8eff672a5a",
+      "match": true,
+      "saved_objects": [
+        "Sheer_Fascia_promenade_01",
+        "Sheer_Fascia_promenade_02"
+      ]
+    },
+    {
+      "name": "Sheer_Fascia_boat",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "cafc2ae692853c32dbfdf5eaa379d3fcc2fd3893e0d1bfdd699864c798297cf1",
+      "saved_faces_sha256": "cafc2ae692853c32dbfdf5eaa379d3fcc2fd3893e0d1bfdd699864c798297cf1",
+      "match": true,
+      "saved_objects": [
+        "Sheer_Fascia_boat_01",
+        "Sheer_Fascia_boat_02"
+      ]
+    },
+    {
+      "name": "Promenade_Seats_Lifesaving_And_FireRack",
+      "kind": "equipment",
+      "mover": null,
+      "generated_faces_sha256": "e25fad67f0d4e1611b2d87d5d04a35434c14ff54547184dce3d742fecee17db8",
+      "saved_faces_sha256": "e25fad67f0d4e1611b2d87d5d04a35434c14ff54547184dce3d742fecee17db8",
+      "match": true,
+      "saved_objects": [
+        "Promenade_Seats_Lifesaving_And_FireRack_01",
+        "Promenade_Seats_Lifesaving_And_FireRack_02"
+      ]
+    },
+    {
+      "name": "Galley_Exterior_CommonFlue",
+      "kind": "superstructure",
+      "mover": null,
+      "generated_faces_sha256": "6d469dffb050f95551fb2e171117d4257191b5fcdb1a45ed42b85651aa40cd9f",
+      "saved_faces_sha256": "6d469dffb050f95551fb2e171117d4257191b5fcdb1a45ed42b85651aa40cd9f",
+      "match": true,
+      "saved_objects": [
+        "Galley_Exterior_CommonFlue"
+      ]
+    }
+  ],
+  "structural_context": [
+    "Hull_Shell_New",
+    "Keel_Stem_SternFrame",
+    "Rolled_Frames_ReverseAngles_01",
+    "Rolled_Frames_ReverseAngles_02",
+    "Rolled_Frames_ReverseAngles_03",
+    "Rolled_Frames_ReverseAngles_04",
+    "Rolled_Frames_ReverseAngles_05",
+    "Rolled_Frames_ReverseAngles_06",
+    "Rolled_Frames_ReverseAngles_07",
+    "Rolled_Frames_ReverseAngles_08",
+    "Floors_And_DeckBeams",
+    "Keelsons",
+    "Joinery_M_Entrance",
+    "Finish_M_Entrance",
+    "Ceiling_M_Entrance",
+    "Joinery_M_ForwardThird",
+    "Finish_M_ForwardThird",
+    "Ceiling_M_ForwardThird",
+    "Joinery_M_AfterThird",
+    "Finish_M_AfterThird",
+    "Ceiling_M_AfterThird",
+    "Joinery_M_Forecastle",
+    "Finish_M_Forecastle",
+    "Ceiling_M_Forecastle",
+    "Joinery_S_ColdStore",
+    "Finish_S_ColdStore",
+    "Ceiling_S_ColdStore",
+    "Joinery_A001",
+    "Finish_A001",
+    "Ceiling_A001",
+    "Joinery_A002",
+    "Finish_A002",
+    "Ceiling_A002",
+    "Joinery_A003",
+    "Finish_A003",
+    "Ceiling_A003",
+    "Joinery_A004",
+    "Finish_A004",
+    "Ceiling_A004",
+    "Joinery_A005",
+    "Finish_A005",
+    "Ceiling_A005",
+    "Joinery_A006",
+    "Finish_A006",
+    "Ceiling_A006",
+    "Joinery_A007",
+    "Finish_A007",
+    "Ceiling_A007",
+    "Joinery_A008",
+    "Finish_A008",
+    "Ceiling_A008",
+    "Joinery_A009",
+    "Finish_A009",
+    "Ceiling_A009",
+    "Joinery_A010",
+    "Finish_A010",
+    "Ceiling_A010",
+    "Joinery_A011",
+    "Finish_A011",
+    "Ceiling_A011",
+    "Joinery_A012",
+    "Finish_A012",
+    "Ceiling_A012",
+    "Joinery_A013",
+    "Finish_A013",
+    "Ceiling_A013",
+    "Joinery_A014",
+    "Finish_A014",
+    "Ceiling_A014",
+    "Joinery_A015",
+    "Finish_A015",
+    "Ceiling_A015",
+    "Joinery_A016",
+    "Finish_A016",
+    "Ceiling_A016",
+    "Joinery_A017",
+    "Finish_A017",
+    "Ceiling_A017",
+    "Joinery_A018",
+    "Finish_A018",
+    "Ceiling_A018",
+    "Joinery_A019",
+    "Finish_A019",
+    "Ceiling_A019",
+    "Joinery_A020",
+    "Finish_A020",
+    "Ceiling_A020",
+    "Joinery_A021",
+    "Finish_A021",
+    "Ceiling_A021",
+    "Joinery_A022",
+    "Finish_A022",
+    "Ceiling_A022",
+    "Joinery_A023",
+    "Finish_A023",
+    "Ceiling_A023",
+    "Joinery_A024",
+    "Finish_A024",
+    "Ceiling_A024",
+    "Joinery_A025",
+    "Finish_A025",
+    "Ceiling_A025",
+    "Joinery_A026",
+    "Finish_A026",
+    "Ceiling_A026",
+    "Joinery_A027",
+    "Finish_A027",
+    "Ceiling_A027",
+    "Joinery_A028",
+    "Finish_A028",
+    "Ceiling_A028",
+    "Joinery_A029",
+    "Finish_A029",
+    "Ceiling_A029",
+    "Joinery_A030",
+    "Finish_A030",
+    "Ceiling_A030",
+    "Joinery_A031",
+    "Finish_A031",
+    "Ceiling_A031",
+    "Joinery_A032",
+    "Finish_A032",
+    "Ceiling_A032",
+    "Joinery_A033",
+    "Finish_A033",
+    "Ceiling_A033",
+    "Joinery_A034",
+    "Finish_A034",
+    "Ceiling_A034",
+    "Joinery_A035",
+    "Finish_A035",
+    "Ceiling_A035",
+    "Joinery_A036",
+    "Finish_A036",
+    "Ceiling_A036",
+    "Joinery_A037",
+    "Finish_A037",
+    "Ceiling_A037",
+    "Joinery_A038",
+    "Finish_A038",
+    "Ceiling_A038",
+    "Joinery_A039",
+    "Finish_A039",
+    "Ceiling_A039",
+    "Joinery_A040",
+    "Finish_A040",
+    "Ceiling_A040",
+    "Joinery_A041",
+    "Finish_A041",
+    "Ceiling_A041",
+    "Joinery_A042",
+    "Finish_A042",
+    "Ceiling_A042",
+    "Joinery_A043",
+    "Finish_A043",
+    "Ceiling_A043",
+    "Joinery_A044",
+    "Finish_A044",
+    "Ceiling_A044",
+    "Joinery_A045",
+    "Finish_A045",
+    "Ceiling_A045",
+    "Joinery_A046",
+    "Finish_A046",
+    "Ceiling_A046",
+    "Joinery_A047",
+    "Finish_A047",
+    "Ceiling_A047",
+    "Joinery_A048",
+    "Finish_A048",
+    "Ceiling_A048",
+    "Joinery_A049",
+    "Finish_A049",
+    "Ceiling_A049",
+    "Joinery_A050",
+    "Finish_A050",
+    "Ceiling_A050",
+    "Joinery_A051",
+    "Finish_A051",
+    "Ceiling_A051",
+    "Joinery_A052",
+    "Finish_A052",
+    "Ceiling_A052",
+    "Joinery_A053",
+    "Finish_A053",
+    "Ceiling_A053",
+    "Joinery_A054",
+    "Finish_A054",
+    "Ceiling_A054",
+    "Joinery_A055",
+    "Finish_A055",
+    "Ceiling_A055",
+    "Joinery_A056",
+    "Finish_A056",
+    "Ceiling_A056",
+    "Joinery_A057",
+    "Finish_A057",
+    "Ceiling_A057",
+    "Joinery_A058",
+    "Finish_A058",
+    "Ceiling_A058",
+    "Joinery_A059",
+    "Finish_A059",
+    "Ceiling_A059",
+    "Joinery_A060",
+    "Finish_A060",
+    "Ceiling_A060",
+    "Joinery_A061",
+    "Finish_A061",
+    "Ceiling_A061",
+    "Joinery_A062",
+    "Finish_A062",
+    "Ceiling_A062",
+    "Joinery_A063",
+    "Finish_A063",
+    "Ceiling_A063",
+    "Joinery_A064",
+    "Finish_A064",
+    "Ceiling_A064",
+    "Joinery_A065",
+    "Finish_A065",
+    "Ceiling_A065",
+    "Joinery_A066",
+    "Finish_A066",
+    "Ceiling_A066",
+    "Joinery_A067",
+    "Finish_A067",
+    "Ceiling_A067",
+    "Joinery_A068",
+    "Finish_A068",
+    "Ceiling_A068",
+    "Joinery_A069",
+    "Finish_A069",
+    "Ceiling_A069",
+    "Joinery_A070",
+    "Finish_A070",
+    "Ceiling_A070",
+    "Joinery_A071",
+    "Finish_A071",
+    "Ceiling_A071",
+    "Joinery_A072",
+    "Finish_A072",
+    "Ceiling_A072",
+    "Joinery_A073",
+    "Finish_A073",
+    "Ceiling_A073",
+    "Joinery_A074",
+    "Finish_A074",
+    "Ceiling_A074",
+    "Joinery_A075",
+    "Finish_A075",
+    "Ceiling_A075",
+    "Joinery_A076",
+    "Finish_A076",
+    "Ceiling_A076",
+    "Joinery_A077",
+    "Finish_A077",
+    "Ceiling_A077",
+    "Joinery_S_Dining",
+    "Finish_S_Dining",
+    "Ceiling_S_Dining",
+    "Joinery_S_Music_01",
+    "Joinery_S_Music_02",
+    "Finish_S_Music",
+    "Ceiling_S_Music",
+    "Joinery_S_Stair",
+    "Finish_S_Stair",
+    "Ceiling_S_Stair",
+    "Joinery_S_Purser",
+    "Finish_S_Purser",
+    "Ceiling_S_Purser",
+    "Joinery_S_Mail",
+    "Finish_S_Mail",
+    "Ceiling_S_Mail",
+    "Joinery_S_Galley",
+    "Finish_S_Galley",
+    "Ceiling_S_Galley",
+    "Joinery_S_Pantry",
+    "Finish_S_Pantry",
+    "Ceiling_S_Pantry",
+    "Joinery_S_Bakery",
+    "Finish_S_Bakery",
+    "Ceiling_S_Bakery",
+    "Joinery_S_Bath_P",
+    "Finish_S_Bath_P",
+    "Ceiling_S_Bath_P",
+    "Joinery_S_Bath_S",
+    "Finish_S_Bath_S",
+    "Ceiling_S_Bath_S",
+    "Joinery_S_SecondDining",
+    "Finish_S_SecondDining",
+    "Ceiling_S_SecondDining",
+    "Joinery_U001",
+    "Finish_U001",
+    "Ceiling_U001",
+    "Joinery_U002",
+    "Finish_U002",
+    "Ceiling_U002",
+    "Joinery_U003",
+    "Finish_U003",
+    "Ceiling_U003",
+    "Joinery_U004",
+    "Finish_U004",
+    "Ceiling_U004",
+    "Joinery_U005",
+    "Finish_U005",
+    "Ceiling_U005",
+    "Joinery_U006",
+    "Finish_U006",
+    "Ceiling_U006",
+    "Joinery_U007",
+    "Finish_U007",
+    "Ceiling_U007",
+    "Joinery_U008",
+    "Finish_U008",
+    "Ceiling_U008",
+    "Joinery_U009",
+    "Finish_U009",
+    "Ceiling_U009",
+    "Joinery_U010",
+    "Finish_U010",
+    "Ceiling_U010",
+    "Joinery_U011",
+    "Finish_U011",
+    "Ceiling_U011",
+    "Joinery_U012",
+    "Finish_U012",
+    "Ceiling_U012",
+    "Joinery_D001",
+    "Finish_D001",
+    "Ceiling_D001",
+    "Joinery_D002",
+    "Finish_D002",
+    "Ceiling_D002",
+    "Joinery_D003",
+    "Finish_D003",
+    "Ceiling_D003",
+    "Joinery_D004",
+    "Finish_D004",
+    "Ceiling_D004",
+    "Joinery_D005",
+    "Finish_D005",
+    "Ceiling_D005",
+    "Joinery_D006",
+    "Finish_D006",
+    "Ceiling_D006",
+    "Joinery_D007",
+    "Finish_D007",
+    "Ceiling_D007",
+    "Joinery_S_Steering",
+    "Finish_S_Steering",
+    "Ceiling_S_Steering",
+    "Joinery_P_Library_01",
+    "Joinery_P_Library_02",
+    "Joinery_P_Library_03",
+    "Finish_P_Library",
+    "Ceiling_P_Library",
+    "Joinery_P_Smoking_01",
+    "Joinery_P_Smoking_02",
+    "Finish_P_Smoking",
+    "Ceiling_P_Smoking",
+    "Joinery_P_Writing_01",
+    "Joinery_P_Writing_02",
+    "Finish_P_Writing",
+    "Ceiling_P_Writing",
+    "Joinery_P_SecondLounge",
+    "Finish_P_SecondLounge",
+    "Ceiling_P_SecondLounge",
+    "Joinery_P_Barber",
+    "Finish_P_Barber",
+    "Ceiling_P_Barber",
+    "Joinery_P_Wash",
+    "Finish_P_Wash",
+    "Ceiling_P_Wash",
+    "Joinery_P_Stair",
+    "Finish_P_Stair",
+    "Ceiling_P_Stair",
+    "Joinery_P_Bar",
+    "Finish_P_Bar",
+    "Ceiling_P_Bar",
+    "Joinery_P_Coats",
+    "Finish_P_Coats",
+    "Ceiling_P_Coats",
+    "Joinery_P_Hospital",
+    "Finish_P_Hospital",
+    "Ceiling_P_Hospital",
+    "Joinery_P001",
+    "Finish_P001",
+    "Ceiling_P001",
+    "Joinery_P002",
+    "Finish_P002",
+    "Ceiling_P002",
+    "Joinery_P003",
+    "Finish_P003",
+    "Ceiling_P003",
+    "Joinery_P004",
+    "Finish_P004",
+    "Ceiling_P004",
+    "Joinery_P005",
+    "Finish_P005",
+    "Ceiling_P005",
+    "Joinery_P006",
+    "Finish_P006",
+    "Ceiling_P006",
+    "Joinery_P007",
+    "Finish_P007",
+    "Ceiling_P007",
+    "Joinery_P008",
+    "Finish_P008",
+    "Ceiling_P008",
+    "Joinery_B_Captain",
+    "Finish_B_Captain",
+    "Ceiling_B_Captain",
+    "Joinery_B_Chief",
+    "Finish_B_Chief",
+    "Ceiling_B_Chief",
+    "Joinery_B_Navigator",
+    "Finish_B_Navigator",
+    "Ceiling_B_Navigator",
+    "Joinery_B_Chart",
+    "Finish_B_Chart",
+    "Ceiling_B_Chart",
+    "Joinery_B_Officer_1",
+    "Finish_B_Officer_1",
+    "Ceiling_B_Officer_1",
+    "Joinery_B_Officer_2",
+    "Finish_B_Officer_2",
+    "Ceiling_B_Officer_2",
+    "Joinery_B_Officer_3",
+    "Finish_B_Officer_3",
+    "Ceiling_B_Officer_3",
+    "Joinery_B_Officer_4",
+    "Finish_B_Officer_4",
+    "Ceiling_B_Officer_4",
+    "Joinery_B_First098",
+    "Finish_B_First098",
+    "Ceiling_B_First098",
+    "Joinery_B_First099",
+    "Finish_B_First099",
+    "Ceiling_B_First099",
+    "Joinery_B_First100",
+    "Finish_B_First100",
+    "Ceiling_B_First100",
+    "Joinery_B_First101",
+    "Finish_B_First101",
+    "Ceiling_B_First101",
+    "Joinery_B_First102",
+    "Finish_B_First102",
+    "Ceiling_B_First102",
+    "Joinery_B_First103",
+    "Finish_B_First103",
+    "Ceiling_B_First103",
+    "Joinery_B_First104",
+    "Finish_B_First104",
+    "Ceiling_B_First104",
+    "Joinery_B_First105",
+    "Finish_B_First105",
+    "Ceiling_B_First105",
+    "Joinery_B_First106",
+    "Finish_B_First106",
+    "Ceiling_B_First106",
+    "Joinery_B_First107",
+    "Finish_B_First107",
+    "Ceiling_B_First107",
+    "Joinery_B_First108",
+    "Finish_B_First108",
+    "Ceiling_B_First108",
+    "Joinery_B_First109",
+    "Finish_B_First109",
+    "Ceiling_B_First109",
+    "Joinery_B_First110",
+    "Finish_B_First110",
+    "Ceiling_B_First110",
+    "Joinery_B_First111",
+    "Finish_B_First111",
+    "Ceiling_B_First111",
+    "Joinery_B_First112",
+    "Finish_B_First112",
+    "Ceiling_B_First112",
+    "Joinery_B_First113",
+    "Finish_B_First113",
+    "Ceiling_B_First113",
+    "Joinery_B_First114",
+    "Finish_B_First114",
+    "Ceiling_B_First114",
+    "Joinery_N_Wheelhouse",
+    "Finish_N_Wheelhouse",
+    "Ceiling_N_Wheelhouse",
+    "Joinery_L_ThirdWomen",
+    "Finish_L_ThirdWomen",
+    "Ceiling_L_ThirdWomen",
+    "Joinery_L_ThirdMen",
+    "Finish_L_ThirdMen",
+    "Ceiling_L_ThirdMen",
+    "Joinery_L_ThirdWash",
+    "Finish_L_ThirdWash",
+    "Ceiling_L_ThirdWash",
+    "Joinery_L_CrewP",
+    "Finish_L_CrewP",
+    "Ceiling_L_CrewP",
+    "Joinery_L_CrewS",
+    "Finish_L_CrewS",
+    "Ceiling_L_CrewS",
+    "Joinery_L_AfterStore",
+    "Finish_L_AfterStore",
+    "Ceiling_L_AfterStore",
+    "Joinery_L_ThirdMess",
+    "Finish_L_ThirdMess",
+    "Ceiling_L_ThirdMess",
+    "Joinery_C001",
+    "Finish_C001",
+    "Ceiling_C001",
+    "Joinery_C002",
+    "Finish_C002",
+    "Ceiling_C002",
+    "Joinery_C003",
+    "Finish_C003",
+    "Ceiling_C003",
+    "Joinery_C004",
+    "Finish_C004",
+    "Ceiling_C004",
+    "Joinery_C005",
+    "Finish_C005",
+    "Ceiling_C005",
+    "Joinery_C006",
+    "Finish_C006",
+    "Ceiling_C006",
+    "Joinery_C007",
+    "Finish_C007",
+    "Ceiling_C007",
+    "Joinery_C008",
+    "Finish_C008",
+    "Ceiling_C008",
+    "Joinery_C009",
+    "Finish_C009",
+    "Ceiling_C009",
+    "Joinery_C010",
+    "Finish_C010",
+    "Ceiling_C010",
+    "Joinery_C011",
+    "Finish_C011",
+    "Ceiling_C011",
+    "Joinery_C012",
+    "Finish_C012",
+    "Ceiling_C012",
+    "Joinery_C013",
+    "Finish_C013",
+    "Ceiling_C013",
+    "Joinery_C014",
+    "Finish_C014",
+    "Ceiling_C014",
+    "Joinery_C015",
+    "Finish_C015",
+    "Ceiling_C015",
+    "Joinery_C016",
+    "Finish_C016",
+    "Ceiling_C016",
+    "Joinery_C017",
+    "Finish_C017",
+    "Ceiling_C017",
+    "Joinery_C018",
+    "Finish_C018",
+    "Ceiling_C018",
+    "Joinery_C019",
+    "Finish_C019",
+    "Ceiling_C019",
+    "Joinery_C020",
+    "Finish_C020",
+    "Ceiling_C020",
+    "Joinery_C021",
+    "Finish_C021",
+    "Ceiling_C021",
+    "Joinery_C022",
+    "Finish_C022",
+    "Ceiling_C022",
+    "Joinery_C023",
+    "Finish_C023",
+    "Ceiling_C023",
+    "Joinery_C024",
+    "Finish_C024",
+    "Ceiling_C024",
+    "Joinery_C025",
+    "Finish_C025",
+    "Ceiling_C025",
+    "Joinery_C026",
+    "Finish_C026",
+    "Ceiling_C026",
+    "Joinery_O_ThirdF",
+    "Finish_O_ThirdF",
+    "Ceiling_O_ThirdF",
+    "Joinery_O_ThirdAP",
+    "Finish_O_ThirdAP",
+    "Ceiling_O_ThirdAP",
+    "Joinery_O_ThirdAS",
+    "Finish_O_ThirdAS",
+    "Ceiling_O_ThirdAS",
+    "Joinery_O_CrewP",
+    "Finish_O_CrewP",
+    "Ceiling_O_CrewP",
+    "Joinery_O_CrewS",
+    "Finish_O_CrewS",
+    "Ceiling_O_CrewS",
+    "Joinery_O_Hold",
+    "Finish_O_Hold",
+    "Ceiling_O_Hold",
+    "Watertight_ShaftAlley_Enclosure"
+  ],
+  "seconds": 18.86,
+  "limits": "Finite primitive surface/nearest-vertex/containment support paths to real structure; old copies of recaptured assemblies excluded as anchors. Rigid mover-internal contact screened separately. Does not establish absence of deep intersections, credible foundations/fastening/load/strength, chain/rope kinematics, continuous/adjacent-room sweeps, climbing, boat contact, visual inspection or Studio acceptance. All flags require physical/source examination; zero flags are not global approval."
+}

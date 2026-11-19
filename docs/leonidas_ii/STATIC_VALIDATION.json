@@ -1,9 +1,9 @@
 {
   "scope": "SOURCE_AND_CURRENT_EXPORT",
-  "source_sha256": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4",
-  "validator_sha256": "2765d8bd4cf6d3d616214ad989e2246563d0db3dad1794092e1fd9336f1e0336",
-  "build_data_sha256": "dd7ae042f6833d11be117e43a68e8112dd3312cab5b828a62f52a549827b9189",
-  "game_manifest_sha256": "997f76bf8f16ec193c7c27f05aa80ee4b8feee4949c99da2cf5cdd9dfacf23c1",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "validator_sha256": "d69c747030efdd14f24dfe2bc6ac79724d6197d8789531a4aba7bbd29b302a1a",
+  "build_data_sha256": "adf9206f7eec378855a281cda21295d10b02725d1c583e2c6b1f45093832bf01",
+  "game_manifest_sha256": "60282b6262dec4aeb9c691f5c805ebf2d9e38e6108f72d0b95a1fb1f217eea18",
   "results": [
     {
       "test": "All planned compartments have an explicit inventory",
@@ -13,7 +13,7 @@
     {
       "test": "Unique object names",
       "status": "PASS",
-      "detail": 1422
+      "detail": 1437
     },
     {
       "test": "UV0 on every source mesh",
@@ -49,8 +49,8 @@
       "test": "Built passenger and crew berths counted separately",
       "status": "INFO",
       "detail": {
-        "mesh_objects": 1422,
-        "triangles": 3300554,
+        "mesh_objects": 1437,
+        "triangles": 4341224,
         "physical_compartments": 203,
         "actual_first_berths": 228,
         "actual_second_berths": 132,
@@ -544,19 +544,19 @@
           "blocked_by": []
         },
         {
-          "id": "EngineLadder_590",
+          "id": "EngineLadder_575",
           "blocked_by": []
         },
         {
-          "id": "EngineLadder_591",
+          "id": "EngineLadder_576",
           "blocked_by": []
         },
         {
-          "id": "EngineLadder_592",
+          "id": "EngineLadder_577",
           "blocked_by": []
         },
         {
-          "id": "EngineLadder_593",
+          "id": "EngineLadder_578",
           "blocked_by": []
         }
       ]
@@ -564,22 +564,22 @@
     {
       "test": "Game export regenerated from current master",
       "status": "PASS",
-      "detail": "ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4"
+      "detail": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526"
     },
     {
       "test": "Game mesh node <=18000 triangles / finite UV0 / closed components",
       "status": "PASS",
       "detail": {
-        "mesh_nodes": 1438,
-        "unique_meshes": 860,
-        "placed_triangles": 2473152,
-        "unique_triangles": 2166940,
-        "reused_nodes": 578,
+        "mesh_nodes": 1461,
+        "unique_meshes": 1160,
+        "placed_triangles": 3199238,
+        "unique_triangles": 3101586,
+        "reused_nodes": 301,
         "max_node_triangles": 18000,
         "removed_zero_area_triangles": 0,
         "calibration_nodes": 4,
-        "storage_meshes_including_calibration": 861,
-        "corrected_shading_corners": 13484,
+        "storage_meshes_including_calibration": 1161,
+        "corrected_shading_corners": 11169,
         "source_precision_vertices": 57
       }
     },
@@ -593,8 +593,8 @@
       "status": "PASS",
       "detail": {
         "interface_arrays_equal": true,
-        "colliders_master": 4071,
-        "colliders_game": 4071,
+        "colliders_master": 4040,
+        "colliders_game": 4040,
         "max_fixture_delta_m": 0.0219,
         "nonconforming": [],
         "runtime_uses": "master proxies, not lower-detail bounding boxes"
@@ -4145,19 +4145,19 @@
       "blocked_by": []
     },
     {
-      "id": "EngineLadder_590",
+      "id": "EngineLadder_575",
       "blocked_by": []
     },
     {
-      "id": "EngineLadder_591",
+      "id": "EngineLadder_576",
       "blocked_by": []
     },
     {
-      "id": "EngineLadder_592",
+      "id": "EngineLadder_577",
       "blocked_by": []
     },
     {
-      "id": "EngineLadder_593",
+      "id": "EngineLadder_578",
       "blocked_by": []
     }
   ],

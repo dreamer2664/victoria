@@ -22,7 +22,18 @@ PALETTE=[
  ('BookRed',(112,46,38),.58,0,'book'),('BookBlue',(37,61,74),.58,0,'book'),('BookGreen',(59,77,45),.58,0,'book'),('Paper',(218,203,163),.88,0,'paper'),
  ('Coal',(28,30,29),.98,0,'grain'),('Firebrick',(134,67,44),.9,0,'brick'),('Canvas',(185,172,137),.9,0,'fabric'),('Chart',(208,198,159),.88,0,'chart'),
  ('Bulb',(255,222,150),.25,0,'grain'),('Red',(148,43,34),.4,.1,'paint'),('Green',(25,98,68),.4,.1,'paint'),('Black',(22,24,23),.7,0,'grain'),
+ # Authored coordinated textiles / wall coverings, NOT random per-object hues.
+ ('CabinBlue',(184,196,193),.79,0,'wallpaper'),('CabinSage',(193,201,174),.79,0,'wallpaper'),
+ ('ClothBlue',(45,70,89),.92,0,'brocade'),('ClothSage',(87,107,77),.93,0,'brocade'),('ClothPlum',(102,62,78),.93,0,'brocade'),
+ ('SagePaint',(137,158,143),.68,0,'paint'),('LibraryWall',(109,133,112),.88,0,'wallpaper'),
+ ('WritingWall',(212,196,190),.90,0,'wallpaper'),('MusicWall',(227,222,205),.87,0,'wallpaper'),('SmokingWall',(142,127,92),.89,0,'wallpaper'),
+ ('CarpetNavy',(40,60,71),.97,0,'carpet'),('CarpetSage',(88,106,81),.97,0,'carpet'),('CarpetWine',(104,52,55),.97,0,'carpet'),
+ ('Parquet',(126,91,57),.52,0,'parquet'),('Grating',(56,62,59),.73,.5,'grating'),('Bread',(169,119,59),.92,0,'grain'),
+ ('Enamel',(221,228,218),.34,.05,'paint'),('Dial',(228,221,196),.42,.05,'dial'),('TelegraphDial',(224,217,192),.44,.05,'telegraph'),
+ ('Notice',(218,209,179),.89,0,'notice'),('Seascape',(152,168,166),.9,0,'seascape'),
+ ('WeatheredTeak',(129,108,76),.70,0,'wood'),('BilliardBaize',(41,89,65),.96,0,'fabric'),('DeckCanvas',(207,196,166),.93,0,'fabric'),
 ]
+assert len(PALETTE)==64, 'The single 8x8 material atlas must never overflow.'
 N=256;SIZE=2048
 base=np.zeros((SIZE,SIZE,3),np.uint8);rough=np.zeros((SIZE,SIZE),np.uint8);metal=np.zeros_like(rough);normal=np.zeros((SIZE,SIZE,3),np.uint8)
 rng=np.random.default_rng(1889);y,x=np.mgrid[0:N,0:N];u=x/N;v=y/N
@@ -35,21 +46,33 @@ for i,(name,col,r,m,pattern) in enumerate(PALETTE):
   fibres=np.convolve(fibres,np.ones(5)/5,mode='same')
   warp=(v*N*3.8+3*np.sin(u*math.tau*1.4+v*6)+1.4*np.sin(u*math.tau*6))%(N*4-1)
   grain=np.interp(warp.ravel(),np.arange(N*4),fibres).reshape(N,N)
-  delta+=grain*9+np.sin(v*math.tau*5+np.sin(u*8)*.6)*1.6;height+=grain*.6
- elif pattern in ('fabric','stripe','rope'):
+  delta+=grain*4+np.sin(v*math.tau*5+np.sin(u*8)*.6)*.7;height+=grain*.28
+ elif pattern in ('fabric','stripe','rope','brocade'):
   weave=(np.sin(u*math.tau*95)+np.sin(v*math.tau*95));delta+=weave*3;height+=weave*2
   if pattern=='stripe':delta+=np.where((x//22)%2,13,-13)
   if pattern=='rope':delta+=np.sin((u+v)*math.tau*13)*9
+  if pattern=='brocade':
+   ornament=np.cos(u*math.tau*4)*np.cos(v*math.tau*4);delta+=np.where(ornament>.58,7,0);height+=np.where(ornament>.58,.6,0)
  elif pattern=='leather':
   delta+=low*.7;height+=low*.3
  elif pattern=='carpet':
-  a=(np.abs(u-.5)+np.abs(v-.5));motif=(np.sin(a*math.tau*4)>0)*12
-  delta+=motif+np.cos(u*math.tau*3)*np.cos(v*math.tau*3)*9;height+=motif*.09
+  a=(np.abs(u-.5)+np.abs(v-.5));motif=(np.sin(a*math.tau*4)>0)*5
+  delta+=motif+np.cos(u*math.tau*3)*np.cos(v*math.tau*3)*3;height+=motif*.09
  elif pattern=='rubber':
   motif=(np.abs(np.abs(u-.5)+np.abs(v-.5)-.32)<.027)|(x<5)|(y<5);delta+=motif*24;height+=motif*4
  elif pattern=='tile':
   grout=(x%64<3)|(y%64<3);delta-=grout*38;height-=grout*7
   delta+=(((x//64+y//64)%2)*2-1)*7
+ elif pattern=='wallpaper':
+  stem=np.cos(u*math.tau*8+np.sin(v*math.tau*4)*.6)
+  delta+=np.where(stem>.94,-5,0)+np.cos(v*math.tau*4)*1.2;height+=stem*.08
+ elif pattern=='parquet':
+  # Narrow herringbone staves and fine seams, not giant swirling wood.
+  X=x+y;Y=y-x;bands=(X//22+Y//66)%2
+  grain=np.sin((np.where(bands,X,Y))*1.7)*1.4
+  joint=(X%22<1)|(Y%66<1);delta+=bands*9-4+grain-joint*24;height-=joint*1.5
+ elif pattern=='grating':
+  hole=(x%32>9)&(y%32>9);delta-=hole*28;height-=hole*8
  elif pattern=='marble':delta-=np.exp(-np.sin(u*21+v*9+np.sin(v*13))**2*100)*29
  elif pattern=='brick':
   grout=(y%64<5)|((x+(y//64%2)*48)%96<5);delta-=grout*32;height-=grout*6
@@ -67,6 +90,36 @@ for i,(name,col,r,m,pattern) in enumerate(PALETTE):
   for j in range(15):
    pts=[(k*8,int(70+j*5+math.sin(k*.4+j)*9)) for k in range(33)];d.line(pts,fill=(125,136,113),width=1)
   d.line([(26,200),(63,168),(124,130),(190,54),(224,31)],fill=(164,81,58),width=2);d.ellipse((180,175,225,220),outline=(92,88,63),width=2);d.line((202,165,202,229),fill=(92,88,63));d.line((171,197,234,197),fill=(92,88,63));rgb=np.asarray(im)
+ if pattern in ('dial','telegraph','notice','seascape'):
+  im=Image.fromarray(rgb);d=ImageDraw.Draw(im)
+  try:facefont=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf',14);tiny=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf',10)
+  except OSError:facefont=ImageFont.load_default();tiny=facefont
+  if pattern in ('dial','telegraph'):
+   d.ellipse((13,13,243,243),outline=(65,59,45),width=2)
+   for j in range(60):
+    a=j*math.tau/60;r0=92 if j%5==0 else 101
+    d.line((128+r0*math.sin(a),128-r0*math.cos(a),128+110*math.sin(a),128-110*math.cos(a)),fill=(45,47,43),width=2 if j%5==0 else 1)
+   if pattern=='dial':
+    for j in range(1,13):
+     a=j*math.tau/12;d.text((128+78*math.sin(a),128-78*math.cos(a)),str(j),font=facefont,fill=(35,38,35),anchor='mm')
+    d.line((128,128,177,88),fill=(29,33,31),width=4);d.line((128,128,99,62),fill=(29,33,31),width=3)
+   else:
+    for j,txt in enumerate(('FULL','HALF','SLOW','STOP','SLOW','HALF','FULL')):
+     a=(-110+j*220/6)*math.pi/180;d.text((128+75*math.sin(a),128-75*math.cos(a)),txt,font=tiny,fill=(49,47,41),anchor='mm')
+    d.text((63,195),'ASTERN',font=tiny,fill=(112,48,37),anchor='mm');d.text((187,195),'AHEAD',font=tiny,fill=(37,71,49),anchor='mm')
+   d.ellipse((121,121,135,135),fill=(53,53,44))
+  elif pattern=='notice':
+   d.rectangle((13,13,243,243),outline=(107,88,56),width=3);d.text((128,35),'AURELIAN',font=facefont,fill=(52,59,48),anchor='mm')
+   d.text((128,63),'SHIP NOTICES',font=tiny,fill=(70,64,49),anchor='mm')
+   for j,length in enumerate((190,177,192,163,185,175,193,157)):
+    yy=93+j*15;d.line((31,yy,31+length,yy),fill=(139,130,105),width=2)
+  else:
+   # Original stylised marine picture for framed joinery, no photo claim.
+   d.rectangle((0,126,255,255),fill=(76,111,119));d.polygon([(0,166),(45,158),(97,174),(161,155),(255,163),(255,181),(0,187)],fill=(115,144,145))
+   d.polygon([(59,154),(187,154),(170,172),(80,169)],fill=(58,54,45));d.line((127,42,127,156),fill=(57,62,56),width=3)
+   d.polygon([(124,54),(124,142),(71,142)],fill=(213,207,181));d.polygon([(132,70),(132,144),(175,144)],fill=(222,214,189))
+   d.ellipse((169,32,196,59),fill=(222,211,172))
+  rgb=np.asarray(im)
  if pattern=='book':
   im=Image.fromarray(rgb);d=ImageDraw.Draw(im)
   for yy in [24,32,195,203,222]:d.line((9,yy,246,yy),fill=(177,146,77),width=2)

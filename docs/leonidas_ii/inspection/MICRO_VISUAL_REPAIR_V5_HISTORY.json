@@ -1,0 +1,50 @@
+{
+  "schema": "victoria.leonidas-ii.visual-repair-history/1.0",
+  "source_sha256": "bd420b394d64fa5e785996951defe5cdca68617ee3aa94f98f20150d1ad82cfc",
+  "archive": "docs/leonidas_ii/inspection/MICRO_VISUAL_REPAIR_V5_HISTORY.tar.xz",
+  "archive_sha256": "44b5cc5cdd17cdf9d0470dd0cdcf4d50b3a7492da7df2378ec6df45b72033e72",
+  "files": [
+    {
+      "file": "docs/leonidas_ii/FINAL_RENDER_REVIEW.json",
+      "bytes": 15367,
+      "sha256": "d7d28bec883f669b57a2cfa1ac0efa5f77015ad94cbbed74b0d6da7a23d929cf"
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Smoking.jpg",
+      "bytes": 310345,
+      "sha256": "5f46b3be3c555c80d696775d8e5c972990972c043ea2b0c7f32e0efbd901ee0d"
+    },
+    {
+      "file": "renders/leonidas_ii/Interior_Grand_Stair.jpg",
+      "bytes": 314455,
+      "sha256": "c2a2ec2843811c2894b03669102e2c5b5a651e1fd8ac268619bdbc79f3b3fb90"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_CONTACT_REGRESSIONS_MASTER.json",
+      "bytes": 60115,
+      "sha256": "69b5ec3764fbee2e4471833fed3c5f867b68a0fac29303fccdd4b71c7b687d3d"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_CONTACT_REGRESSIONS_GAME.json",
+      "bytes": 60109,
+      "sha256": "4100d2dd4e042b1f2dd417603c24f04a73983715162851bf952f4eb293fbf161"
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/Framing_Wheelhouse_Precheck.jpg",
+      "bytes": 201304,
+      "sha256": "b3acdc1a755db6c51083983ec608ec9a27865cb301d167bc42f40e50cbc9ac99"
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/camera_register.json",
+      "bytes": 27502,
+      "sha256": "c25ed7de78019f14183dcee0f2d7df292fb00a4350420b33e9bf4f1bfc09d276"
+    },
+    {
+      "file": "renders/leonidas_ii/refinement/closeup_camera_register.json",
+      "bytes": 6466,
+      "sha256": "8625fb738f8ca85014bbeb79a3316dfc3d3d8a323dee41d503789cbc8ec8a8a4"
+    }
+  ],
+  "reason": "V5 actual pixel review caught coplanar carom rail corners and stair riser ends; archive is historical, never current-source acceptance.",
+  "additional_disposition": "Unregistered older wheelhouse precheck individually opened: ceiling beams, seated helm/telegraphs, wall-mounted bell visible; not current-source acceptance. Exact old pixels/camera registers archived here, replaced by freshly generated Detail_Wheelhouse_Framing."
+}

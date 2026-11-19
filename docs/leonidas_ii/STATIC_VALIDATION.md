@@ -6,7 +6,7 @@
 203
 
 ## PASS — Unique object names
-1422
+1437
 
 ## PASS — UV0 on every source mesh
 []
@@ -27,7 +27,7 @@ Post-build object bounding boxes; not a positive signed-volume proof
 []
 
 ## INFO — Built passenger and crew berths counted separately
-{"mesh_objects": 1422, "triangles": 3300554, "physical_compartments": 203, "actual_first_berths": 228, "actual_second_berths": 132, "actual_third_berths": 268, "actual_crew_berths": 117}
+{"mesh_objects": 1437, "triangles": 4341224, "physical_compartments": 203, "actual_first_berths": 228, "actual_second_berths": 132, "actual_third_berths": 268, "actual_crew_berths": 117}
 
 ## PASS — Main conrod pin-to-crosshead distance over 2163 poses
 8.881784197001252e-16
@@ -57,19 +57,19 @@ Post-build object bounding boxes; not a positive signed-volume proof
 [{"room": "S_Galley", "range_faces_working_aisle": true, "firing_position": [-37.0, -2.9], "reachable": true}, {"room": "S_Bakery", "range_faces_working_aisle": true, "firing_position": [-37.0, 3.05], "reachable": true}]
 
 ## PASS — Stair sampled avatar head/body envelope
-[{"id": "Grand_Main", "blocked_by": []}, {"id": "Grand_Upper", "blocked_by": []}, {"id": "Prom_To_Boat", "blocked_by": []}, {"id": "Forward_Lower", "blocked_by": []}, {"id": "Forward_Orlop", "blocked_by": []}, {"id": "After_Lower", "blocked_by": []}, {"id": "After_Orlop", "blocked_by": []}, {"id": "After_Orlop_Starboard", "blocked_by": []}, {"id": "After_Upper", "blocked_by": []}, {"id": "After_Promenade", "blocked_by": []}, {"id": "Engine_Access", "blocked_by": []}, {"id": "Engine_Main", "blocked_by": []}, {"id": "Bridge_Access", "blocked_by": []}, {"id": "EngineLadder_590", "blocked_by": []}, {"id": "EngineLadder_591", "blocked_by": []}, {"id": "EngineLadder_592", "blocked_by": []}, {"id": "EngineLadder_593", "blocked_by": []}]
+[{"id": "Grand_Main", "blocked_by": []}, {"id": "Grand_Upper", "blocked_by": []}, {"id": "Prom_To_Boat", "blocked_by": []}, {"id": "Forward_Lower", "blocked_by": []}, {"id": "Forward_Orlop", "blocked_by": []}, {"id": "After_Lower", "blocked_by": []}, {"id": "After_Orlop", "blocked_by": []}, {"id": "After_Orlop_Starboard", "blocked_by": []}, {"id": "After_Upper", "blocked_by": []}, {"id": "After_Promenade", "blocked_by": []}, {"id": "Engine_Access", "blocked_by": []}, {"id": "Engine_Main", "blocked_by": []}, {"id": "Bridge_Access", "blocked_by": []}, {"id": "EngineLadder_575", "blocked_by": []}, {"id": "EngineLadder_576", "blocked_by": []}, {"id": "EngineLadder_577", "blocked_by": []}, {"id": "EngineLadder_578", "blocked_by": []}]
 
 ## PASS — Game export regenerated from current master
-ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4
+05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526
 
 ## PASS — Game mesh node <=18000 triangles / finite UV0 / closed components
-{"mesh_nodes": 1438, "unique_meshes": 860, "placed_triangles": 2473152, "unique_triangles": 2166940, "reused_nodes": 578, "max_node_triangles": 18000, "removed_zero_area_triangles": 0, "calibration_nodes": 4, "storage_meshes_including_calibration": 861, "corrected_shading_corners": 13484, "source_precision_vertices": 57}
+{"mesh_nodes": 1461, "unique_meshes": 1160, "placed_triangles": 3199238, "unique_triangles": 3101586, "reused_nodes": 301, "max_node_triangles": 18000, "removed_zero_area_triangles": 0, "calibration_nodes": 4, "storage_meshes_including_calibration": 1161, "corrected_shading_corners": 11169, "source_precision_vertices": 57}
 
 ## PASS — All actual mover / door names exist in the game export
 []
 
 ## PASS — Master/GAME interfaces and collider-envelope tolerance
-{"interface_arrays_equal": true, "colliders_master": 4071, "colliders_game": 4071, "max_fixture_delta_m": 0.0219, "nonconforming": [], "runtime_uses": "master proxies, not lower-detail bounding boxes"}
+{"interface_arrays_equal": true, "colliders_master": 4040, "colliders_game": 4040, "max_fixture_delta_m": 0.0219, "nonconforming": [], "runtime_uses": "master proxies, not lower-detail bounding boxes"}
 
 ## UNVERIFIED — Roblox Studio live acceptance
 No Roblox Studio in this workspace. Static collider graph does not certify avatar headroom on slopes, moving passengers, imported collisions, multiplayer security or frame time.

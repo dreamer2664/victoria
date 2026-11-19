@@ -1,0 +1,58 @@
+[
+  {
+    "raw": "build/pending/Detail_Exterior_Bridge.png",
+    "final": "Detail_Exterior_Bridge.jpg",
+    "width": 1120,
+    "height": 700,
+    "sha256": "a4dad9c21e3763538f80ca3b26575f0dff40fe1d3dc8f11bb8aa74af279a58ff",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Detail_Exterior_Promenade.png",
+    "final": "Detail_Exterior_Promenade.jpg",
+    "width": 1120,
+    "height": 700,
+    "sha256": "b4c420df60aa62ca1cab149dad47cee039f387b5ad9e722af977271d7e27cd85",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Detail_Funnel_Ladder.png",
+    "final": "Detail_Funnel_Ladder.jpg",
+    "width": 1120,
+    "height": 700,
+    "sha256": "fa7a7b1913ba9dfb14dc88897a410891d8d5347c732bfb6ae5330958fd23e89a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Detail_Lifebuoy_Hook.png",
+    "final": "Detail_Lifebuoy_Hook.jpg",
+    "width": 1120,
+    "height": 700,
+    "sha256": "2fa4d174342905805ad888f166416ee64367a519d91d4218e0fdfcf4831b7f68",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Detail_Mast_Ladder.png",
+    "final": "Detail_Mast_Ladder.jpg",
+    "width": 1120,
+    "height": 700,
+    "sha256": "44a632b787d8190747203cc449635df6468fa7ad6ee56b4a379e8df3b331448d",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Detail_Promenade_Bench.png",
+    "final": "Detail_Promenade_Bench.jpg",
+    "width": 1120,
+    "height": 700,
+    "sha256": "274718941ed437fafb953584b53f06c00a6335c0255a49f33dc44bf3e96c5668",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Detail_Wheelhouse_Framing.png",
+    "final": "Detail_Wheelhouse_Framing.jpg",
+    "width": 1120,
+    "height": 700,
+    "sha256": "bf3038f84a46526b4f46b19296c4c2e416c075ddc881b1fa0cb9e993b105cda9",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  }
+]

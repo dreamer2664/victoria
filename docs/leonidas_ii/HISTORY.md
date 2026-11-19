@@ -1,0 +1,38 @@
+# LEONIDAS-II · historical evidence and revision records
+
+These files preserve earlier pixels, claims, source identities and failed/candidate screens. **They are not acceptance of the current corrected MASTER.** Current actual-image observations belong in [FINAL_RENDER_REVIEW.json](FINAL_RENDER_REVIEW.json); current executed delivery checks belong in [DELIVERY_VALIDATION.json](DELIVERY_VALIDATION.json).
+
+## Current corrected handoff
+
+The current corrected source has **272 individually inspected final renders**, a title-only offline [all-render gallery](EVIDENCE_INDEX.html) and **63 PASS / 0 FAIL / 1 UNVERIFIED** strict delivered-package/evidence checks, including 52 isolated binding regressions. These revalidate the original frozen geometry/export records and actual delivered bytes; they do not rerun Blender or claim a fresh read of excluded GAME scratch. Rejected/stale camera evidence was freshly replaced and reopened, not automatically approved. Publication is separately recorded: the ignored local `PUBLICATION.json` receipt binds the exact correction commit/tree and the result of authenticated push plus read-only remote-tip verification; a local commit alone is not a completed publication. It does not overwrite the historical receipt linked below. Studio/live/FPS and user aesthetic approval remain outside this sign-off.
+
+## Published checkpoints
+
+* Earlier published branch tip: `6a9ee980fc9876b691dbb1f7535b61f619b181ed`, the 256-view checkpoint. Its old validation is not transferred to later geometry.
+* The earlier 225-image progress snapshot at `6938aeb31d708d3f11e77cd9d5408cb172ecaec2` remains in [PROGRESS_REPORT.md](PROGRESS_REPORT.md), [PROGRESS_REPORT.html](PROGRESS_REPORT.html) and [PROGRESS_SNAPSHOT.json](PROGRESS_SNAPSHOT.json), unchanged. Dates/status in those documents describe that checkpoint only.
+* [inspection/BUILD12_DELIVERY_REPORT.md](inspection/BUILD12_DELIVERY_REPORT.md), the exact [build-12 publication receipt](inspection/BUILD12_PUBLICATION.json) and the Git commit history preserve prior publication context. The exact old build-12 JSON review/validation records are in the intermediate archive below.
+
+## Lossless, indexed archives
+
+| Archive | Contents and boundary |
+|---|---|
+| [MICRO_BASELINE_ROOMS.tar.xz](inspection/MICRO_BASELINE_ROOMS.tar.xz) | Original pre-micro-correction room-survey JPGs and their recorded identities. These are before-fix pixels, not current source. |
+| [MICRO_INTERMEDIATE_HISTORY.tar.xz](inspection/MICRO_INTERMEDIATE_HISTORY.tar.xz) · [index](inspection/MICRO_INTERMEDIATE_HISTORY_INDEX.json) | 54 superseded audit/candidate/review/identity files and old curated HTML. Original paths, byte lengths and SHA-256 values are indexed and archive extraction was hash-verified. Includes build-12 JSON records, refinement pilot/25-view gallery, pre-micro identity and inherited dimension manifest. |
+| [MICRO_VISUAL_REPAIR_V5_HISTORY.tar.xz](inspection/MICRO_VISUAL_REPAIR_V5_HISTORY.tar.xz) · [index](inspection/MICRO_VISUAL_REPAIR_V5_HISTORY.json) | Exact V5 native-pixel review with two rejected renders, the rejected smoking/stair original JPGs, 314-test records, and the older unregistered wheelhouse-framing precheck/camera registers. The black corner/slit defects were caught here, then repaired at source. No V5 pixel approval is relabelled as V6. The old framing precheck is replaced by a freshly rendered current-source detail, not renamed old pixels. |
+| [MICRO_PRE_FINAL_HANDOFF_HISTORY.tar.xz](inspection/MICRO_PRE_FINAL_HANDOFF_HISTORY.tar.xz) · [index](inspection/MICRO_PRE_FINAL_HANDOFF_HISTORY.json) | Exact superseded delivery report, partial visual registers, original small-defect inventory and 25-view refinement description. Their original text/JSON remains extractable even where the live path now points to the complete correction/review workflow. |
+| [MICRO_CABINET_SWEEP_BEFORE_FIX.json.xz](inspection/MICRO_CABINET_SWEEP_BEFORE_FIX.json.xz) | Failed broader furniture/wardrobe sweep before the cabinet repair; do not confuse with current zero-intersection reports. |
+| [MICRO_GENERATED_DOOR_JAMBS_BEFORE_FRAME_FIX.json.xz](inspection/MICRO_GENERATED_DOOR_JAMBS_BEFORE_FRAME_FIX.json.xz) | Earlier own-frame/hinge failures, preserved rather than waived. |
+| [MICRO_CAMERA_REJECTIONS_V6.tar.xz](inspection/MICRO_CAMERA_REJECTIONS_V6.tar.xz) · [index](inspection/MICRO_CAMERA_REJECTIONS_V6.json) | Exact rejected native open-hinge JPG, original shared camera driver/register and the 17-image partial review. The swung timber leaf blocked the first open-pose eye. Corrected open-pose sightlines are checked against render-visible actual meshes and freshly rendered; the rejection is not silently approved or relabelled. |
+| [PLAN_CAMERA_REJECTIONS_V6.tar.xz](inspection/PLAN_CAMERA_REJECTIONS_V6.tar.xz) · [index](inspection/PLAN_CAMERA_REJECTIONS_V6.json) | Three current-source upper-deck plans rejected during exhaustive individual review: the ceiling filter still left weather roofs hiding the hospital, officer/deck-cabin ranges, chart room and whole wheelhouse. Original JPGs/common renderer/camera entries/observations are preserved and extraction hashes verified. Fresh replacements omit only the explicit separate weather-roof objects, retain every original furnished room and carry their own driver hash; no MASTER/common-renderer edit or old-pixel relabelling. |
+| [STAIR_JOINERY_AUDITOR_NAME_COLLISION.json.xz](inspection/STAIR_JOINERY_AUDITOR_NAME_COLLISION.json.xz) | Initial supplementary auditor selected both `After_Orlop` and `After_Orlop_Starboard` by a broad name prefix, correctly causing a saved-binding mismatch. The selector was narrowed to exact names/two-digit emitted chunks; both complete saved-source reruns then matched all 13 flights. No geometry flag or plane-overlap exception was waived. |
+| [DELIVERY_REVALIDATION_SCRATCH_V6.tar.xz](inspection/DELIVERY_REVALIDATION_SCRATCH_V6.tar.xz) · [index](inspection/DELIVERY_REVALIDATION_SCRATCH_V6.json) | Exact pre-change byte checker and resumed 61-PASS/1-FAIL delivery report with its 21-PASS/2-FAIL micro subprocess report. Both underlying failures were missing excluded GAME rebuild scratch, not changed canonical source/audit bytes. The replacement separates explicit frozen delivered-package revalidation from mandatory actual-saved-source mode; all 12 canonical audits/results remain required, changed retained files fail, and 52 isolated positive/tamper tests exercise that distinction. No model, render, original export receipt or canonical geometry audit was rewritten. |
+| [PRE_MICRO_AUDIT_REPORTS.tar.xz](inspection/PRE_MICRO_AUDIT_REPORTS.tar.xz) | Before-correction audit reports with their original identities. |
+| [REFINEMENT_BEFORE_MICRO_SOURCE.tar.xz](inspection/REFINEMENT_BEFORE_MICRO_SOURCE.tar.xz) | Before-micro generator sources, not a current build input. |
+
+XZ is lossless. Extract with `tar -xJf <archive>` or 7-Zip; member paths retain their original repository names. Extract into a separate inspection directory, **not over the corrected source**. The adjacent index JSON files bind archive and member hashes.
+
+## Rebuild and review discipline
+
+The one-off revision migration and nine `tools/leonidas_micro_corrections/fix_micro_parts*.py` patchers have already been applied. They are **not idempotent rebuild steps**; do not rerun them over subsequent direct repairs.
+
+Use the actual ordered build, canonical both-quality audits, before/after-export frozen-input recorder and real rendering pipeline. A report marked PASS, a successful renderer or an attractive wide view cannot automatically approve hidden parts, continuous sweeps, all contacts, Studio/live/FPS behavior or the user's aesthetic expectations.

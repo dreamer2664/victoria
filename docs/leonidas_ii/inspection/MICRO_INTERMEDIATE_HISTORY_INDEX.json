@@ -1,0 +1,277 @@
+{
+  "status": "LOSSLESS_ARCHIVE_OF_SUPERSEDED_DIAGNOSTICS_AND_DUPLICATED_CURATED_GALLERIES_NOT_CURRENT_ACCEPTANCE",
+  "archive": "docs/leonidas_ii/inspection/MICRO_INTERMEDIATE_HISTORY.tar.xz",
+  "archive_sha256": "516fe2a51e631e2b133b23b59b3a7ecd554dedd973f365e30f845eaab71446c1",
+  "files": [
+    {
+      "file": "docs/leonidas_ii/DETAIL_REFINEMENT.html",
+      "bytes": 2360089,
+      "sha256": "ad85f69ce7f6989a69f08c2a73b6ea292843b48eb9451e76d79641acebd67139"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/BUILD12_DELIVERY_VALIDATION.json",
+      "bytes": 9222,
+      "sha256": "eaa60a4b9b1c54f19f7570c33f7bae8ba9af7acce729d90d97207acc3a2c2b2a"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/BUILD12_VISUAL_REVIEW.json",
+      "bytes": 354194,
+      "sha256": "5c04da47c72250b4e6e9aacdb36c920e9c435c16d50fd614d188957b0619208a"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/DETAIL_CAMERA_PREFLIGHT_REVIEW.json",
+      "bytes": 1290,
+      "sha256": "4b1b029130ec7c9723fc7b0bebb112d2bc6c35a2cfd3952c8cfcdc60dcd6d910"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/DETAIL_PILOT_REVIEW.json",
+      "bytes": 17870,
+      "sha256": "ebbb6aa9af815e1c43b311096a66f85abbd04d9086796b4eb531a83d54b220a5"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/EXPORT_NORMAL_REVISION.json",
+      "bytes": 3412,
+      "sha256": "ee417f4f72050dbc6b21a4dfefb8f4407e131d3c31d1bb12c739c33fbbd54969"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/INHERITED_DIMENSION_MANIFEST.json",
+      "bytes": 9250,
+      "sha256": "78bbcf9bbb262fd3ab7a9f654fbfa13a8500eff53901265a8db8f6726fdc94a3"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/INTERRUPTED_EVIDENCE_REGISTER.json",
+      "bytes": 23405,
+      "sha256": "b8bcbbbb9ce029fe2974477b4f09f3ac5c82811788c1c58bb12ce869777a6663"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_CONTACT_REGRESSIONS_GAME_R225.json",
+      "bytes": 30902,
+      "sha256": "e980569ea379fadcb95d15cbe9cc42fa9c236f590cbdc94a008dffcb44a2419e"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_CONTACT_REGRESSIONS_MASTER_R225.json",
+      "bytes": 30905,
+      "sha256": "f4f11e2a3948875dc6a60b1343108f9c4e62f35ab2d428c7ee14595ef4fe26dd"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_CURRENT_DOOR_CANDIDATE.json",
+      "bytes": 424686,
+      "sha256": "1e83904afe7f83234df02954b5ea44d1319de1b8fa9144f4190631acda19cfff"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_CURRENT_DOOR_CANDIDATE_V2.json",
+      "bytes": 49444,
+      "sha256": "f228299714eb759e9bb6ff54686b526ee722f410cfda0afe8e8f61dd41a38a10"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_CURRENT_DOOR_CANDIDATE_V3.json",
+      "bytes": 20497,
+      "sha256": "94f89ef9dca8617c311281eb3fbbebc0a3ef591bcc74991684edc619d463d247"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_EXTERIOR_CANDIDATE.json",
+      "bytes": 82200,
+      "sha256": "f8e3d89d4c53cc2763c1d05c184bb62ffe816e39dddba591552c6a2a4db6c685"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_EXTERIOR_CANDIDATE_V2.json",
+      "bytes": 50276,
+      "sha256": "348ab0af73ed183a55776cc9301dfed10220deb3603c0b527cba229b1711b35f"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_EXTERIOR_TRANSPORT_GAME.json",
+      "bytes": 51024,
+      "sha256": "d677aaccc645a1a8cc5e1e7d16c0ce1295138d3102615a15c66079f61ce6d136"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_EXTERIOR_TRANSPORT_MASTER.json",
+      "bytes": 50990,
+      "sha256": "de3aa7a416cbbdfcf0ee127364bbba29ec33d650106c8a710e4c32d91bcc55fb"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_FIRST_REBUILD_DETAIL_FLAGS.json",
+      "bytes": 279565,
+      "sha256": "f9bb43228bf8c61ca6e58779e525c17e2c2fd5bb9f72f60714e058b710ffc242"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_FIRST_REBUILD_FLOOR_DIAGNOSTIC.json",
+      "bytes": 69408,
+      "sha256": "8b86073185893ffbacd3484417d87bd698e3a7e071595d82f4dfb2fa0a004282"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_GENERATED_DOOR_JAMBS.json",
+      "bytes": 19685,
+      "sha256": "86276f2b02ffc3599132b2daa0dd66b218573f811265a1e24f30b5597beba9e3"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_GEOMETRY_BEFORE.json",
+      "bytes": 457382,
+      "sha256": "d525092f128be64cce619fd3c655fc5b9ce438171a0f2619373870617c3b29e3"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_PLANT_CANDIDATE.json",
+      "bytes": 519065,
+      "sha256": "00194e8e204ffdbbebf2b926c20a2aec85d4671a4258482a31ee5169cf63be7e"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_PLANT_CANDIDATE_V2.json",
+      "bytes": 54100,
+      "sha256": "b9640688195993bef53d731cbf8c718e97ca9fbacda6316f62d52cbe3bde06e2"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_PLANT_CANDIDATE_V3.json",
+      "bytes": 27426,
+      "sha256": "205cb754cb792227c1cb2d310b464c4d55c170164c4c566dfa2955a6eb0b941e"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_PLANT_PREFLIGHT_GAME.json",
+      "bytes": 28794,
+      "sha256": "f894c11739d9a5c306c211115ec9bef96d32e2e8304e1b02760e823809955a13"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_PLANT_PREFLIGHT_MASTER.json",
+      "bytes": 28779,
+      "sha256": "2c0a431730c6e9345ca4590de87521e5d0e2803a57f4fcc188904299db75b7e4"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_PLANT_TRANSPORT_GAME.json",
+      "bytes": 28620,
+      "sha256": "7135367d10d066d9d932944e95d2e2dcc8621b791700243724685c9605a830d6"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_PLANT_TRANSPORT_MASTER.json",
+      "bytes": 28606,
+      "sha256": "c2e0daff099319b840a32ba2e6737d2876abe3b34a4f2650b86386334a1ae628"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_RECIPES_CANDIDATE_GAME.json",
+      "bytes": 15753,
+      "sha256": "02c7f15b106368b757637c07ee9fdbe3b0166303e2bf031b87405b9ad87fa100"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_RECIPES_CANDIDATE_GAME_V2.json",
+      "bytes": 11841,
+      "sha256": "a1024a9b7041a4b8cd170eb1f699341c87c130a1d41015d55dea3457069b00b7"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_RECIPES_CANDIDATE_MASTER.json",
+      "bytes": 12624,
+      "sha256": "d20e8cc8d1bf91959e89f3df95fd8b532398b0758314b49576e9b810623152b8"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_RECIPES_CANDIDATE_MASTER_V2.json",
+      "bytes": 11844,
+      "sha256": "f3de18c28e40d37d650b1713322a11bd9e8006e7eab7f449d4cfea277a72d809"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_RECIPES_CANDIDATE_MASTER_V3.json",
+      "bytes": 11843,
+      "sha256": "5727186af7d9c65a51828644b0c4b8dfbcbb5ae10e43d2a2329f917bd86b6233"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_RECIPES_TRANSPORT_GAME.json",
+      "bytes": 18872,
+      "sha256": "c5714f7cdfbf717ff676081557da8453afe488d342025d48204add4b6b9d2502"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_RECIPES_TRANSPORT_MASTER.json",
+      "bytes": 18875,
+      "sha256": "cc694d3e3c186def1996109db094fb6acb80d15f671ca80b51f5389d472cc758"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_ROOMS_CANDIDATE.json",
+      "bytes": 162067,
+      "sha256": "c3e577005c801822ea079077d60409e5b19ffcce367acd75c21125aa0349e24b"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_ROOMS_CANDIDATE_V2.json",
+      "bytes": 98566,
+      "sha256": "3efa3378fd8739f3e705309336a2007f1d7869481ae73c98bfef46abb6e72aa7"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_ROOMS_CANDIDATE_V3.json",
+      "bytes": 92086,
+      "sha256": "3f1c09e8c45bd111cc5c7a97af215f310178f3dfa3530b1f1050e7c4fc3cc254"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_ROOMS_PREFLIGHT_GAME.json",
+      "bytes": 93555,
+      "sha256": "afb205ee888ed62216a56dd7a22ef407db222011f30f5ba9294c927a55823613"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_ROOMS_PREFLIGHT_MASTER.json",
+      "bytes": 93558,
+      "sha256": "4c6cec32e04dbcd0e56a239c116be1ae4aea03b8954bf1a19232e8240cb07f94"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_ROOMS_TRANSPORT_GAME.json",
+      "bytes": 93766,
+      "sha256": "b5def29a33e07df4815bb6de7a4f04562ae25a32332d29943e6eca3824e0565c"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_ROOMS_TRANSPORT_MASTER.json",
+      "bytes": 93385,
+      "sha256": "eda929f06392fd0b6c86a87cebe1c7cd87808256e79ad0d51406585a95dc27f4"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_SECOND_REBUILD_FLOOR_FLAGS.json",
+      "bytes": 21065,
+      "sha256": "0c13169a49c55e6fd67ff5dedea80f7256f7f6b58b97790ea55e02ca47924bd1"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_SHAFT_CANDIDATE_GAME.json",
+      "bytes": 10671,
+      "sha256": "7bde2363e8c8e75d58730de5cd48e2bdc3625d5fc6fac39402617e258c6ea55a"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_SHAFT_CANDIDATE_MASTER.json",
+      "bytes": 10671,
+      "sha256": "ea494d766c1d2f609bbd658b0624a51fa456a4b994b7d89693171eaaf7c5c9a1"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_SHAFT_PREFLIGHT_GAME.json",
+      "bytes": 10621,
+      "sha256": "4bc47eefb546f90092dcbe70b3dbd874f822218ee8614882431b7bf57b775480"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/MICRO_SHAFT_PREFLIGHT_MASTER.json",
+      "bytes": 10622,
+      "sha256": "6142290e76cb9d8a8bd8da168f9429ec4e736279eb89bb21f62c7cb815cf6927"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/PRE_MICRO_DELIVERY_IDENTITY.json",
+      "bytes": 1205,
+      "sha256": "eedb74dc0e318051cf691ec6a478ce5854791102c3c89a7314a2546e0829fd38"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/REFINEMENT25_GALLERY.html",
+      "bytes": 2360089,
+      "sha256": "ad85f69ce7f6989a69f08c2a73b6ea292843b48eb9451e76d79641acebd67139"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/REFINEMENT25_VISUAL_REVIEW.json",
+      "bytes": 23591,
+      "sha256": "06f8df95cd708deb12368801057f93d83217e900e42e0c401cd9a17bc42ef6ad"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/STRUCTURE_REGRESSION_BASELINES.json",
+      "bytes": 71466,
+      "sha256": "2bd71c11cc6fde9ed496be717f7bdab9b130b9f0f7cfcb5dc29b54c3323971fd"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/blender-inventory.json",
+      "bytes": 172161,
+      "sha256": "243349e70fe0cc305fc045b28cf2bf004a8bcddc6d2bdd14c640524abcebbf77"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/source-url-inventory.json",
+      "bytes": 4598,
+      "sha256": "61e9293544c7a76f01c0f89fd2e28127314ef6a9684d1044d84ef6392359b81e"
+    },
+    {
+      "file": "docs/leonidas_ii/inspection/visual-inventory.json",
+      "bytes": 22297,
+      "sha256": "3d2ed4e18ad6173e984641659cd2fb9bc060f199f7f857c0ceff6bca155ccfdb"
+    }
+  ]
+}

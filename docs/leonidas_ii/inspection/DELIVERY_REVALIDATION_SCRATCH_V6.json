@@ -1,0 +1,24 @@
+{
+  "schema": "victoria.leonidas-ii.delivery-scratch-resume-history/1.0",
+  "file": "docs/leonidas_ii/inspection/DELIVERY_REVALIDATION_SCRATCH_V6.tar.xz",
+  "sha256": "f7f878c28acd668b61c46266edb188f814efdedf69a9696a2f316dc657005df9",
+  "bytes": 6120,
+  "reason": "A resumed snapshot discarded explicitly excluded GAME rebuild scratch. The old byte checker treated missing temporary inputs as an asset failure. Preserve that exact failure and validator before splitting delivered frozen-provenance revalidation from explicitly strict fresh saved-source validation. No canonical geometry audit/source/export receipt is edited.",
+  "members": [
+    {
+      "file": "tools/check_leonidas_micro_delivery.py",
+      "bytes": 6601,
+      "sha256": "3f7f38fd7afdb5fa3622046be97ef26083563d912b8accbade40bbb8c7534516"
+    },
+    {
+      "file": "docs/leonidas_ii/MICRO_DELIVERY_VALIDATION.json",
+      "bytes": 4682,
+      "sha256": "37487dde42075a2b6b2681569af99dfb0bd033c091ad9c5451f3e61b68522071"
+    },
+    {
+      "file": "docs/leonidas_ii/DELIVERY_VALIDATION.json",
+      "bytes": 15197,
+      "sha256": "a314a5d0222d6c673fe89146dd64b7106a8cb3f928c906b252b11c364ebb5e0a"
+    }
+  ]
+}

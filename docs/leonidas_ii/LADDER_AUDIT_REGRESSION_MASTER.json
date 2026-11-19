@@ -1,0 +1,36 @@
+{
+  "schema": "victoria.leonidas-ii.ladder-audit-regression/1.0",
+  "scope": "ISOLATED_GENERATOR_FIXTURE_ONLY; no saved ship mesh is modified or comprehensively certified",
+  "quality": "MASTER",
+  "runner_sha256": "914be03a56cbe45e62106826f8f97cb7f4d9beea961d40997ddda9f13226b146",
+  "auditor_sha256": "1555331c82df15419e4463b0c10e5f57629dddfe0359146ba3384a9ba855b714",
+  "generator_sha256": {
+    "blender/leonidas_ii/access_detail.py": "6ca46cb230757472d3ca8110977e9998f46ad80362d6bd0b2e965c6d5fe23f81",
+    "blender/leonidas_ii/meshkit.py": "c889fe01f1cdc584d8fd7cae260b94a3f5bc35ba5a5222bd63b0e291bcb4669a",
+    "blender/leonidas_ii/topsides.py": "54fdfb58775d9bd9311b9bdb101cb6305c8a42d95af339bad74d1c2aa78ff289",
+    "blender/leonidas_ii/structure.py": "f965a544aac0b4bbec368ca1b9f3e4959e5163611b1bb6d2af2681cffd0e0999",
+    "blender/leonidas_ii/weather_detail.py": "18e99087e33a62a633d538b1aae98b3386e77b5db85789c7274a4326b3ef3c64"
+  },
+  "tests": [
+    {
+      "test": "Five generated climbing ladders have all recorded actual contacts",
+      "status": "PASS",
+      "detail": {
+        "ladders": 5,
+        "rung_ends": 330,
+        "frame_mounts": 44,
+        "failures": 0
+      }
+    },
+    {
+      "test": "Existing foremast frame displaced by 150mm fails actual rung-contact rays",
+      "status": "PASS",
+      "rejected_joint_count": 76
+    },
+    {
+      "test": "Completely removed actual foremast frame is rejected",
+      "status": "PASS"
+    }
+  ],
+  "limits": "The full saved-master ladder gate is separately recorded in DETAIL_GEOMETRY_AUDIT.json. These tests do not certify universal joint connectivity, nest hatches, load rating, Humanoid climbing or Studio acceptance."
+}

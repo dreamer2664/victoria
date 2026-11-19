@@ -1,166 +1,105 @@
-# SS Aurelian · LEONIDAS-II delivery report
+# SS Aurelian · corrected model and exhaustively reviewed render handoff
 
-**Status: reconstruction review candidate with completed image-evidence review, not an accepted playable release.** The current build-12 source/export checks, including actual-shell structural regression and independent normal/precision gates, are complete. All **51 major views + 203 room surveys + 2 supplementary correction cutaways = 256 actual-model images** are opened and hash-registered, with three analytical SVGs reviewed separately. The strict evidence/review checker returns **47 PASS / 1 UNVERIFIED / 0 FAIL**. The unverified gate is Roblox Studio/live/FPS acceptance; capacity and cross-agent limitations also remain. Exact local-commit and remote-publication outcomes belong to the local receipt / final handoff. Do not infer a completed playable release from image coverage or the counts below.
+**Current status: corrected editable MASTER and corresponding GAME/import kit rebuilt; all 272 current final renders individually inspected with limitations; requested title-only offline HTML built and tested. Strict delivered-package/evidence gates: 63 PASS / 0 FAIL / 1 UNVERIFIED.** This is not a Roblox Studio-certified playable release, universal hidden-contact certification or the user's aesthetic sign-off. Publication is recorded independently: the local receipt contains the exact prepared commit and the outcome of push plus read-only remote-tip verification.
 
-## 1. What was preserved, rebuilt and added
+## 1. What was corrected
 
-The recoverable brief is a fictional **1889 British Atlantic express passenger/mail-and-cargo liner**, Liverpool–Queenstown–New York. Its **166.00 m LOA / 158.00 m LBP / 18.40 m moulded beam / 6.50 m design draught**, single screw, nine boilers, two funnels, three pole masts and shared 0.28 m/stud scale are retained. It was not replaced with a launch, yacht, paddle steamer or a literal Teutonic replica.
+The user identified floating plates and many small defects after the earlier refinement. We reopened the actual images, traced candidates into finite primitives and saved meshes, repaired the generators, then expanded the independent checks rather than trusting the old PASS reports.
 
-| Disposition | Work |
-|---|---|
-| Preserved | Identity/function/principal envelope; examined longitudinal hull-control intent; shared metric scale; historical research/provenance; useful concepts of authoritative server state, telegraph/helm/prompts and published attributes. |
-| Substantially rebuilt | Section/shell topology and counter stern, keel/stern-frame aperture, plate laps/fasteners, ports/boarding openings, finite decks/cutouts, framing/floors/keelsons/beams/bulkheads; room-derived superstructure and circulation; interior finish/furnishing; plant, shaft and steering; export and runtime implementation. |
-| New | 203-space physical inventory; meaningful furniture templates and room fixtures; original UV/PBR atlas/signs; matched native collisions and movers; calibrated regional GLBs; install/control/smoke-test modules; exact-source logic harness; actual-model evidence registry; analytical SVG/PDF sheets; source and acceptance registers. |
-| Kept as provenance, not installed | Original models, generators, drawings, interfaces and all legacy controllers at base commit `75bf4ac5770b803919b36c8dbdb5374df82d88ac`. No other agent's boat/port/QA asset is overwritten. |
+* Tableware, individual cup/saucer/runner heights, stacked pantry crockery, tray contents, paper/ink, chessmen and other small surface-mounted accessories now use their real supporting surfaces.
+* Furniture support includes bed slats, table/chair joints and outer soles, a three-foot piano stool with raised hub, piano soundboard/tail-leg/hinge/prop/pedal supports and actual curved caster bearings. Hospital-screen rings, the trolley, service fittings, locker hardware and bracketed accessories were also repaired.
+* Finished floor layers are flush, preserve true stair/plant wells and do not hide millimetre bearing errors. Stair-hall column feet and capitals have separate saved-surface probes. Saved/generated polygon comparison retains a 0.1 mm grid and explicitly reproduces float32/local-origin storage rather than enlarging the tolerance.
+* Door tests now include their own jambs **and actual furniture**, in both signed directions. The wider check exposed 97 wardrobe-crown obstructions; the cabinets and finite hinge/strap geometry were corrected, not exempted. The final screen samples 196 doors at 9,212 poses in each quality.
+* Plant/exterior primitive graphs are matched to the saved geometry. Shaft carriers, bored flanges/shoes, thrust collars and coupling positions were repaired and separately sampled for moving clearance.
+* **The subsequent native-pixel review found two more defects that valid closed components had missed:** crossed carom-table rails made false black corner pockets, and full-width stair riser ends produced black coplanar side slits. The rails are now one closed, shared-vertex mitred annulus; risers are housed inside the skirts and under the nosings. Convex exposed-plane tests cover the actual authored rail/stairs, with restored-old-geometry negative controls. Both quality settings now pass 344 regressions.
+* Diagnostic cameras were also rejected during pixel inspection: one was inside a washstand, two looked between the real hinges and one cropped a trolley wheel. A subsequent native-frame opening caught a further open-pose problem: the swung leaf blocked the closed-pose eye. The rejected original pixels/driver/register/review are archived. A fresh opposite-side view now passes three actual-mesh knuckle sightlines and was individually reopened, showing all three knuckles and the swung strap. All four shared-driver replacements were freshly rendered/denoised/reopened. The widened target bunk includes its feet/posts in the checked native frame; the trolley retains all four tyres in frame, while its far caster neck remains visually occluded. These are evidence-camera corrections, not assumed model defects; old pixels are never assigned a new camera/source identity.
 
-The audit **preceded** reconstruction. See [PREVIOUS_GENERATION_INSPECTION.md](PREVIOUS_GENERATION_INSPECTION.md) and its recorded branch/history/Blender/image inventories. The old assembly had 44 mesh objects / 287,408 triangles, no UV layers or image maps; its low-detail merged interiors and static machinery were not reused as finished assets.
+* **The exhaustive deck-plan pass found three more evidence failures:** the normal ceiling filter still left weather roofs hiding the hospital, two cabin ranges, chart room and entire wheelhouse. Those originals were rejected and archived. Fresh actual-source roof-off replacements now omit the explicit separate roof objects while retaining all **18 promenade / 25 boat-deck / 1 bridge** furnished rooms; each replacement has a separately hashed visibility driver. This changes evidence visibility only, not the delivered MASTER/common renderer or any ship geometry.
 
-## 2. Measured current build
+Earlier room-specific layouts, period materials, supported lighting, rigging chainplates and five exterior ladder assemblies are retained. Principal hull, machinery, capacity, scale and boat-interface contracts have not changed. No generated concept imagery substitutes for model geometry.
 
-From `exports/leonidas_ii/build_data.json`, `game_manifest.json` and `IMPORT_KIT_MANIFEST.json`:
+## 2. Exact current assets
+
+Editable MASTER SHA-256:
+
+`05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526`
 
 | Item | Measured result |
 |---|---:|
-| Editable master mesh objects | 1,422 |
-| Editable master triangles | 3,300,554 |
-| Explicit physical-space inventory entries | 203 |
-| GAME visual nodes, excluding calibration | 1,438 |
-| GAME unique meshes / reused placements | 860 / 578 |
-| GAME placed triangles / unique geometry triangles | 2,473,152 / 2,166,940 |
-| Maximum triangles in one GAME visual node | 18,000 |
-| Complementary regional GLBs | 18 |
-| Master native collision proxies | 4,071 |
-| Compartment doors | 196 |
-| Named machinery/helm/rudder/gangway moving assemblies | 20 |
-| Generated native seats | 219 modeled positions, including four crew-mess bench seats; plus helm VehicleSeat |
-| Registered modeled light positions | 346 |
+| MASTER mesh objects / triangles | 1,437 / 4,341,224 |
+| Inventoried physical spaces | 203 |
+| GAME visual nodes, excluding calibration | 1,461 |
+| Unique GAME meshes / reused placements | 1,160 / 301 |
+| GAME placed / unique triangles | 3,199,238 / 3,101,586 |
+| Maximum triangles per visual node | 18,000 |
+| Calibration nodes | 4 |
+| Complementary regional GLBs | 24 |
+| Collision proxies / doors / moving assemblies | 4,040 / 196 / 20 |
+| Seat records / modeled light positions | 201 plus helm VehicleSeat / 485 |
 | Main stair flights / engine ladders | 13 / 4 |
+| Compacted editable source | 23,514,427 bytes |
+| Regenerable full GAME GLB | 318,706,340 bytes |
+| Delivered compressed import kit | 26,721,984 bytes |
 
-Master SHA-256: `ac604ee3238339de176d5816e325dff61508a21c013d48d6e9dae020cf9880c4`.
+Import archive SHA-256: `0e43cb09d8d4bcbc3f400765f3c1ecc3c33bd7ec60e710b63483bc0ef31aa29f`.
 
-The import archive is **35,690,308 bytes**, SHA-256 `6f662a149daf6d19f10980b8a41425894e582b3b7f1f82ccd7b5d84578e81fe3`. It contains standard regional GLBs, not a flattened single mesh or fabricated uploaded asset IDs. Solid XZ reduces duplicate embedded-map compression streams; it does not change the geometry. Source maps are 2048², embedded regional image mip levels 1024². These counts are an export budget disclosure, **not proof of acceptable Roblox FPS**.
+The MASTER was losslessly recompressed: all **231,304,620 decompressed bytes** were hash-compared before replacement; no mesh, map or data was removed. The kit contains normal glTF 2.0 regional GLBs and the exact six-source RBXMX control package. Its solid XZ compression reuses embedded-image redundancy, not a Draco/decimated replacement. Original 2048² maps remain editable; regional maps use the documented 1024² mip level.
 
-### Built accommodation is less than the targets
+## 3. Executed checks on this exact generation
 
-* **628 passenger sleeping positions:** 228 first, 132 second, 268 third. The first-class count is **114 permanent beds plus 114 modeled convertible upholstered settee berths**, one of each per cabin—not 228 permanent bed frames. Settee conversion animation and live sleeping use have not been implemented/accepted.
-* **117 crew berths**, including the modeled captain/officer accommodation.
-* First-/second-class dining: **96 / 48 actual chairs**. The first-class 228-seat schedule value is a target, not built seating. No one-sitting capacity is implied.
-* The room-schedule target remains **900 passengers / 196 crew**; the inherited claim was 1,080 / 196. **Neither is achieved.** No invisible passengers, crew, chairs or unbuilt boats are counted.
+| Scope | Executed result | Limit |
+|---|---|---|
+| Finite fittings and actual saved-floor contacts, MASTER and GAME | 83 recipes each; zero detached clusters, floating/support flags | Finite surface/graph/ray screen at 0.6 mm, not every hidden joint or load rating |
+| Complete room-part correspondence/contact, both qualities | 195 rooms / 41,425 parts each; zero detached/saved-mismatch flags; 12 column feet/capitals pass | Non-plant room meshes, not continuous avatar access |
+| Plant-part correspondence/contact, both qualities | 45 static assemblies / 5,295 parts and 18 moving assemblies; zero scoped flags | Rigid-part graphs, not pressure/strength/thermodynamics |
+| Exterior/deck/access correspondence/contact, both qualities | 80 static assemblies / 33,247 parts and 3 moving assemblies; zero scoped flags | Not universal rigging clearance or operability |
+| Broad signed door sweeps, both qualities | 196 doors / 9,212 sampled poses / zero intersections each | 2° discrete poses; own jambs and room furniture included, not continuous or adjacent-space/avatar certification |
+| Shaft/bearing clearance, both qualities | 2 pairs / 48 poses / zero intersections or saved mismatch; 4/4 negative controls | Sampled finite meshes, not continuous dynamics |
+| Positive/negative generator regressions | **344 PASS / 0 FAIL in each quality** | Includes actual-template alterations and exposed-plane controls; not assembled-ship visual approval |
+| Independent actual saved stair joinery, both qualities | 13 stairs / 26 exposed sides each; zero saved mismatch or positive-area coplanar overlap; restored old riser negative detected | Actual saved polygons at the existing 0.1 mm correspondence grid; not all-surface/hidden-joint or strength/walking proof |
+| Source/detail and structural checks | 7 detail gates and 3 structural gates pass | Scoped actual contacts/rays/analytical envelopes; not seaworthiness |
+| Frozen actual export provenance | Verified | MASTER/GAME/build-data/exporter/generator/12 canonical audit identities frozen before the real exporter, checked unchanged afterward; receipt included in kit |
+| Independent exact exported component audit | 1,160 unique meshes / 3,101,586 triangles / 110,629 components; all eight blocking categories zero | No negative/near-zero volume, normal disagreement, degenerate area, odd unpaired edges, inconsistent winding or collapsed edges; not a union/no-intersection proof |
+| Full source/current-export static checks | 20 PASS / 3 INFO / 1 UNVERIFIED | Simplified collision grids, open-door routes and sampled stair envelopes, not Humanoid physics |
+| Official Khronos format validation | 24 regional GLBs; 0 errors / 0 warnings / 294 infos | Actual archived GLB hashes, not Studio upload or appearance |
+| Luau compilation and exact-source mock runtime | 6/6 compile; 30 logic/transform tests pass | Fake Roblox API, not engine/network/physics/LOS/FPS acceptance |
+| Micro-delivery byte/provenance checks | 42 PASS / 0 FAIL | All 12 original canonical audit files/results and current generator keys, retained source bytes, unchanged frozen actual-export receipt and matching kit; absent excluded GAME scratch is explicitly receipt-bound, not freshly read |
+| Validator mode/tamper regressions | 52 PASS / 0 FAIL | Isolated copied-metadata and explicitly synthetic saved-byte fixtures; tests missing/changed inputs, audit/result/identity tampering and mandatory strict-mode failures. Not a geometry or actual-archive validation. Original assets remain unchanged. |
+| **Strict delivered-package/evidence preflight** | **63 PASS / 0 FAIL / 1 UNVERIFIED** | Actual archive/source/driver identity, unchanged frozen audit/export bindings, explicit roof-off upper plans, all 272 actual individual observations, exact embedded native-dimension encodings and offline desktop/mobile/restricted-iframe UI pass. No Blender geometry audit is rerun here; the remaining live acceptance boundary is Studio/Humanoid/network/FPS. |
 
-The inventory comprises 114 first-class cabins, 33 second-class cabins, six officer cabins, one captain's cabin, five third-class and five crew dormitories, seven machinery spaces and the public/service/working spaces. Repeated cabin types are individually bounded/furnished/accessed physical spaces, not 203 unique furniture designs.
+Reports are the canonical `*_MASTER.json` / `*_GAME.json` families, regression records in `inspection/`, [EXPORT_INPUT_IDENTITY.json](EXPORT_INPUT_IDENTITY.json), [MICRO_DELIVERY_VALIDATION.json](MICRO_DELIVERY_VALIDATION.json), [DELIVERY_BINDING_TESTS.json](DELIVERY_BINDING_TESTS.json), [COMPONENT_VOLUME_AUDIT.json](COMPONENT_VOLUME_AUDIT.json), [GLTF_VALIDATION.json](GLTF_VALIDATION.json), [STATIC_VALIDATION.json](STATIC_VALIDATION.json), [RUNTIME_LOGIC_TESTS.json](RUNTIME_LOGIC_TESTS.json) and [DELIVERY_VALIDATION.json](DELIVERY_VALIDATION.json).
 
-## 3. Interior, structure and mechanical scope
+**Revalidation scope after snapshot resume:** excluded `build/` scratch, including the original saved GAME `.blend`/data pair, is not retained. The original fresh-input checker therefore reported two missing-input failures; the exact validator/failure reports are [preserved](inspection/DELIVERY_REVALIDATION_SCRATCH_V6.json). No canonical geometry audit, model, image, frozen actual-export receipt or import archive was rewritten to remove those failures. Delivery checking now explicitly uses `--delivered-package`: actual delivered archive contents/receipt and retained MASTER/data/exporter bytes must match, all twelve original audit hashes and their full generator/source/result gates remain mandatory, and missing GAME scratch is plainly recorded as frozen-identity-only. This is not a fresh GAME geometry audit or saved-file read. The standalone micro checker still defaults to `--require-saved-sources` and fails on missing or changed saved GAME inputs; the actual ordered build enforces that strict mode after packaging. Use the same flag on the full delivery checker when fresh saved-source bytes are required.
 
-Public rooms include first/second dining, library/writing rooms, smoking/music/drawing and second-class lounges, stair halls and bar. Cabin/crew/third-class accommodation has real bed/bunk frames, mattresses, pillows/blankets, wardrobes/washstands or purpose-appropriate storage, and dimensional doors/finishes. Service rooms include galley/ranges/pots/connected common flue, bakery, pantry/cold/provision storage, bathrooms/lavatories/washrooms, hospital, purser/mail/barber/chart/navigation spaces and cargo fittings. Furniture uses turned legs/pedestals, cushions/rolled arms, panels/hardware, individual book spines/pages and hollow bowl/tub forms; it is not inherited box furniture hidden by textures.
+## 4. Completed individual visual handoff and limits
 
-Seven deck datums above baseline: **2.35 / 5.20 / 8.80 / 11.80 / 14.40 / 17.20 / 20.00 m**. The machinery working floor is separately at **1.60 m**, with engine galleries at 4.60/6.80 m. The bridge is high enough to contain the occupied cabins below; bridge-wing plates no longer duplicate the central structural deck. Fore/aft service routes, both after-orlop escapes and machinery access/return landings are explicit.
+The current complete target is **272 actual-model final renders**: 51 major views, 203 roof-off room surveys, 2 crew-mess cutaways, 7 exterior/wheelhouse details and 9 micro-contact details. Enclosed photographs, wall/roof-removed diagnostics and analytical drawings remain explicitly distinguished by short view titles and separate metadata.
 
-The plant uses nine single-ended Scotch boilers with after-facing furnace doors and connected steam/feed/flue headers, a graduated HP/IP/LP triple-expansion engine, separate crank/rods/crossheads/eccentric-link/spindle movers, surface condenser, hotwell, open-crosshead feed pumps, separately ported circulating pump, supported dynamo engine/generator assemblies and inboard-facing switchboards, tailshaft/thrust bearings/stern tube, pitched screw and stock/quadrant/steam steering. The latest revisions correct the condenser/pipe/stair arrangement, working-light supports and boiler firing-door flange clearances. Galley/bakery ranges now face reachable working aisles; the bakery entrance clears its range and preparation bench. Two small crew table/bench mess alcoves occupy existing berth-free bays without reducing berths. Internal boiler/valve/auxiliary details are simplified; the schematic is not a thermodynamic or pressure-vessel certification.
+**Every one of the 272 current final JPGs has now been individually inspected after this rebuild.** Observations cover all 203 room surveys, 51 major views, 2 crew-mess cutaways, 7 exterior/wheelhouse details and 9 micro-contact details. All seven rejected/stale-driver replacements were freshly rendered, denoised and individually reopened: three roof-off upper-deck plans plus the bunk, closed/open hinge and trolley. There are **272 current filename/native-body identity associations and zero unresolved visual blockers** in the declared visible-image scope; no rejected/stale record is counted as accepted. The black carom corners and stair-end slits are absent in the relevant current public-room pixels. Tiny, dark, cropped, roof-removed and occluded contacts remain explicitly limited, not declared proved. [FINAL_RENDER_REVIEW.json](FINAL_RENDER_REVIEW.json) records exact file/source/renderer identities and actual visible observations. No earlier V5 approval is transferred merely because some objects did not change. [VISUAL_REVIEW.json](VISUAL_REVIEW.json) is the compatible major/survey/supplementary subset; image generation alone cannot fill it.
 
-Engine bores **1.40 / 2.25 / 3.50 m**, stroke 1.80 m, crank radius 0.90 m, conrod length 3.00 m, nominal ahead 72 rpm; shaft z=3.00 m, propeller x=−78.00 m / diameter 5.30 m / pitch 9.40 m; rudder stock x=−79.50 m. The 19.295 kn result is `RPM × pitch × .88`, a **kinematic gameplay target**, not proven power, resistance, coal consumption or sea speed. Numerical displacement/hull coefficients are not a stability, load-line, strength or safety assessment.
+The requested [final HTML gallery](EVIDENCE_INDEX.html) is **self-contained and offline, shows every final render, and contains only short view titles—no captions**. Native-dimension WebP display copies are conventionally encoded from the exact unlabelled final JPGs; original JPGs and camera/source metadata remain separate. The temporary 58px filename/hash strips used to disambiguate inspection are never gallery content. Its builder refuses stale/unregistered/missing pixels, changed driver hashes or incomplete exact-image/native-body review coverage.
 
-## 4. Implemented Roblox contracts — live acceptance still required
+All **272 embedded encodings** were independently reproduced from the originals. With networking offline, Chromium tests passed at **1440×1000 and 390×844**: responsive layout/no horizontal overflow, native image decoding, modal/next/previous, keyboard wraparound, Escape/focus return and 44px controls. A separate **390×844 opaque-origin iframe with only `sandbox="allow-scripts"`** also passed image decoding, layout, modal/next/close and focus checks, without same-origin, modal or network privileges. Desktop, mobile and restricted-iframe screenshots were additionally opened for layout inspection. [RENDER_GALLERY.json](RENDER_GALLERY.json) and [RENDER_GALLERY_VALIDATION.json](RENDER_GALLERY_VALIDATION.json) bind the exact HTML, builder/tester and final-review identities. These are UI/byte tests, not automatic model approval.
 
-* Regional imports normalize independently using four genuine calibration points. The waterline pivot maps `(x,y,z) → (−y,z−6.5,−x)` in **metres**, then scales once by `1/.28`. Final design envelope: **592.857 × 65.714 × 23.214 studs**.
-* One anchored waterline root, welded passive geometry and Motor6D moving parts; visual furniture/rigging does not become detailed collision soup. Matched native doors/gangway colliders follow the same transformations.
-* Boarding/gangway stow/travel and mooring interlocks; signed nine-order ahead/astern telegraph; independent regulator and firing controls; helm seat plus prompt fallbacks; generator, optional authorised whistle and local smoke/wake/instrument display.
-* Exact slider-crank and eccentric-link transforms; signed shaft/propeller and matching rudder/quadrant; no cumulative integrated heave offset.
-* Door prompts have server distance/rate/liveness/line-of-sight checks. Closing uses a conservative hinge-sweep avatar guard. Stationary doors stop sending redundant motor changes. Nearby players can use controls; production crew-role authorisation remains the experience owner's responsibility.
-* Native seating, prototype standing-passenger carry, bounds-aware local furniture detail hiding and nearest-light budget (default 12, clamp 4–24, within 58 studs). These do **not** prove rendering/network/streaming performance.
+Current renderer SHA-256: `854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781`. Cycles uses the actual model with registered practical-light positions plus photographic fill, bounded CPU samples and a temporary 1K texture cache. Conventional tiled OIDN/JPEG processing is recorded. This is visible-image review, not hidden-joint, historical-photo, gameplay or user aesthetic certification.
 
-Full instructions and unchecked live sheet: [ROBLOX_INSTALL_AND_TEST.md](ROBLOX_INSTALL_AND_TEST.md). The `.rbxmx` is an installer/control package, **not a pre-uploaded finished Roblox place**. Upload/review textures using your own authorised account/group. Disable old controllers for this imported ship.
+Three regenerated analytical SVGs have separately been inspected through exact native rasterisations. All three delivered one-page PDFs have now also been individually opened through direct PDFium page rasterisations; their file/page/raster identities and observations are separate entries in the manual registers, not part of the 272 model JPGs. They show arrangement, datums/calibration and connected plant flow; dense arrangement labels require vector zoom and these drawings do not prove physical contacts, safety or thermodynamics.
 
-## 5. Evidence and verification
+## 5. Preserved contracts and unverified live work
 
-### Headless results
+* Fictional 1889 British Atlantic passenger/mail/cargo liner: **166 m LOA / 158 m LBP / 18.4 m moulded beam / 6.5 m draft**; nine boilers, two funnels, three pole masts, one screw. Not a literal reconstruction of an actual Aurelian/Teutonic.
+* Scale **0.28 m/stud**. Native source +X bow / +Y port / +Z baseline becomes GLB metres `(-y, z−6.5, -x)`, Y-up, waterline origin. Scale once using the four genuine 10 m markers.
+* **628 passenger sleeping positions:** 228 first / 132 second / 268 third, plus 117 crew berths. First class is **114 permanent beds + 114 modeled convertible settee positions**; live conversion/sleeping is unimplemented. Dining has 96 / 48 actual chairs. Earlier 900/196 planning targets are not achieved.
+* Engine bores 1.4 / 2.25 / 3.5 m, 1.8 m stroke. Signed 72 rpm and about 19.3 kn are gameplay kinematics, not proven power, resistance, coal use or sea speed. No stability, pressure-vessel, scantling, load or seaworthiness certification.
+* Three host craft sockets are unchanged; boat/port assets are untouched. A unilateral interface handoff is not a complete lifesaving inventory or joint quay/channel/gangway/launch/hoist world-fit acceptance.
+* Installer/runtime controls include calibration, anchoring/movers, signed orders, interlocks, doors, helm, seats, prototype standing carry and local detail/light budgets. **Studio import, continuous Humanoid access, replication/carry/security, real prompt LOS, streaming and measured client FPS remain UNVERIFIED.** Use [ROBLOX_INSTALL_AND_TEST.md](ROBLOX_INSTALL_AND_TEST.md) before a published experience.
 
-* Static geometry/interface/circulation suite: **20 PASS / 3 INFO / 1 UNVERIFIED**. All inventoried door approaches, multideck component links, 13 sampled stair flights, four engine ladders and nine machinery aisle anchors pass the documented simplified collider checks.
-* Actual structural regression (auditor 1.2): **3 PASS / 0 FAIL**. Frames/floors/keelsons pass both the analytical envelope and the actual lower-shell ray tests; the stern shoe/post/rising keel contacts pass. The full-radius rotating disc clears the stern frame by a conservative 79.5 mm; the actual shell has a conservative **574 mm radial-separation bound** using 115 continuous axial intervals no wider than 10 mm, each with a 20 mm axial propeller guard. This is not stopped-pose sampling or a minimum Euclidean tip-distance/elastic/hydrodynamic certification. The actual-shell negative control correctly rejected the previous master with 778 frame and 406 floor/beam vertices outside the physical loft. See `STRUCTURE_GEOMETRY_AUDIT.json` and `inspection/STRUCTURE_REGRESSION_BASELINES.json`; this is not universal Boolean containment or a strength calculation.
-* Main conrod geometry: 2,163 analytical poses, maximum pin-distance residual about `8.88e−16 m`.
-* Official Khronos validation: **18 actual regional GLBs, 0 errors, 0 warnings, 290 informational messages**. Reports bind the results to the archive's exact GLB hashes.
-* All **six Luau sources compile** with Luau 0.747. This is parsing/bytecode compilation, not Roblox type/engine/API certification.
-* **30 exact-source runtime logic/transform tests pass** under a deliberately fake Roblox API, including interlocks, signed reversing, endpoint transforms, no made-fast height drift, prompt rejection and door-sweep logic. This does not simulate weld contacts, Humanoid physics, multiplayer, real line of sight, streaming or FPS.
-* Archive checks verify all regional hashes, six exact current script sources inside the RBXMX, matching archive/manifests/install guide, original maps and own-change scope. See `DELIVERY_VALIDATION.json`.
+## 6. Files, history and publication
 
-The collider model assumes 0.20 m grid cells, 0.28 m avatar radius, 1.68 m height, open doors and discrete stair samples. Furniture proxy comparison allows up to 25 mm differences from lower tessellation (measured maximum 21.9 mm); other proxies/interfaces must match exactly. Finite positive bounding extents are not signed-volume proof. Closed glTF components and UV checks are not universal proof of outward normals, no accidental interpenetration or successful Studio ingestion.
+* Editable source: `models/leonidas_ii/Aurelian_1889.blend`; generators: `blender/leonidas_ii/`.
+* Matching import kit: `exports/leonidas_ii/Aurelian_Roblox_Import_Kit.tar.xz` — extract before importing. Six Luau sources and insertable `.rbxmx`: `roblox/leonidas_ii/`.
+* Main visual handoff: [all-render title-only HTML gallery](EVIDENCE_INDEX.html); exact individual observations/limitations: [FINAL_RENDER_REVIEW.json](FINAL_RENDER_REVIEW.json). Three SVG and three delivered PDF pages were separately reviewed, outside the 272 model JPGs.
+* Lossless histories: [history guide](HISTORY.md). The old 25-view review/critical inventory and their exact claims remain archived, never relabelled as this source.
+* Rebuild serially: `bash tools/build_leonidas_ii.sh`, followed by the official/runtime checks, render batches, individual review, gallery builder and strict delivery gate described in the README. **Do not rerun the one-off revision or nine micro-migration patchers; preserve subsequent direct source repairs.** Excluded `build/` scratch must be regenerated for fresh GAME saved-source audits.
 
-### Independent exported component / normal / precision audit
-
-The exact regional-file audit initially found **2,788 triangles with opposing averaged shading normals (12,647 individual opposing corners)** and **nine cap triangles made collinear by the 0.1 mm export compression grid**. These were corrected rather than waived because Khronos accepted the format. The exporter splits opposing shading corners before tangent construction, and retains exact original source-point float precision only where compression would collapse a cap triangle. It does not invent offsets or delete cap faces.
-
-The **executed current build-12 re-audit** covers all **860 unique meshes / 2,166,940 unique triangles / 74,050 exact-coordinate connected components**. Results: **zero negative or near-zero net component volumes, zero opposing face/corner-normal flags, zero degenerate-area triangles, zero odd unpaired welded edges, zero inconsistent directed edge winding, and zero collapsed triangle edges**. The manifest records 13,484 corrected shading corners across placements and 57 source-precision retained vertices. Report identities bind this audit to the current manifests and exact regional files. See `COMPONENT_VOLUME_AUDIT.json` and `inspection/EXPORT_NORMAL_REVISION.json`.
-
-Coincident contacts have more than two balanced edge uses; these are reported separately, not passed off as a two-manifold Boolean union or proof of no intersections. Signed net component volumes do not certify every local face, physical pressure boundary or ship strength. This audit does not replace Studio import review.
-
-### Actual-model visual evidence — views reviewed with limitations
-
-The complete planned set is **51/51 major/technical views + 203/203 roof-off physical-space surveys**, with **two additional crew-mess detail cutaways**. All 51 major JPGs and both details were opened individually; every survey was inspected on one of 34 native-grid pages preserving its original 640×480 pixels without resizing. The three analytical SVGs are separately registered and are not included in the 256-image count. `VISUAL_REVIEW.json` has status **`VIEWS_REVIEWED_WITH_LIMITATIONS`**, with **zero unresolved image-revision blockers**, not universal geometry or gameplay approval.
-
-The final detail views expose each small crew bench seat, its four support legs/floor contacts, table supports and adjacent bunks. The first overhead detail attempt still hid most of the bench and was rejected. Final oblique diagnostics deliberately omit the joined room walls and ceiling; their camera is outside the omitted wall. They retain the original floor and furniture, are explicitly marked technical cutaways, and do not replace the enclosed eye-level crew view or certify avatar sitting/knee room. Their separate camera/visibility driver hash is checked in addition to the unchanged common renderer/master identities.
-
-Eye-level interiors and explicitly named technical cutaways are distinct. All come from the delivered Blender geometry using Cycles; OIDN processing and image hashes are registered. Major views use up to 12 adaptive samples and surveys up to six on the limited CPU host, with two diffuse/glossy bounces and a temporary 1K texture cache (the original delivered 2K maps are unchanged); soft fine detail, residual noise and denoising edge artefacts are disclosed. Raw PNGs and render tiles remain excluded scratch; the full-resolution processed JPGs are the retained evidence. No AI-generated concept, historical photograph or analytical SVG is passed off as an actual model or in-game screenshot.
-
-The exact opened-file review list, view-specific limitations and source hash are recorded in `VISUAL_REVIEW.json`; [EVIDENCE_INDEX.html](EVIDENCE_INDEX.html) is the regenerated 256-image embedded-thumbnail index, with full-resolution JPG paths on each card. `all_cameras.json` records cameras, true pixel dimensions, source/renderer identities and cutaway flags. Presence of a file alone is not visual acceptance.
-
-The final executed command is `python3 tools/check_leonidas_delivery.py --require-evidence --require-reviewed`: **47 PASS / 1 UNVERIFIED / 0 FAIL**, including the additional detail evidence/driver and manual-review checks. A pre-completion negative control refused the then-missing public/detail evidence, supplementary reviews and unresolved crew blocker while all other gates passed. The final strict result supersedes that intentionally failing intermediate run, and differs from the preserved non-strict interim snapshot.
-
-### Selected actual-model renders
-
-These are links to retained full-resolution Cycles JPGs, not gameplay screenshots; the embedded index above works without external image requests.
-
-![Actual model, port-bow exterior](../../renders/leonidas_ii/Exterior_Bow_Port.jpg)
-
-*Port-bow exterior, original 2400×1400 frame. No live-world or sea-speed claim.*
-
-![Enclosed first-class dining room](../../renders/leonidas_ii/Interior_Dining_First.jpg)
-
-*Enclosed first-class dining: 96 modeled chairs, not the 228-seat target. Live chair/crowd clearance unverified.*
-
-![Triple-expansion engine technical cutaway](../../renders/leonidas_ii/Engineering_Engine_Cutaway.jpg)
-
-*Explicit isolated plant cutaway; not an intact engine-room photograph or pressure-vessel certification.*
-
-![Port crew mess bench and table correction detail](../../renders/leonidas_ii/Supplement_Crew_Mess_Port.jpg)
-
-*Wall/roof-removed diagnostic showing the original bench/table and neighboring bunks. Live sitting, knee room and hidden contacts unverified.*
-
-## 6. Sources and cross-agent interfaces
-
-Historical basis: period *Ocean Steamships* (1891) construction/engine evidence; September 1889 *Ocean* Teutonic interiors/electric-lighting account; museum comparative engine model; inherited liner photographs. **RMG 1880/1895 steam-launch sheets were not accessible as images and are not liner plans.** No exact historical Aurelian plan was found/traced. The vessel and revised machinery/arrangement are explicit project design choices. See [DESIGN_AND_SOURCES.md](DESIGN_AND_SOURCES.md) and [ATTRIBUTION.md](ATTRIBUTION.md).
-
-Boat tip inspected: `6bd984e7d9a95459bc9c1032f58bd5210a9c1159`; port tip: `dbcc091fb20f4a3f53ab29b46a09055ca0e735f4`; QA tip: `f2237f8bea5e25d6153100b98558360b787012db`. This is a unilateral versioned handoff, not approval from Themistocles-II/Pericles-II or a joint Studio test.
-
-Three ship-owned mount/cradle/davit interfaces: steam cutter SWL requirement **3,900 kg**, rowing cutter **2,100 kg**, whaler **1,700 kg**. Actual boat assets are not duplicated or modified. There is **not** a complete eleven-boat lifesaving inventory. Berth/depth envelopes fit nominal dimensions on paper, but the actual +4 m quay/gangway world fit, channel/turning/grounding and launch/hoist operations remain unverified.
-
-## 7. Files and publishing
-
-* Editable source: `models/leonidas_ii/Aurelian_1889.blend`, `blender/leonidas_ii/`, `shipdesign/leonidas_ii.py`.
-* Import delivery: `exports/leonidas_ii/Aurelian_Roblox_Import_Kit.tar.xz`; standalone control sources/package in `roblox/leonidas_ii/`.
-* Maps: `reference/leonidas_ii/materials/`; spatial data/manifests in `exports/leonidas_ii/`.
-* Three editable analytical sheets plus vector PDF in `drawings/leonidas_ii/`; actual deck cutaways are separate model renders. Drawings are neither museum tracings nor certified construction sheets.
-* Audit, inventories, source/attribution, static/format/runtime/delivery checks and installation sheet in `docs/leonidas_ii/`.
-
-Branch **`agent/leonidas-ii`**, original base `75bf4ac5770b803919b36c8dbdb5374df82d88ac`. The follow-up is a child of the already-published progress snapshot below, not a replacement for it. The exact local commit and publication outcome are recorded in the local `PUBLICATION.json` receipt / final handoff; this report cannot include its own commit's hash without a circular dependency.
-
-**An explicitly requested interim progress snapshot was pushed and remote-verified at commit `6938aeb31d708d3f11e77cd9d5408cb172ecaec2`.** It includes the [detailed illustrated progress report](PROGRESS_REPORT.md), editable/import deliverables and 225 reviewed images: all 203 room surveys plus 22/51 major views. Its 42 PASS / 4 UNVERIFIED delivery result was intentionally an **in-progress publication, not strict final acceptance**. See `PROGRESS_SNAPSHOT.json`; the current image-review register may subsequently contain more reviewed views.
-
-The complete-evidence follow-up publisher still requires the exact reviewed commit, strict evidence/review gates and a clean worktree before an ordinary fast-forward branch update. The earlier anonymous dry-run and authenticated permission check were not themselves pushes; the interim commit above was separately pushed and verified. No force-push or other branch overwrite is authorized. The credential is transient, not saved in repository files, remote URLs or reports; rotate it after all authorized pushes. Exact follow-up commit/publication outcomes belong to the local `PUBLICATION.json` receipt / final handoff, because this report cannot include its own commit's hash. For a normal authenticated checkout, after verifying the branch/commit:
-
-```bash
-git switch agent/leonidas-ii
-git log -1 --oneline
-git push -u origin agent/leonidas-ii
-```
-
-If the remote has advanced, fetch and review; do not force-push. Only this agent's namespaced additions and the requested root entry points are in scope. The sandbox sparsely omits unchanged inherited binaries and caches redundant Git objects outside saved files to fit its size limit; their repository trees remain unchanged. `tools/restore_leonidas_checkout.py` can reconstruct the exact recorded local commit if that cache expires, without replacing working files or making any remote write.
-
-## 8. Remaining acceptance work
-
-1. **Obtain external/Studio acceptance of the reviewed rebuild.** The 256-image headless view-review pass is complete with stated limitations; no universal hidden-geometry, avatar or gameplay approval follows from it.
-2. Import all regions in Studio, review PBR/UV/normal/glass fidelity and exact hierarchy, then run the supplied structural smoke test.
-3. Walk every route/compartment and operate doors/gangways with the intended largest avatar. Pay attention to shallow headroom, gallery transitions and furniture clearances.
-4. Test seated/standing/jumping passengers, boarding/disembarking and reversing machinery with two clients under latency. Carry is a prototype, not a certified solution.
-5. Benchmark target-device client/server frame times, draw calls, memory, replication and streaming. The substantial whole-ship asset has **no proven performance target**.
-6. Test real port/quay/world navigation collision and mooring/boat launch/hoist behavior; the controller is anchored-root kinematics, not hydrodynamic contact solving.
-7. Resolve accommodation/dining/lifesaving shortfalls if the original capacity is mandatory, and obtain cross-agent approval. No stability/structural/pressure-vessel/safety certification is supplied.
-8. Verify the complete-evidence follow-up publication against the exact commit in the final handoff/local receipt; the earlier requested progress snapshot is already pushed and verified as recorded above. Even a successful follow-up push does not clear items 1–7. Until the Studio/live and capacity gates are actually accepted, describe this as a reviewable rebuild, **not a completed playable release**.
+Branch **`agent/leonidas-ii`**; the earlier published checkpoint **`6a9ee980fc9876b691dbb1f7535b61f619b181ed`** is historical. The corrected handoff passes the strict delivered-package/visual-file gates described above. Publication is a separate normal fast-forward operation, followed by read-only comparison of the remote branch tip with the exact local commit. The ignored local `PUBLICATION.json` receipt records that commit/tree and verification outcome independently of this non-self-referential report; the exact old publication receipt remains preserved in history. No force-push, unrelated asset change or Studio/live acceptance is implied by publication.

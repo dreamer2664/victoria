@@ -1,0 +1,809 @@
+{
+  "schema": "victoria.leonidas-ii.delivery-binding-tests/1.0",
+  "runner_sha256": "b80027de19c916c1f1244e61d4e4bfaf737e70ff1dbb16438fa56d171039dfb8",
+  "checker_sha256": "b3954681c0112d3ec3bbd29dc13e8e306bbbe443e960d4d66446c7f3b43a77d9",
+  "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+  "export_input_receipt_sha256": "43102b9594e880ae7fdb419f62c1c03d774f882fb44b35070df276538416294b",
+  "mode": "ISOLATED_COPIED_METADATA_AND_SYNTHETIC_SAVED_BYTE_FIXTURES_NOT_GEOMETRY_VALIDATION",
+  "original_inputs_unchanged": true,
+  "tests": [
+    {
+      "test": "Explicit delivered-package mode checks all 42 gates with GAME scratch absent",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 0,
+        "validation_summary": {
+          "PASS": 42
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Default fresh-source mode rejects absent saved GAME bytes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 20
+        },
+        "mode": "REQUIRE_ACTUAL_SAVED_SOURCES",
+        "absent_inputs": []
+      }
+    },
+    {
+      "test": "Explicit strict flag semantics reject absent saved GAME bytes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 20
+        },
+        "mode": "REQUIRE_ACTUAL_SAVED_SOURCES",
+        "absent_inputs": []
+      }
+    },
+    {
+      "test": "Synthetic retained saved-source fixture passes the strict positive path",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 0,
+        "validation_summary": {
+          "PASS": 42
+        },
+        "mode": "REQUIRE_ACTUAL_SAVED_SOURCES",
+        "absent_inputs": []
+      }
+    },
+    {
+      "test": "Synthetic retained saved-source fixture also passes explicit package mode",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 0,
+        "validation_summary": {
+          "PASS": 42
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": []
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in MICRO_GEOMETRY_MASTER",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in ROOM_PART_GEOMETRY_MASTER",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in PLANT_PART_GEOMETRY_MASTER",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in EXTERIOR_PART_GEOMETRY_MASTER",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in DOOR_SWEEP_GEOMETRY_MASTER",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in SHAFT_CLEARANCE_MASTER",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in MICRO_GEOMETRY_GAME",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in ROOM_PART_GEOMETRY_GAME",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in PLANT_PART_GEOMETRY_GAME",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in EXTERIOR_PART_GEOMETRY_GAME",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in DOOR_SWEEP_GEOMETRY_GAME",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Exact frozen hash rejects whitespace-only change in SHAFT_CLEARANCE_GAME",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "A missing canonical GAME audit is not waived with absent scratch",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 4,
+          "PASS": 36
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "An empty frozen canonical-audit list is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 4,
+          "PASS": 38
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "An omitted canonical-audit identity is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 4,
+          "PASS": 38
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "A duplicated canonical-audit identity cannot replace a family",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 4,
+          "PASS": 38
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Absent GAME source still requires its exact original frozen identity",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 35,
+          "FAIL": 7
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Absent GAME build-data still requires its exact original frozen identity",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 35,
+          "FAIL": 7
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "A missing frozen GAME input record is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 10,
+          "PASS": 32
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Changed retained MASTER cannot use a receipt fallback",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 10,
+          "PASS": 32
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Changed retained MASTER data cannot use a receipt fallback",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 9,
+          "PASS": 33
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Changed exporter is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 17,
+          "PASS": 25
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "An added current generator key is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 17,
+          "PASS": 25
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "An omitted current generator is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 5,
+          "PASS": 37
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Changed retained GAME cannot silently fall back to frozen identity",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 9,
+          "PASS": 33
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": []
+      }
+    },
+    {
+      "test": "Changed retained GAME data cannot silently fall back to frozen identity",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 9,
+          "PASS": 33
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": []
+      }
+    },
+    {
+      "test": "Partial saved-source retention is explicitly identified in package mode",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 0,
+        "validation_summary": {
+          "PASS": 42
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Strict mode rejects even partially absent GAME saved inputs",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 20
+        },
+        "mode": "REQUIRE_ACTUAL_SAVED_SOURCES",
+        "absent_inputs": []
+      }
+    },
+    {
+      "test": "MICRO_GEOMETRY nonzero geometry result is rejected even with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "ROOM_PART_GEOMETRY nonzero geometry result is rejected even with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "PLANT_PART_GEOMETRY nonzero geometry result is rejected even with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "EXTERIOR_PART_GEOMETRY nonzero geometry result is rejected even with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "DOOR_SWEEP_GEOMETRY nonzero geometry result is rejected even with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "SHAFT_CLEARANCE nonzero geometry result is rejected even with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Wrong GAME audit quality rejected even with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Wrong GAME audit source rejected even with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Missing GAME audit generator coverage rejected with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Expanded GAME fitting tolerance is rejected with rebound fixture hashes",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Duplicate regression names cannot inflate a passing total",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Fewer than the complete current 344 regressions is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Wrong regression generator binding is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Wrong import-kit GAME source binding is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Wrong import-kit frozen-receipt binding is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "PASS": 41,
+          "FAIL": 1
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "Changed game manifest is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "A pending rather than completed frozen exporter receipt is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 4,
+          "PASS": 38
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "A changed original export recorder is rejected",
+      "status": "PASS",
+      "detail": {
+        "exit_code": 1,
+        "validation_summary": {
+          "FAIL": 3,
+          "PASS": 39
+        },
+        "mode": "DELIVERED_FROZEN_EXPORT_AND_CANONICAL_AUDIT_BINDINGS",
+        "absent_inputs": [
+          "game",
+          "game_data"
+        ]
+      }
+    },
+    {
+      "test": "All original canonical source/data/audit/receipt/manifest bytes remain unchanged",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "PASS": 52
+  },
+  "limits": "Regression-test delivered/fresh byte-binding modes in isolated COPIED fixtures.\n\nNever edits canonical sources/audits/receipt/kit and never runs Blender. A small,\nexplicitly synthetic GAME byte fixture exercises the saved-source-positive path;\nthat fixture is NOT a model, a geometry audit, or an actual export. The real kit\narchive and its contents are checked separately by check_leonidas_delivery.py.\n"
+}

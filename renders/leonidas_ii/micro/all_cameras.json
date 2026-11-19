@@ -1,0 +1,353 @@
+[
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Dining_Tableware.jpg",
+    "title": "Dining Tableware \u2014 Side Cutaway",
+    "camera": [
+      11.92,
+      -3.2500000000000004,
+      12.7475
+    ],
+    "target": [
+      11.8,
+      -4.53,
+      12.6175
+    ],
+    "lens": 60,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "S_Dining",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_details.py",
+    "detail_driver_sha256": "1f5af8c33d72c4cd18e185ad50100d7bf53bd0e4e2b8dfdb30caeabbc6f5fa89",
+    "supplementary": true,
+    "short_title": "Dining Tableware \u2014 Side Cutaway",
+    "diagnostic_limit": "Close diagnostic with enclosure walls/roof omitted. Original furniture/floor retained, except the explicitly isolated shaft-bearing view; not a possible enclosed-room photograph or live/hidden-contact certification.",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "8c3b57dd42fb5b06688a4a1b561f9409082930078311a5634da2a08bf049fb52"
+  },
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Dining_Underside.jpg",
+    "title": "Dining Table and Chair Supports \u2014 Cutaway",
+    "camera": [
+      11.88,
+      -3.5000000000000004,
+      12.0675
+    ],
+    "target": [
+      12.42,
+      -4.65,
+      12.2775
+    ],
+    "lens": 33,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "S_Dining",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_details.py",
+    "detail_driver_sha256": "1f5af8c33d72c4cd18e185ad50100d7bf53bd0e4e2b8dfdb30caeabbc6f5fa89",
+    "supplementary": true,
+    "short_title": "Dining Table and Chair Supports \u2014 Cutaway",
+    "diagnostic_limit": "Close diagnostic with enclosure walls/roof omitted. Original furniture/floor retained, except the explicitly isolated shaft-bearing view; not a possible enclosed-room photograph or live/hidden-contact certification.",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "8fa0ef0501df2aa1ad8b5d455ad9c1a1a6d1d373ef47537cc12609080f48915a"
+  },
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Piano_Stool_Feet.jpg",
+    "title": "Piano Casters and Stool Feet \u2014 Cutaway",
+    "camera": [
+      -18.4,
+      -1.25,
+      12.0675
+    ],
+    "target": [
+      -20.25,
+      0.0,
+      12.1275
+    ],
+    "lens": 43,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "S_Music",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_details.py",
+    "detail_driver_sha256": "1f5af8c33d72c4cd18e185ad50100d7bf53bd0e4e2b8dfdb30caeabbc6f5fa89",
+    "supplementary": true,
+    "short_title": "Piano Casters and Stool Feet \u2014 Cutaway",
+    "diagnostic_limit": "Close diagnostic with enclosure walls/roof omitted. Original furniture/floor retained, except the explicitly isolated shaft-bearing view; not a possible enclosed-room photograph or live/hidden-contact certification.",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "773226ca447f731da947f7f0d11cb76bdd07be7b82bf16d545f1e6f6e78d2793"
+  },
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Pantry_Crockery.jpg",
+    "title": "Pantry Crockery \u2014 Side Cutaway",
+    "camera": [
+      -32.05,
+      2.29,
+      12.6875
+    ],
+    "target": [
+      -31.5,
+      1.04,
+      12.5675
+    ],
+    "lens": 53,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "S_Pantry",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_details.py",
+    "detail_driver_sha256": "1f5af8c33d72c4cd18e185ad50100d7bf53bd0e4e2b8dfdb30caeabbc6f5fa89",
+    "supplementary": true,
+    "short_title": "Pantry Crockery \u2014 Side Cutaway",
+    "diagnostic_limit": "Close diagnostic with enclosure walls/roof omitted. Original furniture/floor retained, except the explicitly isolated shaft-bearing view; not a possible enclosed-room photograph or live/hidden-contact certification.",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "a1776c2a852d5c7990ec4f6e4a5bc37b8d9e8bbc9e0749a3cd6fceb0e811a475"
+  },
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Thrust_Bearings.jpg",
+    "title": "Thrust Collars and Bearings \u2014 Cutaway",
+    "camera": [
+      -30.3,
+      -1.7,
+      3.75
+    ],
+    "target": [
+      -27.85,
+      0,
+      3.0
+    ],
+    "lens": 45,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "E_Alley",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_details.py",
+    "detail_driver_sha256": "1f5af8c33d72c4cd18e185ad50100d7bf53bd0e4e2b8dfdb30caeabbc6f5fa89",
+    "supplementary": true,
+    "short_title": "Thrust Collars and Bearings \u2014 Cutaway",
+    "diagnostic_limit": "Close diagnostic with enclosure walls/roof omitted. Original furniture/floor retained, except the explicitly isolated shaft-bearing view; not a possible enclosed-room photograph or live/hidden-contact certification.",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "75b8572758bc1fc43179b48c89f6fbab0ebd366cf880d69f58bc267c49a931a2"
+  },
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Bunk_Ladder.jpg",
+    "title": "Bunk Ladder and Berth Frames \u2014 Cutaway",
+    "camera": [
+      -51.220000000000006,
+      -2.73,
+      6.367500000000001
+    ],
+    "target": [
+      -52.120000000000005,
+      1.17,
+      6.367500000000001
+    ],
+    "lens": 28,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "C006",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_rechecks.py",
+    "detail_driver_sha256": "e7cde3338e1fc5f5a4241c12d54c7a6f5f8d64158ac9cb6f9c754802839bd8ab",
+    "supplementary": true,
+    "short_title": "Bunk Ladder and Berth Frames \u2014 Cutaway",
+    "diagnostic_limit": "Close diagnostic, ceiling omitted; original furniture/floor retained. Bunk camera is outside the explicitly omitted front wall, with target feet/posts frustum-checked; not an enclosed photograph. Door view retains actual own jambs. Not live/hidden-contact certification.",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "287fa7f94623cade9dc6ba0807887e9683524695a5c54bf6d1f23587f8f5fc54"
+  },
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Door_Hinge_Closed.jpg",
+    "title": "Cabin Door Hinge \u2014 Closed, Roof Off",
+    "camera": [
+      -50.35,
+      -2.38,
+      10.7275
+    ],
+    "target": [
+      -50.745000000000005,
+      -3.0,
+      10.5475
+    ],
+    "lens": 63,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "A001",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_rechecks.py",
+    "detail_driver_sha256": "e7cde3338e1fc5f5a4241c12d54c7a6f5f8d64158ac9cb6f9c754802839bd8ab",
+    "supplementary": true,
+    "short_title": "Cabin Door Hinge \u2014 Closed, Roof Off",
+    "diagnostic_limit": "Close diagnostic, ceiling omitted; original furniture/floor retained. Bunk camera is outside the explicitly omitted front wall, with target feet/posts frustum-checked; not an enclosed photograph. Door view retains actual own jambs. Not live/hidden-contact certification.",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "8f33c5fb5a12ebca589a02a3a6aca9208f71deb05f74b0f629f46c8db24a1d31"
+  },
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Door_Hinge_Open.jpg",
+    "title": "Cabin Door Hinge \u2014 Open, Roof Off",
+    "camera": [
+      -51.190000000000005,
+      -2.38,
+      10.7275
+    ],
+    "target": [
+      -50.77,
+      -3.0,
+      10.5475
+    ],
+    "lens": 63,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "A001",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_rechecks.py",
+    "detail_driver_sha256": "e7cde3338e1fc5f5a4241c12d54c7a6f5f8d64158ac9cb6f9c754802839bd8ab",
+    "supplementary": true,
+    "short_title": "Cabin Door Hinge \u2014 Open, Roof Off",
+    "diagnostic_limit": "Close diagnostic, ceiling omitted; original furniture/floor retained. Bunk camera is outside the explicitly omitted front wall, with target feet/posts frustum-checked; not an enclosed photograph. Door view retains actual own jambs. Not live/hidden-contact certification.",
+    "posed_door_degrees": 92,
+    "open_pose_visible_knuckle_rays": [
+      {
+        "object": "Joinery_A001",
+        "point": [
+          -50.779930114746094,
+          -2.9853427410125732,
+          10.505377769470215
+        ],
+        "axis": [
+          -50.77000045776367,
+          -3.0,
+          10.5
+        ],
+        "distance": 0.7641558491643358
+      },
+      {
+        "object": "Door_A001",
+        "point": [
+          -50.78000259399414,
+          -2.985232353210449,
+          10.551787376403809
+        ],
+        "axis": [
+          -50.77000045776367,
+          -3.0,
+          10.547499656677246
+        ],
+        "distance": 0.7518495401648395
+      },
+      {
+        "object": "Joinery_A001",
+        "point": [
+          -50.779930114746094,
+          -2.985342025756836,
+          10.598133087158203
+        ],
+        "axis": [
+          -50.77000045776367,
+          -3.0,
+          10.595000267028809
+        ],
+        "distance": 0.7425165425771334
+      }
+    ],
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "5b9b751c8bf08b419cdaec6d8fe5163e7c3eb6c70d2733e45b748e41c5eb5a81"
+  },
+  {
+    "file": "renders/leonidas_ii/micro/Micro_Hospital_Trolley.jpg",
+    "title": "Hospital Trolley Casters \u2014 Cutaway",
+    "camera": [
+      52.7,
+      1.1500000000000001,
+      15.2475
+    ],
+    "target": [
+      54.0,
+      2.95,
+      14.7975
+    ],
+    "lens": 50,
+    "orthographic_scale": null,
+    "cutaway": true,
+    "room_id": "P_Hospital",
+    "source": "models/leonidas_ii/Aurelian_1889.blend",
+    "source_sha256": "05fcdf10d429f83bd5e671b27e026d5c577e90a6e44f20c26750e9e3e069a526",
+    "renderer_sha256": "854dd554b781839204ffeefa9401434282449a3803c0331381a79c0b7d81b781",
+    "pixels": [
+      1600,
+      1000
+    ],
+    "cycles_samples": 24,
+    "staging": "Registered fixture points plus photographic fill; atlas emission visible but not sampled as area lights; diffuse/glossy bounces 2/2",
+    "detail_driver": "tools/render_leonidas_contact_rechecks.py",
+    "detail_driver_sha256": "e7cde3338e1fc5f5a4241c12d54c7a6f5f8d64158ac9cb6f9c754802839bd8ab",
+    "supplementary": true,
+    "short_title": "Hospital Trolley Casters \u2014 Cutaway",
+    "diagnostic_limit": "Close diagnostic, ceiling omitted; original furniture/floor retained. Bunk camera is outside the explicitly omitted front wall, with target feet/posts frustum-checked; not an enclosed photograph. Door view retains actual own jambs. Not live/hidden-contact certification.",
+    "postprocess": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize",
+    "sha256": "bcde67a972b8cc6de06ac2c6969f5bf74fff6117ec399535ac99cc090eedd5d5"
+  }
+]

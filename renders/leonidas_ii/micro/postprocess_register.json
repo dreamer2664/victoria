@@ -1,0 +1,74 @@
+[
+  {
+    "raw": "build/pending/Micro_Bunk_Ladder.png",
+    "final": "Micro_Bunk_Ladder.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "287fa7f94623cade9dc6ba0807887e9683524695a5c54bf6d1f23587f8f5fc54",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Micro_Dining_Tableware.png",
+    "final": "Micro_Dining_Tableware.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "8c3b57dd42fb5b06688a4a1b561f9409082930078311a5634da2a08bf049fb52",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Micro_Dining_Underside.png",
+    "final": "Micro_Dining_Underside.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "8fa0ef0501df2aa1ad8b5d455ad9c1a1a6d1d373ef47537cc12609080f48915a",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Micro_Door_Hinge_Closed.png",
+    "final": "Micro_Door_Hinge_Closed.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "8f33c5fb5a12ebca589a02a3a6aca9208f71deb05f74b0f629f46c8db24a1d31",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Micro_Door_Hinge_Open.png",
+    "final": "Micro_Door_Hinge_Open.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "5b9b751c8bf08b419cdaec6d8fe5163e7c3eb6c70d2733e45b748e41c5eb5a81",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Micro_Hospital_Trolley.png",
+    "final": "Micro_Hospital_Trolley.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "bcde67a972b8cc6de06ac2c6969f5bf74fff6117ec399535ac99cc090eedd5d5",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Micro_Pantry_Crockery.png",
+    "final": "Micro_Pantry_Crockery.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "a1776c2a852d5c7990ec4f6e4a5bc37b8d9e8bbc9e0749a3cd6fceb0e811a475",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Micro_Piano_Stool_Feet.png",
+    "final": "Micro_Piano_Stool_Feet.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "773226ca447f731da947f7f0d11cb76bdd07be7b82bf16d545f1e6f6e78d2793",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  },
+  {
+    "raw": "build/pending/Micro_Thrust_Bearings.png",
+    "final": "Micro_Thrust_Bearings.jpg",
+    "width": 1600,
+    "height": 1000,
+    "sha256": "75b8572758bc1fc43179b48c89f6fbab0ebd366cf880d69f58bc267c49a931a2",
+    "processing": "Cycles actual source geometry; tiled standalone OIDN 2 CPU, 384px core/80px halo; JPEG94, no resize"
+  }
+]

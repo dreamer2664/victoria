@@ -8,7 +8,7 @@ from pathlib import Path
 import os,sys,ctypes as C,json,hashlib,shutil
 import numpy as np
 from PIL import Image
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'renders'/'leonidas_ii';RAW=OUT/'build'/'raw';RAW.mkdir(parents=True,exist_ok=True)
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'renders'/'leonidas_ii'/os.getenv('LII_RENDER_SUBDIR','');OUT_REL=OUT.relative_to(ROOT);RAW=OUT/'build'/'raw';RAW.mkdir(parents=True,exist_ok=True)
 lib=C.CDLL(os.getenv('OIDN_LIBRARY','/var/tmp/blender/lib/libOpenImageDenoise.so.2'))
 def function(name,restype,args):
  f=getattr(lib,name);f.restype=restype;f.argtypes=args;return f
@@ -22,8 +22,8 @@ def persist(done):
   if not p.exists():continue
   regs=json.loads(p.read_text());updates={r['raw']:r for r in done}
   for r in regs:
-   key=str(Path(r['file']).relative_to(Path('renders/leonidas_ii')))
-   if key in updates:r['file']=str(Path('renders/leonidas_ii')/updates[key]['final']);r['postprocess']=updates[key]['processing'];r['sha256']=updates[key]['sha256']
+   key=str(Path(r['file']).relative_to(OUT_REL))
+   if key in updates:r['file']=str(OUT_REL/updates[key]['final']);r['postprocess']=updates[key]['processing'];r['sha256']=updates[key]['sha256']
   p.write_text(json.dumps(regs,indent=2))
  p=OUT/'postprocess_register.json';old=json.loads(p.read_text()) if p.exists() else [];by={r['final']:r for r in old}
  for r in done:by[r['final']]=r

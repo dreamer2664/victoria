@@ -1,0 +1,9 @@
+{
+  "schema": "victoria.leonidas-ii.superseded-review-pointer/1.0",
+  "status": "HISTORICAL_SUPERSEDED_NOT_CURRENT_ACCEPTANCE",
+  "original": "docs/leonidas_ii/DETAIL_VISUAL_REVIEW.json",
+  "history_archive": "docs/leonidas_ii/inspection/MICRO_PRE_FINAL_HANDOFF_HISTORY.tar.xz",
+  "history_index": "docs/leonidas_ii/inspection/MICRO_PRE_FINAL_HANDOFF_HISTORY.json",
+  "current_review": "docs/leonidas_ii/FINAL_RENDER_REVIEW.json",
+  "reason": "The user found further micro defects; the complete exact prior review/critical inventory remains in the lossless archive, not silently relabelled."
+}

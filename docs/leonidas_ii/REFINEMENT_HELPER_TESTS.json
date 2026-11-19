@@ -1,0 +1,80 @@
+{
+  "schema": "victoria.leonidas-ii.refinement-helper-tests/1.0",
+  "scope": "SYNTHETIC FIXTURES ONLY; no real render opened or approved",
+  "runner_sha256": "b88ce86efc88425c1c77b7f3f35c221feb2be18a498420728cc112eacee9f995",
+  "helper_sha256": "0b01c437d821cee5327311bcc9f8e391c446f16c5358f801eec1ded3fd6d9c08",
+  "tests": [
+    {
+      "test": "Synthetic complete 19-full-resolution / 6-close-up plan validates",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses missing planned image",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses duplicate replacing a planned view",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses stale master",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses stale renderer",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses stale audit identity",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses an unopened final JPG",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses wrong opened-pixel identity",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses an unscoped release status",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses an empty observation",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses unresolved visual blockers",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses mislabeled wall-removed stair",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses pilot dimensions substituted for a full-resolution interior",
+      "status": "PASS"
+    },
+    {
+      "test": "Refuses insufficient full-resolution samples",
+      "status": "PASS"
+    },
+    {
+      "test": "Copies only six scratch close-ups; reuses nineteen durable main JPGs",
+      "status": "PASS"
+    },
+    {
+      "test": "Durable mixed register regenerates page with no scratch registers",
+      "status": "PASS"
+    },
+    {
+      "test": "Displayed contact/space metrics derive from audit/data",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "PASS": 17,
+    "FAIL": 0
+  }
+}
