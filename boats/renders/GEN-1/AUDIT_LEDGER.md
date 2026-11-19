@@ -1,6 +1,6 @@
 # GEN-1 — individual image audit
 
-**Checkpoint:** twenty-four of 45 required final PNGs accepted. The release is incomplete.
+**Checkpoint:** twenty-six of 45 required final PNGs accepted. The release is incomplete.
 
 THEMISTOCLES-III and THEMISTOCLES-IV, 18 November 2026. Each accepted exact output was opened and visually examined before advancing; re-renders were re-opened. Earlier rows were re-rendered and re-reviewed after the lighting and hard-edge shading changes at row 06. Diagnostic images are outside this directory. No rejected `them2` image was copied here.
 
@@ -44,6 +44,10 @@ THEMISTOCLES-III and THEMISTOCLES-IV, 18 November 2026. Each accepted exact outp
 
 | 24 | `whaler_construction_construction.png` | disclosed double-ended skeletal construction | Construction review exposed the non-transom gunwale run ending at xi=0.94, visibly short of the aft post, and no explicit aft closing knee. The new 64-sample image shows tapered cap/inwale/rubbing rails carried into both posts and a second breasthook tying the stern framing. | `gunwale_set` now tapers into both ends for non-transom hulls; `build2_whaler.py` adds the true aft breasthook. The whaler was rebuilt and rechecked for containment before rendering. | Shell and loose equipment are omitted only to disclose joinery; normal views remain full assemblies. | Yes |
 
+| 25 | `whaler_hero.png` | elevated double-ended whaler service-state portrait | A full 64-sample hero candidate was opened after end-joinery and containment repairs. Both fine ends, continuous rail-to-post runs, clinker, housed board state, fenders and practical whaling outfit remain coherent with no projection or cove artifact. | No new defect found. | The pose favours hull silhouette; dedicated construction/interior views document the dense outfit and framing. | Yes |
+
+| 26 | `whaler_water_hero.png` | loaded-waterline whaler service-state portrait | A full 64-sample afloat hero was opened. The solved loaded waterline meets the double-ended hull without studio blocks or lights; reflection, rail/endpost closures, clinker, fenders and contained outfit remain credible. | No defect found. | Bright overcast water exposes construction and draft rather than obscuring them in theatrical reflection. | Yes |
+
 ## Checkpoint image hashes
 
 - `rowing_bow_on.png` — SHA-256 `619ba240c56843f9119fb3edea82bb04329a12f06b48ecc6a7428acd3a1de004`
@@ -72,3 +76,5 @@ THEMISTOCLES-III and THEMISTOCLES-IV, 18 November 2026. Each accepted exact outp
 - `whaler_underside.png` — SHA-256 `1a1b33d683eefa76668ac64d3702a445b105959734179d0cc10dd58db90b7f25`
 - `whaler_interior.png` — SHA-256 `e4ba642f19f86eae52f5ecacdcd4dbe2875b3725924dac14e49d057157e1875b`
 - `whaler_construction_construction.png` — SHA-256 `345d875d6f663e5a11bcc6a77e35e4aa27cb6e322405c303e95af195a752e3d0`
+- `whaler_hero.png` — SHA-256 `1bd80b086bf06f80e70144fdceb815eeb61531d5f09d89ac250f8c5f7f864ccd`
+- `whaler_water_hero.png` — SHA-256 `68eb6068bf7510857c4892504f7a31b2709e9eb053d3c2b30287065ec7708511`
